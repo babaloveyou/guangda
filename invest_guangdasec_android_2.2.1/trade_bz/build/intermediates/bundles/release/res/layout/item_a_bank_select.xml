@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/trade_color_white"
+              android:orientation="vertical">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/trade_normal_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/trade_color_black"
+            android:textSize="@dimen/select_table_text"
+            android:id="@+id/tv_bank_direction"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/trade_color_black"
+            android:textSize="@dimen/select_table_text"
+            android:id="@+id/tv_bank_account"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textSize="@dimen/main_captial_num_size"
+            android:textStyle="bold"
+            android:id="@+id/tv_bank_count"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_weight="1"
+            android:id="@+id/tv_bank_time"/>
+
+        <com.thinkive.android.trade_bz.views.MarqueeTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:focusable="true"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:id="@+id/tv_bank_status"/>
+
+    </LinearLayout>
+
+</LinearLayout>

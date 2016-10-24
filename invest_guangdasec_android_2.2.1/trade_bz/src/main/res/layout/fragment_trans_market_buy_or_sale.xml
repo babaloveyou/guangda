@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_color_white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.9"
+        android:orientation="horizontal"
+        android:baselineAligned="false"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.4"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/ll_code_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/buy_no_corner_kong"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <EditText
+                    android:id="@+id/edt_stock_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center|right"
+                    android:hint="@string/trade_stock_code"
+                    android:inputType="textNoSuggestions"
+                    android:maxLength="6"
+                    android:paddingRight="10dp"
+                    android:textColor="@color/trade_text_color3"
+                    android:textColorHint="@color/trade_text_color9"
+                    android:textSize="@dimen/buysell_button_text_size"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_stock_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:hint="@string/trade_stock_name"
+                    android:textColor="@color/trade_text_color9"
+                    android:textSize="@dimen/buysell_button_text_size"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_input_price"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/buy_no_corner_kong"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/ibt_subtract"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/trade_buy"
+                    android:gravity="center"
+                    android:text="@string/trade_subtract"
+                    android:textColor="@color/trade_color_white"
+                    android:textSize="21sp"/>
+
+                <EditText
+                    android:id="@+id/edt_stock_price"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:inputType="numberDecimal"
+                    android:textColor="@color/trade_text_color3"
+                    android:textColorHint="@color/trade_text_color9"
+                    android:textSize="16sp"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/ibt_add"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/trade_buy"
+                    android:gravity="center"
+                    android:text="@string/trade_add"
+                    android:textColor="@color/trade_color_white"
+                    android:textSize="21sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_input_amount"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buy_no_corner_kong"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/ed_entrust_num"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:paddingLeft="3dp"
+                    android:maxLength="7"
+                    android:textColor="@color/trade_text_color3"
+                    android:textColorHint="@color/trade_text_color9"
+                    android:textSize="@dimen/buysell_button_text_size"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.75"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:text="@string/trans_buy_or_sale21"
+                    android:background="@color/trade_buy"
+                    android:textColor="@color/trade_color_white"
+                    android:textSize="@dimen/buysell_button_text_size"
+                    android:id="@+id/tv_trans_click_max_all"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:id="@+id/tv_trans_limit_max_str"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="@string/no_text_set"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:gravity="center"
+                    android:id="@+id/tv_trans_limit_max"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/trans_buy_or_sale11"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_buy_or_sell"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/trade_buy"
+                android:textColor="@color/trade_color_white"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <!-- 卖五 -->
+            <LinearLayout
+                android:id="@+id/ll_sale5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_sale5"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale5_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale5_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+            </LinearLayout>
+
+            <!-- 卖四 -->
+            <LinearLayout
+                android:id="@+id/ll_sale4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_sale4"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale4_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale4_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 卖三 -->
+            <LinearLayout
+                android:id="@+id/ll_sale3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_sale3"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale3_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale3_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 卖二 -->
+            <LinearLayout
+                android:id="@+id/ll_sale2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_sale2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale2_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale2_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 卖一 -->
+            <LinearLayout
+                android:id="@+id/ll_sale1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_sale1"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale1_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_sale1_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/trade_divide_line"/>
+
+            <!-- 买一 -->
+            <LinearLayout
+                android:id="@+id/ll_buy1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_buy1"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy1_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy1_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 买二 -->
+            <LinearLayout
+                android:id="@+id/ll_buy2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_buy2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy2_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy2_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 买三 -->
+            <LinearLayout
+                android:id="@+id/ll_buy3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_buy3"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy3_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy3_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 买四 -->
+            <LinearLayout
+                android:id="@+id/ll_buy4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_buy4"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy4_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy4_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <!-- 买五 -->
+            <LinearLayout
+                android:id="@+id/ll_buy5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="1"
+                    android:text="@string/trade_buy5"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy5_price"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textStyle="normal"/>
+
+                <TextView
+                    android:id="@+id/tv_buy5_amount"
+                    style="@style/trade_wudang_text"
+                    android:layout_weight="2"
+                    android:textColor="@color/trade_text_color9"
+                    android:textStyle="normal"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/trade_normal_background"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.15"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/store_market_value"
+            android:gravity="center"
+            android:textColor="@color/trade_text_color6"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/store_win_lose"
+            android:gravity="center"
+            android:textColor="@color/trade_text_color6" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/store_usable"
+            android:gravity="center"
+            android:textColor="@color/trade_text_color6"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/store_now_price"
+            android:gravity="center"
+            android:textColor="@color/trade_text_color6" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <!-- 正在加载时显示的界面 -->
+    <LinearLayout
+        android:id="@+id/ll_buy_or_sell_list_loading"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/fragment_ab_list_info_progressbar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="@string/home_loading_text"/>
+
+    </LinearLayout>
+
+    <!--暂无数据时界面-->
+    <LinearLayout
+        android:id="@+id/lin_not_data_set"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/not_data_listview"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/no_data_listview"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/lsv_no_data_text"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_show_stock"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:visibility="gone"/>
+
+</LinearLayout>

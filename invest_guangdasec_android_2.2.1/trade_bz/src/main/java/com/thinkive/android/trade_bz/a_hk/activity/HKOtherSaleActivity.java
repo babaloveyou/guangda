@@ -1,0 +1,38 @@
+package com.thinkive.android.trade_bz.a_hk.activity;
+
+import android.os.Bundle;
+import android.view.View;
+
+import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_hk.fragment.HKOtherSaleFragment;
+import com.thinkive.android.trade_bz.a_stock.activity.AbsNavBarActivity;
+
+/**
+ * 港股零股卖出
+ * @author 张雪梅
+ * @company Thinkive
+ * @date 2016/6/6
+ */
+public class HKOtherSaleActivity extends AbsNavBarActivity {
+
+    private HKOtherSaleFragment mFragment = null;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initData();
+        initViews();
+    }
+
+    @Override
+    protected void initViews() {
+        addFragment(R.id.fl_container, mFragment);
+        setTitleText(R.string.hk_company_action7);
+        setBackBtnVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected void initData() {
+        mFragment = new HKOtherSaleFragment();
+    }
+}

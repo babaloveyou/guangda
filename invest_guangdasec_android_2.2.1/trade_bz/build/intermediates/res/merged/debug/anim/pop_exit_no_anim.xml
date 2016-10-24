@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+     android:duration="350">
+    <alpha
+        android:fromAlpha="1.0"
+        android:toAlpha="1.0"/>
+</set><!-- From: file:/Users/wangzhihong/Desktop/android_prom/new_framework/standard/thinkive_invest/fragmentation/src/main/res/anim/pop_exit_no_anim.xml -->

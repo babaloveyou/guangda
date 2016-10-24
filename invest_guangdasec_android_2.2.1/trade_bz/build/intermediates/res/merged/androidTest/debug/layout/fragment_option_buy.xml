@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/trade_normal_background">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main3"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_buy_open"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main4"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_sale_open"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main5"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_buy_close"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main6"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_sale_close"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main7"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_covered_open"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main8"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_covered_close"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main9"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_exercise"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main10"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_covered_lock"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main11"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_covered_open_lock"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main12"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_option_revocation"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/option_main29"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_option_change_pwd"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+</LinearLayout>

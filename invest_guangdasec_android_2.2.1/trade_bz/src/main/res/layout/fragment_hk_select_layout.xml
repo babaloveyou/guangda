@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background"
+    android:orientation="vertical">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:id="@+id/tv_select_today_entrust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select17"
+        android:textColor="@color/trade_text_color6"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:id="@+id/tv_select_today_trade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:text="@string/hk_select18"
+        android:gravity="center_vertical"
+        android:textColor="@color/trade_text_color6"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:id="@+id/tv_select_histortradey_entrust"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:text="@string/hk_select19"
+        android:textColor="@color/trade_text_color6"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+
+    <TextView android:id="@+id/tv_select_history_trade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:paddingTop="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select20"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_select_capital_stock"
+        android:text="@string/hk_select0"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_no_trade"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select1"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:id="@+id/tv_select_securities"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select2"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:id="@+id/tv_select_fund"
+        android:text="@string/hk_select3"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:id="@+id/tv_select_combined"
+        android:paddingTop="10dp"
+        android:text="@string/hk_select4"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:id="@+id/tv_select_liabilities"
+        android:text="@string/hk_select5"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_price_difference"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select6"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:id="@+id/tv_select_exchange"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:text="@string/hk_select7"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:gravity="center_vertical"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:id="@+id/tv_select_limit"
+        android:paddingTop="10dp"
+        android:text="@string/hk_select8"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_voting_trust"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:text="@string/hk_select9"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_voting_msg"
+        android:paddingRight="8dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:text="@string/hk_select21"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_corporate_behavior_trust"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select10"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_corporate_behavior_msg"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select22"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:id="@+id/tv_select_statement_account"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select11"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:id="@+id/tv_select_delivery_order"
+        android:paddingRight="8dp"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:gravity="center_vertical"
+        android:text="@string/hk_select12"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:gravity="center_vertical"
+        android:paddingRight="8dp"
+        android:id="@+id/tv_select_notification"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:text="@string/hk_select13"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="8dp"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:background="@color/trade_color_white"
+        android:id="@+id/tv_select_market_day"
+        android:text="@string/hk_select14"
+        android:textColor="@color/trade_text_color6"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+</LinearLayout>

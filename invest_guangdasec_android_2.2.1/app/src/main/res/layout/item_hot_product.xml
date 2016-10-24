@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="#eeeeee"
+        />
+    <LinearLayout
+        android:paddingBottom="23dp"
+    android:layout_width="match_parent"
+        android:gravity="center_vertical"
+    android:layout_height="match_parent">
+        <LinearLayout
+            android:paddingLeft="30dp"
+            android:paddingTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_weight="6"
+            android:layout_height="match_parent"
+            >
+
+    <LinearLayout
+        android:id="@+id/ll_product_price"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_product_price_tens"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#ff5700"
+    android:textSize="34sp"
+    android:text="9."
+    />
+    <TextView
+        android:id="@+id/tv_product_price_units"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#ff5700"
+    android:textSize="34sp"
+    android:text="06"
+    />
+    <TextView
+        android:id="@+id/tv_product_price_sign"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#ff5700"
+    android:textSize="18sp"
+    android:text="%"
+    />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_product_price_depict"
+        android:textColor="#999999"
+        android:layout_marginTop="1dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="近一年收益"
+        android:textSize="14sp" />
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:gravity="center_vertical"
+            android:layout_weight="7"
+            android:paddingRight="15dp"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_product_depict"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="25dp"
+            android:textColor="#222222"
+            android:layout_width="wrap_content"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:text="买买买,大家快来买"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_alignLeft="@id/tv_product_depict"
+            android:layout_below="@id/tv_product_depict"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:textColor="#555555"
+            android:paddingBottom="3dp"
+            android:text="私募产品转入测试"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_marginTop="4dp"
+        android:id="@+id/tv_product_sell_date"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+        android:layout_alignLeft="@id/tv_product_name"
+        android:layout_below="@id/tv_product_name"
+        android:textColor="#4359aa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ff8f6e_round"
+        android:text="每周一"
+        android:textSize="10sp" />
+        <TextView
+            android:layout_marginTop="4dp"
+            android:id="@+id/tv_product_profit"
+            android:layout_below="@id/tv_product_name"
+            android:layout_marginLeft="6dp"
+            android:layout_toRightOf="@id/tv_product_sell_date"
+            android:textColor="#4359aa"
+            android:layout_width="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_ff8f6e_round"
+            android:text="收益高"
+            android:textSize="10sp" />
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

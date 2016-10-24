@@ -1,0 +1,191 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 交易首页中，上方两排按钮的样式 -->
+    <style name="trade_main_top_buttons">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/navigation_title_text_size</item>
+        <item name="android:textColor">@color/trade_text_color6</item>
+        <item name="android:background">@color/trade_color_white</item>
+    </style>
+
+
+    <style name="trade_wudang_text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/trade_buysell_text_size</item>
+        <item name="android:textColor">@color/trade_text_color6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:hint">@string/blank</item>
+    </style>
+
+    <style name="trade_wudang_price_buy_text" parent="trade_wudang_text">
+        <item name="android:textColor">@color/trade_up_red</item>
+    </style>
+
+    <style name="dialogstyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- 新股-申购页面中，普通文本的样式 -->
+    <style name="new_subscribe_normal_text_style">
+        <item name="android:textColor">@color/trade_text_color9</item>
+        <item name="android:textSize">@dimen/new_subscribe_text</item>
+    </style>
+
+    <!-- 新股-申购页面中，标题文字的样式 -->
+    <style name="new_subscribe_title_text_style">
+        <item name="android:textColor">@color/trade_text_color9</item>
+        <item name="android:textSize">@dimen/new_subscribe_text</item>
+    </style>
+
+    <!-- 新股-申购页面中，按钮文字的样式 -->
+    <style name="new_subscribe_button_text_style">
+        <item name="android:textColor">@color/trade_color_white</item>
+        <item name="android:textSize">@dimen/login_button_text_size</item>
+    </style>
+
+    <!-- 新股-申购页面中，表格数字的样式 -->
+    <style name="new_subscribe_table_num">
+        <item name="android:textColor">@color/trade_color_black</item>
+        <item name="android:textSize">@dimen/new_subscribe_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 新股-申购页面中，普通文本的样式 -->
+    <style name="new_subscribe_normal_num_style" parent="new_subscribe_normal_text_style">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="fund_fisk_test_result_text">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/trade_text_color9</item>
+    </style>
+
+    <style name="fund_fisk_test_result_value">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/trade_color_black</item>
+    </style>
+
+    <style name="pop_show_bottom" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+
+    <!-- 加载对话框 主题 -->
+    <style name="loadingDialogStyle" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 对话框是否有遮盖 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="ActivityTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+    <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
+    </style>
+
+
+
+
+    <style name="tv_tab_top">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">#555555</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="et_input_without_bg">
+        <item name="android:textSize">16sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/normal_hint_color</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="tv_normal_show">
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:textColor">@color/trade_top_tab_dark_gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="style_tv_left">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#222222</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="style_iv_right">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:src">@mipmap/show_more_arrwo</item>
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="style_rl_click_expandable">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">55dp</item>
+        <item name="android:background">#ffffff</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+    <style name="style_login_et" parent="et_input_without_bg">
+        <item name="android:layout_marginLeft">20dp</item>
+    </style>
+
+    <style name="style_login_ll">
+        <item name="android:background">@color/white</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+    <style name="style_tv_with_et_active">
+        <item name="android:layout_centerVertical">true</item>
+
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/trade_top_tab_dark_gray</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="style_et_input_active">
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">160dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColorHint">@color/normal_hint_color</item>
+        <item name="android:textColor">@color/text_et_input_french_black</item>
+        <item name="android:textSize">16sp</item>
+
+    </style>
+
+</resources>

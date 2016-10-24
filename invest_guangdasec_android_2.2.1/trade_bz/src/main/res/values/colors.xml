@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pop_bg_alph90">#E6333333</color>
+    <color name="pop_bg_press_alph90">#E6888888</color>
+    <color name="pop_total_price">#ff3300</color>
+</resources>

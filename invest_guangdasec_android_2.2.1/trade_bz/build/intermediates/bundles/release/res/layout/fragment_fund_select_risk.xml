@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background"
+    android:orientation="vertical">
+
+    <!-- 正在加载时显示的界面 -->
+    <LinearLayout
+        android:id="@+id/ll_risk_list_loading"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/fragment_ab_list_info_progressbar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+        <TextView
+            android:text="@string/home_loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <!-- 风险测评结果展示部分 -->
+    <LinearLayout
+        android:id="@+id/ll_risk_test_result"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trade_text_color1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:orientation="horizontal">
+
+            <!-- 测评结果图片 -->
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="center"
+                android:src="@drawable/icon05"/>
+
+            <!-- 测评结果文字信息 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="20dp">
+
+                <!-- 风险等级 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/fund_fisk_test_result_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fund_trade_risk_test_level"/>
+
+                    <TextView
+                        android:id="@+id/tv_risk_test_value_level"
+                        style="@style/fund_fisk_test_result_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <!-- 是否过期 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        style="@style/fund_fisk_test_result_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fund_trade_risk_test_is_over_date"/>
+
+                    <TextView
+                        android:id="@+id/tv_risk_test_value_is_over_date"
+                        style="@style/fund_fisk_test_result_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+
+                </LinearLayout>
+
+                <!-- 测试日期 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/fund_fisk_test_result_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fund_trade_risk_test_date"/>
+
+                    <TextView
+                        android:id="@+id/tv_risk_test_value_date"
+                        style="@style/fund_fisk_test_result_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_retest"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trade_buy"
+            android:gravity="center"
+            android:text="@string/fund_trade_risk_test_retest"
+            android:textColor="@color/trade_color_white"
+            android:textSize="18sp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trade_text_color1"/>
+
+    </LinearLayout>
+
+    <!--列表类型的试卷-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:id="@+id/ll_risk_test_paper">
+
+        <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/lv_refresh_list"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:background="@drawable/common_all_corner_shi"
+            android:text="@string/fund_commit"
+            android:layout_margin="10dp"
+            android:textColor="@color/trade_color_white"
+            android:textSize="@dimen/text_size"
+            android:id="@+id/tv_click_commit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

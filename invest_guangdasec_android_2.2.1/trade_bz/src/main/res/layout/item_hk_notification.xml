@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/trade_color_white">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/trade_normal_background"/>
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/tv_stock_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"
+            />
+        <TextView
+            android:id="@+id/tv_stock_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:hint="@string/no_text_set"
+            android:textSize="@dimen/hk_select_item"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:hint="@string/hk_notification_item0"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView
+            android:id="@+id/tv_note_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"
+            />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <!--第一栏-->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:layout_weight="1"
+            android:hint="@string/hk_notification_item1"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_circulation_type_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:layout_weight="1"
+            android:hint="@string/hk_notification_item2"
+            android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_authority_type_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_item_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+
+    <!--第一栏-->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.6"
+            android:hint="@string/hk_notification_item3"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_market_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.6"
+            android:hint="@string/hk_notification_item4"
+            android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_authority_times"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+
+    <!--第一栏-->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.6"
+            android:hint="@string/hk_notification_item5"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_current_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.6"
+            android:hint="@string/hk_notification_item6"
+            android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_money_type_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+
+    <!--第一栏-->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/hk_select_item_height"
+            android:layout_marginLeft="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.6"
+            android:hint="@string/hk_notification_item7"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_sno"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/hk_select_item_height"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/hk_select_item_height"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.6"
+            android:hint="@string/hk_notification_item8"
+            android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_current_rate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/hk_select_item_height"
+            android:layout_marginRight="@dimen/hk_select_left_distances"
+            android:layout_marginTop="@dimen/hk_select_height"
+            android:layout_weight="0.8"
+            android:hint="@string/no_text_set"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+
+
+</LinearLayout>

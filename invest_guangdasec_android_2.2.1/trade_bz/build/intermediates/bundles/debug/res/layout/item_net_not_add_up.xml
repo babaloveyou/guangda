@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/trade_color_white">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/trade_normal_background" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:textSize="@dimen/text_size"
+        android:id="@+id/tv_add_vote_content"
+        android:textColor="@color/trade_text_color3"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp"
+        android:id="@+id/rg_add_vote">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/trade_color1"
+            android:text="@string/net_vote25"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/common_all_corner_transparent"
+            android:id="@+id/rb_add_vote_agree"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/trade_color1"
+            android:text="@string/net_vote26"
+            android:background="@drawable/common_all_corner_transparent"
+            android:id="@+id/rb_add_vote_opppse"/>
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/trade_color1"
+            android:text="@string/net_vote27"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/common_all_corner_transparent"
+            android:id="@+id/rb_add_vote_give_up"/>
+
+    </RadioGroup>
+
+</LinearLayout>

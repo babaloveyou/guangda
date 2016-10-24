@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="#DDDDDD"
+            />
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="#EEEEEE"
+                android:gravity="center_vertical"
+            >
+    <TextView android:layout_width="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#666666"
+              android:id="@+id/tv_recommendna_name"
+            android:text="161725招商中证白酒"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignParentRight="true"
+                  android:id="@+id/tv_recommend_risk_level"
+            android:layout_marginRight="7dp"
+                  android:text="高"/>
+        <TextView android:layout_width="wrap_content"
+                  android:layout_toLeftOf="@id/tv_recommend_risk_level"
+                  android:layout_height="wrap_content"
+                  android:layout_marginRight="6dp"
+                  android:text="投资风险"/>
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="61dp">
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:layout_marginLeft="30dp"
+                android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="当前价格"
+                      android:textSize="12sp"
+                android:layout_gravity="center_horizontal"
+                      android:id="@+id/tv_recommend_time_increase"
+                    />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal"
+                    >
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="22"
+                android:textSize="30sp"
+                android:layout_marginTop="3dp"
+                android:gravity="bottom"
+                android:textColor="#FF0000"
+                android:id="@+id/tv_recommend_increase_decade"
+                />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text=".3933%"
+                android:textSize="20sp"
+                android:layout_marginTop="3dp"
+                android:gravity="bottom"
+                android:textColor="#FF0000"
+                android:id="@+id/tv_recommend_increase_unit"
+                />
+
+            </LinearLayout>
+        </LinearLayout>
+        <!--<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+                <!--android:text="7月9日~13日净值增长率"-->
+                <!--android:textSize="10sp"-->
+                <!--android:layout_marginLeft="50dp"-->
+                <!--android:id="@+id/tv_recommend_time_increase"-->
+                <!--/>-->
+        <!--<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+                <!--android:text="22"-->
+                <!--android:textSize="23sp"-->
+                <!--android:layout_marginTop="3dp"-->
+                <!--android:gravity="bottom"-->
+                <!--android:textColor="#FF0000"-->
+                <!--android:paddingLeft="10dp"-->
+                <!--android:id="@+id/tv_recommend_increase_decade"-->
+                <!--android:layout_below="@id/tv_recommend_time_increase"-->
+                <!--android:layout_alignLeft="@id/tv_recommend_time_increase"-->
+                <!--/>-->
+        <!--<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"-->
+                  <!--android:text=".39%"-->
+                  <!--android:textSize="14sp"-->
+                  <!--android:gravity="bottom"-->
+                  <!--android:layout_marginBottom="2dp"-->
+                  <!--android:textColor="#FF0000"-->
+                  <!--android:id="@+id/tv_recommend_increase_unit"-->
+                  <!--android:layout_below="@id/tv_recommend_time_increase"-->
+                  <!--android:layout_alignBottom="@id/tv_recommend_increase_decade"-->
+                  <!--android:layout_toRightOf="@id/tv_recommend_increase_decade"-->
+                <!--/>-->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="1000"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                android:id="@+id/tv_recommend_buy_money"
+                />
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="起购金额 "
+                  android:textSize="14sp"
+                  android:textColor="#999999"
+                  android:layout_toLeftOf="@id/tv_recommend_buy_money"
+                />
+        <Button android:layout_width="100dp"
+            android:layout_height="30dp"
+                android:background="@drawable/bg_bule_5dp_ruond"
+                android:text="立即购买"
+                android:paddingBottom="4dp"
+                android:layout_marginTop="2dp"
+                android:paddingTop="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:id="@+id/but_recommend_buy"
+                android:layout_below="@id/tv_recommend_buy_money"
+                />
+    </RelativeLayout>
+</LinearLayout>

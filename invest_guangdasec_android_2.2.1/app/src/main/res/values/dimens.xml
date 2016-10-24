@@ -1,0 +1,38 @@
+    <resources>
+        <!-- 顶部导航栏高度 -->
+        <dimen name="navigation_bar_height">44dp</dimen>
+
+
+        <!-- Default screen margins, per the Android Design guidelines. -->
+        <dimen name="activity_horizontal_margin">16dp</dimen>
+        <dimen name="activity_vertical_margin">16dp</dimen>
+
+        <dimen name="title_action_icon_size">30dp</dimen>
+        <!--******************************首页*******************************-->
+        <!--顶部导航栏标题文字大小 -->
+        <dimen name="navbar_title_text_size">17sp</dimen>
+        <!--顶部导航栏返回文字大小-->
+        <dimen name="navbar_back_text_size">13sp</dimen>
+        <!--我的持仓ListViewItem的字体大小-->
+        <dimen name="store_text_size">10sp</dimen>
+        <!--登录界面按钮字体大小-->
+        <dimen name="login_button_text_size">20sp</dimen>
+        <!--主热门资讯文字大小 -->
+        <dimen name="main_tv_text">17sp</dimen>
+        <!--主热门更多文字大小 -->
+        <dimen name="main_tv_more">16sp</dimen>
+        <!--主热门盈利文字大小 -->
+        <dimen name="main_tv_profit">20sp</dimen>
+        <!--主热门关注人数文字大小 -->
+        <dimen name="look_mun">14sp</dimen>
+        <!--关注字样 收益 文字大小-->
+        <dimen name="tv_content_text">13sp</dimen>
+
+        <dimen name="fast_menu_text_size">14sp</dimen>
+
+        <dimen name="hot_counselor_name_size">16sp</dimen>
+
+        <!--精品推荐-->
+        <dimen name="recomend_text1">13sp</dimen>
+    </resources>
+

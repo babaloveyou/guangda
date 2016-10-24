@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+
+    <include layout="@layout/include_loginactivity_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/bg_main_french_gray"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_login_fund"
+                style="@style/tv_tab_top"
+                android:text="资金账号登录"/>
+
+            <include
+                android:id="@+id/indcator_left"
+                layout="@layout/view_bottom_golden"/>
+        </LinearLayout>
+
+        <TextView
+            android:background="#e5e5e5"
+            android:layout_width=".5dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_login_sun_e"
+                style="@style/tv_tab_top"
+                android:text="阳光E账通登录"/>
+
+            <include
+                android:id="@+id/indcator_right"
+                layout="@layout/view_bottom_golden"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/fl_container_childe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+    </FrameLayout>
+</LinearLayout>

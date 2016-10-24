@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/trade_color_white">
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_securities"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:textSize="@dimen/buysell_button_text_size"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/trade_text_color6" />
+
+            <TextView
+                    android:id="@+id/tv_market_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:gravity="center"
+                    android:paddingBottom="4dp"
+                    android:textSize="@dimen/store_text_size"
+                    android:textColor="@color/trade_text_color6"  />
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/trade_text_color1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:id="@+id/tv_win_lose_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="2dp"/>
+
+            <TextView
+                    android:id="@+id/tv_win_lose_rate"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:gravity="center"
+                    android:paddingBottom="4dp"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/trade_text_color1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/tv_store"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/trade_text_color6" />
+
+            <TextView
+                    android:id="@+id/tv_usable"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:paddingBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/trade_text_color6"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/trade_text_color1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+            <TextView
+                    android:id="@+id/tv_costing"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="@color/trade_text_color6"/>
+
+            <TextView
+                    android:id="@+id/tv_now_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/no_text_set"
+                    android:paddingBottom="4dp"
+                    android:gravity="center"
+                    android:textColor="@color/trade_text_color6"/>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="1dp"
+                  android:background="@color/trade_text_color1"/>
+
+        </LinearLayout>
+
+</LinearLayout>

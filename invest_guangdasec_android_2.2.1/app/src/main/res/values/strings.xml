@@ -1,0 +1,144 @@
+<resources>
+    <string name="app_name">光大掌上富尊</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="item1">首页</string>
+    <string name="item2">行情</string>
+    <string name="item3">商城</string>
+    <string name="item4">我</string>
+    <string name="item5">资讯</string>
+    <string name="item6">交易</string>
+
+    <string name="app_description">Android drawer icon with material design animation</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+
+    <string name="gd_name">光大掌上富尊</string>
+    <string name="share_title">光大掌上富尊</string>
+    <string name="share_text">开户、行情、交易、理财、融资、客服，随时随地满足您的需求！</string>
+    <string name="launcher_slide_over">跳过</string>
+    <string name="more_text">更多</string>
+    <string name="left_click_login">点击登录</string>
+    <string name="left_open_account">我要开户/转账</string>
+    <string name="left_btn_open_account">开户、签约、账户管理</string>
+    <string name="left_btn_price">快速行情、理财交易</string>
+    <string name="left_btn_trade">金融商城、资金、理财、资讯</string>
+    <string name="left_btn_loan">小额融资</string>
+    <string name="left_btn_order_bank_card">预约光大银行卡</string>
+    <string name="left_btn_customer">客服热线 95525</string>
+    <string name="left_btn_attention">关注我们</string>
+    <string name="left_btn_share">分享</string>
+    <string name="left_btn_update">更新</string>
+    <string name="left_btn_exit">退出登录</string>
+    <string name="left_btn_comment">普通账号\n1034 8888 8999 9999</string>
+    <string name="left_btn_blend">融资账号\n1034 8888 8999 9999</string>
+    <string name="left_btn_otc">OTC账号\n1034 8888 8999 9999</string>
+    <string name="left_current_account">当前使用账号:</string>
+    <string name="left_checking_hint">正在检测，请稍等……</string>
+    <string name="login_fund_text">资金账号登录</string>
+    <string name="login_sunshine_text">阳光E账通登录</string>
+    <string name="login_hint_account_text">资金账号:</string>
+    <string name="login_trade_password_text">交易密码:</string>
+    <string name="login_e_account_text">E账通账号:</string>
+    <string name="login_e_password_text">E账通密码:</string>
+    <string name="login_verif_code_text">验 证 码 :</string>
+    <string name="login_btn_login_text">登录</string>
+    <string name="login_btn_exit_text">退出</string>
+    <string name="login_show_hint_info_text">如果您没有账号,请先开户</string>
+    <string name="login_show_faile_text">如果登陆失败，您还可以通过以下两个入口快速登陆普通交易或融资融券交易</string>
+    <string name="login_open_account_text">开户/转户</string>
+    <string name="menu_band_rich_text">掌上富尊</string>
+    <string name="menu_price_news_text">行情交易</string>
+    <string name="menu_often_func_text">常用功能</string>
+    <string name="menu_business_open_text">业务开通</string>
+    <string name="menu_login_text">登录</string>
+    <string name="login_e_hint">资金账号登录后激活，开始阳光E账通之旅</string>
+    <string name="login_input_account_error_hint">输入账号错误</string>
+    <string name="login_input_password_error_hint">输入密码错误</string>
+    <string name="login_input_verify_error_hint">输入错误验证</string>
+    <string name="login_no_account_hint">没有输入账号</string>
+    <string name="login_no_password_hint">没有密码</string>
+    <string name="login_no_verify_hint">没有验证码</string>
+    <string name="login_fund_account">普通账号\n</string>
+    <string name="login_loan_account">融资账号\n</string>
+    <string name="login_otc_account">OTC账号\n</string>
+    <string name="login_no_know">未知</string>
+    <string name="login_hello">您好，</string>
+    <string name="account_hint">请输入资金账号</string>
+    <string name="account_e_hint">请输入阳光E账通账号</string>
+    <string name="login_logging">"正在登录中"</string>
+    <string name="switch_account_success">切换账号成功</string>
+    <string name="switch_account_fail">切换账号失败</string>
+    <string name="switch_switching_account">正在切换账号……</string>
+    <string name="exit_login_title">退出登录</string>
+    <string name="exit_login_context">你真的要离开了吗?</string>
+
+    <!--register activity -->
+    <string name="activate_title">用戶激活</string>
+    <string name="activate_mobile_number">手机号码:</string>
+    <string name="activate_verify_code">验证码:</string>
+    <string name="activate_send_verify_code">获取验证码</string>
+    <string name="activate_resend_verify_code">%1$s秒后重发</string>
+    <string name="activate">激活</string>
+    <string name="activate_ignore">暂不激活,随便看看</string>
+    <string name="activate_tips_one">根据证监会的要求，首次使用需要进行手机验证</string>
+    <string name="activate_tips_two">如有疑问，请拨打光大证券客服热线：95525</string>
+
+    <!--登录-->
+    <string name="password_hint">请输入交易密码</string>
+    <string name="e_password_hint">请输入登录密码</string>
+    <string name="verify_hint">请输入右侧验证码</string>
+
+    <string name="no_model2">攻城师们正在努力，敬请期待！</string>
+    <string name="main_hot_message">微资讯</string>
+    <string name="main_tv_more">更多</string>
+    <string name="main_hot_group">今日热门组合</string>
+    <string name="main_hot">热门</string>
+    <string name="main_hot_group_text">收益</string>
+    <string name="main_hot_group_num">关注</string>
+    <string name="main_hot_group_num_unit"> 人</string>
+    <string name="main_hot_group_do">创建</string>
+    <string name="tv_no_text_set">--</string>
+    <string name="profit_unit">%</string>
+    <!--<string name="check_ok">yes</string>-->
+    <!--<string name="check_not">no</string>-->
+
+    <!--精品推荐-->
+    <string name="uint_net">单位净值</string>
+    <string name="add_net">累计净值</string>
+    <string name="recomend_tetle">精品推荐</string>
+    <string name="recomend_yield">今年以来收益率</string>
+    <string name="recomend_risk1">低风险</string>
+    <string name="recomend_risk2">中风险</string>
+    <string name="recomend_risk3">高风险</string>
+    <string name="no_text_set">--</string>
+    <!-- 公共符号定义 -->
+    <string name="left_part">(</string>
+    <string name="right_part">)</string>
+    <!-- 对话框 -->
+    <string name="dialog_ok">确认</string>
+    <string name="dialog_not">取消</string>
+
+    <!-- 设置页-版本 子项的文本 -->
+    <string name="set_version_noNewVersion">已是最新版本</string>
+    <string name="set_version_text">版本</string>
+    <string name="set_check_update">检查新版本</string>
+    <!-- 对话框-自动更新 -->
+    <string name="upgrade_title">版本更新提示</string>
+    <string name="dialog_title_general_tip">温馨提示</string>
+    <string name="dialog_msg_cancel_upgrade_and_close_force">确定要终止更新并退出应用吗？</string>
+    <string name="dialog_msg_cancel_upgrade_and_close_no_force">确定要终止更新吗？</string>
+    <string name="upgrade_bu_upgrade_at_once">立即更新</string>
+    <string name="upgrade_later">稍后再说</string>
+    <string name="upgrade_cancel">取消</string>
+    <string name="upgrade_dismiss_dialog">隐藏对话框</string>
+    <string name="upgrade_download_state_downloading">下载中……</string>
+    <string name="upgrade_download_state_failed">下载失败</string>
+    <string name="upgrade_download_state_success">下载成功</string>
+    <string name="upgrade_download_state_pause">下载暂停</string>
+    <string name="upgrade_download_state_resume">下载继续</string>
+    <string name="upgrade_download_state_cancel">下载取消</string>
+    <string name="upgrade_download_state_finish">下载完成</string>
+    <string name="upgrade_has_finish">已完成：</string>
+</resources>

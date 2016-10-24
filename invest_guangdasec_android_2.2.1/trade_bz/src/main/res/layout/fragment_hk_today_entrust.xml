@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/lin_head"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="@string/today_head_one"
+            android:gravity="center"
+            android:textSize="@dimen/select_table_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1.1"
+            android:text="@string/hk_order32"
+            android:gravity="center"
+            android:textSize="@dimen/select_table_text"
+            android:textColor="@color/trade_text_color6" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="@string/today_head_three"
+            android:gravity="center"
+            android:textSize="@dimen/select_table_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="@string/hk_order12"
+            android:gravity="center"
+            android:textSize="@dimen/select_table_text"
+            android:textColor="@color/trade_text_color6"/>
+
+    </LinearLayout>
+
+    <!-- 正在加载时显示的界面 -->
+    <LinearLayout
+        android:id="@+id/lin_loading_set"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/fragment_ab_list_info_progressbar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+        <TextView
+            android:text="@string/hk_order0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+        <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv_refresh_list"
+            android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lin_not_data_set"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/not_data_listview"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hk_order1"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:textColor="@color/trade_text_color6"
+            android:id="@+id/tv_no_data_set"
+            android:textSize="@dimen/lsv_no_data_text"/>
+
+    </LinearLayout>
+
+</LinearLayout>

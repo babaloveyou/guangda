@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lin_lin_r"
+        android:background="@drawable/selector_press_list_item">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:id="@+id/tv_rollater_in_name"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:id="@+id/tv_rollater_in_code"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="10dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="1.7"
+                android:id="@+id/tv_rollater_in_now_price"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/r_collater0"
+                android:layout_weight="0.5"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="1"
+                android:id="@+id/tv_rollater_in_ben"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:gravity="center|left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/r_collater1"
+                android:layout_weight="0.6"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="1"
+                android:id="@+id/tv_rollater_in_per_price"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:gravity="center|left"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="0.9"
+                android:id="@+id/tv_rollater_in_yk"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/store_text_size"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="0.9"
+                android:id="@+id/tv_rollater_in_yk_per"
+                android:paddingBottom="5dp"
+                android:textSize="@dimen/store_text_size"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/r_collater2"
+                android:layout_weight="0.5"
+                android:paddingBottom="5dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="1"
+                android:id="@+id/tv_rollater_in_hold"
+                android:paddingBottom="5dp"
+                android:gravity="center|left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/r_collater3"
+                android:layout_weight="0.5"
+                android:paddingBottom="5dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="1.2"
+                android:id="@+id/tv_rollater_in_market"
+                android:paddingBottom="5dp"
+                android:gravity="center|left"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/trade_normal_background"/>
+
+</LinearLayout>

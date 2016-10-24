@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:id="@+id/ll_parent"
+              android:background="@color/bg_main_french_gray"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/include_loginactivity_input_sune"/>
+    <LinearLayout
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+        <TextView
+            android:textSize="14sp"
+            android:text="记住账号"
+            style="@style/tv_normal_show"/>
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.thinkive.android.trade_bz.views.SqqSwitchButton
+                android:id="@+id/btn_switch"
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp"
+                android:layout_height="30dp"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        style="?android:attr/borderlessButtonStyle"
+        android:id="@+id/btn_login"
+        android:text="登录"
+        android:textSize="18sp"
+        android:textColor="#7c5d48"
+        android:background="@drawable/selector_bg_btn_toactive"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/statusbar_main"
+        android:id="@+id/tv_show_faq"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:text="登录有问题?"
+        android:layout_width="wrap_content"
+        android:autoLink="all"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="#f0f0f0"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            >
+            <TextView
+                android:textColor="@color/trade_top_tab_dark_gray"
+                android:textSize="14sp"
+                android:layout_marginLeft="15dp"
+                android:text="您还不是光大证券用户?"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:background="@drawable/shape_bg_tv_open_account"
+                    android:textColor="@color/statusbar_main"
+                    android:layout_alignParentRight="true"
+                    android:id="@+id/tv_toopen_account"
+                    android:gravity="center"
+                    android:text="点我开户"
+                    android:layout_marginRight="15dp"
+                    android:layout_width="115dp"
+                    android:layout_height="33dp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#FFFFFF"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:textColor="#999999" android:text="分类一"
+              android:padding="5dp"
+              android:id="@+id/tv_tctm_name"
+              android:textSize="12sp"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="#999999"
+            />
+    <com.android.thinkive.invest_sd.widget.GridviewOfScrollView
+        android:background="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridview_munu_item"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="4"
+            >
+    </com.android.thinkive.invest_sd.widget.GridviewOfScrollView>
+
+    <View android:layout_width="match_parent" android:layout_height="5dp"
+          android:background="#F6F6F6"
+          android:id="@+id/view_edit_page_line"
+            />
+</LinearLayout>

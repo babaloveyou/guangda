@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thinkive.android.trade_bz"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:enabled="true"
+        android:label="@string/app_name" >
+
+        <!-- 加载H5的页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity"
+            android:screenOrientation="portrait" />
+
+        <!-- 交易登录 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 普通交易页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 今日委托、今日成交 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayEntrustOrTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 历史成交、历史委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.HistoryEntrustOrTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 对账单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.StatementAccountActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 当日资金流水 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayMoneyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 退市板块协议签署 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 退市板块协议签署协议详情 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.SignAgreementMsgActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 网络投票主页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_net.activity.NetVoteMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 网络投票议案详情页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_net.activity.NetBillDetailsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 申购、配号、中签所在的Activity -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewStockMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 新股选择列表类 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 一键申购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewOneKeySubActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 申报记录查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewSubSelectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 放弃认购申报 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewGiveUpActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 放弃认购申报撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewGiveUpRevocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 缴费历史纪录查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_new.activity.NewHistoryListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 基金交易列表选择类 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 基金申购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundScribeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金认购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundSubscriptionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金赎回 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundRansomActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金赎回 选择基金 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.SelectListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 查询之 今日委托 今日成交 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundTodayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 查询之 基金撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundRevocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 查询之 历史查询、历史委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 查询之基金账户查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundAccountActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 开户 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundOpenAccountActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- 基金交易之 查询之 风险级别查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundRiskActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 基金定投 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundPledgeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 分红设置 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundShareSetActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 基金转托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundTransferEntrustActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 基金交易之 基金转换 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_out.activity.FundConvertActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之  拆分 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundDevideActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之历史委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之 分拆 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundMergerActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之 赎回 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundRansomActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之 撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundRevocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之 申购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundScribeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之 认购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundSubscriptionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易之  今日委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundTodayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 分级基金交易 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_level.activity.LFundTradeMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通买入卖出 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKBuyOrSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKCapitalStockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 公司行为 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKCompanyActionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!-- 港股通 历史 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 主页 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKMultiTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 零股卖出 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKOtherSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKRevocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 今日 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKTodayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 港股通 投票申报 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKVoteSubActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!-- 港股通 列表选择类 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_hk.activity.HKListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 银证转账 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TransferBanktActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转账查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TransferBankSelectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 一键归集页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 修改密码 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.ChangePasswordActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSecuritiesMarginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之融资买入 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RCreditBuyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之融券卖出 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RCreditSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之担保品买入和卖出 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- 融资融券之和卖券还款 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之买券还券 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之现券还券 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RStockReturnStockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之现金还款 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RCashReturnActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之现金还款之选择合约 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RChooseContractActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之合约展期 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RContractExpandActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之划转之担保品划转 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之划转之担保品划转查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RCollaterSelectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之资产负债 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectPropertyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之股份持仓 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectHoldStockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之今日委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectTodayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之历史成交和历史委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之未偿还合约 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectContractNotActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之已了结合约 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectContractYesActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之历史资金流水 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectWaterMoneyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之交割单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectDOselectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之授信额度查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditLimitActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之担保品证券 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectCollateralSecurityActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之查询之标的证券 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectObjectSecurityActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券之下单之撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 融资融券列表选择类 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易主页 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransStockMainActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易委托限价买卖 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransLimitBuyOrSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易委托做市买卖 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransMarketBuyOrSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易定价申报买卖 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransSubBuyOrSaleActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易定价申报行情详情 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransSubHqThreeActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易成交确认买卖 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransTradeBuyOrSaleActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易互报确认买卖 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransSureBuyOrSaleActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <!-- 转股交易互报今日委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransStockTodayActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- 转股交易互报历史委托 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransStockHistoryActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易定价申报行情查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransSubHqOneActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易挂牌股票查询查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransSelectTicketActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易定价申报行情列表 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransSubHqTwoActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 转股交易撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_trans.activity.TransRevocationActivityTrade"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 个股期权主页 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 历史委托  历史成交 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionHistoryActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 当日委托  当日成交 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionTodayActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 持仓查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionHoldSelectActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 历史对账单查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionHistoryListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 历史风险通知查询 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionHistoryRiskActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 撤单 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionRevocationActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 买入平仓 卖出平仓 备兑平仓 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionBuyOrSaleCloseActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 买入开仓 卖出开仓 备兑开仓 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionBuyOrSaleOpenActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 个股期权 备兑券解锁 备兑券锁定 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionTicketOpenOrLockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 个股期权 行权 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionExerciseActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 个股期权选择列表 用于单选 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_option.activity.OptionSelectListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <!-- 场内基金主页面 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_in.activity.InFundMainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 场内货币基金认、内货币基金申购、LOF基金认购、LOF基金申购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_in.activity.InFundPurchaseOrSubscriptionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 货币基金赎回、LOF基金赎回 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_in.activity.InFundRedemptionActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 场内基金 单选列表 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_in.activity.InFundSelectListActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

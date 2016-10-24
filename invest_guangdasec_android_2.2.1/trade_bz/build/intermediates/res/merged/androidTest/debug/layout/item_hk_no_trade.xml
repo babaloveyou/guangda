@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/trade_color_white"
+              android:orientation="vertical">
+
+    <View android:layout_width="match_parent"
+          android:layout_height="10dp"
+          android:background="@color/trade_normal_background"/>
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_stock_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/no_text_set"
+            android:paddingBottom="2dp"
+            android:paddingTop="4dp"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/hk_select_title"
+        />
+        <TextView
+            android:id="@+id/tv_stock_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="@string/no_text_set"
+            android:textSize="@dimen/hk_select_title"
+        />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginRight="10dp"
+          android:background="@color/trade_divide_line"/>
+
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item0"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_hk_not_paid_deta_price"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item1"
+                  android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_hk_transaction_price"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+    <!--第二栏-->
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item2"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_hk_not_paid_deta_entrust"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"/>
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item3"
+                  android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_hk_not_paid_detail_numbler"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+    <!--第二栏-->
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item4"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_tv_hk_not_paid_detail_money"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item5"
+                  android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_hk_liquidation_money"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+    <!--第二栏-->
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_hk_stamp_duty"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item7"
+                  android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_hk_commission"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+    <!--第二栏-->
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item8"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_hk_transaction_number"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item9"
+                  android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_hk_settlement_rate"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+    <!--第二栏-->
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item10"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_hk_currency"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.6"
+                  android:text="@string/hk_not_paid_detail_item11"
+                  android:textSize="@dimen/hk_select_item"/>
+        <TextView android:id="@+id/tv_hk_business_name"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+    </LinearLayout>
+    <!--第二栏-->
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="@dimen/hk_select_left_distances"
+                  android:orientation="horizontal">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="0.24"
+                  android:text="@string/hk_not_paid_detail_item12"
+                  android:textSize="@dimen/hk_select_item"/>
+
+        <TextView android:id="@+id/tv_hk_commission_data"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="@dimen/hk_select_height"
+                  android:layout_weight="1"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_text_color6"
+                  android:textSize="@dimen/hk_select_item"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

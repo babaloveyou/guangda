@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/trade_normal_background">
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/rg_property_select"
+        android:gravity="center_horizontal|center_vertical">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/r_rb_one"
+            android:textColor="@color/trade_color_white"
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:checked="true"
+            android:background="@drawable/common_selector_left1"
+            android:id="@+id/rb_r_money" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/r_rb_two"
+            android:textColor="@color/trade_color1"
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/common_selector_center1"
+            android:id="@+id/rb_r_liability"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/r_rb_three"
+            android:textColor="@color/trade_color1"
+            android:button="@null"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="@drawable/common_selector_right1"
+            android:id="@+id/rb_r_limit" />
+    </RadioGroup>
+    <!--资产布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/lin_proper_one"
+        android:visibility="visible">
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_all_money"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_one"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_money_per"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_two"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_var"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_three"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_market_value"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_four"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_can_use"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_five"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_other_money"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_six"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_can_money"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_seven"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_out_collater"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_eight"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_cash"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_night"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_can_qu"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_ten"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_one_shell_out"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_one_tenone"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+    </LinearLayout>
+
+    <!--负债布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/lin_proper_two"
+        android:visibility="gone">
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_all"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_one"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_lb_money"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_two"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_lb_stock"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_three"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_cash"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_four"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_cash_var"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_five"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_market"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_six"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_cash_per"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_seven"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_money"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_eight"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_money_per"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_night"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_two_year_var"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_two_ten"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+    </LinearLayout>
+
+
+    <!--额度布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:id="@+id/lin_proper_three"
+        android:visibility="gone">
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_three_one"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:id="@+id/tv_three_one"
+                android:paddingLeft="10dp"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/r_three_two"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_three_two"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_three_three"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_three_three"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_three_four"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_three_four"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_three_five"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_three_five"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_three_six"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_three_six"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/r_three_seven"
+                android:gravity="center|right"
+                android:paddingRight="10dp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/trade_divide_line"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:gravity="center|left"
+                android:paddingLeft="10dp"
+                android:id="@+id/tv_three_seven"
+                android:background="@color/trade_color_white"
+                android:textColor="@color/trade_color_black"/>
+        </LinearLayout>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+

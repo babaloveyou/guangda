@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="shen_buy_ways">
+        <item>对手方最优价格</item>
+        <item>本方最优价格</item>
+        <item>五档即成交剩余撤销</item>
+        <item>即时成交剩余撤销</item>
+        <item>全额成交或撤销委托</item>
+    </string-array>
+
+    <string-array name="shen_buy_num">
+        <item>70</item>
+        <item>68</item>
+        <item>64</item>
+        <item>4</item>
+        <item>66</item>
+    </string-array>
+
+
+
+    <string-array name="shen_sell_ways">
+        <item>对手方最优价格</item>
+        <item>本方最优价格</item>
+        <item>五档即成交剩余撤销</item>
+        <item>即时成交剩余撤销</item>
+        <item>全额成交或撤销委托</item>
+    </string-array>
+
+    <string-array name="shen_sell_num">
+        <item>71</item>
+        <item>69</item>
+        <item>65</item>
+        <item>5</item>
+        <item>67</item>
+    </string-array>
+
+
+
+    <string-array name="hu_buy_ways">
+        <item>五档即成交剩余撤销</item>
+        <item>五档即成交剩余转限价</item>
+    </string-array>
+
+    <string-array name="hu_buy_num">
+        <item>64</item>
+        <item>62</item>
+    </string-array>
+
+
+
+    <string-array name="hu_sell_ways">
+        <item>五档即成交剩余撤销</item>
+        <item>五档即成交剩余转限价</item>
+    </string-array>
+
+    <string-array name="hu_sell_num">
+        <item>65</item>
+        <item>63</item>
+    </string-array>
+
+    <string-array name="trade_normal_account_type_text">
+        <item>资金账号</item>
+        <item>沪A账号</item>
+        <item>深A账号</item>
+        <item>沪B账号</item>
+        <item>深B账号</item>
+    </string-array>
+
+
+    <string-array name="hk_business_type_str">
+        <item>公司收购</item>
+        <item>公开招股</item>
+        <item>供股行权</item>
+        <item>红利现金选择权</item>
+
+    </string-array>
+
+
+    <string-array name="hk_business_type_num">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string-array name="hk_sub_type_str">
+        <item>查询</item>
+        <item>申报</item>
+        <item>撤单</item>
+
+    </string-array>
+
+
+    <string-array name="hk_sub_type_num">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- 两融 深市买入，委托方式名称 数组-->
+    <string-array name="two_finance_shen_buy_ways">
+        <item>对方最优价格</item>
+        <item>本方最优价格 </item>
+        <item>即时成交剩余撤销  </item>
+        <item>五档即成剩余撤销</item>
+        <item>全额成交或撤销</item>
+    </string-array>
+    <!-- 两融 深市买入，委托方式数值 数组-->
+    <string-array name="two_finance_shen_buy_nums">
+        <item>70</item>
+        <item>68</item>
+        <item>4</item>
+        <item>64</item>
+        <item>66</item>
+    </string-array>
+    <!-- 两融 深市卖出，委托方式名称 数组-->
+    <string-array name="two_finance_shen_sell_ways">
+        <item>对方最优价格</item>
+        <item>本方最优价格</item>
+        <item>即时成交剩余撤销</item>
+        <item>五档即成剩余撤销</item>
+        <item>全额成交或撤销</item>
+    </string-array>
+    <!-- 两融 深市卖出，委托方式数值 数组-->
+    <string-array name="two_finance_shen_sell_nums">
+        <item>71</item>
+        <item>69</item>
+        <item>107</item>
+        <item>65</item>
+        <item>67</item>
+    </string-array>
+
+    <!-- 两融 沪市买入，委托方式名称 数组-->
+    <string-array name="two_finance_hu_buy_ways">
+        <item>五档即成剩余撤销</item>
+        <item>五档即成剩余转限价 </item>
+    </string-array>
+    <!-- 两融 沪市买入，委托方式数值 数组-->
+    <string-array name="two_finance_hu_buy_nums">
+        <item>64</item>
+        <item>62</item>
+    </string-array>
+    <!-- 两融 沪市卖出，委托方式名称 数组-->
+    <string-array name="two_finance_hu_sell_ways">
+        <item>五档即成剩余撤销</item>
+        <item>五档即成转限价</item>
+    </string-array>
+    <!-- 两融 沪市卖出，委托方式数值 数组-->
+    <string-array name="two_finance_hu_sell_nums">
+        <item>65</item>
+        <item>63</item>
+    </string-array>
+</resources>

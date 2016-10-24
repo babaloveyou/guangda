@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView
+        android:id="@+id/tv_trans_today"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trans_select0"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView
+        android:id="@+id/tv_trans_today2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trans_select1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView
+        android:id="@+id/tv_trans_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trans_select2"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView
+        android:id="@+id/tv_trans_history2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trans_select3"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView
+        android:id="@+id/tv_trans_price_hq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trans_stock7"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView
+        android:id="@+id/tv_trans_market_ticket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/trans_stock34"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+
+</LinearLayout>

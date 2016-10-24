@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background"
+    android:id="@+id/sll_back_out">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/new_stock24"/>
+
+    <!-- 正在加载时显示的界面 -->
+    <LinearLayout
+        android:id="@+id/lin_loading_set"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:id="@+id/fragment_ab_list_info_progressbar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+        <TextView
+            android:text="@string/home_loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/lin_have_data"
+        android:visibility="gone">
+
+        <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/lv_refresh_list"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/rb_foot_one_key_sub"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/new_stock9"
+                android:textColor="@color/trade_buy"
+                android:paddingLeft="10dp"
+                android:background="@color/trade_color_white"/>
+
+            <Button
+                android:id="@+id/btn_total_new_stock"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@color/trade_buy"
+                android:textSize="@dimen/login_button_text_size"
+                android:textColor="@color/trade_color_white"
+                android:text="@string/new_stock22"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lin_not_data_set"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/not_data_listview"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data_listview"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:textColor="@color/trade_text_color6"
+            android:id="@+id/tv_no_data_set"
+            android:textSize="@dimen/lsv_no_data_text"/>
+
+    </LinearLayout>
+
+</LinearLayout>

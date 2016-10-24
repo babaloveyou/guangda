@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:background="#FFFFFF"
+              android:gravity="center_horizontal"
+              android:layout_height="wrap_content">
+<ImageView android:layout_width="46dp" android:layout_height="46dp"
+        android:src="@drawable/ic_menu_test"
+        android:id="@+id/tv_menu_img"
+     android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        />
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+              android:textSize="16sp"
+              android:id="@+id/tv_menu_name"
+              android:textColor="#333333"
+            android:text="金融商城"/>
+</LinearLayout>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <View android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lin_lin_revocation"
+        android:background="@drawable/selector_press_list_item">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:paddingTop="5dp"
+                android:id="@+id/tv_hk_revocation_bs"
+                android:textColor="@color/trade_buy"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/trade_text_color6"
+                android:id="@+id/tv_hk_revocation_name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:layout_weight="1"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="3dp"
+                android:id="@+id/tv_hk_revocation_code"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_hk_revocation_date"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/hk_order16"
+                android:gravity="center|left"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:paddingBottom="5dp"
+                android:textColor="@color/trade_text_color6"
+                android:singleLine="true"
+                android:id="@+id/tv_hk_revocation_entrust_price"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/hk_order15"
+                android:gravity="center|left"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:paddingBottom="5dp"
+                android:textColor="@color/trade_text_color6"
+                android:singleLine="true"
+                android:id="@+id/tv_hk_revocation_entrust_num"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/hk_order14"
+                android:gravity="center|left"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:paddingBottom="5dp"
+                android:textColor="@color/trade_text_color6"
+                android:singleLine="true"
+                android:id="@+id/tv_hk_revocation_trade_price"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.6"
+                android:text="@string/hk_order13"
+                android:gravity="center|left"
+                android:paddingBottom="5dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/no_text_set"
+                android:paddingBottom="5dp"
+                android:textColor="@color/trade_text_color6"
+                android:singleLine="true"
+                android:id="@+id/tv_hk_revocation_trade_num"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+

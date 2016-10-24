@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal" >
+
+    <com.android.thinkive.viewlibrary.wheelview.WheelView
+        android:id="@+id/options1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:itemNumber="5"
+        app:itemlineColor="@android:color/holo_blue_dark"
+        app:itemlineHeight="1.5dp"
+        app:maskHight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="#777"
+        app:normalTextSize="14sp"
+        app:selectedTextColor="#ff000000"
+        app:selectedTextSize="22sp"
+        app:unitHight="50dp"
+        />
+
+    <com.android.thinkive.viewlibrary.wheelview.WheelView
+        android:id="@+id/options2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        app:itemNumber="5"
+        app:itemlineColor="@android:color/holo_blue_dark"
+        app:itemlineHeight="1.5dp"
+        app:maskHight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="#777"
+        app:normalTextSize="14sp"
+        app:selectedTextColor="#ff000000"
+        app:selectedTextSize="22sp"
+        app:unitHight="50dp"
+        />
+    <com.android.thinkive.viewlibrary.wheelview.WheelView
+        android:id="@+id/options3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        app:itemNumber="5"
+        app:itemlineColor="@android:color/holo_blue_dark"
+        app:itemlineHeight="1.5dp"
+        app:maskHight="32dp"
+        app:noEmpty="true"
+        app:normalTextColor="#777"
+        app:normalTextSize="14sp"
+        app:selectedTextColor="#ff000000"
+        app:selectedTextSize="22sp"
+        app:unitHight="50dp"
+        />
+</LinearLayout>
+<!-- From: file:/D:/SVN/WebApp_mall/viewlibrary/src/main/res/layout/include_optionspicker.xml -->

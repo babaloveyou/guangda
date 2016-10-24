@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.thinkive.invest_sd">
+    <!--android:allowBackup="true"-->
+    <!--android:debuggable="false"-->
+    <application
+        android:name=".MyApplication"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.DesignDemo"
+        tools:replace="android:icon, android:theme,android:label,android:allowBackup,android:name">
+
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.LauncherActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--意见反馈-->
+        <activity
+            android:name="com.umeng.fb.ConversationActivity"/>
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.CommWebActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.EditeMenuItemActivity"
+            android:screenOrientation="portrait"/>
+        <!--登录-->
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--公告详情-->
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.NoticeInfoDetailActivity"
+            android:screenOrientation="portrait"/>
+        <!--开户首页-->
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.OpenAccountHomeActivity"
+            android:screenOrientation="portrait"/>
+        <!--激活-->
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.ActivateActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.NewsActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.NewsDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.ThemeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            android:launchMode="singleTask"
+           />
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.VideoPlayerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name="com.android.thinkive.invest_sd.activities.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <!--<activity
+            android:name=".activities.QRCodeActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Dialog"></activity>-->
+        <activity
+            android:name="cn.sharesdk.framework.ShareSDKUIShell"
+
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <data android:scheme="tencent100371282" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.android.thinkive.gesturelock.EditLockPatternActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.thinkive.gesturelock.VerifyLockPatternActivity"
+            android:screenOrientation="portrait" />
+        <!-- 开户 -->
+        <activity
+            android:name="com.thinkive.mobile.account.activitys.CameraActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.thinkive.mobile.account.activitys.PhotographActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.thinkive.mobile.video.activities.VideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.thinkive.mobile.video.activities.ApplyVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.thinkive.mobile.video.activities.OfflineVideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.thinkive.mobile.account.activitys.FaceCameraActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.thinkive.mobile.account.activitys.FacePhotographActivity"
+            android:screenOrientation="portrait" />
+
+
+
+
+        <!--=========================service配置=========================-->
+        <!--UDID服务-->
+        <service android:name="com.thinkive.aqf.openudid.OpenUDIDService">
+            <intent-filter>
+                <action android:name="org.OpenUDID.GETUDID" />
+            </intent-filter>
+        </service>
+
+        <!--=========================broadcastreceiver配置=========================-->
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5559627be0f55a876300169d"></meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Thinkive"></meta-data>
+    </application>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+</manifest>

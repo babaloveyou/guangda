@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.android.thinkive.viewlibrary"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name" >
+        <activity
+            android:name="com.android.thinkive.gesturelock.EditLockPatternActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.thinkive.gesturelock.VerifyLockPatternActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.thinkive.viewlibrary.imageselector.MultiImageSelectorActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.thinkive.viewlibrary.imageselector.CropActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.thinkive.viewlibrary.imageselector.CameraActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.android.thinkive.codescan.MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.android.thinkive.codescan.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.android.thinkive.codescan.QRCodeActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+    </application>
+
+</manifest>

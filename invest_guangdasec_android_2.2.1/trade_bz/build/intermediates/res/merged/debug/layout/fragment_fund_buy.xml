@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+        <TextView
+            android:id="@+id/tv_out_fund_subtion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon17"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_one"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_sub"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon18"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_two"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_ransom"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon15"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_three"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_convert"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon16"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_four"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <!-- fixme:暂时先隐藏 定投和转托 -->
+    <!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+        <TextView
+            android:id="@+id/tv_out_fund_entrust"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon22"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_five"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_set"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon23"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_six"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_account"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon24"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_seven"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_risk"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon25"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_eight"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_out_fund_direction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon28"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_night"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"
+            android:background="@color/trade_color_white"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_remove"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon21"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_ten"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"
+            android:background="@color/trade_color_white"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    -->
+
+    <!-- fixme:暂时先隐藏 定投和转托 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+        <TextView
+            android:id="@+id/tv_out_fund_entrust"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon22"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_five"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"
+            android:visibility="gone"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_set"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon23"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_six"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_account"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon24"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_seven"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_risk"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon25"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_eight"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_direction"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon28"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_night"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"
+            android:background="@color/trade_color_white"
+            android:visibility="gone"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_out_fund_remove"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon21"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/fund_buy_ten"
+            android:textSize="@dimen/fund_buy_text"
+            android:textColor="@color/trade_text_color6"
+            android:background="@color/trade_color_white"/>
+    </LinearLayout>
+
+</LinearLayout>

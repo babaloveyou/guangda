@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:background="#F6F6F6"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#1098EE">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="点金门"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:padding="10dp"
+            android:src="@drawable/back_icon" />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/banner" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_open_account"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/open_account"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="股票开户" />
+
+        <TextView
+            android:id="@+id/tv_open_ggt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/open_ggt"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="港股通签约" />
+
+        <TextView
+            android:id="@+id/tv_open_rzrq"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/rzrq"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="融资融券开户"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/tv_order_card"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_order_card"
+            android:gravity="center"
+            android:drawablePadding="5dp"
+            android:text="预约光行卡"
+             />
+
+
+    </LinearLayout>
+</LinearLayout>

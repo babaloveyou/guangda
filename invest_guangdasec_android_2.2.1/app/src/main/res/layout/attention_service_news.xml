@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="400dp"
+              android:layout_height="600dp"
+              android:paddingLeft="10dp"
+              android:paddingRight="10dp"
+              android:paddingTop="20dp"
+              android:paddingBottom="30dp"
+              android:background="#ffffff"
+              android:gravity="center_vertical">
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="光大证券服务号"
+              android:textColor="#1199EF"
+              android:textSize="18sp"
+              android:textStyle="bold"/>
+
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="账户绑定、查询、快速行情资讯、研报"
+              android:textColor="#000000"
+              android:textSize="14sp"
+              android:layout_marginTop="5dp"
+            />
+
+    <ImageView android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:src="@drawable/attention_service_weixin"
+               android:layout_gravity="center_horizontal"
+               android:layout_marginTop="20dp"/>
+
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="扫描二维码,关注光大证券服务号"
+              android:textColor="#000000"
+              android:textSize="14sp"
+              android:layout_gravity="center_horizontal"
+              android:layout_marginTop="20dp"
+            />
+
+
+
+
+
+</LinearLayout>

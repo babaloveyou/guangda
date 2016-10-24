@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.thinkive.invest_sd.widget.ScrollViewExtend
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:auto3d="http://schemas.android.com/apk/res/com.thinkive.android.gd_ytz"
+        android:scrollbars="none"
+        android:background="#FFFFFF"
+       android:focusable="true"
+        android:focusableInTouchMode="true"
+     android:descendantFocusability="blocksDescendants"
+        android:id="@+id/frist_fragment_main_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="7dp"
+            android:layout_height="44dp">
+            <View
+                android:id="@+id/view_center_line"
+                android:layout_centerHorizontal="true"
+                android:layout_width="1dp"
+                android:background="#FFFFFF"
+                android:layout_height="44dp"/>
+            <ImageView
+                android:layout_alignRight="@id/view_center_line"
+                android:layout_marginRight="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:src="@drawable/top_logo"
+                />
+            <TextView
+                android:layout_alignLeft="@id/view_center_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:text="掌上富尊"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                />
+
+        </RelativeLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+            <android.support.v4.view.ViewPager
+                    android:id="@+id/viewpager_frist_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"/>
+            <LinearLayout
+                    android:id="@+id/ll_head_dot"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:gravity="center"
+                    >
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/ll_notice_show"
+            android:layout_height="33dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/icon_notification"/>
+            <com.android.thinkive.invest_sd.widget.AutoTextView android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:padding="5dp"
+                android:id="@+id/tv_frist_notfice"
+                auto3d:textSize="12sp"
+                android:layout_marginRight="10dp"
+              >
+            </com.android.thinkive.invest_sd.widget.AutoTextView>
+        </LinearLayout>
+        <View android:layout_width="match_parent" android:layout_height="1dp"
+              android:background="#DDDDDD"
+                />
+        <com.android.thinkive.invest_sd.widget.GridviewOfScrollView
+                  android:layout_width="match_parent"
+                  android:id="@+id/gridview_frist_menu"
+                  android:layout_height="wrap_content"
+                   android:layout_marginLeft="10dp"
+                 android:layout_marginRight="10dp"
+
+                  android:numColumns="4"
+                >
+        </com.android.thinkive.invest_sd.widget.GridviewOfScrollView>
+        <View android:layout_width="match_parent" android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+              android:background="#EEEEEE"
+                />
+        <RelativeLayout
+                android:padding="5dp" android:layout_width="fill_parent"
+            android:gravity="center_vertical"
+            android:layout_height="30dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="最新推荐"
+                      android:textColor="#999999"
+                      android:textSize="14sp"
+                      android:paddingLeft="10dp"
+                    />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="更多"
+                      android:id="@+id/but_new_recommend_more"
+                      android:layout_alignParentRight="true"
+                      android:textColor="#1199EC"
+                      android:paddingRight="10dp"
+                      android:textSize="12sp"
+                    />
+        </RelativeLayout>
+        <com.android.thinkive.invest_sd.widget.MyListView
+                android:id="@+id/listview_new_recommend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        </com.android.thinkive.invest_sd.widget.MyListView>
+    </LinearLayout>
+</com.android.thinkive.invest_sd.widget.ScrollViewExtend>

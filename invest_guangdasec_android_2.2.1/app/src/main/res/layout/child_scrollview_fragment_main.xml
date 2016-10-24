@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto3d="http://schemas.android.com/apk/res/com.thinkive.android.gd_ytz"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- 表示广告ViewPager正在加载的布局 -->
+    <LinearLayout
+        android:id="@+id/ll_adLoading"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:visibility="gone">
+        <ProgressBar
+            android:id="@+id/fragment_ab_list_info_progressbar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_refresh_progressbar"/>
+        <TextView
+            android:text="正在加载数据"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+    <!-- 广告滑动页 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:id="@+id/fl_ad">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_multi_trade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <!-- 滑动位置标识小圆点容器 -->
+        <LinearLayout
+            android:id="@+id/ll_point_group"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="5dp"
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+    <com.android.thinkive.invest_sd.widget.GridviewOfScrollView
+        android:id="@+id/gv_fast_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="4"
+        android:verticalSpacing="18dp"
+        android:paddingTop="23dp"
+        android:paddingBottom="23dp"
+        android:background="#FFFFFF"
+        >
+</com.android.thinkive.invest_sd.widget.GridviewOfScrollView>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/ll_notice_show"
+        android:background="#FFFFFF"
+       android:gravity="center_vertical"
+        android:layout_height="40dp">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/icon_notification"/>
+        <com.android.thinkive.invest_sd.widget.AutoTextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_frist_notfice"
+                auto3d:textSize="14sp"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="5dp"
+            android:paddingBottom="2dp"
+            >
+        </com.android.thinkive.invest_sd.widget.AutoTextView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="40dp"
+        android:background="#FFFFFF">
+        <View
+            android:layout_width="4dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"
+            android:background="#ff6806"
+            android:layout_marginLeft="5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="最新推荐"
+            android:textColor="#333333"
+            android:textSize="17sp"
+            android:layout_marginLeft="15dp"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="更多"
+            android:textColor="#999999"
+            android:textSize="14sp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="35dp"
+            android:id="@+id/tv_recomend_more"/>
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/ic_mainpage_more"
+            />
+    </RelativeLayout>
+    <com.android.thinkive.invest_sd.widget.ListViewInScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ls_recomend"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#f5f5f5"
+        android:layout_height="97dp">
+        <ImageView
+            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mainpage_end"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/iv_mainpage_about"
+            />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:id="@+id/but_mainpage_about"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:text="关于我们 >"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="33dp"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:background="#FFFFFF">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="热门组合 暂无"-->
+            <!--android:textColor="@color/fragment_main_tv"-->
+            <!--android:textSize="@dimen/look_mun"-->
+            <!--android:layout_marginLeft="15dp"-->
+            <!--android:layout_centerVertical="true"/>-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:text="@string/main_tv_more"-->
+            <!--android:textSize="@dimen/tv_content_text"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:textColor="@color/primary_text_color"-->
+            <!--android:layout_marginRight="15dp"-->
+            <!--android:id="@+id/tv_group_more"/>-->
+    <!--</RelativeLayout>-->
+
+    <!--<View android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:visibility="gone"-->
+        <!--android:background="@color/fragment_line"/>-->
+
+    <!--<com.android.thinkive.invest_sd.widget.ListViewInScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/ls_hot_group"-->
+        <!--android:visibility="gone"/>-->
+
+
+
+</LinearLayout>

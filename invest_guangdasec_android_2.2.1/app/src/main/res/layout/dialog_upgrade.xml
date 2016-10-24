@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:background="@drawable/circular_corner_white_25"
+              android:paddingBottom="30dp"
+              android:paddingLeft="20dp"
+              android:paddingRight="20dp"
+              android:paddingTop="35dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/upgrade_title"
+        android:textColor="@color/black"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_upgrade_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/tv_upgrade_later"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/circular_corner_blue_solid"
+            android:gravity="center"
+            android:text="@string/upgrade_later"
+            android:textSize="18sp"
+            android:textColor="@color/trade_color_white"/>
+
+        <View
+            android:id="@+id/view_upgrade_blank"
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            />
+
+        <TextView
+            android:id="@+id/tv_upgrade_at_once"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/circular_corner_blue_solid"
+            android:gravity="center"
+            android:text="@string/upgrade_bu_upgrade_at_once"
+            android:textSize="18sp"
+            android:textColor="@color/trade_color_white"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

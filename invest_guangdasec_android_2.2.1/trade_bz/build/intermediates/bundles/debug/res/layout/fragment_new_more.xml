@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/trade_normal_background">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_stock0"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_one_key_sub"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_stock1"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_sub_select"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="visible"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_stock2"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_give_up_sub"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="visible"/>
+
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_stock3"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_give_up_sub_revocation"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="visible"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/new_stock4"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_history_list"
+        android:visibility="visible"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="visible"/>
+
+</LinearLayout>

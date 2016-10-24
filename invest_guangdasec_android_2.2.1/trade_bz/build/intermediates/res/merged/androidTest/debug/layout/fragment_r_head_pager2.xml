@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ll_whole_login_fragment"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="15dp">
+
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center|left"
+            android:layout_marginBottom="2dp">
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/r_hold_pager15"
+                  android:layout_marginLeft="30dp"
+                  android:textColor="@color/trade_color15"
+                  android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center|left"
+            android:layout_marginBottom="5dp">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_text_set"
+                android:textSize="@dimen/myhold_text"
+                android:id="@+id/tv_r_pager_all"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/trade_color15"/>
+
+        <!--新增总资产的小数点-->
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_r_pager_alla"
+                android:textStyle="bold"
+                android:paddingTop="6dp"
+                android:textColor="@color/trade_color15"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/head_pager_bank"
+                android:textColor="@color/trade_color_white"
+                android:id="@+id/tv_r_pager_click"
+                android:layout_marginLeft="15dp"
+                android:paddingTop="6dp"
+                android:drawableLeft="@drawable/trans_money_icon"
+                android:drawablePadding="3dp"/>
+
+    </LinearLayout>
+
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginLeft="14dp"
+          android:layout_marginRight="14dp"
+          android:layout_marginBottom="14dp"
+          android:background="@color/trade_color15"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="2dp">
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/r_hold_pager16"
+                android:layout_weight="1"
+                android:textColor="@color/trade_color15"
+                android:gravity="center|center_vertical"/>
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/r_hold_pager17"
+                android:layout_weight="1"
+                android:textColor="@color/trade_color15"
+                android:gravity="center|center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp" >
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginTop="1dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/no_text_set"
+                      android:textStyle="bold"
+                      android:textSize="@dimen/lsv_no_data_text"
+                      android:id="@+id/tv_r_pager_can"
+                      android:textColor="@color/trade_color15"/>
+
+            <!--新增总资产的小数点-->
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textStyle="bold"
+                      android:layout_gravity="bottom"
+                      android:id="@+id/tv_r_pager_cana"
+                      android:textColor="@color/trade_color15"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="1dp"
+                android:gravity="center">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/no_text_set"
+                      android:id="@+id/tv_r_pager_per"
+                      android:textStyle="bold"
+                      android:textSize="@dimen/lsv_no_data_text"
+                      android:textColor="@color/trade_color15"/>
+
+            <!--新增总资产的小数点-->
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/tv_r_pager_pera"
+                      android:layout_gravity="bottom"
+                      android:textStyle="bold"
+                      android:textColor="@color/trade_color15"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="2dp">
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="@string/r_hold_pager18"
+                  android:layout_weight="1"
+                  android:textColor="@color/trade_color15"
+                  android:gravity="center|center_vertical"/>
+
+        <TextView android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:text="@string/r_hold_pager19"
+                  android:layout_weight="1"
+                  android:textColor="@color/trade_color15"
+                  android:gravity="center|center_vertical"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginTop="1dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/no_text_set"
+                      android:id="@+id/tv_r_pager_cash"
+                      android:textColor="@color/trade_color15"
+                      android:textStyle="bold"
+                      android:textSize="@dimen/lsv_no_data_text"  />
+
+            <!--新增总资产的小数点-->
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:textStyle="bold"
+                      android:layout_gravity="bottom"
+                      android:id="@+id/tv_r_pager_casha"
+                      android:textColor="@color/trade_color15"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_marginTop="1dp">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="@string/no_text_set"
+                      android:id="@+id/tv_r_pager_market"
+                      android:textColor="@color/trade_color15"
+                      android:textStyle="bold"
+                      android:textSize="@dimen/lsv_no_data_text" />
+
+            <!--新增总资产的小数点-->
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:id="@+id/tv_r_pager_marketa"
+                      android:layout_gravity="bottom"
+                      android:textStyle="bold"
+                      android:textColor="@color/trade_color15"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

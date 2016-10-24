@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/bg_pop_price"
+                android:gravity="center"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:singleLine="true"
+            android:id="@+id/tv_total_price"
+            android:layout_width="90dp"
+            android:layout_height="25dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="191,011.83"
+            android:textColor="@color/pop_total_price"
+            android:textSize="14sp"/>
+    </RelativeLayout>
+</RelativeLayout>

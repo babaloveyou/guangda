@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/trade_color_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:textColor="@color/trade_text_color6"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="8dp"
+                android:singleLine="true"
+                android:id="@+id/tv_trans_stock_name"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:textColor="@color/trade_text_color6"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:singleLine="true"
+                android:id="@+id/tv_trans_stock_code"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:textColor="@color/trade_text_color6"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="8dp"
+                android:singleLine="true"
+                android:id="@+id/tv_trans_up_limit"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                android:textColor="@color/trade_text_color6"
+                android:gravity="center"
+                android:paddingBottom="8dp"
+                android:singleLine="true"
+                android:id="@+id/tv_trans_down_limit"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/no_text_set"
+            android:gravity="center"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color6"
+            android:id="@+id/tv_trans_trade_market"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/no_text_set"
+            android:gravity="center"
+            android:paddingBottom="18dp"
+            android:paddingTop="18dp"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color6"
+            android:id="@+id/tv_trans_stock_status"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+</LinearLayout>

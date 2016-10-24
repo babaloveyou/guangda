@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_main_french_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.thinkive.android.trade_bz.views.TrimGridView
+                android:id="@+id/gv_fast_menu_credit"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="#FFFFFF"
+                android:numColumns="4"
+                android:verticalSpacing="0dp"
+                />
+
+            <RelativeLayout
+                android:id="@+id/rl_more_credit"
+                style="@style/style_rl_click_expandable"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="更多"/>
+
+                <ImageView
+                    android:id="@+id/iv_more_can_rotate_credit"
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
+
+
+            <com.thinkive.android.trade_bz.views.TrimGridView
+                android:id="@+id/gv_more_menu_credit"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="0.5dp"
+                android:background="@color/white"
+                android:numColumns="3"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:verticalSpacing="0dp"/>
+
+            <include layout="@layout/include_devider_view"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_new_buy_credit"
+                style="@style/style_rl_click_expandable"
+                >
+
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="新股申购"/>
+
+                <ImageView
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
+
+
+            <include layout="@layout/include_devider_view"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_not_close_out_credit"
+                style="@style/style_rl_click_expandable"
+                >
+
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="未平仓合约"/>
+
+                <ImageView
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
+
+
+            <include layout="@layout/include_devider_view"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_close_out_credit"
+                style="@style/style_rl_click_expandable"
+                >
+
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="已平仓合约"/>
+
+                <ImageView
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
+
+            <include layout="@layout/include_devider_view"/>
+
+            <RelativeLayout
+                android:id="@+id/contract_show_data_credit"
+                style="@style/style_rl_click_expandable"
+                >
+
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="合约展期"/>
+
+                <ImageView
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="25dp"
+            android:paddingTop="25dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_exit_logout_credit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_bg_tv_open_account_bigradius"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="退出信用交易"
+                android:textColor="@color/statusbar_main"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

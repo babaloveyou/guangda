@@ -1,0 +1,65 @@
+<resources>
+    <!-- 主题色1 -->
+    <color name="trade_color1">#4359aa</color>
+
+    <!--买入颜色-->
+    <color name="trade_buy">#4359aa</color>
+    <!--买入颜色 浅色-->
+    <color name="trade_buy_bg">#bbdcf7</color>
+
+    <!-- 卖出颜色  -->
+    <color name="trade_sale">#ff5700</color>
+    <!--卖出颜色 浅色-->
+    <color name="trade_sale_bg">#FFF5EC</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00000000</color>
+    <!-- 白色 -->
+    <color name="trade_color_white">#FFFFFF</color>
+    <!-- 黑色 -->
+    <color name="trade_color_black">#000</color>
+    <!-- 红涨 -->
+    <color name="trade_up_red">@color/trade_text</color>
+    <!-- 绿跌 -->
+    <color name="trade_down_green">#07a168</color>
+    <!-- 分隔线的颜色 -->
+    <color name="trade_divide_line">#DDDDDD</color>
+    <!-- 无状态背景色 -->
+    <color name="trade_normal_background">#F4F4F4</color>
+    <!--  字体颜色  -->
+    <color name="trade_text_color2">#222222</color>
+    <color name="trade_text_color3">#333333</color>
+    <color name="trade_text_color6">#666666</color>
+    <color name="trade_text_color9">#999999</color>
+    <color name="trade_text_color0">#CBCBCB</color>
+    <color name="trade_text_color1">#DDDDDD</color>
+
+    <!--用于list 区分颜色-->
+    <color name="trade_list_item">#EFF7FF</color>
+    <!--用于list 按下时改变色-->
+    <color name="trade_list_press">#EFF9FE</color>
+    <!-- 持仓列表展开的分隔线 -->
+    <color name="trade_color_hold_line01">#A8DBF9</color>
+    <!--我的持仓头部字体颜色-->
+    <color name="trade_color15">#E9E9E9</color>
+    <!--我的持仓列表的item展开时的背景色 -->
+    <color name="trade_color_hold_list_item_expand_backgound">#EFF7FF</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+    <color name="statusbar_left">#667ac5</color>
+    <color name="statusbar_main">#4359aa</color>
+    <color name="bg_main_french_gray">#f4f4f4</color>
+    <color name="trade_top_tab_dark_gray">#555555</color>
+    <color name="normal_hint_color">#cccccc</color>
+    <color name="trader_door_gv_divider">#e5e5e5</color>
+    <color name="tv_bt_brown">#7c5d48</color>
+    <color name="text_reming">#999999</color>
+    <color name="text_et_input_french_black">#222222</color>
+    <color name="trans_white">#ccffffff</color>
+    <color name="bg_bt_yellow_pressed">#dcae24</color>
+    <color name="bg_bt_yellow_normal">#fdce43</color>
+    <color name="trade_text">#ff3300</color>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BottomCircleIndicator">
+        <attr name="circleNum" format="reference|integer"></attr>
+        <attr name="indicator_spacing" format="dimension"/>
+        <attr name="indicator_type" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="fraction" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

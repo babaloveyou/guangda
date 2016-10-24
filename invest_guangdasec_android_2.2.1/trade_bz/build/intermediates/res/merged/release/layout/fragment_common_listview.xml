@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+          android:id="@+id/lv_pop"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:divider="@color/text_et_input_french_black"
+          android:dividerHeight="0.5dp"
+          android:background="@drawable/shape_bg_alph_popwindow"
+          android:listSelector="@drawable/lv_button_style"/>

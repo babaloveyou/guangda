@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+
+    android:background="#ffbbbbbb">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/guide_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity" />
+    <LinearLayout
+        android:id="@+id/ll"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_guide_dot"/>
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_guide_dot"/>
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_guide_dot"/>
+        <ImageView
+            android:layout_width="10dip"
+            android:layout_height="10dip"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/selector_guide_dot"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/but_goto_main"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:paddingLeft="70dip"
+        android:paddingRight="70dip"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="75dp"
+        android:text="立即体验"
+        android:background="@drawable/bg_red_50_but_rund"
+        />
+
+</FrameLayout>

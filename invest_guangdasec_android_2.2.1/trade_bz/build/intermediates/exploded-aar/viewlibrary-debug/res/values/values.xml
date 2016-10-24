@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/D:/SVN/WebApp_mall/viewlibrary/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="base">#FFFFFB</color>
+    <color name="bthumbnail_background">#00000000</color>
+    <color name="bthumbnail_border">#dbdbdb</color>
+    <color name="bthumbnail_font">#7e7e7e</color>
+    <color name="frame">#86C166</color>
+    <color name="guide">#AA86C166</color>
+    <color name="handle">#86C166</color>
+    <color name="menu_bg">#FFFFFB</color>
+    <color name="overlay">#AA1C1C1C</color>
+    <color name="possible_result_points">#c0ffff00</color>
+    <color name="result_view">#b0000000</color>
+    <color name="text">#1C1C1C</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="wheel_timebtn_nor">#54a3fa</color>
+    <color name="wheel_timebtn_pre">#CCCCCC</color>
+    <declare-styleable name="CircleThumbnail"><attr format="integer" name="bct_image"/><attr format="string" name="bct_size"/><attr format="boolean" name="bct_minimal"/><attr name="android:text"/></declare-styleable>
+    <declare-styleable name="CropImageView"><attr format="reference" name="imgSrc"/><attr name="cropMode"><enum name="ratio_fit_image" value="0"/><enum name="ratio_4_3" value="1"/><enum name="ratio_3_4" value="2"/><enum name="ratio_1_1" value="3"/><enum name="ratio_16_9" value="4"/><enum name="ratio_9_16" value="5"/><enum name="ratio_free" value="6"/><enum name="ratio_custom" value="7"/></attr><attr format="color" name="backgroundColor"/><attr format="color" name="overlayColor"/><attr format="color" name="frameColor"/><attr format="color" name="handleColor"/><attr format="color" name="guideColor"/><attr name="guideShowMode"><enum name="show_always" value="1"/><enum name="show_on_touch" value="2"/><enum name="not_show" value="3"/></attr><attr name="handleShowMode"><enum name="show_always" value="1"/><enum name="show_on_touch" value="2"/><enum name="not_show" value="3"/></attr><attr format="dimension" name="handleSize"/><attr format="dimension" name="touchPadding"/><attr format="dimension" name="minFrameSize"/><attr format="dimension" name="frameStrokeWeight"/><attr format="dimension" name="guideStrokeWeight"/><attr format="boolean" name="cropEnabled"/></declare-styleable>
+    <declare-styleable name="LockPatternView"><attr format="string" name="aspect"/></declare-styleable>
+    <declare-styleable name="WheelView"><attr format="color" name="normalTextColor"/><attr format="dimension" name="normalTextSize"/><attr format="color" name="selectedTextColor"/><attr format="dimension" name="selectedTextSize"/><attr format="dimension" name="unitHight"/><attr format="integer" name="itemNumber"/><attr format="color" name="itemlineColor"/><attr format="dimension" name="itemlineHeight"/><attr format="dimension" name="maskHight"/><attr format="boolean" name="noEmpty"/><attr format="boolean" name="isEnable"/></declare-styleable>
+    <!-- From: file:/D:/SVN/WebApp_mall/viewlibrary/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="folder_cover_size">72dp</dimen>
+    <dimen name="image_size">120dp</dimen>
+    <dimen name="space_size">2dp</dimen>
+    <dimen name="text_size_m">24sp</dimen>
+    <dimen name="text_size_s">17sp</dimen>
+    <!-- From: file:/D:/SVN/WebApp_mall/viewlibrary/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="about_version_code" type="id">false</item>
+    <item name="auto_focus" type="id"/>
+    <item name="decode" type="id"/>
+    <item name="decode_failed" type="id"/>
+    <item name="decode_succeeded" type="id"/>
+    <item name="encode_failed" type="id"/>
+    <item name="encode_succeeded" type="id"/>
+    <item name="gridview" type="id"/>
+    <item name="launch_product_query" type="id"/>
+    <item name="quit" type="id"/>
+    <item name="restart_preview" type="id"/>
+    <item name="return_scan_result" type="id"/>
+    <item name="search_book_contents_failed" type="id"/>
+    <item name="search_book_contents_succeeded" type="id"/>
+    <item name="split" type="id">false</item>
+    <item name="webview" type="id"/>
+    <!-- From: file:/D:/SVN/WebApp_mall/viewlibrary/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="account_info">158****3236</string>
+    <string name="app_name">View library</string>
+    <string name="back">返回</string>
+    <string name="folder_all">All Images</string>
+    <string name="forget_gesture_pwd">忘记手势密码?</string>
+    <string name="lockscreen_access_pattern_cell_added">Cell added</string>
+    <string name="lockscreen_access_pattern_cleared">Pattern cleared</string>
+    <string name="lockscreen_access_pattern_detected">Pattern completed</string>
+    <string name="lockscreen_access_pattern_start">Pattern started</string>
+    <string name="msg_amount_limit">Select images amount is limit</string>
+    <string name="msg_no_camera">No system camera found</string>
+    <string name="next">跳过</string>
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_seconds">秒</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="preview">Preview</string>
+    <string name="reset_gesture_pwd">重新设置手势密码</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="set_gesture_pwd">设置手势密码</string>
+    <string name="set_gesture_pwd_reason">设置手势密码，防止他人未经授权查看</string>
+    <string name="set_gesture_pwd_suc">设置手势密码成功</string>
+    <string name="set_lock_pattern">绘制解锁图案</string>
+    <string name="set_lock_pattern_again">再次绘制解锁图案</string>
+    <string name="set_lock_pattern_inconsistent">与上一次绘制不一致，请重新绘制</string>
+    <string name="set_lock_pattern_too_short">最少链接4个点, 请重新输入</string>
+    <string name="unlock_pattern_fail">密码错误,您还剩余%d次机会</string>
+    <string name="unlock_pattern_suc">解锁成功</string>
+    <string name="use_other_account_login">用其他账号登录</string>
+    <!-- From: file:/D:/SVN/WebApp_mall/viewlibrary/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="timepopwindow_anim_style">
+        <item name="android:windowEnterAnimation">@anim/timepicker_anim_enter_bottom</item> <!-- 指定显示的动画xml -->
+        <item name="android:windowExitAnimation">@anim/timepicker_anim_exit_bottom</item> <!-- 指定消失的动画xml -->
+    </style>
+</resources>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+    <!--配置系统通用参数-->
+    <system-config>
+        <item
+            name="charset"
+            description="编码方式,用于网络请求"
+            value="utf-8" />
+        <item
+            name="isDebug"
+            description="调试模式,控制log输出"
+            value="true" />
+        <item
+            name="webviewCount"
+            description="webview管理池中webview的个数，根据项目中用到多少h5模块来指定"
+            value="7" />
+        <item
+            name="TOAST_WHEN_QUERY_UPDATE_FAILED"
+            description="是否提示更新失败"
+            value="false" />
+        <item
+            name="IS_THIRD_INTEGRATION"
+            description="是否为第三方集成版本，true表示是，false表示不是"
+            value="false" />
+        <item
+            name="VIDEO_SAVE_PATH"
+            value="/mobiletrader" />
+        <item
+            name="IMG_SIZE"
+            description="影像大小，单位为KB"
+            value="150" />
+        <item
+            name="SMS_CHANNEL"
+            description="发送验证码的短信通道号码"
+            value="10698000088536606" />
+        <item
+            name="LICENSE"
+            description="思迪证书签名控件License"
+            value="CngtA/owAwLB0TvE7+KM5Y3WsL3zIWiwvsGpoE4Yj3HTispE+njECfCC/jqO1SCX6Lhmhf9nnsbvBWFsnb2YjpLsT4LbTmiSRrohpqIDjZQRJ3xKBieQjJ5NbHoWbbv/oZMIgM2qTkVnxmCXfuvf+thWlp3qsfJK/mbHbx5TdAk=" />
+        <item
+            name="CHECK_SUCCESS"
+            description="视频见证成功消息"
+            value="SYS:10000" />
+        <item
+            name="CHECK_FAILED"
+            description="视频见证失败消息"
+            value="SYS:10001" />
+        <item
+            name="USER_LEAVE_ROOM"
+            description="手动退出房间"
+            value="SYS:10002" />
+        <item
+            name="SEAT_LEAVE_ROOM"
+            description="坐席退出房间，针对恶意账户清除出队列"
+            value="SYS:10003" />
+        <item
+            name="SEAT_FORCE_QUIT"
+            description="坐席强制退出房间"
+            value="SYS:10004" />
+        <item
+            name="USER_CONFIRM_QUIT"
+            description="用户确认退出房间"
+            value="SYS:10005" />
+        <item
+            name="SEAT_REFRESH_IE"
+            description="坐席刷新浏览器"
+            value="SYS:10006" />
+        <item
+            name="NETWORK_PROBLEM"
+            description="网络问题"
+            value="SYS:10007" />
+        <item
+            name="VIDEO_PROBLEM"
+            description="视频问题 "
+            value="SYS:10008" />
+        <item
+            name="CHECK_REJECT"
+            description="用户驳回"
+            value="SYS:10009" />
+        <item
+            name="TEXT_MSG"
+            description="文字消息"
+            value="USR:0:" />
+        <item
+            name="STATUS_BAR_COLOR"
+            description="状态栏颜色"
+            value="#4359aa" />
+    </system-config>
+
+    <!--配置系统中需要用到的网络访问地址
+        value:可配置多个ip，用|分割
+        optional属性:route,timeout,retry,method
+        route:设置是否ping ip地址,用于配置了多个ip的情况，通过ping获取响应最快的地址
+        timeout:设置连接超时时间
+        retry:设置连接失败重试次数
+        method:指定http请求方式，支持post和get；默认为post
+        -->
+    <address-config>
+
+        <address
+            name="ABOUT_URL"
+            description="关于我们的地址 "
+            value="http://10.84.134.24:84/m/gd_about/aboutUs.html" />
+        <address
+            name="HQ_URL_HTTP"
+            description="行情接口地址"
+            socketType="A"
+            value="10.84.132.71:10000"/>
+        <address
+            name="PUSH_SOCKET_HTTP"
+            description="行情推送地址"
+            route="true"
+            value="10.84.132.71:10003"/>
+        <address
+            name="UPGRADE_URL"
+            description="版本升级地址"
+            timeout="60000"
+            value="http://10.84.134.24:83/servlet/json?" />
+        <address
+            name="URL_FRIST_DATAGD"
+            description="首页广告、菜单、推荐的地址"
+            value="http://10.84.134.24:84/servlet/json?"/>
+        <address
+            name="URL_FRIST_DATAGD_SC"
+            description="首页推荐的地址"
+            value="http://10.84.134.24:83/servlet/json?"/>
+        <address
+            name="URL_FRIST_IMAGEGD"
+            description="首页加载图片时需要拼上的头部"
+            value="http://10.84.134.24:84"/>
+
+        <address
+            name="URL_HTTP_LOGIN"
+            description="光大登录URL接口"
+            value="http://10.84.134.24:84/servlet/json?"/>
+
+        <address
+            name="URL_HTTP_GET_VERIFY_CODE"
+            description="光大激活URL接口"
+            value="http://10.84.134.24:81/servlet/json?"/>
+        <address
+            name="URL_HTTP_GET_ACTIVATE_STATE"
+            description="光大获取用户激活状态URL接口"
+            value="http://10.84.134.24:83/servlet/json?"/>
+        <address name="LOGIN_VERIFY_ICON_URL"
+            description="登录验证码图片url"
+            value="http://10.84.134.24:84/servlet/Image?"/>
+
+        <!--配置退出地址-->
+        <address name="URL_EXIT_FUND"
+            description="富尊退出地址"
+            value="http://10.84.134.24:84/servlet/json?"/>
+
+        <address name="URL_EXIT_TRADE"
+            description="交易退出地址"
+            value="http://10.0.14.140/servlet/json?funcNo=1000013"/>
+
+        <address name="URL_EXIT_MALL"
+            description="商城退出地址"
+            value="http://10.84.134.24:83/servlet/json?"/>
+
+        <address name="URL_EXIT_XD"
+            description="小贷退出地址"
+            value="http://10.84.134.24:82/rz/servlet/json?"/>
+
+        <address name="URL_EXIT_GGT"
+            description="港股通退出地址"
+            value="http://10.84.134.24:88/ggtqy/servlet/TokenAction?function=loginOut"/>
+
+        <address
+            name="NEWS_URL_HTTP"
+            description="微资讯url"
+            value="http://10.84.134.24:84/servlet/json?"/>
+        <address
+            name="WEIZIXUN_URL_PHOTO"
+            description="微资讯展示图片url"
+            value="http://10.84.134.24:84/mall"/>
+
+        <address
+            name="INFO_URL"
+            description="光大个股资讯URL接口"
+            value="http://222.73.111.117/servlet/json?"/>
+        <address
+            name="HQ_URL_HTTP"
+            description="光大个股行情URL接口"
+            value="http://10.0.14.224:8080/market/json?"/>
+
+        <!--<address-->
+        <!--name="URL_HTTP"-->
+        <!--description="行情接口地址"-->
+        <!--value="http://183.57.43.60:8080/market/json?" />-->
+        <!--<address-->
+        <!--name="URL_SYSC_OPTIONAL"-->
+        <!--description="行情同步自选股接口地址"-->
+        <!--value="http://218.17.161.51:8533/servlet/json?" />-->
+        <addressm
+            name="URL_WARN"
+            description="行情预警接口地址"
+            value="http://183.57.43.60:8081/servlet/json?" />
+        <address
+        name="URL_INFO"
+        description="行情资讯接口地址"
+        value="http://120.24.73.231:8089/servlet/json?" />
+        <!--<address-->
+        <!--name="URL_NDO_HTTP"-->
+        <!--description="行情股期权接口地址"-->
+        <!--value="http://222.240.130.28:8686/market/json?" />-->
+        <address
+            name="H5_url_pre"
+            description="H5页面加载地址前缀"
+            value="file:///android_asset/www/" />
+    </address-config>
+
+    <!--配置系统业务模块-->
+    <!--module name不能定义为common，common关键字保留给框架使用-->
+    <module-config>
+        <module
+            name="home"
+            class="com.android.thinkive.invest_sd.activities.MainActivity"
+            description="" />
+        <!--<module-->
+        <!--name="self-stock"-->
+        <!--class="com.thinkive.android.quotation.fragments.OptionalFragment"-->
+        <!--description="" />-->
+        <module
+            name="comm_h5"
+            class="com.android.thinkive.invest_sd.fragment.WebCacheFragment"
+            description="" />
+        <module
+            name="user-center"
+            class="com.android.thinkive.invest_sd.fragment.UserCenterFragment"
+            description="" />
+        <module
+            name="open"
+            class="com.android.thinkive.invest_sd.fragment.OpenAccountFragment"
+            description="股票开户" />
+        <module
+            name="price"
+            class="com.thinkive.android.quotation.fragments.GNewOptionalFragment "
+            description="" />
+        <module
+            name="trade"
+            class="com.android.thinkive.invest_sd.fragment.TradeFragment"
+            description="" />
+        <module
+            name="main"
+            class="com.android.thinkive.invest_sd.fragment.MainPageFragment"
+            description="" />
+        <module
+            name="financial-mall"
+            class="com.android.thinkive.invest_sd.fragment.MallFragment"
+            description="" />
+        <!--<module-->
+        <!--name="ggt"-->
+        <!--class="com.android.thinkive.invest_sd.fragment.GgtFragment"-->
+        <!--description="" />-->
+        <!--<module-->
+        <!--name="open-account"-->
+        <!--class="com.android.thinkive.invest_sd.fragment.OpenAccountFragment"-->
+        <!--description="股票开户" />-->
+        <!--<module-->
+        <!--name="fund-loan"-->
+        <!--class="com.android.thinkive.invest_sd.fragment.XdtFragment"-->
+        <!--description="" />-->
+        <module
+            name="news"
+            class="com.android.thinkive.invest_sd.activities.NewsActivity"
+            description="" />
+        <!--<module-->
+        <!--name="open-account-home"-->
+        <!--class="com.android.thinkive.invest_sd.activities.OpenAccountHomeActivity"-->
+        <!--description="开户首页" />-->
+    </module-config>
+</configs>

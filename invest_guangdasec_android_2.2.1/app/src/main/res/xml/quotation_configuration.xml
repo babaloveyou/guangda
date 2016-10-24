@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quotation>
+
+    <!-- 第一次安装默认自选股-->
+    <defaultOptional>
+        <item
+            name="OPTION_DEFAULT_ADD_STOCK"
+            description="默认添加自选股market:code:name:type_"
+            value="SH:601788:光大证券:9_SZ:399006:创业板指:7_SZ:399001:深证成指:7_SH:000001:上证指数:15"/>
+    </defaultOptional>
+
+    <!--是否进行预加载数据 -->
+    <PreGetData>
+        <item
+            name="STOCK_DETAIL_PREGETDATA"
+            description="股票详情是否采用预读取数据"
+            value="true"/>
+    </PreGetData>
+
+    <!-- 本地数据库首次安装版本控制 -->
+    <database>
+        <item
+            name="DATABASE_FILE_NAME"
+            description="码表数据库名称xxxx.db"
+            value="gpcx20151029.db"/>
+
+        <item
+            name="IS_NEED_DB_UPDATE"
+            description="是否需要码表库更新"
+            value="false"
+            >
+        </item>
+
+    </database>
+
+    <!--行情tab是否一屏自适应展示-->
+    <tab_is_auto>
+        <item
+            name="TAB_IS_AUTO"
+            description="行情tab是否一屏自适应展示 默认:false"
+            value="false"/>
+    </tab_is_auto>
+
+    <!--状态栏是否需要显示颜色-->
+    <statusbar>
+        <item
+            name="IS_SHOW_STATUS_BAR_COLOR"
+            description="是否显示状态栏颜色"
+            value="true"/>
+    </statusbar>
+
+    <!--状态栏是否需要开启显示颜色-->
+    <statusbar>
+        <item
+            name="IS_NEED_SHOW_STATUS_BAR_COLOR"
+            description="是否需要显示状态栏颜色"
+            value="true"/>
+    </statusbar>
+
+
+    <!--行情模块首页是否加返回-->
+    <back>
+        <item
+            name="IS_SHOW_BACK"
+            description="首页是否有返回"
+            value="false"/>
+    </back>
+
+    <!--http://minfo.gildata.com/mobileF10View/global_index.html?p=hsjy_1010&u=abc123-->
+    <!--http://120.27.166.179/mobileF10View/global_index.html?p=hsjy_1010&u=abc123-->
+    <!--配置环球地址  & 符号 XML直接写不可以,所以需要进行替换,是 #038 代替-->
+    <global>
+        <item
+            name="GLOBAL_URL"
+            description="环球行情的地址配置,特殊符号需要转译  "
+            value="http://minfo.gildata.com/mobileF10View/global_index.html?p=hsjy_1010#038u=abc123"
+            />
+    </global>
+
+
+    <!--港股配置-->
+    <ggt>
+        <item
+            name="IS_NEED_GG_SEARCH"
+            description="是否需要港股搜索"
+            value="false"/>
+
+        <item
+            name="IS_NEED_GG_SHOW_INFO"
+            description="是否需要港股显示新闻资讯"
+            value="false"/>
+
+        <item
+            name="IS_NEED_GG_TRADE"
+            description="是否需要港股显示买卖交易,默认是false,不配置就是默认"
+            value="false"/>
+
+    </ggt>
+
+    <!--是否需要个股诊断-->
+    <diagnose>
+        <item
+            name="IS_NEED_DIAGNOSE"
+            description="是否需要个股诊断"
+            value="false"/>
+
+        <!--http://116.236.247.174:8072/m/invesrment/index.html#!/hq/stockDiagnose.html?stockCode=-->
+        <!--http://10.84.132.68:8082/m/invesrment/index.html#!/hq/stockDiagnose.html?stockCode= -->
+
+        <!--<item-->
+        <!--name="DIAGNOSE_ADDRESS"-->
+        <!--description="个股诊断URL地址，后面需加上股票代码（全真内网）"-->
+        <!--value="http://10.84.132.188:8080/m/invesrment/index.html#!/hq/stockDiagnose.html?stockCode="-->
+        <!--/>-->
+
+        <item
+            name="DIAGNOSE_ADDRESS"
+            description="个股诊断URL地址，后面需加上股票代码（生产）"
+            value="http://info.ebscn.com:81/m/invesrment/index.html#!/hq/stockDiagnose.html?stockCode="
+            />
+
+        <!--<item-->
+            <!--name="DIAGNOSE_ADDRESS"-->
+            <!--description="个股诊断URL地址，后面需加上股票代码（内网）"-->
+            <!--value="http://10.84.132.68:8082/m/invesrment/index.html#!/hq/stockDiagnose.html?stockCode="-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--name="DIAGNOSE_ADDRESS"-->
+            <!--description="个股诊断URL地址，后面需加上股票代码（外网）"-->
+            <!--value="http://116.236.247.174:8072/m/invesrment/index.html#!/hq/stockDiagnose.html?stockCode="-->
+            <!--/>-->
+    </diagnose>
+
+    <info>
+        <item
+            name="INFO_GET_URL"
+            description="加载网页资讯的地址"
+            value="http://minfo.gildata.com/mobileF10View/">
+        </item>
+    </info>
+    <!--个股行情是否需要分享-->
+    <share>
+        <item
+            name="IS_SHARE"
+            description="是否需要分享"
+            value="false"/>
+        <item
+            name="SHARE_LINK_ADRESS"
+            description="分享链接地址"
+            value="http://www.baidu.com"/>
+    </share>
+
+    <!--个股行情是否需要预警-->
+    <warn>
+        <item
+            name="IS_WARN"
+            description="是否需要预警"
+            value="false"/>
+    </warn>
+
+    <!--新股界面是否需要申购-->
+    <sg>
+        <item
+            name="IS_SG"
+            description="是否需要申购"
+            value="false"/>
+    </sg>
+
+    <!--个股行情是否需要打开融资融券-->
+    <stm>
+        <item
+            name="IS_SMT"
+            description="是否需要打开融资融券"
+            value="false"/>
+    </stm>
+
+    <!--编辑行情是否需要置顶-->
+    <stick>
+        <item
+            name="IS_STICK"
+            description="编辑行情是否需要置顶"
+            value="true">
+        </item>
+    </stick>
+
+    <!--这个要和你应用的applicationId的名称一样,配置这个和登出删除自选股有关和预警推送有关-->
+    <package>
+        <item
+            name="APPLICATIONID"
+            description="这个要和你应用的applicationId的名称一样,配置这个和登出删除自选股有关和预警推送有关"
+            value="com.thinkive.android.gd_ytz"/>
+    </package>
+
+    <!--自选股配置-->
+    <optional>
+        <item
+            name="IS_NEED_LO_DEL_DB"
+            description="是否需要登出删除自选股"
+            value="false"/>
+    </optional>
+
+    <!--是否显示分钟K线-->
+    <minstock>
+        <item
+            name="IS_SHOW_MIN_K_LINE"
+            description="是否需要分钟K线显示"
+            value="true"/>
+    </minstock>
+
+    <!--是否采取socket推送,反之是定时拉取方式-->
+    <pushsocket>
+        <item
+            name="IS_PUSH"
+            description="是否需要socket推送"
+            value="true"/>
+    </pushsocket>
+
+    <!--个股详情里面tab显示-->
+    <tab_info_show>
+        <item
+            name="ZIJIN_SHOW"
+            description="行情个股详情资金选项是否显示"
+            value="true"
+            >
+        </item>
+    </tab_info_show>
+
+    <!--个股详情是否需要tab栏标签的盘口-->
+    <pankou>
+        <item
+            name="IS_TAB_PANKOU"
+            description="是否需要tab的盘口"
+            value="false"/>
+    </pankou>
+
+    <!--自选股选项卡切换-->
+    <click_switch_value_count>
+        <item
+            name="CLICK_SWITCH_VALUE_COUNT"
+            description="自选股选项卡切换不配的话默认3"
+            value="3"/>
+    </click_switch_value_count>
+
+    <!--接口通讯协议-->
+    <interface_communication_protocol>
+        <item
+            name="INTERFACE_COMMUNICATION_PROTOCOL"
+            description="行情接口通讯协议 0:http 1:socket 不配的话默认http"
+            value="1"/>
+
+        <item
+            name="ZX_INTERFACE_COMMUNICATION_PROTOCOL"
+            description="资讯接口通讯协议 0:http 1:socket 不配的话默认http"
+            value="0">
+        </item>
+    </interface_communication_protocol>
+
+    <!--列表标题栏名称-->
+    <title_name>
+        <item
+            name="TITLE_NAME"
+            description="列表标题栏名称"
+            value=""/>
+    </title_name>
+
+    <!--是否采用新版行情样式-->
+    <is_use_new_style>
+        <item
+            name="IS_USE_NEW_STYLE"
+            description="是否采用新版行情样式"
+            value="true"/>
+    </is_use_new_style>
+
+    <!--配置说明
+        classPath 该fragment的包名类名路由
+        refreshInterval 单位秒
+        description 描述
+     -->
+
+    <fragments>
+        <!--  <moduleFragment
+              classPath="com.thinkive.android.quotation.fragments.listfragments.OptionalListFragment"
+              description="自选股列表"
+              refreshInterval="10">
+              <modules>
+                  <module
+                      description="自选模块"
+                      value="OPTIONAL_LIST_TYPE"/>
+              </modules>
+          </moduleFragment>-->
+
+        <moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.HSListFragment"
+            description="沪深列表"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="指数模块"
+                    value="ZS_LIST_TYPE"/>
+                <module
+                    description="热门行业"
+                    value="LEADER_UP_PLATE_LIST_TYPE"/>
+                <module
+                    description="热门概念"
+                    value="LEADER_UP_CONCEPT_LIST_TYPE"/>
+                <module
+                    description="领涨股"
+                    value="LEADER_UP_STOCK_LIST_TYPE"/>
+                <module
+                    description="领跌股"
+                    value="LEADER_DOWN_STOCK_LIST_TYPE"/>
+                <!--<module
+                    description="资金流入"
+                    value="MONEY_IN_LIST_TYPE"/>
+                <module
+                    description="资金流出"
+                    value="MONEY_OUT_LIST_TYPE"/>-->
+                <module
+                    description="换手率"
+                    value="TURNOVER_TATE_LIST_TYPE"/>
+            </modules>
+        </moduleFragment>
+
+        <moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.PlateListFragment"
+            description="板块列表"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="行业板块"
+                    value="INDUSTRY_LIST_TYPE"/>
+                <module
+                    description="概念板块"
+                    value="CONCEPT_LIST_TYPE"/>
+                <module
+                    description="地域板块"
+                    value="REGIONAL_LIST_TYPE"/>
+            </modules>
+        </moduleFragment>
+
+        <moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.NewStockListFragment"
+            description="新股列表"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="新股行情"
+                    value="NEW_STOCK_QUOTATION_LIST_TYPE"/>
+            </modules>
+        </moduleFragment>
+
+
+        <moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.IndexListFragment"
+            description="指数列表"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="指数行情"
+                    value="INDEX_QUOTATION_LIST_TYPE"/>
+            </modules>
+        </moduleFragment>
+
+
+       <!-- <moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.GGTListFragment"
+            description="港股通列表"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="港股通行情"
+                    value="GGT_STOCK_LIST_TYPE"/>
+            </modules>
+        </moduleFragment>-->
+
+        <moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.BondListFragment"
+            description="债券列表"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="可转债"
+                    value="CONVERTIBLE_BOND_STOCK_LIST_TYPE"/>
+                <module
+                    description="国债"
+                    value="NATIONAL_BOND_STOCK_LIST_TYPE"/>
+                <module
+                    description="企债"
+                    value="BUSINESS_DEBT_STOCK_LIST_TYPE"/>
+                <module
+                    description="回购"
+                    value="BUY_BACK_STOCK_LIST_TYPE"/>
+            </modules>
+        </moduleFragment>
+
+        <!--<moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.FuturesListFragment"
+            description="期货"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="中金所"
+                    value="STOCK_INDEX_FUTURES_ZJS"/>
+                <module
+                    description="上海期货交易所"
+                    value="STOCK_INDEX_FUTURES_SH"/>
+                <module
+                    description="大连期货交易所"
+                    value="STOCK_INDEX_FUTURES_DL"/>
+                <module
+                    description="郑州期货交易所"
+                    value="STOCK_INDEX_FUTURES_ZZ"/>
+            </modules>
+        </moduleFragment>-->
+
+
+        <!--<moduleFragment
+            classPath="com.thinkive.android.quotation.fragments.listfragments.NDOTargetListFragment"
+            description="股票期权"
+            refreshInterval="15">
+            <modules>
+                <module
+                    description="期权标的"
+                    value="NDO_TARGET_QUOTATION_LIST_TYPE">
+                </module>
+            </modules>
+        </moduleFragment>-->
+
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.StockNewABPanKouFragment"
+            description="AB股盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.StockBondPanKouFragment"
+            description="债券股盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.StockFundsPanKouFragment"
+            description="基金盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.StockGGTStockPanKouFragment"
+            description="港股通盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.StockIndexPanKouFragment"
+            description="指数盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.StockFuturesPanKouFragment"
+            description="期货盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.NDOTargetPanKouFragment"
+            description="标的盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.pankoufragments.NDOContractPanKouFragment"
+            description="合约盘口"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.chartfragments.StockChartFragment"
+            description="图表"
+            refreshInterval="10"/>
+        <fragment
+            classPath="com.thinkive.android.quotation.fragments.charthorizontalfragment.StockChartHorizontalFragment"
+            description="横屏图表"
+            refreshInterval="10"/>
+
+    </fragments>
+</quotation>

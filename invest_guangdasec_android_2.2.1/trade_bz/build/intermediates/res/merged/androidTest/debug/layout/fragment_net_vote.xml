@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/trade_normal_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/common_all_corner_white">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:inputType="number"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="@string/net_vote15"
+            android:textSize="@dimen/text_size"
+            android:textColorHint="@color/trade_text_color0"
+            android:id="@+id/edt_stock_code"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:textColor="@color/trade_color_white"
+            android:background="@drawable/common_all_corner_shi"
+            android:layout_margin="6dp"
+            android:text="@string/net_vote1"
+            android:id="@+id/tv_click_select"/>
+
+    </LinearLayout>
+
+    <!-- 正在加载时显示的界面 -->
+    <LinearLayout
+        android:id="@+id/lin_loading"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+        <TextView
+            android:text="@string/home_loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_refresh_list"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lin_no_data_set"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/not_data_listview"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data_listview"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="@dimen/lsv_no_data_text"/>
+    </LinearLayout>
+
+</LinearLayout>

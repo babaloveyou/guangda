@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/wangzhihong/Desktop/android_prom/new_framework/standard/thinkive_invest/fragmentation/src/main/res/values/ids.xml -->
+    <eat-comment/>
+    <item name="hierarchy" type="id"/>
+    <item name="isexpand" type="id"/>
+</resources>

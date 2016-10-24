@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/trade_normal_background">
+
+    <!--融资融券之下单-->
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+
+        <TextView
+            android:id="@+id/tv_r_buy_in"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/bigicon5"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_buy"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_sell_out"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/bigicon6"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_sell"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_firstRow"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+
+        <TextView
+            android:id="@+id/tv_r_assure_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon13"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_d_buy"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_assure_sell"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon14"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_d_sell"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_sell_coupon_payments"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon15"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_one"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_money_payments"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon16"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_two"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:id="@+id/ll_secondRow"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+
+        <TextView
+            android:id="@+id/tv_r_buy_coupon_payments"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon19"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_three"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_payments"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon20"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_four"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_equity_trading"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon04"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_subscribut"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6"/>
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_revocation"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon21"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_revocation"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:orientation="horizontal"
+        android:background="@color/trade_color_white">
+
+        <TextView
+            android:id="@+id/tv_r_contract"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon26"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_contract"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_change_pwd"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/icon10"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_change_pwd"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView
+            android:id="@+id/tv_r_more"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/icon27"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingBottom="5dp"
+            android:text="@string/r_order_more"
+            android:textSize="@dimen/navigation_title_text_size"
+            android:textColor="@color/trade_text_color6" />
+
+        <View android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+</LinearLayout>

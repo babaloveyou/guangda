@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="launcher_color">#96B7DD</color>
+    <color name="window_background">#eeeeee</color>
+    <color name="indicator_background">#FFFFFFFF</color>
+
+    <color name="primary_text_color">#FF4359aa</color>
+    <color name="secondary_text_color">#ff888888</color>
+
+    <color name="divide_color">#FF999999</color>
+    <color name="ldrawer_color">#FFFFFF</color>
+    <color name="actionbar_color">#bf360c</color>
+    <color name="drawer_arrow_second_color">#303f9f</color>
+
+    <color name="color_red">#d70b17</color>
+    <!--资讯颜色配置-->
+    <color name="info_color1">#A9A9A9</color>
+    <color name="info_color2">#ffFE8D01</color>
+    <color name="info_color3">#666666</color>
+    <color name="info_color4">#6f222222</color>
+    <!--启动页颜色配置-->
+    <color name="launcher_color1">#96B7DD</color>
+    <!--<color name="launcher_title_backgound">#009be7</color>-->
+    <!--设置页背景颜色-->
+    <color name="set_backgroud_color">#EEEFEF</color>
+    <color name="black">#000000</color>
+    <!-- 设置页设置项之间的黑线 -->
+    <color name="set_item_separation_color">#C9C8CD</color>
+    <!-- 设置值文本的显示颜色 -->
+    <color name="set_value">#8E8E93</color>
+    <!-- 系统公告颜色定义开始 -->
+    <!--系统公告内容背景颜色-->
+    <!--<color name="announcement_content">#dddddd</color>-->
+    <!-- 关闭按钮按压时的颜色 -->
+    <color name="announcement_btn_press">#8E8E93</color>
+    <!-- 关闭按钮按正常的颜色 -->
+    <color name="announcement_btn_normal">#aaaaaa</color>
+    <!-- 系统公告颜色定义结束 -->
+    <!-- 没有可用的更新版本时的提示字的颜色 -->
+    <!--<color name="has_no_new_version">#8E8E93</color>-->
+    <!--首页公告字体颜色-->
+    <color name="main_page_notice">#1b1b1b</color>
+    <!--标题栏返回按钮背景颜色，透明-->
+    <color name="trade_color2">#00000000</color>
+    <!--标题栏标题颜色、白色-->
+    <color name="trade_color_white">#FFFFFF</color>
+    <!--交易首页表格里的字体颜色-->
+    <color name="trade_color4">#666666</color>
+    <!--交易首页表格分割线颜色-->
+    <color name="thinkive_gray5">#CCCCCC</color>
+    <!--交易首页布局背景颜色-->
+    <color name="trade_color6">#F4F4F4</color>
+    <color name="trade_color7">#eff3fb</color>
+    <!--<color name="trade_color8">#FF7610</color>-->
+    <!-- 上方标题栏未选中时的文本颜色 -->
+    <color name="trade_color9">#999999</color>
+    <!-- 普通交易右上方买卖盘中，买盘和卖盘之间的虚线 -->
+    <color name="trade_color10">#CBCBCB</color>
+    <!--普通交易栏目条纹颜色-->
+    <color name="trade_color11">#E1E0E0</color>
+    <!--普通交易栏目列表字体颜色-->
+    <color name="trade_color12">#7E7E7E</color>
+
+    <!--撤单-->
+    <color name="trade_pop">#EFF7FF</color>
+    <color name="color_one">#666666</color>
+    <color name="color_two">#999999</color>
+
+    <!-- 新股-申购页面背景色 -->
+    <color name="trade_color13">#F5F5F5</color>
+    <color name="trade_baby_blue">#EDF7FE</color>
+    <color name="trade_btn_blue">#219AEA</color>
+    <!-- 黑色 -->
+    <color name="trade_color_black">#000</color>
+    <color name="trade_color_red">#f00</color>
+
+
+    <!--*************************主页布局的取色****************************-->
+    <!--主页搜索条目颜色-->
+    <color name="fragment_main_look_out">#0D81C6</color>
+    <!--搜索edt的字体颜色-->
+    <color name="fragment_main_tv_hint">#51A5D6</color>
+    <!--text字体颜色-->
+    <color name="fragment_main_tv">#666666</color>
+    <!--text内容的字体颜色-->
+    <color name="fragment_main_text">#999999</color>
+    <!--标题栏标题颜色、白色-->
+    <color name="white">#FFFFFF</color>
+    <!--分割线颜色-->
+    <color name="fragment_line">#DDDDDD</color>
+
+    <!--精品推荐shape颜色-->
+    <color name="recommend_shape">#FF0000</color>
+    <!--风险等级的3种颜色-->
+    <color name="recommend_risk1">#00BB00</color>
+    <color name="recommend_risk2">#1098ED</color>
+    <color name="recommend_risk3">#1098ED</color>
+    <color name="recommend_risk4">#FF0000</color>
+    <color name="recommend_risk5">#FF0000</color>
+</resources>

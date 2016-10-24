@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_marginBottom="10dp">
+
+    <LinearLayout android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/common_all_corner_white">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/r_collater4"
+            android:padding="10dp"/>
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_collater_out_max"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:inputType="number"
+            android:textSize="@dimen/text_size"
+            android:text="@string/no_text_set"
+            android:textColor="@color/trade_text_color9"/>
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@drawable/common_all_corner_white"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/r_collater5"/>
+
+        <EditText android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edt_collater_out_num"
+            android:layout_weight="1"
+            android:background="@null"
+            android:singleLine="true"
+            android:inputType="number"
+            android:textSize="@dimen/text_size"
+            android:hint="@string/r_trans_num"
+            android:textColorHint="@color/trade_normal_background"
+            android:textColor="@color/trade_text_color9"/>
+
+    </LinearLayout>
+
+</LinearLayout>

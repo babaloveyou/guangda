@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="32dp"
+              >
+    <TextView
+        android:id="@+id/tv_more_menu_item"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:text="历史委托"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"/>
+    <View
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@color/trader_door_gv_divider"
+        android:layout_width="0.5dp"
+        android:layout_height="14dp"/>
+</RelativeLayout>
+
+
+
+
+
+
+

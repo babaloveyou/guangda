@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/trade_color_white">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/level_fund_trade0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:hint="@string/level_error3"
+                android:padding="10dp"
+                android:background="@null"
+                android:maxLength="6"
+                android:id="@+id/edt_level_merger_code"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/fund_subscribe_name"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:id="@+id/tv_level_merger_name"
+                android:hint="@string/no_text_set"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/fund_trade_ramson_text1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:id="@+id/tv_level_merger_num"
+                android:hint="@string/no_text_set"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/trade_color_white">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/level_fund_trade7"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+            <EditText android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:hint="@string/level_fund_trade8"
+                android:padding="10dp"
+                android:id="@+id/edt_level_merger"
+                android:textSize="@dimen/buysell_button_text_size"
+                android:singleLine="true"
+                android:inputType="number"
+                android:background="@null"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <Button
+            android:id="@+id/btn_level_merger"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/common_all_corner_shi"
+            android:textSize="@dimen/login_button_text_size"
+            android:textColor="@color/trade_color_white"
+            android:text="@string/level_fund_trade9"/>
+
+    </LinearLayout>
+
+</LinearLayout>

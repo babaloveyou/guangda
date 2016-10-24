@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="tv_my_hold" />
+    <item type="id" name="tv_today_trade" />
+    <item type="id" name="tv_today_entrust" />
+    <item type="id" name="tv_new_stock" />
+    <item type="id" name="tv_two_finance" />
+    <item type="id" name="tv_home_g_g_t" />
+    <item type="id" name="tv_home_trans_stock" />
+    <item type="id" name="tv_one_stock_option" />
+    <item type="id" name="tv_fun_trade" />
+    <item type="id" name="tv_fun_trade_in" />
+    <item type="id" name="tv_fun_trade_level" />
+    <item type="id" name="tv_fun_otc" />
+    <item type="id" name="tv_oneKey_collection" />
+    <item type="id" name="tv_transfer_account" />
+    <item type="id" name="tv_sign_agreement" />
+    <item type="id" name="tv_modified_trade_password" />
+    <item type="id" name="tv_communication_password" />
+    <item type="id" name="tv_net_direction" />
+    <item type="id" name="tv_sell_yu" />
+
+</resources>

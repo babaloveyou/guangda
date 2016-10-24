@@ -1,0 +1,125 @@
+package com.thinkive.android.trade_bz.a_rr.fragment;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditLimitActivity;
+import com.thinkive.android.trade_bz.a_rr.bean.RSelectPropertBean;
+import com.thinkive.android.trade_bz.a_rr.bll.RSelectCraditLimitServiceImpl;
+import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
+
+/**
+ * 融资融券--查询--授信额度查询
+ * Announcements：
+ * @author 张雪梅
+ * @company Thinkive
+ * @date 2015/8/19
+ */
+
+public class RSelectCreditLimitFragment extends AbsBaseFragment {
+    /**
+     *Fragment的宿主
+     */
+    private RSelectCreditLimitActivity mActivity;
+    /**
+     *该Fragement的业务类
+     */
+    private RSelectCraditLimitServiceImpl mServices;
+    /**
+     * 授信总额度
+     */
+    private TextView mTvAllLimit;
+    /**
+     *融资授信额度
+     */
+    private TextView mTvLimitZi;
+    /**
+     *融券授信额度
+     */
+    private TextView mTvLimitQuan;
+    /**
+     *融资使用额度
+     */
+    private TextView mTvUseZi;
+    /**
+     *融券使用额度
+     */
+    private TextView mTvUseQuan;
+    /**
+     *融资剩余额度
+     */
+    private TextView mTvOtherZi;
+    /**
+     *融券剩余额度
+     */
+    private TextView mTvOtherQuan;
+    /**
+     * 正在加载
+     */
+    private LinearLayout mLinLoading;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_r_select_limit,null);
+        findViews(rootView);
+        initData();
+        setListeners();
+        initViews();
+        return rootView;
+    }
+
+    @Override
+    protected void findViews(View view) {
+        mTvAllLimit=(TextView)view.findViewById(R.id.tv_limit_all);
+        mTvLimitZi=(TextView)view.findViewById(R.id.tv_limit_zi);
+        mTvLimitQuan=(TextView)view.findViewById(R.id.tv_limit_quan);
+        mTvUseZi=(TextView)view.findViewById(R.id.tv_limit_use_zi);
+        mTvUseQuan=(TextView)view.findViewById(R.id.tv_limit_use_quan);
+        mTvOtherZi=(TextView)view.findViewById(R.id.tv_limit_other_zi);
+        mTvOtherQuan=(TextView)view.findViewById(R.id.tv_limit_other_quan);
+        mLinLoading = (LinearLayout)view.findViewById(R.id.lin_loading_set);
+    }
+
+    @Override
+    protected void setListeners() {
+    }
+
+    @Override
+    protected void initData() {
+        mActivity = (RSelectCreditLimitActivity) getActivity();
+        mServices = new RSelectCraditLimitServiceImpl(this);
+
+    }
+
+    @Override
+    protected void initViews() {
+        mServices.requestCreditLimit();
+        setTheme();
+    }
+
+    @Override
+    protected void setTheme() {
+
+    }
+
+    /**
+     * 接收业务类传递过来的授信额度数据
+     * @param data
+     */
+    public void getCreditLimit(RSelectPropertBean data) {
+        mLinLoading.setVisibility(View.GONE);
+        mTvAllLimit.setText(data.getAcreditavl());
+        mTvLimitZi.setText(data.getFcreditbal());
+        mTvLimitQuan.setText(data.getDcreditbal());
+        mTvUseZi.setText(data.getFin_used_quota());
+        mTvUseQuan.setText(data.getSlo_used_quota());
+        mTvOtherZi.setText(data.getFcreditavl());
+        mTvOtherQuan.setText(data.getDcreditavl());
+    }
+}
+

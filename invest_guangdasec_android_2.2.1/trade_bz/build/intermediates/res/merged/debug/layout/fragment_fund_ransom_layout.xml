@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background"
+    android:orientation="vertical">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/trade_normal_background"
+        android:layout_marginTop="15dp">
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/trade_color_white"
+            android:layout_weight="1">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fund_transe1"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:hint="@string/fund_input_hint2"
+                    android:padding="10dp"
+                    android:id="@+id/tv_ransom_fundname"
+                    android:textSize="@dimen/buysell_button_text_size"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/arrows_right_gray"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fund_trade_renasom_value"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:hint="@string/no_text_set"
+                android:id="@+id/tv_fund_ransom_netvalue"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fund_trade_ransom_limit"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:padding="10dp"
+                android:hint="@string/no_text_set"
+                android:id="@+id/tv_fund_ransom_max_limit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/common_all_corner_shi"
+                android:gravity="center_vertical|right"
+                android:textColor="@color/trade_color_white"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/fund_subscribe_max_all"
+                android:id="@+id/tv_fund_click_ransom_max"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/trade_color_white"
+            android:layout_weight="1">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fund_trade_ransom_count"
+                android:layout_weight="0"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="@dimen/buysell_button_text_size"/>
+
+            <EditText android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:hint="@string/fund_input_hint"
+                android:padding="10dp"
+                android:id="@+id/edt_fund_ransom_count"
+                android:textSize="@dimen/buysell_button_text_size"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:background="@color/trade_color_white"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="@string/fund_trade_max_count_hint"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/trade_color_black"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:id="@+id/tv_fund_ransom_max"
+                android:hint="@string/no_text_set"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="@string/fund_trade_ransom_unit"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_fund_ransom"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/common_all_corner_shi"
+            android:textSize="@dimen/login_button_text_size"
+            android:textColor="@color/trade_color_white"
+            android:text="@string/fund_commit"/>
+
+    </LinearLayout>
+
+</LinearLayout>
+

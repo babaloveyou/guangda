@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background">
+
+    <!-- 正在加载时显示的界面 -->
+    <LinearLayout
+        android:id="@+id/lin_loading_set"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <ProgressBar
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+        <TextView
+            android:text="@string/home_loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/lin_transfer_out"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bank_radio_out2"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:background="@color/trade_color_white"
+            android:padding="12dp"
+            android:hint="@string/one_key_hint_select"
+            android:drawableRight="@drawable/arrows_right_gray"
+            android:drawablePadding="10dp"
+            android:id="@+id/tv_bank_out_select"
+            android:textSize="@dimen/text_size"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_transfer_text"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textSize="@dimen/text_size" />
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:padding="12dp"
+                android:hint="@string/no_text_set"
+                android:id="@+id/tv_bank_out_text"
+                android:textSize="@dimen/text_size" />
+
+        </LinearLayout>
+
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/trade_color_white">
+
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bank_money_out"
+                android:gravity="center"
+                android:padding="12dp"
+                android:textSize="@dimen/text_size"/>
+
+            <EditText android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:hint="@string/one_key_hint_input"
+                android:padding="12dp"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                android:id="@+id/edt_bank_out_money"
+                android:background="@null"
+                android:textSize="@dimen/text_size"
+                android:maxLength="16" />
+
+        </LinearLayout>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trade_divide_line"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/trade_color_white"
+            android:layout_weight="1"
+            android:id="@+id/lin_out_pwd_text1"
+            android:visibility="gone">
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/trade_divide_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bank_password"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textSize="@dimen/text_size"/>
+
+                <EditText android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:hint="@string/one_key_hint_input"
+                    android:padding="12dp"
+                    android:id="@+id/edt_bank_out_pwd1"
+                    android:textSize="@dimen/text_size"
+                    android:inputType="numberPassword"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:maxLength="16" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/trade_divide_line"/>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/trade_normal_background"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/trade_color_white"
+            android:layout_weight="1"
+            android:id="@+id/lin_out_pwd_text2"
+            android:visibility="gone">
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/trade_divide_line"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bank_money_pwd"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:textSize="@dimen/text_size"/>
+
+                <EditText android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|right"
+                    android:hint="@string/one_key_hint_input"
+                    android:padding="12dp"
+                    android:inputType="numberPassword"
+                    android:singleLine="true"
+                    android:id="@+id/edt_bank_out_pwd2"
+                    android:background="@null"
+                    android:textSize="@dimen/text_size"
+                    android:maxLength="16" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/trade_divide_line"/>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_bank_out_commit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/common_all_corner_shi"
+            android:textSize="@dimen/login_button_text_size"
+            android:textColor="@color/trade_color_white"
+            android:text="@string/bank_btn_commit"/>
+
+    </LinearLayout>
+
+</LinearLayout>

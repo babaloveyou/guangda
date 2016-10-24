@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/trade_normal_background">
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:layout_marginTop="10dp"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/r_transferred_collateral_security_in"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_collateral_security_in"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/r_transferred_collateral_security_out"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_collateral_security_out"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/trade_divide_line"/>
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/r_collater_select_title"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_collateral_security_lookout"
+        android:visibility="gone"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"
+        android:visibility="gone"/>
+
+
+    <TextView android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/r_transferred_collateral_security_revocation"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/trade_text_color6"
+        android:background="@color/trade_color_white"
+        android:drawableRight="@drawable/arrows_right_gray"
+        android:id="@+id/tv_collateral_security_revocation"/>
+
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/trade_divide_line"/>
+
+
+</LinearLayout>
