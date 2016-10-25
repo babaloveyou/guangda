@@ -21,13 +21,12 @@ import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.compatible.ListenerController;
-import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_rr.activity.RCreditBuyActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectObjectSecurityActivity;
 import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RCreditBuyServiceImpl;
 import com.thinkive.android.trade_bz.a_rr.controll.RCreditBuyViewController;
+import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.BuyOrSellForPopAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.MyStoreListViewAdapterForBuysale;
 import com.thinkive.android.trade_bz.a_stock.adapter.SearchStocksAdapter;
@@ -39,6 +38,7 @@ import com.thinkive.android.trade_bz.a_stock.controll.BuyOrSellViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
 import com.thinkive.android.trade_bz.dialog.RCreditBuyDialog;
+import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
@@ -145,7 +145,7 @@ public class RCreditBuyFragment extends AbsBaseFragment {
     /**
      * 该类的宿主Activity
      */
-    private RCreditBuyActivity mActivity = null;
+    private MultiCreditTradeActivity mActivity = null;
     /**
      * 该类的业务类
      */
@@ -453,7 +453,7 @@ public class RCreditBuyFragment extends AbsBaseFragment {
 
     @Override
     protected void initData() {
-        mActivity = (RCreditBuyActivity) getActivity();
+        mActivity = (MultiCreditTradeActivity) getActivity();
         mResources = CoreApplication.getInstance().getResources();
         mMyHoldAdapter = new MyStoreListViewAdapterForBuysale(mActivity);
         mController = new RCreditBuyViewController(this);

@@ -48,12 +48,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\item_trans_select_ticket.xml"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\item_a_one_key.xml",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\item_a_one_key.xml"
-    },
-    {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_layout.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\item_a_one_key.xml",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\item_a_one_key.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\fragment_trade_bottom_hold.xml",
@@ -224,12 +224,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\fragment_common_listview.xml"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\fragment_r_orders.xml",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\fragment_r_orders.xml"
-    },
-    {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\fragment_a_bank_in_layout.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\fragment_a_bank_in_layout.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\fragment_r_orders.xml",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\fragment_r_orders.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\abc_list_menu_item_icon.xml",
@@ -330,6 +330,10 @@
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\item_a_today_entrust.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\item_a_today_entrust.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\activity_multicredittrade.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\activity_multicredittrade.xml"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\abc_action_mode_bar.xml",
@@ -932,6 +936,10 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\fragment_option_close_out.xml"
     },
     {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\include_multi_credit.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\include_multi_credit.xml"
+    },
+    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\item_in_fund_sercurities_positions.xml",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\item_in_fund_sercurities_positions.xml"
     },
@@ -1486,6 +1494,10 @@
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\fragment_hk_history_entrust.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\fragment_hk_history_entrust.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\activity_multi_credit_trade.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\layout\\activity_multi_credit_trade.xml"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\layout\\item_option_contract.xml",

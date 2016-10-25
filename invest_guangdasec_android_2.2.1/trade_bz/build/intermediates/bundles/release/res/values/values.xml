@@ -269,6 +269,7 @@
     <string name="data_error">服务器返回数据出错，或解析数据出错！</string>
     <string name="dateUpRange">31</string>
     <string name="date_select_error">日期选择有误，请重新选择！</string>
+    <string name="deal_on_creadit">信用交易</string>
     <string name="dialog_account_credit">融资融券账户</string>
     <string name="dialog_account_normal">普通账户</string>
     <string name="dialog_account_option">个股期权账户</string>

@@ -37,6 +37,7 @@ import com.jakewharton.rxbinding.view.RxView;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.BuyOrSellForPopAdapter;
+import com.thinkive.android.trade_bz.a_stock.adapter.HolderAccountAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.SearchStocksAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.TradeBottomFragmentVpAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;

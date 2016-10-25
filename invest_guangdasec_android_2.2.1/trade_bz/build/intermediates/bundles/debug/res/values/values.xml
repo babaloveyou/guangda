@@ -269,6 +269,7 @@
     <string name="data_error">服务器返回数据出错，或解析数据出错！</string>
     <string name="dateUpRange">31</string>
     <string name="date_select_error">日期选择有误，请重新选择！</string>
+    <string name="deal_on_creadit">信用交易</string>
     <string name="dialog_account_credit">融资融券账户</string>
     <string name="dialog_account_normal">普通账户</string>
     <string name="dialog_account_option">个股期权账户</string>
@@ -1429,6 +1430,9 @@
     <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
         <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
     </style>
+    <style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">
+        <item name="android:typeface">monospace</item>
+    </style>
     <style name="dialogstyle" parent="android:style/Theme.Dialog">
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:windowNoTitle">true</item>
@@ -1480,6 +1484,22 @@
     <style name="new_subscribe_title_text_style">
         <item name="android:textColor">@color/trade_text_color9</item>
         <item name="android:textSize">@dimen/new_subscribe_text</item>
+    </style>
+    <style name="pagertab_style">
+        <item name="android:background">@color/trade_color_black</item>
+        <item name="apTabBackground">@color/white</item>
+        <item name="android:textSize">14sp</item>
+
+        <item name="apTabUnderlineHeight">0.5sp</item>
+        <item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>
+        <item name="android:textColor">@drawable/selector_text_tab</item>
+        <item name="apTabIndicatorColor">@color/statusbar_main</item>
+        <item name="apTabUnderlineColor">@color/trader_door_gv_divider</item>
+        <item name="apTabDividerColor">@color/white</item>
+        <item name="apTabPaddingLeftRight">8dp</item>
+        <item name="apTabShouldExpand">false</item>
+        <item name="apTabDrawMode">text</item>
+        <item name="apTabTextSelectColor">@color/statusbar_main</item>
     </style>
     <style name="pop_show_bottom" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>

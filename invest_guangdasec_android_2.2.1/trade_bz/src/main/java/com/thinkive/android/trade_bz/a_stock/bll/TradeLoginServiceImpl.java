@@ -141,6 +141,7 @@ public class TradeLoginServiceImpl {
                     LoginInfo.setUsername(loginAccount);
                     LoginInfo.setPassword(loginPassword);
                 }
+                //// TODO: 2016/10/25 保存用户信息 
 
             }
 

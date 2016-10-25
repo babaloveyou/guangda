@@ -1367,4 +1367,5 @@
     <string name="sune_login">阳光E账通登录</string>
     <string name="dialog_logout_normal">确定要退出普通交易吗?</string>
     <string name="dialog_logout_credit">确定要退出信用交易吗?</string>
+    <string name="deal_on_creadit">信用交易</string>
 </resources>

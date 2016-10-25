@@ -45,6 +45,7 @@ import com.thinkive.android.trade_bz.a_rr.activity.RCreditBuyActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCreditSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
@@ -235,6 +236,17 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         //防止测试点点点
         mParentFragment.setLogTvClickable(true);
 
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            //实时更新主页状态
+            updateLogoutBtnState();
+            //防止测试点点点
+            mParentFragment.setLogTvClickable(true);
+        }
     }
 
     @Override
@@ -490,7 +502,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      * 注：只有登录成功了，才显示
      */
     public void updateLogoutBtnState() {
-        mParentFragment.initLoginTvListener();
         if (!isAdded()) {
             return;
         }
@@ -498,6 +509,14 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
                 showExitBtn();
                 mParentFragment.setLoginToExit();
+                mLogOutTv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+                            logOff();
+                        }
+                    }
+                });
                 if (loadingDialog == null && mClickBtnBeforeLogin == 0) {//只有之间点击的登录按钮的时候，会返回交易主界面，在onResume的时候，才需要查询持仓数据
                     loadingDialog = new LoadingDialog(getContext());
                 }
@@ -513,7 +532,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                 hideExitBtn();
             }
         }
-
+        mParentFragment.initLoginTvListener();
     }
 
     /**
@@ -748,14 +767,21 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             //            TradeWebFragmentManager.sWebCacheFragment.prepareMsgToH5ForSkip(TradeLoginManager.LOGIN_TYPE_CREDIT);
             //            intent.setClass(mActivity, TradeH5Activity.class);
             //            mActivity.startActivity(intent);
+            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
+            Bundle bundle = new Bundle();
             if (flag == 0) {
-                Intent intent = new Intent(mActivity, RCreditBuyActivity.class);
+//                Intent intent = new Intent(mActivity, RCreditBuyActivity.class);
+                bundle.putInt("pos", 0);
+                intent.putExtras(bundle);
                 mActivity.startActivity(intent);
             }
             if (flag == 1) {
-                Intent intent = new Intent(mActivity, RCreditSaleActivity.class);
+//                Intent intent = new Intent(mActivity, RCreditSaleActivity.class);
+                bundle.putInt("pos", 1);
+                intent.putExtras(bundle);
                 mActivity.startActivity(intent);
             }
+
         } else {
             if (flag == 0) {
                 //1001 fastmenu第一个按钮
@@ -1111,8 +1137,10 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         TradeFlags.removeFlag(TradeFlags.FLAG_GET_CREDIT_USERINFO_SUCCESS);
 
         if (TradeFlags.check(TradeFlags.FLAG_NOT_UNITY_LOGIN_TYPE)) {//单独登录
-            TradeFlags.removeFlag(TradeFlags.FLAG_CREATE_SESSION_SUCCESS);
-            mServices.requestClearSession();
+            if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES) && !TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+                TradeFlags.removeFlag(TradeFlags.FLAG_CREATE_SESSION_SUCCESS);
+                mServices.requestClearSession();
+            }
         }
     }
 
@@ -1236,7 +1264,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     int viewId = intent.getIntExtra(INTENT_KEY_CLICK_VIEW_ID, 1000);
                     if (viewId != -1) { // 此时，说明当初是未登录时，在交易主页点击某个按钮，触发登录的
                         viewId = viewId - 1000;
-                        onItemClick(mFastMenuGv,viewId);
+                        onItemClick(mFastMenuGv, viewId);
                     } else { // 此时，说明当初是在未登录时，从行情模块点击“买入”或“卖出”按钮，触发登录的
                         onClickBuyOrSaleInHq(mJsonDataFromHq);
                     }

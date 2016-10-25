@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical"
+              tools:context=".a_stock.activity.MultiCreditTradeActivity">
+
+    <include layout="@layout/include_multi_credit"/>
+
+    <com.lhh.apst.library.AdvancedPagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        app:apTabIndicatorHeight="10dp"
+        style="@style/pagertab_style"
+        android:fillViewport="false"/>
+
+    <com.thinkive.android.trade_bz.views.CusViewPager
+        android:id="@+id/vp_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@+id/tabs"/>
+
+
+</LinearLayout>

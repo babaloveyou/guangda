@@ -1,4 +1,4 @@
-package com.thinkive.android.trade_bz.a_stock.fragment;
+package com.thinkive.android.trade_bz.a_stock.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

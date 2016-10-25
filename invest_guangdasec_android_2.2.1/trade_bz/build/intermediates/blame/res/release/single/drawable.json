@@ -4,20 +4,20 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\viewlibrary-debug\\res\\drawable\\circle_thumbnail_container.xml"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
-    },
-    {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\common_left_corner_white.xml",
@@ -96,12 +96,12 @@
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\btn_bg_fc.xml",
-        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\btn_bg_fc.xml"
-    },
-    {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\shape_bg_trade_tab_normal_select.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\shape_bg_trade_tab_normal_select.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\btn_bg_fc.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\btn_bg_fc.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\wheel_val.xml",
@@ -140,12 +140,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\shape_normal.xml",
-        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\shape_normal.xml"
-    },
-    {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\shape_normal.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\shape_normal.xml"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\selector_press_list_item.xml",
@@ -160,12 +160,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\bt_delete_et_normal.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\btn_keyboard_delete_small_light.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\btn_keyboard_delete_small_light.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\common_selector_center1.xml",
@@ -364,6 +364,10 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\viewlibrary-debug\\res\\drawable\\bg_line_timepicker.png"
     },
     {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\psts_background_tab.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\homhomlin.lib\\apsts\\1.4.0\\res\\drawable\\psts_background_tab.xml"
+    },
+    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\common_right_corner_shi.xml",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\common_right_corner_shi.xml"
     },
@@ -546,6 +550,10 @@
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\buy_no_corner_kong.xml",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\buy_no_corner_kong.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\apsts_tips.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\homhomlin.lib\\apsts\\1.4.0\\res\\drawable\\apsts_tips.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
@@ -758,6 +766,10 @@
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\common_no_corner_shi.xml",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\common_no_corner_shi.xml"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\selector_text_tab.xml",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\drawable\\selector_text_tab.xml"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\release\\drawable\\sale_selector_right.xml",

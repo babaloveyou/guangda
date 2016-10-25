@@ -29,7 +29,8 @@ public abstract class AbsBaseFragment extends Fragment {
 
     private TKFragmentActivity mActivity = null;
     String mName;
-public boolean isAdded;
+    public boolean isAdded;
+
     public AbsBaseFragment() {
 
     }
@@ -44,10 +45,11 @@ public boolean isAdded;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (mActivity instanceof AbsNavBarActivity) {
-            AbsNavBarActivity absNavBarActivity = (AbsNavBarActivity)mActivity;
+            AbsNavBarActivity absNavBarActivity = (AbsNavBarActivity) mActivity;
             absNavBarActivity.getSwipeBackLayout().addSwipeListener(new SwipeBackLayout.OnSwipeListener() {
                 @Override
-                public void onDragStateChange(int i) {}
+                public void onDragStateChange(int i) {
+                }
 
                 @Override
                 public void onEdgeTouch(int i) {
@@ -55,7 +57,8 @@ public boolean isAdded;
                 }
 
                 @Override
-                public void onDragScrolled(float v) {}
+                public void onDragScrolled(float v) {
+                }
             });
         }
         return super.onCreateView(inflater, container, savedInstanceState);
@@ -81,10 +84,12 @@ public boolean isAdded;
         final Intent intent = new Intent(mActivity, activity);
         mActivity.startActivity(intent);
     }
+
     @Override
     public void startActivity(Intent intent) {
         mActivity.startActivity(intent);
     }
+
     public String getName() {
         if (mName == null) {
             mName = "--";
@@ -97,7 +102,8 @@ public boolean isAdded;
      * 凡是用到框架自绘键盘的Fragment建议都复写下这个方法，
      * 然后在这里写上相关关闭框架自绘键盘的代码。
      */
-    public void closeFrameworkKeyBroad() {}
+    public void closeFrameworkKeyBroad() {
+    }
 
     public void setName(String name) {
         mName = name;

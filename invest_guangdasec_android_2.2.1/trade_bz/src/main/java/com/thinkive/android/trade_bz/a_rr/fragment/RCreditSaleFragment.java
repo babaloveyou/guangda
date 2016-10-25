@@ -21,9 +21,7 @@ import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.compatible.ListenerController;
-import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_rr.activity.RCreditSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectObjectSecurityActivity;
 import com.thinkive.android.trade_bz.a_rr.adapter.RBuyOrSaleContractAdapter;
 import com.thinkive.android.trade_bz.a_rr.adapter.RBuyOrSaleObjectAdapter;
@@ -32,6 +30,7 @@ import com.thinkive.android.trade_bz.a_rr.bean.RSelectCollaterSecurityBean;
 import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RCreditSaleServiceImpl;
 import com.thinkive.android.trade_bz.a_rr.controll.RCreditSaleViewController;
+import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.SearchStocksAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.bean.StockBuySellDish;
@@ -40,6 +39,7 @@ import com.thinkive.android.trade_bz.a_stock.controll.BuyOrSellViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
 import com.thinkive.android.trade_bz.dialog.RCreditSaleDialog;
+import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
@@ -57,7 +57,7 @@ import java.util.ArrayList;
  * @date 2016/1/20
  */
 public class RCreditSaleFragment extends AbsBaseFragment {
-    private RCreditSaleActivity mActivity = null;
+    private MultiCreditTradeActivity mActivity = null;
     private RCreditSaleServiceImpl mService = null;
     private RCreditSaleViewController mController = null;
     private KeyboardManager mStockCodeEdKeyboardManager;
@@ -376,7 +376,7 @@ public class RCreditSaleFragment extends AbsBaseFragment {
 
     @Override
     protected void initData() {
-        mActivity = (RCreditSaleActivity) getActivity();
+        mActivity = (MultiCreditTradeActivity) getActivity();
         mResources = CoreApplication.getInstance().getResources();
         mContractAdapter = new RBuyOrSaleContractAdapter(mActivity);
         mObjectAdapter = new RBuyOrSaleObjectAdapter(mActivity);

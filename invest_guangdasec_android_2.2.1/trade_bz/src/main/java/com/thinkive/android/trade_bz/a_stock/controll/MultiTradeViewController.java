@@ -4,6 +4,7 @@ package com.thinkive.android.trade_bz.a_stock.controll;
 
 import android.view.View;
 
+import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout;
 import com.thinkive.android.trade_bz.views.NavigatorView;
@@ -18,10 +19,18 @@ public class MultiTradeViewController extends AbsBaseController implements
         NavigatorView.OnTabClickListener, NavigatorView.OnTabLightChangeListener,
         HorizontalSlideLinearLayout.OnSlideListener {
 
-    private MultiTradeActivity mActivity = null;
+    private MultiTradeActivity mMultiTradeActivity = null;
+    private MultiCreditTradeActivity mMultiCreditTradeActivity = null;
+    private boolean isCredit;
 
     public MultiTradeViewController(MultiTradeActivity activity) {
-        mActivity = activity;
+        mMultiTradeActivity = activity;
+        isCredit = false;
+    }
+
+    public MultiTradeViewController(MultiCreditTradeActivity activity) {
+        mMultiCreditTradeActivity = activity;
+        isCredit = true;
     }
 
     @Override
@@ -33,9 +42,9 @@ public class MultiTradeViewController extends AbsBaseController implements
             case ON_TAB_CLICK:
                 ((NavigatorView) view).setOnTabClickListener(this);
                 break;
-//            case ON_PAGER_CHANGED:
-//                ((ViewPager) view).setOnPageChangeListener(this);
-//                break;
+            //            case ON_PAGER_CHANGED:
+            //                ((ViewPager) view).setOnPageChangeListener(this);
+            //                break;
             case ON_TAB_CHANGE:
                 break;
             case ON_SLIDE:
@@ -48,40 +57,60 @@ public class MultiTradeViewController extends AbsBaseController implements
 
     @Override
     public void onTabClick(int index, String str) {
-//        mActivity.getViewPager().setCurrentItem(index);
-        mActivity.onTabClick(index);
+        //        mActivity.getViewPager().setCurrentItem(index);
+        if (isCredit) {
+
+            mMultiCreditTradeActivity.onTabClick(index);
+        } else {
+            mMultiTradeActivity.onTabClick(index);
+        }
     }
 
     @Override
     public void onTabLightChange(int index, String str) {
-        mActivity.onTabLightChange(index, str);
+        if (isCredit) {
+
+            mMultiCreditTradeActivity.onTabLightChange(index, str);
+        } else {
+            mMultiTradeActivity.onTabLightChange(index, str);
+        }
 
     }
 
-//    @Override
-//    public void onPageScrolled(int i, float v, int i1) {
-//
-//    }
-//
-//    @Override
-//    public void onPageSelected(int i) {
-//        mActivity.getNavSlide().setCurrentIndex(i);
-//        Log.i("DEBUG", "PageSelected=" + i);
-//    }
-//
-//    @Override
-//    public void onPageScrollStateChanged(int i) {
-//
-//    }
+    //    @Override
+    //    public void onPageScrolled(int i, float v, int i1) {
+    //
+    //    }
+    //
+    //    @Override
+    //    public void onPageSelected(int i) {
+    //        mActivity.getNavSlide().setCurrentIndex(i);
+    //        Log.i("DEBUG", "PageSelected=" + i);
+    //    }
+    //
+    //    @Override
+    //    public void onPageScrollStateChanged(int i) {
+    //
+    //    }
 
 
     @Override
     public void onToLeftSlide(HorizontalSlideLinearLayout horizontalSlideLinearLayout) {
-        mActivity.onLeftSlide();
+
+        if (isCredit) {
+
+            mMultiCreditTradeActivity.onLeftSlide();
+        } else {
+            mMultiTradeActivity.onLeftSlide();
+        }
     }
 
     @Override
     public void onToRightSlide(HorizontalSlideLinearLayout horizontalSlideLinearLayout) {
-        mActivity.onRightSlide();
+        if (isCredit) {
+            mMultiCreditTradeActivity.onRightSlide();
+        } else {
+            mMultiTradeActivity.onRightSlide();
+        }
     }
 }

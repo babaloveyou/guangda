@@ -212,7 +212,17 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         updateLogoutBtnState();
         //防止测试点点点
         mParentFragment.setLogTvClickable(true);
+    }
 
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) {
+            //实时更新主页状态
+            updateLogoutBtnState();
+            //防止测试点点点
+            mParentFragment.setLogTvClickable(true);
+        }
     }
 
     @Override
@@ -468,21 +478,27 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      * 注：只有普通交易登录成功了，才显示
      */
     public void updateLogoutBtnState() {
-        mParentFragment.initLoginTvListener();
         if (!isAdded()) {
             return;
         }
-
         if (mParentFragment.isNormalTrade()) {
             if (TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
                 showExitBtn();
                 mParentFragment.setLoginToExit();
+                mLogOutTv.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
+                            logOff();
+                        }
+                    }
+                });
                 if (loadingDialog == null && mClickBtnBeforeLogin == 0) {//只有之间点击的登录按钮的时候，会返回交易主界面，在onResume的时候，才需要查询持仓数据
                     loadingDialog = new LoadingDialog(getContext());
                 }
                 if (loadingDialog != null) {
                     loadingDialog.show(R.string.querying_data);
-                    mServices.requestMyHoldPager();
+                    loadingDialog.dismiss();
                 }
             } else {
                 mParentFragment.setExitTologin();
@@ -490,7 +506,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                 hideExitBtn();
             }
         }
-
+        mParentFragment.initLoginTvListener();
     }
 
     /**
@@ -1049,8 +1065,10 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         TradeFlags.removeFlag(TradeFlags.FLAG_NORMAL_ACCOUNT_CHECK_SUCCESS);
 
         if (TradeFlags.check(TradeFlags.FLAG_NOT_UNITY_LOGIN_TYPE)) {//单独登录
-            TradeFlags.removeFlag(TradeFlags.FLAG_CREATE_SESSION_SUCCESS);
-            mServices.requestClearSession();
+            if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES) && !TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+                TradeFlags.removeFlag(TradeFlags.FLAG_CREATE_SESSION_SUCCESS);
+                mServices.requestClearSession();
+            }
         }
     }
 

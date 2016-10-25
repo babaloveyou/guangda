@@ -108,12 +108,12 @@
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_moreoverflow_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon28.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon28.png"
-    },
-    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon28.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon28.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon06.png",
@@ -200,12 +200,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\viewlibrary-debug\\res\\drawable-xxhdpi\\default_check.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon03.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon03.png"
-    },
-    {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\trade_buy_selected.png",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\trade_buy_selected.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon03.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon03.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png",
@@ -240,12 +240,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\arrows_right_gray.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_error.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\viewlibrary-debug\\res\\drawable-xxhdpi\\default_error.png"
-    },
-    {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon25.png",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon25.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\default_error.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\viewlibrary-debug\\res\\drawable-xxhdpi\\default_error.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon26.png",
@@ -280,12 +280,12 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon27.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon04.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon04.png"
-    },
-    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxhdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\icon04.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon04.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_btn_rating_star_on_mtrl_alpha.png",
@@ -304,12 +304,12 @@
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\icon29.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\is_not_select.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\drawable-xxhdpi-v4\\is_not_select.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\drawable-xxhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xxhdpi-v4\\abc_ic_go_search_api_mtrl_alpha.png",
