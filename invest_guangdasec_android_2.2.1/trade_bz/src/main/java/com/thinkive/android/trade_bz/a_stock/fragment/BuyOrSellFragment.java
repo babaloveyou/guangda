@@ -996,7 +996,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
                     if (dataList.size() == 1) {
                         CodeTableBean bean = dataList.get(0);
                         hidePreAccountView();
-                        mEdStockCode.setText(bean.getCode() + bean.getName());
+                        mEdStockCode.setText(bean.getCode() +"(" +bean.getName()+")");
                         mEdStockCode.clearFocus();
                         mService.request20000ForHqData(bean.getCode(), bean.getMarket());
                     } else {
@@ -1047,7 +1047,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     public void onSearchListViewItemClick(int position) {
         CodeTableBean bean = mStockFuzzyQueryManager.getSearchStocksAdapter().getItem(position);
         mService.request20000ForHqData(bean.getCode(), bean.getMarket());
-        mEdStockCode.setText(bean.getCode() + bean.getName());
+        mEdStockCode.setText(bean.getCode() +"(" +bean.getName()+")");
         mEdStockCode.clearFocus();
         TradeUtils.hideSystemKeyBoard(mActivity);
         TradeUtils.hideSystemKeyBoard(mActivity);
@@ -1362,7 +1362,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
      */
     public void onGetHqData(CodeTableBean bean) {
         mCodeTableBean = bean;
-        mEdStockCode.setText(mCodeTableBean.getCode() + mCodeTableBean.getName());
+        mEdStockCode.setText(mCodeTableBean.getCode() + "("+mCodeTableBean.getName()+")");
         double step = Double.parseDouble(mCodeTableBean.getStep_unit());
         setStep(step);
         mTvUpLimit.setText(mCodeTableBean.getUpLimit());

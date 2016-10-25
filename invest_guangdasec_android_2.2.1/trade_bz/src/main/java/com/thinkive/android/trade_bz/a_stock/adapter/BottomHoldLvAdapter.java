@@ -91,7 +91,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     }
 
     private View setEnableText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
-        String enableText = "可用:" + myStoreStockBean.getEnable_amount() + "股";
+        String enableText = "可用:" + myStoreStockBean.getEnable_amount();
         SpannableStringBuilder styleEnable = new SpannableStringBuilder(enableText);
         styleEnable.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleEnable.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, enableText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -100,7 +100,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     }
 
     private void setStoreText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
-        String storeText = "持仓:" + myStoreStockBean.getLast_price() + "股";
+        String storeText = "持仓:" + myStoreStockBean.getLast_price() ;
         SpannableStringBuilder styleStore = new SpannableStringBuilder(storeText);
         styleStore.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleStore.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, storeText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -108,7 +108,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     }
 
     private void setCurrentPrice(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
-        String currentPriceText = "现价:" + myStoreStockBean.getLast_price() + "元";
+        String currentPriceText = "现价:" + myStoreStockBean.getLast_price();
         SpannableStringBuilder styleCurrentPrice = new SpannableStringBuilder(currentPriceText);
         styleCurrentPrice.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleCurrentPrice.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, currentPriceText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -116,7 +116,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     }
 
     private void setCostPriceText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
-        String costPriceText = "成本:" + myStoreStockBean.getCost_price() + "元";
+        String costPriceText = "成本:" + myStoreStockBean.getCost_price() ;
         SpannableStringBuilder styleCostPrice = new SpannableStringBuilder(costPriceText);
         styleCostPrice.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleCostPrice.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, costPriceText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

@@ -60,24 +60,26 @@
             android:orientation="vertical">
 
             <TextView
+                android:paddingLeft="10dp"
                 android:id="@+id/tv_win_lose_rate"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:hint="@string/no_text_set"
-                android:gravity="center"
+                android:gravity="center_vertical|left"
                 android:paddingTop="4dp"
                 android:textSize="@dimen/fund_buy_text"
                 android:paddingBottom="2dp"
                 android:textColor="@color/trade_text_color9" />
 
             <TextView
+                android:paddingLeft="10dp"
                 android:id="@+id/tv_win_lose_num"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:hint="@string/no_text_set"
-                android:gravity="center"
+                android:gravity="center_vertical|left"
                 android:paddingBottom="4dp"
                 android:textSize="@dimen/fund_buy_text"
                 android:textColor="@color/trade_text_color9"  />
@@ -89,23 +91,25 @@
         android:layout_weight="1"
         android:orientation="vertical" >
         <TextView
+            android:paddingLeft="10dp"
             android:id="@+id/tv_cost_price"
             android:layout_width="match_parent"
             android:textSize="14sp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:hint="@string/no_text_set"
-            android:gravity="center"
+            android:gravity="center_vertical|left"
             android:paddingTop="4dp"
             android:paddingBottom="2dp"/>
         <TextView
+            android:paddingLeft="10dp"
             android:textSize="14sp"
             android:id="@+id/tv_current_price"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:hint="@string/no_text_set"
-            android:gravity="center"
+            android:gravity="center_vertical|left"
             android:paddingBottom="4dp"/>
     </LinearLayout>
 
@@ -116,18 +120,20 @@
         android:orientation="vertical">
 
         <TextView
+            android:paddingLeft="10dp"
             android:textSize="14sp"
             android:id="@+id/tv_store"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:hint="@string/no_text_set"
-            android:gravity="center"
+            android:gravity="center_vertical|left"
             android:paddingTop="4dp"
             android:paddingBottom="2dp"
             android:textColor="@color/trade_text_color9" />
 
         <TextView
+            android:paddingLeft="10dp"
             android:textSize="14sp"
             android:id="@+id/tv_usable"
             android:layout_width="match_parent"
@@ -135,7 +141,7 @@
             android:layout_weight="1"
             android:hint="@string/no_text_set"
             android:paddingBottom="4dp"
-            android:gravity="center"
+            android:gravity="center_vertical|left"
             android:textColor="@color/trade_text_color9"/>
     </LinearLayout>
     </LinearLayout>
