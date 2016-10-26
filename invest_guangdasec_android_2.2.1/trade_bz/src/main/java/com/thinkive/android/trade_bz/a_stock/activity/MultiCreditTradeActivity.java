@@ -3,7 +3,6 @@ package com.thinkive.android.trade_bz.a_stock.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
@@ -37,7 +36,6 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     private int defaultViewPagerPos;
     private RCreditBuyFragment mRCreditBuyFragment;
     private RCreditSaleFragment mRCreditSaleFragment;
-    private Toolbar mToolbar;
     private TextView mBackTv;
 
     @Override
@@ -57,7 +55,6 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         super.findViews();
         mHorizontalSlideLinearLayout = (HorizontalSlideLinearLayout) findViewById(R.id.hsll_content);
         mNavSlide = (NavigatorView) findViewById(R.id.nsv_multi_trade);
-        mToolbar = (Toolbar) findViewById(R.id.tool_bar);
         mBackTv = (TextView) findViewById(R.id.tv_back);
         mNavSlide = (NavigatorView) findViewById(R.id.nsv_multi_trade);
     }
@@ -87,7 +84,6 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     @Override
     protected void initViews() {
         mHorizontalSlideLinearLayout.initslideStandard(this);
-        setSupportActionBar(mToolbar);
         mNavSlide.setTabNormalTextColor(getResources().getColor(R.color.trade_text_color9));
         mNavSlide.setTabLightTextColor(getResources().getColor(R.color.trade_color1));
         mNavSlide.setTabLightBackGroundColor(getResources().getColor(R.color.trade_color1));

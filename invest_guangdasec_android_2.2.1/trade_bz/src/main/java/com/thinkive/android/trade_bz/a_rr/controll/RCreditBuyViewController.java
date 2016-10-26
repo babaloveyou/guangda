@@ -53,8 +53,6 @@ public class RCreditBuyViewController extends AbsBaseController implements
             mFragment.onClickTradeAdd();
         } else if (resId == R.id.btn_buy_or_sell) { // 买入或者卖出按钮
             mFragment.onClickTrade();
-        } else if (resId == R.id.ll_market_entrust) { // 市价委托，弹出列表框
-            mFragment.onClickMarketForPop();
         } else if (resId == R.id.ll_buy1 ||
                 resId == R.id.ll_buy2 ||
                 resId == R.id.ll_buy3 ||
@@ -70,12 +68,17 @@ public class RCreditBuyViewController extends AbsBaseController implements
             mFragment.onClickDownLimit();
         } else if (resId == R.id.tv_up_limit) { // 跌停价
             mFragment.onClickUpLimit();
-        } else if (resId == R.id.tv_stock_name) { // 股票名称
-            mFragment.onClickStockName();
-        }else if (resId == R.id.tv_trade_limit) {//限价委托
-            mFragment.onClickTradeLimit();
-        } else if (resId == R.id.tv_trade_market){//市价委托
-            mFragment.onClickTradeMarket();
+        }else if (resId == R.id.ll_code_name) {//点击名字
+            mFragment.onNameClick();
+        }
+        else if (resId == R.id.tv_all_num) {//全仓按钮
+            mFragment.setStockNumAll();
+        } else if (resId == R.id.tv_half_num) {//半仓
+            mFragment.setStockNumHalf();
+        } else if (resId == R.id.tv_third_num) {//1/3仓
+            mFragment.setStockNumThird();
+        }else if (resId == R.id.tv_quarter_num) {//1/4仓
+            mFragment.setStockNumQuarter();
         }
     }
 

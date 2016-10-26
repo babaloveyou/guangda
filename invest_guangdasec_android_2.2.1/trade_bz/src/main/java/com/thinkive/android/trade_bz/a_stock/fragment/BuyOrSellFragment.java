@@ -114,7 +114,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     /**
      * 委托交易数量输入框
      */
-    private EditText mEdEntrustAmount = null;
+    private ClearEditText mEdEntrustAmount = null;
     /**
      * 交易按钮，买入，或者卖出
      */
@@ -180,10 +180,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
      * 股票数量编辑器文本监听
      */
     private NumTextWatcher mNumTextWatcher;
-    /**
-     * 股票数量编辑器删除
-     */
-    private ImageView mDeleteNumIv;
     /**
      * 最大可买可卖
      */
@@ -519,8 +515,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mInPutAmountFl = (FrameLayout) mRootView.findViewById(R.id.ll_input_amount);
         mMaxStockNumTv = (TextView) mRootView.findViewById(R.id.tv_stock_max_num);
         mStockNumPreTv = (TextView) mRootView.findViewById(R.id.tv_stock_num_pre);
-        mDeleteNumIv = (ImageView) mRootView.findViewById(R.id.iv_delete_num);
-        mEdEntrustAmount = (EditText) view.findViewById(R.id.ed_entrust_num);
+        mEdEntrustAmount = (ClearEditText) view.findViewById(R.id.ed_entrust_num);
 
         mHolderAccount = (TextView) view.findViewById(R.id.tv_show_holder_account);
         mShowHolderAccountsTv = (TextView) view.findViewById(R.id.tv_show_pop_more_account);
@@ -613,7 +608,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         registerListener(ListenerController.ON_CLICK, mEdStockPricePre, mController);
         registerListener(ListenerController.ON_CLICK, mStockNumPreTv, mController);
         registerListener(ListenerController.ON_CLICK, mDeletePriceIv, mController);
-        registerListener(ListenerController.ON_CLICK, mDeleteNumIv, mController);
         registerListener(ListenerController.ON_CLICK, mAllNumTv, mController);
         registerListener(ListenerController.ON_CLICK, mHalfNumTv, mController);
         registerListener(ListenerController.ON_CLICK, mThirdNumTv, mController);
@@ -1818,12 +1812,17 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
                 } else {
                     plainPrice = TradeUtils.formatDouble3(bigDecimal.toPlainString());
                 }
-                //// TODO: 2016/10/14 把btn上显示的总价格显示到popwindow中去
+
+
                 mPriceWindowHandler.removeCallbacks(mPriceWindowRunnable);
                 //显示
                 if (mTotalPricePopView == null) {
                     LayoutInflater inflater = (LayoutInflater) mActivity.getSystemService(LAYOUT_INFLATER_SERVICE);
                     mTotalPricePopView = inflater.inflate(R.layout.popwindow_total_price, null);
+                    if (mTotalPricePopView.getParent() != null) {
+                        ViewGroup parent = (ViewGroup) mTotalPricePopView.getParent();
+                        parent.removeView(mTotalPricePopView);
+                    }
                     //计算popwindow宽度
                     mTotalPricePopWindow = new PopupWindow(mTotalPricePopView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
                     mTotalPricePopWindow.setBackgroundDrawable(new BitmapDrawable());
@@ -1964,9 +1963,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mEdStockPrice.setText("");
     }
 
-    public void onClickDeletNumText() {
-        mEdEntrustAmount.setText("");
-    }
 
     //点击替换掉股票数量初始显示布局
     public void onPreNumClick() {
@@ -2023,7 +2019,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     }
 
     public void onNameClick() {
-        if (!TextUtils.isEmpty(mEdStockCode.getText())) {
+        if (!TextUtils.isEmpty(mEdStockCode.getText())&&getEntrustCode().toString().length()>=6) {
             mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
             mEdStockCode.performClick();
             mEdStockCode.requestFocus();
@@ -2031,7 +2027,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         }
     }
 
-    //设置可用资金
+    //设置可用资金可用资金
     public void onGetCanUseBalance(String canUseMoney) {
         mCanUseMoneyTv.setText(canUseMoney);
     }
@@ -2067,10 +2063,12 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         @Override
         public void afterTextChanged(Editable s) {
             onListenerEdtNum();
-            if (mEdEntrustAmount.getText().toString().length() != 0) {
-                mDeleteNumIv.setVisibility(View.VISIBLE);
+            if (TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                mEdEntrustAmount.setClearIconVisible(false);
+                mEdEntrustAmount.invalidate();
             } else {
-                mDeleteNumIv.setVisibility(View.INVISIBLE);
+                mEdEntrustAmount.setClearIconVisible(true);
+                mEdEntrustAmount.invalidate();
             }
             mStockNumText = mEdEntrustAmount.getText().toString();
             if (TextUtils.isEmpty(mStockNumText)) {

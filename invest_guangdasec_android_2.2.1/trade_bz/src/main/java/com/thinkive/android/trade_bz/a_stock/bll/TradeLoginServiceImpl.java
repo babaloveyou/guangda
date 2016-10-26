@@ -11,6 +11,7 @@ import com.android.thinkive.framework.network.http.MyImageRequest;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.bean.CreditLoginInfo;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
 import com.thinkive.android.trade_bz.a_stock.bean.LoginInfo;
 import com.thinkive.android.trade_bz.a_stock.fragment.FundLoginFragment;
@@ -140,6 +141,9 @@ public class TradeLoginServiceImpl {
                     //普通用户登录的用户信息保存
                     LoginInfo.setUsername(loginAccount);
                     LoginInfo.setPassword(loginPassword);
+                }
+                if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {
+                    CreditLoginInfo.setPassword(loginPassword);
                 }
                 //// TODO: 2016/10/25 保存用户信息 
 

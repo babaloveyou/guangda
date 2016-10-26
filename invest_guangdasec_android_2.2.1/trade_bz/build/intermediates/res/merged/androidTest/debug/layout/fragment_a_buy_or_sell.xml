@@ -34,15 +34,15 @@
                 android:orientation="horizontal">
 
                 <com.thinkive.android.trade_bz.views.ClearEditText
-                    android:longClickable="false"
                     android:id="@+id/edt_stock_code"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
                     android:gravity="center"
-                    android:paddingEnd="6dp"
                     android:hint="@string/trade_stock_code"
                     android:inputType="textNoSuggestions"
+                    android:longClickable="false"
+                    android:paddingEnd="6dp"
                     android:paddingRight="2dp"
                     android:singleLine="true"
                     android:textColor="@color/trade_text_color3"
@@ -80,18 +80,18 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ll_account_after"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingRight="8dp"
-                 >
+                    android:visibility="gone"
+                    >
 
                     <TextView
                         android:id="@+id/tv_show_holder_account"
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="match_parent"
+                        android:layout_weight="1"
                         android:gravity="center_vertical"
                         android:maxLength="11"
                         android:paddingLeft="10dp"
@@ -183,11 +183,11 @@
 
                 <LinearLayout
                     android:id="@+id/ibt_subtract"
-                    android:orientation="vertical"
                     android:layout_width="0dp"
-                    android:background="@color/trade_sale"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@color/trade_sale"
+                    android:orientation="vertical">
 
                     <TextView
 
@@ -198,15 +198,16 @@
                         android:text="@string/option_buy14"
                         android:textColor="@color/trade_color_white"
                         android:textSize="16sp"/>
+
                     <TextView
 
-                        android:text="0.01"
                         android:id="@+id/step1"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
-
                         android:gravity="center"
+
+                        android:text="0.01"
                         android:textColor="@color/trade_color_white"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -226,7 +227,6 @@
                         android:visibility="gone">
 
                         <EditText
-                            android:longClickable="false"
                             android:id="@+id/edt_stock_price_after"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -234,6 +234,7 @@
                             android:background="@null"
                             android:gravity="center|left"
                             android:inputType="numberDecimal"
+                            android:longClickable="false"
                             android:textColor="@color/trade_text_color3"
                             android:textSize="16sp"
                             android:textStyle="normal"/>
@@ -259,12 +260,12 @@
                 </FrameLayout>
 
                 <LinearLayout
-                    android:background="@color/trade_sale"
                     android:id="@+id/ibt_add"
-                    android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:background="@color/trade_sale"
+                    android:orientation="vertical">
 
                     <TextView
 
@@ -275,13 +276,14 @@
                         android:text="@string/option_buy13"
                         android:textColor="@color/trade_color_white"
                         android:textSize="16sp"/>
+
                     <TextView
-                        android:text="0.01"
                         android:id="@+id/step2"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:text="0.01"
                         android:textColor="@color/trade_color_white"
                         android:textSize="12sp"/>
                 </LinearLayout>
@@ -305,10 +307,7 @@
                     android:paddingRight="7dp"
                     >
 
-                    <EditText
-                        android:longClickable="false"
-                        android:paddingLeft="2dp"
-                        android:maxLength="7"
+                    <com.thinkive.android.trade_bz.views.ClearEditText
                         android:id="@+id/ed_entrust_num"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -316,18 +315,13 @@
                         android:background="@null"
                         android:gravity="center|left"
                         android:inputType="numberDecimal"
+                        android:longClickable="false"
+                        android:maxLength="7"
+                        android:paddingLeft="2dp"
                         android:textColor="@color/trade_text_color3"
                         android:textSize="16sp"
                         android:textStyle="normal"
                         />
-
-                    <ImageView
-                        android:id="@+id/iv_delete_num"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:clickable="true"
-                        android:src="@drawable/selector_delete_text"/>
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
@@ -421,7 +415,6 @@
                     android:textSize="12sp"/>
 
                 <TextView
-                    android:textColorHint="@color/text_reming"
                     android:id="@+id/tv_can_use_money"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -429,6 +422,7 @@
                     android:gravity="center"
                     android:hint="   - -"
                     android:textColor="@color/text_et_input_french_black"
+                    android:textColorHint="@color/text_reming"
                     android:textSize="12sp"/>
             </LinearLayout>
 
@@ -467,17 +461,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="现价"
                         android:padding="3dp"
+                        android:text="现价"
                         android:textSize="12sp"/>
 
                     <TextView
-                        android:textColor="@color/trade_text"
                         android:id="@+id/tv_now_price"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:hint="--"
+                        android:textColor="@color/trade_text"
                         />
 
                 </LinearLayout>
@@ -497,21 +491,22 @@
                         android:textSize="12sp"/>
 
                     <TextView
-                        android:textColor="@color/trade_text"
                         android:id="@+id/tv_increase_amount"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:hint="--"
+                        android:textColor="@color/trade_text"
                         />
 
 
                 </LinearLayout>
             </LinearLayout>
+
             <View
-                android:layout_marginLeft="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
+                android:layout_marginLeft="6dp"
                 android:background="@color/trade_text_color9"
                 android:visibility="visible"/>
             <!-- 卖五 -->
@@ -668,12 +663,13 @@
 
 
             </LinearLayout>
+
             <ProgressBar
-                android:layout_marginLeft="6dp"
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0.5dp"
+                android:layout_marginLeft="6dp"
                 android:max="100"
                 android:progressDrawable="@drawable/progressbar"
                 android:visibility="visible"/>
@@ -865,8 +861,8 @@
 
         <LinearLayout
             android:id="@+id/indcator_bottom_circle"
-            android:orientation="horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"/>
     </RelativeLayout>
 </LinearLayout>

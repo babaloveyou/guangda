@@ -10,20 +10,17 @@
 
     <include layout="@layout/include_multi_credit"/>
 
-    <com.lhh.apst.library.AdvancedPagerSlidingTabStrip
-        android:id="@+id/tabs"
+    <com.thinkive.android.trade_bz.views.NavigatorView
+        android:id="@+id/nsv_multi_trade"
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        app:apTabIndicatorHeight="10dp"
-        style="@style/pagertab_style"
-        android:fillViewport="false"/>
+        android:layout_height="37dp"
+        android:background="@color/trade_normal_background"/>
 
-    <com.thinkive.android.trade_bz.views.CusViewPager
-        android:id="@+id/vp_main"
+    <com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout
+        android:id="@+id/hsll_content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_below="@+id/tabs"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/nsv_multi_trade"/>
 
 
 </LinearLayout>

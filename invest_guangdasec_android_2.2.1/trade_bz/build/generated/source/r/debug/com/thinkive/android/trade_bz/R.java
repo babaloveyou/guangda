@@ -74,15 +74,15 @@ public final class R {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarDivider=0x7f010049;
+        public static int actionBarDivider=0x7f01003b;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarItemBackground=0x7f01004a;
+        public static int actionBarItemBackground=0x7f01003c;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarPopupTheme=0x7f010043;
+        public static int actionBarPopupTheme=0x7f010035;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -100,117 +100,117 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>0</td><td></td></tr>
 </table>
          */
-        public static int actionBarSize=0x7f010048;
+        public static int actionBarSize=0x7f01003a;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarSplitStyle=0x7f010045;
+        public static int actionBarSplitStyle=0x7f010037;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarStyle=0x7f010044;
+        public static int actionBarStyle=0x7f010036;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarTabBarStyle=0x7f01003f;
+        public static int actionBarTabBarStyle=0x7f010031;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarTabStyle=0x7f01003e;
+        public static int actionBarTabStyle=0x7f010030;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarTabTextStyle=0x7f010040;
+        public static int actionBarTabTextStyle=0x7f010032;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarTheme=0x7f010046;
+        public static int actionBarTheme=0x7f010038;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionBarWidgetTheme=0x7f010047;
+        public static int actionBarWidgetTheme=0x7f010039;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionButtonStyle=0x7f010063;
+        public static int actionButtonStyle=0x7f010055;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionDropDownStyle=0x7f01005f;
+        public static int actionDropDownStyle=0x7f010051;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionLayout=0x7f0100c7;
+        public static int actionLayout=0x7f0100b9;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionMenuTextAppearance=0x7f01004b;
+        public static int actionMenuTextAppearance=0x7f01003d;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static int actionMenuTextColor=0x7f01004c;
+        public static int actionMenuTextColor=0x7f01003e;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeBackground=0x7f01004f;
+        public static int actionModeBackground=0x7f010041;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeCloseButtonStyle=0x7f01004e;
+        public static int actionModeCloseButtonStyle=0x7f010040;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeCloseDrawable=0x7f010051;
+        public static int actionModeCloseDrawable=0x7f010043;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeCopyDrawable=0x7f010053;
+        public static int actionModeCopyDrawable=0x7f010045;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeCutDrawable=0x7f010052;
+        public static int actionModeCutDrawable=0x7f010044;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeFindDrawable=0x7f010057;
+        public static int actionModeFindDrawable=0x7f010049;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModePasteDrawable=0x7f010054;
+        public static int actionModePasteDrawable=0x7f010046;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModePopupWindowStyle=0x7f010059;
+        public static int actionModePopupWindowStyle=0x7f01004b;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeSelectAllDrawable=0x7f010055;
+        public static int actionModeSelectAllDrawable=0x7f010047;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeShareDrawable=0x7f010056;
+        public static int actionModeShareDrawable=0x7f010048;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeSplitBackground=0x7f010050;
+        public static int actionModeSplitBackground=0x7f010042;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeStyle=0x7f01004d;
+        public static int actionModeStyle=0x7f01003f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionModeWebSearchDrawable=0x7f010058;
+        public static int actionModeWebSearchDrawable=0x7f01004a;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionOverflowButtonStyle=0x7f010041;
+        public static int actionOverflowButtonStyle=0x7f010033;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int actionOverflowMenuStyle=0x7f010042;
+        public static int actionOverflowMenuStyle=0x7f010034;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -218,7 +218,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int actionProviderClass=0x7f0100c9;
+        public static int actionProviderClass=0x7f0100bb;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -226,15 +226,15 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int actionViewClass=0x7f0100c8;
+        public static int actionViewClass=0x7f0100ba;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int activityChooserViewStyle=0x7f01006b;
+        public static int activityChooserViewStyle=0x7f01005d;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int alertDialogButtonGroupStyle=0x7f01008e;
+        public static int alertDialogButtonGroupStyle=0x7f010080;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -242,15 +242,15 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int alertDialogCenterButtons=0x7f01008f;
+        public static int alertDialogCenterButtons=0x7f010081;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int alertDialogStyle=0x7f01008d;
+        public static int alertDialogStyle=0x7f01007f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int alertDialogTheme=0x7f010090;
+        public static int alertDialogTheme=0x7f010082;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -258,20 +258,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int allowStacking=0x7f0100a5;
-        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-         */
-        public static int apTabBackground=0x7f010029;
-        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabDividerColor=0x7f010021;
+        public static int allowStacking=0x7f010097;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -281,27 +268,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int apTabDividerPadding=0x7f010025;
-        /** <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>normal</code></td><td>0</td><td></td></tr>
-<tr><td><code>text</code></td><td>1</td><td></td></tr>
-</table>
-         */
-        public static int apTabDrawMode=0x7f01002c;
-        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabIndicatorColor=0x7f01001f;
+        public static int arrowHeadLength=0x7f0100b0;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -311,101 +278,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int apTabIndicatorHeight=0x7f010023;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabPaddingLeftRight=0x7f010026;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabPaddingTopBottom=0x7f010027;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabScrollOffset=0x7f010028;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabShouldExpand=0x7f01002a;
-        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabTextAllCaps=0x7f01002b;
-        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabTextSelectColor=0x7f010022;
-        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabUnderlineColor=0x7f010020;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int apTabUnderlineHeight=0x7f010024;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int arrowHeadLength=0x7f0100be;
-        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-         */
-        public static int arrowShaftLength=0x7f0100bf;
+        public static int arrowShaftLength=0x7f0100b1;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -413,11 +286,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int aspect=0x7f0100c5;
+        public static int aspect=0x7f0100b7;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int autoCompleteTextViewStyle=0x7f010095;
+        public static int autoCompleteTextViewStyle=0x7f010087;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -430,7 +303,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int backgroundColor=0x7f0100ad;
+        public static int backgroundColor=0x7f01009f;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
@@ -451,7 +324,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int backgroundTint=0x7f0100f3;
+        public static int backgroundTint=0x7f0100e5;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -465,7 +338,7 @@ containing a value of this type.
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
          */
-        public static int backgroundTintMode=0x7f0100f4;
+        public static int backgroundTintMode=0x7f0100e6;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -475,7 +348,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int barLength=0x7f0100c0;
+        public static int barLength=0x7f0100b2;
         /** <p>Must be an integer value, such as "<code>100</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -483,7 +356,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int bct_image=0x7f0100a6;
+        public static int bct_image=0x7f010098;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -491,7 +364,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int bct_minimal=0x7f0100a8;
+        public static int bct_minimal=0x7f01009a;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -499,43 +372,43 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int bct_size=0x7f0100a7;
+        public static int bct_size=0x7f010099;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int borderlessButtonStyle=0x7f010068;
+        public static int borderlessButtonStyle=0x7f01005a;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonBarButtonStyle=0x7f010065;
+        public static int buttonBarButtonStyle=0x7f010057;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonBarNegativeButtonStyle=0x7f010093;
+        public static int buttonBarNegativeButtonStyle=0x7f010085;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonBarNeutralButtonStyle=0x7f010094;
+        public static int buttonBarNeutralButtonStyle=0x7f010086;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonBarPositiveButtonStyle=0x7f010092;
+        public static int buttonBarPositiveButtonStyle=0x7f010084;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonBarStyle=0x7f010064;
+        public static int buttonBarStyle=0x7f010056;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonPanelSideLayout=0x7f01002d;
+        public static int buttonPanelSideLayout=0x7f01001f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonStyle=0x7f010096;
+        public static int buttonStyle=0x7f010088;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int buttonStyleSmall=0x7f010097;
+        public static int buttonStyleSmall=0x7f010089;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -544,7 +417,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int buttonTint=0x7f0100a9;
+        public static int buttonTint=0x7f01009b;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -558,24 +431,24 @@ containing a value of this type.
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
          */
-        public static int buttonTintMode=0x7f0100aa;
+        public static int buttonTintMode=0x7f01009c;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int checkboxStyle=0x7f010098;
+        public static int checkboxStyle=0x7f01008a;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int checkedTextViewStyle=0x7f010099;
+        public static int checkedTextViewStyle=0x7f01008b;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be an integer value, such as "<code>100</code>".
          */
-        public static int circleNum=0x7f0100a2;
+        public static int circleNum=0x7f010094;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int closeIcon=0x7f0100d1;
+        public static int closeIcon=0x7f0100c3;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -587,11 +460,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int collapseContentDescription=0x7f0100ea;
+        public static int collapseContentDescription=0x7f0100dc;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int collapseIcon=0x7f0100e9;
+        public static int collapseIcon=0x7f0100db;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -600,7 +473,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int color=0x7f0100ba;
+        public static int color=0x7f0100ac;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -609,7 +482,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorAccent=0x7f010086;
+        public static int colorAccent=0x7f010078;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -618,7 +491,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorButtonNormal=0x7f01008a;
+        public static int colorButtonNormal=0x7f01007c;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -627,7 +500,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorControlActivated=0x7f010088;
+        public static int colorControlActivated=0x7f01007a;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -636,7 +509,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorControlHighlight=0x7f010089;
+        public static int colorControlHighlight=0x7f01007b;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -645,7 +518,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorControlNormal=0x7f010087;
+        public static int colorControlNormal=0x7f010079;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -654,7 +527,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorPrimary=0x7f010084;
+        public static int colorPrimary=0x7f010076;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -663,7 +536,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorPrimaryDark=0x7f010085;
+        public static int colorPrimaryDark=0x7f010077;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -672,11 +545,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int colorSwitchThumbNormal=0x7f01008b;
+        public static int colorSwitchThumbNormal=0x7f01007d;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int commitIcon=0x7f0100d6;
+        public static int commitIcon=0x7f0100c8;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -720,7 +593,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int controlBackground=0x7f01008c;
+        public static int controlBackground=0x7f01007e;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -728,7 +601,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int cropEnabled=0x7f0100b9;
+        public static int cropEnabled=0x7f0100ab;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -745,7 +618,7 @@ containing a value of this type.
 <tr><td><code>ratio_custom</code></td><td>7</td><td></td></tr>
 </table>
          */
-        public static int cropMode=0x7f0100ac;
+        public static int cropMode=0x7f01009e;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -757,7 +630,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int defaultQueryHint=0x7f0100d0;
+        public static int defaultQueryHint=0x7f0100c2;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -767,11 +640,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int dialogPreferredPadding=0x7f01005d;
+        public static int dialogPreferredPadding=0x7f01004f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int dialogTheme=0x7f01005c;
+        public static int dialogTheme=0x7f01004e;
         /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -795,7 +668,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int dividerHorizontal=0x7f01006a;
+        public static int dividerHorizontal=0x7f01005c;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -805,11 +678,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int dividerPadding=0x7f0100c4;
+        public static int dividerPadding=0x7f0100b6;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int dividerVertical=0x7f010069;
+        public static int dividerVertical=0x7f01005b;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -819,7 +692,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int drawableSize=0x7f0100bc;
+        public static int drawableSize=0x7f0100ae;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -827,7 +700,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int dropDownListViewStyle=0x7f01007c;
+        public static int dropDownListViewStyle=0x7f01006e;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -837,21 +710,21 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int dropdownListPreferredItemHeight=0x7f010060;
+        public static int dropdownListPreferredItemHeight=0x7f010052;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int editTextBackground=0x7f010071;
+        public static int editTextBackground=0x7f010063;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static int editTextColor=0x7f010070;
+        public static int editTextColor=0x7f010062;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int editTextStyle=0x7f01009a;
+        public static int editTextStyle=0x7f01008c;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -874,7 +747,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int frameColor=0x7f0100af;
+        public static int frameColor=0x7f0100a1;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -884,7 +757,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int frameStrokeWeight=0x7f0100b7;
+        public static int frameStrokeWeight=0x7f0100a9;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -894,11 +767,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int gapBetweenBars=0x7f0100bd;
+        public static int gapBetweenBars=0x7f0100af;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int goIcon=0x7f0100d2;
+        public static int goIcon=0x7f0100c4;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -907,7 +780,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int guideColor=0x7f0100b1;
+        public static int guideColor=0x7f0100a3;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -919,7 +792,7 @@ containing a value of this type.
 <tr><td><code>not_show</code></td><td>3</td><td></td></tr>
 </table>
          */
-        public static int guideShowMode=0x7f0100b2;
+        public static int guideShowMode=0x7f0100a4;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -929,7 +802,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int guideStrokeWeight=0x7f0100b8;
+        public static int guideStrokeWeight=0x7f0100aa;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -938,7 +811,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int handleColor=0x7f0100b0;
+        public static int handleColor=0x7f0100a2;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -950,7 +823,7 @@ containing a value of this type.
 <tr><td><code>not_show</code></td><td>3</td><td></td></tr>
 </table>
          */
-        public static int handleShowMode=0x7f0100b3;
+        public static int handleShowMode=0x7f0100a5;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -960,7 +833,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int handleSize=0x7f0100b4;
+        public static int handleSize=0x7f0100a6;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -982,7 +855,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int homeAsUpIndicator=0x7f010062;
+        public static int homeAsUpIndicator=0x7f010054;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -998,15 +871,15 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int iconifiedByDefault=0x7f0100ce;
+        public static int iconifiedByDefault=0x7f0100c0;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int imageButtonStyle=0x7f010072;
+        public static int imageButtonStyle=0x7f010064;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int imgSrc=0x7f0100ab;
+        public static int imgSrc=0x7f01009d;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1020,7 +893,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int indicator_spacing=0x7f0100a3;
+        public static int indicator_spacing=0x7f010095;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1031,7 +904,7 @@ containing a value of this type.
 <tr><td><code>fraction</code></td><td>1</td><td></td></tr>
 </table>
          */
-        public static int indicator_type=0x7f0100a4;
+        public static int indicator_type=0x7f010096;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1047,7 +920,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int isEnable=0x7f0100ff;
+        public static int isEnable=0x7f0100f1;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1063,7 +936,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int itemNumber=0x7f0100fa;
+        public static int itemNumber=0x7f0100ec;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1082,7 +955,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int itemlineColor=0x7f0100fb;
+        public static int itemlineColor=0x7f0100ed;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1092,31 +965,31 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int itemlineHeight=0x7f0100fc;
+        public static int itemlineHeight=0x7f0100ee;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int layout=0x7f0100cd;
+        public static int layout=0x7f0100bf;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int listChoiceBackgroundIndicator=0x7f010083;
+        public static int listChoiceBackgroundIndicator=0x7f010075;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int listDividerAlertDialog=0x7f01005e;
+        public static int listDividerAlertDialog=0x7f010050;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int listItemLayout=0x7f010031;
+        public static int listItemLayout=0x7f010023;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int listLayout=0x7f01002e;
+        public static int listLayout=0x7f010020;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int listPopupWindowStyle=0x7f01007d;
+        public static int listPopupWindowStyle=0x7f01006f;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1126,7 +999,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int listPreferredItemHeight=0x7f010077;
+        public static int listPreferredItemHeight=0x7f010069;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1136,7 +1009,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int listPreferredItemHeightLarge=0x7f010079;
+        public static int listPreferredItemHeightLarge=0x7f01006b;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1146,7 +1019,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int listPreferredItemHeightSmall=0x7f010078;
+        public static int listPreferredItemHeightSmall=0x7f01006a;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1156,7 +1029,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int listPreferredItemPaddingLeft=0x7f01007a;
+        public static int listPreferredItemPaddingLeft=0x7f01006c;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1166,7 +1039,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int listPreferredItemPaddingRight=0x7f01007b;
+        public static int listPreferredItemPaddingRight=0x7f01006d;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1178,7 +1051,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int logoDescription=0x7f0100ed;
+        public static int logoDescription=0x7f0100df;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1188,7 +1061,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int maskHight=0x7f0100fd;
+        public static int maskHight=0x7f0100ef;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1198,7 +1071,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int maxButtonHeight=0x7f0100e8;
+        public static int maxButtonHeight=0x7f0100da;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1206,7 +1079,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int measureWithLargestChild=0x7f0100c2;
+        public static int measureWithLargestChild=0x7f0100b4;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1216,11 +1089,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int minFrameSize=0x7f0100b6;
+        public static int minFrameSize=0x7f0100a8;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int multiChoiceItemLayout=0x7f01002f;
+        public static int multiChoiceItemLayout=0x7f010021;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1228,11 +1101,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int navigationContentDescription=0x7f0100ec;
+        public static int navigationContentDescription=0x7f0100de;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int navigationIcon=0x7f0100eb;
+        public static int navigationIcon=0x7f0100dd;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1252,7 +1125,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int noEmpty=0x7f0100fe;
+        public static int noEmpty=0x7f0100f0;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1261,7 +1134,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int normalTextColor=0x7f0100f5;
+        public static int normalTextColor=0x7f0100e7;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1271,7 +1144,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int normalTextSize=0x7f0100f6;
+        public static int normalTextSize=0x7f0100e8;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1279,7 +1152,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int overlapAnchor=0x7f0100cb;
+        public static int overlapAnchor=0x7f0100bd;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1288,7 +1161,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int overlayColor=0x7f0100ae;
+        public static int overlayColor=0x7f0100a0;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1298,7 +1171,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int paddingEnd=0x7f0100f1;
+        public static int paddingEnd=0x7f0100e3;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1308,15 +1181,15 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int paddingStart=0x7f0100f0;
+        public static int paddingStart=0x7f0100e2;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int panelBackground=0x7f010080;
+        public static int panelBackground=0x7f010072;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int panelMenuListTheme=0x7f010082;
+        public static int panelMenuListTheme=0x7f010074;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1326,11 +1199,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int panelMenuListWidth=0x7f010081;
+        public static int panelMenuListWidth=0x7f010073;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int popupMenuStyle=0x7f01006e;
+        public static int popupMenuStyle=0x7f010060;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1338,7 +1211,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int popupWindowStyle=0x7f01006f;
+        public static int popupWindowStyle=0x7f010061;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1346,7 +1219,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int preserveIconSpacing=0x7f0100ca;
+        public static int preserveIconSpacing=0x7f0100bc;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1364,7 +1237,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int queryBackground=0x7f0100d8;
+        public static int queryBackground=0x7f0100ca;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1372,47 +1245,47 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int queryHint=0x7f0100cf;
+        public static int queryHint=0x7f0100c1;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int radioButtonStyle=0x7f01009b;
+        public static int radioButtonStyle=0x7f01008d;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int ratingBarStyle=0x7f01009c;
+        public static int ratingBarStyle=0x7f01008e;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int ratingBarStyleIndicator=0x7f01009d;
+        public static int ratingBarStyleIndicator=0x7f01008f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int ratingBarStyleSmall=0x7f01009e;
+        public static int ratingBarStyleSmall=0x7f010090;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int searchHintIcon=0x7f0100d4;
+        public static int searchHintIcon=0x7f0100c6;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int searchIcon=0x7f0100d3;
+        public static int searchIcon=0x7f0100c5;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int searchViewStyle=0x7f010076;
+        public static int searchViewStyle=0x7f010068;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int seekBarStyle=0x7f01009f;
+        public static int seekBarStyle=0x7f010091;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int selectableItemBackground=0x7f010066;
+        public static int selectableItemBackground=0x7f010058;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int selectableItemBackgroundBorderless=0x7f010067;
+        public static int selectableItemBackgroundBorderless=0x7f010059;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1421,7 +1294,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int selectedTextColor=0x7f0100f7;
+        public static int selectedTextColor=0x7f0100e9;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1431,7 +1304,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int selectedTextSize=0x7f0100f8;
+        public static int selectedTextSize=0x7f0100ea;
         /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1445,7 +1318,7 @@ containing a value of this type.
 <tr><td><code>collapseActionView</code></td><td>8</td><td></td></tr>
 </table>
          */
-        public static int showAsAction=0x7f0100c6;
+        public static int showAsAction=0x7f0100b8;
         /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1458,7 +1331,7 @@ containing a value of this type.
 <tr><td><code>end</code></td><td>4</td><td></td></tr>
 </table>
          */
-        public static int showDividers=0x7f0100c3;
+        public static int showDividers=0x7f0100b5;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1466,11 +1339,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int showText=0x7f0100e0;
+        public static int showText=0x7f0100d2;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int singleChoiceItemLayout=0x7f010030;
+        public static int singleChoiceItemLayout=0x7f010022;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1478,15 +1351,15 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int spinBars=0x7f0100bb;
+        public static int spinBars=0x7f0100ad;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int spinnerDropDownItemStyle=0x7f010061;
+        public static int spinnerDropDownItemStyle=0x7f010053;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int spinnerStyle=0x7f0100a0;
+        public static int spinnerStyle=0x7f010092;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1494,11 +1367,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int splitTrack=0x7f0100df;
+        public static int splitTrack=0x7f0100d1;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int srcCompat=0x7f010032;
+        public static int srcCompat=0x7f010024;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1506,11 +1379,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int state_above_anchor=0x7f0100cc;
+        public static int state_above_anchor=0x7f0100be;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int submitBackground=0x7f0100d9;
+        public static int submitBackground=0x7f0100cb;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1522,7 +1395,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int subtitleTextAppearance=0x7f0100e2;
+        public static int subtitleTextAppearance=0x7f0100d4;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1531,7 +1404,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int subtitleTextColor=0x7f0100ef;
+        public static int subtitleTextColor=0x7f0100e1;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1539,7 +1412,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int suggestionRowLayout=0x7f0100d7;
+        public static int suggestionRowLayout=0x7f0100c9;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1549,7 +1422,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int switchMinWidth=0x7f0100dd;
+        public static int switchMinWidth=0x7f0100cf;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1559,60 +1432,60 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int switchPadding=0x7f0100de;
+        public static int switchPadding=0x7f0100d0;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int switchStyle=0x7f0100a1;
+        public static int switchStyle=0x7f010093;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int switchTextAppearance=0x7f0100dc;
+        public static int switchTextAppearance=0x7f0100ce;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
          */
-        public static int textAllCaps=0x7f010033;
+        public static int textAllCaps=0x7f010025;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceLargePopupMenu=0x7f01005a;
+        public static int textAppearanceLargePopupMenu=0x7f01004c;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceListItem=0x7f01007e;
+        public static int textAppearanceListItem=0x7f010070;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceListItemSmall=0x7f01007f;
+        public static int textAppearanceListItemSmall=0x7f010071;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceSearchResultSubtitle=0x7f010074;
+        public static int textAppearanceSearchResultSubtitle=0x7f010066;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceSearchResultTitle=0x7f010073;
+        public static int textAppearanceSearchResultTitle=0x7f010065;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int textAppearanceSmallPopupMenu=0x7f01005b;
+        public static int textAppearanceSmallPopupMenu=0x7f01004d;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static int textColorAlertDialogListItem=0x7f010091;
+        public static int textColorAlertDialogListItem=0x7f010083;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
-        public static int textColorSearchUrl=0x7f010075;
+        public static int textColorSearchUrl=0x7f010067;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int theme=0x7f0100f2;
+        public static int theme=0x7f0100e4;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1622,7 +1495,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int thickness=0x7f0100c1;
+        public static int thickness=0x7f0100b3;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1632,7 +1505,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int thumbTextPadding=0x7f0100db;
+        public static int thumbTextPadding=0x7f0100cd;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1650,7 +1523,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int titleMarginBottom=0x7f0100e7;
+        public static int titleMarginBottom=0x7f0100d9;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1660,7 +1533,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int titleMarginEnd=0x7f0100e5;
+        public static int titleMarginEnd=0x7f0100d7;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1670,7 +1543,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int titleMarginStart=0x7f0100e4;
+        public static int titleMarginStart=0x7f0100d6;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1680,7 +1553,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int titleMarginTop=0x7f0100e6;
+        public static int titleMarginTop=0x7f0100d8;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1690,11 +1563,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int titleMargins=0x7f0100e3;
+        public static int titleMargins=0x7f0100d5;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int titleTextAppearance=0x7f0100e1;
+        public static int titleTextAppearance=0x7f0100d3;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1703,7 +1576,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int titleTextColor=0x7f0100ee;
+        public static int titleTextColor=0x7f0100e0;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1711,11 +1584,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int toolbarNavigationButtonStyle=0x7f01006d;
+        public static int toolbarNavigationButtonStyle=0x7f01005f;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int toolbarStyle=0x7f01006c;
+        public static int toolbarStyle=0x7f01005e;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1725,11 +1598,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int touchPadding=0x7f0100b5;
+        public static int touchPadding=0x7f0100a7;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int track=0x7f0100da;
+        public static int track=0x7f0100cc;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1739,11 +1612,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int unitHight=0x7f0100f9;
+        public static int unitHight=0x7f0100eb;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static int voiceIcon=0x7f0100d5;
+        public static int voiceIcon=0x7f0100c7;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1751,7 +1624,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowActionBar=0x7f010034;
+        public static int windowActionBar=0x7f010026;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1759,7 +1632,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowActionBarOverlay=0x7f010036;
+        public static int windowActionBarOverlay=0x7f010028;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1767,7 +1640,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowActionModeOverlay=0x7f010037;
+        public static int windowActionModeOverlay=0x7f010029;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1780,7 +1653,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowFixedHeightMajor=0x7f01003b;
+        public static int windowFixedHeightMajor=0x7f01002d;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1793,7 +1666,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowFixedHeightMinor=0x7f010039;
+        public static int windowFixedHeightMinor=0x7f01002b;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1806,7 +1679,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowFixedWidthMajor=0x7f010038;
+        public static int windowFixedWidthMajor=0x7f01002a;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1819,7 +1692,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowFixedWidthMinor=0x7f01003a;
+        public static int windowFixedWidthMinor=0x7f01002c;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1832,7 +1705,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowMinWidthMajor=0x7f01003c;
+        public static int windowMinWidthMajor=0x7f01002e;
         /** <p>May be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1845,7 +1718,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowMinWidthMinor=0x7f01003d;
+        public static int windowMinWidthMinor=0x7f01002f;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1853,7 +1726,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static int windowNoTitle=0x7f010035;
+        public static int windowNoTitle=0x7f010027;
     }
     public static final class bool {
         public static int abc_action_bar_embed_tabs=0x7f080003;
@@ -1866,139 +1739,137 @@ containing a value of this type.
         public static int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f080007;
     }
     public static final class color {
-        public static int abc_background_cache_hint_selector_material_dark=0x7f0d0076;
-        public static int abc_background_cache_hint_selector_material_light=0x7f0d0077;
-        public static int abc_color_highlight_material=0x7f0d0078;
+        public static int abc_background_cache_hint_selector_material_dark=0x7f0d0074;
+        public static int abc_background_cache_hint_selector_material_light=0x7f0d0075;
+        public static int abc_color_highlight_material=0x7f0d0076;
         public static int abc_input_method_navigation_guard=0x7f0d0000;
-        public static int abc_primary_text_disable_only_material_dark=0x7f0d0079;
-        public static int abc_primary_text_disable_only_material_light=0x7f0d007a;
-        public static int abc_primary_text_material_dark=0x7f0d007b;
-        public static int abc_primary_text_material_light=0x7f0d007c;
-        public static int abc_search_url_text=0x7f0d007d;
+        public static int abc_primary_text_disable_only_material_dark=0x7f0d0077;
+        public static int abc_primary_text_disable_only_material_light=0x7f0d0078;
+        public static int abc_primary_text_material_dark=0x7f0d0079;
+        public static int abc_primary_text_material_light=0x7f0d007a;
+        public static int abc_search_url_text=0x7f0d007b;
         public static int abc_search_url_text_normal=0x7f0d0001;
         public static int abc_search_url_text_pressed=0x7f0d0002;
         public static int abc_search_url_text_selected=0x7f0d0003;
-        public static int abc_secondary_text_material_dark=0x7f0d007e;
-        public static int abc_secondary_text_material_light=0x7f0d007f;
+        public static int abc_secondary_text_material_dark=0x7f0d007c;
+        public static int abc_secondary_text_material_light=0x7f0d007d;
         public static int accent_material_dark=0x7f0d0004;
         public static int accent_material_light=0x7f0d0005;
         public static int background_floating_material_dark=0x7f0d0006;
         public static int background_floating_material_light=0x7f0d0007;
         public static int background_material_dark=0x7f0d0008;
         public static int background_material_light=0x7f0d0009;
-        public static int background_tab_pressed=0x7f0d000a;
-        public static int base=0x7f0d000b;
-        public static int bg_bt_yellow_normal=0x7f0d000c;
-        public static int bg_bt_yellow_pressed=0x7f0d000d;
-        public static int bg_main_french_gray=0x7f0d000e;
-        public static int bright_foreground_disabled_material_dark=0x7f0d000f;
-        public static int bright_foreground_disabled_material_light=0x7f0d0010;
-        public static int bright_foreground_inverse_material_dark=0x7f0d0011;
-        public static int bright_foreground_inverse_material_light=0x7f0d0012;
-        public static int bright_foreground_material_dark=0x7f0d0013;
-        public static int bright_foreground_material_light=0x7f0d0014;
-        public static int bthumbnail_background=0x7f0d0015;
-        public static int bthumbnail_border=0x7f0d0016;
-        public static int bthumbnail_font=0x7f0d0017;
-        public static int button_material_dark=0x7f0d0018;
-        public static int button_material_light=0x7f0d0019;
-        public static int colorAccent=0x7f0d001a;
-        public static int colorPrimary=0x7f0d001b;
-        public static int colorPrimaryDark=0x7f0d001c;
-        public static int default_text_color=0x7f0d0080;
-        public static int dim_foreground_disabled_material_dark=0x7f0d001d;
-        public static int dim_foreground_disabled_material_light=0x7f0d001e;
-        public static int dim_foreground_material_dark=0x7f0d001f;
-        public static int dim_foreground_material_light=0x7f0d0020;
-        public static int folder_text_color=0x7f0d0081;
-        public static int foreground_material_dark=0x7f0d0021;
-        public static int foreground_material_light=0x7f0d0022;
-        public static int frame=0x7f0d0023;
-        public static int guide=0x7f0d0024;
-        public static int handle=0x7f0d0025;
-        public static int highlighted_text_material_dark=0x7f0d0026;
-        public static int highlighted_text_material_light=0x7f0d0027;
-        public static int hint_foreground_material_dark=0x7f0d0028;
-        public static int hint_foreground_material_light=0x7f0d0029;
-        public static int material_blue_grey_800=0x7f0d002a;
-        public static int material_blue_grey_900=0x7f0d002b;
-        public static int material_blue_grey_950=0x7f0d002c;
-        public static int material_deep_teal_200=0x7f0d002d;
-        public static int material_deep_teal_500=0x7f0d002e;
-        public static int material_grey_100=0x7f0d002f;
-        public static int material_grey_300=0x7f0d0030;
-        public static int material_grey_50=0x7f0d0031;
-        public static int material_grey_600=0x7f0d0032;
-        public static int material_grey_800=0x7f0d0033;
-        public static int material_grey_850=0x7f0d0034;
-        public static int material_grey_900=0x7f0d0035;
-        public static int menu_bg=0x7f0d0036;
-        public static int normal_hint_color=0x7f0d0037;
-        public static int overlay=0x7f0d0038;
-        public static int pop_bg_alph90=0x7f0d0039;
-        public static int pop_bg_press_alph90=0x7f0d003a;
-        public static int pop_total_price=0x7f0d003b;
-        public static int possible_result_points=0x7f0d003c;
-        public static int primary_dark_material_dark=0x7f0d003d;
-        public static int primary_dark_material_light=0x7f0d003e;
-        public static int primary_material_dark=0x7f0d003f;
-        public static int primary_material_light=0x7f0d0040;
-        public static int primary_text_default_material_dark=0x7f0d0041;
-        public static int primary_text_default_material_light=0x7f0d0042;
-        public static int primary_text_disabled_material_dark=0x7f0d0043;
-        public static int primary_text_disabled_material_light=0x7f0d0044;
-        public static int red=0x7f0d0045;
-        public static int result_view=0x7f0d0046;
-        public static int ripple_material_dark=0x7f0d0047;
-        public static int ripple_material_light=0x7f0d0048;
-        public static int secondary_text_default_material_dark=0x7f0d0049;
-        public static int secondary_text_default_material_light=0x7f0d004a;
-        public static int secondary_text_disabled_material_dark=0x7f0d004b;
-        public static int secondary_text_disabled_material_light=0x7f0d004c;
-        public static int selector_tv_login=0x7f0d0082;
-        public static int statusbar_left=0x7f0d004d;
-        public static int statusbar_main=0x7f0d004e;
-        public static int switch_thumb_disabled_material_dark=0x7f0d004f;
-        public static int switch_thumb_disabled_material_light=0x7f0d0050;
-        public static int switch_thumb_material_dark=0x7f0d0083;
-        public static int switch_thumb_material_light=0x7f0d0084;
-        public static int switch_thumb_normal_material_dark=0x7f0d0051;
-        public static int switch_thumb_normal_material_light=0x7f0d0052;
-        public static int text=0x7f0d0053;
-        public static int text_et_input_french_black=0x7f0d0054;
-        public static int text_reming=0x7f0d0055;
-        public static int trade_buy=0x7f0d0056;
-        public static int trade_buy_bg=0x7f0d0057;
-        public static int trade_color1=0x7f0d0058;
-        public static int trade_color15=0x7f0d0059;
-        public static int trade_color_black=0x7f0d005a;
-        public static int trade_color_hold_line01=0x7f0d005b;
-        public static int trade_color_hold_list_item_expand_backgound=0x7f0d005c;
-        public static int trade_color_white=0x7f0d005d;
-        public static int trade_divide_line=0x7f0d005e;
-        public static int trade_down_green=0x7f0d005f;
-        public static int trade_list_item=0x7f0d0060;
-        public static int trade_list_press=0x7f0d0061;
-        public static int trade_normal_background=0x7f0d0062;
-        public static int trade_sale=0x7f0d0063;
-        public static int trade_sale_bg=0x7f0d0064;
-        public static int trade_text=0x7f0d0065;
-        public static int trade_text_color0=0x7f0d0066;
-        public static int trade_text_color1=0x7f0d0067;
-        public static int trade_text_color2=0x7f0d0068;
-        public static int trade_text_color3=0x7f0d0069;
-        public static int trade_text_color6=0x7f0d006a;
-        public static int trade_text_color9=0x7f0d006b;
-        public static int trade_top_tab_dark_gray=0x7f0d006c;
-        public static int trade_up_red=0x7f0d006d;
-        public static int trader_door_gv_divider=0x7f0d006e;
-        public static int trans_white=0x7f0d006f;
-        public static int transparent=0x7f0d0070;
-        public static int tv_bt_brown=0x7f0d0071;
-        public static int viewfinder_mask=0x7f0d0072;
-        public static int wheel_timebtn_nor=0x7f0d0073;
-        public static int wheel_timebtn_pre=0x7f0d0074;
-        public static int white=0x7f0d0075;
+        public static int base=0x7f0d000a;
+        public static int bg_bt_yellow_normal=0x7f0d000b;
+        public static int bg_bt_yellow_pressed=0x7f0d000c;
+        public static int bg_main_french_gray=0x7f0d000d;
+        public static int bright_foreground_disabled_material_dark=0x7f0d000e;
+        public static int bright_foreground_disabled_material_light=0x7f0d000f;
+        public static int bright_foreground_inverse_material_dark=0x7f0d0010;
+        public static int bright_foreground_inverse_material_light=0x7f0d0011;
+        public static int bright_foreground_material_dark=0x7f0d0012;
+        public static int bright_foreground_material_light=0x7f0d0013;
+        public static int bthumbnail_background=0x7f0d0014;
+        public static int bthumbnail_border=0x7f0d0015;
+        public static int bthumbnail_font=0x7f0d0016;
+        public static int button_material_dark=0x7f0d0017;
+        public static int button_material_light=0x7f0d0018;
+        public static int colorAccent=0x7f0d0019;
+        public static int colorPrimary=0x7f0d001a;
+        public static int colorPrimaryDark=0x7f0d001b;
+        public static int default_text_color=0x7f0d007e;
+        public static int dim_foreground_disabled_material_dark=0x7f0d001c;
+        public static int dim_foreground_disabled_material_light=0x7f0d001d;
+        public static int dim_foreground_material_dark=0x7f0d001e;
+        public static int dim_foreground_material_light=0x7f0d001f;
+        public static int folder_text_color=0x7f0d007f;
+        public static int foreground_material_dark=0x7f0d0020;
+        public static int foreground_material_light=0x7f0d0021;
+        public static int frame=0x7f0d0022;
+        public static int guide=0x7f0d0023;
+        public static int handle=0x7f0d0024;
+        public static int highlighted_text_material_dark=0x7f0d0025;
+        public static int highlighted_text_material_light=0x7f0d0026;
+        public static int hint_foreground_material_dark=0x7f0d0027;
+        public static int hint_foreground_material_light=0x7f0d0028;
+        public static int material_blue_grey_800=0x7f0d0029;
+        public static int material_blue_grey_900=0x7f0d002a;
+        public static int material_blue_grey_950=0x7f0d002b;
+        public static int material_deep_teal_200=0x7f0d002c;
+        public static int material_deep_teal_500=0x7f0d002d;
+        public static int material_grey_100=0x7f0d002e;
+        public static int material_grey_300=0x7f0d002f;
+        public static int material_grey_50=0x7f0d0030;
+        public static int material_grey_600=0x7f0d0031;
+        public static int material_grey_800=0x7f0d0032;
+        public static int material_grey_850=0x7f0d0033;
+        public static int material_grey_900=0x7f0d0034;
+        public static int menu_bg=0x7f0d0035;
+        public static int normal_hint_color=0x7f0d0036;
+        public static int overlay=0x7f0d0037;
+        public static int pop_bg_alph90=0x7f0d0038;
+        public static int pop_bg_press_alph90=0x7f0d0039;
+        public static int pop_total_price=0x7f0d003a;
+        public static int possible_result_points=0x7f0d003b;
+        public static int primary_dark_material_dark=0x7f0d003c;
+        public static int primary_dark_material_light=0x7f0d003d;
+        public static int primary_material_dark=0x7f0d003e;
+        public static int primary_material_light=0x7f0d003f;
+        public static int primary_text_default_material_dark=0x7f0d0040;
+        public static int primary_text_default_material_light=0x7f0d0041;
+        public static int primary_text_disabled_material_dark=0x7f0d0042;
+        public static int primary_text_disabled_material_light=0x7f0d0043;
+        public static int result_view=0x7f0d0044;
+        public static int ripple_material_dark=0x7f0d0045;
+        public static int ripple_material_light=0x7f0d0046;
+        public static int secondary_text_default_material_dark=0x7f0d0047;
+        public static int secondary_text_default_material_light=0x7f0d0048;
+        public static int secondary_text_disabled_material_dark=0x7f0d0049;
+        public static int secondary_text_disabled_material_light=0x7f0d004a;
+        public static int selector_tv_login=0x7f0d0080;
+        public static int statusbar_left=0x7f0d004b;
+        public static int statusbar_main=0x7f0d004c;
+        public static int switch_thumb_disabled_material_dark=0x7f0d004d;
+        public static int switch_thumb_disabled_material_light=0x7f0d004e;
+        public static int switch_thumb_material_dark=0x7f0d0081;
+        public static int switch_thumb_material_light=0x7f0d0082;
+        public static int switch_thumb_normal_material_dark=0x7f0d004f;
+        public static int switch_thumb_normal_material_light=0x7f0d0050;
+        public static int text=0x7f0d0051;
+        public static int text_et_input_french_black=0x7f0d0052;
+        public static int text_reming=0x7f0d0053;
+        public static int trade_buy=0x7f0d0054;
+        public static int trade_buy_bg=0x7f0d0055;
+        public static int trade_color1=0x7f0d0056;
+        public static int trade_color15=0x7f0d0057;
+        public static int trade_color_black=0x7f0d0058;
+        public static int trade_color_hold_line01=0x7f0d0059;
+        public static int trade_color_hold_list_item_expand_backgound=0x7f0d005a;
+        public static int trade_color_white=0x7f0d005b;
+        public static int trade_divide_line=0x7f0d005c;
+        public static int trade_down_green=0x7f0d005d;
+        public static int trade_list_item=0x7f0d005e;
+        public static int trade_list_press=0x7f0d005f;
+        public static int trade_normal_background=0x7f0d0060;
+        public static int trade_sale=0x7f0d0061;
+        public static int trade_sale_bg=0x7f0d0062;
+        public static int trade_text=0x7f0d0063;
+        public static int trade_text_color0=0x7f0d0064;
+        public static int trade_text_color1=0x7f0d0065;
+        public static int trade_text_color2=0x7f0d0066;
+        public static int trade_text_color3=0x7f0d0067;
+        public static int trade_text_color6=0x7f0d0068;
+        public static int trade_text_color9=0x7f0d0069;
+        public static int trade_top_tab_dark_gray=0x7f0d006a;
+        public static int trade_up_red=0x7f0d006b;
+        public static int trader_door_gv_divider=0x7f0d006c;
+        public static int trans_white=0x7f0d006d;
+        public static int transparent=0x7f0d006e;
+        public static int tv_bt_brown=0x7f0d006f;
+        public static int viewfinder_mask=0x7f0d0070;
+        public static int wheel_timebtn_nor=0x7f0d0071;
+        public static int wheel_timebtn_pre=0x7f0d0072;
+        public static int white=0x7f0d0073;
     }
     public static final class dimen {
         public static int abc_action_bar_content_inset_material=0x7f090027;
@@ -2100,18 +1971,13 @@ containing a value of this type.
         public static int notification_large_icon_height=0x7f090066;
         public static int notification_large_icon_width=0x7f090067;
         public static int notification_subtext_size=0x7f090068;
-        public static int psts_dot_linelayout_h=0x7f090069;
-        public static int psts_dot_m_right=0x7f09006a;
-        public static int psts_dot_m_top=0x7f09006b;
-        public static int psts_dot_txt_size=0x7f09006c;
-        public static int psts_dot_wh=0x7f09006d;
         public static int select_table_item_height=0x7f090013;
         public static int select_table_text=0x7f090014;
         public static int space_size=0x7f090026;
         public static int store_text_size=0x7f090015;
         public static int text_size=0x7f090016;
-        public static int text_size_m=0x7f09006e;
-        public static int text_size_s=0x7f09006f;
+        public static int text_size_m=0x7f090069;
+        public static int text_size_s=0x7f09006a;
         public static int trade_buysell_text_size=0x7f090017;
     }
     public static final class drawable {
@@ -2192,1740 +2058,1733 @@ containing a value of this type.
         public static int abc_textfield_search_material=0x7f02004a;
         public static int action_btn=0x7f02004b;
         public static int anim_pull_to_refresh_loading=0x7f02004c;
-        public static int apsts_tips=0x7f02004d;
-        public static int arrows_down_buy=0x7f02004e;
-        public static int arrows_down_sale=0x7f02004f;
-        public static int arrows_left_white=0x7f020050;
-        public static int arrows_right_gray=0x7f020051;
-        public static int arrows_right_trade_color1=0x7f020052;
-        public static int asv=0x7f020053;
-        public static int asy=0x7f020054;
-        public static int back_black=0x7f020055;
-        public static int background_gradient_blue=0x7f020056;
-        public static int bg_above_timepicker=0x7f020057;
-        public static int bg_line_timepicker=0x7f020058;
-        public static int bigicon1=0x7f020059;
-        public static int bigicon2=0x7f02005a;
-        public static int bigicon3=0x7f02005b;
-        public static int bigicon4=0x7f02005c;
-        public static int bigicon5=0x7f02005d;
-        public static int bigicon6=0x7f02005e;
-        public static int bt_delete_et_normal=0x7f02005f;
-        public static int bt_delete_et_press=0x7f020060;
-        public static int btn_back_icon=0x7f020061;
-        public static int btn_bg_fc=0x7f020062;
-        public static int btn_keyboard_delete_small_light=0x7f020063;
-        public static int btn_keyboard_delete_small_night=0x7f020064;
-        public static int btn_selected=0x7f020065;
-        public static int btn_unselected=0x7f020066;
-        public static int buy_all_corner_kong=0x7f020067;
-        public static int buy_all_corner_shi=0x7f020068;
-        public static int buy_left_corner_kong=0x7f020069;
-        public static int buy_left_corner_shi=0x7f02006a;
-        public static int buy_no_corner_kong=0x7f02006b;
-        public static int buy_right_conner_kong=0x7f02006c;
-        public static int buy_right_corner_shi=0x7f02006d;
-        public static int buy_selector_button=0x7f02006e;
-        public static int buy_selector_left=0x7f02006f;
-        public static int buy_selector_right=0x7f020070;
-        public static int buy_trade_button=0x7f020071;
-        public static int circle_thumbnail_container=0x7f020072;
-        public static int common_all_corner_gray=0x7f020073;
-        public static int common_all_corner_shi=0x7f020074;
-        public static int common_all_corner_transparent=0x7f020075;
-        public static int common_all_corner_white=0x7f020076;
-        public static int common_left_corner_kong=0x7f020077;
-        public static int common_left_corner_shi=0x7f020078;
-        public static int common_left_corner_shi2=0x7f020079;
-        public static int common_left_corner_white=0x7f02007a;
-        public static int common_no_conner_white=0x7f02007b;
-        public static int common_no_corner_shi=0x7f02007c;
-        public static int common_no_corner_transparent=0x7f02007d;
-        public static int common_only_top_buttom=0x7f02007e;
-        public static int common_only_top_buttom2=0x7f02007f;
-        public static int common_revocation_press=0x7f020080;
-        public static int common_right_corner_kong=0x7f020081;
-        public static int common_right_corner_shi=0x7f020082;
-        public static int common_right_corner_shi2=0x7f020083;
-        public static int common_right_corner_white=0x7f020084;
-        public static int common_selector_center1=0x7f020085;
-        public static int common_selector_center2=0x7f020086;
-        public static int common_selector_left1=0x7f020087;
-        public static int common_selector_left2=0x7f020088;
-        public static int common_selector_right1=0x7f020089;
-        public static int common_selector_right2=0x7f02008a;
-        public static int default_check=0x7f02008b;
-        public static int default_error=0x7f02008c;
-        public static int enablefalse=0x7f02008d;
-        public static int enabletrue=0x7f02008e;
-        public static int expand_buy=0x7f02008f;
-        public static int expand_hq=0x7f020090;
-        public static int expand_sale=0x7f020091;
-        public static int ic_expandable=0x7f020092;
-        public static int ic_loading=0x7f020093;
-        public static int ic_menu_back=0x7f020094;
-        public static int ic_right=0x7f020095;
-        public static int icon01=0x7f020096;
-        public static int icon02=0x7f020097;
-        public static int icon03=0x7f020098;
-        public static int icon04=0x7f020099;
-        public static int icon05=0x7f02009a;
-        public static int icon06=0x7f02009b;
-        public static int icon07=0x7f02009c;
-        public static int icon08=0x7f02009d;
-        public static int icon09=0x7f02009e;
-        public static int icon10=0x7f02009f;
-        public static int icon11=0x7f0200a0;
-        public static int icon12=0x7f0200a1;
-        public static int icon13=0x7f0200a2;
-        public static int icon14=0x7f0200a3;
-        public static int icon15=0x7f0200a4;
-        public static int icon16=0x7f0200a5;
-        public static int icon17=0x7f0200a6;
-        public static int icon18=0x7f0200a7;
-        public static int icon19=0x7f0200a8;
-        public static int icon20=0x7f0200a9;
-        public static int icon21=0x7f0200aa;
-        public static int icon22=0x7f0200ab;
-        public static int icon23=0x7f0200ac;
-        public static int icon24=0x7f0200ad;
-        public static int icon25=0x7f0200ae;
-        public static int icon26=0x7f0200af;
-        public static int icon27=0x7f0200b0;
-        public static int icon28=0x7f0200b1;
-        public static int icon29=0x7f0200b2;
-        public static int icon30=0x7f0200b3;
-        public static int icon_login1=0x7f0200b4;
-        public static int icon_login2=0x7f0200b5;
-        public static int is_not_select=0x7f0200b6;
-        public static int is_select=0x7f0200b7;
-        public static int line_gradient_soild=0x7f0200b8;
-        public static int little_circle_bg=0x7f0200b9;
-        public static int lv_button_style=0x7f0200ba;
-        public static int mm_title_back_btn=0x7f0200bb;
-        public static int mm_title_back_focused=0x7f0200bc;
-        public static int mm_title_back_normal=0x7f0200bd;
-        public static int mm_title_back_pressed=0x7f0200be;
-        public static int mmtitle_bg_alpha=0x7f0200bf;
-        public static int next_black=0x7f0200c0;
-        public static int not_data_listview=0x7f0200c1;
-        public static int notification_template_icon_bg=0x7f02010a;
-        public static int person=0x7f0200c2;
-        public static int progressbar=0x7f0200c3;
-        public static int psts_background_tab=0x7f0200c4;
-        public static int radio_dark=0x7f0200c5;
-        public static int radio_light=0x7f0200c6;
-        public static int refresh_pull=0x7f0200c7;
-        public static int refresh_pull_success=0x7f0200c8;
-        public static int rotate_blue_trade_refresh_progressbar=0x7f0200c9;
-        public static int sale_all_corner_shi=0x7f0200ca;
-        public static int sale_left_corner_kong=0x7f0200cb;
-        public static int sale_left_corner_shi=0x7f0200cc;
-        public static int sale_no_corner_kong=0x7f0200cd;
-        public static int sale_right_conner_kong=0x7f0200ce;
-        public static int sale_right_corner_shi=0x7f0200cf;
-        public static int sale_selector_button=0x7f0200d0;
-        public static int sale_selector_left=0x7f0200d1;
-        public static int sale_selector_right=0x7f0200d2;
-        public static int sale_trade_button=0x7f0200d3;
-        public static int seach=0x7f0200d4;
-        public static int selector_bg_btn_toactive=0x7f0200d5;
-        public static int selector_delete_text=0x7f0200d6;
-        public static int selector_indicator=0x7f0200d7;
-        public static int selector_press_list_item=0x7f0200d8;
-        public static int selector_press_list_item2=0x7f0200d9;
-        public static int selector_text_tab=0x7f0200da;
-        public static int selector_trade_login_btn=0x7f0200db;
-        public static int shadow_bottom=0x7f0200dc;
-        public static int shadow_left=0x7f0200dd;
-        public static int shadow_right=0x7f0200de;
-        public static int shape_bg_alph_popwindow=0x7f0200df;
-        public static int shape_bg_btn_num=0x7f0200e0;
-        public static int shape_bg_trade_tab_credit=0x7f0200e1;
-        public static int shape_bg_trade_tab_credit_select=0x7f0200e2;
-        public static int shape_bg_trade_tab_normal=0x7f0200e3;
-        public static int shape_bg_trade_tab_normal_select=0x7f0200e4;
-        public static int shape_bg_tv_open_account=0x7f0200e5;
-        public static int shape_bg_tv_open_account_bigradius=0x7f0200e6;
-        public static int shape_btn_pressed=0x7f0200e7;
-        public static int shape_normal=0x7f0200e8;
-        public static int text_indicator=0x7f0200e9;
-        public static int theme_blue_pull_to_refresh_loading=0x7f0200ea;
-        public static int trade_buy=0x7f0200eb;
-        public static int trade_buy_selected=0x7f0200ec;
-        public static int trade_sale=0x7f0200ed;
-        public static int trade_sale_selected=0x7f0200ee;
-        public static int trans_money_icon=0x7f0200ef;
-        public static int wheel_timebtn=0x7f0200f0;
-        public static int wheel_val=0x7f0200f1;
-        public static int yunloading01=0x7f0200f2;
-        public static int yunloading02=0x7f0200f3;
-        public static int yunloading03=0x7f0200f4;
-        public static int yunloading04=0x7f0200f5;
-        public static int yunloading05=0x7f0200f6;
-        public static int yunloading06=0x7f0200f7;
-        public static int yunloading07=0x7f0200f8;
-        public static int yunloading08=0x7f0200f9;
-        public static int yunloading09=0x7f0200fa;
-        public static int yunloading10=0x7f0200fb;
-        public static int yunloading11=0x7f0200fc;
-        public static int yunloading12=0x7f0200fd;
-        public static int yunloading13=0x7f0200fe;
-        public static int yunloading14=0x7f0200ff;
-        public static int yunloading15=0x7f020100;
-        public static int yunloading16=0x7f020101;
-        public static int yunloading17=0x7f020102;
-        public static int yunloading18=0x7f020103;
-        public static int yunloading19=0x7f020104;
-        public static int yunloading20=0x7f020105;
-        public static int yunloading21=0x7f020106;
-        public static int yunloading22=0x7f020107;
-        public static int yunloading23=0x7f020108;
-        public static int yunloading24=0x7f020109;
+        public static int arrows_down_buy=0x7f02004d;
+        public static int arrows_down_sale=0x7f02004e;
+        public static int arrows_left_white=0x7f02004f;
+        public static int arrows_right_gray=0x7f020050;
+        public static int arrows_right_trade_color1=0x7f020051;
+        public static int asv=0x7f020052;
+        public static int asy=0x7f020053;
+        public static int back_black=0x7f020054;
+        public static int background_gradient_blue=0x7f020055;
+        public static int bg_above_timepicker=0x7f020056;
+        public static int bg_line_timepicker=0x7f020057;
+        public static int bigicon1=0x7f020058;
+        public static int bigicon2=0x7f020059;
+        public static int bigicon3=0x7f02005a;
+        public static int bigicon4=0x7f02005b;
+        public static int bigicon5=0x7f02005c;
+        public static int bigicon6=0x7f02005d;
+        public static int bt_delete_et_normal=0x7f02005e;
+        public static int bt_delete_et_press=0x7f02005f;
+        public static int btn_back_icon=0x7f020060;
+        public static int btn_bg_fc=0x7f020061;
+        public static int btn_keyboard_delete_small_light=0x7f020062;
+        public static int btn_keyboard_delete_small_night=0x7f020063;
+        public static int btn_selected=0x7f020064;
+        public static int btn_unselected=0x7f020065;
+        public static int buy_all_corner_kong=0x7f020066;
+        public static int buy_all_corner_shi=0x7f020067;
+        public static int buy_left_corner_kong=0x7f020068;
+        public static int buy_left_corner_shi=0x7f020069;
+        public static int buy_no_corner_kong=0x7f02006a;
+        public static int buy_right_conner_kong=0x7f02006b;
+        public static int buy_right_corner_shi=0x7f02006c;
+        public static int buy_selector_button=0x7f02006d;
+        public static int buy_selector_left=0x7f02006e;
+        public static int buy_selector_right=0x7f02006f;
+        public static int buy_trade_button=0x7f020070;
+        public static int circle_thumbnail_container=0x7f020071;
+        public static int common_all_corner_gray=0x7f020072;
+        public static int common_all_corner_shi=0x7f020073;
+        public static int common_all_corner_transparent=0x7f020074;
+        public static int common_all_corner_white=0x7f020075;
+        public static int common_left_corner_kong=0x7f020076;
+        public static int common_left_corner_shi=0x7f020077;
+        public static int common_left_corner_shi2=0x7f020078;
+        public static int common_left_corner_white=0x7f020079;
+        public static int common_no_conner_white=0x7f02007a;
+        public static int common_no_corner_shi=0x7f02007b;
+        public static int common_no_corner_transparent=0x7f02007c;
+        public static int common_only_top_buttom=0x7f02007d;
+        public static int common_only_top_buttom2=0x7f02007e;
+        public static int common_revocation_press=0x7f02007f;
+        public static int common_right_corner_kong=0x7f020080;
+        public static int common_right_corner_shi=0x7f020081;
+        public static int common_right_corner_shi2=0x7f020082;
+        public static int common_right_corner_white=0x7f020083;
+        public static int common_selector_center1=0x7f020084;
+        public static int common_selector_center2=0x7f020085;
+        public static int common_selector_left1=0x7f020086;
+        public static int common_selector_left2=0x7f020087;
+        public static int common_selector_right1=0x7f020088;
+        public static int common_selector_right2=0x7f020089;
+        public static int default_check=0x7f02008a;
+        public static int default_error=0x7f02008b;
+        public static int enablefalse=0x7f02008c;
+        public static int enabletrue=0x7f02008d;
+        public static int expand_buy=0x7f02008e;
+        public static int expand_hq=0x7f02008f;
+        public static int expand_sale=0x7f020090;
+        public static int ic_expandable=0x7f020091;
+        public static int ic_loading=0x7f020092;
+        public static int ic_menu_back=0x7f020093;
+        public static int ic_right=0x7f020094;
+        public static int icon01=0x7f020095;
+        public static int icon02=0x7f020096;
+        public static int icon03=0x7f020097;
+        public static int icon04=0x7f020098;
+        public static int icon05=0x7f020099;
+        public static int icon06=0x7f02009a;
+        public static int icon07=0x7f02009b;
+        public static int icon08=0x7f02009c;
+        public static int icon09=0x7f02009d;
+        public static int icon10=0x7f02009e;
+        public static int icon11=0x7f02009f;
+        public static int icon12=0x7f0200a0;
+        public static int icon13=0x7f0200a1;
+        public static int icon14=0x7f0200a2;
+        public static int icon15=0x7f0200a3;
+        public static int icon16=0x7f0200a4;
+        public static int icon17=0x7f0200a5;
+        public static int icon18=0x7f0200a6;
+        public static int icon19=0x7f0200a7;
+        public static int icon20=0x7f0200a8;
+        public static int icon21=0x7f0200a9;
+        public static int icon22=0x7f0200aa;
+        public static int icon23=0x7f0200ab;
+        public static int icon24=0x7f0200ac;
+        public static int icon25=0x7f0200ad;
+        public static int icon26=0x7f0200ae;
+        public static int icon27=0x7f0200af;
+        public static int icon28=0x7f0200b0;
+        public static int icon29=0x7f0200b1;
+        public static int icon30=0x7f0200b2;
+        public static int icon_login1=0x7f0200b3;
+        public static int icon_login2=0x7f0200b4;
+        public static int is_not_select=0x7f0200b5;
+        public static int is_select=0x7f0200b6;
+        public static int line_gradient_soild=0x7f0200b7;
+        public static int little_circle_bg=0x7f0200b8;
+        public static int lv_button_style=0x7f0200b9;
+        public static int mm_title_back_btn=0x7f0200ba;
+        public static int mm_title_back_focused=0x7f0200bb;
+        public static int mm_title_back_normal=0x7f0200bc;
+        public static int mm_title_back_pressed=0x7f0200bd;
+        public static int mmtitle_bg_alpha=0x7f0200be;
+        public static int next_black=0x7f0200bf;
+        public static int not_data_listview=0x7f0200c0;
+        public static int notification_template_icon_bg=0x7f020108;
+        public static int person=0x7f0200c1;
+        public static int progressbar=0x7f0200c2;
+        public static int radio_dark=0x7f0200c3;
+        public static int radio_light=0x7f0200c4;
+        public static int refresh_pull=0x7f0200c5;
+        public static int refresh_pull_success=0x7f0200c6;
+        public static int rotate_blue_trade_refresh_progressbar=0x7f0200c7;
+        public static int sale_all_corner_shi=0x7f0200c8;
+        public static int sale_left_corner_kong=0x7f0200c9;
+        public static int sale_left_corner_shi=0x7f0200ca;
+        public static int sale_no_corner_kong=0x7f0200cb;
+        public static int sale_right_conner_kong=0x7f0200cc;
+        public static int sale_right_corner_shi=0x7f0200cd;
+        public static int sale_selector_button=0x7f0200ce;
+        public static int sale_selector_left=0x7f0200cf;
+        public static int sale_selector_right=0x7f0200d0;
+        public static int sale_trade_button=0x7f0200d1;
+        public static int seach=0x7f0200d2;
+        public static int selector_bg_btn_toactive=0x7f0200d3;
+        public static int selector_delete_text=0x7f0200d4;
+        public static int selector_indicator=0x7f0200d5;
+        public static int selector_press_list_item=0x7f0200d6;
+        public static int selector_press_list_item2=0x7f0200d7;
+        public static int selector_text_tab=0x7f0200d8;
+        public static int selector_trade_login_btn=0x7f0200d9;
+        public static int shadow_bottom=0x7f0200da;
+        public static int shadow_left=0x7f0200db;
+        public static int shadow_right=0x7f0200dc;
+        public static int shape_bg_alph_popwindow=0x7f0200dd;
+        public static int shape_bg_btn_num=0x7f0200de;
+        public static int shape_bg_trade_tab_credit=0x7f0200df;
+        public static int shape_bg_trade_tab_credit_select=0x7f0200e0;
+        public static int shape_bg_trade_tab_normal=0x7f0200e1;
+        public static int shape_bg_trade_tab_normal_select=0x7f0200e2;
+        public static int shape_bg_tv_open_account=0x7f0200e3;
+        public static int shape_bg_tv_open_account_bigradius=0x7f0200e4;
+        public static int shape_btn_pressed=0x7f0200e5;
+        public static int shape_normal=0x7f0200e6;
+        public static int text_indicator=0x7f0200e7;
+        public static int theme_blue_pull_to_refresh_loading=0x7f0200e8;
+        public static int trade_buy=0x7f0200e9;
+        public static int trade_buy_selected=0x7f0200ea;
+        public static int trade_sale=0x7f0200eb;
+        public static int trade_sale_selected=0x7f0200ec;
+        public static int trans_money_icon=0x7f0200ed;
+        public static int wheel_timebtn=0x7f0200ee;
+        public static int wheel_val=0x7f0200ef;
+        public static int yunloading01=0x7f0200f0;
+        public static int yunloading02=0x7f0200f1;
+        public static int yunloading03=0x7f0200f2;
+        public static int yunloading04=0x7f0200f3;
+        public static int yunloading05=0x7f0200f4;
+        public static int yunloading06=0x7f0200f5;
+        public static int yunloading07=0x7f0200f6;
+        public static int yunloading08=0x7f0200f7;
+        public static int yunloading09=0x7f0200f8;
+        public static int yunloading10=0x7f0200f9;
+        public static int yunloading11=0x7f0200fa;
+        public static int yunloading12=0x7f0200fb;
+        public static int yunloading13=0x7f0200fc;
+        public static int yunloading14=0x7f0200fd;
+        public static int yunloading15=0x7f0200fe;
+        public static int yunloading16=0x7f0200ff;
+        public static int yunloading17=0x7f020100;
+        public static int yunloading18=0x7f020101;
+        public static int yunloading19=0x7f020102;
+        public static int yunloading20=0x7f020103;
+        public static int yunloading21=0x7f020104;
+        public static int yunloading22=0x7f020105;
+        public static int yunloading23=0x7f020106;
+        public static int yunloading24=0x7f020107;
     }
     public static final class id {
-        public static int LinearLayout=0x7f0e00bc;
+        public static int LinearLayout=0x7f0e00b7;
         public static int about_version_code=0x7f0e0000;
-        public static int account_large_photo=0x7f0e00ac;
-        public static int action0=0x7f0e05e5;
-        public static int action_bar=0x7f0e0076;
+        public static int account_large_photo=0x7f0e00a7;
+        public static int action0=0x7f0e05df;
+        public static int action_bar=0x7f0e0073;
         public static int action_bar_activity_content=0x7f0e0001;
-        public static int action_bar_container=0x7f0e0075;
-        public static int action_bar_root=0x7f0e0071;
+        public static int action_bar_container=0x7f0e0072;
+        public static int action_bar_root=0x7f0e006e;
         public static int action_bar_spinner=0x7f0e0002;
-        public static int action_bar_subtitle=0x7f0e0057;
-        public static int action_bar_title=0x7f0e0056;
-        public static int action_context_bar=0x7f0e0077;
-        public static int action_divider=0x7f0e05e9;
+        public static int action_bar_subtitle=0x7f0e0054;
+        public static int action_bar_title=0x7f0e0053;
+        public static int action_context_bar=0x7f0e0074;
+        public static int action_divider=0x7f0e05e3;
         public static int action_menu_divider=0x7f0e0003;
         public static int action_menu_presenter=0x7f0e0004;
-        public static int action_mode_bar=0x7f0e0073;
-        public static int action_mode_bar_stub=0x7f0e0072;
-        public static int action_mode_close_button=0x7f0e0058;
-        public static int activity_chooser_view_content=0x7f0e0059;
-        public static int alertTitle=0x7f0e0065;
-        public static int always=0x7f0e0051;
+        public static int action_mode_bar=0x7f0e0070;
+        public static int action_mode_bar_stub=0x7f0e006f;
+        public static int action_mode_close_button=0x7f0e0055;
+        public static int activity_chooser_view_content=0x7f0e0056;
+        public static int alertTitle=0x7f0e0062;
+        public static int always=0x7f0e004e;
         public static int auto_focus=0x7f0e0005;
-        public static int back=0x7f0e008f;
-        public static int beginning=0x7f0e004e;
-        public static int bottom_list_loading=0x7f0e0346;
-        public static int btnCancel=0x7f0e0603;
-        public static int btnSubmit=0x7f0e0604;
-        public static int btn_account_fragment=0x7f0e0176;
-        public static int btn_back=0x7f0e0098;
-        public static int btn_back_in_fragment=0x7f0e0171;
-        public static int btn_bank_out_commit=0x7f0e00ee;
-        public static int btn_buy_or_sell=0x7f0e0110;
-        public static int btn_click_commit=0x7f0e029c;
-        public static int btn_click_open=0x7f0e016e;
-        public static int btn_fund_commmit=0x7f0e01bd;
-        public static int btn_fund_convert=0x7f0e01b3;
-        public static int btn_fund_open_account=0x7f0e01b7;
-        public static int btn_fund_ransom=0x7f0e01c4;
-        public static int btn_fund_subtion=0x7f0e0256;
-        public static int btn_fund_subtricbue=0x7f0e01db;
-        public static int btn_fund_trans=0x7f0e01e2;
-        public static int btn_hk_action_commit=0x7f0e01f5;
-        public static int btn_hk_vote_commit=0x7f0e0214;
-        public static int btn_in_commit_transfer=0x7f0e00e5;
-        public static int btn_level_divide=0x7f0e0241;
-        public static int btn_level_merger=0x7f0e0246;
-        public static int btn_login=0x7f0e019f;
-        public static int btn_login_click=0x7f0e0186;
-        public static int btn_logout=0x7f0e009b;
-        public static int btn_logout_in_fragment=0x7f0e0173;
-        public static int btn_onek_click=0x7f0e0159;
-        public static int btn_onem_transfer=0x7f0e015f;
-        public static int btn_pwd_click=0x7f0e0138;
-        public static int btn_r_cash_commit=0x7f0e02ba;
-        public static int btn_r_contract_extension_commit=0x7f0e02c5;
-        public static int btn_r_stock_return_commit=0x7f0e033f;
-        public static int btn_switch=0x7f0e019e;
-        public static int btn_total_new_stock=0x7f0e0270;
-        public static int btn_trans_hq_select=0x7f0e0369;
-        public static int btn_trans_trade_commit=0x7f0e0381;
-        public static int btr_commit=0x7f0e0268;
-        public static int bu_subscribe=0x7f0e0277;
-        public static int button1=0x7f0e009d;
-        public static int buttonClick=0x7f0e00b2;
-        public static int buttonPanel=0x7f0e0060;
-        public static int button_back=0x7f0e00a9;
-        public static int cancel_action=0x7f0e05e6;
-        public static int category_btn=0x7f0e025f;
-        public static int checkbox=0x7f0e006e;
-        public static int checkbox_agreement=0x7f0e016c;
-        public static int checkmark=0x7f0e05e4;
-        public static int chronometer=0x7f0e05ec;
-        public static int circle=0x7f0e003c;
-        public static int ckb_contract_item_select=0x7f0e0529;
-        public static int code_content=0x7f0e00a0;
-        public static int code_image=0x7f0e00a2;
-        public static int collapseActionView=0x7f0e0052;
-        public static int combinfee_hk=0x7f0e0423;
-        public static int commit=0x7f0e00b3;
-        public static int container=0x7f0e05db;
-        public static int contentPanel=0x7f0e0066;
-        public static int contract_not_cut_date=0x7f0e0564;
-        public static int contract_show_data_credit=0x7f0e019b;
-        public static int cover=0x7f0e05df;
-        public static int cropImageView=0x7f0e008d;
-        public static int custom=0x7f0e006c;
-        public static int customPanel=0x7f0e006b;
+        public static int back=0x7f0e008c;
+        public static int beginning=0x7f0e004b;
+        public static int bottom_list_loading=0x7f0e0340;
+        public static int btnCancel=0x7f0e05fe;
+        public static int btnSubmit=0x7f0e05ff;
+        public static int btn_account_fragment=0x7f0e0170;
+        public static int btn_back=0x7f0e0095;
+        public static int btn_back_in_fragment=0x7f0e016b;
+        public static int btn_bank_out_commit=0x7f0e00e9;
+        public static int btn_buy_or_sell=0x7f0e010a;
+        public static int btn_click_commit=0x7f0e0296;
+        public static int btn_click_open=0x7f0e0168;
+        public static int btn_fund_commmit=0x7f0e01b7;
+        public static int btn_fund_convert=0x7f0e01ad;
+        public static int btn_fund_open_account=0x7f0e01b1;
+        public static int btn_fund_ransom=0x7f0e01be;
+        public static int btn_fund_subtion=0x7f0e0250;
+        public static int btn_fund_subtricbue=0x7f0e01d5;
+        public static int btn_fund_trans=0x7f0e01dc;
+        public static int btn_hk_action_commit=0x7f0e01ef;
+        public static int btn_hk_vote_commit=0x7f0e020e;
+        public static int btn_in_commit_transfer=0x7f0e00e0;
+        public static int btn_level_divide=0x7f0e023b;
+        public static int btn_level_merger=0x7f0e0240;
+        public static int btn_login=0x7f0e0199;
+        public static int btn_login_click=0x7f0e0180;
+        public static int btn_logout=0x7f0e0098;
+        public static int btn_logout_in_fragment=0x7f0e016d;
+        public static int btn_onek_click=0x7f0e0153;
+        public static int btn_onem_transfer=0x7f0e0159;
+        public static int btn_pwd_click=0x7f0e0132;
+        public static int btn_r_cash_commit=0x7f0e02b4;
+        public static int btn_r_contract_extension_commit=0x7f0e02bf;
+        public static int btn_r_stock_return_commit=0x7f0e0339;
+        public static int btn_switch=0x7f0e0198;
+        public static int btn_total_new_stock=0x7f0e026a;
+        public static int btn_trans_hq_select=0x7f0e0363;
+        public static int btn_trans_trade_commit=0x7f0e037b;
+        public static int btr_commit=0x7f0e0262;
+        public static int bu_subscribe=0x7f0e0271;
+        public static int button1=0x7f0e009a;
+        public static int buttonClick=0x7f0e00ad;
+        public static int buttonPanel=0x7f0e005d;
+        public static int button_back=0x7f0e00a4;
+        public static int cancel_action=0x7f0e05e0;
+        public static int category_btn=0x7f0e0259;
+        public static int checkbox=0x7f0e006b;
+        public static int checkbox_agreement=0x7f0e0166;
+        public static int checkmark=0x7f0e05de;
+        public static int chronometer=0x7f0e05e6;
+        public static int circle=0x7f0e0039;
+        public static int ckb_contract_item_select=0x7f0e0523;
+        public static int code_content=0x7f0e009d;
+        public static int code_image=0x7f0e009f;
+        public static int collapseActionView=0x7f0e004f;
+        public static int combinfee_hk=0x7f0e041d;
+        public static int commit=0x7f0e00ae;
+        public static int container=0x7f0e05d5;
+        public static int contentPanel=0x7f0e0063;
+        public static int contract_not_cut_date=0x7f0e055e;
+        public static int contract_show_data_credit=0x7f0e0195;
+        public static int cover=0x7f0e05d9;
+        public static int cropImageView=0x7f0e008a;
+        public static int custom=0x7f0e0069;
+        public static int customPanel=0x7f0e0068;
         public static int decode=0x7f0e0006;
         public static int decode_failed=0x7f0e0007;
         public static int decode_succeeded=0x7f0e0008;
-        public static int decor_content_parent=0x7f0e0074;
-        public static int default_activity_button=0x7f0e005c;
-        public static int dialog_line1=0x7f0e00b8;
-        public static int disableHome=0x7f0e0033;
-        public static int ed_entrust_num=0x7f0e0106;
-        public static int ed_subscribe_amount=0x7f0e0275;
-        public static int edit_query=0x7f0e0078;
-        public static int edt_bank_in_pwd=0x7f0e00e2;
-        public static int edt_bank_in_pwd2=0x7f0e00e4;
-        public static int edt_bank_input_pwd=0x7f0e00b4;
-        public static int edt_bank_out_money=0x7f0e00e9;
-        public static int edt_bank_out_pwd1=0x7f0e00eb;
-        public static int edt_bank_out_pwd2=0x7f0e00ed;
-        public static int edt_capital_code=0x7f0e030a;
-        public static int edt_collater_code=0x7f0e02fc;
-        public static int edt_collater_out_num=0x7f0e00c8;
-        public static int edt_entrust_num=0x7f0e0298;
-        public static int edt_entrust_price=0x7f0e0295;
-        public static int edt_fund_code=0x7f0e01d4;
-        public static int edt_fund_dire_code=0x7f0e01b8;
-        public static int edt_fund_in_name=0x7f0e01ae;
-        public static int edt_fund_out_num=0x7f0e01b1;
-        public static int edt_fund_pledge_num=0x7f0e01bb;
-        public static int edt_fund_ransom_count=0x7f0e01c2;
-        public static int edt_fund_ransom_price=0x7f0e024a;
-        public static int edt_fund_subscribe_money=0x7f0e01d9;
-        public static int edt_fund_subtion_money=0x7f0e0254;
-        public static int edt_fund_subtion_num=0x7f0e0253;
-        public static int edt_give_up_num=0x7f0e0267;
-        public static int edt_hk_action_code=0x7f0e01f3;
-        public static int edt_hk_action_entrust_num=0x7f0e01f4;
-        public static int edt_hk_action_stock_code=0x7f0e01ef;
-        public static int edt_hk_vote_code=0x7f0e020d;
-        public static int edt_hk_vote_give_up=0x7f0e0213;
-        public static int edt_hk_vote_no=0x7f0e0212;
-        public static int edt_hk_vote_no1=0x7f0e020f;
-        public static int edt_hk_vote_no2=0x7f0e0210;
-        public static int edt_hk_vote_yes=0x7f0e0211;
-        public static int edt_input_momey=0x7f0e00e0;
-        public static int edt_level_divide=0x7f0e0240;
-        public static int edt_level_divide_code=0x7f0e023d;
-        public static int edt_level_fund_code=0x7f0e0251;
-        public static int edt_level_merger=0x7f0e0245;
-        public static int edt_level_merger_code=0x7f0e0242;
-        public static int edt_new_num=0x7f0e00c0;
-        public static int edt_onek_pwd=0x7f0e0158;
-        public static int edt_onem_money=0x7f0e015d;
-        public static int edt_onem_pwd=0x7f0e015e;
-        public static int edt_pwd_new=0x7f0e0136;
-        public static int edt_pwd_old=0x7f0e0135;
-        public static int edt_pwd_sure=0x7f0e0137;
-        public static int edt_r_cash_num=0x7f0e02b8;
-        public static int edt_r_trans_account=0x7f0e00c9;
-        public static int edt_r_trans_pwd=0x7f0e00ca;
-        public static int edt_ransom_code=0x7f0e0247;
-        public static int edt_stock_code=0x7f0e00f0;
-        public static int edt_stock_num=0x7f0e033e;
-        public static int edt_stock_price=0x7f0e01ec;
-        public static int edt_stock_price_after=0x7f0e00ff;
-        public static int edt_stock_price_pre=0x7f0e0101;
-        public static int edt_ticket_code=0x7f0e0310;
-        public static int edt_trans_hq_input=0x7f0e0368;
-        public static int edt_trans_num=0x7f0e01e0;
-        public static int edt_trans_organ_code=0x7f0e01df;
-        public static int edt_trans_trade_code=0x7f0e0374;
-        public static int edt_trans_trade_num=0x7f0e037a;
-        public static int edt_trans_trade_out_account=0x7f0e0380;
-        public static int edt_trans_trade_out_xi=0x7f0e037f;
-        public static int edt_trans_trade_price=0x7f0e0377;
-        public static int edt_trans_trade_yue_num=0x7f0e037e;
-        public static int edt_win_change_sort=0x7f0e00c6;
+        public static int decor_content_parent=0x7f0e0071;
+        public static int default_activity_button=0x7f0e0059;
+        public static int dialog_line1=0x7f0e00b3;
+        public static int disableHome=0x7f0e0031;
+        public static int ed_entrust_num=0x7f0e0101;
+        public static int ed_subscribe_amount=0x7f0e026f;
+        public static int edit_query=0x7f0e0075;
+        public static int edt_bank_in_pwd=0x7f0e00dd;
+        public static int edt_bank_in_pwd2=0x7f0e00df;
+        public static int edt_bank_input_pwd=0x7f0e00af;
+        public static int edt_bank_out_money=0x7f0e00e4;
+        public static int edt_bank_out_pwd1=0x7f0e00e6;
+        public static int edt_bank_out_pwd2=0x7f0e00e8;
+        public static int edt_capital_code=0x7f0e0304;
+        public static int edt_collater_code=0x7f0e02f6;
+        public static int edt_collater_out_num=0x7f0e00c3;
+        public static int edt_entrust_num=0x7f0e0292;
+        public static int edt_entrust_price=0x7f0e028f;
+        public static int edt_fund_code=0x7f0e01ce;
+        public static int edt_fund_dire_code=0x7f0e01b2;
+        public static int edt_fund_in_name=0x7f0e01a8;
+        public static int edt_fund_out_num=0x7f0e01ab;
+        public static int edt_fund_pledge_num=0x7f0e01b5;
+        public static int edt_fund_ransom_count=0x7f0e01bc;
+        public static int edt_fund_ransom_price=0x7f0e0244;
+        public static int edt_fund_subscribe_money=0x7f0e01d3;
+        public static int edt_fund_subtion_money=0x7f0e024e;
+        public static int edt_fund_subtion_num=0x7f0e024d;
+        public static int edt_give_up_num=0x7f0e0261;
+        public static int edt_hk_action_code=0x7f0e01ed;
+        public static int edt_hk_action_entrust_num=0x7f0e01ee;
+        public static int edt_hk_action_stock_code=0x7f0e01e9;
+        public static int edt_hk_vote_code=0x7f0e0207;
+        public static int edt_hk_vote_give_up=0x7f0e020d;
+        public static int edt_hk_vote_no=0x7f0e020c;
+        public static int edt_hk_vote_no1=0x7f0e0209;
+        public static int edt_hk_vote_no2=0x7f0e020a;
+        public static int edt_hk_vote_yes=0x7f0e020b;
+        public static int edt_input_momey=0x7f0e00db;
+        public static int edt_level_divide=0x7f0e023a;
+        public static int edt_level_divide_code=0x7f0e0237;
+        public static int edt_level_fund_code=0x7f0e024b;
+        public static int edt_level_merger=0x7f0e023f;
+        public static int edt_level_merger_code=0x7f0e023c;
+        public static int edt_new_num=0x7f0e00bb;
+        public static int edt_onek_pwd=0x7f0e0152;
+        public static int edt_onem_money=0x7f0e0157;
+        public static int edt_onem_pwd=0x7f0e0158;
+        public static int edt_pwd_new=0x7f0e0130;
+        public static int edt_pwd_old=0x7f0e012f;
+        public static int edt_pwd_sure=0x7f0e0131;
+        public static int edt_r_cash_num=0x7f0e02b2;
+        public static int edt_r_trans_account=0x7f0e00c4;
+        public static int edt_r_trans_pwd=0x7f0e00c5;
+        public static int edt_ransom_code=0x7f0e0241;
+        public static int edt_stock_code=0x7f0e00eb;
+        public static int edt_stock_num=0x7f0e0338;
+        public static int edt_stock_price=0x7f0e01e6;
+        public static int edt_stock_price_after=0x7f0e00fa;
+        public static int edt_stock_price_pre=0x7f0e00fc;
+        public static int edt_ticket_code=0x7f0e030a;
+        public static int edt_trans_hq_input=0x7f0e0362;
+        public static int edt_trans_num=0x7f0e01da;
+        public static int edt_trans_organ_code=0x7f0e01d9;
+        public static int edt_trans_trade_code=0x7f0e036e;
+        public static int edt_trans_trade_num=0x7f0e0374;
+        public static int edt_trans_trade_out_account=0x7f0e037a;
+        public static int edt_trans_trade_out_xi=0x7f0e0379;
+        public static int edt_trans_trade_price=0x7f0e0371;
+        public static int edt_trans_trade_yue_num=0x7f0e0378;
+        public static int edt_win_change_sort=0x7f0e00c1;
         public static int encode_failed=0x7f0e0009;
         public static int encode_succeeded=0x7f0e000a;
-        public static int end=0x7f0e004f;
-        public static int end_padder=0x7f0e05f0;
-        public static int entrust_price_way=0x7f0e0504;
-        public static int et_password=0x7f0e0384;
-        public static int et_verify=0x7f0e0385;
-        public static int exercise_end_date=0x7f0e0505;
-        public static int exercise_price=0x7f0e0506;
-        public static int expand_activities_button=0x7f0e005a;
-        public static int expanded_menu=0x7f0e006d;
-        public static int fl_account_container=0x7f0e00f1;
-        public static int fl_container=0x7f0e0096;
-        public static int fl_container_childe=0x7f0e025b;
-        public static int fl_dialog_container=0x7f0e00b7;
-        public static int fl_fragment_sub_container=0x7f0e0174;
-        public static int fl_header=0x7f0e00a8;
-        public static int fl_r_choose_contract=0x7f0e02bb;
-        public static int footer=0x7f0e025e;
-        public static int fraction=0x7f0e003d;
-        public static int fragment_ab_list_info_progressbar=0x7f0e014c;
-        public static int generate_button=0x7f0e00a1;
-        public static int gesture_tip_layout=0x7f0e0091;
-        public static int grid=0x7f0e025c;
+        public static int end=0x7f0e004c;
+        public static int end_padder=0x7f0e05eb;
+        public static int entrust_price_way=0x7f0e04fe;
+        public static int et_password=0x7f0e037e;
+        public static int et_verify=0x7f0e037f;
+        public static int exercise_end_date=0x7f0e04ff;
+        public static int exercise_price=0x7f0e0500;
+        public static int expand_activities_button=0x7f0e0057;
+        public static int expanded_menu=0x7f0e006a;
+        public static int fl_account_container=0x7f0e00ec;
+        public static int fl_container=0x7f0e0093;
+        public static int fl_container_childe=0x7f0e0255;
+        public static int fl_dialog_container=0x7f0e00b2;
+        public static int fl_fragment_sub_container=0x7f0e016e;
+        public static int fl_header=0x7f0e00a3;
+        public static int fl_r_choose_contract=0x7f0e02b5;
+        public static int footer=0x7f0e0258;
+        public static int fraction=0x7f0e003a;
+        public static int fragment_ab_list_info_progressbar=0x7f0e0146;
+        public static int generate_button=0x7f0e009e;
+        public static int gesture_tip_layout=0x7f0e008e;
+        public static int grid=0x7f0e0256;
         public static int gridview=0x7f0e000b;
-        public static int gv_fast_menu=0x7f0e027a;
-        public static int gv_fast_menu_credit=0x7f0e0194;
-        public static int gv_more_menu=0x7f0e027d;
-        public static int gv_more_menu_credit=0x7f0e0197;
+        public static int gv_fast_menu=0x7f0e0274;
+        public static int gv_fast_menu_credit=0x7f0e018e;
+        public static int gv_more_menu=0x7f0e0277;
+        public static int gv_more_menu_credit=0x7f0e0191;
         public static int hierarchy=0x7f0e000c;
-        public static int hold_stock=0x7f0e0501;
-        public static int hold_stock2=0x7f0e0502;
-        public static int hold_stock3=0x7f0e0503;
+        public static int hold_stock=0x7f0e04fb;
+        public static int hold_stock2=0x7f0e04fc;
+        public static int hold_stock3=0x7f0e04fd;
         public static int home=0x7f0e000d;
-        public static int homeAsUp=0x7f0e0034;
-        public static int hsll_content=0x7f0e00a4;
-        public static int hsll_part1=0x7f0e014f;
-        public static int hsll_part2=0x7f0e0152;
-        public static int ibt_add=0x7f0e0102;
-        public static int ibt_subtract=0x7f0e00fc;
-        public static int icon=0x7f0e005e;
-        public static int id_tab_txt=0x7f0e000e;
-        public static int ifRoom=0x7f0e0053;
-        public static int im_right=0x7f0e009c;
-        public static int image=0x7f0e005b;
-        public static int image_grid=0x7f0e008e;
-        public static int in_fund_purchase_money_ll=0x7f0e0230;
-        public static int in_fund_purchase_upper_limit_ll=0x7f0e022d;
-        public static int in_fund_subscription_money_ll=0x7f0e022a;
-        public static int in_fund_subscription_money_title=0x7f0e022b;
-        public static int in_fund_subscription_upper_limit_ll=0x7f0e0226;
-        public static int in_fund_subscription_upper_limit_title=0x7f0e0227;
-        public static int include1=0x7f0e0087;
-        public static int indcator_bottom_circle=0x7f0e0134;
-        public static int indcator_left=0x7f0e0258;
-        public static int indcator_right=0x7f0e025a;
-        public static int indicator=0x7f0e05e0;
-        public static int info=0x7f0e05ef;
-        public static int isexpand=0x7f0e000f;
-        public static int iv_account_phone=0x7f0e05dd;
-        public static int iv_back=0x7f0e0389;
-        public static int iv_delete_num=0x7f0e0107;
-        public static int iv_delete_price=0x7f0e0100;
-        public static int iv_fast_menu_icon=0x7f0e03ea;
-        public static int iv_item_select=0x7f0e03df;
-        public static int iv_left_selected=0x7f0e01e9;
-        public static int iv_more_can_rotate=0x7f0e027c;
-        public static int iv_more_can_rotate_credit=0x7f0e0196;
-        public static int iv_right_selected=0x7f0e01eb;
-        public static int iv_show_security_code=0x7f0e0386;
-        public static int launch_product_query=0x7f0e0010;
-        public static int layout=0x7f0e00b0;
-        public static int layout_root=0x7f0e008b;
-        public static int lin_a_revocation=0x7f0e03bd;
-        public static int lin_bottom_revocation=0x7f0e03e0;
-        public static int lin_choose_contract=0x7f0e052b;
-        public static int lin_entrust_type=0x7f0e02c6;
-        public static int lin_have_data=0x7f0e026e;
-        public static int lin_have_data_set=0x7f0e0156;
-        public static int lin_have_date=0x7f0e0262;
-        public static int lin_head=0x7f0e01f6;
-        public static int lin_head_contract=0x7f0e02af;
-        public static int lin_head_expand_contract=0x7f0e0178;
-        public static int lin_head_hold=0x7f0e02ec;
-        public static int lin_head_return_money=0x7f0e02bd;
-        public static int lin_head_return_stock=0x7f0e02bc;
-        public static int lin_in_pwd_text1=0x7f0e00e1;
-        public static int lin_in_pwd_text2=0x7f0e00e3;
-        public static int lin_lay_collater=0x7f0e02fb;
-        public static int lin_lay_ticket=0x7f0e030f;
-        public static int lin_level_revocation=0x7f0e04b3;
-        public static int lin_lin=0x7f0e0409;
-        public static int lin_lin_r=0x7f0e0537;
-        public static int lin_lin_revocation=0x7f0e0481;
-        public static int lin_loading=0x7f0e0260;
-        public static int lin_loading_contract=0x7f0e02cb;
-        public static int lin_loading_object=0x7f0e02cf;
-        public static int lin_loading_set=0x7f0e00db;
-        public static int lin_no_data_set=0x7f0e0261;
-        public static int lin_not_data_contract=0x7f0e02cc;
-        public static int lin_not_data_object=0x7f0e02d0;
-        public static int lin_not_data_set=0x7f0e014e;
-        public static int lin_object_capital=0x7f0e0309;
-        public static int lin_option_revocation=0x7f0e0519;
-        public static int lin_out_pwd_text1=0x7f0e00ea;
-        public static int lin_out_pwd_text2=0x7f0e00ec;
-        public static int lin_proper_one=0x7f0e0301;
-        public static int lin_proper_three=0x7f0e032f;
-        public static int lin_proper_two=0x7f0e0324;
-        public static int lin_r_head_contract=0x7f0e02ca;
-        public static int lin_r_head_object=0x7f0e02ce;
-        public static int lin_r_revocation=0x7f0e052e;
-        public static int lin_r_stock_return_pop=0x7f0e0339;
-        public static int lin_select_data_end=0x7f0e0149;
-        public static int lin_select_data_start=0x7f0e0147;
-        public static int lin_trans_line_one=0x7f0e0596;
-        public static int lin_trans_line_two=0x7f0e0599;
-        public static int lin_trans_trade_head=0x7f0e0382;
-        public static int lin_transfer_in=0x7f0e00dc;
-        public static int lin_transfer_out=0x7f0e00e6;
-        public static int line1=0x7f0e05ea;
-        public static int line3=0x7f0e05ee;
-        public static int listMode=0x7f0e0030;
-        public static int list_item=0x7f0e005d;
-        public static int ll_account_after=0x7f0e00f4;
-        public static int ll_account_pre=0x7f0e00f2;
-        public static int ll_buy1=0x7f0e0123;
-        public static int ll_buy2=0x7f0e0126;
-        public static int ll_buy3=0x7f0e0129;
-        public static int ll_buy4=0x7f0e012c;
-        public static int ll_buy5=0x7f0e012f;
-        public static int ll_buy_or_sell_list_loading=0x7f0e01ed;
-        public static int ll_capital_have_data=0x7f0e0373;
-        public static int ll_capital_list_loading=0x7f0e030d;
-        public static int ll_click_parent=0x7f0e03dd;
-        public static int ll_code_name=0x7f0e00ef;
-        public static int ll_collater_list_loading=0x7f0e02ff;
-        public static int ll_dialog_button_bar=0x7f0e00b9;
-        public static int ll_dialog_title=0x7f0e00b5;
-        public static int ll_firstRow=0x7f0e018e;
-        public static int ll_fselect_trade_loading=0x7f0e01b4;
-        public static int ll_fund_list_loading=0x7f0e0278;
-        public static int ll_hold_list_item_expand=0x7f0e03aa;
-        public static int ll_hold_list_item_view=0x7f0e03a9;
-        public static int ll_home_layout=0x7f0e0184;
-        public static int ll_input_amount=0x7f0e0104;
-        public static int ll_input_price=0x7f0e00fb;
-        public static int ll_list_loading=0x7f0e0155;
-        public static int ll_main_container_hold=0x7f0e0187;
-        public static int ll_main_container_hold_non=0x7f0e0185;
-        public static int ll_market_entrust=0x7f0e02a2;
-        public static int ll_myhold_list_loading=0x7f0e0153;
-        public static int ll_parent=0x7f0e019d;
-        public static int ll_points=0x7f0e0150;
-        public static int ll_price_after=0x7f0e00fe;
-        public static int ll_r_choose_contract=0x7f0e02b4;
-        public static int ll_r_choose_shock=0x7f0e02ab;
-        public static int ll_risk_list_loading=0x7f0e01cc;
-        public static int ll_risk_test_paper=0x7f0e01d2;
-        public static int ll_risk_test_result=0x7f0e01cd;
-        public static int ll_sale1=0x7f0e011f;
-        public static int ll_sale2=0x7f0e011c;
-        public static int ll_sale3=0x7f0e0119;
-        public static int ll_sale4=0x7f0e0116;
-        public static int ll_sale5=0x7f0e0113;
-        public static int ll_secondRow=0x7f0e02e4;
-        public static int ll_stock_num_after=0x7f0e0105;
-        public static int ll_ticket_list_loading=0x7f0e0313;
-        public static int ll_whole_login_fragment=0x7f0e0139;
-        public static int lock_pattern_indicator=0x7f0e0092;
-        public static int lock_pattern_view=0x7f0e0094;
-        public static int lv_account=0x7f0e05f6;
-        public static int lv_fund_hold_stock=0x7f0e01b5;
-        public static int lv_have_head=0x7f0e0179;
-        public static int lv_hold=0x7f0e0344;
-        public static int lv_my_hold_stock=0x7f0e0154;
-        public static int lv_new_stock_list=0x7f0e0279;
-        public static int lv_one_key=0x7f0e015a;
-        public static int lv_one_key_transfer=0x7f0e0160;
-        public static int lv_pop=0x7f0e0177;
-        public static int lv_r_choose_contract=0x7f0e02be;
-        public static int lv_r_select_capital=0x7f0e030e;
-        public static int lv_r_select_collater=0x7f0e0300;
-        public static int lv_r_select_ticket=0x7f0e0314;
-        public static int lv_refresh_list=0x7f0e014d;
-        public static int lv_refresh_pop=0x7f0e0181;
-        public static int lv_revotion=0x7f0e0347;
-        public static int lv_show_contract=0x7f0e02cd;
-        public static int lv_show_object=0x7f0e02d2;
-        public static int lv_show_stock=0x7f0e01ee;
-        public static int lv_today_entrust=0x7f0e0348;
-        public static int mask=0x7f0e05e3;
-        public static int media_actions=0x7f0e05e8;
-        public static int middle=0x7f0e0050;
-        public static int multiply=0x7f0e003e;
-        public static int name=0x7f0e05e1;
-        public static int never=0x7f0e0054;
-        public static int next=0x7f0e0090;
-        public static int none=0x7f0e0035;
-        public static int normal=0x7f0e0031;
-        public static int not_show=0x7f0e004b;
-        public static int nsv_for_activity=0x7f0e0089;
-        public static int nsv_multi_trade=0x7f0e00a3;
-        public static int options1=0x7f0e038c;
-        public static int options2=0x7f0e038d;
-        public static int options3=0x7f0e038e;
-        public static int optionspicker=0x7f0e0605;
-        public static int parentPanel=0x7f0e0062;
-        public static int pb_loadImage=0x7f0e0387;
-        public static int placeholder=0x7f0e05dc;
-        public static int pop_all_agree=0x7f0e05f2;
-        public static int pop_all_cancel=0x7f0e05f5;
-        public static int pop_all_give_up=0x7f0e05f4;
-        public static int pop_all_oppose=0x7f0e05f3;
-        public static int pop_layout=0x7f0e05f1;
-        public static int preview=0x7f0e00b1;
-        public static int preview_view=0x7f0e0085;
-        public static int pro_loaing_money=0x7f0e00df;
-        public static int progressBar=0x7f0e0122;
-        public static int progressBar1=0x7f0e00bd;
-        public static int progress_circular=0x7f0e0011;
-        public static int progress_horizontal=0x7f0e0012;
-        public static int pull_to_load_footer_content=0x7f0e05f8;
-        public static int pull_to_load_footer_hint_textview=0x7f0e05fa;
-        public static int pull_to_load_footer_progressbar=0x7f0e05f9;
-        public static int pull_to_refresh_header_animimg=0x7f0e0602;
-        public static int pull_to_refresh_header_arrow=0x7f0e0600;
-        public static int pull_to_refresh_header_content=0x7f0e05fb;
-        public static int pull_to_refresh_header_hint_textview=0x7f0e05fd;
-        public static int pull_to_refresh_header_progressbar=0x7f0e0601;
-        public static int pull_to_refresh_header_text=0x7f0e05fc;
-        public static int pull_to_refresh_header_time=0x7f0e05ff;
-        public static int pull_to_refresh_last_update_time_text=0x7f0e05fe;
-        public static int qr_picture=0x7f0e00a7;
-        public static int qrcode_bitmap=0x7f0e009f;
-        public static int quit=0x7f0e0013;
-        public static int r_cash_fragment=0x7f0e02b0;
-        public static int radio=0x7f0e0070;
-        public static int ratio_16_9=0x7f0e0043;
-        public static int ratio_1_1=0x7f0e0044;
-        public static int ratio_3_4=0x7f0e0045;
-        public static int ratio_4_3=0x7f0e0046;
-        public static int ratio_9_16=0x7f0e0047;
-        public static int ratio_custom=0x7f0e0048;
-        public static int ratio_fit_image=0x7f0e0049;
-        public static int ratio_free=0x7f0e004a;
-        public static int rb_add_vote_agree=0x7f0e04d0;
-        public static int rb_add_vote_give_up=0x7f0e04d2;
-        public static int rb_add_vote_opppse=0x7f0e04d1;
-        public static int rb_buy_or_sale=0x7f0e02a9;
-        public static int rb_cash_return=0x7f0e02b2;
-        public static int rb_cash_return_contract=0x7f0e02b3;
-        public static int rb_contract=0x7f0e02c8;
-        public static int rb_foot_one_key_sub=0x7f0e026f;
-        public static int rb_object=0x7f0e02c9;
-        public static int rb_one_key_sub=0x7f0e04e9;
-        public static int rb_option_put=0x7f0e02a1;
-        public static int rb_option_subscription=0x7f0e02a0;
-        public static int rb_r_liability=0x7f0e0317;
-        public static int rb_r_limit=0x7f0e0318;
-        public static int rb_r_money=0x7f0e0316;
-        public static int rb_return_stock=0x7f0e0338;
-        public static int rb_select_contract=0x7f0e02aa;
-        public static int rb_share_set_cash=0x7f0e041b;
-        public static int rb_share_set_hold=0x7f0e041a;
-        public static int rb_trans_hq_all=0x7f0e0365;
-        public static int rb_trans_hq_buy=0x7f0e0366;
-        public static int re_root_layout=0x7f0e0175;
-        public static int real_base_title=0x7f0e0097;
-        public static int restart_preview=0x7f0e0014;
-        public static int result=0x7f0e009e;
-        public static int return_scan_result=0x7f0e0015;
-        public static int rg_add_vote=0x7f0e04cf;
-        public static int rg_buy_or_sale=0x7f0e02a8;
-        public static int rg_cash_return=0x7f0e02b1;
-        public static int rg_fragment_group=0x7f0e017a;
-        public static int rg_fund_risk_question=0x7f0e0412;
-        public static int rg_option_open=0x7f0e029f;
-        public static int rg_property_select=0x7f0e0315;
-        public static int rg_r_buy_or_sale=0x7f0e02c7;
-        public static int rg_radio_group_share=0x7f0e0419;
-        public static int rg_return_stock=0x7f0e0337;
-        public static int rg_trans_hq=0x7f0e0364;
-        public static int rg_trans_sale=0x7f0e0367;
-        public static int rl_bgoftoolbar=0x7f0e0388;
-        public static int rl_change_fundpwd=0x7f0e0280;
-        public static int rl_change_tradepwd=0x7f0e027f;
-        public static int rl_close_out_credit=0x7f0e019a;
-        public static int rl_more=0x7f0e027b;
-        public static int rl_more_credit=0x7f0e0195;
-        public static int rl_new_buy=0x7f0e027e;
-        public static int rl_new_buy_credit=0x7f0e0198;
-        public static int rl_no_data=0x7f0e0345;
-        public static int rl_not_close_out_credit=0x7f0e0199;
-        public static int rl_r_choose_stock=0x7f0e02bf;
-        public static int screen=0x7f0e003f;
-        public static int scrollIndicatorDown=0x7f0e006a;
-        public static int scrollIndicatorUp=0x7f0e0067;
-        public static int scrollView=0x7f0e0068;
-        public static int scrollview_trade_home=0x7f0e0193;
-        public static int search_badge=0x7f0e007a;
-        public static int search_bar=0x7f0e0079;
-        public static int search_book_contents_failed=0x7f0e0016;
-        public static int search_book_contents_succeeded=0x7f0e0017;
-        public static int search_button=0x7f0e007b;
-        public static int search_close_btn=0x7f0e0080;
-        public static int search_edit_frame=0x7f0e007c;
-        public static int search_go_btn=0x7f0e0082;
-        public static int search_mag_icon=0x7f0e007d;
-        public static int search_plate=0x7f0e007e;
-        public static int search_src_text=0x7f0e007f;
-        public static int search_voice_btn=0x7f0e0083;
-        public static int select_dialog_listview=0x7f0e0084;
-        public static int shortcut=0x7f0e006f;
-        public static int showCustom=0x7f0e0036;
-        public static int showHome=0x7f0e0037;
-        public static int showTitle=0x7f0e0038;
-        public static int show_always=0x7f0e004c;
-        public static int show_on_touch=0x7f0e004d;
-        public static int size=0x7f0e05e2;
-        public static int sll_back_out=0x7f0e017e;
-        public static int sll_for_activity=0x7f0e0088;
-        public static int sll_layout=0x7f0e0183;
-        public static int sll_my_stock=0x7f0e0182;
-        public static int sll_statement=0x7f0e02fa;
-        public static int spacer=0x7f0e0061;
-        public static int split=0x7f0e0018;
-        public static int split_action_bar=0x7f0e0019;
-        public static int src_atop=0x7f0e0040;
-        public static int src_in=0x7f0e0041;
-        public static int src_over=0x7f0e0042;
-        public static int status_bar_latest_event_content=0x7f0e05e7;
-        public static int step1=0x7f0e00fd;
-        public static int step2=0x7f0e0103;
-        public static int submit_area=0x7f0e0081;
-        public static int t_new_stck=0x7f0e02ef;
-        public static int t_new_stock=0x7f0e02f3;
-        public static int tabMode=0x7f0e0032;
-        public static int tab_replace_toolbar=0x7f0e0349;
-        public static int tabs=0x7f0e00a5;
-        public static int tag_position=0x7f0e001a;
-        public static int tb_showname=0x7f0e038a;
-        public static int text=0x7f0e003a;
-        public static int text2=0x7f0e05ed;
-        public static int textSpacerNoButtons=0x7f0e0069;
-        public static int textView=0x7f0e03e9;
-        public static int textview_title=0x7f0e00aa;
-        public static int time=0x7f0e05eb;
-        public static int timeline_area=0x7f0e025d;
-        public static int title=0x7f0e005f;
-        public static int title_template=0x7f0e0064;
-        public static int tool_bar=0x7f0e038b;
-        public static int toolbar=0x7f0e008c;
-        public static int topPanel=0x7f0e0063;
-        public static int top_area=0x7f0e00ab;
-        public static int trade_container=0x7f0e017b;
-        public static int tv=0x7f0e00be;
-        public static int tv1=0x7f0e00cf;
-        public static int tv2=0x7f0e00d1;
-        public static int tv3=0x7f0e00d3;
-        public static int tv4=0x7f0e00d5;
-        public static int tv_a_history_entrust_bs=0x7f0e039b;
-        public static int tv_a_history_entrust_date=0x7f0e0395;
-        public static int tv_a_history_entrust_name=0x7f0e0394;
-        public static int tv_a_history_entrust_num=0x7f0e0399;
-        public static int tv_a_history_entrust_price=0x7f0e0397;
-        public static int tv_a_history_entrust_status=0x7f0e039c;
-        public static int tv_a_history_entrust_time=0x7f0e0396;
-        public static int tv_a_history_trade_balances=0x7f0e03a0;
-        public static int tv_a_history_trade_bs=0x7f0e03a1;
-        public static int tv_a_history_trade_date=0x7f0e039e;
-        public static int tv_a_history_trade_name=0x7f0e039d;
-        public static int tv_a_history_trade_num=0x7f0e039a;
-        public static int tv_a_history_trade_price=0x7f0e0398;
-        public static int tv_a_history_trade_time=0x7f0e039f;
-        public static int tv_a_revocation_bs=0x7f0e03be;
-        public static int tv_a_revocation_code=0x7f0e03c0;
-        public static int tv_a_revocation_entrust_num=0x7f0e03c4;
-        public static int tv_a_revocation_entrust_price=0x7f0e03c2;
-        public static int tv_a_revocation_name=0x7f0e03bf;
-        public static int tv_a_revocation_time=0x7f0e03c1;
-        public static int tv_a_revocation_trade_num=0x7f0e03c5;
-        public static int tv_a_revocation_trade_price=0x7f0e03c3;
-        public static int tv_a_statement_bs=0x7f0e03c6;
-        public static int tv_a_statement_date=0x7f0e03c7;
-        public static int tv_a_today_entrust_bs=0x7f0e03d4;
-        public static int tv_a_today_entrust_name=0x7f0e03d1;
-        public static int tv_a_today_entrust_num=0x7f0e03d3;
-        public static int tv_a_today_entrust_price=0x7f0e03d2;
-        public static int tv_a_today_entrust_status=0x7f0e03d8;
-        public static int tv_a_today_entrust_time=0x7f0e03d5;
-        public static int tv_a_today_trade_balances=0x7f0e03db;
-        public static int tv_a_today_trade_bs=0x7f0e03dc;
-        public static int tv_a_today_trade_name=0x7f0e03d9;
-        public static int tv_a_today_trade_num=0x7f0e03d7;
-        public static int tv_a_today_trade_price=0x7f0e03d6;
-        public static int tv_a_today_trade_time=0x7f0e03da;
-        public static int tv_a_water_bs=0x7f0e03ae;
-        public static int tv_a_water_date=0x7f0e03af;
-        public static int tv_a_water_entrust_no=0x7f0e03b0;
-        public static int tv_a_water_entrust_num=0x7f0e03b6;
-        public static int tv_a_water_entrust_price=0x7f0e03b5;
-        public static int tv_a_water_hou_money=0x7f0e03b2;
-        public static int tv_a_water_money_type=0x7f0e03b7;
-        public static int tv_a_water_occur_money=0x7f0e03b1;
-        public static int tv_a_water_remark=0x7f0e03b8;
-        public static int tv_a_water_trade_num=0x7f0e03b4;
-        public static int tv_a_water_trade_price=0x7f0e03b3;
-        public static int tv_account=0x7f0e00ad;
-        public static int tv_account_label=0x7f0e05de;
-        public static int tv_account_switch_credit=0x7f0e00d8;
-        public static int tv_account_switch_normal=0x7f0e00d7;
-        public static int tv_account_switch_option=0x7f0e00d9;
-        public static int tv_add_vote_content=0x7f0e04ce;
-        public static int tv_agreement_content=0x7f0e0170;
-        public static int tv_agreement_title=0x7f0e016f;
-        public static int tv_all_num=0x7f0e010b;
-        public static int tv_amount=0x7f0e01e6;
-        public static int tv_amount_text=0x7f0e01e7;
-        public static int tv_apply_time=0x7f0e0427;
-        public static int tv_approve_amount=0x7f0e04ae;
-        public static int tv_assert_val=0x7f0e0447;
-        public static int tv_authority_times=0x7f0e047e;
-        public static int tv_authority_type_name=0x7f0e047c;
-        public static int tv_bank_account=0x7f0e0390;
-        public static int tv_bank_click_select=0x7f0e00de;
-        public static int tv_bank_count=0x7f0e0391;
-        public static int tv_bank_direction=0x7f0e038f;
-        public static int tv_bank_in_select=0x7f0e00dd;
-        public static int tv_bank_out_select=0x7f0e00e7;
-        public static int tv_bank_out_text=0x7f0e00e8;
-        public static int tv_bank_status=0x7f0e0393;
-        public static int tv_bank_time=0x7f0e0392;
-        public static int tv_bbusiness_type=0x7f0e042d;
-        public static int tv_begin_date=0x7f0e04e0;
-        public static int tv_begin_time=0x7f0e046a;
-        public static int tv_bizdate=0x7f0e043c;
-        public static int tv_bsflag=0x7f0e04d7;
-        public static int tv_business_amount=0x7f0e0431;
-        public static int tv_business_balance=0x7f0e0432;
-        public static int tv_business_id=0x7f0e0428;
-        public static int tv_business_price=0x7f0e03c8;
-        public static int tv_business_time=0x7f0e043d;
-        public static int tv_business_type=0x7f0e042f;
-        public static int tv_business_type_name=0x7f0e0492;
-        public static int tv_businessflag=0x7f0e046b;
-        public static int tv_buy1_amount=0x7f0e0125;
-        public static int tv_buy1_price=0x7f0e0124;
-        public static int tv_buy2_amount=0x7f0e0128;
-        public static int tv_buy2_price=0x7f0e0127;
-        public static int tv_buy3_amount=0x7f0e012b;
-        public static int tv_buy3_price=0x7f0e012a;
-        public static int tv_buy4_amount=0x7f0e012e;
-        public static int tv_buy4_price=0x7f0e012d;
-        public static int tv_buy5_amount=0x7f0e0131;
-        public static int tv_buy5_price=0x7f0e0130;
-        public static int tv_buy_close=0x7f0e0284;
-        public static int tv_buy_open=0x7f0e0282;
-        public static int tv_buy_or_sale_title=0x7f0e00da;
-        public static int tv_buying=0x7f0e018f;
-        public static int tv_buyrate=0x7f0e0441;
-        public static int tv_can_out_num=0x7f0e01b2;
-        public static int tv_can_trans_num=0x7f0e01e1;
-        public static int tv_can_use_money=0x7f0e010f;
-        public static int tv_capital_click=0x7f0e030c;
-        public static int tv_capital_name=0x7f0e030b;
-        public static int tv_channel=0x7f0e050e;
-        public static int tv_circulation_type_name=0x7f0e047b;
-        public static int tv_cleardate=0x7f0e0493;
-        public static int tv_click_all_max=0x7f0e029b;
-        public static int tv_click_buy=0x7f0e0361;
-        public static int tv_click_commit=0x7f0e01d3;
-        public static int tv_click_hq=0x7f0e0363;
-        public static int tv_click_input_num=0x7f0e04ef;
-        public static int tv_click_sale=0x7f0e0362;
-        public static int tv_click_select=0x7f0e0263;
-        public static int tv_click_set=0x7f0e04f7;
-        public static int tv_click_vote=0x7f0e04df;
-        public static int tv_click_warn_book=0x7f0e016d;
-        public static int tv_code=0x7f0e03e2;
-        public static int tv_code_and_name=0x7f0e028e;
-        public static int tv_collater_click=0x7f0e02fe;
-        public static int tv_collater_code=0x7f0e0520;
-        public static int tv_collater_date=0x7f0e0524;
-        public static int tv_collater_hold=0x7f0e0522;
-        public static int tv_collater_market=0x7f0e0551;
-        public static int tv_collater_name=0x7f0e02fd;
-        public static int tv_collater_not=0x7f0e0523;
-        public static int tv_collater_num=0x7f0e0521;
-        public static int tv_collater_out_max=0x7f0e00c7;
-        public static int tv_collater_profit=0x7f0e0552;
-        public static int tv_collater_revocation_bs=0x7f0e054a;
-        public static int tv_collater_revocation_code=0x7f0e054c;
-        public static int tv_collater_revocation_count=0x7f0e054e;
-        public static int tv_collater_revocation_name=0x7f0e054b;
-        public static int tv_collater_revocation_price=0x7f0e054d;
-        public static int tv_collater_revocation_time=0x7f0e054f;
-        public static int tv_collateral_security_in=0x7f0e0340;
-        public static int tv_collateral_security_lookout=0x7f0e0342;
-        public static int tv_collateral_security_out=0x7f0e0341;
-        public static int tv_collateral_security_revocation=0x7f0e0343;
-        public static int tv_combinfee_rmb=0x7f0e0421;
-        public static int tv_commitflag=0x7f0e046c;
-        public static int tv_communication_password=0x7f0e001b;
-        public static int tv_content=0x7f0e0515;
-        public static int tv_contract_code=0x7f0e0291;
-        public static int tv_contract_name=0x7f0e0292;
-        public static int tv_corpbehavior_code=0x7f0e042e;
-        public static int tv_cost_balance=0x7f0e0516;
-        public static int tv_cost_price=0x7f0e0495;
-        public static int tv_costing=0x7f0e03a8;
-        public static int tv_covered_close=0x7f0e0287;
-        public static int tv_covered_lock=0x7f0e0289;
-        public static int tv_covered_open=0x7f0e0286;
-        public static int tv_covered_open_lock=0x7f0e028a;
-        public static int tv_create_date=0x7f0e0511;
-        public static int tv_create_time=0x7f0e0512;
-        public static int tv_current_amount=0x7f0e0517;
-        public static int tv_current_price=0x7f0e047f;
-        public static int tv_current_rate=0x7f0e0480;
-        public static int tv_cut_date=0x7f0e028f;
-        public static int tv_date_search_ll=0x7f0e0180;
-        public static int tv_daybuyriserate=0x7f0e0444;
-        public static int tv_daysaleriserate=0x7f0e0445;
-        public static int tv_debtsid=0x7f0e041e;
-        public static int tv_dialog_title=0x7f0e00b6;
-        public static int tv_direct_data=0x7f0e0404;
-        public static int tv_direct_have=0x7f0e0405;
-        public static int tv_direct_have_time=0x7f0e0407;
-        public static int tv_direct_money=0x7f0e0403;
-        public static int tv_direct_time=0x7f0e0406;
-        public static int tv_distribute_begin=0x7f0e04e8;
-        public static int tv_distribute_count=0x7f0e04e7;
-        public static int tv_distribute_data=0x7f0e04e3;
-        public static int tv_distribute_securit_name=0x7f0e04e4;
-        public static int tv_distribute_securit_number=0x7f0e04e5;
-        public static int tv_divide_line=0x7f0e04c9;
-        public static int tv_down_limit=0x7f0e00f8;
-        public static int tv_down_limit_text=0x7f0e00f7;
-        public static int tv_enable_amount=0x7f0e0498;
-        public static int tv_enable_balance=0x7f0e0448;
-        public static int tv_end_date=0x7f0e04e1;
-        public static int tv_entrust_amount=0x7f0e042a;
-        public static int tv_entrust_balance=0x7f0e048f;
-        public static int tv_entrust_count=0x7f0e04b9;
-        public static int tv_entrust_date=0x7f0e0494;
-        public static int tv_entrust_info=0x7f0e03e5;
-        public static int tv_entrust_name=0x7f0e0550;
-        public static int tv_entrust_no=0x7f0e0491;
-        public static int tv_entrust_price=0x7f0e0430;
-        public static int tv_entrust_state_name=0x7f0e0508;
-        public static int tv_entrust_status_name=0x7f0e051a;
-        public static int tv_entrust_str=0x7f0e029d;
-        public static int tv_entrust_time=0x7f0e04d6;
-        public static int tv_entrust_value=0x7f0e04b7;
-        public static int tv_exchange_rate=0x7f0e01e5;
-        public static int tv_exchange_rate_text=0x7f0e01e4;
-        public static int tv_exchange_type=0x7f0e04d9;
-        public static int tv_exchange_type_name=0x7f0e043e;
-        public static int tv_exercise=0x7f0e0288;
-        public static int tv_exercise_price=0x7f0e0290;
-        public static int tv_exit_logout=0x7f0e0281;
-        public static int tv_exit_logout_credit=0x7f0e019c;
-        public static int tv_fee_ghf=0x7f0e03cf;
-        public static int tv_fee_jsf=0x7f0e043b;
-        public static int tv_fee_jygf=0x7f0e0438;
-        public static int tv_fee_qsf=0x7f0e043a;
-        public static int tv_fee_sxf=0x7f0e03d0;
-        public static int tv_fee_yhs=0x7f0e0436;
-        public static int tv_fee_zgf=0x7f0e0437;
-        public static int tv_feefront=0x7f0e0439;
-        public static int tv_float_yk=0x7f0e049b;
-        public static int tv_float_yk_per=0x7f0e049a;
-        public static int tv_forget_password=0x7f0e00af;
-        public static int tv_freeze_amount=0x7f0e0499;
-        public static int tv_fselect_four=0x7f0e03f1;
-        public static int tv_fselect_one=0x7f0e03ee;
-        public static int tv_fselect_three=0x7f0e03ef;
-        public static int tv_fselect_two=0x7f0e03f0;
-        public static int tv_fun_otc=0x7f0e001c;
-        public static int tv_fun_trade=0x7f0e001d;
-        public static int tv_fun_trade_in=0x7f0e001e;
-        public static int tv_fun_trade_level=0x7f0e001f;
-        public static int tv_fund_account=0x7f0e04d8;
-        public static int tv_fund_click_ransom_max=0x7f0e01c1;
-        public static int tv_fund_click_sub_max=0x7f0e01d8;
-        public static int tv_fund_code=0x7f0e0451;
-        public static int tv_fund_dire_name=0x7f0e01b9;
-        public static int tv_fund_in_name=0x7f0e01af;
-        public static int tv_fund_in_profit=0x7f0e01b0;
-        public static int tv_fund_max_money=0x7f0e01da;
-        public static int tv_fund_maxmoney=0x7f0e0255;
-        public static int tv_fund_name=0x7f0e01d5;
-        public static int tv_fund_name_account=0x7f0e03ec;
-        public static int tv_fund_net_value=0x7f0e01d6;
-        public static int tv_fund_now_price=0x7f0e0252;
-        public static int tv_fund_open_account=0x7f0e01b6;
-        public static int tv_fund_out_profit=0x7f0e01ad;
-        public static int tv_fund_pledge_click=0x7f0e0402;
-        public static int tv_fund_profit=0x7f0e01ba;
-        public static int tv_fund_ransom_max=0x7f0e01c3;
-        public static int tv_fund_ransom_max_limit=0x7f0e01c0;
-        public static int tv_fund_ransom_name=0x7f0e0248;
-        public static int tv_fund_ransom_netvalue=0x7f0e01bf;
-        public static int tv_fund_ransom_now_price=0x7f0e0249;
-        public static int tv_fund_real_own=0x7f0e0450;
-        public static int tv_fund_realin=0x7f0e044b;
-        public static int tv_fund_realout=0x7f0e044c;
-        public static int tv_fund_revocation_balances=0x7f0e040f;
-        public static int tv_fund_revocation_balances_title=0x7f0e040e;
-        public static int tv_fund_revocation_bs=0x7f0e040a;
-        public static int tv_fund_revocation_code=0x7f0e040c;
-        public static int tv_fund_revocation_name=0x7f0e040b;
-        public static int tv_fund_revocation_profit=0x7f0e040d;
-        public static int tv_fund_revocation_time=0x7f0e0410;
-        public static int tv_fund_risk_question=0x7f0e0411;
-        public static int tv_fund_select_balance=0x7f0e03f7;
-        public static int tv_fund_select_bs=0x7f0e03f2;
-        public static int tv_fund_select_code=0x7f0e03f4;
-        public static int tv_fund_select_name=0x7f0e03f3;
-        public static int tv_fund_select_profit=0x7f0e03f6;
-        public static int tv_fund_select_status=0x7f0e03f5;
-        public static int tv_fund_select_time=0x7f0e03f8;
-        public static int tv_fund_sub_max=0x7f0e01d7;
-        public static int tv_fund_tranin=0x7f0e0449;
-        public static int tv_fund_tranout=0x7f0e044a;
-        public static int tv_fundbal=0x7f0e03cd;
-        public static int tv_fundnightout=0x7f0e044f;
-        public static int tv_funduncomein=0x7f0e044d;
-        public static int tv_funduncomeout=0x7f0e044e;
-        public static int tv_give_up_sub=0x7f0e026b;
-        public static int tv_give_up_sub_revocation=0x7f0e026c;
-        public static int tv_half_num=0x7f0e010c;
-        public static int tv_header_of_grade_bottom=0x7f0e0132;
-        public static int tv_hfund_bs=0x7f0e04bb;
-        public static int tv_hfund_code=0x7f0e04bf;
-        public static int tv_hfund_count=0x7f0e04c0;
-        public static int tv_hfund_name=0x7f0e04be;
-        public static int tv_hfund_price=0x7f0e04c1;
-        public static int tv_hfund_status=0x7f0e04bd;
-        public static int tv_hfund_time=0x7f0e04bc;
-        public static int tv_history_data=0x7f0e0453;
-        public static int tv_history_entrust=0x7f0e02a3;
-        public static int tv_history_entrust_bs=0x7f0e0459;
-        public static int tv_history_entrust_num=0x7f0e0457;
-        public static int tv_history_entrust_price=0x7f0e0455;
-        public static int tv_history_entrust_status=0x7f0e045a;
-        public static int tv_history_list=0x7f0e026d;
-        public static int tv_history_securit_name=0x7f0e0452;
-        public static int tv_history_time=0x7f0e0454;
-        public static int tv_history_trade=0x7f0e02a4;
-        public static int tv_history_trade_bs=0x7f0e0461;
-        public static int tv_history_trade_count=0x7f0e045f;
-        public static int tv_history_trade_data=0x7f0e045c;
-        public static int tv_history_trade_money=0x7f0e0460;
-        public static int tv_history_trade_name=0x7f0e045b;
-        public static int tv_history_trade_number=0x7f0e0458;
-        public static int tv_history_trade_pric=0x7f0e045e;
-        public static int tv_history_trade_price=0x7f0e0456;
-        public static int tv_history_trade_time=0x7f0e045d;
-        public static int tv_hk_action_name=0x7f0e01f0;
-        public static int tv_hk_action_type1=0x7f0e01f1;
-        public static int tv_hk_action_type2=0x7f0e01f2;
-        public static int tv_hk_business_name=0x7f0e0478;
-        public static int tv_hk_buy=0x7f0e01f7;
-        public static int tv_hk_commission=0x7f0e0474;
-        public static int tv_hk_commission_data=0x7f0e0479;
-        public static int tv_hk_currency=0x7f0e0477;
-        public static int tv_hk_liquidation_money=0x7f0e0472;
-        public static int tv_hk_not_paid_deta_entrust=0x7f0e046f;
-        public static int tv_hk_not_paid_deta_price=0x7f0e046d;
-        public static int tv_hk_not_paid_detail_numbler=0x7f0e0470;
-        public static int tv_hk_other_sale=0x7f0e01f9;
-        public static int tv_hk_revocation=0x7f0e01fc;
-        public static int tv_hk_revocation_bs=0x7f0e0482;
-        public static int tv_hk_revocation_code=0x7f0e0484;
-        public static int tv_hk_revocation_date=0x7f0e0485;
-        public static int tv_hk_revocation_entrust_num=0x7f0e0487;
-        public static int tv_hk_revocation_entrust_price=0x7f0e0486;
-        public static int tv_hk_revocation_name=0x7f0e0483;
-        public static int tv_hk_revocation_trade_num=0x7f0e0489;
-        public static int tv_hk_revocation_trade_price=0x7f0e0488;
-        public static int tv_hk_sale=0x7f0e01f8;
-        public static int tv_hk_settlement_rate=0x7f0e0476;
-        public static int tv_hk_stamp_duty=0x7f0e0473;
-        public static int tv_hk_transaction_number=0x7f0e0475;
-        public static int tv_hk_transaction_price=0x7f0e046e;
-        public static int tv_hk_vote_name=0x7f0e020e;
-        public static int tv_hold_amount=0x7f0e0497;
-        public static int tv_hold_list_item_expend_buy=0x7f0e03ab;
-        public static int tv_hold_list_item_expend_hq=0x7f0e03ad;
-        public static int tv_hold_list_item_expend_sale=0x7f0e03ac;
-        public static int tv_hold_stock=0x7f0e02a5;
-        public static int tv_holder_account=0x7f0e03de;
-        public static int tv_holdpager_bank=0x7f0e013e;
-        public static int tv_home_g_g_t=0x7f0e0020;
-        public static int tv_home_trans_stock=0x7f0e0021;
-        public static int tv_in_cur_day_entrust=0x7f0e021e;
-        public static int tv_in_cur_day_transcations=0x7f0e021f;
-        public static int tv_in_entrust_inquire=0x7f0e021d;
-        public static int tv_in_fund_available_funds_show=0x7f0e0232;
-        public static int tv_in_fund_code_input=0x7f0e0223;
-        public static int tv_in_fund_code_title=0x7f0e0222;
-        public static int tv_in_fund_name_show=0x7f0e0224;
-        public static int tv_in_fund_net_value_show=0x7f0e0225;
-        public static int tv_in_fund_purchase=0x7f0e021b;
-        public static int tv_in_fund_purchase_all_button=0x7f0e022f;
-        public static int tv_in_fund_purchase_money_input=0x7f0e0231;
-        public static int tv_in_fund_purchase_or_subscription_submit=0x7f0e0233;
-        public static int tv_in_fund_purchase_upper_limit_show=0x7f0e022e;
-        public static int tv_in_fund_redemption=0x7f0e021c;
-        public static int tv_in_fund_redemption_all_button=0x7f0e0235;
-        public static int tv_in_fund_redemption_amount_input=0x7f0e0236;
-        public static int tv_in_fund_redemption_upper_limit_show=0x7f0e0234;
-        public static int tv_in_fund_stock_code=0x7f0e04b2;
-        public static int tv_in_fund_stock_name=0x7f0e04b1;
-        public static int tv_in_fund_subscription=0x7f0e021a;
-        public static int tv_in_fund_subscription_all_button=0x7f0e0229;
-        public static int tv_in_fund_subscription_money_input=0x7f0e022c;
-        public static int tv_in_fund_subscription_upper_limit_show=0x7f0e0228;
-        public static int tv_in_history_entrust=0x7f0e0220;
-        public static int tv_in_history_transcations=0x7f0e0221;
-        public static int tv_in_lof_fund=0x7f0e0219;
-        public static int tv_in_monetary_fund=0x7f0e0215;
-        public static int tv_in_monetary_fund_purchase=0x7f0e0217;
-        public static int tv_in_monetary_fund_redemption=0x7f0e0218;
-        public static int tv_in_monetary_fund_subscription=0x7f0e0216;
-        public static int tv_income_balance=0x7f0e0518;
-        public static int tv_increase_amount=0x7f0e0112;
-        public static int tv_inform_day=0x7f0e0425;
-        public static int tv_inform_type=0x7f0e0424;
-        public static int tv_input_num=0x7f0e04cd;
-        public static int tv_item_search_stock_code=0x7f0e051e;
-        public static int tv_item_search_stock_name=0x7f0e051f;
-        public static int tv_jsdate=0x7f0e041d;
-        public static int tv_last_price=0x7f0e0496;
-        public static int tv_lastmktvalue=0x7f0e0422;
-        public static int tv_level_buy_divide=0x7f0e023b;
-        public static int tv_level_buy_ransom=0x7f0e0239;
-        public static int tv_level_buy_revocation=0x7f0e023a;
-        public static int tv_level_buy_sub=0x7f0e0237;
-        public static int tv_level_buy_subtion=0x7f0e0238;
-        public static int tv_level_buy_together=0x7f0e023c;
-        public static int tv_level_fund_subscription_all_button=0x7f0e0250;
-        public static int tv_level_fund_subscription_up_limit=0x7f0e024f;
-        public static int tv_level_merger_name=0x7f0e0243;
-        public static int tv_level_merger_num=0x7f0e0244;
-        public static int tv_level_name=0x7f0e023e;
-        public static int tv_level_num=0x7f0e023f;
-        public static int tv_level_select_eentrust=0x7f0e024d;
-        public static int tv_level_select_entrust=0x7f0e024b;
-        public static int tv_level_select_trade=0x7f0e024e;
-        public static int tv_level_select_ttrade=0x7f0e024c;
-        public static int tv_lgtrdstatusName=0x7f0e048b;
-        public static int tv_limit_all=0x7f0e0302;
-        public static int tv_limit_other_quan=0x7f0e0308;
-        public static int tv_limit_other_zi=0x7f0e0307;
-        public static int tv_limit_quan=0x7f0e0304;
-        public static int tv_limit_use_quan=0x7f0e0306;
-        public static int tv_limit_use_zi=0x7f0e0305;
-        public static int tv_limit_zi=0x7f0e0303;
-        public static int tv_login=0x7f0e034c;
-        public static int tv_login_fund=0x7f0e0257;
-        public static int tv_login_sun_e=0x7f0e0259;
-        public static int tv_main_all_captial=0x7f0e0188;
-        public static int tv_main_all_captial_a=0x7f0e0189;
-        public static int tv_main_all_profit=0x7f0e018c;
-        public static int tv_main_all_profit_a=0x7f0e018d;
-        public static int tv_main_today_profit=0x7f0e018a;
-        public static int tv_main_today_profit_a=0x7f0e018b;
-        public static int tv_market_arrows=0x7f0e02ae;
-        public static int tv_market_entrust=0x7f0e02ad;
-        public static int tv_market_price=0x7f0e04c7;
-        public static int tv_market_value=0x7f0e03a3;
-        public static int tv_market_year=0x7f0e047d;
-        public static int tv_matchamt=0x7f0e03ca;
-        public static int tv_matchqty=0x7f0e03c9;
-        public static int tv_max_enable=0x7f0e029a;
-        public static int tv_max_text=0x7f0e029e;
-        public static int tv_menu_item=0x7f0e03eb;
-        public static int tv_midrate=0x7f0e0443;
-        public static int tv_mkttrdstatus_name=0x7f0e0468;
-        public static int tv_modified_trade_password=0x7f0e0022;
-        public static int tv_money_number=0x7f0e013a;
-        public static int tv_money_type_name=0x7f0e03ce;
-        public static int tv_money_type_name1=0x7f0e0490;
-        public static int tv_money_unit=0x7f0e013b;
-        public static int tv_more_menu_item=0x7f0e04c8;
-        public static int tv_motion_id=0x7f0e04ad;
-        public static int tv_my_hold=0x7f0e0023;
-        public static int tv_myhold_canget=0x7f0e0143;
-        public static int tv_myhold_cangeta=0x7f0e0144;
-        public static int tv_myhold_canuse=0x7f0e013f;
-        public static int tv_myhold_canusea=0x7f0e0140;
-        public static int tv_myhold_money=0x7f0e013c;
-        public static int tv_myhold_moneya=0x7f0e013d;
-        public static int tv_myhold_port=0x7f0e0141;
-        public static int tv_myhold_porta=0x7f0e0142;
-        public static int tv_myhold_value=0x7f0e0145;
-        public static int tv_myhold_valuea=0x7f0e0146;
-        public static int tv_name=0x7f0e03e1;
-        public static int tv_ne_ock=0x7f0e02f1;
-        public static int tv_ne_stock=0x7f0e02f2;
-        public static int tv_nestock=0x7f0e02f7;
-        public static int tv_net_direction=0x7f0e0024;
-        public static int tv_new_max=0x7f0e00c1;
-        public static int tv_new_sock=0x7f0e02f4;
-        public static int tv_new_stck=0x7f0e02f6;
-        public static int tv_new_stock=0x7f0e0025;
-        public static int tv_new_subscribe_limit_hu=0x7f0e0271;
-        public static int tv_new_subscribe_limit_shen=0x7f0e0272;
-        public static int tv_new_tock=0x7f0e02ee;
-        public static int tv_newstock=0x7f0e02f0;
-        public static int tv_newtock=0x7f0e02f9;
-        public static int tv_no_data_object=0x7f0e02d1;
-        public static int tv_no_data_set=0x7f0e017f;
-        public static int tv_note_date=0x7f0e047a;
-        public static int tv_notice_sn=0x7f0e050d;
-        public static int tv_now_price=0x7f0e0111;
-        public static int tv_nstock=0x7f0e02ed;
-        public static int tv_num_add=0x7f0e0299;
-        public static int tv_num_cut=0x7f0e0297;
-        public static int tv_nw_stock=0x7f0e02f5;
-        public static int tv_object_code=0x7f0e0526;
-        public static int tv_object_market=0x7f0e0528;
-        public static int tv_object_name=0x7f0e0525;
-        public static int tv_object_per=0x7f0e0527;
-        public static int tv_occur_balance=0x7f0e03cb;
-        public static int tv_on_way_in=0x7f0e049c;
-        public static int tv_on_way_out=0x7f0e049d;
-        public static int tv_oneKey_collection=0x7f0e0026;
-        public static int tv_one_eight=0x7f0e0320;
-        public static int tv_one_five=0x7f0e031d;
-        public static int tv_one_four=0x7f0e031c;
-        public static int tv_one_key_can_use=0x7f0e03bc;
-        public static int tv_one_key_money=0x7f0e03bb;
-        public static int tv_one_key_name=0x7f0e03b9;
-        public static int tv_one_key_sub=0x7f0e0269;
-        public static int tv_one_key_sub_max=0x7f0e04ed;
-        public static int tv_one_key_sub_num=0x7f0e04ee;
-        public static int tv_one_key_sub_price=0x7f0e04ec;
-        public static int tv_one_key_type=0x7f0e03ba;
-        public static int tv_one_night=0x7f0e0321;
-        public static int tv_one_one=0x7f0e0319;
-        public static int tv_one_seven=0x7f0e031f;
-        public static int tv_one_six=0x7f0e031e;
-        public static int tv_one_stock_option=0x7f0e0027;
-        public static int tv_one_ten=0x7f0e0322;
-        public static int tv_one_tenone=0x7f0e0323;
-        public static int tv_one_three=0x7f0e031b;
-        public static int tv_one_two=0x7f0e031a;
-        public static int tv_onek_account=0x7f0e0157;
-        public static int tv_onem_in_account=0x7f0e015c;
-        public static int tv_onem_out_account=0x7f0e015b;
-        public static int tv_open_date=0x7f0e03ed;
-        public static int tv_open_status=0x7f0e016b;
-        public static int tv_oppose_amount=0x7f0e04af;
-        public static int tv_opt_business_price=0x7f0e050c;
-        public static int tv_opt_entrust_price=0x7f0e050b;
-        public static int tv_opthold_type_name=0x7f0e050a;
-        public static int tv_option_change_pwd=0x7f0e028c;
-        public static int tv_option_code=0x7f0e02a6;
-        public static int tv_option_contract_bs=0x7f0e0500;
-        public static int tv_option_contract_name=0x7f0e04fe;
-        public static int tv_option_contract_type=0x7f0e04ff;
-        public static int tv_option_name=0x7f0e0507;
-        public static int tv_option_revocation=0x7f0e028b;
-        public static int tv_option_type_name=0x7f0e0509;
-        public static int tv_order_date=0x7f0e04d5;
-        public static int tv_order_group=0x7f0e04d4;
-        public static int tv_order_sno=0x7f0e04d3;
-        public static int tv_order_status=0x7f0e04de;
-        public static int tv_out_fund_account=0x7f0e01a8;
-        public static int tv_out_fund_company=0x7f0e01de;
-        public static int tv_out_fund_convert=0x7f0e01a5;
-        public static int tv_out_fund_direction=0x7f0e01aa;
-        public static int tv_out_fund_entrust=0x7f0e01a6;
-        public static int tv_out_fund_out=0x7f0e01ac;
-        public static int tv_out_fund_profit=0x7f0e01dd;
-        public static int tv_out_fund_ransom=0x7f0e01a4;
-        public static int tv_out_fund_remove=0x7f0e01ab;
-        public static int tv_out_fund_risk=0x7f0e01a9;
-        public static int tv_out_fund_set=0x7f0e01a7;
-        public static int tv_out_fund_sub=0x7f0e01a3;
-        public static int tv_out_fund_subtion=0x7f0e01a2;
-        public static int tv_out_fund_trans_out=0x7f0e01dc;
-        public static int tv_outf_code=0x7f0e03fa;
-        public static int tv_outf_count=0x7f0e03fe;
-        public static int tv_outf_name=0x7f0e03f9;
-        public static int tv_outf_profit=0x7f0e03fc;
-        public static int tv_outf_share=0x7f0e03ff;
-        public static int tv_outf_status=0x7f0e03fb;
-        public static int tv_outf_value=0x7f0e03fd;
-        public static int tv_placard_id=0x7f0e04ac;
-        public static int tv_pop_buy=0x7f0e00d0;
-        public static int tv_pop_cancel=0x7f0e00bb;
-        public static int tv_pop_code=0x7f0e00ce;
-        public static int tv_pop_code_text=0x7f0e00cd;
-        public static int tv_pop_entrust_number=0x7f0e00d4;
-        public static int tv_pop_fund_code=0x7f0e051c;
-        public static int tv_pop_fund_left=0x7f0e051b;
-        public static int tv_pop_fund_name=0x7f0e051d;
-        public static int tv_pop_msg=0x7f0e00bf;
-        public static int tv_pop_name=0x7f0e00cc;
-        public static int tv_pop_name_text=0x7f0e00cb;
-        public static int tv_pop_ok=0x7f0e00ba;
-        public static int tv_pop_price=0x7f0e00d2;
-        public static int tv_pop_trade=0x7f0e00d6;
-        public static int tv_price_add=0x7f0e0296;
-        public static int tv_price_cut=0x7f0e0294;
-        public static int tv_product_status=0x7f0e0467;
-        public static int tv_qsdate=0x7f0e041f;
-        public static int tv_quarter_num=0x7f0e010e;
-        public static int tv_query=0x7f0e0192;
-        public static int tv_r_assure_buy=0x7f0e02e0;
-        public static int tv_r_assure_sell=0x7f0e02e1;
-        public static int tv_r_begin_date=0x7f0e052a;
-        public static int tv_r_bs=0x7f0e0577;
-        public static int tv_r_bscode=0x7f0e057a;
-        public static int tv_r_bsname=0x7f0e0579;
-        public static int tv_r_bsnum=0x7f0e057c;
-        public static int tv_r_bsprice=0x7f0e057b;
-        public static int tv_r_bsstatus=0x7f0e0578;
-        public static int tv_r_bstime=0x7f0e057f;
-        public static int tv_r_business_balance=0x7f0e052d;
-        public static int tv_r_business_price=0x7f0e058a;
-        public static int tv_r_buy_coupon_payments=0x7f0e02e5;
-        public static int tv_r_buy_in=0x7f0e02de;
-        public static int tv_r_cash_can_use=0x7f0e02b6;
-        public static int tv_r_cash_other=0x7f0e02b7;
-        public static int tv_r_change_pwd=0x7f0e02ea;
-        public static int tv_r_choose_contract=0x7f0e02b5;
-        public static int tv_r_choose_stock=0x7f0e033a;
-        public static int tv_r_choose_stock_count=0x7f0e02ac;
-        public static int tv_r_contract=0x7f0e02e9;
-        public static int tv_r_contract_id=0x7f0e02c3;
-        public static int tv_r_do_bs=0x7f0e0565;
-        public static int tv_r_do_compact_id=0x7f0e0570;
-        public static int tv_r_do_date=0x7f0e0566;
-        public static int tv_r_do_fare_guo_hu=0x7f0e056f;
-        public static int tv_r_do_fare_qing=0x7f0e056c;
-        public static int tv_r_do_fare_shou=0x7f0e056b;
-        public static int tv_r_do_fare_trade=0x7f0e056d;
-        public static int tv_r_do_fare_yin=0x7f0e056e;
-        public static int tv_r_do_market=0x7f0e0575;
-        public static int tv_r_do_money_yu=0x7f0e0573;
-        public static int tv_r_do_qing_money=0x7f0e056a;
-        public static int tv_r_do_remark=0x7f0e0576;
-        public static int tv_r_do_stock_account=0x7f0e0574;
-        public static int tv_r_do_stock_yu=0x7f0e0572;
-        public static int tv_r_do_trade_balances=0x7f0e0569;
-        public static int tv_r_do_trade_id=0x7f0e0571;
-        public static int tv_r_do_trade_num=0x7f0e0567;
-        public static int tv_r_do_trade_price=0x7f0e0568;
-        public static int tv_r_end_date=0x7f0e02c4;
-        public static int tv_r_entrust_bs=0x7f0e0580;
-        public static int tv_r_equity_trading=0x7f0e02e7;
-        public static int tv_r_money_payments=0x7f0e02e3;
-        public static int tv_r_money_type_name=0x7f0e058c;
-        public static int tv_r_more=0x7f0e02eb;
-        public static int tv_r_not_bs=0x7f0e0556;
-        public static int tv_r_not_cash=0x7f0e055d;
-        public static int tv_r_not_code=0x7f0e0554;
-        public static int tv_r_not_cut_date=0x7f0e0562;
-        public static int tv_r_not_date=0x7f0e0555;
-        public static int tv_r_not_id=0x7f0e0563;
-        public static int tv_r_not_money=0x7f0e055c;
-        public static int tv_r_not_name=0x7f0e0553;
-        public static int tv_r_not_not_fa=0x7f0e0561;
-        public static int tv_r_not_not_li=0x7f0e055f;
-        public static int tv_r_not_r_money=0x7f0e055a;
-        public static int tv_r_not_status=0x7f0e0557;
-        public static int tv_r_not_trade_balances=0x7f0e0559;
-        public static int tv_r_not_trade_num=0x7f0e0558;
-        public static int tv_r_not_yes_fa=0x7f0e0560;
-        public static int tv_r_not_yes_li=0x7f0e055e;
-        public static int tv_r_not_yk=0x7f0e055b;
-        public static int tv_r_open_date=0x7f0e02c1;
-        public static int tv_r_pager_all=0x7f0e02d3;
-        public static int tv_r_pager_alla=0x7f0e02d4;
-        public static int tv_r_pager_can=0x7f0e02d6;
-        public static int tv_r_pager_cana=0x7f0e02d7;
-        public static int tv_r_pager_cash=0x7f0e02da;
-        public static int tv_r_pager_casha=0x7f0e02db;
-        public static int tv_r_pager_click=0x7f0e02d5;
-        public static int tv_r_pager_market=0x7f0e02dc;
-        public static int tv_r_pager_marketa=0x7f0e02dd;
-        public static int tv_r_pager_per=0x7f0e02d8;
-        public static int tv_r_pager_pera=0x7f0e02d9;
-        public static int tv_r_payments=0x7f0e02e6;
-        public static int tv_r_real_compact_balance=0x7f0e052c;
-        public static int tv_r_return_all=0x7f0e02b9;
-        public static int tv_r_return_stock_all=0x7f0e033d;
-        public static int tv_r_return_stock_max_num=0x7f0e033c;
-        public static int tv_r_return_stock_num=0x7f0e033b;
-        public static int tv_r_revocation=0x7f0e02e8;
-        public static int tv_r_revocation_bs=0x7f0e052f;
-        public static int tv_r_revocation_code=0x7f0e0531;
-        public static int tv_r_revocation_entrust_num=0x7f0e0533;
-        public static int tv_r_revocation_entrust_price=0x7f0e0532;
-        public static int tv_r_revocation_name=0x7f0e0530;
-        public static int tv_r_revocation_time=0x7f0e0536;
-        public static int tv_r_revocation_trade_num=0x7f0e0535;
-        public static int tv_r_revocation_trade_price=0x7f0e0534;
-        public static int tv_r_sell_coupon_payments=0x7f0e02e2;
-        public static int tv_r_sell_out=0x7f0e02df;
-        public static int tv_r_stock_code=0x7f0e02c0;
-        public static int tv_r_stock_name=0x7f0e02c2;
-        public static int tv_r_trade_balances=0x7f0e0584;
-        public static int tv_r_trade_code=0x7f0e0583;
-        public static int tv_r_trade_name=0x7f0e0582;
-        public static int tv_r_trade_num=0x7f0e057e;
-        public static int tv_r_trade_price=0x7f0e057d;
-        public static int tv_r_trade_time=0x7f0e0581;
-        public static int tv_r_water_balance=0x7f0e0588;
-        public static int tv_r_water_bs=0x7f0e0585;
-        public static int tv_r_water_date=0x7f0e0586;
-        public static int tv_r_water_entrust_no=0x7f0e0587;
-        public static int tv_r_water_num=0x7f0e0589;
-        public static int tv_r_water_post_money=0x7f0e058b;
-        public static int tv_radio_back=0x7f0e017c;
-        public static int tv_radio_right=0x7f0e017d;
-        public static int tv_ransom_fundname=0x7f0e01be;
-        public static int tv_report_id=0x7f0e042c;
-        public static int tv_report_time=0x7f0e04dd;
-        public static int tv_report_type=0x7f0e0429;
-        public static int tv_reset=0x7f0e0095;
-        public static int tv_retest=0x7f0e01d1;
-        public static int tv_revocation=0x7f0e0191;
-        public static int tv_revocation_time=0x7f0e04b6;
-        public static int tv_risk_id=0x7f0e0510;
-        public static int tv_risk_test_value_date=0x7f0e01d0;
-        public static int tv_risk_test_value_is_over_date=0x7f0e01cf;
-        public static int tv_risk_test_value_level=0x7f0e01ce;
-        public static int tv_rollater_in_ben=0x7f0e053b;
-        public static int tv_rollater_in_code=0x7f0e0539;
-        public static int tv_rollater_in_hold=0x7f0e053f;
-        public static int tv_rollater_in_market=0x7f0e0540;
-        public static int tv_rollater_in_name=0x7f0e0538;
-        public static int tv_rollater_in_now_price=0x7f0e053a;
-        public static int tv_rollater_in_per_price=0x7f0e053c;
-        public static int tv_rollater_in_yk=0x7f0e053d;
-        public static int tv_rollater_in_yk_per=0x7f0e053e;
-        public static int tv_rollater_out_ben=0x7f0e0544;
-        public static int tv_rollater_out_code=0x7f0e0542;
-        public static int tv_rollater_out_hold=0x7f0e0548;
-        public static int tv_rollater_out_market=0x7f0e0549;
-        public static int tv_rollater_out_name=0x7f0e0541;
-        public static int tv_rollater_out_now_price=0x7f0e0543;
-        public static int tv_rollater_out_per_price=0x7f0e0545;
-        public static int tv_rollater_out_yk=0x7f0e0546;
-        public static int tv_rollater_out_yk_per=0x7f0e0547;
-        public static int tv_sale1_amount=0x7f0e0121;
-        public static int tv_sale1_price=0x7f0e0120;
-        public static int tv_sale2_amount=0x7f0e011e;
-        public static int tv_sale2_price=0x7f0e011d;
-        public static int tv_sale3_amount=0x7f0e011b;
-        public static int tv_sale3_price=0x7f0e011a;
-        public static int tv_sale4_amount=0x7f0e0118;
-        public static int tv_sale4_price=0x7f0e0117;
-        public static int tv_sale5_amount=0x7f0e0115;
-        public static int tv_sale5_price=0x7f0e0114;
-        public static int tv_sale_close=0x7f0e0285;
-        public static int tv_sale_open=0x7f0e0283;
-        public static int tv_salerate=0x7f0e0442;
-        public static int tv_securities=0x7f0e03a2;
-        public static int tv_security_name=0x7f0e04b4;
-        public static int tv_security_number=0x7f0e04b5;
-        public static int tv_sele_history_entrust=0x7f0e01c8;
-        public static int tv_sele_history_trade=0x7f0e01c9;
-        public static int tv_sele_ransom_risk=0x7f0e01ca;
-        public static int tv_sele_revocation=0x7f0e01c7;
-        public static int tv_sele_select=0x7f0e01cb;
-        public static int tv_sele_today_entrust=0x7f0e01c5;
-        public static int tv_sele_today_trade=0x7f0e01c6;
-        public static int tv_select_business_type=0x7f0e016a;
-        public static int tv_select_capital_stock=0x7f0e01fd;
-        public static int tv_select_code=0x7f0e0401;
-        public static int tv_select_combined=0x7f0e0201;
-        public static int tv_select_company_action=0x7f0e01fb;
-        public static int tv_select_contract=0x7f0e028d;
-        public static int tv_select_corporate_behavior_msg=0x7f0e0209;
-        public static int tv_select_corporate_behavior_trust=0x7f0e0208;
-        public static int tv_select_data=0x7f0e014b;
-        public static int tv_select_data_take=0x7f0e01bc;
-        public static int tv_select_delivery_order=0x7f0e020a;
-        public static int tv_select_distribute_data=0x7f0e04e6;
-        public static int tv_select_distribute_number=0x7f0e0167;
-        public static int tv_select_entrust=0x7f0e04e2;
-        public static int tv_select_entrust_number=0x7f0e04a2;
-        public static int tv_select_entrust_price=0x7f0e04a0;
-        public static int tv_select_exchange=0x7f0e0204;
-        public static int tv_select_fund=0x7f0e0200;
-        public static int tv_select_histortradey_entrust=0x7f0e0163;
-        public static int tv_select_history_trade=0x7f0e0164;
-        public static int tv_select_hk_bs=0x7f0e04a4;
-        public static int tv_select_liabilities=0x7f0e0202;
-        public static int tv_select_limit=0x7f0e0205;
-        public static int tv_select_market_day=0x7f0e020c;
-        public static int tv_select_name=0x7f0e0400;
-        public static int tv_select_no_trade=0x7f0e01fe;
-        public static int tv_select_notification=0x7f0e020b;
-        public static int tv_select_numberwinning=0x7f0e0168;
-        public static int tv_select_price_difference=0x7f0e0203;
-        public static int tv_select_securit_name=0x7f0e049e;
-        public static int tv_select_securities=0x7f0e01ff;
-        public static int tv_select_statement_account=0x7f0e0165;
-        public static int tv_select_status=0x7f0e0408;
-        public static int tv_select_stock=0x7f0e0264;
-        public static int tv_select_stock_account=0x7f0e0169;
-        public static int tv_select_sub_bs=0x7f0e0293;
-        public static int tv_select_time=0x7f0e049f;
-        public static int tv_select_today_entrust=0x7f0e0161;
-        public static int tv_select_today_money=0x7f0e0166;
-        public static int tv_select_today_trade=0x7f0e0162;
-        public static int tv_select_trade_number=0x7f0e04a3;
-        public static int tv_select_trade_price=0x7f0e04a1;
-        public static int tv_select_trade_status=0x7f0e04a5;
-        public static int tv_select_vote_sub=0x7f0e01fa;
-        public static int tv_select_voting_msg=0x7f0e0207;
-        public static int tv_select_voting_trust=0x7f0e0206;
-        public static int tv_sell=0x7f0e0190;
-        public static int tv_sell_yu=0x7f0e0028;
-        public static int tv_send_date=0x7f0e0513;
-        public static int tv_send_time=0x7f0e0514;
-        public static int tv_send_type=0x7f0e050f;
-        public static int tv_set_balance=0x7f0e0433;
-        public static int tv_set_data_end=0x7f0e014a;
-        public static int tv_set_data_start=0x7f0e0148;
-        public static int tv_settrate=0x7f0e0420;
-        public static int tv_share_set_code=0x7f0e0414;
-        public static int tv_share_set_hold=0x7f0e0418;
-        public static int tv_share_set_market=0x7f0e0417;
-        public static int tv_share_set_name=0x7f0e0413;
-        public static int tv_share_set_profit=0x7f0e0416;
-        public static int tv_share_set_status=0x7f0e0415;
-        public static int tv_should_money=0x7f0e0266;
-        public static int tv_show_faq=0x7f0e01a0;
-        public static int tv_show_holder_account=0x7f0e00f5;
-        public static int tv_show_pop_more_account=0x7f0e00f6;
-        public static int tv_show_pop_more_account_pre=0x7f0e00f3;
-        public static int tv_sign_agreement=0x7f0e0029;
-        public static int tv_sno=0x7f0e041c;
-        public static int tv_step_price=0x7f0e0440;
-        public static int tv_stkbal=0x7f0e03cc;
-        public static int tv_stock_account=0x7f0e04da;
-        public static int tv_stock_code=0x7f0e0273;
-        public static int tv_stock_max_num=0x7f0e0108;
-        public static int tv_stock_name=0x7f0e01e3;
-        public static int tv_stock_num_pre=0x7f0e010a;
-        public static int tv_stock_type_name=0x7f0e043f;
-        public static int tv_stock_unit=0x7f0e0109;
-        public static int tv_store=0x7f0e03a6;
-        public static int tv_sub_select=0x7f0e026a;
-        public static int tv_subscribe_amount_max=0x7f0e0276;
-        public static int tv_subscribe_code=0x7f0e04f1;
-        public static int tv_subscribe_name=0x7f0e04f0;
-        public static int tv_subscribe_price=0x7f0e0274;
-        public static int tv_subscribe_unit=0x7f0e04f2;
-        public static int tv_subscribe_uplimit=0x7f0e04f3;
-        public static int tv_sumdebtamt=0x7f0e0464;
-        public static int tv_sumpaidamt=0x7f0e0463;
-        public static int tv_surplus_amount=0x7f0e0435;
-        public static int tv_surplus_balance=0x7f0e0434;
-        public static int tv_surplus_quota=0x7f0e0466;
-        public static int tv_sysdate=0x7f0e0446;
-        public static int tv_tab_credit=0x7f0e034b;
-        public static int tv_tab_normal=0x7f0e034a;
-        public static int tv_tfund_code=0x7f0e04c4;
-        public static int tv_tfund_count=0x7f0e04c5;
-        public static int tv_tfund_name=0x7f0e04c3;
-        public static int tv_tfund_price=0x7f0e04c6;
-        public static int tv_tfund_time=0x7f0e04c2;
-        public static int tv_third_num=0x7f0e010d;
-        public static int tv_three_five=0x7f0e0334;
-        public static int tv_three_four=0x7f0e0333;
-        public static int tv_three_one=0x7f0e0330;
-        public static int tv_three_seven=0x7f0e0336;
-        public static int tv_three_six=0x7f0e0335;
-        public static int tv_three_three=0x7f0e0332;
-        public static int tv_three_two=0x7f0e0331;
-        public static int tv_ticket_click=0x7f0e0312;
-        public static int tv_ticket_name=0x7f0e0311;
-        public static int tv_time=0x7f0e03e4;
-        public static int tv_tip=0x7f0e0093;
-        public static int tv_title=0x7f0e0099;
-        public static int tv_title_below=0x7f0e009a;
-        public static int tv_title_in_fragment=0x7f0e0172;
-        public static int tv_title_status=0x7f0e03e3;
-        public static int tv_today_entrust=0x7f0e002a;
-        public static int tv_today_trade=0x7f0e002b;
-        public static int tv_today_trade_bs=0x7f0e04ab;
-        public static int tv_today_trade_count=0x7f0e04a9;
-        public static int tv_today_trade_money=0x7f0e04aa;
-        public static int tv_today_trade_name=0x7f0e04a6;
-        public static int tv_today_trade_pric=0x7f0e04a8;
-        public static int tv_today_trade_time=0x7f0e04a7;
-        public static int tv_toopen_account=0x7f0e01a1;
-        public static int tv_total_price=0x7f0e05f7;
-        public static int tv_total_quota=0x7f0e0465;
-        public static int tv_total_stock_code=0x7f0e04eb;
-        public static int tv_total_stock_name=0x7f0e04ea;
-        public static int tv_trade_count=0x7f0e04ba;
-        public static int tv_trade_date=0x7f0e0426;
-        public static int tv_trade_limit=0x7f0e01e8;
-        public static int tv_trade_market=0x7f0e01ea;
-        public static int tv_trade_value=0x7f0e04b8;
-        public static int tv_trans_bank_click=0x7f0e02a7;
-        public static int tv_trans_buy=0x7f0e034d;
-        public static int tv_trans_click_max_all=0x7f0e036a;
-        public static int tv_trans_down_limit=0x7f0e05b8;
-        public static int tv_trans_history=0x7f0e036f;
-        public static int tv_trans_history2=0x7f0e0370;
-        public static int tv_trans_history_entrust_bs=0x7f0e058d;
-        public static int tv_trans_history_entrust_code=0x7f0e0591;
-        public static int tv_trans_history_entrust_date=0x7f0e058e;
-        public static int tv_trans_history_entrust_entrust_num=0x7f0e0593;
-        public static int tv_trans_history_entrust_entrust_price=0x7f0e0592;
-        public static int tv_trans_history_entrust_name=0x7f0e0590;
-        public static int tv_trans_history_entrust_out_account=0x7f0e059b;
-        public static int tv_trans_history_entrust_out_xi=0x7f0e059a;
-        public static int tv_trans_history_entrust_status=0x7f0e058f;
-        public static int tv_trans_history_entrust_trade_num=0x7f0e0595;
-        public static int tv_trans_history_entrust_trade_price=0x7f0e0594;
-        public static int tv_trans_history_entrust_trade_status=0x7f0e0597;
-        public static int tv_trans_history_entrust_yue_num=0x7f0e0598;
-        public static int tv_trans_history_trade_bs=0x7f0e059c;
-        public static int tv_trans_history_trade_code=0x7f0e05a0;
-        public static int tv_trans_history_trade_date=0x7f0e059d;
-        public static int tv_trans_history_trade_entrust_num=0x7f0e05a2;
-        public static int tv_trans_history_trade_entrust_price=0x7f0e05a1;
-        public static int tv_trans_history_trade_name=0x7f0e059f;
-        public static int tv_trans_history_trade_out_account=0x7f0e05a8;
-        public static int tv_trans_history_trade_out_xi=0x7f0e05a7;
-        public static int tv_trans_history_trade_status=0x7f0e059e;
-        public static int tv_trans_history_trade_trade_num=0x7f0e05a4;
-        public static int tv_trans_history_trade_trade_price=0x7f0e05a3;
-        public static int tv_trans_history_trade_trade_status=0x7f0e05a5;
-        public static int tv_trans_history_trade_yue_num=0x7f0e05a6;
-        public static int tv_trans_limit_max=0x7f0e036c;
-        public static int tv_trans_limit_max_str=0x7f0e036b;
-        public static int tv_trans_market_buy=0x7f0e034f;
-        public static int tv_trans_market_sale=0x7f0e0350;
-        public static int tv_trans_market_ticket=0x7f0e0372;
-        public static int tv_trans_max_text=0x7f0e037c;
-        public static int tv_trans_msg_bs=0x7f0e035a;
-        public static int tv_trans_msg_code=0x7f0e0358;
-        public static int tv_trans_msg_name=0x7f0e0359;
-        public static int tv_trans_msg_sub_num=0x7f0e035b;
-        public static int tv_trans_msg_sub_price=0x7f0e035c;
-        public static int tv_trans_msg_sub_status=0x7f0e0360;
-        public static int tv_trans_msg_sub_time=0x7f0e035f;
-        public static int tv_trans_msg_xi_num=0x7f0e035e;
-        public static int tv_trans_msg_yue_num=0x7f0e035d;
-        public static int tv_trans_num_add=0x7f0e037b;
-        public static int tv_trans_num_cut=0x7f0e0379;
-        public static int tv_trans_price_add=0x7f0e0378;
-        public static int tv_trans_price_cut=0x7f0e0376;
-        public static int tv_trans_price_hq=0x7f0e0371;
-        public static int tv_trans_revocation=0x7f0e0357;
-        public static int tv_trans_revocation_bs=0x7f0e05a9;
-        public static int tv_trans_revocation_code=0x7f0e05ac;
-        public static int tv_trans_revocation_date=0x7f0e05aa;
-        public static int tv_trans_revocation_entrust_num=0x7f0e05ae;
-        public static int tv_trans_revocation_entrust_price=0x7f0e05ad;
-        public static int tv_trans_revocation_name=0x7f0e05ab;
-        public static int tv_trans_revocation_out_account=0x7f0e05b4;
-        public static int tv_trans_revocation_out_xi=0x7f0e05b3;
-        public static int tv_trans_revocation_trade_num=0x7f0e05b0;
-        public static int tv_trans_revocation_trade_price=0x7f0e05af;
-        public static int tv_trans_revocation_trade_status=0x7f0e05b1;
-        public static int tv_trans_revocation_yue_num=0x7f0e05b2;
-        public static int tv_trans_sale=0x7f0e034e;
-        public static int tv_trans_stock_code=0x7f0e05b6;
-        public static int tv_trans_stock_name=0x7f0e05b5;
-        public static int tv_trans_stock_status=0x7f0e05ba;
-        public static int tv_trans_sub_buy=0x7f0e0351;
-        public static int tv_trans_sub_sale=0x7f0e0352;
-        public static int tv_trans_sure_buy=0x7f0e0355;
-        public static int tv_trans_sure_sale=0x7f0e0356;
-        public static int tv_trans_today=0x7f0e036d;
-        public static int tv_trans_today2=0x7f0e036e;
-        public static int tv_trans_today_entrust_bs=0x7f0e05bb;
-        public static int tv_trans_today_entrust_code=0x7f0e05bf;
-        public static int tv_trans_today_entrust_date=0x7f0e05bc;
-        public static int tv_trans_today_entrust_entrust_num=0x7f0e05c1;
-        public static int tv_trans_today_entrust_entrust_price=0x7f0e05c0;
-        public static int tv_trans_today_entrust_name=0x7f0e05be;
-        public static int tv_trans_today_entrust_out_account=0x7f0e05c7;
-        public static int tv_trans_today_entrust_out_xi=0x7f0e05c6;
-        public static int tv_trans_today_entrust_status=0x7f0e05bd;
-        public static int tv_trans_today_entrust_trade_num=0x7f0e05c3;
-        public static int tv_trans_today_entrust_trade_price=0x7f0e05c2;
-        public static int tv_trans_today_entrust_trade_status=0x7f0e05c4;
-        public static int tv_trans_today_entrust_yue_num=0x7f0e05c5;
-        public static int tv_trans_today_trade_bs=0x7f0e05c8;
-        public static int tv_trans_today_trade_code=0x7f0e05cc;
-        public static int tv_trans_today_trade_date=0x7f0e05c9;
-        public static int tv_trans_today_trade_entrust_num=0x7f0e05ce;
-        public static int tv_trans_today_trade_entrust_price=0x7f0e05cd;
-        public static int tv_trans_today_trade_name=0x7f0e05cb;
-        public static int tv_trans_today_trade_out_account=0x7f0e05d4;
-        public static int tv_trans_today_trade_out_xi=0x7f0e05d3;
-        public static int tv_trans_today_trade_status=0x7f0e05ca;
-        public static int tv_trans_today_trade_trade_num=0x7f0e05d0;
-        public static int tv_trans_today_trade_trade_price=0x7f0e05cf;
-        public static int tv_trans_today_trade_trade_status=0x7f0e05d1;
-        public static int tv_trans_today_trade_yue_num=0x7f0e05d2;
-        public static int tv_trans_trade_bs=0x7f0e05d6;
-        public static int tv_trans_trade_buy=0x7f0e0353;
-        public static int tv_trans_trade_code=0x7f0e05d5;
-        public static int tv_trans_trade_count=0x7f0e05d7;
-        public static int tv_trans_trade_market=0x7f0e05b9;
-        public static int tv_trans_trade_max=0x7f0e037d;
-        public static int tv_trans_trade_name=0x7f0e0375;
-        public static int tv_trans_trade_price=0x7f0e05d8;
-        public static int tv_trans_trade_sale=0x7f0e0354;
-        public static int tv_trans_trade_xi_num=0x7f0e05da;
-        public static int tv_trans_trade_yue_num=0x7f0e05d9;
-        public static int tv_trans_up_limit=0x7f0e05b7;
-        public static int tv_transfer_account=0x7f0e002c;
-        public static int tv_trunover_info=0x7f0e03e6;
-        public static int tv_trust_status_fj=0x7f0e042b;
-        public static int tv_turn_status=0x7f0e03e8;
-        public static int tv_tv_hk_not_paid_detail_money=0x7f0e0471;
-        public static int tv_two_eight=0x7f0e032c;
-        public static int tv_two_finance=0x7f0e002d;
-        public static int tv_two_five=0x7f0e0329;
-        public static int tv_two_four=0x7f0e0328;
-        public static int tv_two_night=0x7f0e032d;
-        public static int tv_two_one=0x7f0e0325;
-        public static int tv_two_seven=0x7f0e032b;
-        public static int tv_two_six=0x7f0e032a;
-        public static int tv_two_ten=0x7f0e032e;
-        public static int tv_two_three=0x7f0e0327;
-        public static int tv_two_two=0x7f0e0326;
-        public static int tv_uddelegere_numbler=0x7f0e048e;
-        public static int tv_uddelegere_priser=0x7f0e048d;
-        public static int tv_unpayamt=0x7f0e0462;
-        public static int tv_up_limit=0x7f0e00f9;
-        public static int tv_up_limit_text=0x7f0e00fa;
-        public static int tv_update_date=0x7f0e048c;
-        public static int tv_upddate=0x7f0e0469;
-        public static int tv_usable=0x7f0e03a7;
-        public static int tv_use_other_account=0x7f0e00ae;
-        public static int tv_username=0x7f0e0383;
-        public static int tv_v_id=0x7f0e04ca;
-        public static int tv_vote_info=0x7f0e04cb;
-        public static int tv_vote_leijino=0x7f0e04cc;
-        public static int tv_vote_qty=0x7f0e04dc;
-        public static int tv_vote_type=0x7f0e04db;
-        public static int tv_waive_amount=0x7f0e04b0;
-        public static int tv_win_code=0x7f0e00c3;
-        public static int tv_win_count=0x7f0e00c4;
-        public static int tv_win_cur_sort=0x7f0e00c5;
-        public static int tv_win_lose_num=0x7f0e03a4;
-        public static int tv_win_lose_rate=0x7f0e03a5;
-        public static int tv_win_name=0x7f0e00c2;
-        public static int tv_win_num=0x7f0e0265;
-        public static int tv_winning_cash=0x7f0e04fd;
-        public static int tv_winning_count=0x7f0e04f9;
-        public static int tv_winning_data=0x7f0e04f4;
-        public static int tv_winning_money=0x7f0e04fc;
-        public static int tv_winning_number=0x7f0e04f8;
-        public static int tv_winning_price=0x7f0e04fa;
-        public static int tv_winning_securit_name=0x7f0e04f5;
-        public static int tv_winning_securit_number=0x7f0e04f6;
-        public static int tv_winning_tcount=0x7f0e04fb;
-        public static int tv_zstrdstatusName=0x7f0e048a;
-        public static int tvew_stock=0x7f0e02f8;
-        public static int up=0x7f0e002e;
-        public static int useLogo=0x7f0e0039;
-        public static int view_indicator=0x7f0e03e7;
-        public static int viewfinder_view=0x7f0e0086;
-        public static int vp_bottom_fragment=0x7f0e0133;
-        public static int vp_for_activity=0x7f0e008a;
-        public static int vp_main=0x7f0e00a6;
-        public static int vp_multi_trade=0x7f0e0151;
-        public static int webview=0x7f0e002f;
-        public static int withText=0x7f0e0055;
-        public static int wrap_content=0x7f0e003b;
+        public static int homeAsUp=0x7f0e0032;
+        public static int hsll_content=0x7f0e00a1;
+        public static int hsll_part1=0x7f0e0149;
+        public static int hsll_part2=0x7f0e014c;
+        public static int ibt_add=0x7f0e00fd;
+        public static int ibt_subtract=0x7f0e00f7;
+        public static int icon=0x7f0e005b;
+        public static int ifRoom=0x7f0e0050;
+        public static int im_right=0x7f0e0099;
+        public static int image=0x7f0e0058;
+        public static int image_grid=0x7f0e008b;
+        public static int in_fund_purchase_money_ll=0x7f0e022a;
+        public static int in_fund_purchase_upper_limit_ll=0x7f0e0227;
+        public static int in_fund_subscription_money_ll=0x7f0e0224;
+        public static int in_fund_subscription_money_title=0x7f0e0225;
+        public static int in_fund_subscription_upper_limit_ll=0x7f0e0220;
+        public static int in_fund_subscription_upper_limit_title=0x7f0e0221;
+        public static int include1=0x7f0e0084;
+        public static int indcator_bottom_circle=0x7f0e012e;
+        public static int indcator_left=0x7f0e0252;
+        public static int indcator_right=0x7f0e0254;
+        public static int indicator=0x7f0e05da;
+        public static int info=0x7f0e05ea;
+        public static int isexpand=0x7f0e000e;
+        public static int iv_account_phone=0x7f0e05d7;
+        public static int iv_back=0x7f0e0383;
+        public static int iv_delete_num=0x7f0e02c0;
+        public static int iv_delete_price=0x7f0e00fb;
+        public static int iv_fast_menu_icon=0x7f0e03e4;
+        public static int iv_item_select=0x7f0e03d9;
+        public static int iv_left_selected=0x7f0e01e3;
+        public static int iv_more_can_rotate=0x7f0e0276;
+        public static int iv_more_can_rotate_credit=0x7f0e0190;
+        public static int iv_right_selected=0x7f0e01e5;
+        public static int iv_show_security_code=0x7f0e0380;
+        public static int launch_product_query=0x7f0e000f;
+        public static int layout=0x7f0e00ab;
+        public static int layout_root=0x7f0e0088;
+        public static int lin_a_revocation=0x7f0e03b7;
+        public static int lin_bottom_revocation=0x7f0e03da;
+        public static int lin_choose_contract=0x7f0e0525;
+        public static int lin_have_data=0x7f0e0268;
+        public static int lin_have_data_set=0x7f0e0150;
+        public static int lin_have_date=0x7f0e025c;
+        public static int lin_head=0x7f0e01f0;
+        public static int lin_head_contract=0x7f0e02a9;
+        public static int lin_head_expand_contract=0x7f0e0172;
+        public static int lin_head_hold=0x7f0e02e6;
+        public static int lin_head_return_money=0x7f0e02b7;
+        public static int lin_head_return_stock=0x7f0e02b6;
+        public static int lin_in_pwd_text1=0x7f0e00dc;
+        public static int lin_in_pwd_text2=0x7f0e00de;
+        public static int lin_lay_collater=0x7f0e02f5;
+        public static int lin_lay_ticket=0x7f0e0309;
+        public static int lin_level_revocation=0x7f0e04ad;
+        public static int lin_lin=0x7f0e0403;
+        public static int lin_lin_r=0x7f0e0531;
+        public static int lin_lin_revocation=0x7f0e047b;
+        public static int lin_loading=0x7f0e025a;
+        public static int lin_loading_contract=0x7f0e02c5;
+        public static int lin_loading_object=0x7f0e02c9;
+        public static int lin_loading_set=0x7f0e00d6;
+        public static int lin_no_data_set=0x7f0e025b;
+        public static int lin_not_data_contract=0x7f0e02c6;
+        public static int lin_not_data_object=0x7f0e02ca;
+        public static int lin_not_data_set=0x7f0e0148;
+        public static int lin_object_capital=0x7f0e0303;
+        public static int lin_option_revocation=0x7f0e0513;
+        public static int lin_out_pwd_text1=0x7f0e00e5;
+        public static int lin_out_pwd_text2=0x7f0e00e7;
+        public static int lin_proper_one=0x7f0e02fb;
+        public static int lin_proper_three=0x7f0e0329;
+        public static int lin_proper_two=0x7f0e031e;
+        public static int lin_r_head_contract=0x7f0e02c4;
+        public static int lin_r_head_object=0x7f0e02c8;
+        public static int lin_r_revocation=0x7f0e0528;
+        public static int lin_r_stock_return_pop=0x7f0e0333;
+        public static int lin_select_data_end=0x7f0e0143;
+        public static int lin_select_data_start=0x7f0e0141;
+        public static int lin_trans_line_one=0x7f0e0590;
+        public static int lin_trans_line_two=0x7f0e0593;
+        public static int lin_trans_trade_head=0x7f0e037c;
+        public static int lin_transfer_in=0x7f0e00d7;
+        public static int lin_transfer_out=0x7f0e00e1;
+        public static int line1=0x7f0e05e4;
+        public static int line3=0x7f0e05e8;
+        public static int listMode=0x7f0e002e;
+        public static int list_item=0x7f0e005a;
+        public static int ll_account_after=0x7f0e00ef;
+        public static int ll_account_pre=0x7f0e00ed;
+        public static int ll_buy1=0x7f0e011d;
+        public static int ll_buy2=0x7f0e0120;
+        public static int ll_buy3=0x7f0e0123;
+        public static int ll_buy4=0x7f0e0126;
+        public static int ll_buy5=0x7f0e0129;
+        public static int ll_buy_or_sell_list_loading=0x7f0e01e7;
+        public static int ll_capital_have_data=0x7f0e036d;
+        public static int ll_capital_list_loading=0x7f0e0307;
+        public static int ll_click_parent=0x7f0e03d7;
+        public static int ll_code_name=0x7f0e00ea;
+        public static int ll_collater_list_loading=0x7f0e02f9;
+        public static int ll_dialog_button_bar=0x7f0e00b4;
+        public static int ll_dialog_title=0x7f0e00b0;
+        public static int ll_firstRow=0x7f0e0188;
+        public static int ll_fselect_trade_loading=0x7f0e01ae;
+        public static int ll_fund_list_loading=0x7f0e0272;
+        public static int ll_hold_list_item_expand=0x7f0e03a4;
+        public static int ll_hold_list_item_view=0x7f0e03a3;
+        public static int ll_home_layout=0x7f0e017e;
+        public static int ll_input_amount=0x7f0e00ff;
+        public static int ll_input_price=0x7f0e00f6;
+        public static int ll_list_loading=0x7f0e014f;
+        public static int ll_main_container_hold=0x7f0e0181;
+        public static int ll_main_container_hold_non=0x7f0e017f;
+        public static int ll_market_entrust=0x7f0e029c;
+        public static int ll_myhold_list_loading=0x7f0e014d;
+        public static int ll_parent=0x7f0e0197;
+        public static int ll_points=0x7f0e014a;
+        public static int ll_price_after=0x7f0e00f9;
+        public static int ll_r_choose_contract=0x7f0e02ae;
+        public static int ll_r_choose_shock=0x7f0e02a5;
+        public static int ll_risk_list_loading=0x7f0e01c6;
+        public static int ll_risk_test_paper=0x7f0e01cc;
+        public static int ll_risk_test_result=0x7f0e01c7;
+        public static int ll_sale1=0x7f0e0119;
+        public static int ll_sale2=0x7f0e0116;
+        public static int ll_sale3=0x7f0e0113;
+        public static int ll_sale4=0x7f0e0110;
+        public static int ll_sale5=0x7f0e010d;
+        public static int ll_secondRow=0x7f0e02de;
+        public static int ll_stock_num_after=0x7f0e0100;
+        public static int ll_ticket_list_loading=0x7f0e030d;
+        public static int ll_whole_login_fragment=0x7f0e0133;
+        public static int lock_pattern_indicator=0x7f0e008f;
+        public static int lock_pattern_view=0x7f0e0091;
+        public static int lv_account=0x7f0e05f1;
+        public static int lv_fund_hold_stock=0x7f0e01af;
+        public static int lv_have_head=0x7f0e0173;
+        public static int lv_hold=0x7f0e033e;
+        public static int lv_my_hold_stock=0x7f0e014e;
+        public static int lv_new_stock_list=0x7f0e0273;
+        public static int lv_one_key=0x7f0e0154;
+        public static int lv_one_key_transfer=0x7f0e015a;
+        public static int lv_pop=0x7f0e0171;
+        public static int lv_r_choose_contract=0x7f0e02b8;
+        public static int lv_r_select_capital=0x7f0e0308;
+        public static int lv_r_select_collater=0x7f0e02fa;
+        public static int lv_r_select_ticket=0x7f0e030e;
+        public static int lv_refresh_list=0x7f0e0147;
+        public static int lv_refresh_pop=0x7f0e017b;
+        public static int lv_revotion=0x7f0e0341;
+        public static int lv_show_contract=0x7f0e02c7;
+        public static int lv_show_object=0x7f0e02cc;
+        public static int lv_show_stock=0x7f0e01e8;
+        public static int lv_today_entrust=0x7f0e0342;
+        public static int mask=0x7f0e05dd;
+        public static int media_actions=0x7f0e05e2;
+        public static int middle=0x7f0e004d;
+        public static int multiply=0x7f0e003b;
+        public static int name=0x7f0e05db;
+        public static int never=0x7f0e0051;
+        public static int next=0x7f0e008d;
+        public static int none=0x7f0e0033;
+        public static int normal=0x7f0e002f;
+        public static int not_show=0x7f0e0048;
+        public static int nsv_for_activity=0x7f0e0086;
+        public static int nsv_multi_trade=0x7f0e00a0;
+        public static int options1=0x7f0e0386;
+        public static int options2=0x7f0e0387;
+        public static int options3=0x7f0e0388;
+        public static int optionspicker=0x7f0e0600;
+        public static int parentPanel=0x7f0e005f;
+        public static int pb_loadImage=0x7f0e0381;
+        public static int placeholder=0x7f0e05d6;
+        public static int pop_all_agree=0x7f0e05ed;
+        public static int pop_all_cancel=0x7f0e05f0;
+        public static int pop_all_give_up=0x7f0e05ef;
+        public static int pop_all_oppose=0x7f0e05ee;
+        public static int pop_layout=0x7f0e05ec;
+        public static int preview=0x7f0e00ac;
+        public static int preview_view=0x7f0e0082;
+        public static int pro_loaing_money=0x7f0e00da;
+        public static int progressBar=0x7f0e011c;
+        public static int progressBar1=0x7f0e00b8;
+        public static int progress_circular=0x7f0e0010;
+        public static int progress_horizontal=0x7f0e0011;
+        public static int pull_to_load_footer_content=0x7f0e05f3;
+        public static int pull_to_load_footer_hint_textview=0x7f0e05f5;
+        public static int pull_to_load_footer_progressbar=0x7f0e05f4;
+        public static int pull_to_refresh_header_animimg=0x7f0e05fd;
+        public static int pull_to_refresh_header_arrow=0x7f0e05fb;
+        public static int pull_to_refresh_header_content=0x7f0e05f6;
+        public static int pull_to_refresh_header_hint_textview=0x7f0e05f8;
+        public static int pull_to_refresh_header_progressbar=0x7f0e05fc;
+        public static int pull_to_refresh_header_text=0x7f0e05f7;
+        public static int pull_to_refresh_header_time=0x7f0e05fa;
+        public static int pull_to_refresh_last_update_time_text=0x7f0e05f9;
+        public static int qr_picture=0x7f0e00a2;
+        public static int qrcode_bitmap=0x7f0e009c;
+        public static int quit=0x7f0e0012;
+        public static int r_cash_fragment=0x7f0e02aa;
+        public static int radio=0x7f0e006d;
+        public static int ratio_16_9=0x7f0e0040;
+        public static int ratio_1_1=0x7f0e0041;
+        public static int ratio_3_4=0x7f0e0042;
+        public static int ratio_4_3=0x7f0e0043;
+        public static int ratio_9_16=0x7f0e0044;
+        public static int ratio_custom=0x7f0e0045;
+        public static int ratio_fit_image=0x7f0e0046;
+        public static int ratio_free=0x7f0e0047;
+        public static int rb_add_vote_agree=0x7f0e04ca;
+        public static int rb_add_vote_give_up=0x7f0e04cc;
+        public static int rb_add_vote_opppse=0x7f0e04cb;
+        public static int rb_buy_or_sale=0x7f0e02a3;
+        public static int rb_cash_return=0x7f0e02ac;
+        public static int rb_cash_return_contract=0x7f0e02ad;
+        public static int rb_contract=0x7f0e02c2;
+        public static int rb_foot_one_key_sub=0x7f0e0269;
+        public static int rb_object=0x7f0e02c3;
+        public static int rb_one_key_sub=0x7f0e04e3;
+        public static int rb_option_put=0x7f0e029b;
+        public static int rb_option_subscription=0x7f0e029a;
+        public static int rb_r_liability=0x7f0e0311;
+        public static int rb_r_limit=0x7f0e0312;
+        public static int rb_r_money=0x7f0e0310;
+        public static int rb_return_stock=0x7f0e0332;
+        public static int rb_select_contract=0x7f0e02a4;
+        public static int rb_share_set_cash=0x7f0e0415;
+        public static int rb_share_set_hold=0x7f0e0414;
+        public static int rb_trans_hq_all=0x7f0e035f;
+        public static int rb_trans_hq_buy=0x7f0e0360;
+        public static int re_root_layout=0x7f0e016f;
+        public static int real_base_title=0x7f0e0094;
+        public static int restart_preview=0x7f0e0013;
+        public static int result=0x7f0e009b;
+        public static int return_scan_result=0x7f0e0014;
+        public static int rg_add_vote=0x7f0e04c9;
+        public static int rg_buy_or_sale=0x7f0e02a2;
+        public static int rg_cash_return=0x7f0e02ab;
+        public static int rg_fragment_group=0x7f0e0174;
+        public static int rg_fund_risk_question=0x7f0e040c;
+        public static int rg_option_open=0x7f0e0299;
+        public static int rg_property_select=0x7f0e030f;
+        public static int rg_r_buy_or_sale=0x7f0e02c1;
+        public static int rg_radio_group_share=0x7f0e0413;
+        public static int rg_return_stock=0x7f0e0331;
+        public static int rg_trans_hq=0x7f0e035e;
+        public static int rg_trans_sale=0x7f0e0361;
+        public static int rl_bgoftoolbar=0x7f0e0382;
+        public static int rl_change_fundpwd=0x7f0e027a;
+        public static int rl_change_tradepwd=0x7f0e0279;
+        public static int rl_close_out_credit=0x7f0e0194;
+        public static int rl_more=0x7f0e0275;
+        public static int rl_more_credit=0x7f0e018f;
+        public static int rl_new_buy=0x7f0e0278;
+        public static int rl_new_buy_credit=0x7f0e0192;
+        public static int rl_no_data=0x7f0e033f;
+        public static int rl_not_close_out_credit=0x7f0e0193;
+        public static int rl_r_choose_stock=0x7f0e02b9;
+        public static int screen=0x7f0e003c;
+        public static int scrollIndicatorDown=0x7f0e0067;
+        public static int scrollIndicatorUp=0x7f0e0064;
+        public static int scrollView=0x7f0e0065;
+        public static int scrollview_trade_home=0x7f0e018d;
+        public static int search_badge=0x7f0e0077;
+        public static int search_bar=0x7f0e0076;
+        public static int search_book_contents_failed=0x7f0e0015;
+        public static int search_book_contents_succeeded=0x7f0e0016;
+        public static int search_button=0x7f0e0078;
+        public static int search_close_btn=0x7f0e007d;
+        public static int search_edit_frame=0x7f0e0079;
+        public static int search_go_btn=0x7f0e007f;
+        public static int search_mag_icon=0x7f0e007a;
+        public static int search_plate=0x7f0e007b;
+        public static int search_src_text=0x7f0e007c;
+        public static int search_voice_btn=0x7f0e0080;
+        public static int select_dialog_listview=0x7f0e0081;
+        public static int shortcut=0x7f0e006c;
+        public static int showCustom=0x7f0e0034;
+        public static int showHome=0x7f0e0035;
+        public static int showTitle=0x7f0e0036;
+        public static int show_always=0x7f0e0049;
+        public static int show_on_touch=0x7f0e004a;
+        public static int size=0x7f0e05dc;
+        public static int sll_back_out=0x7f0e0178;
+        public static int sll_for_activity=0x7f0e0085;
+        public static int sll_layout=0x7f0e017d;
+        public static int sll_my_stock=0x7f0e017c;
+        public static int sll_statement=0x7f0e02f4;
+        public static int spacer=0x7f0e005e;
+        public static int split=0x7f0e0017;
+        public static int split_action_bar=0x7f0e0018;
+        public static int src_atop=0x7f0e003d;
+        public static int src_in=0x7f0e003e;
+        public static int src_over=0x7f0e003f;
+        public static int status_bar_latest_event_content=0x7f0e05e1;
+        public static int step1=0x7f0e00f8;
+        public static int step2=0x7f0e00fe;
+        public static int submit_area=0x7f0e007e;
+        public static int t_new_stck=0x7f0e02e9;
+        public static int t_new_stock=0x7f0e02ed;
+        public static int tabMode=0x7f0e0030;
+        public static int tab_replace_toolbar=0x7f0e0343;
+        public static int tb_showname=0x7f0e0384;
+        public static int text=0x7f0e05e9;
+        public static int text2=0x7f0e05e7;
+        public static int textSpacerNoButtons=0x7f0e0066;
+        public static int textView=0x7f0e03e3;
+        public static int textview_title=0x7f0e00a5;
+        public static int time=0x7f0e05e5;
+        public static int timeline_area=0x7f0e0257;
+        public static int title=0x7f0e005c;
+        public static int title_template=0x7f0e0061;
+        public static int toolbar=0x7f0e0089;
+        public static int topPanel=0x7f0e0060;
+        public static int top_area=0x7f0e00a6;
+        public static int trade_container=0x7f0e0175;
+        public static int tv=0x7f0e00b9;
+        public static int tv1=0x7f0e00ca;
+        public static int tv2=0x7f0e00cc;
+        public static int tv3=0x7f0e00ce;
+        public static int tv4=0x7f0e00d0;
+        public static int tv_a_history_entrust_bs=0x7f0e0395;
+        public static int tv_a_history_entrust_date=0x7f0e038f;
+        public static int tv_a_history_entrust_name=0x7f0e038e;
+        public static int tv_a_history_entrust_num=0x7f0e0393;
+        public static int tv_a_history_entrust_price=0x7f0e0391;
+        public static int tv_a_history_entrust_status=0x7f0e0396;
+        public static int tv_a_history_entrust_time=0x7f0e0390;
+        public static int tv_a_history_trade_balances=0x7f0e039a;
+        public static int tv_a_history_trade_bs=0x7f0e039b;
+        public static int tv_a_history_trade_date=0x7f0e0398;
+        public static int tv_a_history_trade_name=0x7f0e0397;
+        public static int tv_a_history_trade_num=0x7f0e0394;
+        public static int tv_a_history_trade_price=0x7f0e0392;
+        public static int tv_a_history_trade_time=0x7f0e0399;
+        public static int tv_a_revocation_bs=0x7f0e03b8;
+        public static int tv_a_revocation_code=0x7f0e03ba;
+        public static int tv_a_revocation_entrust_num=0x7f0e03be;
+        public static int tv_a_revocation_entrust_price=0x7f0e03bc;
+        public static int tv_a_revocation_name=0x7f0e03b9;
+        public static int tv_a_revocation_time=0x7f0e03bb;
+        public static int tv_a_revocation_trade_num=0x7f0e03bf;
+        public static int tv_a_revocation_trade_price=0x7f0e03bd;
+        public static int tv_a_statement_bs=0x7f0e03c0;
+        public static int tv_a_statement_date=0x7f0e03c1;
+        public static int tv_a_today_entrust_bs=0x7f0e03ce;
+        public static int tv_a_today_entrust_name=0x7f0e03cb;
+        public static int tv_a_today_entrust_num=0x7f0e03cd;
+        public static int tv_a_today_entrust_price=0x7f0e03cc;
+        public static int tv_a_today_entrust_status=0x7f0e03d2;
+        public static int tv_a_today_entrust_time=0x7f0e03cf;
+        public static int tv_a_today_trade_balances=0x7f0e03d5;
+        public static int tv_a_today_trade_bs=0x7f0e03d6;
+        public static int tv_a_today_trade_name=0x7f0e03d3;
+        public static int tv_a_today_trade_num=0x7f0e03d1;
+        public static int tv_a_today_trade_price=0x7f0e03d0;
+        public static int tv_a_today_trade_time=0x7f0e03d4;
+        public static int tv_a_water_bs=0x7f0e03a8;
+        public static int tv_a_water_date=0x7f0e03a9;
+        public static int tv_a_water_entrust_no=0x7f0e03aa;
+        public static int tv_a_water_entrust_num=0x7f0e03b0;
+        public static int tv_a_water_entrust_price=0x7f0e03af;
+        public static int tv_a_water_hou_money=0x7f0e03ac;
+        public static int tv_a_water_money_type=0x7f0e03b1;
+        public static int tv_a_water_occur_money=0x7f0e03ab;
+        public static int tv_a_water_remark=0x7f0e03b2;
+        public static int tv_a_water_trade_num=0x7f0e03ae;
+        public static int tv_a_water_trade_price=0x7f0e03ad;
+        public static int tv_account=0x7f0e00a8;
+        public static int tv_account_label=0x7f0e05d8;
+        public static int tv_account_switch_credit=0x7f0e00d3;
+        public static int tv_account_switch_normal=0x7f0e00d2;
+        public static int tv_account_switch_option=0x7f0e00d4;
+        public static int tv_add_vote_content=0x7f0e04c8;
+        public static int tv_agreement_content=0x7f0e016a;
+        public static int tv_agreement_title=0x7f0e0169;
+        public static int tv_all_num=0x7f0e0105;
+        public static int tv_amount=0x7f0e01e0;
+        public static int tv_amount_text=0x7f0e01e1;
+        public static int tv_apply_time=0x7f0e0421;
+        public static int tv_approve_amount=0x7f0e04a8;
+        public static int tv_assert_val=0x7f0e0441;
+        public static int tv_authority_times=0x7f0e0478;
+        public static int tv_authority_type_name=0x7f0e0476;
+        public static int tv_back=0x7f0e0385;
+        public static int tv_bank_account=0x7f0e038a;
+        public static int tv_bank_click_select=0x7f0e00d9;
+        public static int tv_bank_count=0x7f0e038b;
+        public static int tv_bank_direction=0x7f0e0389;
+        public static int tv_bank_in_select=0x7f0e00d8;
+        public static int tv_bank_out_select=0x7f0e00e2;
+        public static int tv_bank_out_text=0x7f0e00e3;
+        public static int tv_bank_status=0x7f0e038d;
+        public static int tv_bank_time=0x7f0e038c;
+        public static int tv_bbusiness_type=0x7f0e0427;
+        public static int tv_begin_date=0x7f0e04da;
+        public static int tv_begin_time=0x7f0e0464;
+        public static int tv_bizdate=0x7f0e0436;
+        public static int tv_bsflag=0x7f0e04d1;
+        public static int tv_business_amount=0x7f0e042b;
+        public static int tv_business_balance=0x7f0e042c;
+        public static int tv_business_id=0x7f0e0422;
+        public static int tv_business_price=0x7f0e03c2;
+        public static int tv_business_time=0x7f0e0437;
+        public static int tv_business_type=0x7f0e0429;
+        public static int tv_business_type_name=0x7f0e048c;
+        public static int tv_businessflag=0x7f0e0465;
+        public static int tv_buy1_amount=0x7f0e011f;
+        public static int tv_buy1_price=0x7f0e011e;
+        public static int tv_buy2_amount=0x7f0e0122;
+        public static int tv_buy2_price=0x7f0e0121;
+        public static int tv_buy3_amount=0x7f0e0125;
+        public static int tv_buy3_price=0x7f0e0124;
+        public static int tv_buy4_amount=0x7f0e0128;
+        public static int tv_buy4_price=0x7f0e0127;
+        public static int tv_buy5_amount=0x7f0e012b;
+        public static int tv_buy5_price=0x7f0e012a;
+        public static int tv_buy_close=0x7f0e027e;
+        public static int tv_buy_open=0x7f0e027c;
+        public static int tv_buy_or_sale_title=0x7f0e00d5;
+        public static int tv_buying=0x7f0e0189;
+        public static int tv_buyrate=0x7f0e043b;
+        public static int tv_can_out_num=0x7f0e01ac;
+        public static int tv_can_trans_num=0x7f0e01db;
+        public static int tv_can_use_money=0x7f0e0109;
+        public static int tv_capital_click=0x7f0e0306;
+        public static int tv_capital_name=0x7f0e0305;
+        public static int tv_channel=0x7f0e0508;
+        public static int tv_circulation_type_name=0x7f0e0475;
+        public static int tv_cleardate=0x7f0e048d;
+        public static int tv_click_all_max=0x7f0e0295;
+        public static int tv_click_buy=0x7f0e035b;
+        public static int tv_click_commit=0x7f0e01cd;
+        public static int tv_click_hq=0x7f0e035d;
+        public static int tv_click_input_num=0x7f0e04e9;
+        public static int tv_click_sale=0x7f0e035c;
+        public static int tv_click_select=0x7f0e025d;
+        public static int tv_click_set=0x7f0e04f1;
+        public static int tv_click_vote=0x7f0e04d9;
+        public static int tv_click_warn_book=0x7f0e0167;
+        public static int tv_code=0x7f0e03dc;
+        public static int tv_code_and_name=0x7f0e0288;
+        public static int tv_collater_click=0x7f0e02f8;
+        public static int tv_collater_code=0x7f0e051a;
+        public static int tv_collater_date=0x7f0e051e;
+        public static int tv_collater_hold=0x7f0e051c;
+        public static int tv_collater_market=0x7f0e054b;
+        public static int tv_collater_name=0x7f0e02f7;
+        public static int tv_collater_not=0x7f0e051d;
+        public static int tv_collater_num=0x7f0e051b;
+        public static int tv_collater_out_max=0x7f0e00c2;
+        public static int tv_collater_profit=0x7f0e054c;
+        public static int tv_collater_revocation_bs=0x7f0e0544;
+        public static int tv_collater_revocation_code=0x7f0e0546;
+        public static int tv_collater_revocation_count=0x7f0e0548;
+        public static int tv_collater_revocation_name=0x7f0e0545;
+        public static int tv_collater_revocation_price=0x7f0e0547;
+        public static int tv_collater_revocation_time=0x7f0e0549;
+        public static int tv_collateral_security_in=0x7f0e033a;
+        public static int tv_collateral_security_lookout=0x7f0e033c;
+        public static int tv_collateral_security_out=0x7f0e033b;
+        public static int tv_collateral_security_revocation=0x7f0e033d;
+        public static int tv_combinfee_rmb=0x7f0e041b;
+        public static int tv_commitflag=0x7f0e0466;
+        public static int tv_communication_password=0x7f0e0019;
+        public static int tv_content=0x7f0e050f;
+        public static int tv_contract_code=0x7f0e028b;
+        public static int tv_contract_name=0x7f0e028c;
+        public static int tv_corpbehavior_code=0x7f0e0428;
+        public static int tv_cost_balance=0x7f0e0510;
+        public static int tv_cost_price=0x7f0e048f;
+        public static int tv_costing=0x7f0e03a2;
+        public static int tv_covered_close=0x7f0e0281;
+        public static int tv_covered_lock=0x7f0e0283;
+        public static int tv_covered_open=0x7f0e0280;
+        public static int tv_covered_open_lock=0x7f0e0284;
+        public static int tv_create_date=0x7f0e050b;
+        public static int tv_create_time=0x7f0e050c;
+        public static int tv_current_amount=0x7f0e0511;
+        public static int tv_current_price=0x7f0e0479;
+        public static int tv_current_rate=0x7f0e047a;
+        public static int tv_cut_date=0x7f0e0289;
+        public static int tv_date_search_ll=0x7f0e017a;
+        public static int tv_daybuyriserate=0x7f0e043e;
+        public static int tv_daysaleriserate=0x7f0e043f;
+        public static int tv_debtsid=0x7f0e0418;
+        public static int tv_dialog_title=0x7f0e00b1;
+        public static int tv_direct_data=0x7f0e03fe;
+        public static int tv_direct_have=0x7f0e03ff;
+        public static int tv_direct_have_time=0x7f0e0401;
+        public static int tv_direct_money=0x7f0e03fd;
+        public static int tv_direct_time=0x7f0e0400;
+        public static int tv_distribute_begin=0x7f0e04e2;
+        public static int tv_distribute_count=0x7f0e04e1;
+        public static int tv_distribute_data=0x7f0e04dd;
+        public static int tv_distribute_securit_name=0x7f0e04de;
+        public static int tv_distribute_securit_number=0x7f0e04df;
+        public static int tv_divide_line=0x7f0e04c3;
+        public static int tv_down_limit=0x7f0e00f3;
+        public static int tv_down_limit_text=0x7f0e00f2;
+        public static int tv_enable_amount=0x7f0e0492;
+        public static int tv_enable_balance=0x7f0e0442;
+        public static int tv_end_date=0x7f0e04db;
+        public static int tv_entrust_amount=0x7f0e0424;
+        public static int tv_entrust_balance=0x7f0e0489;
+        public static int tv_entrust_count=0x7f0e04b3;
+        public static int tv_entrust_date=0x7f0e048e;
+        public static int tv_entrust_info=0x7f0e03df;
+        public static int tv_entrust_name=0x7f0e054a;
+        public static int tv_entrust_no=0x7f0e048b;
+        public static int tv_entrust_price=0x7f0e042a;
+        public static int tv_entrust_state_name=0x7f0e0502;
+        public static int tv_entrust_status_name=0x7f0e0514;
+        public static int tv_entrust_str=0x7f0e0297;
+        public static int tv_entrust_time=0x7f0e04d0;
+        public static int tv_entrust_value=0x7f0e04b1;
+        public static int tv_exchange_rate=0x7f0e01df;
+        public static int tv_exchange_rate_text=0x7f0e01de;
+        public static int tv_exchange_type=0x7f0e04d3;
+        public static int tv_exchange_type_name=0x7f0e0438;
+        public static int tv_exercise=0x7f0e0282;
+        public static int tv_exercise_price=0x7f0e028a;
+        public static int tv_exit_logout=0x7f0e027b;
+        public static int tv_exit_logout_credit=0x7f0e0196;
+        public static int tv_fee_ghf=0x7f0e03c9;
+        public static int tv_fee_jsf=0x7f0e0435;
+        public static int tv_fee_jygf=0x7f0e0432;
+        public static int tv_fee_qsf=0x7f0e0434;
+        public static int tv_fee_sxf=0x7f0e03ca;
+        public static int tv_fee_yhs=0x7f0e0430;
+        public static int tv_fee_zgf=0x7f0e0431;
+        public static int tv_feefront=0x7f0e0433;
+        public static int tv_float_yk=0x7f0e0495;
+        public static int tv_float_yk_per=0x7f0e0494;
+        public static int tv_forget_password=0x7f0e00aa;
+        public static int tv_freeze_amount=0x7f0e0493;
+        public static int tv_fselect_four=0x7f0e03eb;
+        public static int tv_fselect_one=0x7f0e03e8;
+        public static int tv_fselect_three=0x7f0e03e9;
+        public static int tv_fselect_two=0x7f0e03ea;
+        public static int tv_fun_otc=0x7f0e001a;
+        public static int tv_fun_trade=0x7f0e001b;
+        public static int tv_fun_trade_in=0x7f0e001c;
+        public static int tv_fun_trade_level=0x7f0e001d;
+        public static int tv_fund_account=0x7f0e04d2;
+        public static int tv_fund_click_ransom_max=0x7f0e01bb;
+        public static int tv_fund_click_sub_max=0x7f0e01d2;
+        public static int tv_fund_code=0x7f0e044b;
+        public static int tv_fund_dire_name=0x7f0e01b3;
+        public static int tv_fund_in_name=0x7f0e01a9;
+        public static int tv_fund_in_profit=0x7f0e01aa;
+        public static int tv_fund_max_money=0x7f0e01d4;
+        public static int tv_fund_maxmoney=0x7f0e024f;
+        public static int tv_fund_name=0x7f0e01cf;
+        public static int tv_fund_name_account=0x7f0e03e6;
+        public static int tv_fund_net_value=0x7f0e01d0;
+        public static int tv_fund_now_price=0x7f0e024c;
+        public static int tv_fund_open_account=0x7f0e01b0;
+        public static int tv_fund_out_profit=0x7f0e01a7;
+        public static int tv_fund_pledge_click=0x7f0e03fc;
+        public static int tv_fund_profit=0x7f0e01b4;
+        public static int tv_fund_ransom_max=0x7f0e01bd;
+        public static int tv_fund_ransom_max_limit=0x7f0e01ba;
+        public static int tv_fund_ransom_name=0x7f0e0242;
+        public static int tv_fund_ransom_netvalue=0x7f0e01b9;
+        public static int tv_fund_ransom_now_price=0x7f0e0243;
+        public static int tv_fund_real_own=0x7f0e044a;
+        public static int tv_fund_realin=0x7f0e0445;
+        public static int tv_fund_realout=0x7f0e0446;
+        public static int tv_fund_revocation_balances=0x7f0e0409;
+        public static int tv_fund_revocation_balances_title=0x7f0e0408;
+        public static int tv_fund_revocation_bs=0x7f0e0404;
+        public static int tv_fund_revocation_code=0x7f0e0406;
+        public static int tv_fund_revocation_name=0x7f0e0405;
+        public static int tv_fund_revocation_profit=0x7f0e0407;
+        public static int tv_fund_revocation_time=0x7f0e040a;
+        public static int tv_fund_risk_question=0x7f0e040b;
+        public static int tv_fund_select_balance=0x7f0e03f1;
+        public static int tv_fund_select_bs=0x7f0e03ec;
+        public static int tv_fund_select_code=0x7f0e03ee;
+        public static int tv_fund_select_name=0x7f0e03ed;
+        public static int tv_fund_select_profit=0x7f0e03f0;
+        public static int tv_fund_select_status=0x7f0e03ef;
+        public static int tv_fund_select_time=0x7f0e03f2;
+        public static int tv_fund_sub_max=0x7f0e01d1;
+        public static int tv_fund_tranin=0x7f0e0443;
+        public static int tv_fund_tranout=0x7f0e0444;
+        public static int tv_fundbal=0x7f0e03c7;
+        public static int tv_fundnightout=0x7f0e0449;
+        public static int tv_funduncomein=0x7f0e0447;
+        public static int tv_funduncomeout=0x7f0e0448;
+        public static int tv_give_up_sub=0x7f0e0265;
+        public static int tv_give_up_sub_revocation=0x7f0e0266;
+        public static int tv_half_num=0x7f0e0106;
+        public static int tv_header_of_grade_bottom=0x7f0e012c;
+        public static int tv_hfund_bs=0x7f0e04b5;
+        public static int tv_hfund_code=0x7f0e04b9;
+        public static int tv_hfund_count=0x7f0e04ba;
+        public static int tv_hfund_name=0x7f0e04b8;
+        public static int tv_hfund_price=0x7f0e04bb;
+        public static int tv_hfund_status=0x7f0e04b7;
+        public static int tv_hfund_time=0x7f0e04b6;
+        public static int tv_history_data=0x7f0e044d;
+        public static int tv_history_entrust=0x7f0e029d;
+        public static int tv_history_entrust_bs=0x7f0e0453;
+        public static int tv_history_entrust_num=0x7f0e0451;
+        public static int tv_history_entrust_price=0x7f0e044f;
+        public static int tv_history_entrust_status=0x7f0e0454;
+        public static int tv_history_list=0x7f0e0267;
+        public static int tv_history_securit_name=0x7f0e044c;
+        public static int tv_history_time=0x7f0e044e;
+        public static int tv_history_trade=0x7f0e029e;
+        public static int tv_history_trade_bs=0x7f0e045b;
+        public static int tv_history_trade_count=0x7f0e0459;
+        public static int tv_history_trade_data=0x7f0e0456;
+        public static int tv_history_trade_money=0x7f0e045a;
+        public static int tv_history_trade_name=0x7f0e0455;
+        public static int tv_history_trade_number=0x7f0e0452;
+        public static int tv_history_trade_pric=0x7f0e0458;
+        public static int tv_history_trade_price=0x7f0e0450;
+        public static int tv_history_trade_time=0x7f0e0457;
+        public static int tv_hk_action_name=0x7f0e01ea;
+        public static int tv_hk_action_type1=0x7f0e01eb;
+        public static int tv_hk_action_type2=0x7f0e01ec;
+        public static int tv_hk_business_name=0x7f0e0472;
+        public static int tv_hk_buy=0x7f0e01f1;
+        public static int tv_hk_commission=0x7f0e046e;
+        public static int tv_hk_commission_data=0x7f0e0473;
+        public static int tv_hk_currency=0x7f0e0471;
+        public static int tv_hk_liquidation_money=0x7f0e046c;
+        public static int tv_hk_not_paid_deta_entrust=0x7f0e0469;
+        public static int tv_hk_not_paid_deta_price=0x7f0e0467;
+        public static int tv_hk_not_paid_detail_numbler=0x7f0e046a;
+        public static int tv_hk_other_sale=0x7f0e01f3;
+        public static int tv_hk_revocation=0x7f0e01f6;
+        public static int tv_hk_revocation_bs=0x7f0e047c;
+        public static int tv_hk_revocation_code=0x7f0e047e;
+        public static int tv_hk_revocation_date=0x7f0e047f;
+        public static int tv_hk_revocation_entrust_num=0x7f0e0481;
+        public static int tv_hk_revocation_entrust_price=0x7f0e0480;
+        public static int tv_hk_revocation_name=0x7f0e047d;
+        public static int tv_hk_revocation_trade_num=0x7f0e0483;
+        public static int tv_hk_revocation_trade_price=0x7f0e0482;
+        public static int tv_hk_sale=0x7f0e01f2;
+        public static int tv_hk_settlement_rate=0x7f0e0470;
+        public static int tv_hk_stamp_duty=0x7f0e046d;
+        public static int tv_hk_transaction_number=0x7f0e046f;
+        public static int tv_hk_transaction_price=0x7f0e0468;
+        public static int tv_hk_vote_name=0x7f0e0208;
+        public static int tv_hold_amount=0x7f0e0491;
+        public static int tv_hold_list_item_expend_buy=0x7f0e03a5;
+        public static int tv_hold_list_item_expend_hq=0x7f0e03a7;
+        public static int tv_hold_list_item_expend_sale=0x7f0e03a6;
+        public static int tv_hold_stock=0x7f0e029f;
+        public static int tv_holder_account=0x7f0e03d8;
+        public static int tv_holdpager_bank=0x7f0e0138;
+        public static int tv_home_g_g_t=0x7f0e001e;
+        public static int tv_home_trans_stock=0x7f0e001f;
+        public static int tv_in_cur_day_entrust=0x7f0e0218;
+        public static int tv_in_cur_day_transcations=0x7f0e0219;
+        public static int tv_in_entrust_inquire=0x7f0e0217;
+        public static int tv_in_fund_available_funds_show=0x7f0e022c;
+        public static int tv_in_fund_code_input=0x7f0e021d;
+        public static int tv_in_fund_code_title=0x7f0e021c;
+        public static int tv_in_fund_name_show=0x7f0e021e;
+        public static int tv_in_fund_net_value_show=0x7f0e021f;
+        public static int tv_in_fund_purchase=0x7f0e0215;
+        public static int tv_in_fund_purchase_all_button=0x7f0e0229;
+        public static int tv_in_fund_purchase_money_input=0x7f0e022b;
+        public static int tv_in_fund_purchase_or_subscription_submit=0x7f0e022d;
+        public static int tv_in_fund_purchase_upper_limit_show=0x7f0e0228;
+        public static int tv_in_fund_redemption=0x7f0e0216;
+        public static int tv_in_fund_redemption_all_button=0x7f0e022f;
+        public static int tv_in_fund_redemption_amount_input=0x7f0e0230;
+        public static int tv_in_fund_redemption_upper_limit_show=0x7f0e022e;
+        public static int tv_in_fund_stock_code=0x7f0e04ac;
+        public static int tv_in_fund_stock_name=0x7f0e04ab;
+        public static int tv_in_fund_subscription=0x7f0e0214;
+        public static int tv_in_fund_subscription_all_button=0x7f0e0223;
+        public static int tv_in_fund_subscription_money_input=0x7f0e0226;
+        public static int tv_in_fund_subscription_upper_limit_show=0x7f0e0222;
+        public static int tv_in_history_entrust=0x7f0e021a;
+        public static int tv_in_history_transcations=0x7f0e021b;
+        public static int tv_in_lof_fund=0x7f0e0213;
+        public static int tv_in_monetary_fund=0x7f0e020f;
+        public static int tv_in_monetary_fund_purchase=0x7f0e0211;
+        public static int tv_in_monetary_fund_redemption=0x7f0e0212;
+        public static int tv_in_monetary_fund_subscription=0x7f0e0210;
+        public static int tv_income_balance=0x7f0e0512;
+        public static int tv_increase_amount=0x7f0e010c;
+        public static int tv_inform_day=0x7f0e041f;
+        public static int tv_inform_type=0x7f0e041e;
+        public static int tv_input_num=0x7f0e04c7;
+        public static int tv_item_search_stock_code=0x7f0e0518;
+        public static int tv_item_search_stock_name=0x7f0e0519;
+        public static int tv_jsdate=0x7f0e0417;
+        public static int tv_last_price=0x7f0e0490;
+        public static int tv_lastmktvalue=0x7f0e041c;
+        public static int tv_level_buy_divide=0x7f0e0235;
+        public static int tv_level_buy_ransom=0x7f0e0233;
+        public static int tv_level_buy_revocation=0x7f0e0234;
+        public static int tv_level_buy_sub=0x7f0e0231;
+        public static int tv_level_buy_subtion=0x7f0e0232;
+        public static int tv_level_buy_together=0x7f0e0236;
+        public static int tv_level_fund_subscription_all_button=0x7f0e024a;
+        public static int tv_level_fund_subscription_up_limit=0x7f0e0249;
+        public static int tv_level_merger_name=0x7f0e023d;
+        public static int tv_level_merger_num=0x7f0e023e;
+        public static int tv_level_name=0x7f0e0238;
+        public static int tv_level_num=0x7f0e0239;
+        public static int tv_level_select_eentrust=0x7f0e0247;
+        public static int tv_level_select_entrust=0x7f0e0245;
+        public static int tv_level_select_trade=0x7f0e0248;
+        public static int tv_level_select_ttrade=0x7f0e0246;
+        public static int tv_lgtrdstatusName=0x7f0e0485;
+        public static int tv_limit_all=0x7f0e02fc;
+        public static int tv_limit_other_quan=0x7f0e0302;
+        public static int tv_limit_other_zi=0x7f0e0301;
+        public static int tv_limit_quan=0x7f0e02fe;
+        public static int tv_limit_use_quan=0x7f0e0300;
+        public static int tv_limit_use_zi=0x7f0e02ff;
+        public static int tv_limit_zi=0x7f0e02fd;
+        public static int tv_login=0x7f0e0346;
+        public static int tv_login_fund=0x7f0e0251;
+        public static int tv_login_sun_e=0x7f0e0253;
+        public static int tv_main_all_captial=0x7f0e0182;
+        public static int tv_main_all_captial_a=0x7f0e0183;
+        public static int tv_main_all_profit=0x7f0e0186;
+        public static int tv_main_all_profit_a=0x7f0e0187;
+        public static int tv_main_today_profit=0x7f0e0184;
+        public static int tv_main_today_profit_a=0x7f0e0185;
+        public static int tv_market_arrows=0x7f0e02a8;
+        public static int tv_market_entrust=0x7f0e02a7;
+        public static int tv_market_price=0x7f0e04c1;
+        public static int tv_market_value=0x7f0e039d;
+        public static int tv_market_year=0x7f0e0477;
+        public static int tv_matchamt=0x7f0e03c4;
+        public static int tv_matchqty=0x7f0e03c3;
+        public static int tv_max_enable=0x7f0e0294;
+        public static int tv_max_text=0x7f0e0298;
+        public static int tv_menu_item=0x7f0e03e5;
+        public static int tv_midrate=0x7f0e043d;
+        public static int tv_mkttrdstatus_name=0x7f0e0462;
+        public static int tv_modified_trade_password=0x7f0e0020;
+        public static int tv_money_number=0x7f0e0134;
+        public static int tv_money_type_name=0x7f0e03c8;
+        public static int tv_money_type_name1=0x7f0e048a;
+        public static int tv_money_unit=0x7f0e0135;
+        public static int tv_more_menu_item=0x7f0e04c2;
+        public static int tv_motion_id=0x7f0e04a7;
+        public static int tv_my_hold=0x7f0e0021;
+        public static int tv_myhold_canget=0x7f0e013d;
+        public static int tv_myhold_cangeta=0x7f0e013e;
+        public static int tv_myhold_canuse=0x7f0e0139;
+        public static int tv_myhold_canusea=0x7f0e013a;
+        public static int tv_myhold_money=0x7f0e0136;
+        public static int tv_myhold_moneya=0x7f0e0137;
+        public static int tv_myhold_port=0x7f0e013b;
+        public static int tv_myhold_porta=0x7f0e013c;
+        public static int tv_myhold_value=0x7f0e013f;
+        public static int tv_myhold_valuea=0x7f0e0140;
+        public static int tv_name=0x7f0e03db;
+        public static int tv_ne_ock=0x7f0e02eb;
+        public static int tv_ne_stock=0x7f0e02ec;
+        public static int tv_nestock=0x7f0e02f1;
+        public static int tv_net_direction=0x7f0e0022;
+        public static int tv_new_max=0x7f0e00bc;
+        public static int tv_new_sock=0x7f0e02ee;
+        public static int tv_new_stck=0x7f0e02f0;
+        public static int tv_new_stock=0x7f0e0023;
+        public static int tv_new_subscribe_limit_hu=0x7f0e026b;
+        public static int tv_new_subscribe_limit_shen=0x7f0e026c;
+        public static int tv_new_tock=0x7f0e02e8;
+        public static int tv_newstock=0x7f0e02ea;
+        public static int tv_newtock=0x7f0e02f3;
+        public static int tv_no_data_object=0x7f0e02cb;
+        public static int tv_no_data_set=0x7f0e0179;
+        public static int tv_note_date=0x7f0e0474;
+        public static int tv_notice_sn=0x7f0e0507;
+        public static int tv_now_price=0x7f0e010b;
+        public static int tv_nstock=0x7f0e02e7;
+        public static int tv_num_add=0x7f0e0293;
+        public static int tv_num_cut=0x7f0e0291;
+        public static int tv_nw_stock=0x7f0e02ef;
+        public static int tv_object_code=0x7f0e0520;
+        public static int tv_object_market=0x7f0e0522;
+        public static int tv_object_name=0x7f0e051f;
+        public static int tv_object_per=0x7f0e0521;
+        public static int tv_occur_balance=0x7f0e03c5;
+        public static int tv_on_way_in=0x7f0e0496;
+        public static int tv_on_way_out=0x7f0e0497;
+        public static int tv_oneKey_collection=0x7f0e0024;
+        public static int tv_one_eight=0x7f0e031a;
+        public static int tv_one_five=0x7f0e0317;
+        public static int tv_one_four=0x7f0e0316;
+        public static int tv_one_key_can_use=0x7f0e03b6;
+        public static int tv_one_key_money=0x7f0e03b5;
+        public static int tv_one_key_name=0x7f0e03b3;
+        public static int tv_one_key_sub=0x7f0e0263;
+        public static int tv_one_key_sub_max=0x7f0e04e7;
+        public static int tv_one_key_sub_num=0x7f0e04e8;
+        public static int tv_one_key_sub_price=0x7f0e04e6;
+        public static int tv_one_key_type=0x7f0e03b4;
+        public static int tv_one_night=0x7f0e031b;
+        public static int tv_one_one=0x7f0e0313;
+        public static int tv_one_seven=0x7f0e0319;
+        public static int tv_one_six=0x7f0e0318;
+        public static int tv_one_stock_option=0x7f0e0025;
+        public static int tv_one_ten=0x7f0e031c;
+        public static int tv_one_tenone=0x7f0e031d;
+        public static int tv_one_three=0x7f0e0315;
+        public static int tv_one_two=0x7f0e0314;
+        public static int tv_onek_account=0x7f0e0151;
+        public static int tv_onem_in_account=0x7f0e0156;
+        public static int tv_onem_out_account=0x7f0e0155;
+        public static int tv_open_date=0x7f0e03e7;
+        public static int tv_open_status=0x7f0e0165;
+        public static int tv_oppose_amount=0x7f0e04a9;
+        public static int tv_opt_business_price=0x7f0e0506;
+        public static int tv_opt_entrust_price=0x7f0e0505;
+        public static int tv_opthold_type_name=0x7f0e0504;
+        public static int tv_option_change_pwd=0x7f0e0286;
+        public static int tv_option_code=0x7f0e02a0;
+        public static int tv_option_contract_bs=0x7f0e04fa;
+        public static int tv_option_contract_name=0x7f0e04f8;
+        public static int tv_option_contract_type=0x7f0e04f9;
+        public static int tv_option_name=0x7f0e0501;
+        public static int tv_option_revocation=0x7f0e0285;
+        public static int tv_option_type_name=0x7f0e0503;
+        public static int tv_order_date=0x7f0e04cf;
+        public static int tv_order_group=0x7f0e04ce;
+        public static int tv_order_sno=0x7f0e04cd;
+        public static int tv_order_status=0x7f0e04d8;
+        public static int tv_out_fund_account=0x7f0e01a2;
+        public static int tv_out_fund_company=0x7f0e01d8;
+        public static int tv_out_fund_convert=0x7f0e019f;
+        public static int tv_out_fund_direction=0x7f0e01a4;
+        public static int tv_out_fund_entrust=0x7f0e01a0;
+        public static int tv_out_fund_out=0x7f0e01a6;
+        public static int tv_out_fund_profit=0x7f0e01d7;
+        public static int tv_out_fund_ransom=0x7f0e019e;
+        public static int tv_out_fund_remove=0x7f0e01a5;
+        public static int tv_out_fund_risk=0x7f0e01a3;
+        public static int tv_out_fund_set=0x7f0e01a1;
+        public static int tv_out_fund_sub=0x7f0e019d;
+        public static int tv_out_fund_subtion=0x7f0e019c;
+        public static int tv_out_fund_trans_out=0x7f0e01d6;
+        public static int tv_outf_code=0x7f0e03f4;
+        public static int tv_outf_count=0x7f0e03f8;
+        public static int tv_outf_name=0x7f0e03f3;
+        public static int tv_outf_profit=0x7f0e03f6;
+        public static int tv_outf_share=0x7f0e03f9;
+        public static int tv_outf_status=0x7f0e03f5;
+        public static int tv_outf_value=0x7f0e03f7;
+        public static int tv_placard_id=0x7f0e04a6;
+        public static int tv_pop_buy=0x7f0e00cb;
+        public static int tv_pop_cancel=0x7f0e00b6;
+        public static int tv_pop_code=0x7f0e00c9;
+        public static int tv_pop_code_text=0x7f0e00c8;
+        public static int tv_pop_entrust_number=0x7f0e00cf;
+        public static int tv_pop_fund_code=0x7f0e0516;
+        public static int tv_pop_fund_left=0x7f0e0515;
+        public static int tv_pop_fund_name=0x7f0e0517;
+        public static int tv_pop_msg=0x7f0e00ba;
+        public static int tv_pop_name=0x7f0e00c7;
+        public static int tv_pop_name_text=0x7f0e00c6;
+        public static int tv_pop_ok=0x7f0e00b5;
+        public static int tv_pop_price=0x7f0e00cd;
+        public static int tv_pop_trade=0x7f0e00d1;
+        public static int tv_price_add=0x7f0e0290;
+        public static int tv_price_cut=0x7f0e028e;
+        public static int tv_product_status=0x7f0e0461;
+        public static int tv_qsdate=0x7f0e0419;
+        public static int tv_quarter_num=0x7f0e0108;
+        public static int tv_query=0x7f0e018c;
+        public static int tv_r_assure_buy=0x7f0e02da;
+        public static int tv_r_assure_sell=0x7f0e02db;
+        public static int tv_r_begin_date=0x7f0e0524;
+        public static int tv_r_bs=0x7f0e0571;
+        public static int tv_r_bscode=0x7f0e0574;
+        public static int tv_r_bsname=0x7f0e0573;
+        public static int tv_r_bsnum=0x7f0e0576;
+        public static int tv_r_bsprice=0x7f0e0575;
+        public static int tv_r_bsstatus=0x7f0e0572;
+        public static int tv_r_bstime=0x7f0e0579;
+        public static int tv_r_business_balance=0x7f0e0527;
+        public static int tv_r_business_price=0x7f0e0584;
+        public static int tv_r_buy_coupon_payments=0x7f0e02df;
+        public static int tv_r_buy_in=0x7f0e02d8;
+        public static int tv_r_cash_can_use=0x7f0e02b0;
+        public static int tv_r_cash_other=0x7f0e02b1;
+        public static int tv_r_change_pwd=0x7f0e02e4;
+        public static int tv_r_choose_contract=0x7f0e02af;
+        public static int tv_r_choose_stock=0x7f0e0334;
+        public static int tv_r_choose_stock_count=0x7f0e02a6;
+        public static int tv_r_contract=0x7f0e02e3;
+        public static int tv_r_contract_id=0x7f0e02bd;
+        public static int tv_r_do_bs=0x7f0e055f;
+        public static int tv_r_do_compact_id=0x7f0e056a;
+        public static int tv_r_do_date=0x7f0e0560;
+        public static int tv_r_do_fare_guo_hu=0x7f0e0569;
+        public static int tv_r_do_fare_qing=0x7f0e0566;
+        public static int tv_r_do_fare_shou=0x7f0e0565;
+        public static int tv_r_do_fare_trade=0x7f0e0567;
+        public static int tv_r_do_fare_yin=0x7f0e0568;
+        public static int tv_r_do_market=0x7f0e056f;
+        public static int tv_r_do_money_yu=0x7f0e056d;
+        public static int tv_r_do_qing_money=0x7f0e0564;
+        public static int tv_r_do_remark=0x7f0e0570;
+        public static int tv_r_do_stock_account=0x7f0e056e;
+        public static int tv_r_do_stock_yu=0x7f0e056c;
+        public static int tv_r_do_trade_balances=0x7f0e0563;
+        public static int tv_r_do_trade_id=0x7f0e056b;
+        public static int tv_r_do_trade_num=0x7f0e0561;
+        public static int tv_r_do_trade_price=0x7f0e0562;
+        public static int tv_r_end_date=0x7f0e02be;
+        public static int tv_r_entrust_bs=0x7f0e057a;
+        public static int tv_r_equity_trading=0x7f0e02e1;
+        public static int tv_r_money_payments=0x7f0e02dd;
+        public static int tv_r_money_type_name=0x7f0e0586;
+        public static int tv_r_more=0x7f0e02e5;
+        public static int tv_r_not_bs=0x7f0e0550;
+        public static int tv_r_not_cash=0x7f0e0557;
+        public static int tv_r_not_code=0x7f0e054e;
+        public static int tv_r_not_cut_date=0x7f0e055c;
+        public static int tv_r_not_date=0x7f0e054f;
+        public static int tv_r_not_id=0x7f0e055d;
+        public static int tv_r_not_money=0x7f0e0556;
+        public static int tv_r_not_name=0x7f0e054d;
+        public static int tv_r_not_not_fa=0x7f0e055b;
+        public static int tv_r_not_not_li=0x7f0e0559;
+        public static int tv_r_not_r_money=0x7f0e0554;
+        public static int tv_r_not_status=0x7f0e0551;
+        public static int tv_r_not_trade_balances=0x7f0e0553;
+        public static int tv_r_not_trade_num=0x7f0e0552;
+        public static int tv_r_not_yes_fa=0x7f0e055a;
+        public static int tv_r_not_yes_li=0x7f0e0558;
+        public static int tv_r_not_yk=0x7f0e0555;
+        public static int tv_r_open_date=0x7f0e02bb;
+        public static int tv_r_pager_all=0x7f0e02cd;
+        public static int tv_r_pager_alla=0x7f0e02ce;
+        public static int tv_r_pager_can=0x7f0e02d0;
+        public static int tv_r_pager_cana=0x7f0e02d1;
+        public static int tv_r_pager_cash=0x7f0e02d4;
+        public static int tv_r_pager_casha=0x7f0e02d5;
+        public static int tv_r_pager_click=0x7f0e02cf;
+        public static int tv_r_pager_market=0x7f0e02d6;
+        public static int tv_r_pager_marketa=0x7f0e02d7;
+        public static int tv_r_pager_per=0x7f0e02d2;
+        public static int tv_r_pager_pera=0x7f0e02d3;
+        public static int tv_r_payments=0x7f0e02e0;
+        public static int tv_r_real_compact_balance=0x7f0e0526;
+        public static int tv_r_return_all=0x7f0e02b3;
+        public static int tv_r_return_stock_all=0x7f0e0337;
+        public static int tv_r_return_stock_max_num=0x7f0e0336;
+        public static int tv_r_return_stock_num=0x7f0e0335;
+        public static int tv_r_revocation=0x7f0e02e2;
+        public static int tv_r_revocation_bs=0x7f0e0529;
+        public static int tv_r_revocation_code=0x7f0e052b;
+        public static int tv_r_revocation_entrust_num=0x7f0e052d;
+        public static int tv_r_revocation_entrust_price=0x7f0e052c;
+        public static int tv_r_revocation_name=0x7f0e052a;
+        public static int tv_r_revocation_time=0x7f0e0530;
+        public static int tv_r_revocation_trade_num=0x7f0e052f;
+        public static int tv_r_revocation_trade_price=0x7f0e052e;
+        public static int tv_r_sell_coupon_payments=0x7f0e02dc;
+        public static int tv_r_sell_out=0x7f0e02d9;
+        public static int tv_r_stock_code=0x7f0e02ba;
+        public static int tv_r_stock_name=0x7f0e02bc;
+        public static int tv_r_trade_balances=0x7f0e057e;
+        public static int tv_r_trade_code=0x7f0e057d;
+        public static int tv_r_trade_name=0x7f0e057c;
+        public static int tv_r_trade_num=0x7f0e0578;
+        public static int tv_r_trade_price=0x7f0e0577;
+        public static int tv_r_trade_time=0x7f0e057b;
+        public static int tv_r_water_balance=0x7f0e0582;
+        public static int tv_r_water_bs=0x7f0e057f;
+        public static int tv_r_water_date=0x7f0e0580;
+        public static int tv_r_water_entrust_no=0x7f0e0581;
+        public static int tv_r_water_num=0x7f0e0583;
+        public static int tv_r_water_post_money=0x7f0e0585;
+        public static int tv_radio_back=0x7f0e0176;
+        public static int tv_radio_right=0x7f0e0177;
+        public static int tv_ransom_fundname=0x7f0e01b8;
+        public static int tv_report_id=0x7f0e0426;
+        public static int tv_report_time=0x7f0e04d7;
+        public static int tv_report_type=0x7f0e0423;
+        public static int tv_reset=0x7f0e0092;
+        public static int tv_retest=0x7f0e01cb;
+        public static int tv_revocation=0x7f0e018b;
+        public static int tv_revocation_time=0x7f0e04b0;
+        public static int tv_risk_id=0x7f0e050a;
+        public static int tv_risk_test_value_date=0x7f0e01ca;
+        public static int tv_risk_test_value_is_over_date=0x7f0e01c9;
+        public static int tv_risk_test_value_level=0x7f0e01c8;
+        public static int tv_rollater_in_ben=0x7f0e0535;
+        public static int tv_rollater_in_code=0x7f0e0533;
+        public static int tv_rollater_in_hold=0x7f0e0539;
+        public static int tv_rollater_in_market=0x7f0e053a;
+        public static int tv_rollater_in_name=0x7f0e0532;
+        public static int tv_rollater_in_now_price=0x7f0e0534;
+        public static int tv_rollater_in_per_price=0x7f0e0536;
+        public static int tv_rollater_in_yk=0x7f0e0537;
+        public static int tv_rollater_in_yk_per=0x7f0e0538;
+        public static int tv_rollater_out_ben=0x7f0e053e;
+        public static int tv_rollater_out_code=0x7f0e053c;
+        public static int tv_rollater_out_hold=0x7f0e0542;
+        public static int tv_rollater_out_market=0x7f0e0543;
+        public static int tv_rollater_out_name=0x7f0e053b;
+        public static int tv_rollater_out_now_price=0x7f0e053d;
+        public static int tv_rollater_out_per_price=0x7f0e053f;
+        public static int tv_rollater_out_yk=0x7f0e0540;
+        public static int tv_rollater_out_yk_per=0x7f0e0541;
+        public static int tv_sale1_amount=0x7f0e011b;
+        public static int tv_sale1_price=0x7f0e011a;
+        public static int tv_sale2_amount=0x7f0e0118;
+        public static int tv_sale2_price=0x7f0e0117;
+        public static int tv_sale3_amount=0x7f0e0115;
+        public static int tv_sale3_price=0x7f0e0114;
+        public static int tv_sale4_amount=0x7f0e0112;
+        public static int tv_sale4_price=0x7f0e0111;
+        public static int tv_sale5_amount=0x7f0e010f;
+        public static int tv_sale5_price=0x7f0e010e;
+        public static int tv_sale_close=0x7f0e027f;
+        public static int tv_sale_open=0x7f0e027d;
+        public static int tv_salerate=0x7f0e043c;
+        public static int tv_securities=0x7f0e039c;
+        public static int tv_security_name=0x7f0e04ae;
+        public static int tv_security_number=0x7f0e04af;
+        public static int tv_sele_history_entrust=0x7f0e01c2;
+        public static int tv_sele_history_trade=0x7f0e01c3;
+        public static int tv_sele_ransom_risk=0x7f0e01c4;
+        public static int tv_sele_revocation=0x7f0e01c1;
+        public static int tv_sele_select=0x7f0e01c5;
+        public static int tv_sele_today_entrust=0x7f0e01bf;
+        public static int tv_sele_today_trade=0x7f0e01c0;
+        public static int tv_select_business_type=0x7f0e0164;
+        public static int tv_select_capital_stock=0x7f0e01f7;
+        public static int tv_select_code=0x7f0e03fb;
+        public static int tv_select_combined=0x7f0e01fb;
+        public static int tv_select_company_action=0x7f0e01f5;
+        public static int tv_select_contract=0x7f0e0287;
+        public static int tv_select_corporate_behavior_msg=0x7f0e0203;
+        public static int tv_select_corporate_behavior_trust=0x7f0e0202;
+        public static int tv_select_data=0x7f0e0145;
+        public static int tv_select_data_take=0x7f0e01b6;
+        public static int tv_select_delivery_order=0x7f0e0204;
+        public static int tv_select_distribute_data=0x7f0e04e0;
+        public static int tv_select_distribute_number=0x7f0e0161;
+        public static int tv_select_entrust=0x7f0e04dc;
+        public static int tv_select_entrust_number=0x7f0e049c;
+        public static int tv_select_entrust_price=0x7f0e049a;
+        public static int tv_select_exchange=0x7f0e01fe;
+        public static int tv_select_fund=0x7f0e01fa;
+        public static int tv_select_histortradey_entrust=0x7f0e015d;
+        public static int tv_select_history_trade=0x7f0e015e;
+        public static int tv_select_hk_bs=0x7f0e049e;
+        public static int tv_select_liabilities=0x7f0e01fc;
+        public static int tv_select_limit=0x7f0e01ff;
+        public static int tv_select_market_day=0x7f0e0206;
+        public static int tv_select_name=0x7f0e03fa;
+        public static int tv_select_no_trade=0x7f0e01f8;
+        public static int tv_select_notification=0x7f0e0205;
+        public static int tv_select_numberwinning=0x7f0e0162;
+        public static int tv_select_price_difference=0x7f0e01fd;
+        public static int tv_select_securit_name=0x7f0e0498;
+        public static int tv_select_securities=0x7f0e01f9;
+        public static int tv_select_statement_account=0x7f0e015f;
+        public static int tv_select_status=0x7f0e0402;
+        public static int tv_select_stock=0x7f0e025e;
+        public static int tv_select_stock_account=0x7f0e0163;
+        public static int tv_select_sub_bs=0x7f0e028d;
+        public static int tv_select_time=0x7f0e0499;
+        public static int tv_select_today_entrust=0x7f0e015b;
+        public static int tv_select_today_money=0x7f0e0160;
+        public static int tv_select_today_trade=0x7f0e015c;
+        public static int tv_select_trade_number=0x7f0e049d;
+        public static int tv_select_trade_price=0x7f0e049b;
+        public static int tv_select_trade_status=0x7f0e049f;
+        public static int tv_select_vote_sub=0x7f0e01f4;
+        public static int tv_select_voting_msg=0x7f0e0201;
+        public static int tv_select_voting_trust=0x7f0e0200;
+        public static int tv_sell=0x7f0e018a;
+        public static int tv_sell_yu=0x7f0e0026;
+        public static int tv_send_date=0x7f0e050d;
+        public static int tv_send_time=0x7f0e050e;
+        public static int tv_send_type=0x7f0e0509;
+        public static int tv_set_balance=0x7f0e042d;
+        public static int tv_set_data_end=0x7f0e0144;
+        public static int tv_set_data_start=0x7f0e0142;
+        public static int tv_settrate=0x7f0e041a;
+        public static int tv_share_set_code=0x7f0e040e;
+        public static int tv_share_set_hold=0x7f0e0412;
+        public static int tv_share_set_market=0x7f0e0411;
+        public static int tv_share_set_name=0x7f0e040d;
+        public static int tv_share_set_profit=0x7f0e0410;
+        public static int tv_share_set_status=0x7f0e040f;
+        public static int tv_should_money=0x7f0e0260;
+        public static int tv_show_faq=0x7f0e019a;
+        public static int tv_show_holder_account=0x7f0e00f0;
+        public static int tv_show_pop_more_account=0x7f0e00f1;
+        public static int tv_show_pop_more_account_pre=0x7f0e00ee;
+        public static int tv_sign_agreement=0x7f0e0027;
+        public static int tv_sno=0x7f0e0416;
+        public static int tv_step_price=0x7f0e043a;
+        public static int tv_stkbal=0x7f0e03c6;
+        public static int tv_stock_account=0x7f0e04d4;
+        public static int tv_stock_code=0x7f0e026d;
+        public static int tv_stock_max_num=0x7f0e0102;
+        public static int tv_stock_name=0x7f0e01dd;
+        public static int tv_stock_num_pre=0x7f0e0104;
+        public static int tv_stock_type_name=0x7f0e0439;
+        public static int tv_stock_unit=0x7f0e0103;
+        public static int tv_store=0x7f0e03a0;
+        public static int tv_sub_select=0x7f0e0264;
+        public static int tv_subscribe_amount_max=0x7f0e0270;
+        public static int tv_subscribe_code=0x7f0e04eb;
+        public static int tv_subscribe_name=0x7f0e04ea;
+        public static int tv_subscribe_price=0x7f0e026e;
+        public static int tv_subscribe_unit=0x7f0e04ec;
+        public static int tv_subscribe_uplimit=0x7f0e04ed;
+        public static int tv_sumdebtamt=0x7f0e045e;
+        public static int tv_sumpaidamt=0x7f0e045d;
+        public static int tv_surplus_amount=0x7f0e042f;
+        public static int tv_surplus_balance=0x7f0e042e;
+        public static int tv_surplus_quota=0x7f0e0460;
+        public static int tv_sysdate=0x7f0e0440;
+        public static int tv_tab_credit=0x7f0e0345;
+        public static int tv_tab_normal=0x7f0e0344;
+        public static int tv_tfund_code=0x7f0e04be;
+        public static int tv_tfund_count=0x7f0e04bf;
+        public static int tv_tfund_name=0x7f0e04bd;
+        public static int tv_tfund_price=0x7f0e04c0;
+        public static int tv_tfund_time=0x7f0e04bc;
+        public static int tv_third_num=0x7f0e0107;
+        public static int tv_three_five=0x7f0e032e;
+        public static int tv_three_four=0x7f0e032d;
+        public static int tv_three_one=0x7f0e032a;
+        public static int tv_three_seven=0x7f0e0330;
+        public static int tv_three_six=0x7f0e032f;
+        public static int tv_three_three=0x7f0e032c;
+        public static int tv_three_two=0x7f0e032b;
+        public static int tv_ticket_click=0x7f0e030c;
+        public static int tv_ticket_name=0x7f0e030b;
+        public static int tv_time=0x7f0e03de;
+        public static int tv_tip=0x7f0e0090;
+        public static int tv_title=0x7f0e0096;
+        public static int tv_title_below=0x7f0e0097;
+        public static int tv_title_in_fragment=0x7f0e016c;
+        public static int tv_title_status=0x7f0e03dd;
+        public static int tv_today_entrust=0x7f0e0028;
+        public static int tv_today_trade=0x7f0e0029;
+        public static int tv_today_trade_bs=0x7f0e04a5;
+        public static int tv_today_trade_count=0x7f0e04a3;
+        public static int tv_today_trade_money=0x7f0e04a4;
+        public static int tv_today_trade_name=0x7f0e04a0;
+        public static int tv_today_trade_pric=0x7f0e04a2;
+        public static int tv_today_trade_time=0x7f0e04a1;
+        public static int tv_toopen_account=0x7f0e019b;
+        public static int tv_total_price=0x7f0e05f2;
+        public static int tv_total_quota=0x7f0e045f;
+        public static int tv_total_stock_code=0x7f0e04e5;
+        public static int tv_total_stock_name=0x7f0e04e4;
+        public static int tv_trade_count=0x7f0e04b4;
+        public static int tv_trade_date=0x7f0e0420;
+        public static int tv_trade_limit=0x7f0e01e2;
+        public static int tv_trade_market=0x7f0e01e4;
+        public static int tv_trade_value=0x7f0e04b2;
+        public static int tv_trans_bank_click=0x7f0e02a1;
+        public static int tv_trans_buy=0x7f0e0347;
+        public static int tv_trans_click_max_all=0x7f0e0364;
+        public static int tv_trans_down_limit=0x7f0e05b2;
+        public static int tv_trans_history=0x7f0e0369;
+        public static int tv_trans_history2=0x7f0e036a;
+        public static int tv_trans_history_entrust_bs=0x7f0e0587;
+        public static int tv_trans_history_entrust_code=0x7f0e058b;
+        public static int tv_trans_history_entrust_date=0x7f0e0588;
+        public static int tv_trans_history_entrust_entrust_num=0x7f0e058d;
+        public static int tv_trans_history_entrust_entrust_price=0x7f0e058c;
+        public static int tv_trans_history_entrust_name=0x7f0e058a;
+        public static int tv_trans_history_entrust_out_account=0x7f0e0595;
+        public static int tv_trans_history_entrust_out_xi=0x7f0e0594;
+        public static int tv_trans_history_entrust_status=0x7f0e0589;
+        public static int tv_trans_history_entrust_trade_num=0x7f0e058f;
+        public static int tv_trans_history_entrust_trade_price=0x7f0e058e;
+        public static int tv_trans_history_entrust_trade_status=0x7f0e0591;
+        public static int tv_trans_history_entrust_yue_num=0x7f0e0592;
+        public static int tv_trans_history_trade_bs=0x7f0e0596;
+        public static int tv_trans_history_trade_code=0x7f0e059a;
+        public static int tv_trans_history_trade_date=0x7f0e0597;
+        public static int tv_trans_history_trade_entrust_num=0x7f0e059c;
+        public static int tv_trans_history_trade_entrust_price=0x7f0e059b;
+        public static int tv_trans_history_trade_name=0x7f0e0599;
+        public static int tv_trans_history_trade_out_account=0x7f0e05a2;
+        public static int tv_trans_history_trade_out_xi=0x7f0e05a1;
+        public static int tv_trans_history_trade_status=0x7f0e0598;
+        public static int tv_trans_history_trade_trade_num=0x7f0e059e;
+        public static int tv_trans_history_trade_trade_price=0x7f0e059d;
+        public static int tv_trans_history_trade_trade_status=0x7f0e059f;
+        public static int tv_trans_history_trade_yue_num=0x7f0e05a0;
+        public static int tv_trans_limit_max=0x7f0e0366;
+        public static int tv_trans_limit_max_str=0x7f0e0365;
+        public static int tv_trans_market_buy=0x7f0e0349;
+        public static int tv_trans_market_sale=0x7f0e034a;
+        public static int tv_trans_market_ticket=0x7f0e036c;
+        public static int tv_trans_max_text=0x7f0e0376;
+        public static int tv_trans_msg_bs=0x7f0e0354;
+        public static int tv_trans_msg_code=0x7f0e0352;
+        public static int tv_trans_msg_name=0x7f0e0353;
+        public static int tv_trans_msg_sub_num=0x7f0e0355;
+        public static int tv_trans_msg_sub_price=0x7f0e0356;
+        public static int tv_trans_msg_sub_status=0x7f0e035a;
+        public static int tv_trans_msg_sub_time=0x7f0e0359;
+        public static int tv_trans_msg_xi_num=0x7f0e0358;
+        public static int tv_trans_msg_yue_num=0x7f0e0357;
+        public static int tv_trans_num_add=0x7f0e0375;
+        public static int tv_trans_num_cut=0x7f0e0373;
+        public static int tv_trans_price_add=0x7f0e0372;
+        public static int tv_trans_price_cut=0x7f0e0370;
+        public static int tv_trans_price_hq=0x7f0e036b;
+        public static int tv_trans_revocation=0x7f0e0351;
+        public static int tv_trans_revocation_bs=0x7f0e05a3;
+        public static int tv_trans_revocation_code=0x7f0e05a6;
+        public static int tv_trans_revocation_date=0x7f0e05a4;
+        public static int tv_trans_revocation_entrust_num=0x7f0e05a8;
+        public static int tv_trans_revocation_entrust_price=0x7f0e05a7;
+        public static int tv_trans_revocation_name=0x7f0e05a5;
+        public static int tv_trans_revocation_out_account=0x7f0e05ae;
+        public static int tv_trans_revocation_out_xi=0x7f0e05ad;
+        public static int tv_trans_revocation_trade_num=0x7f0e05aa;
+        public static int tv_trans_revocation_trade_price=0x7f0e05a9;
+        public static int tv_trans_revocation_trade_status=0x7f0e05ab;
+        public static int tv_trans_revocation_yue_num=0x7f0e05ac;
+        public static int tv_trans_sale=0x7f0e0348;
+        public static int tv_trans_stock_code=0x7f0e05b0;
+        public static int tv_trans_stock_name=0x7f0e05af;
+        public static int tv_trans_stock_status=0x7f0e05b4;
+        public static int tv_trans_sub_buy=0x7f0e034b;
+        public static int tv_trans_sub_sale=0x7f0e034c;
+        public static int tv_trans_sure_buy=0x7f0e034f;
+        public static int tv_trans_sure_sale=0x7f0e0350;
+        public static int tv_trans_today=0x7f0e0367;
+        public static int tv_trans_today2=0x7f0e0368;
+        public static int tv_trans_today_entrust_bs=0x7f0e05b5;
+        public static int tv_trans_today_entrust_code=0x7f0e05b9;
+        public static int tv_trans_today_entrust_date=0x7f0e05b6;
+        public static int tv_trans_today_entrust_entrust_num=0x7f0e05bb;
+        public static int tv_trans_today_entrust_entrust_price=0x7f0e05ba;
+        public static int tv_trans_today_entrust_name=0x7f0e05b8;
+        public static int tv_trans_today_entrust_out_account=0x7f0e05c1;
+        public static int tv_trans_today_entrust_out_xi=0x7f0e05c0;
+        public static int tv_trans_today_entrust_status=0x7f0e05b7;
+        public static int tv_trans_today_entrust_trade_num=0x7f0e05bd;
+        public static int tv_trans_today_entrust_trade_price=0x7f0e05bc;
+        public static int tv_trans_today_entrust_trade_status=0x7f0e05be;
+        public static int tv_trans_today_entrust_yue_num=0x7f0e05bf;
+        public static int tv_trans_today_trade_bs=0x7f0e05c2;
+        public static int tv_trans_today_trade_code=0x7f0e05c6;
+        public static int tv_trans_today_trade_date=0x7f0e05c3;
+        public static int tv_trans_today_trade_entrust_num=0x7f0e05c8;
+        public static int tv_trans_today_trade_entrust_price=0x7f0e05c7;
+        public static int tv_trans_today_trade_name=0x7f0e05c5;
+        public static int tv_trans_today_trade_out_account=0x7f0e05ce;
+        public static int tv_trans_today_trade_out_xi=0x7f0e05cd;
+        public static int tv_trans_today_trade_status=0x7f0e05c4;
+        public static int tv_trans_today_trade_trade_num=0x7f0e05ca;
+        public static int tv_trans_today_trade_trade_price=0x7f0e05c9;
+        public static int tv_trans_today_trade_trade_status=0x7f0e05cb;
+        public static int tv_trans_today_trade_yue_num=0x7f0e05cc;
+        public static int tv_trans_trade_bs=0x7f0e05d0;
+        public static int tv_trans_trade_buy=0x7f0e034d;
+        public static int tv_trans_trade_code=0x7f0e05cf;
+        public static int tv_trans_trade_count=0x7f0e05d1;
+        public static int tv_trans_trade_market=0x7f0e05b3;
+        public static int tv_trans_trade_max=0x7f0e0377;
+        public static int tv_trans_trade_name=0x7f0e036f;
+        public static int tv_trans_trade_price=0x7f0e05d2;
+        public static int tv_trans_trade_sale=0x7f0e034e;
+        public static int tv_trans_trade_xi_num=0x7f0e05d4;
+        public static int tv_trans_trade_yue_num=0x7f0e05d3;
+        public static int tv_trans_up_limit=0x7f0e05b1;
+        public static int tv_transfer_account=0x7f0e002a;
+        public static int tv_trunover_info=0x7f0e03e0;
+        public static int tv_trust_status_fj=0x7f0e0425;
+        public static int tv_turn_status=0x7f0e03e2;
+        public static int tv_tv_hk_not_paid_detail_money=0x7f0e046b;
+        public static int tv_two_eight=0x7f0e0326;
+        public static int tv_two_finance=0x7f0e002b;
+        public static int tv_two_five=0x7f0e0323;
+        public static int tv_two_four=0x7f0e0322;
+        public static int tv_two_night=0x7f0e0327;
+        public static int tv_two_one=0x7f0e031f;
+        public static int tv_two_seven=0x7f0e0325;
+        public static int tv_two_six=0x7f0e0324;
+        public static int tv_two_ten=0x7f0e0328;
+        public static int tv_two_three=0x7f0e0321;
+        public static int tv_two_two=0x7f0e0320;
+        public static int tv_uddelegere_numbler=0x7f0e0488;
+        public static int tv_uddelegere_priser=0x7f0e0487;
+        public static int tv_unpayamt=0x7f0e045c;
+        public static int tv_up_limit=0x7f0e00f4;
+        public static int tv_up_limit_text=0x7f0e00f5;
+        public static int tv_update_date=0x7f0e0486;
+        public static int tv_upddate=0x7f0e0463;
+        public static int tv_usable=0x7f0e03a1;
+        public static int tv_use_other_account=0x7f0e00a9;
+        public static int tv_username=0x7f0e037d;
+        public static int tv_v_id=0x7f0e04c4;
+        public static int tv_vote_info=0x7f0e04c5;
+        public static int tv_vote_leijino=0x7f0e04c6;
+        public static int tv_vote_qty=0x7f0e04d6;
+        public static int tv_vote_type=0x7f0e04d5;
+        public static int tv_waive_amount=0x7f0e04aa;
+        public static int tv_win_code=0x7f0e00be;
+        public static int tv_win_count=0x7f0e00bf;
+        public static int tv_win_cur_sort=0x7f0e00c0;
+        public static int tv_win_lose_num=0x7f0e039e;
+        public static int tv_win_lose_rate=0x7f0e039f;
+        public static int tv_win_name=0x7f0e00bd;
+        public static int tv_win_num=0x7f0e025f;
+        public static int tv_winning_cash=0x7f0e04f7;
+        public static int tv_winning_count=0x7f0e04f3;
+        public static int tv_winning_data=0x7f0e04ee;
+        public static int tv_winning_money=0x7f0e04f6;
+        public static int tv_winning_number=0x7f0e04f2;
+        public static int tv_winning_price=0x7f0e04f4;
+        public static int tv_winning_securit_name=0x7f0e04ef;
+        public static int tv_winning_securit_number=0x7f0e04f0;
+        public static int tv_winning_tcount=0x7f0e04f5;
+        public static int tv_zstrdstatusName=0x7f0e0484;
+        public static int tvew_stock=0x7f0e02f2;
+        public static int up=0x7f0e002c;
+        public static int useLogo=0x7f0e0037;
+        public static int view_indicator=0x7f0e03e1;
+        public static int viewfinder_view=0x7f0e0083;
+        public static int vp_bottom_fragment=0x7f0e012d;
+        public static int vp_for_activity=0x7f0e0087;
+        public static int vp_multi_trade=0x7f0e014b;
+        public static int webview=0x7f0e002d;
+        public static int withText=0x7f0e0052;
+        public static int wrap_content=0x7f0e0038;
     }
     public static final class integer {
         public static int abc_config_activityDefaultDur=0x7f0b0001;
@@ -5734,7 +5593,6 @@ containing a value of this type.
         /**  设置该属性解决空白部分
          */
         public static int ClubToolbar=0x7f0a00b7;
-        public static int CustomTabPageIndicator_Text=0x7f0a00b8;
         public static int Platform_AppCompat=0x7f0a0017;
         public static int Platform_AppCompat_Light=0x7f0a0018;
         public static int Platform_ThemeOverlay_AppCompat=0x7f0a007a;
@@ -5759,60 +5617,60 @@ containing a value of this type.
         public static int RtlOverlay_Widget_AppCompat_SearchView_MagIcon=0x7f0a0033;
         public static int RtlUnderlay_Widget_AppCompat_ActionButton=0x7f0a0034;
         public static int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow=0x7f0a0035;
-        public static int TextAppearance_AppCompat=0x7f0a00b9;
-        public static int TextAppearance_AppCompat_Body1=0x7f0a00ba;
-        public static int TextAppearance_AppCompat_Body2=0x7f0a00bb;
-        public static int TextAppearance_AppCompat_Button=0x7f0a00bc;
-        public static int TextAppearance_AppCompat_Caption=0x7f0a00bd;
-        public static int TextAppearance_AppCompat_Display1=0x7f0a00be;
-        public static int TextAppearance_AppCompat_Display2=0x7f0a00bf;
-        public static int TextAppearance_AppCompat_Display3=0x7f0a00c0;
-        public static int TextAppearance_AppCompat_Display4=0x7f0a00c1;
-        public static int TextAppearance_AppCompat_Headline=0x7f0a00c2;
-        public static int TextAppearance_AppCompat_Inverse=0x7f0a00c3;
-        public static int TextAppearance_AppCompat_Large=0x7f0a00c4;
-        public static int TextAppearance_AppCompat_Large_Inverse=0x7f0a00c5;
-        public static int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0a00c6;
-        public static int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0a00c7;
-        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0a00c8;
-        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0a00c9;
-        public static int TextAppearance_AppCompat_Medium=0x7f0a00ca;
-        public static int TextAppearance_AppCompat_Medium_Inverse=0x7f0a00cb;
-        public static int TextAppearance_AppCompat_Menu=0x7f0a00cc;
-        public static int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0a00cd;
-        public static int TextAppearance_AppCompat_SearchResult_Title=0x7f0a00ce;
-        public static int TextAppearance_AppCompat_Small=0x7f0a00cf;
-        public static int TextAppearance_AppCompat_Small_Inverse=0x7f0a00d0;
-        public static int TextAppearance_AppCompat_Subhead=0x7f0a00d1;
-        public static int TextAppearance_AppCompat_Subhead_Inverse=0x7f0a00d2;
-        public static int TextAppearance_AppCompat_Title=0x7f0a00d3;
-        public static int TextAppearance_AppCompat_Title_Inverse=0x7f0a00d4;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0a00d5;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0a00d6;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0a00d7;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0a00d8;
-        public static int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0a00d9;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0a00da;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0a00db;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0a00dc;
-        public static int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0a00dd;
-        public static int TextAppearance_AppCompat_Widget_Button=0x7f0a00de;
-        public static int TextAppearance_AppCompat_Widget_Button_Inverse=0x7f0a00df;
-        public static int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0a00e0;
-        public static int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0a00e1;
-        public static int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0a00e2;
-        public static int TextAppearance_AppCompat_Widget_Switch=0x7f0a00e3;
-        public static int TextAppearance_AppCompat_Widget_TextView_SpinnerItem=0x7f0a00e4;
+        public static int TextAppearance_AppCompat=0x7f0a00b8;
+        public static int TextAppearance_AppCompat_Body1=0x7f0a00b9;
+        public static int TextAppearance_AppCompat_Body2=0x7f0a00ba;
+        public static int TextAppearance_AppCompat_Button=0x7f0a00bb;
+        public static int TextAppearance_AppCompat_Caption=0x7f0a00bc;
+        public static int TextAppearance_AppCompat_Display1=0x7f0a00bd;
+        public static int TextAppearance_AppCompat_Display2=0x7f0a00be;
+        public static int TextAppearance_AppCompat_Display3=0x7f0a00bf;
+        public static int TextAppearance_AppCompat_Display4=0x7f0a00c0;
+        public static int TextAppearance_AppCompat_Headline=0x7f0a00c1;
+        public static int TextAppearance_AppCompat_Inverse=0x7f0a00c2;
+        public static int TextAppearance_AppCompat_Large=0x7f0a00c3;
+        public static int TextAppearance_AppCompat_Large_Inverse=0x7f0a00c4;
+        public static int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0a00c5;
+        public static int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0a00c6;
+        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0a00c7;
+        public static int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0a00c8;
+        public static int TextAppearance_AppCompat_Medium=0x7f0a00c9;
+        public static int TextAppearance_AppCompat_Medium_Inverse=0x7f0a00ca;
+        public static int TextAppearance_AppCompat_Menu=0x7f0a00cb;
+        public static int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0a00cc;
+        public static int TextAppearance_AppCompat_SearchResult_Title=0x7f0a00cd;
+        public static int TextAppearance_AppCompat_Small=0x7f0a00ce;
+        public static int TextAppearance_AppCompat_Small_Inverse=0x7f0a00cf;
+        public static int TextAppearance_AppCompat_Subhead=0x7f0a00d0;
+        public static int TextAppearance_AppCompat_Subhead_Inverse=0x7f0a00d1;
+        public static int TextAppearance_AppCompat_Title=0x7f0a00d2;
+        public static int TextAppearance_AppCompat_Title_Inverse=0x7f0a00d3;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0a00d4;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0a00d5;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0a00d6;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0a00d7;
+        public static int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0a00d8;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0a00d9;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0a00da;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0a00db;
+        public static int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0a00dc;
+        public static int TextAppearance_AppCompat_Widget_Button=0x7f0a00dd;
+        public static int TextAppearance_AppCompat_Widget_Button_Inverse=0x7f0a00de;
+        public static int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0a00df;
+        public static int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0a00e0;
+        public static int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0a00e1;
+        public static int TextAppearance_AppCompat_Widget_Switch=0x7f0a00e2;
+        public static int TextAppearance_AppCompat_Widget_TextView_SpinnerItem=0x7f0a00e3;
         public static int TextAppearance_StatusBar_EventContent=0x7f0a0023;
         public static int TextAppearance_StatusBar_EventContent_Info=0x7f0a0024;
         public static int TextAppearance_StatusBar_EventContent_Line2=0x7f0a0025;
         public static int TextAppearance_StatusBar_EventContent_Time=0x7f0a0026;
         public static int TextAppearance_StatusBar_EventContent_Title=0x7f0a0027;
-        public static int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0a00e5;
-        public static int TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0a00e6;
-        public static int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0a00e7;
-        public static int Theme_AppCompat=0x7f0a00e8;
-        public static int Theme_AppCompat_CompactMenu=0x7f0a00e9;
+        public static int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0a00e4;
+        public static int TextAppearance_Widget_AppCompat_Toolbar_Subtitle=0x7f0a00e5;
+        public static int TextAppearance_Widget_AppCompat_Toolbar_Title=0x7f0a00e6;
+        public static int Theme_AppCompat=0x7f0a00e7;
+        public static int Theme_AppCompat_CompactMenu=0x7f0a00e8;
         public static int Theme_AppCompat_DayNight=0x7f0a0004;
         public static int Theme_AppCompat_DayNight_DarkActionBar=0x7f0a0005;
         public static int Theme_AppCompat_DayNight_Dialog=0x7f0a0006;
@@ -5820,121 +5678,120 @@ containing a value of this type.
         public static int Theme_AppCompat_DayNight_Dialog_MinWidth=0x7f0a0008;
         public static int Theme_AppCompat_DayNight_DialogWhenLarge=0x7f0a0009;
         public static int Theme_AppCompat_DayNight_NoActionBar=0x7f0a000a;
-        public static int Theme_AppCompat_Dialog=0x7f0a00ea;
-        public static int Theme_AppCompat_Dialog_Alert=0x7f0a00eb;
-        public static int Theme_AppCompat_Dialog_MinWidth=0x7f0a00ec;
-        public static int Theme_AppCompat_DialogWhenLarge=0x7f0a00ed;
-        public static int Theme_AppCompat_Light=0x7f0a00ee;
-        public static int Theme_AppCompat_Light_DarkActionBar=0x7f0a00ef;
-        public static int Theme_AppCompat_Light_Dialog=0x7f0a00f0;
-        public static int Theme_AppCompat_Light_Dialog_Alert=0x7f0a00f1;
-        public static int Theme_AppCompat_Light_Dialog_MinWidth=0x7f0a00f2;
-        public static int Theme_AppCompat_Light_DialogWhenLarge=0x7f0a00f3;
-        public static int Theme_AppCompat_Light_NoActionBar=0x7f0a00f4;
-        public static int Theme_AppCompat_NoActionBar=0x7f0a00f5;
-        public static int ThemeOverlay_AppCompat=0x7f0a00f6;
-        public static int ThemeOverlay_AppCompat_ActionBar=0x7f0a00f7;
-        public static int ThemeOverlay_AppCompat_Dark=0x7f0a00f8;
-        public static int ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0a00f9;
-        public static int ThemeOverlay_AppCompat_Light=0x7f0a00fa;
-        public static int Widget_AppCompat_ActionBar=0x7f0a00fb;
-        public static int Widget_AppCompat_ActionBar_Solid=0x7f0a00fc;
-        public static int Widget_AppCompat_ActionBar_TabBar=0x7f0a00fd;
-        public static int Widget_AppCompat_ActionBar_TabText=0x7f0a00fe;
-        public static int Widget_AppCompat_ActionBar_TabView=0x7f0a00ff;
-        public static int Widget_AppCompat_ActionButton=0x7f0a0100;
-        public static int Widget_AppCompat_ActionButton_CloseMode=0x7f0a0101;
-        public static int Widget_AppCompat_ActionButton_Overflow=0x7f0a0102;
-        public static int Widget_AppCompat_ActionMode=0x7f0a0103;
-        public static int Widget_AppCompat_ActivityChooserView=0x7f0a0104;
-        public static int Widget_AppCompat_AutoCompleteTextView=0x7f0a0105;
-        public static int Widget_AppCompat_Button=0x7f0a0106;
-        public static int Widget_AppCompat_Button_Borderless=0x7f0a0107;
-        public static int Widget_AppCompat_Button_Borderless_Colored=0x7f0a0108;
-        public static int Widget_AppCompat_Button_ButtonBar_AlertDialog=0x7f0a0109;
-        public static int Widget_AppCompat_Button_Colored=0x7f0a010a;
-        public static int Widget_AppCompat_Button_Small=0x7f0a010b;
-        public static int Widget_AppCompat_ButtonBar=0x7f0a010c;
-        public static int Widget_AppCompat_ButtonBar_AlertDialog=0x7f0a010d;
-        public static int Widget_AppCompat_CompoundButton_CheckBox=0x7f0a010e;
-        public static int Widget_AppCompat_CompoundButton_RadioButton=0x7f0a010f;
-        public static int Widget_AppCompat_CompoundButton_Switch=0x7f0a0110;
-        public static int Widget_AppCompat_DrawerArrowToggle=0x7f0a0111;
-        public static int Widget_AppCompat_DropDownItem_Spinner=0x7f0a0112;
-        public static int Widget_AppCompat_EditText=0x7f0a0113;
-        public static int Widget_AppCompat_ImageButton=0x7f0a0114;
-        public static int Widget_AppCompat_Light_ActionBar=0x7f0a0115;
-        public static int Widget_AppCompat_Light_ActionBar_Solid=0x7f0a0116;
-        public static int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0a0117;
-        public static int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0a0118;
-        public static int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0a0119;
-        public static int Widget_AppCompat_Light_ActionBar_TabText=0x7f0a011a;
-        public static int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0a011b;
-        public static int Widget_AppCompat_Light_ActionBar_TabView=0x7f0a011c;
-        public static int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0a011d;
-        public static int Widget_AppCompat_Light_ActionButton=0x7f0a011e;
-        public static int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0a011f;
-        public static int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0a0120;
-        public static int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0a0121;
-        public static int Widget_AppCompat_Light_ActivityChooserView=0x7f0a0122;
-        public static int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0a0123;
-        public static int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0a0124;
-        public static int Widget_AppCompat_Light_ListPopupWindow=0x7f0a0125;
-        public static int Widget_AppCompat_Light_ListView_DropDown=0x7f0a0126;
-        public static int Widget_AppCompat_Light_PopupMenu=0x7f0a0127;
-        public static int Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0a0128;
-        public static int Widget_AppCompat_Light_SearchView=0x7f0a0129;
-        public static int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0a012a;
-        public static int Widget_AppCompat_ListPopupWindow=0x7f0a012b;
-        public static int Widget_AppCompat_ListView=0x7f0a012c;
-        public static int Widget_AppCompat_ListView_DropDown=0x7f0a012d;
-        public static int Widget_AppCompat_ListView_Menu=0x7f0a012e;
-        public static int Widget_AppCompat_PopupMenu=0x7f0a012f;
-        public static int Widget_AppCompat_PopupMenu_Overflow=0x7f0a0130;
-        public static int Widget_AppCompat_PopupWindow=0x7f0a0131;
-        public static int Widget_AppCompat_ProgressBar=0x7f0a0132;
-        public static int Widget_AppCompat_ProgressBar_Horizontal=0x7f0a0133;
-        public static int Widget_AppCompat_RatingBar=0x7f0a0134;
-        public static int Widget_AppCompat_RatingBar_Indicator=0x7f0a0135;
-        public static int Widget_AppCompat_RatingBar_Small=0x7f0a0136;
-        public static int Widget_AppCompat_SearchView=0x7f0a0137;
-        public static int Widget_AppCompat_SearchView_ActionBar=0x7f0a0138;
-        public static int Widget_AppCompat_SeekBar=0x7f0a0139;
-        public static int Widget_AppCompat_Spinner=0x7f0a013a;
-        public static int Widget_AppCompat_Spinner_DropDown=0x7f0a013b;
-        public static int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0a013c;
-        public static int Widget_AppCompat_Spinner_Underlined=0x7f0a013d;
-        public static int Widget_AppCompat_TextView_SpinnerItem=0x7f0a013e;
-        public static int Widget_AppCompat_Toolbar=0x7f0a013f;
-        public static int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0a0140;
-        public static int dialogstyle=0x7f0a0141;
-        public static int et_input_without_bg=0x7f0a0142;
-        public static int fund_fisk_test_result_text=0x7f0a0143;
-        public static int fund_fisk_test_result_value=0x7f0a0144;
-        public static int loadingDialogStyle=0x7f0a0145;
-        public static int new_subscribe_button_text_style=0x7f0a0146;
-        public static int new_subscribe_normal_num_style=0x7f0a0147;
-        public static int new_subscribe_normal_text_style=0x7f0a0148;
-        public static int new_subscribe_table_num=0x7f0a0149;
-        public static int new_subscribe_title_text_style=0x7f0a014a;
-        public static int pagertab_style=0x7f0a014b;
-        public static int pop_show_bottom=0x7f0a014c;
-        public static int style_btn_num=0x7f0a014d;
-        public static int style_et_input_active=0x7f0a014e;
-        public static int style_iv_right=0x7f0a014f;
-        public static int style_login_et=0x7f0a0150;
-        public static int style_login_ll=0x7f0a0151;
-        public static int style_rl_click_expandable=0x7f0a0152;
-        public static int style_tv_left=0x7f0a0153;
-        public static int style_tv_with_et_active=0x7f0a0154;
+        public static int Theme_AppCompat_Dialog=0x7f0a00e9;
+        public static int Theme_AppCompat_Dialog_Alert=0x7f0a00ea;
+        public static int Theme_AppCompat_Dialog_MinWidth=0x7f0a00eb;
+        public static int Theme_AppCompat_DialogWhenLarge=0x7f0a00ec;
+        public static int Theme_AppCompat_Light=0x7f0a00ed;
+        public static int Theme_AppCompat_Light_DarkActionBar=0x7f0a00ee;
+        public static int Theme_AppCompat_Light_Dialog=0x7f0a00ef;
+        public static int Theme_AppCompat_Light_Dialog_Alert=0x7f0a00f0;
+        public static int Theme_AppCompat_Light_Dialog_MinWidth=0x7f0a00f1;
+        public static int Theme_AppCompat_Light_DialogWhenLarge=0x7f0a00f2;
+        public static int Theme_AppCompat_Light_NoActionBar=0x7f0a00f3;
+        public static int Theme_AppCompat_NoActionBar=0x7f0a00f4;
+        public static int ThemeOverlay_AppCompat=0x7f0a00f5;
+        public static int ThemeOverlay_AppCompat_ActionBar=0x7f0a00f6;
+        public static int ThemeOverlay_AppCompat_Dark=0x7f0a00f7;
+        public static int ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0a00f8;
+        public static int ThemeOverlay_AppCompat_Light=0x7f0a00f9;
+        public static int Widget_AppCompat_ActionBar=0x7f0a00fa;
+        public static int Widget_AppCompat_ActionBar_Solid=0x7f0a00fb;
+        public static int Widget_AppCompat_ActionBar_TabBar=0x7f0a00fc;
+        public static int Widget_AppCompat_ActionBar_TabText=0x7f0a00fd;
+        public static int Widget_AppCompat_ActionBar_TabView=0x7f0a00fe;
+        public static int Widget_AppCompat_ActionButton=0x7f0a00ff;
+        public static int Widget_AppCompat_ActionButton_CloseMode=0x7f0a0100;
+        public static int Widget_AppCompat_ActionButton_Overflow=0x7f0a0101;
+        public static int Widget_AppCompat_ActionMode=0x7f0a0102;
+        public static int Widget_AppCompat_ActivityChooserView=0x7f0a0103;
+        public static int Widget_AppCompat_AutoCompleteTextView=0x7f0a0104;
+        public static int Widget_AppCompat_Button=0x7f0a0105;
+        public static int Widget_AppCompat_Button_Borderless=0x7f0a0106;
+        public static int Widget_AppCompat_Button_Borderless_Colored=0x7f0a0107;
+        public static int Widget_AppCompat_Button_ButtonBar_AlertDialog=0x7f0a0108;
+        public static int Widget_AppCompat_Button_Colored=0x7f0a0109;
+        public static int Widget_AppCompat_Button_Small=0x7f0a010a;
+        public static int Widget_AppCompat_ButtonBar=0x7f0a010b;
+        public static int Widget_AppCompat_ButtonBar_AlertDialog=0x7f0a010c;
+        public static int Widget_AppCompat_CompoundButton_CheckBox=0x7f0a010d;
+        public static int Widget_AppCompat_CompoundButton_RadioButton=0x7f0a010e;
+        public static int Widget_AppCompat_CompoundButton_Switch=0x7f0a010f;
+        public static int Widget_AppCompat_DrawerArrowToggle=0x7f0a0110;
+        public static int Widget_AppCompat_DropDownItem_Spinner=0x7f0a0111;
+        public static int Widget_AppCompat_EditText=0x7f0a0112;
+        public static int Widget_AppCompat_ImageButton=0x7f0a0113;
+        public static int Widget_AppCompat_Light_ActionBar=0x7f0a0114;
+        public static int Widget_AppCompat_Light_ActionBar_Solid=0x7f0a0115;
+        public static int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0a0116;
+        public static int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0a0117;
+        public static int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0a0118;
+        public static int Widget_AppCompat_Light_ActionBar_TabText=0x7f0a0119;
+        public static int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0a011a;
+        public static int Widget_AppCompat_Light_ActionBar_TabView=0x7f0a011b;
+        public static int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0a011c;
+        public static int Widget_AppCompat_Light_ActionButton=0x7f0a011d;
+        public static int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0a011e;
+        public static int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0a011f;
+        public static int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0a0120;
+        public static int Widget_AppCompat_Light_ActivityChooserView=0x7f0a0121;
+        public static int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0a0122;
+        public static int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0a0123;
+        public static int Widget_AppCompat_Light_ListPopupWindow=0x7f0a0124;
+        public static int Widget_AppCompat_Light_ListView_DropDown=0x7f0a0125;
+        public static int Widget_AppCompat_Light_PopupMenu=0x7f0a0126;
+        public static int Widget_AppCompat_Light_PopupMenu_Overflow=0x7f0a0127;
+        public static int Widget_AppCompat_Light_SearchView=0x7f0a0128;
+        public static int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0a0129;
+        public static int Widget_AppCompat_ListPopupWindow=0x7f0a012a;
+        public static int Widget_AppCompat_ListView=0x7f0a012b;
+        public static int Widget_AppCompat_ListView_DropDown=0x7f0a012c;
+        public static int Widget_AppCompat_ListView_Menu=0x7f0a012d;
+        public static int Widget_AppCompat_PopupMenu=0x7f0a012e;
+        public static int Widget_AppCompat_PopupMenu_Overflow=0x7f0a012f;
+        public static int Widget_AppCompat_PopupWindow=0x7f0a0130;
+        public static int Widget_AppCompat_ProgressBar=0x7f0a0131;
+        public static int Widget_AppCompat_ProgressBar_Horizontal=0x7f0a0132;
+        public static int Widget_AppCompat_RatingBar=0x7f0a0133;
+        public static int Widget_AppCompat_RatingBar_Indicator=0x7f0a0134;
+        public static int Widget_AppCompat_RatingBar_Small=0x7f0a0135;
+        public static int Widget_AppCompat_SearchView=0x7f0a0136;
+        public static int Widget_AppCompat_SearchView_ActionBar=0x7f0a0137;
+        public static int Widget_AppCompat_SeekBar=0x7f0a0138;
+        public static int Widget_AppCompat_Spinner=0x7f0a0139;
+        public static int Widget_AppCompat_Spinner_DropDown=0x7f0a013a;
+        public static int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0a013b;
+        public static int Widget_AppCompat_Spinner_Underlined=0x7f0a013c;
+        public static int Widget_AppCompat_TextView_SpinnerItem=0x7f0a013d;
+        public static int Widget_AppCompat_Toolbar=0x7f0a013e;
+        public static int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0a013f;
+        public static int dialogstyle=0x7f0a0140;
+        public static int et_input_without_bg=0x7f0a0141;
+        public static int fund_fisk_test_result_text=0x7f0a0142;
+        public static int fund_fisk_test_result_value=0x7f0a0143;
+        public static int loadingDialogStyle=0x7f0a0144;
+        public static int new_subscribe_button_text_style=0x7f0a0145;
+        public static int new_subscribe_normal_num_style=0x7f0a0146;
+        public static int new_subscribe_normal_text_style=0x7f0a0147;
+        public static int new_subscribe_table_num=0x7f0a0148;
+        public static int new_subscribe_title_text_style=0x7f0a0149;
+        public static int pop_show_bottom=0x7f0a014a;
+        public static int style_btn_num=0x7f0a014b;
+        public static int style_et_input_active=0x7f0a014c;
+        public static int style_iv_right=0x7f0a014d;
+        public static int style_login_et=0x7f0a014e;
+        public static int style_login_ll=0x7f0a014f;
+        public static int style_rl_click_expandable=0x7f0a0150;
+        public static int style_tv_left=0x7f0a0151;
+        public static int style_tv_with_et_active=0x7f0a0152;
         /**  指定消失的动画xml 
          */
-        public static int timepopwindow_anim_style=0x7f0a0155;
-        public static int trade_main_top_buttons=0x7f0a0156;
-        public static int trade_wudang_price_buy_text=0x7f0a0157;
-        public static int trade_wudang_text=0x7f0a0158;
-        public static int tv_normal_show=0x7f0a0159;
-        public static int tv_tab_top=0x7f0a015a;
+        public static int timepopwindow_anim_style=0x7f0a0153;
+        public static int trade_main_top_buttons=0x7f0a0154;
+        public static int trade_wudang_price_buy_text=0x7f0a0155;
+        public static int trade_wudang_text=0x7f0a0156;
+        public static int tv_normal_show=0x7f0a0157;
+        public static int tv_tab_top=0x7f0a0158;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.
@@ -6006,7 +5863,7 @@ containing a value of this type.
             0x7f01000e, 0x7f01000f, 0x7f010010, 0x7f010011,
             0x7f010012, 0x7f010013, 0x7f010014, 0x7f010015,
             0x7f010016, 0x7f010017, 0x7f010018, 0x7f010019,
-            0x7f01001a, 0x7f01001b, 0x7f010062
+            0x7f01001a, 0x7f01001b, 0x7f010054
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#background}
@@ -6536,259 +6393,6 @@ containing a value of this type.
           @attr name com.thinkive.android.trade_bz:initialActivityCount
         */
         public static int ActivityChooserView_initialActivityCount = 0;
-        /** Attributes that can be used with a AdvancedPagerSlidingTabStrip.
-           <p>Includes the following attributes:</p>
-           <table>
-           <colgroup align="left" />
-           <colgroup align="left" />
-           <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabBackground com.thinkive.android.trade_bz:apTabBackground}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabDividerColor com.thinkive.android.trade_bz:apTabDividerColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabDividerPadding com.thinkive.android.trade_bz:apTabDividerPadding}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabDrawMode com.thinkive.android.trade_bz:apTabDrawMode}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabIndicatorColor com.thinkive.android.trade_bz:apTabIndicatorColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabIndicatorHeight com.thinkive.android.trade_bz:apTabIndicatorHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabPaddingLeftRight com.thinkive.android.trade_bz:apTabPaddingLeftRight}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabPaddingTopBottom com.thinkive.android.trade_bz:apTabPaddingTopBottom}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabScrollOffset com.thinkive.android.trade_bz:apTabScrollOffset}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabShouldExpand com.thinkive.android.trade_bz:apTabShouldExpand}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabTextAllCaps com.thinkive.android.trade_bz:apTabTextAllCaps}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabTextSelectColor com.thinkive.android.trade_bz:apTabTextSelectColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabUnderlineColor com.thinkive.android.trade_bz:apTabUnderlineColor}</code></td><td></td></tr>
-           <tr><td><code>{@link #AdvancedPagerSlidingTabStrip_apTabUnderlineHeight com.thinkive.android.trade_bz:apTabUnderlineHeight}</code></td><td></td></tr>
-           </table>
-           @see #AdvancedPagerSlidingTabStrip_apTabBackground
-           @see #AdvancedPagerSlidingTabStrip_apTabDividerColor
-           @see #AdvancedPagerSlidingTabStrip_apTabDividerPadding
-           @see #AdvancedPagerSlidingTabStrip_apTabDrawMode
-           @see #AdvancedPagerSlidingTabStrip_apTabIndicatorColor
-           @see #AdvancedPagerSlidingTabStrip_apTabIndicatorHeight
-           @see #AdvancedPagerSlidingTabStrip_apTabPaddingLeftRight
-           @see #AdvancedPagerSlidingTabStrip_apTabPaddingTopBottom
-           @see #AdvancedPagerSlidingTabStrip_apTabScrollOffset
-           @see #AdvancedPagerSlidingTabStrip_apTabShouldExpand
-           @see #AdvancedPagerSlidingTabStrip_apTabTextAllCaps
-           @see #AdvancedPagerSlidingTabStrip_apTabTextSelectColor
-           @see #AdvancedPagerSlidingTabStrip_apTabUnderlineColor
-           @see #AdvancedPagerSlidingTabStrip_apTabUnderlineHeight
-         */
-        public static final int[] AdvancedPagerSlidingTabStrip = {
-            0x7f01001f, 0x7f010020, 0x7f010021, 0x7f010022,
-            0x7f010023, 0x7f010024, 0x7f010025, 0x7f010026,
-            0x7f010027, 0x7f010028, 0x7f010029, 0x7f01002a,
-            0x7f01002b, 0x7f01002c
-        };
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabBackground}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
-or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.thinkive.android.trade_bz:apTabBackground
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabBackground = 10;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabDividerColor}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabDividerColor
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabDividerColor = 2;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabDividerPadding}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabDividerPadding
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabDividerPadding = 6;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabDrawMode}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be one of the following constant values.</p>
-<table>
-<colgroup align="left" />
-<colgroup align="left" />
-<colgroup align="left" />
-<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
-<tr><td><code>normal</code></td><td>0</td><td></td></tr>
-<tr><td><code>text</code></td><td>1</td><td></td></tr>
-</table>
-          @attr name com.thinkive.android.trade_bz:apTabDrawMode
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabDrawMode = 13;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabIndicatorColor}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabIndicatorColor
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabIndicatorColor = 0;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabIndicatorHeight}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabIndicatorHeight
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabIndicatorHeight = 4;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabPaddingLeftRight}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabPaddingLeftRight
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabPaddingLeftRight = 7;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabPaddingTopBottom}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabPaddingTopBottom
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabPaddingTopBottom = 8;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabScrollOffset}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabScrollOffset
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabScrollOffset = 9;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabShouldExpand}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabShouldExpand
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabShouldExpand = 11;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabTextAllCaps}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabTextAllCaps
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabTextAllCaps = 12;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabTextSelectColor}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabTextSelectColor
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabTextSelectColor = 3;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabUnderlineColor}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
-"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabUnderlineColor
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabUnderlineColor = 1;
-        /**
-          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#apTabUnderlineHeight}
-          attribute's value can be found in the {@link #AdvancedPagerSlidingTabStrip} array.
-
-
-          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
-Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
-in (inches), mm (millimeters).
-<p>This may also be a reference to a resource (in the form
-"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
-theme attribute (in the form
-"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
-containing a value of this type.
-          @attr name com.thinkive.android.trade_bz:apTabUnderlineHeight
-        */
-        public static int AdvancedPagerSlidingTabStrip_apTabUnderlineHeight = 5;
         /** Attributes that can be used with a AlertDialog.
            <p>Includes the following attributes:</p>
            <table>
@@ -6810,8 +6414,8 @@ containing a value of this type.
            @see #AlertDialog_singleChoiceItemLayout
          */
         public static final int[] AlertDialog = {
-            0x010100f2, 0x7f01002d, 0x7f01002e, 0x7f01002f,
-            0x7f010030, 0x7f010031
+            0x010100f2, 0x7f01001f, 0x7f010020, 0x7f010021,
+            0x7f010022, 0x7f010023
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#layout}
@@ -6882,7 +6486,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #AppCompatImageView_srcCompat
          */
         public static final int[] AppCompatImageView = {
-            0x01010119, 0x7f010032
+            0x01010119, 0x7f010024
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#src}
@@ -6913,7 +6517,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #AppCompatTextView_textAllCaps
          */
         public static final int[] AppCompatTextView = {
-            0x01010034, 0x7f010033
+            0x01010034, 0x7f010025
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#textAppearance}
@@ -7165,34 +6769,34 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #AppCompatTheme_windowNoTitle
          */
         public static final int[] AppCompatTheme = {
-            0x01010057, 0x010100ae, 0x7f010034, 0x7f010035,
-            0x7f010036, 0x7f010037, 0x7f010038, 0x7f010039,
-            0x7f01003a, 0x7f01003b, 0x7f01003c, 0x7f01003d,
-            0x7f01003e, 0x7f01003f, 0x7f010040, 0x7f010041,
-            0x7f010042, 0x7f010043, 0x7f010044, 0x7f010045,
-            0x7f010046, 0x7f010047, 0x7f010048, 0x7f010049,
-            0x7f01004a, 0x7f01004b, 0x7f01004c, 0x7f01004d,
-            0x7f01004e, 0x7f01004f, 0x7f010050, 0x7f010051,
-            0x7f010052, 0x7f010053, 0x7f010054, 0x7f010055,
-            0x7f010056, 0x7f010057, 0x7f010058, 0x7f010059,
-            0x7f01005a, 0x7f01005b, 0x7f01005c, 0x7f01005d,
-            0x7f01005e, 0x7f01005f, 0x7f010060, 0x7f010061,
-            0x7f010062, 0x7f010063, 0x7f010064, 0x7f010065,
-            0x7f010066, 0x7f010067, 0x7f010068, 0x7f010069,
-            0x7f01006a, 0x7f01006b, 0x7f01006c, 0x7f01006d,
-            0x7f01006e, 0x7f01006f, 0x7f010070, 0x7f010071,
-            0x7f010072, 0x7f010073, 0x7f010074, 0x7f010075,
-            0x7f010076, 0x7f010077, 0x7f010078, 0x7f010079,
-            0x7f01007a, 0x7f01007b, 0x7f01007c, 0x7f01007d,
-            0x7f01007e, 0x7f01007f, 0x7f010080, 0x7f010081,
-            0x7f010082, 0x7f010083, 0x7f010084, 0x7f010085,
-            0x7f010086, 0x7f010087, 0x7f010088, 0x7f010089,
-            0x7f01008a, 0x7f01008b, 0x7f01008c, 0x7f01008d,
-            0x7f01008e, 0x7f01008f, 0x7f010090, 0x7f010091,
-            0x7f010092, 0x7f010093, 0x7f010094, 0x7f010095,
-            0x7f010096, 0x7f010097, 0x7f010098, 0x7f010099,
-            0x7f01009a, 0x7f01009b, 0x7f01009c, 0x7f01009d,
-            0x7f01009e, 0x7f01009f, 0x7f0100a0, 0x7f0100a1
+            0x01010057, 0x010100ae, 0x7f010026, 0x7f010027,
+            0x7f010028, 0x7f010029, 0x7f01002a, 0x7f01002b,
+            0x7f01002c, 0x7f01002d, 0x7f01002e, 0x7f01002f,
+            0x7f010030, 0x7f010031, 0x7f010032, 0x7f010033,
+            0x7f010034, 0x7f010035, 0x7f010036, 0x7f010037,
+            0x7f010038, 0x7f010039, 0x7f01003a, 0x7f01003b,
+            0x7f01003c, 0x7f01003d, 0x7f01003e, 0x7f01003f,
+            0x7f010040, 0x7f010041, 0x7f010042, 0x7f010043,
+            0x7f010044, 0x7f010045, 0x7f010046, 0x7f010047,
+            0x7f010048, 0x7f010049, 0x7f01004a, 0x7f01004b,
+            0x7f01004c, 0x7f01004d, 0x7f01004e, 0x7f01004f,
+            0x7f010050, 0x7f010051, 0x7f010052, 0x7f010053,
+            0x7f010054, 0x7f010055, 0x7f010056, 0x7f010057,
+            0x7f010058, 0x7f010059, 0x7f01005a, 0x7f01005b,
+            0x7f01005c, 0x7f01005d, 0x7f01005e, 0x7f01005f,
+            0x7f010060, 0x7f010061, 0x7f010062, 0x7f010063,
+            0x7f010064, 0x7f010065, 0x7f010066, 0x7f010067,
+            0x7f010068, 0x7f010069, 0x7f01006a, 0x7f01006b,
+            0x7f01006c, 0x7f01006d, 0x7f01006e, 0x7f01006f,
+            0x7f010070, 0x7f010071, 0x7f010072, 0x7f010073,
+            0x7f010074, 0x7f010075, 0x7f010076, 0x7f010077,
+            0x7f010078, 0x7f010079, 0x7f01007a, 0x7f01007b,
+            0x7f01007c, 0x7f01007d, 0x7f01007e, 0x7f01007f,
+            0x7f010080, 0x7f010081, 0x7f010082, 0x7f010083,
+            0x7f010084, 0x7f010085, 0x7f010086, 0x7f010087,
+            0x7f010088, 0x7f010089, 0x7f01008a, 0x7f01008b,
+            0x7f01008c, 0x7f01008d, 0x7f01008e, 0x7f01008f,
+            0x7f010090, 0x7f010091, 0x7f010092, 0x7f010093
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#actionBarDivider}
@@ -8505,7 +8109,7 @@ containing a value of this type.
            @see #BottomCircleIndicator_indicator_type
          */
         public static final int[] BottomCircleIndicator = {
-            0x7f0100a2, 0x7f0100a3, 0x7f0100a4
+            0x7f010094, 0x7f010095, 0x7f010096
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#circleNum}
@@ -8562,7 +8166,7 @@ containing a value of this type.
            @see #ButtonBarLayout_allowStacking
          */
         public static final int[] ButtonBarLayout = {
-            0x7f0100a5
+            0x7f010097
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#allowStacking}
@@ -8595,7 +8199,7 @@ containing a value of this type.
            @see #CircleThumbnail_bct_size
          */
         public static final int[] CircleThumbnail = {
-            0x0101014f, 0x7f0100a6, 0x7f0100a7, 0x7f0100a8
+            0x0101014f, 0x7f010098, 0x7f010099, 0x7f01009a
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#text}
@@ -8660,7 +8264,7 @@ containing a value of this type.
            @see #CompoundButton_buttonTintMode
          */
         public static final int[] CompoundButton = {
-            0x01010107, 0x7f0100a9, 0x7f0100aa
+            0x01010107, 0x7f01009b, 0x7f01009c
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#button}
@@ -8742,10 +8346,10 @@ containing a value of this type.
            @see #CropImageView_touchPadding
          */
         public static final int[] CropImageView = {
-            0x7f0100ab, 0x7f0100ac, 0x7f0100ad, 0x7f0100ae,
-            0x7f0100af, 0x7f0100b0, 0x7f0100b1, 0x7f0100b2,
-            0x7f0100b3, 0x7f0100b4, 0x7f0100b5, 0x7f0100b6,
-            0x7f0100b7, 0x7f0100b8, 0x7f0100b9
+            0x7f01009d, 0x7f01009e, 0x7f01009f, 0x7f0100a0,
+            0x7f0100a1, 0x7f0100a2, 0x7f0100a3, 0x7f0100a4,
+            0x7f0100a5, 0x7f0100a6, 0x7f0100a7, 0x7f0100a8,
+            0x7f0100a9, 0x7f0100aa, 0x7f0100ab
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#backgroundColor}
@@ -9010,8 +8614,8 @@ containing a value of this type.
            @see #DrawerArrowToggle_thickness
          */
         public static final int[] DrawerArrowToggle = {
-            0x7f0100ba, 0x7f0100bb, 0x7f0100bc, 0x7f0100bd,
-            0x7f0100be, 0x7f0100bf, 0x7f0100c0, 0x7f0100c1
+            0x7f0100ac, 0x7f0100ad, 0x7f0100ae, 0x7f0100af,
+            0x7f0100b0, 0x7f0100b1, 0x7f0100b2, 0x7f0100b3
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#arrowHeadLength}
@@ -9166,8 +8770,8 @@ containing a value of this type.
          */
         public static final int[] LinearLayoutCompat = {
             0x010100af, 0x010100c4, 0x01010126, 0x01010127,
-            0x01010128, 0x7f01000b, 0x7f0100c2, 0x7f0100c3,
-            0x7f0100c4
+            0x01010128, 0x7f01000b, 0x7f0100b4, 0x7f0100b5,
+            0x7f0100b6
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#baselineAligned}
@@ -9339,7 +8943,7 @@ containing a value of this type.
            @see #LockPatternView_aspect
          */
         public static final int[] LockPatternView = {
-            0x7f0100c5
+            0x7f0100b7
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#aspect}
@@ -9461,8 +9065,8 @@ containing a value of this type.
             0x01010002, 0x0101000e, 0x010100d0, 0x01010106,
             0x01010194, 0x010101de, 0x010101df, 0x010101e1,
             0x010101e2, 0x010101e3, 0x010101e4, 0x010101e5,
-            0x0101026f, 0x7f0100c6, 0x7f0100c7, 0x7f0100c8,
-            0x7f0100c9
+            0x0101026f, 0x7f0100b8, 0x7f0100b9, 0x7f0100ba,
+            0x7f0100bb
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#actionLayout}
@@ -9626,7 +9230,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x7f0100ca
+            0x0101012f, 0x01010130, 0x01010131, 0x7f0100bc
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#headerBackground}
@@ -9697,7 +9301,7 @@ containing a value of this type.
            @see #PopupWindow_overlapAnchor
          */
         public static final int[] PopupWindow = {
-            0x01010176, 0x7f0100cb
+            0x01010176, 0x7f0100bd
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#popupBackground}
@@ -9730,7 +9334,7 @@ containing a value of this type.
            @see #PopupWindowBackgroundState_state_above_anchor
          */
         public static final int[] PopupWindowBackgroundState = {
-            0x7f0100cc
+            0x7f0100be
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#state_above_anchor}
@@ -9790,10 +9394,10 @@ containing a value of this type.
          */
         public static final int[] SearchView = {
             0x010100da, 0x0101011f, 0x01010220, 0x01010264,
-            0x7f0100cd, 0x7f0100ce, 0x7f0100cf, 0x7f0100d0,
-            0x7f0100d1, 0x7f0100d2, 0x7f0100d3, 0x7f0100d4,
-            0x7f0100d5, 0x7f0100d6, 0x7f0100d7, 0x7f0100d8,
-            0x7f0100d9
+            0x7f0100bf, 0x7f0100c0, 0x7f0100c1, 0x7f0100c2,
+            0x7f0100c3, 0x7f0100c4, 0x7f0100c5, 0x7f0100c6,
+            0x7f0100c7, 0x7f0100c8, 0x7f0100c9, 0x7f0100ca,
+            0x7f0100cb
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#focusable}
@@ -10046,9 +9650,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #SwitchCompat_track
          */
         public static final int[] SwitchCompat = {
-            0x01010124, 0x01010125, 0x01010142, 0x7f0100da,
-            0x7f0100db, 0x7f0100dc, 0x7f0100dd, 0x7f0100de,
-            0x7f0100df, 0x7f0100e0
+            0x01010124, 0x01010125, 0x01010142, 0x7f0100cc,
+            0x7f0100cd, 0x7f0100ce, 0x7f0100cf, 0x7f0100d0,
+            0x7f0100d1, 0x7f0100d2
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#textOff}
@@ -10193,7 +9797,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int[] TextAppearance = {
             0x01010095, 0x01010096, 0x01010097, 0x01010098,
             0x01010161, 0x01010162, 0x01010163, 0x01010164,
-            0x7f010033
+            0x7f010025
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#shadowColor}
@@ -10315,11 +9919,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int[] Toolbar = {
             0x010100af, 0x01010140, 0x7f010003, 0x7f010006,
             0x7f01000a, 0x7f010016, 0x7f010017, 0x7f010018,
-            0x7f010019, 0x7f01001b, 0x7f0100e1, 0x7f0100e2,
-            0x7f0100e3, 0x7f0100e4, 0x7f0100e5, 0x7f0100e6,
-            0x7f0100e7, 0x7f0100e8, 0x7f0100e9, 0x7f0100ea,
-            0x7f0100eb, 0x7f0100ec, 0x7f0100ed, 0x7f0100ee,
-            0x7f0100ef
+            0x7f010019, 0x7f01001b, 0x7f0100d3, 0x7f0100d4,
+            0x7f0100d5, 0x7f0100d6, 0x7f0100d7, 0x7f0100d8,
+            0x7f0100d9, 0x7f0100da, 0x7f0100db, 0x7f0100dc,
+            0x7f0100dd, 0x7f0100de, 0x7f0100df, 0x7f0100e0,
+            0x7f0100e1
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#gravity}
@@ -10672,8 +10276,8 @@ containing a value of this type.
            @see #View_theme
          */
         public static final int[] View = {
-            0x01010000, 0x010100da, 0x7f0100f0, 0x7f0100f1,
-            0x7f0100f2
+            0x01010000, 0x010100da, 0x7f0100e2, 0x7f0100e3,
+            0x7f0100e4
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#focusable}
@@ -10744,7 +10348,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #ViewBackgroundHelper_backgroundTintMode
          */
         public static final int[] ViewBackgroundHelper = {
-            0x010100d4, 0x7f0100f3, 0x7f0100f4
+            0x010100d4, 0x7f0100e5, 0x7f0100e6
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#background}
@@ -10853,9 +10457,9 @@ containing a value of this type.
            @see #WheelView_unitHight
          */
         public static final int[] WheelView = {
-            0x7f0100f5, 0x7f0100f6, 0x7f0100f7, 0x7f0100f8,
-            0x7f0100f9, 0x7f0100fa, 0x7f0100fb, 0x7f0100fc,
-            0x7f0100fd, 0x7f0100fe, 0x7f0100ff
+            0x7f0100e7, 0x7f0100e8, 0x7f0100e9, 0x7f0100ea,
+            0x7f0100eb, 0x7f0100ec, 0x7f0100ed, 0x7f0100ee,
+            0x7f0100ef, 0x7f0100f0, 0x7f0100f1
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.R.attr#isEnable}

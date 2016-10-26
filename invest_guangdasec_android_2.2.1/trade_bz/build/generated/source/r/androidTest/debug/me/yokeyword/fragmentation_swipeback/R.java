@@ -8,8 +8,8 @@ package me.yokeyword.fragmentation_swipeback;
 
 public final class R {
 	public static final class drawable {
-		public static final int shadow_bottom = 0x7f0200dc;
-		public static final int shadow_left = 0x7f0200dd;
-		public static final int shadow_right = 0x7f0200de;
+		public static final int shadow_bottom = 0x7f0200da;
+		public static final int shadow_left = 0x7f0200db;
+		public static final int shadow_right = 0x7f0200dc;
 	}
 }

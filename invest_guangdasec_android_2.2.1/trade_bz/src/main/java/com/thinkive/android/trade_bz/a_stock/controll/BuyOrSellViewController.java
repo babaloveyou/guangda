@@ -52,8 +52,6 @@ public class BuyOrSellViewController extends AbsBaseController implements
             mFragment.onClickTradeAdd();
         }  else if (resId == R.id.iv_delete_price) {//删除价格按钮
             mFragment.onClickDeletPriceText();
-        } else if (resId == R.id.iv_delete_num) {//删除数量iv
-            mFragment.onClickDeletNumText();
         } else if (resId == R.id.tv_stock_num_pre) {//股票数量替换之前的布局
             mFragment.onPreNumClick();
         } else if (resId == R.id.edt_stock_price_pre) {//股票价格替换之前的布局

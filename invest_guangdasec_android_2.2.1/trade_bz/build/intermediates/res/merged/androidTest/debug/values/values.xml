@@ -141,7 +141,6 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
-    <color name="background_tab_pressed">#6633B5E5</color>
     <color name="base">#FFFFFB</color>
     <color name="bg_bt_yellow_normal">#fdce43</color>
     <color name="bg_bt_yellow_pressed">#dcae24</color>
@@ -200,7 +199,6 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <color name="red">#E43F3E</color>
     <color name="result_view">#b0000000</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
@@ -255,7 +253,6 @@
     <declare-styleable name="ActionMenuView"/>
     <declare-styleable name="ActionMode"><attr name="titleTextStyle"/><attr name="subtitleTextStyle"/><attr name="background"/><attr name="backgroundSplit"/><attr name="height"/><attr format="reference" name="closeItemLayout"/></declare-styleable>
     <declare-styleable name="ActivityChooserView"><attr format="string" name="initialActivityCount"/><attr format="reference" name="expandActivityOverflowButtonDrawable"/></declare-styleable>
-    <declare-styleable name="AdvancedPagerSlidingTabStrip"><attr format="color" name="apTabIndicatorColor"/><attr format="color" name="apTabUnderlineColor"/><attr format="color" name="apTabDividerColor"/><attr format="color" name="apTabTextSelectColor"/><attr format="dimension" name="apTabIndicatorHeight"/><attr format="dimension" name="apTabUnderlineHeight"/><attr format="dimension" name="apTabDividerPadding"/><attr format="dimension" name="apTabPaddingLeftRight"/><attr format="dimension" name="apTabPaddingTopBottom"/><attr format="dimension" name="apTabScrollOffset"/><attr format="reference" name="apTabBackground"/><attr format="boolean" name="apTabShouldExpand"/><attr format="boolean" name="apTabTextAllCaps"/><attr format="enum" name="apTabDrawMode"><enum name="normal" value="0"/><enum name="text" value="1"/></attr></declare-styleable>
     <declare-styleable name="AlertDialog"><attr name="android:layout"/><attr format="reference" name="buttonPanelSideLayout"/><attr format="reference" name="listLayout"/><attr format="reference" name="multiChoiceItemLayout"/><attr format="reference" name="singleChoiceItemLayout"/><attr format="reference" name="listItemLayout"/></declare-styleable>
     <declare-styleable name="AppCompatImageView"><attr name="android:src"/><attr format="reference" name="srcCompat"/></declare-styleable>
     <declare-styleable name="AppCompatTextView"><attr format="reference|boolean" name="textAllCaps"/><attr name="android:textAppearance"/></declare-styleable>
@@ -365,11 +362,6 @@
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
-    <dimen name="psts_dot_linelayout_h">23dp</dimen>
-    <dimen name="psts_dot_m_right">9dp</dimen>
-    <dimen name="psts_dot_m_top">7dp</dimen>
-    <dimen name="psts_dot_txt_size">10sp</dimen>
-    <dimen name="psts_dot_wh">8dp</dimen>
     <dimen name="space_size">2dp</dimen>
     <dimen name="text_size_m">24sp</dimen>
     <dimen name="text_size_s">17sp</dimen>
@@ -388,7 +380,6 @@
     <item name="gridview" type="id"/>
     <item name="hierarchy" type="id"/>
     <item name="home" type="id"/>
-    <item name="id_tab_txt" type="id">888</item>
     <item name="isexpand" type="id"/>
     <item name="launch_product_query" type="id"/>
     <item name="progress_circular" type="id"/>
@@ -400,7 +391,6 @@
     <item name="search_book_contents_succeeded" type="id"/>
     <item name="split" type="id">false</item>
     <item name="split_action_bar" type="id"/>
-    <item name="tag_position" type="id"/>
     <item name="tv_communication_password" type="id"/>
     <item name="tv_fun_otc" type="id"/>
     <item name="tv_fun_trade" type="id"/>
@@ -2683,9 +2673,6 @@
     <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
         <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
     </style>
-    <style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">
-        <item name="android:typeface">monospace</item>
-    </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
 
@@ -3077,22 +3064,6 @@
     <style name="new_subscribe_title_text_style">
         <item name="android:textColor">@color/trade_text_color9</item>
         <item name="android:textSize">@dimen/new_subscribe_text</item>
-    </style>
-    <style name="pagertab_style">
-        <item name="android:background">@color/trade_color_black</item>
-        <item name="apTabBackground">@color/white</item>
-        <item name="android:textSize">14sp</item>
-
-        <item name="apTabUnderlineHeight">0.5sp</item>
-        <item name="android:textAppearance">@style/CustomTabPageIndicator.Text</item>
-        <item name="android:textColor">@drawable/selector_text_tab</item>
-        <item name="apTabIndicatorColor">@color/statusbar_main</item>
-        <item name="apTabUnderlineColor">@color/trader_door_gv_divider</item>
-        <item name="apTabDividerColor">@color/white</item>
-        <item name="apTabPaddingLeftRight">8dp</item>
-        <item name="apTabShouldExpand">false</item>
-        <item name="apTabDrawMode">text</item>
-        <item name="apTabTextSelectColor">@color/statusbar_main</item>
     </style>
     <style name="pop_show_bottom" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>

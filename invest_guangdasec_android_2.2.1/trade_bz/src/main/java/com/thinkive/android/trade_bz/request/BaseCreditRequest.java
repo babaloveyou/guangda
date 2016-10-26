@@ -1,5 +1,6 @@
 package com.thinkive.android.trade_bz.request;
 
+import com.thinkive.android.trade_bz.a_rr.bean.CreditLoginInfo;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 
@@ -34,6 +35,7 @@ public class BaseCreditRequest extends BaseRequest{
         paramHashMap.put("entrust_way", TradeLoginManager.sCreditUserInfo.getEntrust_way());
         paramHashMap.put("branch_no", TradeLoginManager.sCreditUserInfo.getBranch_no());
         paramHashMap.put("fund_account", TradeLoginManager.sCreditUserInfo.getFund_account());
+        paramHashMap.put("password", CreditLoginInfo.getPassword());
         paramHashMap.put("cust_code", TradeLoginManager.sCreditUserInfo.getCust_code());
         paramHashMap.put("op_station", TradeLoginManager.sCreditUserInfo.getOp_station());
         paramHashMap.put("sessionid", TradeLoginManager.sCreditUserInfo.getJsessionid());
