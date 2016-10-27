@@ -164,6 +164,9 @@ public abstract class AbsBaseAdapter<T> extends BaseAdapter {
          * 使之不然显示层混乱
          */
         private int mPosition = 0;
+        public int getPosition() {
+            return mPosition;
+        }
         /**
          * 用于存储item布局视图控件
          */

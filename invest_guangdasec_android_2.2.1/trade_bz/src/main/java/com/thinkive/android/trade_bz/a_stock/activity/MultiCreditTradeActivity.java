@@ -41,7 +41,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multicredittrade, false);
+        setContentView(R.layout.activity_multicredittrade, true);
         // 发消息，让登录页关闭
         TradeTools.sendMsgToLoginForSubmitFinish(this);
         findViews();
@@ -98,6 +98,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         setBackBtnVisibility(View.VISIBLE);
         // 设置页面上方中间的标题
         setTitleText("信用交易");
+//        setTitleDrawableLedt();
         mRadioTabs.setFragments(mFragmentList);
         mRadioTabs.initViews();
         // mRadioTabs对象的类不是View子类，所以这个监听器的设置不能写在mController中
@@ -107,6 +108,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
                 mNavSlide.setCurrentIndex(position);
             }
         });
+        defaultViewPagerPos = getIntent().getExtras().getInt("pos");
         mRadioTabs.setCurTab(defaultViewPagerPos);
         //        setTitleStr(mFragmentList.get(defaultViewPagerPos).getName());
     }

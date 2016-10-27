@@ -49,6 +49,10 @@ public class BottomHoldeFragment extends BaseLazzyFragment {
             return mView;
         }
         mView = inflater.inflate(R.layout.fragment_trade_bottom_hold, null);
+        if (mView.getParent() != null) {
+            ViewGroup parent = (ViewGroup) mView.getParent();
+            parent.removeView(mView);
+        }
         mActivity= (MultiTradeActivity) mFragment.getActivity();
         findViews(mView);
         initView();

@@ -6,11 +6,14 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -33,8 +37,8 @@ import com.thinkive.android.trade_bz.a_rr.bll.RCreditBuyServiceImpl;
 import com.thinkive.android.trade_bz.a_rr.controll.RCreditBuyViewController;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.BuyOrSellForPopAdapter;
-import com.thinkive.android.trade_bz.a_stock.adapter.MyStoreListViewAdapterForBuysale;
 import com.thinkive.android.trade_bz.a_stock.adapter.SearchStocksAdapter;
+import com.thinkive.android.trade_bz.a_stock.adapter.TradeBottomFragmentVpAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.bean.MarketEntrustWay;
 import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
@@ -43,6 +47,7 @@ import com.thinkive.android.trade_bz.a_stock.controll.BuyOrSellViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
 import com.thinkive.android.trade_bz.dialog.RCreditBuyDialog;
+import com.thinkive.android.trade_bz.keyboard.KeyboardEventListener;
 import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
@@ -50,11 +55,13 @@ import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.utils.SizeUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.BottomFragmentVp;
 import com.thinkive.android.trade_bz.views.ClearEditText;
 import com.thinkive.android.trade_bz.views.popupwindows.PopupWindowInListView;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
@@ -66,7 +73,7 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
  * @corporation thinkive
  * @date 2016/1/20
  */
-public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManager.OnKeyCodeDownListener {
+public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManager.OnKeyCodeDownListener, ViewPager.OnPageChangeListener {
     /**
      * 输入“证券代码”
      */
@@ -104,10 +111,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
      */
     private Button mBtnBuyOrSell = null;
     /**
-     * 储存我的持仓数据的LisView
-     */
-    private ListView mLvMyStore = null;
-    /**
      * fragment页面根布局
      */
     private View mRootView;
@@ -137,14 +140,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
      */
     private ArrayList<LinearLayout> mBuySaleDiskLlList;
     /**
-     * 如果没有数据就显示该图片
-     */
-    private LinearLayout mLiNoData;
-    /**
-     * 正在加载的旋转进度条
-     */
-    private LinearLayout mLoading;
-    /**
      * 目前用来弹出模糊查询PopupWindow
      */
     private LinearLayout mLlStockCodeName;
@@ -160,10 +155,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
      * 控制该类的控制器
      */
     private RCreditBuyViewController mController = null;
-    /**
-     * 我的持仓数据的LisView的适配器
-     */
-    private MyStoreListViewAdapterForBuysale mMyHoldAdapter;
     /**
      * 当前的股票联动数据bean
      */
@@ -205,7 +196,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
      * 设置到买卖按钮上的文字
      */
     private String mBtnBuyOrSaleText = "";
-    private TextView mTvMarketEntrustLay;
     /**
      * 买卖方向，买入0，卖出1
      */
@@ -258,9 +248,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         public void run() {
-            if (!TradeUtils.isFastClick()) {
-                mService.getHoldList();
-            }
             if (mCodeTableBean != null) {
                 mService.requestStockWuDangPan(mCodeTableBean.getCode(),
                         mCodeTableBean.getMarket(), mCodeTableBean.getExchange_type(), false);
@@ -320,6 +307,15 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     private TextView mNowPriceTv;
     private TextView mIncreaseAmountTv;
     private TextView mMaxStockNumTv;
+    private BottomFragmentVp mBottomFragmentVp;
+    private TradeBottomFragmentVpAdapter mTradeBottomFragmentVpAdapter;
+    private List<Fragment> mBottomFragmentsList = new ArrayList<>();
+    private LinearLayout mBottomIndicator;
+    private CreditBottomHolderFragment mCreditBottomHolderFragment;
+    private int preSelectPagePos = 0;
+    private TextView mTitleOfBottom;
+    private CreditBottomTodayEntrustFragment mCreditBottomTodayEntrustFragment;
+    private CreditBottomRevocationFragment mCreditBottomRevocationFragment;
 
     public RCreditBuyFragment() {
 
@@ -373,10 +369,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mEdStockPrice = (ClearEditText) view.findViewById(R.id.edt_stock_price);
         mEdEntrustAmount = (ClearEditText) view.findViewById(R.id.ed_entrust_num);
         mBtnBuyOrSell = (Button) view.findViewById(R.id.btn_buy_or_sell);
-        mLvMyStore = (ListView) view.findViewById(R.id.lv_show_stock);
-        mLvMyStore.setDivider(null);
-        mLoading = (LinearLayout) view.findViewById(R.id.ll_buy_or_sell_list_loading);
-        mLiNoData = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
         mLlStockCodeName = (LinearLayout) mRootView.findViewById(R.id.ll_code_name);
         mRealStockNumLl = (LinearLayout) mRootView.findViewById(R.id.ll_stock_num_after);
         mRealStockNumLl = (LinearLayout) mRootView.findViewById(R.id.ll_stock_num_after);
@@ -385,12 +377,14 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mInPutAmountFl = (FrameLayout) view.findViewById(R.id.ll_input_amount);
         mNowPriceTv = (TextView) view.findViewById(R.id.tv_now_price);
         mIncreaseAmountTv = (TextView) view.findViewById(R.id.tv_increase_amount);
-        mTvMarketEntrustLay = (TextView) view.findViewById(R.id.tv_market_entrust);
         mAllNumTv = (TextView) view.findViewById(R.id.tv_all_num);
         mHalfNumTv = (TextView) view.findViewById(R.id.tv_half_num);
         mThirdNumTv = (TextView) view.findViewById(R.id.tv_third_num);
         mQuarterNumTv = (TextView) view.findViewById(R.id.tv_quarter_num);
         mMaxStockNumTv = (TextView) view.findViewById(R.id.tv_stock_max_num);
+        mBottomFragmentVp = (BottomFragmentVp) view.findViewById(R.id.vp_bottom_fragment);
+        mBottomIndicator = (LinearLayout) view.findViewById(R.id.indcator_bottom_circle);
+        mTitleOfBottom = (TextView) view.findViewById(R.id.tv_header_of_grade_bottom);
         // 五档买卖盘中的LinearLayout
         LinearLayout tempLl = (LinearLayout) view.findViewById(R.id.ll_buy1);
         mBuySaleDiskLlList = new ArrayList<LinearLayout>();
@@ -442,7 +436,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         registerListener(ListenerController.ON_CLICK, mTvSubtract, mController);
         registerListener(ListenerController.ON_CLICK, mTvAdd, mController);
         registerListener(ListenerController.ON_CLICK, mBtnBuyOrSell, mController);
-        registerListener(ListenerController.ON_ITEM_CLICK, mLvMyStore, mController);
         registerListener(BuyOrSellViewController.ON_TEXT_CHANGE, mEdStockCode, mController);
         registerListener(ListenerController.ON_CLICK, mTvUpLimit, mController);
         registerListener(ListenerController.ON_CLICK, mTvDownLimit, mController);
@@ -452,6 +445,7 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         registerListener(ListenerController.ON_CLICK, mThirdNumTv, mController);
         registerListener(ListenerController.ON_CLICK, mQuarterNumTv, mController);
         registerListener(ListenerController.ON_CLICK, mLlStockCodeName, mController);
+        mBottomFragmentVp.addOnPageChangeListener(this);
         for (LinearLayout ll : mBuySaleDiskLlList) {
             registerListener(ListenerController.ON_CLICK, ll, mController);
         }
@@ -517,9 +511,10 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
 
     @Override
     protected void initData() {
+        addBottomFragments();
         mActivity = (MultiCreditTradeActivity) getActivity();
+        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mActivity, mBottomFragmentsList);
         mResources = CoreApplication.getInstance().getResources();
-        mMyHoldAdapter = new MyStoreListViewAdapterForBuysale(mActivity);
         mController = new RCreditBuyViewController(this);
         mFontManager = FontManager.getInstance(mActivity);
         mAdapterForPop = new BuyOrSellForPopAdapter(mActivity);
@@ -534,13 +529,13 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mShenEntrustWaysNum = mResources.getStringArray(R.array.two_finance_shen_buy_nums);
         mHuEntrustWaysNum = mResources.getStringArray(R.array.two_finance_hu_buy_nums);
 
-        mBtnBuyOrSaleText = mResources.getString(R.string.hk_buy);
-        mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
         mLastEntrustPrice = "0";
         mEdStockPrice.setHint(mResources.getString(R.string.trade_hint_input_buy_price));
-        mLvMyStore.setAdapter(mMyHoldAdapter);
-        mService.getHoldList();
+        mBottomFragmentVp.setAdapter(mTradeBottomFragmentVpAdapter);
+        //初始化小圆点
+        addCircles();
     }
+
 
     @Override
     protected void initViews() {
@@ -549,7 +544,7 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
             public void onFocusChange(boolean hasFocus) {
                 if (hasFocus) {
                     showOptionalList();
-                    if (!TextUtils.isEmpty(mEdStockCode.getText())&&mEdStockCode.getText().length()>=6) {
+                    if (!TextUtils.isEmpty(mEdStockCode.getText()) && mEdStockCode.getText().length() >= 6) {
                         mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
                         mEdStockCode.performClick();
                         mEdStockCode.requestFocus();
@@ -596,9 +591,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     }
 
 
-
-
-
     /**
      * 为弹出窗口实现监听类
      */
@@ -616,7 +608,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
      */
     public void clickPopList(int position) {
         MarketEntrustWay bean = mAdapterForPop.getItem(position);
-        mTvMarketEntrustLay.setText(bean.getEntrust_way_name());
         entrustBsXjNum = bean.getEntrust_way_num();
         mPopupWindow.dismiss();
     }
@@ -672,9 +663,9 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
             mEdStockCode.requestFocus();
             setEdtCursor(mEdStockCode);
         }
-                if (!TextUtils.isEmpty(mEdStockPrice.getText())) {
-                    setEdtCursor(mEdStockPrice);
-                }
+        if (!TextUtils.isEmpty(mEdStockPrice.getText())) {
+            setEdtCursor(mEdStockPrice);
+        }
         mLastInputStockCodeLength = curInputLength;
     }
 
@@ -720,16 +711,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mLastInputStockCodeLength = 6;
     }
 
-    /**
-     * 持仓列表项单击事件监听
-     *
-     * @param position 选中的item的序号
-     */
-    public void onStoreListViewItemClick(int position) {
-        ArrayList<MyStoreStockBean> dataList = mMyHoldAdapter.getListData();
-        MyStoreStockBean bean = dataList.get(position);
-        mService.request20000ForHqData(bean.getStock_code(), bean.getMarket());
-    }
 
     /**
      * 当价格输入框的内容发生改变时，执行此方法
@@ -953,8 +934,8 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     public void showOptionalList() {
         if (TextUtils.isEmpty(getEntrustCode())) {
             mStockFuzzyQueryManager.dismissQueryPopupWindow();
-            mStockFuzzyQueryManager.execQueryOptional();
-            mStockFuzzyQueryManager.showQueryPopupWindow(mEdStockCode);
+//            mStockFuzzyQueryManager.execQueryOptional();
+//            mStockFuzzyQueryManager.showQueryPopupWindow(mEdStockCode);
         }
     }
 
@@ -1059,8 +1040,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mLastEntrustPrice = "";
         mService.mCount = 2;
         mTvStockUnit.setText(mResources.getString(R.string.trade_stock));
-        mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
-        mTvMarketEntrustLay.setText("");
         entrustBsXjNum = "";
         mCanUseMoneyTv.setText("");
         // 清除五档盘中的数据
@@ -1212,14 +1191,27 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
                             case -14: // 单击了全仓
                                 setAmountPos(1);
                                 setEdtCursor(mEdEntrustAmount);
+                            case KeyboardEventListener.KEY_CODE_INCREMENT:
+                                //// TODO: 2016/10/19  +100
+                                if (!TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                                    mEdEntrustAmount.setText((Integer.parseInt(mEdEntrustAmount.getText().toString()) + 100) / 100 * 100 + "");
+                                    setEdtCursor(mEdEntrustAmount);
+                                }
+                                break;
+                            //// TODO: 2016/10/19  -100
+                            case KeyboardEventListener.KEY_CODE_DECREMENT:
+                                if (!TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                                    int num = Integer.parseInt(mEdEntrustAmount.getText().toString()) / 100 * 100 - 100;
+                                    mEdEntrustAmount.setText(num > 0 ? num + "" : "0");
+                                    setEdtCursor(mEdEntrustAmount);
+                                }
                                 break;
                         }
                     }
                 });
                 int max_amount = 1;
                 max_amount = Integer.parseInt(mStockLinkageBean.getStock_max_amount());
-                //// TODO: 2016/10/26 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                mMaxStockNumTv.setText(max_amount+"");
+                mMaxStockNumTv.setText(max_amount + "");
                 //判断联动股票的市场类型，分别为市价委托弹出框设值
                 String[] entrust_way = {};
                 String[] entrust_way_num = {};
@@ -1250,7 +1242,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
                 });
                 mEdEntrustAmount.setHint("");
                 mEdEntrustAmount.setText("");
-                mTvMarketEntrustLay.setText("");
                 entrustBsXjNum = "";
             }
         } catch (IllegalStateException ise) {
@@ -1288,22 +1279,6 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mEdEntrustAmount.setText(amountStr);
     }
 
-    /**
-     * 我的持仓
-     */
-    public void getStoreData(ArrayList<MyStoreStockBean> dataList) {
-        if (dataList == null || dataList.size() == 0) {
-            mLvMyStore.setVisibility(View.GONE);
-            mLiNoData.setVisibility(View.VISIBLE);
-            mLoading.setVisibility(View.GONE);
-        } else {
-            mLvMyStore.setVisibility(View.VISIBLE);
-            mLiNoData.setVisibility(View.GONE);
-            mLoading.setVisibility(View.GONE);
-            mMyHoldAdapter.setListData(dataList);
-            mMyHoldAdapter.notifyDataSetChanged();
-        }
-    }
 
     /**
      * 点击title栏右侧 “查询” 字样
@@ -1453,9 +1428,10 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     public void onGetCanUseBalance(String canUseMoney) {
         mCanUseMoneyTv.setText(canUseMoney);
     }
+
     //
     public void onNameClick() {
-        if (!TextUtils.isEmpty(mEdStockCode.getText())&&mEdStockCode.getText().toString().length()>=6) {
+        if (!TextUtils.isEmpty(mEdStockCode.getText()) && mEdStockCode.getText().toString().length() >= 6) {
             mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
             mEdStockCode.performClick();
             mEdStockCode.requestFocus();
@@ -1470,5 +1446,84 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         } else {
             onSearchTextChange();
         }
+    }
+
+    //底部vp切换监听
+    //// TODO: 2016/10/26
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        ImageView iv = (ImageView) mBottomIndicator.getChildAt(position);
+        iv.setImageResource(R.drawable.enabletrue);
+        ImageView preIv = (ImageView) mBottomIndicator.getChildAt(preSelectPagePos);
+        preIv.setImageResource(R.drawable.enablefalse);
+        preSelectPagePos = position;
+        mBottomIndicator.invalidate();
+        Fragment item = mTradeBottomFragmentVpAdapter.getItem(position);
+        if (item instanceof CreditBottomHolderFragment) {
+            mTitleOfBottom.setText(CreditBottomHolderFragment.TITLE);
+        } else if (item instanceof CreditBottomTodayEntrustFragment) {
+            mTitleOfBottom.setText(CreditBottomTodayEntrustFragment.TITLE);
+        } else{
+            mTitleOfBottom.setText(CreditBottomRevocationFragment.TITLE);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    //添加底部fragment
+    //// TODO: 2016/10/26
+    private void addBottomFragments() {
+        if (mBottomFragmentsList != null && mBottomFragmentsList.size() > 0) {
+            return;
+        }
+        mCreditBottomHolderFragment = new CreditBottomHolderFragment();
+        mCreditBottomHolderFragment.setFragment(this);
+        mBottomFragmentsList.add(mCreditBottomHolderFragment);
+
+        mCreditBottomTodayEntrustFragment = new CreditBottomTodayEntrustFragment();
+        mCreditBottomTodayEntrustFragment.setFragment(this);
+        mBottomFragmentsList.add(mCreditBottomTodayEntrustFragment);
+
+        mCreditBottomRevocationFragment = new CreditBottomRevocationFragment();
+        mCreditBottomRevocationFragment.setFragment(this);
+        mBottomFragmentsList.add(mCreditBottomRevocationFragment);
+
+    }
+
+    //添加底部小圆点
+    private void addCircles() {
+        //动态添加白色点所有对应的indicator的内容
+        for (int i = 0; i < mTradeBottomFragmentVpAdapter.getCount(); i++) {
+            ImageView ivIndicator = new ImageView(getContext());
+            if (i != 0) {
+                ivIndicator.setImageResource(R.drawable.enablefalse);
+            } else {
+                ivIndicator.setImageResource(R.drawable.enabletrue);
+            }
+            int unit = (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()) + .5f);
+            int width = unit;//10dp<--->10px
+            int height = unit;
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
+
+            if (i != 0) {//不是第一个点的时候设置对应的marginLeft
+                params.leftMargin = unit;
+            }
+            mBottomIndicator.addView(ivIndicator, params);
+        }
+    }
+
+    //底部持仓列表点击事件
+    public void getHolderStock(MyStoreStockBean bean) {
+        mEdStockCode.setText(bean.getStock_code());
+        setEdtCursor(mEdStockCode);
+        onStockLengthMax(mEdStockCode.getText().toString(), mEdStockCode);
     }
 }

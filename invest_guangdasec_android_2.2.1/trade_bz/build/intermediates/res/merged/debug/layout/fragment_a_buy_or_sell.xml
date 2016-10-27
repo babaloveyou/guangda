@@ -300,6 +300,7 @@
                 >
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/ll_stock_num_after"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -356,7 +357,6 @@
                 </LinearLayout>
 
                 <TextView
-
                     android:id="@+id/tv_stock_num_pre"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -364,7 +364,7 @@
                     android:text="委托数量"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="@dimen/fund_buy_text"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     />
 
             </FrameLayout>
@@ -498,8 +498,6 @@
                         android:hint="--"
                         android:textColor="@color/trade_text"
                         />
-
-
                 </LinearLayout>
             </LinearLayout>
 

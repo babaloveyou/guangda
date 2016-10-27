@@ -24,8 +24,6 @@ public class BottomRevocationAdapter extends AbsBaseAdapter<RevocationBean>{
         mSubContext = context;
         mRevocationServices = mServices;
     }
-
-
     @Override
     protected void onFillComponentData(ViewHolder holder, final RevocationBean bean) {
         TextView nameTv=(TextView) holder.getComponentById(R.id.tv_name);

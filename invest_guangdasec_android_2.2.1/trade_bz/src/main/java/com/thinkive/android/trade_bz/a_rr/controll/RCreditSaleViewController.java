@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RadioGroup;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditSaleFragment;
@@ -17,7 +16,7 @@ import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
  */
 public class RCreditSaleViewController extends AbsBaseController implements
         View.OnClickListener, ListView.OnItemClickListener, TextWatcher,
-        View.OnFocusChangeListener, RadioGroup.OnCheckedChangeListener{
+        View.OnFocusChangeListener{
 
     private RCreditSaleFragment mFragment = null;
 
@@ -39,9 +38,6 @@ public class RCreditSaleViewController extends AbsBaseController implements
                 break;
             case ON_FOCUS_CHANGE:
                 view.setOnFocusChangeListener(this);
-                break;
-            case ON_CHECK_CHANGE:
-                ((RadioGroup)view).setOnCheckedChangeListener(this);
                 break;
             default:
                 break;
@@ -72,8 +68,17 @@ public class RCreditSaleViewController extends AbsBaseController implements
             mFragment.onClickDownLimit();
         } else if (resId == R.id.tv_up_limit) { // 跌停价
             mFragment.onClickUpLimit();
-        } else if (resId == R.id.tv_stock_name) { // 股票名称
-            mFragment.onClickStockName();
+        } else if (resId == R.id.ll_code_name) {//点击名字
+            mFragment.onNameClick();
+        }
+        else if (resId == R.id.tv_all_num) {//全仓按钮
+            mFragment.setStockNumAll();
+        } else if (resId == R.id.tv_half_num) {//半仓
+            mFragment.setStockNumHalf();
+        } else if (resId == R.id.tv_third_num) {//1/3仓
+            mFragment.setStockNumThird();
+        }else if (resId == R.id.tv_quarter_num) {//1/4仓
+            mFragment.setStockNumQuarter();
         }
     }
 
@@ -82,19 +87,11 @@ public class RCreditSaleViewController extends AbsBaseController implements
         int adapterViewId = parent.getId();
         if (adapterViewId == R.id.lv_pop) { // 股票代码搜索提示列表的item单击事件
             mFragment.onSearchListViewItemClick(position);
-        } else if (adapterViewId == R.id.lv_show_contract) { // 点击合约列表
-            mFragment.onContractItemClick(position);
-        } else if (adapterViewId == R.id.lv_show_object) { // 点击可容标的
-            mFragment.onTicketItemClick(position);
         } else {
             mFragment.onClickBuyOrSaleDisk(view);
         }
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        mFragment.onClickRadioButtonList(checkedId);
-    }
 
     //---------------------TextWatcher的三个方法，定义开始--------------------
     @Override

@@ -4,6 +4,10 @@
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxxhdpi-v4\\credit_refund.png"
     },
     {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxxhdpi-v4\\reduce_icon.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxxhdpi-v4\\reduce_icon.png"
+    },
+    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxxhdpi-v4\\collateral_transfer.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxxhdpi-v4\\collateral_transfer.png"
     },
@@ -18,6 +22,10 @@
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxxhdpi-v4\\credit_bank_transfer.png",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxxhdpi-v4\\credit_bank_transfer.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxxhdpi-v4\\add_icon.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\bundles\\debug\\res\\mipmap-xxxhdpi-v4\\add_icon.png"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\androidTest\\debug\\mipmap-xxxhdpi-v4\\financing_buy.png",

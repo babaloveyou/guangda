@@ -991,7 +991,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
                     if (dataList.size() == 1) {
                         CodeTableBean bean = dataList.get(0);
                         hidePreAccountView();
-                        mEdStockCode.setText(bean.getCode() +"(" +bean.getName()+")");
+                        mEdStockCode.setText(bean.getCode() + "(" + bean.getName() + ")");
                         mEdStockCode.clearFocus();
                         mService.request20000ForHqData(bean.getCode(), bean.getMarket());
                     } else {
@@ -1042,7 +1042,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     public void onSearchListViewItemClick(int position) {
         CodeTableBean bean = mStockFuzzyQueryManager.getSearchStocksAdapter().getItem(position);
         mService.request20000ForHqData(bean.getCode(), bean.getMarket());
-        mEdStockCode.setText(bean.getCode() +"(" +bean.getName()+")");
+        mEdStockCode.setText(bean.getCode() + "(" + bean.getName() + ")");
         mEdStockCode.clearFocus();
         TradeUtils.hideSystemKeyBoard(mActivity);
         TradeUtils.hideSystemKeyBoard(mActivity);
@@ -1357,7 +1357,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
      */
     public void onGetHqData(CodeTableBean bean) {
         mCodeTableBean = bean;
-        mEdStockCode.setText(mCodeTableBean.getCode() + "("+mCodeTableBean.getName()+")");
+        mEdStockCode.setText(mCodeTableBean.getCode() + "(" + mCodeTableBean.getName() + ")");
         double step = Double.parseDouble(mCodeTableBean.getStep_unit());
         setStep(step);
         mTvUpLimit.setText(mCodeTableBean.getUpLimit());
@@ -1923,11 +1923,13 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mPreAccountParentLl.setVisibility(View.GONE);
         mAfterAccountParentLl.setVisibility(View.VISIBLE);
     }
+
     //复位股东账号布局
     public void resetPreAccountView() {
         mPreAccountParentLl.setVisibility(View.VISIBLE);
         mAfterAccountParentLl.setVisibility(View.GONE);
     }
+
     //股票价格替换之前的布局
     public void onPrePriceClick() {
         mStockFuzzyQueryManager.dismissQueryPopupWindow();
@@ -1952,6 +1954,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mEdStockPricePre.setVisibility(View.VISIBLE);
         mAfterPriceView.setVisibility(View.GONE);
     }
+
     private void resetPreNumView() {
         if (!TextUtils.isEmpty(mEdStockCode.getText())) {
             return;
@@ -1959,6 +1962,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mStockNumPreTv.setVisibility(View.VISIBLE);
         mStockNumAfterView.setVisibility(View.GONE);
     }
+
     public void onClickDeletPriceText() {
         mEdStockPrice.setText("");
     }
@@ -2019,7 +2023,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     }
 
     public void onNameClick() {
-        if (!TextUtils.isEmpty(mEdStockCode.getText())&&getEntrustCode().toString().length()>=6) {
+        if (!TextUtils.isEmpty(mEdStockCode.getText()) && getEntrustCode().toString().length() >= 6) {
             mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
             mEdStockCode.performClick();
             mEdStockCode.requestFocus();
@@ -2076,7 +2080,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             }
         }
     }
-
 
 
     class PriceTextWatcher implements TextWatcher {

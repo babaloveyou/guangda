@@ -87,9 +87,7 @@ public class RCreditBuyViewController extends AbsBaseController implements
         int adapterViewId = parent.getId();
         if (adapterViewId == R.id.lv_pop) { // 股票代码搜索提示列表的item单击事件
             mFragment.onSearchListViewItemClick(position);
-        } else if (adapterViewId == R.id.lv_show_stock) { // 股票持仓列表的item单击事件
-            mFragment.onStoreListViewItemClick(position);
-        } else {
+        }  else {
             mFragment.onClickBuyOrSaleDisk(view);
         }
     }

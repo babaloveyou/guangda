@@ -1,27 +1,31 @@
 [
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\back_arrow.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\back_arrow.png"
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\sellout.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\sellout.png"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\today_vol.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\today_vol.png"
     },
     {
-        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\sellout.png",
-        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\sellout.png"
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\back_arrow.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\back_arrow.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\today_vol.png",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\today_vol.png"
     },
     {
-        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\bt_delete_et_normal.png",
-        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\bt_delete_et_normal.png"
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\reduce_icon.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\reduce_icon.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\take_position.png",
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\take_position.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\bt_delete_et_normal.png",
+        "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\bt_delete_et_normal.png"
     },
     {
         "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\financing_buy.png",
@@ -98,6 +102,10 @@
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\buy_collateral.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\buy_collateral.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\add_icon.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxhdpi\\add_icon.png"
     },
     {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi-v4\\collateral_transfer.png",

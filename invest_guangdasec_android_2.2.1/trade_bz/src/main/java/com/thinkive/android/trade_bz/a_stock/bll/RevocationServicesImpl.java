@@ -92,8 +92,8 @@ public class RevocationServicesImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();//隐藏状态显示框
-                //显示撤单结果
-                ToastUtils.toast(context, bundle.getString(Request301502.BUNDLE_KEY_REVOCATION_DIALOG));
+//                //显示撤单结果
+//                ToastUtils.toast(context, bundle.getString(Request301502.BUNDLE_KEY_REVOCATION_DIALOG));
                 //请求成功后刷新数据
                 requestRevocation();
                 if (isBottom) {

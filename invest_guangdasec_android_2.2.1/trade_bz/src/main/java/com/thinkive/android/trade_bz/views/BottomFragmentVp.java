@@ -8,7 +8,6 @@ import android.util.AttributeSet;
 /**
  * Created by Administrator on 2016/10/19.
  */
-//// TODO: 2016/10/19 处理时间冲突
 public class BottomFragmentVp extends ChildViewPager {
 
     public BottomFragmentVp(Context context, AttributeSet attrs) {

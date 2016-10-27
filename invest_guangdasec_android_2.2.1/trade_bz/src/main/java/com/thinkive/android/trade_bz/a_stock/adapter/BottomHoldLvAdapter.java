@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.bll.CreditBottomHolderServicesImpl;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
 
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class BottomHoldLvAdapter extends BaseAdapter {
     private ArrayList<MyStoreStockBean> mDataList;
     private MultiTradeActivity mActivity;
+    private CreditBottomHolderServicesImpl mServices;
 
     public BottomHoldLvAdapter(MultiTradeActivity activity) {
         mActivity = activity;
@@ -87,16 +89,16 @@ public class BottomHoldLvAdapter extends BaseAdapter {
 
 
         //可用
-        return setEnableText(convertView, holder, myStoreStockBean);
+       setEnableText(convertView, holder, myStoreStockBean);
+        return convertView;
     }
 
-    private View setEnableText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
+    private void setEnableText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
         String enableText = "可用:" + myStoreStockBean.getEnable_amount();
         SpannableStringBuilder styleEnable = new SpannableStringBuilder(enableText);
         styleEnable.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleEnable.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, enableText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         holder.unUsebleTv.setText(styleEnable);
-        return convertView;
     }
 
     private void setStoreText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {

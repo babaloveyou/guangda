@@ -6,26 +6,24 @@ import android.text.TextUtils;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_rr.bean.RChooseContractBean;
-import com.thinkive.android.trade_bz.a_rr.bean.RSelectCollaterSecurityBean;
 import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditSaleFragment;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
+import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
 import com.thinkive.android.trade_bz.a_stock.bean.StockBuySellDish;
 import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
-import com.thinkive.android.trade_bz.request.RR303006;
-import com.thinkive.android.trade_bz.request.RR303021;
 import com.thinkive.android.trade_bz.request.Request303000;
 import com.thinkive.android.trade_bz.request.Request303001;
+import com.thinkive.android.trade_bz.request.Request303004;
 import com.thinkive.android.trade_bz.request.RequestHQ20000;
 import com.thinkive.android.trade_bz.request.RequestHQ20003;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
+import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -62,43 +60,8 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
     public void onStop() {
 
     }
-    /**
-     * 合约请求
-     */
-    public void getContract() {
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        paramMap.put("compact_type","1"); //合约类型(0-融资，1-融券)
-        paramMap.put("query_type","0"); //查询模式(0-未了结，1-当日已了结)
-        new RR303021(paramMap, new IRequestAction() {
-            @Override
-            public void onSuccess(Context context, Bundle bundle) {
-                ArrayList<RChooseContractBean> dataList = bundle.getParcelableArrayList(RR303021.BUNDLE_KEY_R_REVOCATION);
-                mFragment.onGetContract(dataList);
-            }
-            @Override
-            public void onFailed(Context context, Bundle bundle) {
-                ToastUtils.toast(context, bundle.getString(RR303021.ERROR_INFO));
-            }
-        }).request();
-    }
 
-    /**
-     * 请求融券标的
-     */
-    public void getObjectTicket() {
-        HashMap<String, String> map = new HashMap<String, String>();
-        new RR303006(map, new IRequestAction() {
-            @Override
-            public void onSuccess(Context context, Bundle bundle) {
-                ArrayList<RSelectCollaterSecurityBean> dataList = bundle.getParcelableArrayList(RR303006.BUNDLE_KEY_TICKET);
-                mFragment.onGetObject(dataList);
-            }
-            @Override
-            public void onFailed(Context context, Bundle bundle) {
-                ToastUtils.toast(context, bundle.getString(RR303006.ERROR_INFO));
-            }
-        }).request();
-    }
+
 
     public void request20000ForHqData(final String stockCode, final String market) {
         HashMap<String, String> paramMap = new HashMap<String, String>();
@@ -150,6 +113,8 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 StockBuySellDish bean = (StockBuySellDish) bundle.getSerializable(RequestHQ20003.BUNDLE_KEY_WUDANG);
+                String nowPrice = bundle.getString(RequestHQ20003.NOW_PRICE);
+                String increase = bundle.getString(RequestHQ20003.INCREASE_AMOUNT);
                 if (bean != null) {
                     ArrayList<String> valueList = bean.getValueBuySale();
                     for (int i = 0; i <= 4; i++) { // 卖价五~卖价一
@@ -172,7 +137,7 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
                     for (int i = 15; i <= 19; i++) { // 买量一~买量五
                         valueList.set(i, TradeUtils.formateDataWithQUnit(valueList.get(i)));
                     }
-                    mFragment.onGetWuDangDishData(bean,market,exchangeType,isSetText);
+                    mFragment.onGetWuDangDishData(bean,market,exchangeType,isSetText,nowPrice,increase);
                 }
             }
             @Override
@@ -220,6 +185,20 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
                     stockLinkageBean.setMarket(market);
                     // 传输数据到fragment
                     mFragment.onGetStockLinkAgeData(stockLinkageBean);
+                    //信用交易可用资金查询
+                    new Request303004(new HashMap<String, String>(), new IRequestAction() {
+                        @Override
+                        public void onSuccess(Context context, Bundle bundle) {
+                            MoneySelectBean bean = (MoneySelectBean) bundle.getSerializable(Request303004.BUNDLE_KEY_R_MYHOLD_HEAD);
+                            mFragment.onGetCanUseBalance(bean.getEnable_balance() + " 元");
+                        }
+
+                        @Override
+                        public void onFailed(Context context, Bundle bundle) {
+                            String error = bundle.getString(Request303004.BUNDLE_KEY_R_MYHOLD_HEAD);
+                            ToastUtil.showToast(error);
+                        }
+                    }).request();
                 }
             }
             @Override
@@ -250,7 +229,6 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
                 mFragment.onSuccessEntrustTrade(bundle.getString(Request303001.BUNDLE_KEY_ENTRUST_ORDER));
                 // 委托成功后，清空界面上的数据
                 mFragment.clearDataInViews();
-                getContract();
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {

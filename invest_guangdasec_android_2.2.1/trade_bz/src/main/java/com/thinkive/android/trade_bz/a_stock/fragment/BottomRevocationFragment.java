@@ -109,10 +109,30 @@ public class BottomRevocationFragment extends BaseLazzyFragment {
             mNoDataLl.setVisibility(View.VISIBLE);
             mLoadingLl.setVisibility(View.GONE);
         } else {
+            //买入卖出通过entrust_bs筛选数据
+            ArrayList<RevocationBean> revocationBeensBuy = new ArrayList<>();
+            ArrayList<RevocationBean> revocationBeensSell = new ArrayList<>();
+
+
+            for (RevocationBean bean : dataList) {
+                String entrust_bs = bean.getEntrust_bs();
+                if ("0".equals(entrust_bs)) {
+                    revocationBeensBuy.add(bean);
+                } else if ("1".equals(entrust_bs)) {
+                    revocationBeensSell.add(bean);
+                }
+            }
             mLoadingLl.setVisibility(View.GONE);
             mRevotionLv.setVisibility(View.VISIBLE);
             mNoDataLl.setVisibility(View.GONE);
             mAdapter.setListData(dataList);
+            if (mFragment.getBuyOrSell()==0) {//如果是买
+                mAdapter.setListData(revocationBeensBuy);
+                revocationBeensSell = null;
+            } else {//卖
+                mAdapter.setListData(revocationBeensSell);
+                revocationBeensBuy = null;
+            }
             mRevotionLv.setAdapter(mAdapter);
             //            mAdapter.notifyDataSetChanged();
         }

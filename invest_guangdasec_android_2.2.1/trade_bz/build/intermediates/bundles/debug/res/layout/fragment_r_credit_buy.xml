@@ -8,8 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="5dp"
-        android:layout_weight="1"
+        android:layout_marginBottom="15dp"
+        android:layout_weight="0.59"
         android:baselineAligned="false"
         android:orientation="horizontal"
         android:visibility="visible">
@@ -133,21 +133,23 @@
                 android:id="@+id/ll_input_price"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="1.3"
                 android:background="@drawable/buy_no_corner_kong"
                 android:orientation="horizontal"
                 android:visibility="visible">
 
                 <TextView
+                    android:paddingTop="3dp"
+                    android:drawableTop="@mipmap/reduce_icon"
                     android:id="@+id/ibt_subtract"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/trade_buy"
                     android:gravity="center"
-                    android:text="@string/trade_subtract"
+                    android:text="0.01"
                     android:textColor="@color/trade_color_white"
-                    android:textSize="21sp"/>
+                    android:textSize="12sp"/>
 
                 <com.thinkive.android.trade_bz.views.ClearEditText
                     android:id="@+id/edt_stock_price"
@@ -167,15 +169,17 @@
                     android:textStyle="normal"/>
 
                 <TextView
+                    android:paddingTop="3dp"
+                    android:drawableTop="@mipmap/add_icon"
                     android:id="@+id/ibt_add"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/trade_buy"
                     android:gravity="center"
-                    android:text="@string/trade_add"
+                    android:text="0.01"
                     android:textColor="@color/trade_color_white"
-                    android:textSize="21sp"/>
+                    android:textSize="12sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -219,6 +223,7 @@
                 >
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/ll_stock_num_after"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -226,7 +231,7 @@
                     android:paddingRight="7dp"
                     >
 
-                    <EditText
+                    <com.thinkive.android.trade_bz.views.ClearEditText
                         android:longClickable="false"
                         android:paddingLeft="2dp"
                         android:maxLength="7"
@@ -242,12 +247,6 @@
                         android:textStyle="normal"
                         />
 
-                    <ImageView
-                        android:id="@+id/iv_delete_num"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:clickable="true"
-                        android:src="@drawable/selector_delete_text"/>
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -290,7 +289,7 @@
                     android:text="委托数量"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="@dimen/fund_buy_text"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     />
 
             </FrameLayout>
@@ -368,7 +367,67 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="现价"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_now_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:hint="--"
+                        android:textColor="@color/trade_text"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text="涨幅"
+                        android:textSize="12sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_increase_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:hint="--"
+                        android:textColor="@color/trade_text"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="6dp"
+                android:background="@color/trade_text_color9"
+                android:visibility="visible"/>
             <!-- 卖五 -->
             <LinearLayout
                 android:id="@+id/ll_sale5"
@@ -526,8 +585,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/trade_divide_line"/>
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="6dp"
+                android:background="@color/trade_text_color9"/>
 
             <!-- 买一 -->
             <LinearLayout
@@ -684,114 +744,36 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <View
+    <TextView
+        android:id="@+id/tv_header_of_grade_bottom"
         android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:background="@color/trade_normal_background"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/store_market_value"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/store_win_lose"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/store_usable"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/store_now_price"
-            android:textColor="@color/trade_text_color6"/>
-
-    </LinearLayout>
+        android:layout_height="30dp"
+        android:background="@color/trade_normal_background"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="@string/store_usable"
+        android:textColor="@color/trade_text_color6"/>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/trade_divide_line"/>
 
-
-    <!-- 正在加载时显示的界面 -->
-    <LinearLayout
-        android:id="@+id/ll_buy_or_sell_list_loading"
+    <com.thinkive.android.trade_bz.views.BottomFragmentVp
+        android:id="@+id/vp_bottom_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:visibility="visible">
+        android:layout_weight="0.45"/>
 
-        <ProgressBar
-            android:id="@+id/fragment_ab_list_info_progressbar"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="@string/home_loading_text"/>
-
-    </LinearLayout>
-
-    <!--暂无数据时界面-->
-    <LinearLayout
-        android:id="@+id/lin_not_data_set"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:layout_height="20dp"
+        android:gravity="center">
 
-        <ImageView
+        <LinearLayout
+            android:id="@+id/indcator_bottom_circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:src="@drawable/not_data_listview"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="15dp"
-            android:text="@string/no_data_listview"
-            android:textColor="@color/trade_text_color6"
-            android:textSize="@dimen/lsv_no_data_text"/>
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/lv_show_stock"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scrollbars="none"
-        android:visibility="gone"/>
-
+            android:orientation="horizontal"/>
+    </RelativeLayout>
 </LinearLayout>

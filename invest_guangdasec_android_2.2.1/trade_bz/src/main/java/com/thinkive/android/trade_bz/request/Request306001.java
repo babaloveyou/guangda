@@ -23,13 +23,8 @@ public class Request306001 extends BaseNormalRequest {
         super(action);
         paramMap.put("funcNo", "306001");
         setParamHashMap(paramMap);
-        //// TODO: 2016/10/20 服务端还未处理手机端
         paramMap.put("entrust_way", "SJWT");
-        System.out.println("============");
-        System.out.println(paramMap.toString());
-        System.out.println("============");
         setUrlName(Constants.URL_TRADE);
-        System.out.println("306001构造方法");
     }
 
     @Override

@@ -88,6 +88,14 @@
         "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxxhdpi\\securities_sell.png"
     },
     {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\reduce_icon.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxxhdpi\\reduce_icon.png"
+    },
+    {
+        "merged": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\add_icon.png",
+        "source": "D:\\thinkive_space\\guangda\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxxhdpi\\add_icon.png"
+    },
+    {
         "merged": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi-v4\\credit_revocation.png",
         "source": "D:\\thinkive_space\\invest_guangdasec_android_2.2.1\\trade_bz\\src\\main\\res\\mipmap-xxxhdpi\\credit_revocation.png"
     },

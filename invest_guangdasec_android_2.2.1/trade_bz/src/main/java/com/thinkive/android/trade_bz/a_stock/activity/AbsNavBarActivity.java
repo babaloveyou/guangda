@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_stock.activity;
 
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -352,6 +353,17 @@ public abstract class AbsNavBarActivity extends AbsBasicActivity {
         mLogoutBtn.setText(resId);
     }
 
+    /**
+     * 用于设置标题栏drawable
+     *
+     *
+     */
+    public void setTitleDrawableLedt(int resId) {
+        Drawable drawable= getResources().getDrawable(resId);
+        /// 这一步必须要做,否则不会显示.
+        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
+        mTitleTv.setCompoundDrawables(drawable,null,null,null);
+    }
     /**
      * 用于设置标题栏标题
      *

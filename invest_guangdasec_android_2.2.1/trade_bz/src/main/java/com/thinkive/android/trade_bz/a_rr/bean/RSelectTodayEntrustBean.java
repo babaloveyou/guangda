@@ -5,6 +5,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
  * 融资融券--查询--当日委托（303016）
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/8/18
@@ -12,130 +13,192 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 public class RSelectTodayEntrustBean extends BaseBean {
     /**
-     *  委托标志
+     * 委托标志
      */
     @JsonKey("entrust_bs")
-    private String entrust_bs="";
+    private String entrust_bs = "";
     /**
      * 业务名称
      */
     @JsonKey("entrust_name")
-    private String entrust_name= "";
+    private String entrust_name = "";
     /**
-     *委托类别
+     * 委托类别
      */
     @JsonKey("entrust_type")
-    private String entrust_type= "";
+    private String entrust_type = "";
     /**
-     *委托类别名称
+     * 委托类别名称
      */
     @JsonKey("entrust_type_name")
-    private String entrust_type_name= "";
+    private String entrust_type_name = "";
     /**
-     *委托状态
+     * 委托状态
      */
     @JsonKey("entrust_state")
-    private String entrust_state= "";
+    private String entrust_state = "";
     /**
-     *委托状态名称
+     * 委托状态名称
      */
     @JsonKey("entrust_state_name")
-    private String entrust_state_name= "";
+    private String entrust_state_name = "";
     /**
      * 交易市场类别
      */
     @JsonKey("exchange_type")
-    private String exchange_type= "";
+    private String exchange_type = "";
     /**
-     *交易市场名称
+     * 交易市场名称
      */
     @JsonKey("exchange_type_name")
-    private String exchange_type_name= "";
+    private String exchange_type_name = "";
     /**
-     *证券账号
+     * 证券账号
      */
     @JsonKey("stock_account")
-    private String stock_account= "";
+    private String stock_account = "";
     /**
      * 委托日期
      */
     @JsonKey("entrust_date")
-    private String entrust_date= "";
+    private String entrust_date = "";
     /**
-     *委托时间
+     * 委托时间
      */
     @JsonKey("entrust_time")
-    private String entrust_time= "";
+    private String entrust_time = "";
     /**
-     *证券代码
+     * 证券代码
      */
     @JsonKey("stock_code")
-    private String stock_code= "";
+    private String stock_code = "";
     /**
      * 证券名称
      */
     @JsonKey("stock_name")
-    private String stock_name= "";
+    private String stock_name = "";
     /**
-     *申请编号
+     * 申请编号
      */
     @JsonKey("report_no")
-    private String report_no= "";
+    private String report_no = "";
     /**
      * 成交编号
      */
     @JsonKey("entrust_no")
-    private String entrust_no= "";
+    private String entrust_no = "";
     /**
-     *  委托价格
+     * 委托价格
      */
     @JsonKey("entrust_price")
-    private String entrust_price= "";
+    private String entrust_price = "";
     /**
      * 委托数量
      */
     @JsonKey("entrust_amount")
-    private String entrust_amount= "";
+    private String entrust_amount = "";
     /**
      * 成交价格
      */
     @JsonKey("business_price")
-    private String business_price= "";
+    private String business_price = "";
     /**
-     *成交数目
+     * 成交数目
      */
     @JsonKey("business_amount")
-    private String business_amount= "";
+    private String business_amount = "";
     /**
      * 成交金额
      */
     @JsonKey("business_balance")
-    private String business_balance= "";
+    private String business_balance = "";
     /**
      * 撤单数目
      */
     @JsonKey("cancel_amount")
-    private String cancel_amount= "";
+    private String cancel_amount = "";
     /**
-     *订单名称
+     * 订单名称
      */
     @JsonKey("trade_name")
-    private String trade_name= "";
+    private String trade_name = "";
     /**
-     *合约编号
+     * 合约编号
      */
     @JsonKey("compact_id")
-    private String compact_id= "";
+    private String compact_id = "";
     /**
      * 撤单标志（0:可撤 1：不可撤）
      */
     @JsonKey("cancel_flag")
-    private String cancel_flag= "";
+    private String cancel_flag = "";
     /**
      * 冻结金额
      */
     @JsonKey("orderfrzamt")
-    private String orderfrzamt= "";
+    private String orderfrzamt = "";
+    //=================================
+    @JsonKey("buy_amount")
+    private String buy_amount = "";
+    @JsonKey("available_amount")
+    private String available_amount = "";
+    @JsonKey("sell_amount")
+    private String sell_amount = "";
+    @JsonKey("ztrade_flage")
+    private String ztrade_flage = "";
+    @JsonKey("cc_amount")
+    private String cc_amount = "";
+
+    public String getAvailable_amount() {
+        return available_amount;
+    }
+
+    public void setAvailable_amount(String available_amount) {
+        this.available_amount = available_amount;
+    }
+
+    public String getSell_amount() {
+        return sell_amount;
+    }
+
+    public void setSell_amount(String sell_amount) {
+        this.sell_amount = sell_amount;
+    }
+
+    public String getBuy_amount() {
+        return buy_amount;
+    }
+
+    public void setBuy_amount(String buy_amount) {
+        this.buy_amount = buy_amount;
+    }
+
+    public String getZtrade_flage() {
+        return ztrade_flage;
+    }
+
+    public void setZtrade_flage(String ztrade_flage) {
+        this.ztrade_flage = ztrade_flage;
+    }
+
+    public String getCc_amount() {
+        return cc_amount;
+    }
+
+    public void setCc_amount(String cc_amount) {
+        this.cc_amount = cc_amount;
+    }
+
+    public String getZtrade_amount() {
+        return ztrade_amount;
+    }
+
+    public void setZtrade_amount(String ztrade_amount) {
+        this.ztrade_amount = ztrade_amount;
+    }
+
+    @JsonKey("ztrade_amount")
+    private String ztrade_amount = "";
 
     public RSelectTodayEntrustBean() {
 

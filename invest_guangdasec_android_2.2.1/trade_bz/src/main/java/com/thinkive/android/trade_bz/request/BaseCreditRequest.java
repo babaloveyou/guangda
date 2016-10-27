@@ -34,10 +34,13 @@ public class BaseCreditRequest extends BaseRequest{
         paramHashMap.put("acct_type", TradeLoginManager.sCreditLoginType);
         paramHashMap.put("entrust_way", TradeLoginManager.sCreditUserInfo.getEntrust_way());
         paramHashMap.put("branch_no", TradeLoginManager.sCreditUserInfo.getBranch_no());
+        paramHashMap.put("account", TradeLoginManager.sCreditUserInfo.getFund_account());
+        paramHashMap.put("account_type", "0");
         paramHashMap.put("fund_account", TradeLoginManager.sCreditUserInfo.getFund_account());
         paramHashMap.put("password", CreditLoginInfo.getPassword());
         paramHashMap.put("cust_code", TradeLoginManager.sCreditUserInfo.getCust_code());
         paramHashMap.put("op_station", TradeLoginManager.sCreditUserInfo.getOp_station());
         paramHashMap.put("sessionid", TradeLoginManager.sCreditUserInfo.getJsessionid());
+        paramHashMap.put("trade_flag", "2");
     }
 }

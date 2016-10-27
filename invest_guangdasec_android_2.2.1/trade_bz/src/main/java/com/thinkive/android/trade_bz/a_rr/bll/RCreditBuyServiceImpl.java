@@ -10,13 +10,11 @@ import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditBuyFragment;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
-import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
 import com.thinkive.android.trade_bz.a_stock.bean.StockBuySellDish;
 import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
-import com.thinkive.android.trade_bz.request.RR303003;
 import com.thinkive.android.trade_bz.request.Request303000;
 import com.thinkive.android.trade_bz.request.Request303001;
 import com.thinkive.android.trade_bz.request.Request303004;
@@ -63,23 +61,7 @@ public class RCreditBuyServiceImpl extends BasicServiceImpl {
 
     }
 
-    /**
-     * 发起请求，获取持仓列表
-     */
-    public void getHoldList() {
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        new RR303003(paramMap, new IRequestAction() {
-            @Override
-            public void onSuccess(Context context, Bundle bundle) {
-                ArrayList<MyStoreStockBean> dataList = bundle.getParcelableArrayList(RR303003.BUNDLE_KEY_ROLLATER);
-                mFragment.getStoreData(dataList);
-            }
-            @Override
-            public void onFailed(Context context, Bundle bundle) {
-                ToastUtils.toast(context, bundle.getString(RR303003.ERROR_INFO));
-            }
-        }).request();
-    }
+
 
     public void request20000ForHqData(final String stockCode, final String market) {
         HashMap<String, String> paramMap = new HashMap<String, String>();

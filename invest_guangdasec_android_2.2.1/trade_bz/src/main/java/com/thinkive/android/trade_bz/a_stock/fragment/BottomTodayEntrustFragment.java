@@ -37,6 +37,10 @@ public class BottomTodayEntrustFragment extends BaseLazzyFragment {
             return mView;
         }
         mView = inflater.inflate(R.layout.fragment_trade_bottom_today_ectrust, null);
+        if (mView.getParent() != null) {
+            ViewGroup parent = (ViewGroup) mView.getParent();
+            parent.removeView(mView);
+        }
         mActivity = (MultiTradeActivity) mFragment.getActivity();
         findViews(mView);
         initView();
@@ -122,13 +126,28 @@ public class BottomTodayEntrustFragment extends BaseLazzyFragment {
                     revocationBeensSell.add(bean);
                 }
             }
-            mLoadingLl.setVisibility(View.GONE);
-            mLv.setVisibility(View.VISIBLE);
-            mNoDataLl.setVisibility(View.GONE);
             if (mFragment.getBuyOrSell()==0) {//如果是买
+                if (revocationBeensBuy.size() == 0) {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                }else {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.VISIBLE);
+                    mNoDataLl.setVisibility(View.GONE);
+                }
                 mAdapter.setListData(revocationBeensBuy);
                 revocationBeensSell = null;
             } else {//卖
+                if (revocationBeensSell.size() == 0) {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                }else {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.VISIBLE);
+                    mNoDataLl.setVisibility(View.GONE);
+                }
                 mAdapter.setListData(revocationBeensSell);
                 revocationBeensBuy = null;
             }
