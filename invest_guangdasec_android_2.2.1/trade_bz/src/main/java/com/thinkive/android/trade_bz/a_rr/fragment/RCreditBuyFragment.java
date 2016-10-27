@@ -1526,4 +1526,11 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         setEdtCursor(mEdStockCode);
         onStockLengthMax(mEdStockCode.getText().toString(), mEdStockCode);
     }
+    public void jumpToRevotion() {
+        if (mBottomFragmentVp.getCurrentItem() == 2) {
+            mCreditBottomRevocationFragment.requestNewData();
+        }
+        mBottomFragmentVp.setCurrentItem(2);
+        mCreditBottomRevocationFragment.requestNewData();
+    }
 }

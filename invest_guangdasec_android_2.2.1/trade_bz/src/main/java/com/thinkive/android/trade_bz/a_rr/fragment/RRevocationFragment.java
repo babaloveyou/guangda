@@ -155,6 +155,10 @@ public class RRevocationFragment extends AbsBaseFragment {
     public void onDownRefresh() {
         mServices.requestRevocationData();
     }
+
+    public void refreshAdapter() {
+        mAdapter.notifyDataSetChanged();
+    }
 }
 
 /**

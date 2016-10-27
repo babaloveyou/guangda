@@ -317,6 +317,7 @@
                     android:textColor="@color/text_et_input_french_black"
                     android:textSize="12sp"/>
             </LinearLayout>
+
             <Button
                 android:text="@string/hk_sell"
                 android:id="@+id/btn_buy_or_sell"

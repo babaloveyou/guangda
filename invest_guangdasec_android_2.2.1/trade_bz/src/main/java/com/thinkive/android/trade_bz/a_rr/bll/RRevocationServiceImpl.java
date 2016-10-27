@@ -110,11 +110,6 @@ public class RRevocationServiceImpl extends BasicServiceImpl {
                 // ToastUtils.toast(context, bundle.getString(RR303018.BUNDLE_KEY_REVOCATION_DIALOG));
                 //请求成功后刷新数据
                 requestRevocationData();
-                if (isBottom) {
-                    mCreditBottomRevocationFragment.refreshAdapter();
-                } else {
-                    mRRevocationFragmentt.refreshComplete();
-                }
             }
 
             @Override

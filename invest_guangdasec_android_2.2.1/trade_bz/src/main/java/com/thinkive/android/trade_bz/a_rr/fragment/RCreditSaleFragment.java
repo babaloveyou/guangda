@@ -1524,4 +1524,11 @@ public class RCreditSaleFragment extends AbsBaseFragment implements ViewPager.On
         setEdtCursor(mEdStockCode);
         onStockLengthMax(mEdStockCode.getText().toString(), mEdStockCode);
     }
+    public void jumpToRevotion() {
+        if (mBottomFragmentVp.getCurrentItem() == 2) {
+            mCreditBottomRevocationFragment.requestNewData();
+        }
+        mBottomFragmentVp.setCurrentItem(2);
+        mCreditBottomRevocationFragment.requestNewData();
+    }
 }

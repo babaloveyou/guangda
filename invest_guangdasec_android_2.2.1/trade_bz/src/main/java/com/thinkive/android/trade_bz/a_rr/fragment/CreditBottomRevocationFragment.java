@@ -126,8 +126,6 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
             //买入卖出通过entrust_bs筛选数据
             ArrayList<RRevocationBean> revocationBeensBuy = new ArrayList<>();
             ArrayList<RRevocationBean> revocationBeensSell = new ArrayList<>();
-
-
             for (RRevocationBean bean : dataList) {
                 String entrust_bs = bean.getEntrust_bs();
                 if ("0".equals(entrust_bs)) {
@@ -148,6 +146,7 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
                 }
                 mAdapter.setListData(revocationBeensBuy);
                 revocationBeensSell = null;
+                mLv.setAdapter(mAdapter);
             } else {//卖
                 if (revocationBeensSell.size() == 0) {
                     mLoadingLl.setVisibility(View.GONE);
@@ -160,8 +159,10 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
                 }
                 mAdapter.setListData(revocationBeensSell);
                 revocationBeensBuy = null;
+                mLv.setAdapter(mAdapter);
             }
-            mLv.setAdapter(mAdapter);
+
         }
+
     }
 }
