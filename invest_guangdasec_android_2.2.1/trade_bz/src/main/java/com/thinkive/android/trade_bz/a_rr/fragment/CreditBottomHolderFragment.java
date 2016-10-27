@@ -87,8 +87,7 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
                 if (isBuy) {
                     mRCreditBuyFragment.getHolderStock(bean);
                 } else {
-                    // TODO: 2016/10/27  
-//                    mRCreditSaleFragment.getHolderStock(bean);
+                    mRCreditBuyFragment.getHolderStock(bean);
                 } 
             }
         });
