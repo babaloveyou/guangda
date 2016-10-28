@@ -5,15 +5,20 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -41,8 +46,6 @@ import com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity;
-import com.thinkive.android.trade_bz.a_rr.activity.RCreditBuyActivity;
-import com.thinkive.android.trade_bz.a_rr.activity.RCreditSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
@@ -61,7 +64,6 @@ import com.thinkive.android.trade_bz.a_stock.controll.TradeCreditViewController;
 import com.thinkive.android.trade_bz.a_trans.activity.TransStockMainActivityTrade;
 import com.thinkive.android.trade_bz.dialog.LoadingDialog;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
-import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.others.tools.EncryptManager;
 import com.thinkive.android.trade_bz.others.tools.ThinkiveTools;
@@ -70,9 +72,7 @@ import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.others.tools.TradeWebFragmentManager;
 import com.thinkive.android.trade_bz.receivers.TradeBaseBroadcastReceiver;
-import com.thinkive.android.trade_bz.request.RequestLogin;
 import com.thinkive.android.trade_bz.utils.LogUtil;
-import com.thinkive.android.trade_bz.utils.PwdHelp;
 import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 import com.thinkive.android.trade_bz.views.TrimGridView;
@@ -81,7 +81,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import static android.view.View.GONE;
@@ -161,6 +160,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private int[] mImgRes = {R.mipmap.financing_buy, R.mipmap.securities_sell, R.mipmap.credit_revocation, R.mipmap.credit_hold, R.mipmap.credit_refund, R.mipmap.credit_bond, R.mipmap.credit_bank_transfer, R.mipmap.credit_fund, R.mipmap.buy_collateral, R.mipmap.sell_collateral, R.mipmap.collateral_transfer, R.mipmap.collateral_search};
     private TradeParentFragment mParentFragment;//持有的 在TradeParentFragment初始化好的TradeParentFragment对象
     private RelativeLayout mShowDateRl;
+    private Dialog mDialog;
 
 
     @Override
@@ -185,32 +185,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         return mRootView;
     }
 
-    private void initLoginState() {
-        String[] strings = PwdHelp.readPassword(mActivity);
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        paramMap.put("input_content", strings[0]);
-        paramMap.put("ticket", strings[2]);
-        paramMap.put("entrust_way", TradeLoginManager.ENTRUST_WAY);
-        paramMap.put("mobileKey", TradeUtils.getRandomStr(10));
-        paramMap.put("password", strings[1]);
-        paramMap.put("input_type", "0");
-        paramMap.put("op_station", TradeLoginManager.OP_STATION_2);
-        paramMap.put("phone_no", "18607026105");
-        paramMap.put("login_type", TradeLoginManager.LOGIN_TYPE_NORMAL);
-        paramMap.put("funcNo", "300100");
-        new RequestLogin(paramMap, new IRequestAction() {
-            @Override
-            public void onSuccess(Context context, Bundle bundle) {
-                TradeFlags.addFlag(TradeFlags.FLAG_NOT_UNITY_LOGIN_TYPE);
-                ToastUtil.showToast(getResources().getString(R.string.login_success));
-            }
-
-            @Override
-            public void onFailed(Context context, Bundle bundle) {
-                ToastUtil.showToast(mActivity.getResources().getString(R.string.network_error_prompt));
-            }
-        }, TradeLoginManager.LOGIN_TYPE_NORMAL_IN_CREDIT).request();
-    }
 
     private void fillData() {
         for (int i = 0; i < mImgRes.length; i++) {
@@ -231,11 +205,11 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     @Override
     public void onResume() {
         super.onResume();
+        mDialog.dismiss();
         //实时更新主页状态
         updateLogoutBtnState();
         //防止测试点点点
         mParentFragment.setLogTvClickable(true);
-
     }
 
     @Override
@@ -557,58 +531,59 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      * @param parent gridview等
      */
     public void onItemClick(GridView parent, int position) {
-        if (TradeUtils.isFastClick2()) {
-            return;
-        }
+        //        if (TradeUtils.isFastClick2()) {
+        //            return;
+        //        }
         if (parent.getCount() == 12) {
             switch (position) {
                 case 0:
                     onClickTwoFinance(0);
-                    ToastUtil.showToast("融资买入");
+                    //                    ToastUtil.showToast("融资买入");
                     break;
                 case 1:
                     onClickTwoFinance(1);
-                    ToastUtil.showToast("融券卖出");
+                    //                    ToastUtil.showToast("融券卖出");
                     break;
                 case 2:
                     onClickCreditRevotion();
-                    ToastUtil.showToast("撤单");
+                    //                    ToastUtil.showToast("撤单");
                     break;
                 case 3:
                     onClickCreditHolderStock();
-                    ToastUtil.showToast("个人持仓");
+                    //                    ToastUtil.showToast("个人持仓");
                     break;
                 case 4:
-                    onClickCreditRefund();
-                    ToastUtil.showToast("还款");
+                    //弹出现金还款dialog
+                    showBottomRefundDialog();
+                    //                    ToastUtil.showToast("还款");
                     break;
                 case 5:
-                    onClickCreditTicket();
-                    ToastUtil.showToast("还券");
+                    showBottomReStockDialog();
+                    //                    ToastUtil.showToast("还券");
                     break;
                 case 6:
                     onClickTransferAccount();
-                    ToastUtil.showToast("银行转账");
+                    //                    ToastUtil.showToast("银行转账");
                     break;
                 case 7:
-                    ToastUtil.showToast("个人资产");
+                    //                    ToastUtil.showToast("个人资产");
                     break;
                 case 8:
                     onClickGuaranteeIn();
-                    ToastUtil.showToast("买担保品");
+                    //                    ToastUtil.showToast("买担保品");
                     break;
                 case 9:
                     onClickGuaranteeOut();
-                    ToastUtil.showToast("卖担保品");
+                    //                    ToastUtil.showToast("卖担保品");
                     break;
                 case 10:
                     onClickGuaranteeTransfer();
-                    ToastUtil.showToast("划转担保品");
+                    //                    ToastUtil.showToast("划转担保品");
 
                     break;
                 case 11:
                     onGuaranteeSearch();
-                    ToastUtil.showToast("担保品查询");
+                    //                    ToastUtil.showToast("担保品查询");
                     break;
             }
         } else if (parent.getCount() == 4) {
@@ -770,13 +745,13 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
             Bundle bundle = new Bundle();
             if (flag == 0) {
-//                Intent intent = new Intent(mActivity, RCreditBuyActivity.class);
+                //                Intent intent = new Intent(mActivity, RCreditBuyActivity.class);
                 bundle.putInt("pos", 0);
                 intent.putExtras(bundle);
                 mActivity.startActivity(intent);
             }
             if (flag == 1) {
-//                Intent intent = new Intent(mActivity, RCreditSaleActivity.class);
+                //                Intent intent = new Intent(mActivity, RCreditSaleActivity.class);
                 bundle.putInt("pos", 1);
                 intent.putExtras(bundle);
                 mActivity.startActivity(intent);
@@ -845,6 +820,75 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         }
     }
 
+    public void showBottomRefundDialog() {
+        mDialog = new Dialog(getContext(), R.style.ActionSheetDialogStyle);
+        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_layout_refund, null);
+        Button  mFundRefundBtn = (Button) inflate.findViewById(R.id.btn_fund_refund);
+        Button  mStockRefundBtn = (Button) inflate.findViewById(R.id.btn_stock_refund);
+        Button  mCancelBtn = (Button) inflate.findViewById(R.id.btn_cancel);
+        mFundRefundBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.showToast("现金还款");
+                mDialog.dismiss();
+            }
+        });
+        mStockRefundBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickCreditRefund();
+                mDialog.dismiss();
+            }
+        });
+        mCancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        mDialog.setContentView(inflate);
+        Window dialogWindow = mDialog.getWindow();
+        dialogWindow.setGravity(Gravity.BOTTOM);
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.y = 20;
+        dialogWindow.setAttributes(lp);
+        mDialog.show();
+    }
+    public void showBottomReStockDialog() {
+        mDialog = new Dialog(getContext(), R.style.ActionSheetDialogStyle);
+        View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_layout_restock, null);
+        Button   sFundReStockBtn = (Button) inflate.findViewById(R.id.btn_fund_restock);
+        Button  sStockReStockBtn = (Button) inflate.findViewById(R.id.btn_stock_restock);
+        Button  mCancelBtn = (Button) inflate.findViewById(R.id.btn_cancel);
+        sFundReStockBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToastUtil.showToast("现券还券");
+                mDialog.dismiss();
+            }
+        });
+        sStockReStockBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onClickCreditTicket();
+                mDialog.dismiss();
+            }
+        });
+        mCancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDialog.dismiss();
+            }
+        });
+        mDialog.setContentView(inflate);
+        Window dialogWindow = mDialog.getWindow();
+        dialogWindow.setGravity(Gravity.BOTTOM);
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.y = 20;
+        dialogWindow.setAttributes(lp);
+        mDialog.show();
+    }
+
     /*
     * 担保品买入
     * */
@@ -868,7 +912,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
             Intent intent = new Intent(mActivity, RCollaterBuyOrSaleActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putInt("buyOrSale", 0);
+            bundle.putInt("buyOrSale", 1);
             intent.putExtras(bundle);
             mActivity.startActivity(intent);
         } else {
@@ -1088,8 +1132,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             sendMsgToSSO(loginType);
         } else {
             Intent intent = new Intent(mActivity, TradeLoginActivity.class);
-            intent.putExtra("clickIdBeforeLogin", clickIdBeforeLogin);
-            intent.putExtra("loginType", loginType);
+            intent.putExtra(MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID, clickIdBeforeLogin);
+            intent.putExtra(Constants.LOGIN_TYPE, loginType);
             mActivity.startActivity(intent);
         }
     }
@@ -1264,7 +1308,13 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     int viewId = intent.getIntExtra(INTENT_KEY_CLICK_VIEW_ID, 1000);
                     if (viewId != -1) { // 此时，说明当初是未登录时，在交易主页点击某个按钮，触发登录的
                         viewId = viewId - 1000;
-                        onItemClick(mFastMenuGv, viewId);
+                        if (viewId == 4) {
+                            onClickCreditRefund();
+                        } else if (viewId == 5) {
+                            onClickCreditTicket();
+                        } else if (viewId >= 0 && viewId < 11) {
+                            onItemClick(mFastMenuGv, viewId);
+                        }
                     } else { // 此时，说明当初是在未登录时，从行情模块点击“买入”或“卖出”按钮，触发登录的
                         onClickBuyOrSaleInHq(mJsonDataFromHq);
                     }
@@ -1326,8 +1376,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     break;
                 case ACTION_TRANSFORM_TRADE_LOGIN:
                     Intent intent2 = new Intent(mActivity, TradeLoginActivity.class);
-                    intent2.putExtra("clickIdBeforeLogin", mClickBtnBeforeLogin);
-                    intent2.putExtra("loginType", TradeLoginManager.LOGIN_TYPE_NORMAL);
+                    intent2.putExtra(MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID, mClickBtnBeforeLogin);
+                    intent2.putExtra(Constants.LOGIN_TYPE, TradeLoginManager.LOGIN_TYPE_NORMAL);
                     mActivity.startActivity(intent2);
                     break;
             }
@@ -1353,8 +1403,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_NORMAL);
         } else {
             Intent intent = new Intent(mActivity, TradeLoginActivity.class);
-            intent.putExtra("clickIdBeforeLogin", mClickBtnBeforeLogin);
-            intent.putExtra("loginType", TradeLoginManager.LOGIN_TYPE_NORMAL);
+            intent.putExtra(MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID, mClickBtnBeforeLogin);
+            intent.putExtra(Constants.LOGIN_TYPE, TradeLoginManager.LOGIN_TYPE_NORMAL);
             mActivity.startActivity(intent);
         }
     }

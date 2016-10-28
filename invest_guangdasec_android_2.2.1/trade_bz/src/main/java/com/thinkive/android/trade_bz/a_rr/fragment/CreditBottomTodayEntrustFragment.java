@@ -25,12 +25,14 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
     private RSelectTodayEntrustServicesImpl mServices;
     private RCreditBuyFragment mRCreditBuyFragment;
     private RCreditSaleFragment mRCreditSaleFragment;
+    private RCollaterBuyOrSellFragment mRCollaterBuyOrSellFragment;
     private View mView;
     private ListView mLv;
     private LinearLayout mNoDataLl;
     private LinearLayout mLoadingLl;
     private CreditBottomTodayEntrustAdapter mAdapter;
     private boolean isBuy = true;
+    private String mCurrentFragment = null;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -100,10 +102,12 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
     public void setFragment(Fragment fragment) {
         if (fragment instanceof RCreditBuyFragment) {
             mRCreditBuyFragment = (RCreditBuyFragment) fragment;
-            isBuy = true;
-        } else {
+            mCurrentFragment = RCreditBuyFragment.class.getSimpleName();
+        } else if (fragment instanceof RCreditSaleFragment) {
             mRCreditSaleFragment = (RCreditSaleFragment) fragment;
-            isBuy = false;
+            mCurrentFragment = RCreditSaleFragment.class.getSimpleName();
+        } else if(fragment instanceof RCollaterBuyOrSellFragment){
+            mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
         }
     }
 

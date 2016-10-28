@@ -1,34 +1,44 @@
 package com.thinkive.android.trade_bz.a_rr.fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.text.Editable;
+import android.text.Selection;
+import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.compatible.ListenerController;
-import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectObjectSecurityActivity;
 import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RCollaterBuyOrSaleServiceImpl;
 import com.thinkive.android.trade_bz.a_rr.controll.RCollaterBuyOrSaleViewController;
 import com.thinkive.android.trade_bz.a_stock.adapter.BuyOrSellForPopAdapter;
-import com.thinkive.android.trade_bz.a_stock.adapter.MyStoreListViewAdapterForBuysale;
 import com.thinkive.android.trade_bz.a_stock.adapter.SearchStocksAdapter;
+import com.thinkive.android.trade_bz.a_stock.adapter.TradeBottomFragmentVpAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.bean.MarketEntrustWay;
 import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
@@ -37,15 +47,23 @@ import com.thinkive.android.trade_bz.a_stock.controll.BuyOrSellViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
 import com.thinkive.android.trade_bz.dialog.RCollaterComfirmDialog;
+import com.thinkive.android.trade_bz.keyboard.KeyboardEventListener;
+import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
+import com.thinkive.android.trade_bz.utils.SizeUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.BottomFragmentVp;
+import com.thinkive.android.trade_bz.views.ClearEditText;
 import com.thinkive.android.trade_bz.views.popupwindows.PopupWindowInListView;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
+
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
 
 /**
  * 融资融券担保品买入卖出(普通买入、普通卖出)
@@ -55,15 +73,12 @@ import java.util.ArrayList;
  * @corporation thinkive
  * @date 2016/1/20
  */
-public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
+public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewPager.OnPageChangeListener, KeyboardManager.OnKeyCodeDownListener {
+
     /**
      * 输入“证券代码”
      */
-    private EditText mEdStockCode = null;
-    /**
-     * 输入“股票名称”
-     */
-    private TextView mTvStockName = null;
+    private ClearEditText mEdStockCode = null;
     /**
      * 证券的单位
      */
@@ -87,19 +102,15 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
     /**
      * 股票购买的价格输入框
      */
-    private EditText mEdStockPrice = null;
+    private ClearEditText mEdStockPrice = null;
     /**
      * 委托交易数量输入框
      */
-    private EditText mEdEntrustAmount = null;
+    private ClearEditText mEdEntrustAmount = null;
     /**
      * 交易按钮，买入，或者卖出
      */
     private Button mBtnBuyOrSell = null;
-    /**
-     * 储存我的持仓数据的LisView
-     */
-    private ListView mLvMyStore = null;
     /**
      * fragment页面根布局
      */
@@ -130,15 +141,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      */
     private ArrayList<LinearLayout> mBuySaleDiskLlList;
     /**
-     * 如果没有数据就显示该图片
-     */
-    private LinearLayout mLiNoData;
-    /**
-     * 正在加载的旋转进度条
-     */
-    private LinearLayout mLoading;
-    /**
-     * 装有股票代码和股票名称的LinearLayout，目前用来弹出模糊查询PopupWindow
+     * 目前用来弹出模糊查询PopupWindow
      */
     private LinearLayout mLlStockCodeName;
     /**
@@ -153,15 +156,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      * 控制该类的控制器
      */
     private RCollaterBuyOrSaleViewController mController = null;
-    /**
-     * 我的持仓数据的LisView的适配器
-     */
-    private MyStoreListViewAdapterForBuysale mMyStoreListViewAdapter;
-    /**
-     * 买入或者卖出，买入：0，卖出：1
-     * 请在本类构造方法执行完后就给这个变量赋值！
-     */
-    private int mBuyOrSell;
     /**
      * 当前的股票联动数据bean
      */
@@ -192,7 +186,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      */
     private String mLastEntrustPrice = "";
     /**
-     * 昨收价格
+     * 现价
      */
     private String mNowPrice = "";
     /**
@@ -203,31 +197,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      * 设置到买卖按钮上的文字
      */
     private String mBtnBuyOrSaleText = "";
-    /**********************************市价委托 开始*****************************/
-    /**
-     * 市价委托的布局框
-     */
-    private LinearLayout mLinMarketEntrust;
-    /**
-     * 限价委托按钮
-     */
-    private TextView mTvTradeLimit;
-    /**
-     * 市价委托按钮
-     */
-    private TextView mTvTradeMarket;
-    /**
-     * 限价委托选中小图标
-     */
-    private ImageView mIvLeftSelected;
-    /**
-     * 市价委托选中小图标
-     */
-    private ImageView mIvRightSelected;
-    /**
-     * 市价委托选中时的展示
-     */
-    private TextView mTvMarketEntrustLay;
     /**
      * 买卖方向，买入0，卖出1
      */
@@ -280,9 +249,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         public void run() {
-            if (!TradeUtils.isFastClick()) {
-                mService.getHoldList();
-            }
             if (mCodeTableBean != null) {
                 mService.requestStockWuDangPan(mCodeTableBean.getCode(),
                         mCodeTableBean.getMarket(), mCodeTableBean.getExchange_type(), false);
@@ -290,6 +256,69 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             handler.postDelayed(this, 2000);
         }
     };
+    /**
+     * 总价显示窗控制
+     */
+    private Handler mPriceWindowHandler = new Handler();
+    private Runnable mPriceWindowRunnable = new Runnable() {
+        public void run() {
+            mTotalPricePopWindow.dismiss();
+        }
+    };
+    /*
+     * 真实显示股票数量父布局
+     */
+    private LinearLayout mRealStockNumLl;
+    /*
+     *股票数量hint
+     */
+    private TextView mPreStockNumTv;
+    /*
+     * 全仓
+     */
+    private TextView mAllNumTv;
+    /*
+     * 半仓
+     */
+    private TextView mHalfNumTv;
+    /*
+     * 1/3仓
+     */
+    private TextView mThirdNumTv;
+    /*
+     * 1/4
+     */
+    private TextView mQuarterNumTv;
+    /*
+     * 可用资金
+     */
+    private TextView mCanUseMoneyTv;
+    /*
+     * 总价popWindow填充View
+     */
+    private View mTotalPricePopView;
+    /*
+     * 总价popWindow
+     */
+    private PopupWindow mTotalPricePopWindow;
+    /*
+     * 股票数量父布局容器
+     */
+    private FrameLayout mInPutAmountFl;
+    private TextView mNowPriceTv;
+    private TextView mIncreaseAmountTv;
+    private TextView mMaxStockNumTv;
+    private BottomFragmentVp mBottomFragmentVp;
+    private TradeBottomFragmentVpAdapter mTradeBottomFragmentVpAdapter;
+    private List<Fragment> mBottomFragmentsList = new ArrayList<>();
+    private LinearLayout mBottomIndicator;
+    private CreditBottomHolderFragment mCreditBottomHolderFragment;
+    private int preSelectPagePos = 0;
+    private TextView mTitleOfBottom;
+    private CreditBottomTodayEntrustFragment mCreditBottomTodayEntrustFragment;
+    private CreditBottomRevocationFragment mCreditBottomRevocationFragment;
+    private int mBuyOrSell = 0;
+    private TextView mShowContent;
 
     public RCollaterBuyOrSellFragment() {
 
@@ -298,7 +327,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         if (mRootView == null) {
-            mRootView = inflater.inflate(R.layout.fragment_r_normal_buy_or_sell, null);
+            mRootView = inflater.inflate(R.layout.fragment_r_credit_buy, null);
             findViews(mRootView);
             initData();
             setListeners();
@@ -307,7 +336,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         return mRootView;
     }
 
-    @Override
     public void onResume() {
         super.onResume();
         // 初始化股票模糊查询popupwindow的宽度和单击事件
@@ -335,29 +363,32 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
 
     @Override
     protected void findViews(View view) {
-        mEdStockCode = (EditText) view.findViewById(R.id.edt_stock_code);
-        mTvStockName = (TextView) view.findViewById(R.id.tv_stock_name);
+        mEdStockCode = (ClearEditText) view.findViewById(R.id.edt_stock_code);
         mTvStockUnit = (TextView) view.findViewById(R.id.tv_stock_unit);
         mTvUpLimit = (TextView) view.findViewById(R.id.tv_up_limit);
         mTvDownLimit = (TextView) view.findViewById(R.id.tv_down_limit);
         mTvSubtract = (TextView) view.findViewById(R.id.ibt_subtract);
         mTvAdd = (TextView) view.findViewById(R.id.ibt_add);
-        mEdStockPrice = (EditText) view.findViewById(R.id.edt_stock_price);
-        mEdEntrustAmount = (EditText) view.findViewById(R.id.ed_entrust_num);
+        mEdStockPrice = (ClearEditText) view.findViewById(R.id.edt_stock_price);
+        mEdEntrustAmount = (ClearEditText) view.findViewById(R.id.ed_entrust_num);
         mBtnBuyOrSell = (Button) view.findViewById(R.id.btn_buy_or_sell);
-        mLvMyStore = (ListView) view.findViewById(R.id.lv_show_stock);
-        mLvMyStore.setDivider(null);
-        mLoading = (LinearLayout) view.findViewById(R.id.ll_buy_or_sell_list_loading);
-        mLiNoData = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
         mLlStockCodeName = (LinearLayout) mRootView.findViewById(R.id.ll_code_name);
-
-        mTvTradeLimit = (TextView) view.findViewById(R.id.tv_trade_limit);
-        mTvTradeMarket = (TextView) view.findViewById(R.id.tv_trade_market);
-        mIvLeftSelected = (ImageView) view.findViewById(R.id.iv_left_selected);
-        mIvRightSelected = (ImageView) view.findViewById(R.id.iv_right_selected);
-        mTvMarketEntrustLay = (TextView) view.findViewById(R.id.tv_market_entrust);
-        mLinMarketEntrust = (LinearLayout) view.findViewById(R.id.ll_market_entrust);
-
+        mRealStockNumLl = (LinearLayout) mRootView.findViewById(R.id.ll_stock_num_after);
+        mRealStockNumLl = (LinearLayout) mRootView.findViewById(R.id.ll_stock_num_after);
+        mPreStockNumTv = (TextView) mRootView.findViewById(R.id.tv_stock_num_pre);
+        mCanUseMoneyTv = (TextView) view.findViewById(R.id.tv_can_use_money);
+        mInPutAmountFl = (FrameLayout) view.findViewById(R.id.ll_input_amount);
+        mNowPriceTv = (TextView) view.findViewById(R.id.tv_now_price);
+        mIncreaseAmountTv = (TextView) view.findViewById(R.id.tv_increase_amount);
+        mAllNumTv = (TextView) view.findViewById(R.id.tv_all_num);
+        mHalfNumTv = (TextView) view.findViewById(R.id.tv_half_num);
+        mThirdNumTv = (TextView) view.findViewById(R.id.tv_third_num);
+        mQuarterNumTv = (TextView) view.findViewById(R.id.tv_quarter_num);
+        mMaxStockNumTv = (TextView) view.findViewById(R.id.tv_stock_max_num);
+        mBottomFragmentVp = (BottomFragmentVp) view.findViewById(R.id.vp_bottom_fragment);
+        mBottomIndicator = (LinearLayout) view.findViewById(R.id.indcator_bottom_circle);
+        mTitleOfBottom = (TextView) view.findViewById(R.id.tv_header_of_grade_bottom);
+        mShowContent = (TextView) view.findViewById(R.id.tv_show_content);
         // 五档买卖盘中的LinearLayout
         LinearLayout tempLl = (LinearLayout) view.findViewById(R.id.ll_buy1);
         mBuySaleDiskLlList = new ArrayList<LinearLayout>();
@@ -409,17 +440,16 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         registerListener(ListenerController.ON_CLICK, mTvSubtract, mController);
         registerListener(ListenerController.ON_CLICK, mTvAdd, mController);
         registerListener(ListenerController.ON_CLICK, mBtnBuyOrSell, mController);
-        registerListener(ListenerController.ON_CLICK, mTvStockName, mController);
-        registerListener(ListenerController.ON_ITEM_CLICK, mLvMyStore, mController);
         registerListener(BuyOrSellViewController.ON_TEXT_CHANGE, mEdStockCode, mController);
         registerListener(ListenerController.ON_CLICK, mTvUpLimit, mController);
         registerListener(ListenerController.ON_CLICK, mTvDownLimit, mController);
         registerListener(BuyOrSellViewController.ON_FOCUS_CHANGE, mEdStockPrice, mController);
-
-        registerListener(ListenerController.ON_CLICK, mTvTradeLimit, mController);
-        registerListener(ListenerController.ON_CLICK, mTvTradeMarket, mController);
-        registerListener(ListenerController.ON_CLICK, mLinMarketEntrust, mController);
-
+        registerListener(ListenerController.ON_CLICK, mAllNumTv, mController);
+        registerListener(ListenerController.ON_CLICK, mHalfNumTv, mController);
+        registerListener(ListenerController.ON_CLICK, mThirdNumTv, mController);
+        registerListener(ListenerController.ON_CLICK, mQuarterNumTv, mController);
+        registerListener(ListenerController.ON_CLICK, mLlStockCodeName, mController);
+        mBottomFragmentVp.addOnPageChangeListener(this);
         for (LinearLayout ll : mBuySaleDiskLlList) {
             registerListener(ListenerController.ON_CLICK, ll, mController);
         }
@@ -442,6 +472,18 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             public void afterTextChanged(Editable s) {
                 onListenerEdtNum();
                 requestLinkOnPriceChange();
+                if (!TextUtils.isEmpty(mEdStockPrice.getText())) {
+                    mEdStockPrice.setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
+                } else {
+                    mEdStockPrice.setGravity(Gravity.CENTER);
+                }
+                if (TextUtils.isEmpty(mEdStockPrice.getText())) {
+                    mEdStockPrice.setClearIconVisible(false);
+                    mEdStockPrice.invalidate();
+                } else {
+                    mEdStockPrice.setClearIconVisible(true);
+                    mEdStockPrice.invalidate();
+                }
             }
         });
         //数量输入框监听
@@ -457,21 +499,32 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             @Override
             public void afterTextChanged(Editable s) {
                 onListenerEdtNum();
+                if (TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                    hideRealNumLayout();
+                }
+                if (TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                    mEdEntrustAmount.setClearIconVisible(false);
+                    mEdEntrustAmount.invalidate();
+                } else {
+                    mEdEntrustAmount.setClearIconVisible(true);
+                    mEdEntrustAmount.invalidate();
+                }
             }
         });
     }
 
     @Override
     protected void initData() {
+        addBottomFragments();
         mActivity = (RCollaterBuyOrSaleActivity) getActivity();
+        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mBottomFragmentsList);
         mResources = CoreApplication.getInstance().getResources();
-        mMyStoreListViewAdapter = new MyStoreListViewAdapterForBuysale(mActivity);
         mController = new RCollaterBuyOrSaleViewController(this);
         mFontManager = FontManager.getInstance(mActivity);
-
         mAdapterForPop = new BuyOrSellForPopAdapter(mActivity);
         mPopupWindow = new PopupWindowInListView(mActivity, itemsOnClick);
         mEntrustWaysList = new ArrayList<MarketEntrustWay>();
+        mStockFuzzyQueryManager = StockFuzzyQueryManager.getInstance(mActivity);
 
         if (mBuyOrSell == 0) { // 如果是买入
             mService = new RCollaterBuyOrSaleServiceImpl(this);
@@ -493,63 +546,46 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             mShenEntrustWaysNum = mResources.getStringArray(R.array.two_finance_shen_sell_nums);
             mHuEntrustWaysNum = mResources.getStringArray(R.array.two_finance_hu_sell_nums);
         }
-        mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
-        mStockFuzzyQueryManager = StockFuzzyQueryManager.getInstance(mActivity);
         mLastEntrustPrice = "0";
+        mEdStockPrice.setHint(mResources.getString(R.string.trade_hint_input_buy_price));
+        mBottomFragmentVp.setAdapter(mTradeBottomFragmentVpAdapter);
+        //初始化小圆点
+        addCircles();
     }
+
 
     @Override
     protected void initViews() {
-        // 如果是买入
-        if (mBuyOrSell == 0) {
-            mBtnBuyOrSell.setBackgroundResource(R.color.trade_buy);
-            //市价委托
-            mTvTradeLimit.setBackgroundResource(R.drawable.buy_selector_button);
-            mTvTradeMarket.setBackgroundResource(R.drawable.buy_selector_button);
-            mTvTradeLimit.setTextColor(mResources.getColor(R.color.trade_buy));
-            mTvTradeMarket.setTextColor(mResources.getColor(R.color.trade_buy));
-            mIvLeftSelected.setImageResource(R.drawable.trade_buy_selected);
-            mIvRightSelected.setImageResource(R.drawable.trade_buy_selected);
-            mLinMarketEntrust.setBackgroundResource(R.drawable.buy_no_corner_kong);
-            mRootView.findViewById(R.id.tv_market_arrows).setBackgroundResource(R.drawable.arrows_down_buy);
-
-            // 设置“价格加减号”按钮样式
-            mTvAdd.setBackgroundColor(mResources.getColor(R.color.trade_buy));
-            mTvSubtract.setBackgroundColor(mResources.getColor(R.color.trade_buy));
-            // 设置各个边框背景
-            mRootView.findViewById(R.id.ll_code_name).setBackgroundResource(R.drawable.buy_no_corner_kong);
-            mRootView.findViewById(R.id.ll_input_price).setBackgroundResource(R.drawable.buy_no_corner_kong);
-            mRootView.findViewById(R.id.ll_input_amount).setBackgroundResource(R.drawable.buy_no_corner_kong);
-            // 设置委托价格输入框的输入提示hint
-            mEdStockPrice.setHint(mResources.getString(R.string.trade_hint_input_buy_price));
-            // 如果是卖出
-        } else if (mBuyOrSell == 1) {
-            mBtnBuyOrSell.setBackgroundResource(R.color.trade_sale);
-            //市价委托
-            mTvTradeLimit.setBackgroundResource(R.drawable.sale_selector_button);
-            mTvTradeMarket.setBackgroundResource(R.drawable.sale_selector_button);
-            mTvTradeLimit.setTextColor(mResources.getColor(R.color.trade_sale));
-            mTvTradeMarket.setTextColor(mResources.getColor(R.color.trade_sale));
-            mIvLeftSelected.setImageResource(R.drawable.trade_sale_selected);
-            mIvRightSelected.setImageResource(R.drawable.trade_sale_selected);
-            mLinMarketEntrust.setBackgroundResource(R.drawable.sale_no_corner_kong);
-            mRootView.findViewById(R.id.tv_market_arrows).setBackgroundResource(R.drawable.arrows_down_sale);
-
-            // 设置“价格加减号”按钮样式
-            mTvAdd.setBackgroundColor(mResources.getColor(R.color.trade_sale));
-            mTvSubtract.setBackgroundColor(mResources.getColor(R.color.trade_sale));
-            // 设置各个边框背景
-            mRootView.findViewById(R.id.ll_code_name).setBackgroundResource(R.drawable.sale_no_corner_kong);
-            mRootView.findViewById(R.id.ll_input_price).setBackgroundResource(R.drawable.sale_no_corner_kong);
-            mRootView.findViewById(R.id.ll_input_amount).setBackgroundResource(R.drawable.sale_no_corner_kong);
-            // 设置委托价格输入框的输入提示hint
-            mEdStockPrice.setHint(mResources.getString(R.string.trade_hint_input_sale_price));
+        if (this.mBuyOrSell == 0) {
+            this.mBtnBuyOrSell.setBackgroundResource(R.color.trade_buy);
+            this.mTvAdd.setBackgroundColor(this.mResources.getColor(R.color.trade_buy));
+            this.mTvSubtract.setBackgroundColor(this.mResources.getColor(R.color.trade_buy));
+            this.mRootView.findViewById(R.id.ll_code_name).setBackgroundResource(R.drawable.buy_no_corner_kong);
+            this.mRootView.findViewById(R.id.ll_input_price).setBackgroundResource(R.drawable.buy_no_corner_kong);
+            this.mRootView.findViewById(R.id.ll_input_amount).setBackgroundResource(R.drawable.buy_no_corner_kong);
+            this.mEdStockPrice.setHint(this.mResources.getString(R.string.trade_hint_input_buy_price));
+            mShowContent.setText("买担保品");
+        } else if (this.mBuyOrSell == 1) {
+            this.mBtnBuyOrSell.setBackgroundResource(R.color.trade_sale);
+            this.mTvAdd.setBackgroundColor(this.mResources.getColor(R.color.trade_sale));
+            this.mTvSubtract.setBackgroundColor(this.mResources.getColor(R.color.trade_sale));
+            this.mRootView.findViewById(R.id.ll_code_name).setBackgroundResource(R.drawable.sale_no_corner_kong);
+            this.mRootView.findViewById(R.id.ll_input_price).setBackgroundResource(R.drawable.sale_no_corner_kong);
+            this.mRootView.findViewById(R.id.ll_input_amount).setBackgroundResource(R.drawable.sale_no_corner_kong);
+            this.mEdStockPrice.setHint(this.mResources.getString(R.string.trade_hint_input_sale_price));
+            mShowContent.setText("卖担保品");
         }
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdStockCode, KeyboardManager.KEYBOARD_TYPE_STOCK, new TradeTools.OnFocusChangeWithKeyboard() {
             @Override
             public void onFocusChange(boolean hasFocus) {
                 if (hasFocus) {
                     showOptionalList();
+                    if (!TextUtils.isEmpty(mEdStockCode.getText()) && mEdStockCode.getText().length() >= 6) {
+                        mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
+                        mEdStockCode.performClick();
+                        mEdStockCode.requestFocus();
+                        setEdtCursor(mEdStockCode);
+                    }
                 }
             }
         }, new TradeTools.OnClickWithKeyboard() {
@@ -558,13 +594,10 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
                 showOptionalList();
             }
         });
+        //拓展键盘确定按钮功能
+        mStockCodeEdKeyboardManager.setOnKeyCodeDownListener(this);
         mEntrustNumEDKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdEntrustAmount, KeyboardManager.KEYBOARD_TYPE_MERCHANDISE);
         setTheme();
-
-        mLvMyStore.setAdapter(mMyStoreListViewAdapter);
-        // 调用业务类中，请求数据的方法
-        mService.getHoldList();
-
         // 设置字体
         mFontManager.setTextFont(mTvUpLimit, FontManager.FONT_DINPRO_MEDIUM);
         mFontManager.setTextFont(mTvDownLimit, FontManager.FONT_DINPRO_MEDIUM);
@@ -593,58 +626,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         mFontManager.setTextFont(mAmountSale1, FontManager.FONT_DINPRO_MEDIUM);
     }
 
-    //***************************************市价委托*****************************
-
-    /**
-     * 点击限价委托
-     */
-    public void onClickTradeLimit() {
-        mTvTradeLimit.setEnabled(false);
-        mTvTradeMarket.setEnabled(true);
-        mIvLeftSelected.setVisibility(View.VISIBLE);
-        mIvRightSelected.setVisibility(View.INVISIBLE);
-        mRootView.findViewById(R.id.ll_input_price).setVisibility(View.VISIBLE);
-        mLinMarketEntrust.setVisibility(View.GONE);
-        mEdEntrustAmount.setText("");
-        mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
-        mTvMarketEntrustLay.setText("");
-        limitOrMarketPriceFlag = "0";
-    }
-
-    /**
-     * 点击市价委托
-     */
-    public void onClickTradeMarket() {
-        mTvTradeLimit.setEnabled(true);
-        mTvTradeMarket.setEnabled(false);
-        mIvLeftSelected.setVisibility(View.INVISIBLE);
-        mIvRightSelected.setVisibility(View.VISIBLE);
-        mRootView.findViewById(R.id.ll_input_price).setVisibility(View.GONE);
-        mLinMarketEntrust.setVisibility(View.VISIBLE);
-        mEdEntrustAmount.setText("");
-        mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
-        mTvMarketEntrustLay.setText("");
-        limitOrMarketPriceFlag = "1";
-    }
-
-    /**
-     * 点击市价委托 弹出列表框
-     */
-    public void onClickMarketForPop() {
-        if (TextUtils.isEmpty(getEntrustCode())) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_code));
-        } else if (mStockLinkageBean == null || mEntrustWaysList == null || mEntrustWaysList.size() == 0) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_error));
-        } else {
-            mAdapterForPop.setListData(mEntrustWaysList);
-            mPopupWindow.setListAdapter(mAdapterForPop);
-            if (mPopupWindow != null && mPopupWindow.isShowing()) {
-                mPopupWindow.dismiss();
-            } else {
-                mPopupWindow.showPopwindow(mLinMarketEntrust, mLinMarketEntrust.getWidth(), mPopupWindow.getListViewHeight(mAdapterForPop), 0, 0);
-            }
-        }
-    }
 
     /**
      * 为弹出窗口实现监听类
@@ -663,7 +644,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      */
     public void clickPopList(int position) {
         MarketEntrustWay bean = mAdapterForPop.getItem(position);
-        mTvMarketEntrustLay.setText(bean.getEntrust_way_name());
         entrustBsXjNum = bean.getEntrust_way_num();
         mPopupWindow.dismiss();
     }
@@ -677,18 +657,25 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      * 当股票代码输入框{@link #mEdStockCode}中的输入内容改变的时候
      */
     public void onSearchTextChange() {
+        if (!TextUtils.isEmpty(mEdStockCode.getText()) && mEdStockCode.getText().toString().length() < 7) {
+            mEdStockCode.setClearIconVisible(true);
+            mEdStockCode.invalidate();
+        } else {
+            mEdStockCode.setClearIconVisible(false);
+            mEdStockCode.invalidate();
+        }
         // 当前股票代码输入框输入的内容
         String curEditContent = getEntrustCode();
         // 当前输入内容的长度
         int curInputLength = curEditContent.length();
         setLinkageState(false);
         // 没有输入完成时
-        if (curInputLength > 1 && curInputLength < 6) {
+        if (curInputLength >= 1 && curInputLength < 6) {
             clearDataInViewsExpectStockCodeEd();
             //判断输入的是否是数字
             if (TradeUtils.isNumeric(curEditContent)) {
                 //如果是数字（输入3位及以上开始模糊查询）
-                if (curInputLength > 2 && curInputLength < 6) {
+                if (curInputLength > 3 && curInputLength < 6) {
                     mStockFuzzyQueryManager.execQuery(curEditContent, "1", mEdStockCode);
                 }
             } else { //如果是字母（输入2位及以上开始模糊查询）
@@ -701,12 +688,23 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             if (mLastInputStockCodeLength == 5 || mLastInputStockCodeLength == 3) {
                 onStockLengthMax(curEditContent, mEdStockCode);
             }
-        } else {
+        } else if (curInputLength == 0) {
             clearDataInViewsExpectStockCodeEd();
             mStockFuzzyQueryManager.dismissQueryPopupWindow();
         }
+        //控制最大可编辑长度为6
+        if (mEdStockCode.getText().toString().length() > 6 && mEdStockCode.getText().toString().length() < 10) {
+            mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
+            //            mEdStockCode.performClick();
+            mEdStockCode.requestFocus();
+            setEdtCursor(mEdStockCode);
+        }
+        if (!TextUtils.isEmpty(mEdStockPrice.getText())) {
+            setEdtCursor(mEdStockPrice);
+        }
         mLastInputStockCodeLength = curInputLength;
     }
+
 
     /**
      * 当用户输入满6位时
@@ -736,29 +734,77 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         });
     }
 
-
     /**
      * 展示股票代码模糊查询结果的listview的item单击事件
      *
      * @param position 被单击的item的position
      */
     public void onSearchListViewItemClick(int position) {
-        CodeTableBean SelectBean = mStockFuzzyQueryManager.getSearchStocksAdapter().getItem(position);
-        mService.request20000ForHqData(SelectBean.getCode(), SelectBean.getMarket());
+        CodeTableBean bean = mStockFuzzyQueryManager.getSearchStocksAdapter().getItem(position);
+        mService.request20000ForHqData(bean.getCode(), bean.getMarket());
         TradeUtils.hideSystemKeyBoard(mActivity);
         mStockCodeEdKeyboardManager.dismiss();
         mLastInputStockCodeLength = 6;
     }
 
+
     /**
-     * 持仓列表项单击事件监听
-     *
-     * @param position 选中的item的序号
+     * 当价格输入框的内容发生改变时，执行此方法
      */
-    public void onStoreListViewItemClick(int position) {
-        ArrayList<MyStoreStockBean> dataList = mMyStoreListViewAdapter.getListData();
-        MyStoreStockBean bean = dataList.get(position);
-        mService.request20000ForHqData(bean.getStock_code(), bean.getMarket());
+    private void requestLinkOnPriceChange() {
+        String entrustCode = getEntrustCode();
+        String curEntrustPrice = getEntrustPrice();
+        if (mStockLinkageBean != null && !TextUtils.isEmpty(entrustCode) &&
+                !TextUtils.isEmpty(curEntrustPrice) && !mLastEntrustPrice.equals(curEntrustPrice)) {
+            mService.requestLinkageData(entrustCode, curEntrustPrice,
+                    mStockLinkageBean.getMarket(), mStockLinkageBean.getExchange_type(), String.valueOf(this.mBuyOrSell));
+            mLastEntrustPrice = curEntrustPrice;
+        }
+    }
+
+    /**
+     * 当数量或者价格发生变化时，弹窗展示总价
+     */
+    private void onListenerEdtNum() {
+        String price = getEntrustPrice();
+        String num = getEntrustAmount();
+        try {
+            if (!TextUtils.isEmpty(price) && !TextUtils.isEmpty(num)) {
+                double fPrice = Double.parseDouble(price);
+                double fNum = Double.parseDouble(num);
+                BigDecimal bigDecimal = new BigDecimal(fPrice * fNum);
+                String plainPrice;
+                if (mService.mCount == 2) {
+                    plainPrice = TradeUtils.formatDouble2(bigDecimal.toPlainString());
+                } else {
+                    plainPrice = TradeUtils.formatDouble3(bigDecimal.toPlainString());
+                }
+                //// TODO: 2016/10/26
+
+                mPriceWindowHandler.removeCallbacks(mPriceWindowRunnable);
+                //显示
+                if (mTotalPricePopView == null) {
+                    LayoutInflater inflater = (LayoutInflater) mActivity.getSystemService(LAYOUT_INFLATER_SERVICE);
+                    mTotalPricePopView = inflater.inflate(R.layout.popwindow_total_price, null);
+                    if (mTotalPricePopView.getParent() != null) {
+                        ViewGroup parent = (ViewGroup) mTotalPricePopView.getParent();
+                        parent.removeView(mTotalPricePopView);
+                    }
+                    //计算popwindow宽度
+                    mTotalPricePopWindow = new PopupWindow(mTotalPricePopView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, false);
+                    mTotalPricePopWindow.setBackgroundDrawable(new BitmapDrawable());
+                }
+                TextView textView = (TextView) mTotalPricePopView.findViewById(R.id.tv_total_price);
+                textView.setText(plainPrice.isEmpty() ? "0" : plainPrice);
+                mTotalPricePopWindow.update();
+                mTotalPricePopWindow.showAsDropDown(mInPutAmountFl, mInPutAmountFl.getWidth() - SizeUtil.dp2px(mActivity, 90), 0);
+                mPriceWindowHandler.postDelayed(mPriceWindowRunnable, 2000);
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -791,6 +837,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             } else {
                 mEdStockPrice.setText(TradeUtils.formatDouble2(curTradePrice + 0.01));
             }
+            setEdtCursor(mEdStockPrice);
         }
     }
 
@@ -810,136 +857,68 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             } else {
                 mEdStockPrice.setText(TradeUtils.formatDouble2(curTradePrice - 0.01));
             }
+            setEdtCursor(mEdStockPrice);
         }
     }
 
-    /**
-     * 股票名称单击事件
-     */
-    public void onClickStockName() {
-        // 注意！此处代码务必和 mEdStockCode 焦点获取监听事件一致
-        if (mEdStockCode.hasFocus()) {
-            showOptionalList();
-            mStockCodeEdKeyboardManager.show();
-        } else {
-            mEdStockCode.performClick();
-            mEdStockCode.requestFocus();
-            showOptionalList();
-        }
-    }
-
-    /**
-     * 当价格输入框的内容发生改变时，执行此方法
-     */
-    private void requestLinkOnPriceChange() {
-        String entrustCode = getEntrustCode();
-        String curEntrustPrice = getEntrustPrice();
-        if (mStockLinkageBean != null && !TextUtils.isEmpty(entrustCode) &&
-                !TextUtils.isEmpty(curEntrustPrice) && !mLastEntrustPrice.equals(curEntrustPrice)) {
-            mService.requestLinkageData(entrustCode, curEntrustPrice, mStockLinkageBean.getMarket(),
-                    mStockLinkageBean.getExchange_type(), String.valueOf(mBuyOrSell));
-            mLastEntrustPrice = curEntrustPrice;
-        }
-    }
-
-    /**
-     * 当数量或者价格发生变化时，改变button上的数据
-     */
-    private void onListenerEdtNum() {
-        String price = getEntrustPrice();
-        String num = getEntrustAmount();
-        try {
-            if (mLinMarketEntrust.getVisibility() == View.GONE && !TextUtils.isEmpty(price) && !TextUtils.isEmpty(num)) {
-                double fPrice = Double.parseDouble(price);
-                double fNum = Double.parseDouble(num);
-                BigDecimal bigDecimal = new BigDecimal(fPrice * fNum);
-                String plainPrice;
-                if (mService.mCount == 2) {
-                    plainPrice = TradeUtils.formatDouble2(bigDecimal.toPlainString());
-                } else {
-                    plainPrice = TradeUtils.formatDouble3(bigDecimal.toPlainString());
-                }
-                mBtnBuyOrSell.setText(mBtnBuyOrSaleText + mResources.getString(R.string.rmb) + plainPrice);
-            } else {
-                mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
-            }
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * 买入或者卖出按钮单击事件
      * 弹出确认操作对话框对话框，设置对话框布局，然后监听对话框中按钮的单击事件
      */
     public void onClickTrade() {
-        if (TradeUtils.isFastClick2()) {
-            return;
-        }
-        String entrustPrice = getEntrustPrice();
-        String entrustAmount = getEntrustAmount();
-        String stockCode = getEntrustCode();
-        // 没正确输入股票代码时
-        if (TextUtils.isEmpty(stockCode)) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_code));
-            TradeUtils.showKeyBoard(mActivity, mEdStockCode, false);
-            return;
-        }
-        // 联动失败时
-        if (mStockLinkageBean == null) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_code2));
-            TradeUtils.showKeyBoard(mActivity, mEdStockCode, false);
-            return;
-        }
-        if (entrustAmount == null || entrustAmount.equals("")) { // 没输入委托数量时
-            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_amount));
-            TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
-            return;
-        }
-        //若是限价委托
-        if (mRootView.findViewById(R.id.ll_input_price).getVisibility() == View.VISIBLE) {
-            if (entrustPrice == null || entrustPrice.equals("")) { // 没输入委托价格时
-                ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_price));
-                mEntrustNumEDKeyboardManager.dismiss();
-                mStockCodeEdKeyboardManager.dismiss();
-                TradeUtils.showKeyBoard(mActivity, mEdStockPrice, true);
-                return;
+        if (!TradeUtils.isFastClick2()) {
+            String entrustPrice = this.getEntrustPrice();
+            String entrustAmount = this.getEntrustAmount();
+            String stockCode = this.getEntrustCode();
+            if (TextUtils.isEmpty(stockCode)) {
+                ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_code));
+                TradeUtils.showKeyBoard(this.mActivity, this.mEdStockCode, false);
+            } else if (this.mStockLinkageBean == null) {
+                ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_code2));
+                TradeUtils.showKeyBoard(this.mActivity, this.mEdStockCode, false);
+            } else if (entrustAmount != null && !entrustAmount.equals("")) {
+                if (this.mRootView.findViewById(R.id.ll_input_price).getVisibility() == View.VISIBLE && (entrustPrice == null || entrustPrice.equals(""))) {
+                    ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_price));
+                    this.mEntrustNumEDKeyboardManager.dismiss();
+                    this.mStockCodeEdKeyboardManager.dismiss();
+                    TradeUtils.showKeyBoard(this.mActivity, this.mEdStockPrice, true);
+                } else if ("1".equals(this.limitOrMarketPriceFlag) && TextUtils.isEmpty(this.entrustBsXjNum)) {
+                    ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_select_bs));
+                } else {
+                    try {
+                        double dialog = Double.parseDouble(entrustAmount);
+                        double entrustMaxAmountDouble = Double.parseDouble(this.mStockLinkageBean.getStock_max_amount());
+                        if (this.mBuyOrSell == 0 && dialog % 100.0D != 0.0D) {
+                            ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_buy_amount_error));
+                            TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
+                            return;
+                        }
+
+                        if (this.mBuyOrSell == 1 && dialog % 100.0D != 0.0D && dialog != entrustMaxAmountDouble) {
+                            ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_sale_amount_error));
+                            TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
+                            return;
+                        }
+                    } catch (NullPointerException var8) {
+                        var8.printStackTrace();
+                    } catch (NumberFormatException var9) {
+                        var9.printStackTrace();
+                    }
+
+                    this.mEntrustNumEDKeyboardManager.dismiss();
+                    this.mStockCodeEdKeyboardManager.dismiss();
+                    TradeUtils.hideSystemKeyBoard(this.mActivity);
+                    RCollaterComfirmDialog dialog1 = new RCollaterComfirmDialog(this.mActivity, this.mBuyOrSell, this.mService);
+                    dialog1.setDataToViews(this.mStockLinkageBean.getStock_name(), this.mStockLinkageBean.getStock_code(), this.getEntrustPrice(), this.getEntrustAmount());
+                    dialog1.setEntrustBs(this.mEntrustBs, this.limitOrMarketPriceFlag, this.entrustBsXjNum);
+                    dialog1.show();
+                }
+            } else {
+                ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_amount));
+                TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
             }
         }
-        //若是市价委托
-        if ("1".equals(limitOrMarketPriceFlag) && TextUtils.isEmpty(entrustBsXjNum)) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_select_bs));
-            return;
-        }
-        try {
-            double entrustAmountDouble = Double.parseDouble(entrustAmount);
-            double entrustMaxAmountDouble = Double.parseDouble(mStockLinkageBean.getStock_max_amount());
-            // 如果是买入，那么数量必须能被100整除，否则报错
-            if (mBuyOrSell == 0 && entrustAmountDouble % 100 != 0) {
-                ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_buy_amount_error));
-                TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
-                return;
-                // 如果是卖出，那么数量必须能被100整除，或者等于最大可卖数量，否则报错
-            } else if (mBuyOrSell == 1 && entrustAmountDouble % 100 != 0 && entrustAmountDouble != entrustMaxAmountDouble) {
-                ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_sale_amount_error));
-                TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
-                return;
-            }
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
-        mEntrustNumEDKeyboardManager.dismiss();
-        mStockCodeEdKeyboardManager.dismiss();
-        TradeUtils.hideSystemKeyBoard(mActivity);
-        RCollaterComfirmDialog dialog = new RCollaterComfirmDialog(mActivity, mBuyOrSell, mService);
-        dialog.setDataToViews(mStockLinkageBean.getStock_name(),
-                mStockLinkageBean.getStock_code(), getEntrustPrice(), getEntrustAmount());
-        dialog.setEntrustBs(mEntrustBs, limitOrMarketPriceFlag, entrustBsXjNum);
-        dialog.show();
     }
 
     /**
@@ -970,6 +949,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         } else if (viewId == R.id.ll_sale5) {
             mEdStockPrice.setText(mPriceSale5.getText().toString());
         }
+        setEdtCursor(mEdStockPrice);
         for (LinearLayout ll : mBuySaleDiskLlList) {
             if (viewId == ll.getId()) {
                 ll.setBackgroundResource(R.drawable.common_no_corner_transparent);
@@ -984,10 +964,9 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      */
     public void showOptionalList() {
         if (TextUtils.isEmpty(getEntrustCode())) {
-            // 发消息给行情，查询股票输入提示列表
             mStockFuzzyQueryManager.dismissQueryPopupWindow();
-            mStockFuzzyQueryManager.execQueryOptional();
-            mStockFuzzyQueryManager.showQueryPopupWindow(mEdStockCode);
+            //            mStockFuzzyQueryManager.execQueryOptional();
+            //            mStockFuzzyQueryManager.showQueryPopupWindow(mEdStockCode);
         }
     }
 
@@ -997,6 +976,10 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
     public void onPriceEdtFocusChange(boolean hasFocus) {
         if (!hasFocus) {
             requestLinkOnPriceChange();
+        } else {
+            if (mEdStockPrice.getText() != null) {
+                setEdtCursor(mEdStockPrice);
+            }
         }
     }
 
@@ -1033,11 +1016,16 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
             mTvStockUnit.setText(mResources.getString(R.string.trade_stock));
         }
         mCodeTableBean = bean;
+        double step = Double.parseDouble(mCodeTableBean.getStep_unit());
+        mTvSubtract.setText(step + "");
+        mTvAdd.setText(step + "");
         mEdStockCode.setText(bean.getCode());
-        mTvStockName.setText(bean.getName());
+        mEdStockCode.setText(bean.getCode() + "(" + bean.getName() + ")");
         mTvUpLimit.setText(bean.getUpLimit());
         mTvDownLimit.setText(bean.getDownLimit());
         mNowPrice = bean.getNow();
+        showRealNumLayout();
+
     }
 
     /**
@@ -1045,7 +1033,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      */
     public void onGetSuspendStock(String stockName, String stockCode) {
         clearDataInViewsExpectStockCodeEd();
-        mTvStockName.setText(stockName);
+        mEdStockCode.setText(stockCode + "(" + stockName + ")");
         mEdStockCode.setText(stockCode);
     }
 
@@ -1057,11 +1045,13 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         final String blankStr = "";
         // 清除股票代码输入框上的数据
         mEdStockCode.setText(blankStr);
+        mCanUseMoneyTv.setText(blankStr);
         // 清除其他控件上的数据
         clearDataInViewsExpectStockCodeEd();
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
+        hideRealNumLayout();
     }
 
     /**
@@ -1069,7 +1059,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      */
     public void clearDataInViewsExpectStockCodeEd() {
         final String blankStr = "";
-        mTvStockName.setText(blankStr);
         mTvUpLimit.setText(blankStr);
         mTvDownLimit.setText(blankStr);
         mEdStockPrice.setText(blankStr);
@@ -1082,9 +1071,8 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         mLastEntrustPrice = "";
         mService.mCount = 2;
         mTvStockUnit.setText(mResources.getString(R.string.trade_stock));
-        mBtnBuyOrSell.setText(mBtnBuyOrSaleText);
-        mTvMarketEntrustLay.setText("");
         entrustBsXjNum = "";
+        mCanUseMoneyTv.setText("");
         // 清除五档盘中的数据
         clearWuDangData();
     }
@@ -1093,7 +1081,12 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      * 在成功从服务器获取五档买卖盘数据时调用
      * 设置五档买卖盘数据和当前委托价格数据（当前委托价格，买入时取买一，卖出时取卖一）。
      */
-    public void onGetWuDangDishData(StockBuySellDish bean, String market, String exchangeType, boolean isSetText) {
+    public void onGetWuDangDishData(StockBuySellDish bean, String market, String exchangeType, boolean isSetText, String nowPrice, String increase) {
+        //现价和涨幅
+        mNowPriceTv.setTextColor(mResources.getColor(R.color.trade_text));
+        mIncreaseAmountTv.setTextColor(mResources.getColor(R.color.trade_text));
+        mNowPriceTv.setText(nowPrice);
+        mIncreaseAmountTv.setText(increase + "%");
         ArrayList<String> priceColorList = bean.getPriceColorsList();
         ArrayList<String> valueList = bean.getValueBuySale();
         setWuDangDataToViews(mPriceSale5, valueList.get(0), priceColorList.get(0));
@@ -1118,34 +1111,20 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         setWuDangDataToViews(mAmountBuy5, valueList.get(19), priceColorList.get(19));
         //是否是自动刷新，如果是自动刷新，则不需要执行下面的逻辑
         if (isSetText) {
-            if (mBuyOrSell == 0) { // 如果是买入，设置卖1价格到股票价格数据框中
-                String buyOne = valueList.get(4);
-                if (buyOne != null && !TextUtils.isEmpty(buyOne)) {
-                    float buyFloat = Float.parseFloat(buyOne);
-                    if (buyFloat > 0) {
-                        mLastEntrustPrice = buyOne;
-                    } else if (buyFloat <= 0) {
-                        mLastEntrustPrice = mNowPrice;
-                    }
-                } else {
+            String buyOne = valueList.get(4);
+            if (buyOne != null && !TextUtils.isEmpty(buyOne)) {
+                float buyFloat = Float.parseFloat(buyOne);
+                if (buyFloat > 0) {
+                    mLastEntrustPrice = buyOne;
+                } else if (buyFloat <= 0) {
                     mLastEntrustPrice = mNowPrice;
                 }
-            } else if (mBuyOrSell == 1) { // 如果是卖出，设置买1价格到股票价格数据框中
-                String saleOne = valueList.get(10);
-                if (saleOne != null && !TextUtils.isEmpty(saleOne)) {
-                    float saleFloat = Float.parseFloat(saleOne);
-                    if (saleFloat > 0) {
-                        mLastEntrustPrice = saleOne;
-                    } else if (saleFloat <= 0) {
-                        mLastEntrustPrice = mNowPrice;
-                    }
-                } else {
-                    mLastEntrustPrice = mNowPrice;
-                }
+            } else {
+                mLastEntrustPrice = mNowPrice;
             }
             mEdStockPrice.setText(mLastEntrustPrice);
-            mService.requestLinkageData(getEntrustCode(), getEntrustPrice(),
-                    exchangeType, market, String.valueOf(mBuyOrSell));
+            setEdtCursor(mEdStockPrice);
+            mService.requestLinkageData(getEntrustCode(), getEntrustPrice(), exchangeType, market, String.valueOf(this.mBuyOrSell));
         }
     }
 
@@ -1153,6 +1132,8 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
      * 清空五档买卖盘和当前委托价格上的数据
      */
     public void clearWuDangData() {
+        mNowPriceTv.setText("");
+        mIncreaseAmountTv.setText("");
         mPriceSale5.setText("");
         mPriceSale4.setText("");
         mPriceSale3.setText("");
@@ -1228,27 +1209,40 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
                         switch (i) {
                             case -11: // 单击了1/4仓
                                 setAmountPos(4);
+                                setEdtCursor(mEdEntrustAmount);
                                 break;
                             case -12: // 单击了1/3仓
                                 setAmountPos(3);
+                                setEdtCursor(mEdEntrustAmount);
                                 break;
                             case -13: // 单击了半仓
                                 setAmountPos(2);
+                                setEdtCursor(mEdEntrustAmount);
                                 break;
                             case -14: // 单击了全仓
                                 setAmountPos(1);
+                                setEdtCursor(mEdEntrustAmount);
+                            case KeyboardEventListener.KEY_CODE_INCREMENT:
+                                //// TODO: 2016/10/19  +100
+                                if (!TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                                    mEdEntrustAmount.setText((Integer.parseInt(mEdEntrustAmount.getText().toString()) + 100) / 100 * 100 + "");
+                                    setEdtCursor(mEdEntrustAmount);
+                                }
+                                break;
+                            //// TODO: 2016/10/19  -100
+                            case KeyboardEventListener.KEY_CODE_DECREMENT:
+                                if (!TextUtils.isEmpty(mEdEntrustAmount.getText())) {
+                                    int num = Integer.parseInt(mEdEntrustAmount.getText().toString()) / 100 * 100 - 100;
+                                    mEdEntrustAmount.setText(num > 0 ? num + "" : "0");
+                                    setEdtCursor(mEdEntrustAmount);
+                                }
                                 break;
                         }
                     }
                 });
                 int max_amount = 1;
                 max_amount = Integer.parseInt(mStockLinkageBean.getStock_max_amount());
-                if (mBuyOrSell == 0) { // 买入时，设置委托数量输入框的输入提示hint为：最多可买xx股
-                    mEdEntrustAmount.setHint(mResources.getString(R.string.trade_hint_most_buy) + max_amount);
-                } else if (mBuyOrSell == 1) { // 卖出时，设置委托数量输入框的输入提示hint为：最多可卖xx股
-                    mEdEntrustAmount.setHint(mResources.getString(R.string.trade_hint_most_sale) + max_amount);
-                }
-
+                mMaxStockNumTv.setText(max_amount + "");
                 //判断联动股票的市场类型，分别为市价委托弹出框设值
                 String[] entrust_way = {};
                 String[] entrust_way_num = {};
@@ -1279,7 +1273,6 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
                 });
                 mEdEntrustAmount.setHint("");
                 mEdEntrustAmount.setText("");
-                mTvMarketEntrustLay.setText("");
                 entrustBsXjNum = "";
             }
         } catch (IllegalStateException ise) {
@@ -1308,11 +1301,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         String amountStr = "";
         try {
             max_amount = Integer.parseInt(mStockLinkageBean.getStock_max_amount());
-            if (mBuyOrSell == 1 && pos == 1) { //卖出时点击全仓
-                amountStr = String.valueOf(max_amount);
-            } else {
-                amountStr = TradeUtils.formatNumToHundreds(max_amount / pos);
-            }
+            amountStr = TradeUtils.formatNumToHundreds(max_amount / pos);
         } catch (NumberFormatException nfe) {
             nfe.printStackTrace();
         } catch (NullPointerException e) {
@@ -1321,32 +1310,16 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
         mEdEntrustAmount.setText(amountStr);
     }
 
-    /**
-     * 获取BuyOrSellServiceImpl 类传过来的持仓数据
-     *
-     * @param dataList 持仓列表数据表
-     */
-    public void getStoreData(ArrayList<MyStoreStockBean> dataList) {
-        if (dataList == null || dataList.size() == 0) {
-            mLvMyStore.setVisibility(View.GONE);
-            mLiNoData.setVisibility(View.VISIBLE);
-            mLoading.setVisibility(View.GONE);
-        } else {
-            mLvMyStore.setVisibility(View.VISIBLE);
-            mLiNoData.setVisibility(View.GONE);
-            mLoading.setVisibility(View.GONE);
-            mMyStoreListViewAdapter.setListData(dataList);
-            mMyStoreListViewAdapter.notifyDataSetChanged();
-        }
-    }
 
     /**
-     * 买入卖出的区分标志
-     *
-     * @param buyOrSell
+     * 点击title栏右侧 “查询” 字样
      */
-    public void setBuyOrSell(int buyOrSell) {
-        mBuyOrSell = buyOrSell;
+    public void onClickTitleRight() {
+        Intent intent = new Intent(mActivity, RSelectObjectSecurityActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("ViewPagerFragmentPos", 0);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     /**
@@ -1412,6 +1385,192 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment {
     }
 
     public String getEntrustCode() {
-        return mEdStockCode.getText().toString().trim();
+        if (mEdStockCode.getText().toString().trim().length() > 6) {
+
+            return mEdStockCode.getText().toString().trim().substring(0, 6);
+        } else {
+            return mEdStockCode.getText().toString().trim();
+        }
+    }
+
+
+    private void setEdtCursor(EditText et) {
+        if (et == null) {
+            return;
+        }
+        CharSequence text = et.getText();
+        if (TextUtils.isEmpty(text)) {
+            return;
+        }
+        if (text instanceof Spannable) {
+            Spannable spanText = (Spannable) text;
+            Selection.setSelection(spanText, text.length());
+        }
+    }
+
+    //stocknum编辑布局
+    private void showRealNumLayout() {
+        if (!TextUtils.isEmpty(mEdStockCode.getText())) {
+            mRealStockNumLl.setVisibility(View.VISIBLE);
+            mPreStockNumTv.setVisibility(View.GONE);
+        }
+    }
+
+    ;
+
+    private void hideRealNumLayout() {
+        if (TextUtils.isEmpty(mEdStockCode.getText())) {
+            mRealStockNumLl.setVisibility(View.GONE);
+            mPreStockNumTv.setVisibility(View.VISIBLE);
+        }
+    }
+
+    ;
+
+    //全仓
+    public void setStockNumAll() {
+        setAmountPos(1);
+        mEdEntrustAmount.requestFocus();
+        setEdtCursor(mEdEntrustAmount);
+    }
+
+    //半仓
+    public void setStockNumHalf() {
+        setAmountPos(2);
+        mEdEntrustAmount.requestFocus();
+        setEdtCursor(mEdEntrustAmount);
+    }
+
+    //1/3仓
+    public void setStockNumThird() {
+        setAmountPos(3);
+        mEdEntrustAmount.requestFocus();
+        setEdtCursor(mEdEntrustAmount);
+    }
+
+    //1/4仓
+    public void setStockNumQuarter() {
+        setAmountPos(4);
+        mEdEntrustAmount.requestFocus();
+        setEdtCursor(mEdEntrustAmount);
+    }
+
+    //获取最大可用资金在联动查询成功回调中吊用
+    public void onGetCanUseBalance(String canUseMoney) {
+        mCanUseMoneyTv.setText(canUseMoney);
+    }
+
+    //
+    public void onNameClick() {
+        if (!TextUtils.isEmpty(mEdStockCode.getText()) && mEdStockCode.getText().toString().length() >= 6) {
+            mEdStockCode.setText(mEdStockCode.getText().toString().substring(0, 6));
+            mEdStockCode.performClick();
+            mEdStockCode.requestFocus();
+            setEdtCursor(mEdStockCode);
+        }
+    }
+
+    @Override
+    public void onKeyCodeDown() {
+        if (mEdStockCode.getText().length() == 6) {
+            onStockLengthMax(mEdStockCode.getText().toString().trim(), mEdStockCode);
+        } else {
+            onSearchTextChange();
+        }
+    }
+
+    //底部vp切换监听
+    //// TODO: 2016/10/26
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        ImageView iv = (ImageView) mBottomIndicator.getChildAt(position);
+        iv.setImageResource(R.drawable.enabletrue);
+        ImageView preIv = (ImageView) mBottomIndicator.getChildAt(preSelectPagePos);
+        preIv.setImageResource(R.drawable.enablefalse);
+        preSelectPagePos = position;
+        mBottomIndicator.invalidate();
+        Fragment item = mTradeBottomFragmentVpAdapter.getItem(position);
+        if (item instanceof CreditBottomHolderFragment) {
+            mTitleOfBottom.setText(CreditBottomHolderFragment.TITLE);
+        } else if (item instanceof CreditBottomTodayEntrustFragment) {
+            mTitleOfBottom.setText(CreditBottomTodayEntrustFragment.TITLE);
+        } else {
+            mTitleOfBottom.setText(CreditBottomRevocationFragment.TITLE);
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
+
+    //添加底部fragment
+    //// TODO: 2016/10/26
+    private void addBottomFragments() {
+        if (mBottomFragmentsList != null && mBottomFragmentsList.size() > 0) {
+            return;
+        }
+        mCreditBottomHolderFragment = new CreditBottomHolderFragment();
+        mCreditBottomHolderFragment.setFragment(this);
+        mBottomFragmentsList.add(mCreditBottomHolderFragment);
+
+        mCreditBottomTodayEntrustFragment = new CreditBottomTodayEntrustFragment();
+        mCreditBottomTodayEntrustFragment.setFragment(this);
+        mBottomFragmentsList.add(mCreditBottomTodayEntrustFragment);
+
+        mCreditBottomRevocationFragment = new CreditBottomRevocationFragment();
+        mCreditBottomRevocationFragment.setFragment(this);
+        mBottomFragmentsList.add(mCreditBottomRevocationFragment);
+
+    }
+
+    //添加底部小圆点
+    private void addCircles() {
+        //动态添加白色点所有对应的indicator的内容
+        for (int i = 0; i < mTradeBottomFragmentVpAdapter.getCount(); i++) {
+            ImageView ivIndicator = new ImageView(getContext());
+            if (i != 0) {
+                ivIndicator.setImageResource(R.drawable.enablefalse);
+            } else {
+                ivIndicator.setImageResource(R.drawable.enabletrue);
+            }
+            int unit = (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()) + .5f);
+            int width = unit;//10dp<--->10px
+            int height = unit;
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
+
+            if (i != 0) {//不是第一个点的时候设置对应的marginLeft
+                params.leftMargin = unit;
+            }
+            mBottomIndicator.addView(ivIndicator, params);
+        }
+    }
+
+    //底部持仓列表点击事件
+    public void getHolderStock(MyStoreStockBean bean) {
+        mEdStockCode.setText(bean.getStock_code());
+        setEdtCursor(mEdStockCode);
+        onStockLengthMax(mEdStockCode.getText().toString(), mEdStockCode);
+    }
+
+    public void jumpToRevotion() {
+        if (mBottomFragmentVp.getCurrentItem() == 2) {
+            mCreditBottomRevocationFragment.requestNewData();
+        }
+        mBottomFragmentVp.setCurrentItem(2);
+        mCreditBottomRevocationFragment.requestNewData();
+    }
+
+    public void setBuyOrSell(int buyOrSell) {
+        mBuyOrSell = buyOrSell;
+    }
+
+    public int getBuyOrSell() {
+        return mBuyOrSell;
     }
 }

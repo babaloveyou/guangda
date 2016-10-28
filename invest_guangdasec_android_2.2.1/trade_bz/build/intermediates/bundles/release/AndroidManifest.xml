@@ -401,7 +401,8 @@
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustPan" />
 
         <!-- 融资融券之和卖券还款 -->
         <activity

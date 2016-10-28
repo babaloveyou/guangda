@@ -1352,7 +1352,6 @@
     <string name="active_remind">根据监证会的要求,首次使用需要进行手机验证.</string>
     <string name="normal_trade_login">普通登录</string>
     <string name="credit_trade_login">信用登陆</string>
-    <string name="network_error_prompt">请重新登录</string>
     <string name="price_stock">委托价格</string>
     <string name="trade_subtract">一</string>
     <string name="qurry_error">查询失败</string>

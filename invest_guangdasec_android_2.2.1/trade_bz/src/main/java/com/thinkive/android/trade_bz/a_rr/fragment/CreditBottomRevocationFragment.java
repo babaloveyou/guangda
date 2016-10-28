@@ -25,12 +25,13 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
     private RRevocationServiceImpl mServices;
     private RCreditBuyFragment mRCreditBuyFragment;
     private RCreditSaleFragment mRCreditSaleFragment;
+    private RCollaterBuyOrSellFragment mRCollaterBuyOrSellFragment;
     private View mView;
     private ListView mLv;
     private LinearLayout mNoDataLl;
     private LinearLayout mLoadingLl;
     private CreditBottomRevocationAdapter mAdapter;
-    private boolean isBuy;
+    private String mCurrentFragment = null;
 
     @Nullable
     @Override
@@ -99,13 +100,15 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
     }
 
     public void setFragment(Fragment fragment) {
-        if (fragment instanceof RCreditSaleFragment) {
-            mRCreditSaleFragment = (RCreditSaleFragment) fragment;
-            isBuy = false;
-        }
         if (fragment instanceof RCreditBuyFragment) {
             mRCreditBuyFragment = (RCreditBuyFragment) fragment;
-            isBuy = true;
+            mCurrentFragment = RCreditBuyFragment.class.getSimpleName();
+        } else if (fragment instanceof RCreditSaleFragment) {
+            mRCreditSaleFragment = (RCreditSaleFragment) fragment;
+            mCurrentFragment = RCreditSaleFragment.class.getSimpleName();
+        } else if (fragment instanceof RCollaterBuyOrSellFragment) {
+            mRCollaterBuyOrSellFragment = (RCollaterBuyOrSellFragment) fragment;
+            mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
         }
     }
 
@@ -134,35 +137,53 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
                     revocationBeensSell.add(bean);
                 }
             }
-            if (isBuy) {//如果是买
-                if (revocationBeensBuy.size() == 0) {
-                    mLoadingLl.setVisibility(View.GONE);
-                    mLv.setVisibility(View.GONE);
-                    mNoDataLl.setVisibility(View.VISIBLE);
+            if (mCurrentFragment == null) {
+                return;
+            } else if (mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())) {
+                setBuyAdapter(revocationBeensBuy);
+            } else if (mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())) {
+                setSaleAdapter(revocationBeensSell);
+            } else if (mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName())) {
+                int buyOrSell = mRCollaterBuyOrSellFragment.getBuyOrSell();
+                if (buyOrSell == 0) {
+                    setBuyAdapter(revocationBeensBuy);
                 } else {
-                    mLoadingLl.setVisibility(View.GONE);
-                    mLv.setVisibility(View.VISIBLE);
-                    mNoDataLl.setVisibility(View.GONE);
+                    setSaleAdapter(revocationBeensSell);
                 }
-                mAdapter.setListData(revocationBeensBuy);
-                revocationBeensSell = null;
-                mLv.setAdapter(mAdapter);
-            } else {//卖
-                if (revocationBeensSell.size() == 0) {
-                    mLoadingLl.setVisibility(View.GONE);
-                    mLv.setVisibility(View.GONE);
-                    mNoDataLl.setVisibility(View.VISIBLE);
-                }else {
-                    mLoadingLl.setVisibility(View.GONE);
-                    mLv.setVisibility(View.VISIBLE);
-                    mNoDataLl.setVisibility(View.GONE);
-                }
-                mAdapter.setListData(revocationBeensSell);
-                revocationBeensBuy = null;
-                mLv.setAdapter(mAdapter);
             }
-
         }
 
+    }
+
+    private void setSaleAdapter(ArrayList<RRevocationBean> revocationBeensSell) {
+        ArrayList<RRevocationBean> revocationBeensBuy;
+        if (revocationBeensSell.size() == 0) {
+            mLoadingLl.setVisibility(View.GONE);
+            mLv.setVisibility(View.GONE);
+            mNoDataLl.setVisibility(View.VISIBLE);
+        } else {
+            mLoadingLl.setVisibility(View.GONE);
+            mLv.setVisibility(View.VISIBLE);
+            mNoDataLl.setVisibility(View.GONE);
+        }
+        mAdapter.setListData(revocationBeensSell);
+        revocationBeensBuy = null;
+        mLv.setAdapter(mAdapter);
+    }
+
+    private void setBuyAdapter(ArrayList<RRevocationBean> revocationBeensBuy) {
+        ArrayList<RRevocationBean> revocationBeensSell;
+        if (revocationBeensBuy.size() == 0) {
+            mLoadingLl.setVisibility(View.GONE);
+            mLv.setVisibility(View.GONE);
+            mNoDataLl.setVisibility(View.VISIBLE);
+        } else {
+            mLoadingLl.setVisibility(View.GONE);
+            mLv.setVisibility(View.VISIBLE);
+            mNoDataLl.setVisibility(View.GONE);
+        }
+        mAdapter.setListData(revocationBeensBuy);
+        revocationBeensSell = null;
+        mLv.setAdapter(mAdapter);
     }
 }

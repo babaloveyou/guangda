@@ -23,7 +23,9 @@ public class Request303001 extends BaseCreditRequest {
         super(action);
         paramMap.put("funcNo", "303001");
         setParamHashMap(paramMap);
-        System.out.println("303001参数" + paramMap.toString());
+        if (paramMap.get("entrust_bs").equals("1")) {
+            System.out.println("融卖参数" + paramMap.toString());
+        }
         setUrlName(Constants.URL_CREDIT_TRADE);
     }
 

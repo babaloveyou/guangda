@@ -54,7 +54,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
- * 融资融券-买券还款
+ * 融资融券-卖券还款
  * @author 张雪梅
  * @company Thinkive
  * @date 2016/8/23

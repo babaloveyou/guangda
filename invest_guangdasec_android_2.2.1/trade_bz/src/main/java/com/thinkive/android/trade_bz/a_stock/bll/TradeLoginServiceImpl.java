@@ -145,8 +145,6 @@ public class TradeLoginServiceImpl {
                 if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {
                     CreditLoginInfo.setPassword(loginPassword);
                 }
-                //// TODO: 2016/10/25 保存用户信息 
-
             }
 
             @Override

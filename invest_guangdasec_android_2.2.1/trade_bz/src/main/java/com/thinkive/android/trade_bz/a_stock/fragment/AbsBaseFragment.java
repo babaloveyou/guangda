@@ -122,4 +122,5 @@ public abstract class AbsBaseFragment extends Fragment {
     protected abstract void setTheme();
 
 
+
 }

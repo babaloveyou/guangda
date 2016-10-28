@@ -115,14 +115,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      */
     private int mClickBtnBeforeLogin;
     /**
-     * 登录前单击的快捷菜单pos
-     */
-    private int mFastMenuPosBeforeLogin;
-    /**
-     * 登录前单击的更多菜单pos
-     */
-    private int mMoreMenuPosBeforeLogin;
-    /**
      * 登录前，如果在行情模块点击了“买入”或“卖出”按钮，则使用本变量记住行情模块传入的信息
      */
     private JSONObject mJsonDataFromHq;
@@ -535,7 +527,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             return;
         }
         if (parent.getCount() == 8) {
-            mFastMenuPosBeforeLogin = position;
 
             switch (position) {
                 case 0:
@@ -564,7 +555,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                     break;
             }
         } else if (parent.getCount() == 4) {
-            mMoreMenuPosBeforeLogin = position;
             switch (position) {
 
                 case 0:
@@ -1016,8 +1006,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             sendMsgToSSO(loginType);
         } else {
             Intent intent = new Intent(mActivity, TradeLoginActivity.class);
-            intent.putExtra("clickIdBeforeLogin", clickIdBeforeLogin);
-            intent.putExtra("loginType", loginType);
+            intent.putExtra(MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID, clickIdBeforeLogin);
+            intent.putExtra(Constants.LOGIN_TYPE, loginType);
+
             mActivity.startActivity(intent);
         }
     }

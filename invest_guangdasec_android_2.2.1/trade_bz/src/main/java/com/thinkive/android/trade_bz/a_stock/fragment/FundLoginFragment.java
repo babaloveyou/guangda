@@ -215,8 +215,10 @@ public class FundLoginFragment extends AbsBaseFragment {
     @Override
     protected void initData() {
         Bundle bundle = getArguments();
+        System.out.println("TradeLoginActivity--logintype="+bundle.getString(Constants.LOGIN_TYPE).toString());
+        System.out.println("TradeLoginActivity--preId="+bundle.getInt(NormalTradeFragment.MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID) + "".toString());
         if (bundle != null) {
-            mClickIdBeforeLogin = bundle.getInt("clickIdBeforeLogin");
+            mClickIdBeforeLogin = bundle.getInt(NormalTradeFragment.MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID);
             mJsonDataFromHq = bundle.getString("jsonDataFormHq");
             mLoginType = bundle.getString(Constants.LOGIN_TYPE);
         }

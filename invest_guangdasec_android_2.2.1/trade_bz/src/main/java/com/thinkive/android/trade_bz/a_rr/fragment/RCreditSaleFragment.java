@@ -870,8 +870,9 @@ public class RCreditSaleFragment extends AbsBaseFragment implements ViewPager.On
         }
         try {
             double entrustAmountDouble = Double.parseDouble(entrustAmount);
+            double entrustMaxAmountDouble = Double.parseDouble(mStockLinkageBean.getStock_max_amount());
             // 如果是买入，那么数量必须能被100整除，否则报错
-            if (entrustAmountDouble % 100 != 0) {
+            if (entrustAmountDouble % 100 != 0&& entrustAmountDouble != entrustMaxAmountDouble) {
                 ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_buy_amount_error));
                 TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
                 return;

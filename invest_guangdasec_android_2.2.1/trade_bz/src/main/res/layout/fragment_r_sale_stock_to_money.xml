@@ -5,46 +5,6 @@
     android:background="@color/trade_normal_background"
     android:orientation="vertical">
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:orientation="horizontal"
-        android:id="@+id/rg_buy_or_sale"
-        android:visibility="visible">
-
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:checked="true"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="@string/r_order_one"
-            android:textColor="@color/trade_color_white"
-            android:background="@drawable/sale_selector_left"
-            android:id="@+id/rb_buy_or_sale"/>
-
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:layout_marginLeft="-1dp"
-            android:text="@string/r_return_contract"
-            android:textColor="@color/trade_sale"
-            android:background="@drawable/sale_selector_right"
-            android:id="@+id/rb_select_contract" />
-
-    </RadioGroup>
 
     <LinearLayout
         android:id="@+id/ll_r_choose_shock"

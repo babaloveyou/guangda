@@ -40,8 +40,8 @@ public class TradeLoginActivity extends AbsNavBarActivity {
     protected void initViews() {
         super.initViews();
         setBackBtnVisibility(View.VISIBLE);
-        replaceFragment(R.id.fl_container, mLoginParentFragment);
         mLoginParentFragment.setArguments(getIntent().getExtras());
+        replaceFragment(R.id.fl_container, mLoginParentFragment);
     }
 
     /**

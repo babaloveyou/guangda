@@ -857,7 +857,6 @@
     <string name="net_vote7">资产账户</string>
     <string name="net_vote8">交易类别</string>
     <string name="net_vote9">证券账户</string>
-    <string name="network_error_prompt">请重新登录</string>
     <string name="new_stock0">一键申购</string>
     <string name="new_stock1">申购记录查询</string>
     <string name="new_stock10">申购上限</string>

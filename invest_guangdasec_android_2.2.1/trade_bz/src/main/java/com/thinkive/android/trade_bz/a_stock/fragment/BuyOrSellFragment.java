@@ -709,7 +709,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mService = new BuyOrSellServiceImpl(this);
         addBottomFragments();
         mActivity = (MultiTradeActivity) getActivity();
-        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mActivity, mBottomFragmentsList);
+        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mBottomFragmentsList);
         mResources = CoreApplication.getInstance().getResources();
         mController = new BuyOrSellViewController(this);
         mFontManager = FontManager.getInstance(mActivity);

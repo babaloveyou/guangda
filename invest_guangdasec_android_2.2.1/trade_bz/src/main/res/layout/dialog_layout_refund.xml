@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="match_parent">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/actionsheet_top_selector"
+        android:gravity="center"
+        android:text="选择还款业务"
+        android:textSize="14sp"  />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
+    <Button
+        android:id="@+id/btn_fund_refund"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/actionsheet_mid_selector"
+        android:gravity="center"
+        android:text="现金还款"
+        android:textColor="@color/statusbar_main"
+        android:textSize="18sp"  />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
+    <Button
+        android:id="@+id/btn_stock_refund"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/actionsheet_bottom_selector"
+        android:gravity="center"
+        android:text="卖券还款"
+        android:textColor="@color/statusbar_main"
+        android:textSize="18sp"
+         />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/actionsheet_single_selector"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/statusbar_main"
+        android:textSize="18sp"
+         />
+
+</LinearLayout>

@@ -1118,7 +1118,6 @@
     <string name="net_vote7">资产账户</string>
     <string name="net_vote8">交易类别</string>
     <string name="net_vote9">证券账户</string>
-    <string name="network_error_prompt">请重新登录</string>
     <string name="new_stock0">一键申购</string>
     <string name="new_stock1">申购记录查询</string>
     <string name="new_stock10">申购上限</string>
@@ -1704,6 +1703,28 @@
     <string name="unlock_pattern_fail">密码错误,您还剩余%d次机会</string>
     <string name="unlock_pattern_suc">解锁成功</string>
     <string name="use_other_account_login">用其他账号登录</string>
+    <style name="ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
+    </style>
+    <style name="ActionSheetDialogStyle" parent="@android:style/Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/ActionSheetDialogAnimation</item>
+    </style>
     <style name="ActivityTitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">45dp</item>

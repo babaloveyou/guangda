@@ -7,10 +7,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.ViewGroup;
 
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,24 +15,16 @@ import java.util.List;
  */
 public class TradeBottomFragmentVpAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragments;
-    private MultiTradeActivity mMultiTradeActivity;
-    private MultiCreditTradeActivity mMultiCreditTradeActivity;
-    private ArrayList<MyStoreStockBean> mListData;
     private FragmentManager mFragmentManager;
-    private boolean isNormal = true;
-    public TradeBottomFragmentVpAdapter(FragmentManager fm, MultiTradeActivity activity, List<Fragment> fragments) {
+    public TradeBottomFragmentVpAdapter(FragmentManager fm, List<Fragment> fragments) {
         super(fm);
-        this.mMultiTradeActivity = activity;
         mFragments = fragments;
         mFragmentManager = fm;
-        isNormal = true;
     }
     public TradeBottomFragmentVpAdapter(FragmentManager fm, MultiCreditTradeActivity activity, List<Fragment> fragments) {
         super(fm);
-        this.mMultiCreditTradeActivity = activity;
         mFragments = fragments;
         mFragmentManager = fm;
-        isNormal = false;
     }
 
     @Override

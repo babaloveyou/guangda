@@ -64,14 +64,12 @@ public class LoginParentFragment extends Fragment implements View.OnClickListene
         mFlContainer = (FrameLayout) view.findViewById(R.id.fl_container);
         mFundLoginFragment = new FundLoginFragment();
         mSunEFragment = new SunEFragment();
-        mBundle = new Bundle();
-        mBundle.putString(Constants.LOGIN_TYPE,getArguments().getString("loginType"));
-        mBundle.putString("clickIdBeforeLogin",getArguments().getString("clickIdBeforeLogin"));
-        mFundLoginFragment.setArguments(mBundle);
+        mFundLoginFragment.setArguments(getArguments());
         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fl_container_childe, mFundLoginFragment, getActivity().getResources().getString(R.string.fund_login)).commit();
         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.fl_container_childe, mSunEFragment, getActivity().getResources().getString(R.string.sune_login)).commit();
         getActivity().getSupportFragmentManager().beginTransaction().hide(mSunEFragment).commit();
-        switch (getArguments().getString("loginType")) {
+        Bundle extras = getArguments();
+        switch (getArguments().getString(Constants.LOGIN_TYPE)) {
             case TradeLoginManager.LOGIN_TYPE_NORMAL:
                 mHeaderText.setText(getResources().getString(R.string.normal_trade_login));
                 break;

@@ -9,21 +9,21 @@ import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCollaterBuyOrSellFragment;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
-import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
+import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
 import com.thinkive.android.trade_bz.a_stock.bean.StockBuySellDish;
 import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
-import com.thinkive.android.trade_bz.request.RR303003;
 import com.thinkive.android.trade_bz.request.Request303000;
 import com.thinkive.android.trade_bz.request.Request303001;
+import com.thinkive.android.trade_bz.request.Request303004;
 import com.thinkive.android.trade_bz.request.RequestHQ20000;
 import com.thinkive.android.trade_bz.request.RequestHQ20003;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
+import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
-
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -60,23 +60,7 @@ public class RCollaterBuyOrSaleServiceImpl extends BasicServiceImpl {
 
     }
 
-    /**
-     * 发起请求，获取持仓列表
-     */
-    public void getHoldList() {
-        HashMap<String, String> paramMap = new HashMap<String, String>();
-        new RR303003(paramMap, new IRequestAction() {
-            @Override
-            public void onSuccess(Context context, Bundle bundle) {
-                ArrayList<MyStoreStockBean> dataList = bundle.getParcelableArrayList(RR303003.BUNDLE_KEY_ROLLATER);
-                mFragment.getStoreData(dataList);
-            }
-            @Override
-            public void onFailed(Context context, Bundle bundle) {
-                ToastUtils.toast(context, bundle.getString(RR303003.ERROR_INFO));
-            }
-        }).request();
-    }
+
 
     public void request20000ForHqData(final String stockCode, final String market) {
         HashMap<String, String> paramMap = new HashMap<String, String>();
@@ -129,6 +113,8 @@ public class RCollaterBuyOrSaleServiceImpl extends BasicServiceImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 StockBuySellDish bean = (StockBuySellDish) bundle.getSerializable(RequestHQ20003.BUNDLE_KEY_WUDANG);
+                String nowPrice = bundle.getString(RequestHQ20003.NOW_PRICE);
+                String increase = bundle.getString(RequestHQ20003.INCREASE_AMOUNT);
                 if (bean != null) {
                     ArrayList<String> valueList = bean.getValueBuySale();
                     for (int i = 0; i <= 4; i++) { // 卖价五~卖价一
@@ -151,7 +137,7 @@ public class RCollaterBuyOrSaleServiceImpl extends BasicServiceImpl {
                     for (int i = 15; i <= 19; i++) { // 买量一~买量五
                         valueList.set(i, TradeUtils.formateDataWithQUnit(valueList.get(i)));
                     }
-                    mFragment.onGetWuDangDishData(bean,market,exchangeType,isSetText);
+                    mFragment.onGetWuDangDishData(bean,market,exchangeType,isSetText,nowPrice,increase);
                 }
             }
             @Override
@@ -199,6 +185,20 @@ public class RCollaterBuyOrSaleServiceImpl extends BasicServiceImpl {
                     stockLinkageBean.setMarket(market);
                     // 传输数据到fragment
                     mFragment.onGetStockLinkAgeData(stockLinkageBean);
+                    //信用交易可用资金查询
+                    new Request303004(new HashMap<String, String>(), new IRequestAction() {
+                        @Override
+                        public void onSuccess(Context context, Bundle bundle) {
+                            MoneySelectBean bean = (MoneySelectBean) bundle.getSerializable(Request303004.BUNDLE_KEY_R_MYHOLD_HEAD);
+                            mFragment.onGetCanUseBalance(bean.getEnable_balance() + " 元");
+                        }
+
+                        @Override
+                        public void onFailed(Context context, Bundle bundle) {
+                            String error = bundle.getString(Request303004.BUNDLE_KEY_R_MYHOLD_HEAD);
+                            ToastUtil.showToast(error);
+                        }
+                    }).request();
                 }
             }
             @Override

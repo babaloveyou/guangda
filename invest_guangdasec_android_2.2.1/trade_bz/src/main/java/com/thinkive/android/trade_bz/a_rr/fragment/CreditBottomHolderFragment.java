@@ -26,12 +26,15 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
     private CreditBottomHolderServicesImpl mServices;
     private RCreditBuyFragment mRCreditBuyFragment;
     private RCreditSaleFragment mRCreditSaleFragment;
+    private RCollaterBuyOrSellFragment mRCollaterBuyOrSellFragment;
     private View mView;
     private ListView mLv;
     private LinearLayout mNoDataLl;
     private LinearLayout mLoadingLl;
     private CreditBottomHoldLvAdapter mAdapter;
-    private boolean isBuy = true;
+    private String mCurrentFragment = null;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -84,11 +87,15 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ArrayList<MyStoreStockBean> dataList = mAdapter.getListData();
                 MyStoreStockBean bean = dataList.get(position);
-                if (isBuy) {
+                if (mCurrentFragment == null) {
+                    return;
+                } else if(mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())){
                     mRCreditBuyFragment.getHolderStock(bean);
-                } else {
+                } else if(mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())){
                     mRCreditSaleFragment.getHolderStock(bean);
-                } 
+                }else if(mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName())){
+                    mRCollaterBuyOrSellFragment.getHolderStock(bean);
+                }
             }
         });
     }
@@ -113,10 +120,13 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
     public void setFragment(Fragment fragment) {
         if (fragment instanceof RCreditBuyFragment) {
             mRCreditBuyFragment = (RCreditBuyFragment) fragment;
-            isBuy = true;
-        } else {
+            mCurrentFragment = RCreditBuyFragment.class.getSimpleName();
+        } else if (fragment instanceof RCreditSaleFragment) {
             mRCreditSaleFragment = (RCreditSaleFragment) fragment;
-            isBuy = false;
+            mCurrentFragment = RCreditSaleFragment.class.getSimpleName();
+        } else if(fragment instanceof RCollaterBuyOrSellFragment){
+            mRCollaterBuyOrSellFragment = (RCollaterBuyOrSellFragment) fragment;
+            mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
         }
     }
 
