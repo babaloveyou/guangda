@@ -33,6 +33,8 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
     private LinearLayout mLoadingLl;
     private CreditBottomHoldLvAdapter mAdapter;
     private String mCurrentFragment = null;
+    private RSaleStockToMoneyFragment mRSaleStockToMoneyFragment;
+    private RBuyStockToStockFragment mRBuyStockToStockFragment;
 
 
     @Nullable
@@ -89,12 +91,16 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
                 MyStoreStockBean bean = dataList.get(position);
                 if (mCurrentFragment == null) {
                     return;
-                } else if(mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())){
+                } else if (mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())) {
                     mRCreditBuyFragment.getHolderStock(bean);
-                } else if(mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())){
+                } else if (mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())) {
                     mRCreditSaleFragment.getHolderStock(bean);
-                }else if(mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName())){
+                } else if (mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName())) {
                     mRCollaterBuyOrSellFragment.getHolderStock(bean);
+                } else if (mCurrentFragment.equals(RSaleStockToMoneyFragment.class.getSimpleName())) {
+                    mRSaleStockToMoneyFragment.getHolderStock(bean);
+                }else if (mCurrentFragment.equals(RBuyStockToStockFragment.class.getSimpleName())) {
+                    mRBuyStockToStockFragment.getHolderStock(bean);
                 }
             }
         });
@@ -124,9 +130,15 @@ public class CreditBottomHolderFragment extends BaseLazzyFragment {
         } else if (fragment instanceof RCreditSaleFragment) {
             mRCreditSaleFragment = (RCreditSaleFragment) fragment;
             mCurrentFragment = RCreditSaleFragment.class.getSimpleName();
-        } else if(fragment instanceof RCollaterBuyOrSellFragment){
+        } else if (fragment instanceof RCollaterBuyOrSellFragment) {
             mRCollaterBuyOrSellFragment = (RCollaterBuyOrSellFragment) fragment;
             mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
+        } else if (fragment instanceof RSaleStockToMoneyFragment) {
+            mRSaleStockToMoneyFragment = (RSaleStockToMoneyFragment) fragment;
+            mCurrentFragment = RSaleStockToMoneyFragment.class.getSimpleName();
+        } else if (fragment instanceof RBuyStockToStockFragment) {
+            mRBuyStockToStockFragment = (RBuyStockToStockFragment) fragment;
+            mCurrentFragment = RBuyStockToStockFragment.class.getSimpleName();
         }
     }
 

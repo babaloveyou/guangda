@@ -512,7 +512,7 @@ public class RCreditSaleFragment extends AbsBaseFragment implements ViewPager.On
     protected void initData() {
         addBottomFragments();
         mActivity = (MultiCreditTradeActivity) getActivity();
-        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mActivity, mBottomFragmentsList);
+        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mBottomFragmentsList);
         mResources = CoreApplication.getInstance().getResources();
         mController = new RCreditSaleViewController(this);
         mFontManager = FontManager.getInstance(mActivity);

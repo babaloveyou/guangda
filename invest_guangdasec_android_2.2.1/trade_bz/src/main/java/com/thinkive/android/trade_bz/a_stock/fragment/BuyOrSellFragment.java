@@ -810,6 +810,14 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             mInPutAmountFl.setBackgroundResource(sale_no_corner_kong);
             mTv1.setBackgroundColor(mResources.getColor(R.color.trade_sale));
             mTv2.setBackgroundColor(mResources.getColor(R.color.trade_sale));
+            mAllNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mHalfNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mThirdNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mQuarterNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mAllNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
+            mHalfNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
+            mThirdNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
+            mQuarterNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
         }
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdStockCode, KeyboardManager.KEYBOARD_TYPE_STOCK, new TradeTools.OnFocusChangeWithKeyboard() {
             @Override

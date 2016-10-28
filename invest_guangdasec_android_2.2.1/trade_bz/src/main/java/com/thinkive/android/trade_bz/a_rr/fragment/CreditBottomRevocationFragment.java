@@ -32,6 +32,8 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
     private LinearLayout mLoadingLl;
     private CreditBottomRevocationAdapter mAdapter;
     private String mCurrentFragment = null;
+    private RSaleStockToMoneyFragment mRSaleStockToMoneyFragment;
+    private RBuyStockToStockFragment mRBuyStockToStockFragment;
 
     @Nullable
     @Override
@@ -109,6 +111,12 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
         } else if (fragment instanceof RCollaterBuyOrSellFragment) {
             mRCollaterBuyOrSellFragment = (RCollaterBuyOrSellFragment) fragment;
             mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
+        } else if (fragment instanceof RSaleStockToMoneyFragment) {
+            mRSaleStockToMoneyFragment = (RSaleStockToMoneyFragment) fragment;
+            mCurrentFragment = RSaleStockToMoneyFragment.class.getSimpleName();
+        }else if (fragment instanceof RBuyStockToStockFragment) {
+            mRBuyStockToStockFragment = (RBuyStockToStockFragment) fragment;
+            mCurrentFragment = RBuyStockToStockFragment.class.getSimpleName();
         }
     }
 
@@ -139,9 +147,9 @@ public class CreditBottomRevocationFragment extends BaseLazzyFragment {
             }
             if (mCurrentFragment == null) {
                 return;
-            } else if (mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())) {
+            } else if (mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())||mCurrentFragment.equals(RBuyStockToStockFragment.class.getSimpleName())) {
                 setBuyAdapter(revocationBeensBuy);
-            } else if (mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())) {
+            } else if (mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())||mCurrentFragment.equals(RSaleStockToMoneyFragment.class.getSimpleName())) {
                 setSaleAdapter(revocationBeensSell);
             } else if (mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName())) {
                 int buyOrSell = mRCollaterBuyOrSellFragment.getBuyOrSell();

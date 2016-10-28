@@ -134,7 +134,7 @@ public class TradeParentFragment extends Fragment implements View.OnClickListene
         mNormalTabTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_bg_trade_tab_normal));
         getChildFragmentManager().beginTransaction().show(mCreditTradeFragment).commit();
         getChildFragmentManager().beginTransaction().hide(mNormalTradeFragment).commit();
-
+        mCreditTradeFragment.scrollToTop();
     }
 
     private void showNormal() {
@@ -144,6 +144,7 @@ public class TradeParentFragment extends Fragment implements View.OnClickListene
         mCreditTabTv.setBackgroundDrawable(getResources().getDrawable(R.drawable.shape_bg_trade_tab_credit));
         getChildFragmentManager().beginTransaction().show(mNormalTradeFragment).commit();
         getChildFragmentManager().beginTransaction().hide(mCreditTradeFragment).commit();
+        mNormalTradeFragment.scrollToTop();
     }
 
 

@@ -513,7 +513,7 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     protected void initData() {
         addBottomFragments();
         mActivity = (MultiCreditTradeActivity) getActivity();
-        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mActivity, mBottomFragmentsList);
+        mTradeBottomFragmentVpAdapter = new TradeBottomFragmentVpAdapter(getChildFragmentManager(), mBottomFragmentsList);
         mResources = CoreApplication.getInstance().getResources();
         mController = new RCreditBuyViewController(this);
         mFontManager = FontManager.getInstance(mActivity);

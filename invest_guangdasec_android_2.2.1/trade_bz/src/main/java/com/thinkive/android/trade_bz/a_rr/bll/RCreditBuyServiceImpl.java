@@ -233,6 +233,7 @@ public class RCreditBuyServiceImpl extends BasicServiceImpl {
                 // 委托成功后，清空界面上的数据
                 mFragment.clearDataInViews();
                 mFragment.jumpToRevotion();
+
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {

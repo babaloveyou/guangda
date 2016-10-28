@@ -100,6 +100,7 @@ public class StockFuzzyQueryManager {
                     mSearchStocksAdapter.setListData(dataList);
                     mSearchStocksAdapter.notifyDataSetChanged();
                     mLastInputTime = curTime;
+                    mPopupWindow.getListView().setSelection(0);
                     showQueryPopupWindow(parentView);
                 }
             });

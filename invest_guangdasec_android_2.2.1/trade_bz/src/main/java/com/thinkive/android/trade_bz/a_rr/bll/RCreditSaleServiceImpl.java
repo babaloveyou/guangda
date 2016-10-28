@@ -228,7 +228,6 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
                 loadingDialogUtil.hideDialog();
                 mFragment.clearDataInViews();
                 mFragment.onSuccessEntrustTrade(bundle.getString(Request303001.BUNDLE_KEY_ENTRUST_ORDER));
-                mFragment.jumpToRevotion();
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {

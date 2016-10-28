@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
@@ -155,6 +156,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     private String[] mFastMenuTitles = {"买入", "卖出", "委托撤单", "个人资产", "个人持仓", "当日委托", "当日成交", "银行转账"};
     private int[] mImgRes = {R.mipmap.buyin, R.mipmap.sellout, R.mipmap.repeal_bill, R.mipmap.personal_ass, R.mipmap.take_position, R.mipmap.today_trust, R.mipmap.today_vol, R.mipmap.bank_trans};
     private TradeParentFragment mParentFragment;//持有的 在TradeParentFragment初始化好的TradeParentFragment对象
+    private ScrollView mScrollView;
 
 
     @Override
@@ -257,6 +259,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         mChageTradePwdRl = (RelativeLayout) view.findViewById(R.id.rl_change_tradepwd);
         mChangeFundPwdRl = (RelativeLayout) view.findViewById(R.id.rl_change_fundpwd);
         mLogOutTv = (TextView) view.findViewById(R.id.tv_exit_logout);
+        mScrollView = (ScrollView) view.findViewById(R.id.scroll_parent);
 
 
     }
@@ -1156,6 +1159,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         mLogOutTv.setVisibility(View.GONE);
     }
 
+    public void scrollToTop() {
+        mScrollView.fullScroll(ScrollView.FOCUS_UP);
+    }
 
     /**
      * 负责接收广播以实现登录结束后，自动从本页跳转到登录前用户点击过得按钮所对应的页面。

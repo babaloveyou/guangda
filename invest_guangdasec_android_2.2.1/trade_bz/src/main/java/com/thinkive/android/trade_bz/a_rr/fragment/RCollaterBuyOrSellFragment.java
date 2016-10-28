@@ -573,6 +573,15 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
             this.mRootView.findViewById(R.id.ll_input_price).setBackgroundResource(R.drawable.sale_no_corner_kong);
             this.mRootView.findViewById(R.id.ll_input_amount).setBackgroundResource(R.drawable.sale_no_corner_kong);
             this.mEdStockPrice.setHint(this.mResources.getString(R.string.trade_hint_input_sale_price));
+            mAllNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mHalfNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mThirdNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+            mQuarterNumTv.setBackgroundResource(R.drawable.shape_bg_btn_num_sale);
+
+            mAllNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
+            mHalfNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
+            mThirdNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
+            mQuarterNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
             mShowContent.setText("卖担保品");
         }
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdStockCode, KeyboardManager.KEYBOARD_TYPE_STOCK, new TradeTools.OnFocusChangeWithKeyboard() {

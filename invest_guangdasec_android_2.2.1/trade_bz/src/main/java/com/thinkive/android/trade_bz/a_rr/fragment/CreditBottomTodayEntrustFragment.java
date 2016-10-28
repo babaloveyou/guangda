@@ -33,6 +33,9 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
     private CreditBottomTodayEntrustAdapter mAdapter;
     private boolean isBuy = true;
     private String mCurrentFragment = null;
+    private RSaleStockToMoneyFragment mRSaleStockToMoneyFragment;
+    private RBuyStockToStockFragment mRBuyStockToStockFragment;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -103,11 +106,28 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
         if (fragment instanceof RCreditBuyFragment) {
             mRCreditBuyFragment = (RCreditBuyFragment) fragment;
             mCurrentFragment = RCreditBuyFragment.class.getSimpleName();
+            isBuy = true;
         } else if (fragment instanceof RCreditSaleFragment) {
             mRCreditSaleFragment = (RCreditSaleFragment) fragment;
             mCurrentFragment = RCreditSaleFragment.class.getSimpleName();
+            isBuy = false;
         } else if(fragment instanceof RCollaterBuyOrSellFragment){
             mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
+            mRCollaterBuyOrSellFragment = (RCollaterBuyOrSellFragment) fragment;
+            int buyOrSell = mRCollaterBuyOrSellFragment.getBuyOrSell();
+            if (buyOrSell == 0) {
+                isBuy = true;
+            } else {
+                isBuy = false;
+            }
+        } else if (fragment instanceof RSaleStockToMoneyFragment) {
+            mCurrentFragment = RSaleStockToMoneyFragment.class.getSimpleName();
+            mRSaleStockToMoneyFragment = (RSaleStockToMoneyFragment) fragment;
+            isBuy = false;
+        }else if (fragment instanceof RBuyStockToStockFragment) {
+            mCurrentFragment = RBuyStockToStockFragment.class.getSimpleName();
+            mRBuyStockToStockFragment = (RBuyStockToStockFragment) fragment;
+            isBuy = true;
         }
     }
 

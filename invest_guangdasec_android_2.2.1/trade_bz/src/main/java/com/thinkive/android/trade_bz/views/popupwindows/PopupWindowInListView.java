@@ -109,4 +109,8 @@ public class PopupWindowInListView extends PopupWindow {
     public int getListViewHeight(ListAdapter adapter) {
         return getListViewHeight(adapter,400);
     }
+
+    public ListView getListView() {
+        return mListView;
+    }
 }

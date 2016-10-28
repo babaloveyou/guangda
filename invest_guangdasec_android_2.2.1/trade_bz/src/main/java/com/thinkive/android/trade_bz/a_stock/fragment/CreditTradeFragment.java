@@ -22,6 +22,7 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
@@ -161,6 +162,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private TradeParentFragment mParentFragment;//持有的 在TradeParentFragment初始化好的TradeParentFragment对象
     private RelativeLayout mShowDateRl;
     private Dialog mDialog;
+    private ScrollView mScrollView;
 
 
     @Override
@@ -205,7 +207,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     @Override
     public void onResume() {
         super.onResume();
-        mDialog.dismiss();
         //实时更新主页状态
         updateLogoutBtnState();
         //防止测试点点点
@@ -264,6 +265,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mCloseOutRl = (RelativeLayout) view.findViewById(R.id.rl_close_out_credit);
         mShowDateRl = (RelativeLayout) view.findViewById(R.id.contract_show_data_credit);
         mLogOutTv = (TextView) view.findViewById(R.id.tv_exit_logout_credit);
+        mScrollView = (ScrollView) view.findViewById(R.id.scroll_parent);
 
 
     }
@@ -1279,6 +1281,10 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
 
     public void hideExitBtn() {
         mLogOutTv.setVisibility(View.GONE);
+    }
+
+    public void scrollToTop() {
+        mScrollView.fullScroll(ScrollView.FOCUS_UP);
     }
 
 

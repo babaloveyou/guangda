@@ -6,8 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.view.ViewGroup;
 
-import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
-
 import java.util.List;
 
 /**
@@ -17,11 +15,6 @@ public class TradeBottomFragmentVpAdapter extends FragmentPagerAdapter {
     private List<Fragment> mFragments;
     private FragmentManager mFragmentManager;
     public TradeBottomFragmentVpAdapter(FragmentManager fm, List<Fragment> fragments) {
-        super(fm);
-        mFragments = fragments;
-        mFragmentManager = fm;
-    }
-    public TradeBottomFragmentVpAdapter(FragmentManager fm, MultiCreditTradeActivity activity, List<Fragment> fragments) {
         super(fm);
         mFragments = fragments;
         mFragmentManager = fm;

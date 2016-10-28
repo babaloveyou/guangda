@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/trade_color_white"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/trade_color_white"
+              android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,6 +47,7 @@
                     android:textSize="@dimen/buysell_button_text_size"
                     android:textStyle="normal"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -68,6 +69,7 @@
                     android:textSize="@dimen/buysell_button_text_size"
                     android:textStyle="normal"/>
             </LinearLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -137,49 +139,48 @@
                 android:visibility="visible">
 
                 <TextView
-                    android:paddingTop="3dp"
-                    android:drawableTop="@mipmap/reduce_icon"
                     android:id="@+id/ibt_subtract"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/trade_sale"
+                    android:drawableTop="@mipmap/reduce_icon"
                     android:gravity="center"
+                    android:paddingTop="3dp"
                     android:text="0.01"
                     android:textColor="@color/trade_color_white"
                     android:textSize="12sp"/>
 
                 <com.thinkive.android.trade_bz.views.ClearEditText
                     android:id="@+id/edt_stock_price"
-                    android:hint="委托价格"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:maxLength="7"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="3"
                     android:background="@null"
                     android:gravity="center"
+                    android:hint="委托价格"
                     android:inputType="numberDecimal"
+                    android:maxLength="7"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
                     android:textColor="@color/trade_text_color3"
                     android:textColorHint="@color/trade_text_color9"
                     android:textSize="16sp"
                     android:textStyle="normal"/>
 
                 <TextView
-                    android:paddingTop="3dp"
-                    android:drawableTop="@mipmap/add_icon"
                     android:id="@+id/ibt_add"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@color/trade_sale"
+                    android:drawableTop="@mipmap/add_icon"
                     android:gravity="center"
+                    android:paddingTop="3dp"
                     android:text="0.01"
                     android:textColor="@color/trade_color_white"
                     android:textSize="12sp"/>
             </LinearLayout>
-
 
 
             <FrameLayout
@@ -192,18 +193,15 @@
                 >
 
                 <LinearLayout
-                    android:visibility="gone"
                     android:id="@+id/ll_stock_num_after"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center_vertical"
                     android:paddingRight="7dp"
+                    android:visibility="gone"
                     >
 
                     <com.thinkive.android.trade_bz.views.ClearEditText
-                        android:longClickable="false"
-                        android:paddingLeft="2dp"
-                        android:maxLength="7"
                         android:id="@+id/ed_entrust_num"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -211,6 +209,9 @@
                         android:background="@null"
                         android:gravity="center|left"
                         android:inputType="numberDecimal"
+                        android:longClickable="false"
+                        android:maxLength="7"
+                        android:paddingLeft="2dp"
                         android:textColor="@color/trade_text_color3"
                         android:textSize="16sp"
                         android:textStyle="normal"
@@ -262,6 +263,7 @@
                     />
 
             </FrameLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -272,12 +274,14 @@
                 <TextView
                     android:id="@+id/tv_all_num"
                     style="@style/style_btn_num"
+                    android:background="@drawable/shape_bg_btn_num_sale"
                     android:text="全仓"/>
 
                 <TextView
                     android:id="@+id/tv_half_num"
                     style="@style/style_btn_num"
                     android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_bg_btn_num_sale"
                     android:text="1/2"
                     />
 
@@ -285,14 +289,17 @@
                     android:id="@+id/tv_third_num"
                     style="@style/style_btn_num"
                     android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_bg_btn_num_sale"
                     android:text="1/3"/>
 
                 <TextView
                     android:id="@+id/tv_quarter_num"
                     style="@style/style_btn_num"
                     android:layout_marginLeft="10dp"
+                    android:background="@drawable/shape_bg_btn_num_sale"
                     android:text="1/4"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -307,7 +314,6 @@
                     android:textSize="12sp"/>
 
                 <TextView
-                    android:textColorHint="@color/text_reming"
                     android:id="@+id/tv_can_use_money"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -315,16 +321,17 @@
                     android:gravity="center"
                     android:hint="   - -"
                     android:textColor="@color/text_et_input_french_black"
+                    android:textColorHint="@color/text_reming"
                     android:textSize="12sp"/>
             </LinearLayout>
 
             <Button
-                android:text="@string/hk_sell"
                 android:id="@+id/btn_buy_or_sell"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:background="@color/trade_sale"
+                android:text="@string/hk_sell"
                 android:textColor="@color/trade_color_white"
                 android:textSize="@dimen/buysell_button_text_size"/>
 
@@ -338,6 +345,7 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:visibility="visible">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -392,6 +400,7 @@
                         />
                 </LinearLayout>
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"

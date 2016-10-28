@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.RadioGroup;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.fragment.RBuyStockToStockFragment;
@@ -20,7 +19,7 @@ import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
  */
 public class RBuyStockToStockController extends AbsBaseController implements
         View.OnClickListener, ListView.OnItemClickListener, TextWatcher,
-        View.OnFocusChangeListener, RadioGroup.OnCheckedChangeListener {
+        View.OnFocusChangeListener {
 
     private RBuyStockToStockFragment mFragment = null;
 
@@ -43,9 +42,6 @@ public class RBuyStockToStockController extends AbsBaseController implements
             case ON_FOCUS_CHANGE:
                 view.setOnFocusChangeListener(this);
                 break;
-            case ON_CHECK_CHANGE:
-                ((RadioGroup)view).setOnCheckedChangeListener(this);
-                break;
         }
     }
 
@@ -58,9 +54,7 @@ public class RBuyStockToStockController extends AbsBaseController implements
             mFragment.onClickTradeAdd();
         } else if (resId == R.id.btn_buy_or_sell) { // 买入或者卖出按钮
             mFragment.onClickTrade();
-        }  else if (resId == R.id.ll_market_entrust) { // 市价委托，弹出列表框
-            mFragment.onClickMarketForPop();
-        }   else if (resId == R.id.ll_buy1 ||
+        }  else if (resId == R.id.ll_buy1 ||
                 resId == R.id.ll_buy2 ||
                 resId == R.id.ll_buy3 ||
                 resId == R.id.ll_buy4 ||
@@ -75,14 +69,17 @@ public class RBuyStockToStockController extends AbsBaseController implements
             mFragment.onClickDownLimit();
         } else if (resId == R.id.tv_up_limit) { // 跌停价
             mFragment.onClickUpLimit();
-        } else if (resId == R.id.tv_stock_name) { // 股票名称
-            mFragment.onClickStockName();
-        } else if(resId == R.id.tv_r_choose_stock_count){//选择合约
-            mFragment.onClickTvChooseContract();
-        }else if (resId == R.id.tv_trade_limit) {//限价委托
-            mFragment.onClickTradeLimit();
-        } else if (resId == R.id.tv_trade_market){//市价委托
-            mFragment.onClickTradeMarket();
+        } else if (resId == R.id.ll_code_name) {//点击名字
+            mFragment.onNameClick();
+        }
+        else if (resId == R.id.tv_all_num) {//全仓按钮
+            mFragment.setStockNumAll();
+        } else if (resId == R.id.tv_half_num) {//半仓
+            mFragment.setStockNumHalf();
+        } else if (resId == R.id.tv_third_num) {//1/3仓
+            mFragment.setStockNumThird();
+        }else if (resId == R.id.tv_quarter_num) {//1/4仓
+            mFragment.setStockNumQuarter();
         }
     }
 
@@ -91,9 +88,7 @@ public class RBuyStockToStockController extends AbsBaseController implements
         int adapterViewId = parent.getId();
         if (adapterViewId == R.id.lv_pop) { // 股票代码搜索提示列表的item单击事件
             mFragment.onSearchListViewItemClick(position);
-        } else if (adapterViewId == R.id.lv_show_stock) { // 股票持仓列表的item单击事件
-            mFragment.onStoreListViewItemClick(position);
-        } else {
+        }else {
             mFragment.onClickBuyOrSaleDisk(view);
         }
     }
@@ -121,8 +116,5 @@ public class RBuyStockToStockController extends AbsBaseController implements
         }
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup group, int checkedId) {
-        mFragment.onClickRadioButton(checkedId);
-    }
+
 }
