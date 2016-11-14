@@ -1,196 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/ll_hold_list_item_view"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_press_list_item2"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:orientation="horizontal"
-                  android:layout_width="match_parent"
-                  android:layout_height="55dp">
-        <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
             <TextView
-                    android:id="@+id/tv_securities"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/no_text_set"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/buysell_button_text_size"
-                    android:paddingBottom="2dp"
-                    android:textColor="@color/trade_text_color6"/>
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="浦发银行"
+                android:textColor="@color/text_et_input_french_black"
+                android:textSize="16sp"/>
+
             <TextView
-                    android:id="@+id/tv_market_value"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/no_text_set"
-                    android:gravity="center"
-                    android:paddingBottom="4dp"
-                    android:textStyle="normal"
-                    android:textSize="@dimen/store_text_size"
-                    android:textColor="@color/trade_text_color6"/>
+                android:id="@+id/tv_code"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:textColor="@color/text_reming"
+                android:textSize="14sp"/>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_market_price"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/text_reming"
+                android:textSize="14sp"/>
+
+
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/trade_normal_background"/>
+
         <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-            <TextView
-                    android:id="@+id/tv_win_lose_num"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/no_text_set"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="2dp"
-                    android:textStyle="normal"
-                    android:textColor="@color/trade_text_color6"/>
-            <TextView
+                <TextView
                     android:id="@+id/tv_win_lose_rate"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:gravity="center_vertical|left"
                     android:hint="@string/no_text_set"
-                    android:gravity="center"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="4dp"
+                    android:textColor="@color/trade_text_color9"
+                    android:textSize="@dimen/fund_buy_text"/>
+
+                <TextView
+                    android:id="@+id/tv_win_lose_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/no_text_set"
                     android:paddingBottom="4dp"
-                    android:textStyle="normal"
-                    android:textColor="@color/trade_text_color6"/>
-        </LinearLayout>
-        <LinearLayout
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/trade_text_color9"
+                    android:textSize="@dimen/fund_buy_text"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-            <TextView
+                <TextView
+                    android:id="@+id/tv_cost_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/no_text_set"
+                    android:paddingBottom="2dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="4dp"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tv_current_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|left"
+                    android:hint="@string/no_text_set"
+                    android:paddingBottom="4dp"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
                     android:id="@+id/tv_store"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:gravity="center_vertical|left"
                     android:hint="@string/no_text_set"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
                     android:paddingBottom="2dp"
-                    android:textStyle="normal"
-                    android:textColor="@color/trade_text_color6"/>
-            <TextView
+                    android:paddingLeft="10dp"
+                    android:paddingTop="4dp"
+                    android:textColor="@color/trade_text_color9"
+                    android:textSize="14sp"/>
+
+                <TextView
                     android:id="@+id/tv_usable"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
+                    android:gravity="center_vertical|left"
                     android:hint="@string/no_text_set"
                     android:paddingBottom="4dp"
-                    android:gravity="center"
-                    android:textStyle="normal"
-                    android:textColor="@color/trade_text_color6"/>
-        </LinearLayout>
-        <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-
-            <TextView
-                    android:id="@+id/tv_costing"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/no_text_set"
-                    android:gravity="center"
-                    android:paddingTop="4dp"
-                    android:textStyle="normal"
-                    android:paddingBottom="2dp"
-                    android:textColor="@color/trade_text_color6"/>
-            <TextView
-                    android:id="@+id/tv_now_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:hint="@string/no_text_set"
-                    android:paddingBottom="4dp"
-                    android:gravity="center"
-                    android:textStyle="normal"
-                    android:textColor="@color/trade_text_color6"/>
+                    android:paddingLeft="10dp"
+                    android:textColor="@color/trade_text_color9"
+                    android:textSize="14sp"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
     <!-- 可展开/收缩的布局部分 -->
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:orientation="vertical"
-            android:id="@+id/ll_hold_list_item_expand">
+        android:visibility="visible"
+        android:id="@+id/ll_hold_list_item_expand"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="vertical">
 
-        <View android:layout_width="match_parent"
-              android:layout_height="1dp"
-              android:layout_marginLeft="10dp"
-              android:layout_marginRight="10dp"
-              android:background="@color/trade_color_hold_line01"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/trader_door_gv_divider"/>
 
         <!-- 横向显示三个按钮的LinearLayout -->
         <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="44dp"
-                android:orientation="horizontal">
-
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
             <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
                 <TextView
-                        android:id="@+id/tv_hold_list_item_expend_buy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="@color/trade_buy"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:drawableLeft="@drawable/expand_buy"
-                        android:drawablePadding="5dp"
-                        android:text="@string/listview_expand_buy"/>
+                    android:id="@+id/tv_hold_list_item_expend_buy"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_bg_btn_buy"
+                    android:drawableLeft="@mipmap/btn_buy"
+                    android:drawablePadding="-30dp"
+                    android:gravity="center"
+                    android:paddingLeft="30dp"
+                    android:text="@string/listview_expand_buy"
+                    android:textColor="@color/white"/>
             </FrameLayout>
 
             <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
                 <TextView
-                        android:id="@+id/tv_hold_list_item_expend_sale"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="@color/trade_sale"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:drawableLeft="@drawable/expand_sale"
-                        android:drawablePadding="5dp"
-                        android:text="@string/listview_expand_sale"/>
+                    android:id="@+id/tv_hold_list_item_expend_sale"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="7.5dp"
+                    android:layout_marginRight="7.5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_bg_btn_sell"
+                    android:drawableLeft="@mipmap/btn_sale"
+                    android:drawablePadding="-30dp"
+                    android:gravity="center"
+                    android:paddingLeft="30dp"
+                    android:text="@string/listview_expand_sale"
+                    android:textColor="@color/white"/>
             </FrameLayout>
 
             <FrameLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
                 <TextView
-                        android:id="@+id/tv_hold_list_item_expend_hq"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:textColor="@color/trade_up_red"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:drawableLeft="@drawable/expand_hq"
-                        android:drawablePadding="5dp"
-                        android:text="@string/listview_expand_hq"/>
+                    android:id="@+id/tv_hold_list_item_expend_hq"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/shape_bg_btn_hq"
+                    android:drawableLeft="@mipmap/btn_hq"
+                    android:drawablePadding="-30dp"
+                    android:gravity="center"
+                    android:paddingLeft="30dp"
+                    android:text="@string/listview_expand_hq"
+                    android:textColor="@color/white"/>
             </FrameLayout>
 
         </LinearLayout>
@@ -198,8 +248,9 @@
 
     </LinearLayout>
 
-    <View android:layout_width="match_parent"
-          android:layout_height="1dp"
-          android:background="@color/trade_text_color1"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/bg_main_french_gray"/>
 
 </LinearLayout>

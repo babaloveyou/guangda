@@ -2,10 +2,11 @@
 <resources>
 
     <!--对话框-->
-    <string name="dialog_stock_name">证券名称</string>
-    <string name="dialog_stock_code">证券代码</string>
+    <string name="dialog_stock_name">股票名称</string>
+    <string name="dialog_stock_code">股票代码</string>
     <string name="dialog_entrust_buy">委托确认</string>
     <string name="dialog_buy">买卖方向</string>
+    <string name="dialog_time">委托时间</string>
     <string name="dialog_price">委托价格</string>
     <string name="dialog_entrust">委托数量</string>
     <string name="dialog_trade">成交数量</string>
@@ -115,6 +116,7 @@
     <string name="trade_hint_most_sale">最多可卖</string>
     <string name="trade_buy_rb1">市价委托</string>
     <string name="trade_buy_rb2">限价委托</string>
+    <string name="common_emp_text">--</string>
 
     <!--撤单-->
     <string name="revocation_entrust_value">委托价格</string>
@@ -178,11 +180,11 @@
     <string name="today_money_hou">后资金额</string>
 
     <!--我的持仓-->
-    <string name="money_type_num1">CNY</string>
+    <string name="money_type_num1">人民币总资产CNY</string>
     <string name="money_type_name1">¥</string>
-    <string name="money_type_num2">HKD</string>
+    <string name="money_type_num2">港元总资产HKD</string>
     <string name="money_type_name2">$</string>
-    <string name="money_type_num3">USD</string>
+    <string name="money_type_num3">美元总资产USD</string>
     <string name="money_type_name3">$</string>
     <string name="head_pager_all_money">总资产</string>
     <string name="head_pager_all_port">总盈亏</string>
@@ -495,6 +497,7 @@
     <string name="hk_order34">成交金额</string>
     <string name="hk_order35">成交数</string>
     <string name="hk_order36">(港币)</string>
+    <string name="hk_order37">参考盈亏</string>
 
     <!--港股资金股份查询-->
     <string name="hk_stock_action0">成本价</string>
@@ -1367,4 +1370,7 @@
     <string name="dialog_logout_normal">确定要退出普通交易吗?</string>
     <string name="dialog_logout_credit">确定要退出信用交易吗?</string>
     <string name="deal_on_creadit">信用交易</string>
+    <string name="hk_mine">个人</string>
+    <string name="hk_entrust">委托</string>
+    <string name="listview_expand_xq">详情</string>
 </resources>

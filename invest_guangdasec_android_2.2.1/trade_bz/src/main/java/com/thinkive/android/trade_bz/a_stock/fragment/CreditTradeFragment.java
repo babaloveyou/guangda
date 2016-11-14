@@ -30,18 +30,20 @@ import com.android.thinkive.framework.ThinkiveInitializer;
 import com.android.thinkive.framework.WebViewManager;
 import com.android.thinkive.framework.compatible.ListenerController;
 import com.android.thinkive.framework.config.ConfigManager;
+import com.android.thinkive.framework.fragment.BaseWebFragment;
 import com.android.thinkive.framework.message.AppMessage;
 import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.module.IModule;
 import com.android.thinkive.framework.module.ModuleManager;
 import com.android.thinkive.framework.storage.MemoryStorage;
+import com.android.thinkive.framework.util.CommonUtil;
 import com.android.thinkive.framework.util.Constant;
+import com.android.thinkive.framework.view.MyWebView;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_hk.activity.HKMultiTradeActivity;
 import com.thinkive.android.trade_bz.a_in.activity.InFundMainActivity;
 import com.thinkive.android.trade_bz.a_level.activity.LFundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_net.activity.NetVoteMainActivity;
-import com.thinkive.android.trade_bz.a_new.activity.NewStockMainActivity;
 import com.thinkive.android.trade_bz.a_option.activity.OptionMainActivity;
 import com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity;
@@ -51,6 +53,7 @@ import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity;
@@ -163,6 +166,11 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private RelativeLayout mShowDateRl;
     private Dialog mDialog;
     private ScrollView mScrollView;
+    private static NewStockWebFragment mNewStockWebFragment = new NewStockWebFragment();
+
+    public static NewStockWebFragment getNewStockWebFragment() {
+        return mNewStockWebFragment;
+    }
 
 
     @Override
@@ -316,6 +324,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         EncryptManager.getInstance().requestRsaParam();
         String webviewName = TradeUtils.getPreUrl(TradeWebFragmentManager.sWebCacheFragment.getUrl());
         mWebViewManager.preLoad(TradeWebFragmentManager.sWebCacheFragment.getUrl(), webviewName, false);
+
     }
 
     @Override
@@ -379,18 +388,18 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                         setLogout();
                         break;
                     case 7060403: // 统一账户校验成功（手机号登录成功）
-                        try {
-                            String temp_token_key = jsonObject.getString("moduleName");
-                            if (temp_token_key.contains(Constants.MODULE_NAME_TRADE)) {
-                                mTemp_token_key = temp_token_key;
-                                TradeFlags.addFlag(TradeFlags.FLAG_PHONE_LOGIN);
-                                MemoryStorage memoryStorage = new MemoryStorage();
-                                String temp_token = memoryStorage.loadData(temp_token_key);
-                                mServices.startServerSession(temp_token);
-                            }
-                        } catch (JSONException je) {
-                            je.printStackTrace();
-                        }
+//                        try {
+//                            String temp_token_key = jsonObject.getString("moduleName");
+//                            if (temp_token_key.contains(Constants.MODULE_NAME_TRADE)) {
+//                                mTemp_token_key = temp_token_key;
+//                                TradeFlags.addFlag(TradeFlags.FLAG_PHONE_LOGIN);
+//                                MemoryStorage memoryStorage = new MemoryStorage();
+//                                String temp_token = memoryStorage.loadData(temp_token_key);
+//                                mServices.startServerSession(temp_token);
+//                            }
+//                        } catch (JSONException je) {
+//                            je.printStackTrace();
+//                        }
                         break;
                     case 60200: // 资金账号校验成功（业务模块登录成功）
                         try {
@@ -720,16 +729,16 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      * 新股申购
      */
     private void onClickNewStock() {
-        Intent intent = new Intent(mActivity, NewStockMainActivity.class);
-        final Bundle bundle = new Bundle();
-        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            bundle.putString("userType", TradeLoginManager.LOGIN_TYPE_CREDIT);
-            intent.putExtras(bundle);
-            mActivity.startActivity(intent);
-        } else {
-            startLogin(R.id.tv_new_stock, TradeLoginManager.LOGIN_TYPE_CREDIT);
-            return;
+        mNewStockWebFragment.setUrl(NewStockWebActivity.CREDIT_URL);
+        mNewStockWebFragment.setWebViewName("new-stock");
+        MyWebView webView = mNewStockWebFragment.getWebView();
+        if (webView == null) {
+            System.out.println("webView没有加载好2333333333333333");
         }
+        mNewStockWebFragment.preloadUrl(getActivity(), NewStockWebActivity.CREDIT_URL);
+        Intent intent = new Intent(mActivity, NewStockWebActivity.class);
+        intent.putExtra("loginType", NewStockWebActivity.CREDIT);
+        mActivity.startActivity(intent);
 
     }
 
@@ -825,9 +834,9 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     public void showBottomRefundDialog() {
         mDialog = new Dialog(getContext(), R.style.ActionSheetDialogStyle);
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_layout_refund, null);
-        Button  mFundRefundBtn = (Button) inflate.findViewById(R.id.btn_fund_refund);
-        Button  mStockRefundBtn = (Button) inflate.findViewById(R.id.btn_stock_refund);
-        Button  mCancelBtn = (Button) inflate.findViewById(R.id.btn_cancel);
+        Button mFundRefundBtn = (Button) inflate.findViewById(R.id.btn_fund_refund);
+        Button mStockRefundBtn = (Button) inflate.findViewById(R.id.btn_stock_refund);
+        Button mCancelBtn = (Button) inflate.findViewById(R.id.btn_cancel);
         mFundRefundBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -856,12 +865,13 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         dialogWindow.setAttributes(lp);
         mDialog.show();
     }
+
     public void showBottomReStockDialog() {
         mDialog = new Dialog(getContext(), R.style.ActionSheetDialogStyle);
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_layout_restock, null);
-        Button   sFundReStockBtn = (Button) inflate.findViewById(R.id.btn_fund_restock);
-        Button  sStockReStockBtn = (Button) inflate.findViewById(R.id.btn_stock_restock);
-        Button  mCancelBtn = (Button) inflate.findViewById(R.id.btn_cancel);
+        Button sFundReStockBtn = (Button) inflate.findViewById(R.id.btn_fund_restock);
+        Button sStockReStockBtn = (Button) inflate.findViewById(R.id.btn_stock_restock);
+        Button mCancelBtn = (Button) inflate.findViewById(R.id.btn_cancel);
         sFundReStockBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1131,7 +1141,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     mServices.startServerSession(temp_token);
                 }
             }
-            sendMsgToSSO(loginType);
+//            sendMsgToSSO(loginType);
+
         } else {
             Intent intent = new Intent(mActivity, TradeLoginActivity.class);
             intent.putExtra(MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID, clickIdBeforeLogin);
@@ -1168,6 +1179,21 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         clearAllUserInfo();
         //更新页面状态
         updateLogoutBtnState();
+        //清除供给H5的用户信息
+        MemoryStorage memoryStorage = new MemoryStorage();
+        memoryStorage.removeData(Constants.CREDIT_LOGIN_USERINFO_FORH5);
+        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.CREDIT_URL,"");
+        try {
+            sendMessageCireditLogout(getNewStockWebFragment());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    private void sendMessageCireditLogout(BaseWebFragment baseWebFragment) throws JSONException {
+        JSONObject param = new JSONObject();
+        //退出登录发个消息
+        AppMessage appMessage = new AppMessage(222222, param);
+        baseWebFragment.sendMessageToH5(appMessage);
     }
 
     /**

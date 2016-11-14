@@ -3,9 +3,10 @@ package com.thinkive.android.trade_bz.a_stock.bll;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
+import com.thinkive.android.trade_bz.a_stock.bean.MoneyBean;
 import com.thinkive.android.trade_bz.a_stock.fragment.HoldPagerFragment;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
+import com.thinkive.android.trade_bz.request.CRequest301504;
 import com.thinkive.android.trade_bz.request.Request301504;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 
@@ -27,15 +28,15 @@ public class MyholdPagerServicesImpl  {
 
     /**
      * 初始化请求到的资金账户数据 出入货币类型
-     * @param moneyType
+     * @param page
      */
-    public void requestMyHoldPager(int moneyType) {
+    public void requestMyHoldPager(int page) {
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("money_type", String.valueOf(moneyType));
-        new Request301504(map, new IRequestAction() {
+        map.put("page", page+"");
+        new CRequest301504(map, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
-                MoneySelectBean data = (MoneySelectBean)bundle.getSerializable(Request301504.BUNDLE_KEY_MYHOLD_HEAD);
+                MoneyBean data = (MoneyBean)bundle.getSerializable(CRequest301504.BUNDLE_KEY_MYHOLD_HEAD);
                 if (data != null) {
                     mHoldPagerFragment.getMoneyAccountData(data);
                 }

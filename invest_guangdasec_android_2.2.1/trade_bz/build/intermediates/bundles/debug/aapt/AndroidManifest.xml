@@ -31,7 +31,7 @@
         <!-- 交易登录 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
         <!-- 普通交易页面 -->
@@ -46,11 +46,16 @@
             android:name="com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 今日委托、今日成交 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayEntrustOrTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 普通交易新股申购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
@@ -388,13 +393,15 @@
         <activity
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RCreditBuyActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 融资融券之融券卖出 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RCreditSaleActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 融资融券之担保品买入和卖出 -->
         <activity
@@ -402,19 +409,21 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 融资融券之和卖券还款 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 融资融券之买券还券 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 融资融券之现券还券 -->
         <activity

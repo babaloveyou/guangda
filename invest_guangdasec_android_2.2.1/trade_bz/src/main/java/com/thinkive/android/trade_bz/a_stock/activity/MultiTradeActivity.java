@@ -10,7 +10,7 @@ import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.a_stock.fragment.BuyOrSellFragment;
 import com.thinkive.android.trade_bz.a_stock.fragment.MyHoldStockFragment;
 import com.thinkive.android.trade_bz.a_stock.fragment.RevocationFragment;
-import com.thinkive.android.trade_bz.a_stock.fragment.SelectFragment;
+import com.thinkive.android.trade_bz.a_stock.fragment.TodayEntrustOrTradeFragment;
 import com.thinkive.android.trade_bz.others.RadioTabs;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout;
@@ -38,6 +38,7 @@ public class MultiTradeActivity extends AbsNavBarActivity {
     private BuyOrSellFragment mSaleFragment;
 
     private int defaultViewPagerPos;
+    private int mChildePos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +61,16 @@ public class MultiTradeActivity extends AbsNavBarActivity {
 
     @Override
     protected void initData() {
+        Bundle bundle = getIntent().getExtras();
+        defaultViewPagerPos = bundle.getInt("ViewPagerFragmentPos", 0);
+        mChildePos = bundle.getInt("childePos", 0);
         mFragmentList = new ArrayList<AbsBaseFragment>();
         RevocationFragment revocationFragment = new RevocationFragment();
         MyHoldStockFragment myHoldStockFragment = new MyHoldStockFragment();
-        SelectFragment selectFragment = new SelectFragment();
+        TodayEntrustOrTradeFragment mTodayEntrustOrTradeFragment = new TodayEntrustOrTradeFragment();
+        Bundle bundle1 = new Bundle();
+        bundle1.putInt("childePos",mChildePos);
+        mTodayEntrustOrTradeFragment.setArguments(bundle1);
         // 初始化“买入”、“卖出”两个Fragment
         mBuyFragment = new BuyOrSellFragment();
         mSaleFragment = new BuyOrSellFragment();
@@ -75,19 +82,18 @@ public class MultiTradeActivity extends AbsNavBarActivity {
         mSaleFragment.setBuyOrSell(1);
         // 设置“撤单”滑动页Fragment的属性
         revocationFragment.setName(getResources().getString(R.string.revocation_actionbar_text));
-        // 设置“持仓”滑动页Fragment的属性
-        myHoldStockFragment.setName(getResources().getString(R.string.hk_hold));
-        // 设置“查询”滑动页Fragment的属性
-        selectFragment.setName(getResources().getString(R.string.select_actionbar_text));
+        // 设置“委托”滑动页Fragment的属性
+        mTodayEntrustOrTradeFragment.setName(getResources().getString(R.string.hk_entrust));
+        // 设置“个人”滑动页Fragment的属性
+        myHoldStockFragment.setName(getResources().getString(R.string.hk_mine));
         // 将各个Fragment对象添加到mFragmentList，以便添加到ViewPager中
         mFragmentList.add(mBuyFragment);
         mFragmentList.add(mSaleFragment);
         mFragmentList.add(revocationFragment);
+        mFragmentList.add(mTodayEntrustOrTradeFragment);
         mFragmentList.add(myHoldStockFragment);
-        mFragmentList.add(selectFragment);
         mController = new MultiTradeViewController(this);
-        Bundle bundle = getIntent().getExtras();
-        defaultViewPagerPos = bundle.getInt("ViewPagerFragmentPos", 0);
+
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);
     }
 
@@ -162,26 +168,27 @@ public class MultiTradeActivity extends AbsNavBarActivity {
     }
 
     /**
-     * 当我的持仓Fragment{@link MyHoldStockFragment} 中的持仓列表的item展开布局中的“买入”、“卖出”按钮
+     * 当其他Fragment中的列表的item展开布局中的“买入”、“卖出”按钮
      *
      * @param stockCode 在持仓列表中点击的那支股票的股票代码
      * @param buyOrSale 0:单击的是“买入”；1：单机的是“卖出”
      */
-    public void transferFragmentToBuySaleFromHold(String stockCode,String market, int buyOrSale) {
+    public void transferFragmentToBuySaleFromOthers(String stockCode, int buyOrSale) {
         BuyOrSellFragment buyOrSellFragment = null;
         if (buyOrSale == 0) { // 如果单击的是“买入”
             buyOrSellFragment = mBuyFragment;
         } else if (buyOrSale == 1) { // 如果单击的是“卖出”
             buyOrSellFragment = mSaleFragment;
         }
-        Bundle bundle = buyOrSellFragment.getArguments();
+            Bundle bundle = buyOrSellFragment.getArguments();
         if (bundle == null) {
             bundle = new Bundle();
+            bundle.putString("hold_stock_code", stockCode);
+            buyOrSellFragment.setArguments(bundle);
+        } else {
+            buyOrSellFragment.setStockCodeFromOther(stockCode);
         }
-        bundle.putString("hold_stock_code", stockCode);
-        bundle.putString("hold_market", market);
-        buyOrSellFragment.setArguments(bundle);
-        // mViewPager设置买入或者卖出Fragment为当前Fragment
+
         mRadioTabs.setCurTab(buyOrSale);
     }
 

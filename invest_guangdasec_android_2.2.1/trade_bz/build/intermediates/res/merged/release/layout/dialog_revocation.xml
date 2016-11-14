@@ -48,22 +48,22 @@
     </LinearLayout>
 
     <LinearLayout android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="6dp" >
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:paddingTop="6dp">
 
         <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_buy"
-            android:id="@+id/tv1"
-            android:textColor="@color/trade_text_color6"  />
+                  android:layout_height="wrap_content"
+                  android:text="@string/dialog_time"
+                  android:id="@+id/tv1"
+                  android:textColor="@color/trade_text_color6"/>
 
         <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_pop_buy"
-            android:hint="@string/no_text_set"
-            android:textColor="@color/trade_color_black"
-            android:paddingLeft="4dp" />
+                  android:layout_height="wrap_content"
+                  android:id="@+id/tv_pop_time"
+                  android:hint="@string/no_text_set"
+                  android:textColor="@color/trade_color_black"
+                  android:paddingLeft="4dp"/>
 
     </LinearLayout>
 
@@ -107,25 +107,5 @@
 
     </LinearLayout>
 
-    <LinearLayout android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="6dp"
-        android:paddingBottom="7dp"  >
-
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dialog_trade"
-            android:id="@+id/tv4"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/trade_color_black"
-            android:paddingLeft="4dp"
-            android:hint="@string/no_text_set"
-            android:id="@+id/tv_pop_trade" />
-
-    </LinearLayout>
 
 </LinearLayout>

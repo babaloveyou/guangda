@@ -31,7 +31,7 @@
         <!-- 交易登录 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 
         <!-- 普通交易页面 -->
@@ -51,6 +51,11 @@
         <!-- 今日委托、今日成交 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayEntrustOrTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!-- 普通交易新股申购 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
 

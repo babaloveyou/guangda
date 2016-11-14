@@ -29,6 +29,7 @@ import static com.thinkive.android.trade_bz.others.tools.TradeLoginManager.sNorm
  * @date 2015/7/6
  */
 public class RequestLogin extends BaseRequest {
+    public static final String BUNDLE_KEY_LOGIN = "Requestlogin_result";
 
     private String mLoginType;
 
@@ -50,6 +51,10 @@ public class RequestLogin extends BaseRequest {
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
+        Bundle bundle = new Bundle();
+        bundle.putString(BUNDLE_KEY_LOGIN,jsonObject.toString());
+        transferAction(REQUEST_SUCCESS, bundle);
+
         try {
             // 如果是普通账户登录
             if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_NORMAL)) {

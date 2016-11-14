@@ -89,7 +89,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
 
 
         //可用
-       setEnableText(convertView, holder, myStoreStockBean);
+        setEnableText(convertView, holder, myStoreStockBean);
         return convertView;
     }
 
@@ -102,7 +102,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     }
 
     private void setStoreText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
-        String storeText = "持仓:" + myStoreStockBean.getLast_price() ;
+        String storeText = "持仓:" + myStoreStockBean.getLast_price();
         SpannableStringBuilder styleStore = new SpannableStringBuilder(storeText);
         styleStore.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleStore.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, storeText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -118,7 +118,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     }
 
     private void setCostPriceText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
-        String costPriceText = "成本:" + myStoreStockBean.getCost_price() ;
+        String costPriceText = "成本:" + myStoreStockBean.getCost_price();
         SpannableStringBuilder styleCostPrice = new SpannableStringBuilder(costPriceText);
         styleCostPrice.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleCostPrice.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text_color2)), 3, costPriceText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -128,15 +128,18 @@ public class BottomHoldLvAdapter extends BaseAdapter {
     private void setWinLoseNumText(View convertView, HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
         holder.winLoseNumTv = (TextView) convertView.findViewById(R.id.tv_win_lose_num);
         holder.winLoseNumTv.setText(myStoreStockBean.getFloat_yk());
-        holder.winLoseNumTv.setTextColor(mActivity.getResources().getColor(R.color.trade_text));
+        holder.winLoseNumTv.setTextColor(holder.winLoseNumTv.getText().toString().startsWith("-") ? mActivity.getResources().getColor(R.color.trade_down_green) : mActivity.getResources().getColor(R.color.trade_text));
     }
 
     private void setWinLostRate(HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
         String winlostRate = myStoreStockBean.getFloat_yk_per();
         String winLostRateTvString = "盈亏" + winlostRate + "%";
         SpannableStringBuilder styleWinLostRate = new SpannableStringBuilder(winLostRateTvString);
-        styleWinLostRate.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        styleWinLostRate.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.trade_text)), 2, winLostRateTvString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        if (winlostRate.startsWith(mActivity.getResources().getString(R.string.common_emp_text))) {
+            styleWinLostRate.setSpan(new ForegroundColorSpan(mActivity.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            styleWinLostRate.setSpan(new ForegroundColorSpan(winlostRate.startsWith("-") ? mActivity.getResources().getColor(R.color.trade_down_green) : mActivity.getResources().getColor(R.color.trade_text)), 2, winLostRateTvString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
         holder.winLoseRateTv.setText(styleWinLostRate);
     }
 

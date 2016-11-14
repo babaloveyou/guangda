@@ -56,7 +56,6 @@ import com.android.thinkive.invest_sd.fragment.MallFragment;
 import com.android.thinkive.invest_sd.fragment.NewsWebFragment;
 import com.android.thinkive.invest_sd.fragment.UserCenterFragment;
 import com.android.thinkive.invest_sd.fragment.WebCacheFragment;
-import com.android.thinkive.invest_sd.message.handler.Message50101;
 import com.android.thinkive.invest_sd.message.handler.Message50102;
 import com.android.thinkive.invest_sd.message.handler.Message50108;
 import com.android.thinkive.invest_sd.message.handler.Message50115;
@@ -643,9 +642,9 @@ public class MainActivity extends BaseActivity implements IModule {
             case 50222://打开通讯录
                 messageHandler = new Message50222();
                 break;
-            case 50101:  //进入模块
-                messageHandler = new Message50101(mHandler, mAdapter);
-                break;
+//            case 50101:  //进入模块
+//                messageHandler = new Message50101(mHandler, mAdapter);
+//                break;
             case 50102:  //打开关闭左右侧滑栏
                 messageHandler = new Message50102(mHandler);
                 break;

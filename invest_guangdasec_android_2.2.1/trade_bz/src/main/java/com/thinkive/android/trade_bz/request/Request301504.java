@@ -4,8 +4,8 @@ import android.os.Bundle;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
-import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
+import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.JsonParseUtils;
 
 import org.json.JSONArray;
@@ -16,12 +16,12 @@ import java.util.HashMap;
 
 /**
  * 资产查询
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/7/7
  */
 public class Request301504 extends BaseNormalRequest {
-
     public static final String BUNDLE_KEY_MYHOLD_HEAD = "Request301504_result";
 
     public Request301504(HashMap<String, String> paramMap, IRequestAction action) {

@@ -437,6 +437,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             hidePriceWindow();
         }
     };
+    private String mStockCodeFromOther = null;
 
     public BuyOrSellFragment() {
     }
@@ -465,8 +466,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         }
 
         // 初始化股东账号popwindow
-        //从持仓跳转至此
-        setDataToViewsFromHoldList();
+        setDataToViewsFromOther();
         // 开启自动刷新模式
         handler.removeCallbacks(runnable);
         handler.postDelayed(runnable, 2000);
@@ -479,6 +479,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         handler.removeCallbacks(runnable);
         //切换的时候，清空所有数据
         clearDataInViews();
+        mStockCodeFromOther = null;
     }
 
     @Override
@@ -900,20 +901,22 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     }
 
     /**
-     * 在我的持仓页面，点击买卖跳转至此
+     * 在其他界面，点击买卖跳转至此
      */
-    private void setDataToViewsFromHoldList() {
-        Bundle bundle = getArguments();
-        if (bundle != null) {
-            String default_stock_code = bundle.getString("hold_stock_code");
-            String hold_market = bundle.getString("hold_market");
-            if (!TextUtils.isEmpty(default_stock_code)) {
-                mService.request20000ForHqData(default_stock_code, hold_market);
-                //移除bundle中的数据，避免影响下次操作
-                bundle.remove("hold_stock_code");
-                bundle.remove("hold_market");
+    private void setDataToViewsFromOther() {
+        if (TextUtils.isEmpty(mStockCodeFromOther)) {
+            Bundle bundle = getArguments();
+            if (bundle != null) {
+                String default_stock_code = bundle.getString("hold_stock_code");
+                mEdStockCode.setText(default_stock_code);
+                onStockLengthMax(mEdStockCode.getText().toString().trim(), mEdStockCode);
             }
+        } else {
+            mEdStockCode.setText(mStockCodeFromOther);
+            onStockLengthMax(mEdStockCode.getText().toString().trim(), mEdStockCode);
         }
+
+
     }
 
     /**
@@ -1428,7 +1431,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
-
         resetPrePriceView();
         resetPreNumView();
     }
@@ -2058,6 +2060,10 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         }
         mBottomFragmentVp.setCurrentItem(2);
         mBottomTodayEntrustFragment.requestNewData();
+    }
+
+    public void setStockCodeFromOther(String stockCodeFromOther) {
+        mStockCodeFromOther = stockCodeFromOther;
     }
 
 

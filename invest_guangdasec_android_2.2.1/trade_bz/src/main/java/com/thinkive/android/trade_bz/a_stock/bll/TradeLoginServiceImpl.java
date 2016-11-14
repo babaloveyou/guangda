@@ -17,6 +17,7 @@ import com.thinkive.android.trade_bz.a_stock.bean.LoginInfo;
 import com.thinkive.android.trade_bz.a_stock.fragment.FundLoginFragment;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.constants.Constants;
+import com.thinkive.android.trade_bz.others.tools.ThinkiveTools;
 import com.thinkive.android.trade_bz.others.tools.TradeFlags;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.request.RequestLogin;
@@ -136,14 +137,32 @@ public class TradeLoginServiceImpl {
             public void onSuccess(Context context, Bundle bundle) {
                 TradeFlags.addFlag(TradeFlags.FLAG_NOT_UNITY_LOGIN_TYPE);
                 mFragment.onLoginSuccess(loginAccount, mLoginType);
+
                 ToastUtils.toast(context, R.string.login_success);
                 if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_NORMAL)) {
                     //普通用户登录的用户信息保存
                     LoginInfo.setUsername(loginAccount);
                     LoginInfo.setPassword(loginPassword);
+                    //给新股申购提供用户信息
+                    String s = bundle.getString(RequestLogin.BUNDLE_KEY_LOGIN);
+                    if (s != null) {
+                        int i = s.lastIndexOf("results\":[{")+10;
+                        s=s.substring(0, i + 1) + "\"loginClass\":\"0\",\"loginType\":\"5\"," + s.substring(i + 1, s.length());
+
+                        ThinkiveTools.putDataToMemoryByMsg(Constants.NORMAL_LOGIN_USERINFO_FORH5, s);
+                    }
+
+
                 }
                 if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {
                     CreditLoginInfo.setPassword(loginPassword);
+                    //给新股申购提供用户信息
+                    String s = bundle.getString(RequestLogin.BUNDLE_KEY_LOGIN);
+                    if (s != null) {
+                        int i = s.lastIndexOf("results\":[{")+10;
+                        s=s.substring(0, i + 1) + "\"loginClass\":\"1\",\"loginType\":\"b\"," + s.substring(i + 1, s.length());
+                        ThinkiveTools.putDataToMemoryByMsg(Constants.CREDIT_LOGIN_USERINFO_FORH5,s);
+                    }
                 }
             }
 

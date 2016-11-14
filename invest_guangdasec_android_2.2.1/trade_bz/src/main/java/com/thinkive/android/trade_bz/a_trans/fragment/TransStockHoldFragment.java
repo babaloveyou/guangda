@@ -256,11 +256,11 @@ public class TransStockHoldFragment extends AbsBaseFragment {
         mTvAllMoney.setText(StringUtils.subStringBefor(bean.getAssert_val()));
         mTvAllMoneya.setText(StringUtils.subStringAfter(bean.getAssert_val()));
 
-        mTvTodayProfit.setText(StringUtils.subStringBefor(bean.getDaily_income_balance()));
-        mTvTodayProfita.setText(StringUtils.subStringAfter(bean.getDaily_income_balance()));
+        mTvTodayProfit.setText(StringUtils.subStringBefor(bean.getTotal_income_balance()));
+        mTvTodayProfita.setText(StringUtils.subStringAfter(bean.getTotal_income_balance()));
 
-        mTvAllPorfit.setText(StringUtils.subStringBefor(bean.getTotal_income_balance()));
-        mTvAllPorfita.setText(StringUtils.subStringAfter(bean.getTotal_income_balance()));
+        mTvAllPorfit.setText(StringUtils.subStringBefor(bean.getDaily_income_balance()));
+        mTvAllPorfita.setText(StringUtils.subStringAfter(bean.getDaily_income_balance()));
 
         mTvCanUse.setText(StringUtils.subStringBefor(bean.getEnable_balance()));
         mTvCanUsea.setText(StringUtils.subStringAfter(bean.getEnable_balance()));

@@ -3,19 +3,46 @@ package com.thinkive.android.trade_bz.views;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
+import android.widget.ScrollView;
 
 /**
  * 自定义ViewPager 实现监听不拦截
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/6/29
  */
 
 public class ChildViewPager extends ViewPager {
+    private boolean isSelf = true;
+    /**
+     * 父布局
+     */
+    ScrollView mParentScrollView;
+    private int mStartX;
+    private int mStartY;
+    private int mCurrentX;
+    private int mCurrentY;
+    //    int mLastMotionY;
+    //    int mLastMotionX;
 
-//    int mLastMotionY;
-//    int mLastMotionX;
+    /**
+     * 获取父布局对象
+     *
+     * @return
+     */
+    public ScrollView getmParentScrollView() {
+        return mParentScrollView;
+    }
+
+    /**
+     * 设置父布局
+     *
+     * @param mParentScrollView
+     */
+    public void setmParentScrollView(ScrollView mParentScrollView) {
+        this.mParentScrollView = mParentScrollView;
+    }
 
     public ChildViewPager(Context context) {
         super(context);
@@ -24,13 +51,33 @@ public class ChildViewPager extends ViewPager {
     public ChildViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
-
-    @Override
-    public boolean dispatchTouchEvent(MotionEvent ev) {
-        //让父类不拦截触摸事件
-        getParent().requestDisallowInterceptTouchEvent(true);
-        return super.dispatchTouchEvent(ev);
-    }
+//
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+//        switch (ev.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                mStartX = (int) ev.getX();
+//                mStartY = (int) ev.getY();
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                mCurrentX = (int) ev.getX();
+//                mCurrentY = (int) ev.getY();
+//                if ((mCurrentY - mStartY) > 1.5*(mCurrentX - mStartX)) {
+//                    isSelf = false;
+//                } else {
+//                    isSelf = true;
+//                }
+//                mStartX = mCurrentX;
+//                mStartY = mCurrentY;
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                break;
+//        }
+//        //让父类不拦截触摸事件
+//        if (mParentScrollView != null)
+//            mParentScrollView.requestDisallowInterceptTouchEvent(isSelf);
+//        return super.dispatchTouchEvent(ev);
+//    }
 
 
 

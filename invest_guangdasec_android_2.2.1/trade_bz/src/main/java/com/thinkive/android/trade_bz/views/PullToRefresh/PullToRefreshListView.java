@@ -28,6 +28,8 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView> implement
      * 滚动的监听器
      */
     private OnScrollListener mScrollListener;
+    private float mTouchDownY;
+    private boolean mScrolling;
 
     /**
      * 构造方法
@@ -69,7 +71,6 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView> implement
 
         return listView;
     }
-
     /**
      * 设置是否有更多数据的标志
      *
@@ -110,7 +111,6 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView> implement
     @Override
     protected void startLoading() {
         super.startLoading();
-
         if (null != mLoadMoreFooterLayout) {
             mLoadMoreFooterLayout.setState(ILoadingLayout.State.REFRESHING);
         }
@@ -249,4 +249,7 @@ public class PullToRefreshListView extends PullToRefreshBase<ListView> implement
 
         return false;
     }
+
+
+
 }

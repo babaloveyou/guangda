@@ -5,86 +5,90 @@
         <item
             name="charset"
             description="编码方式,用于网络请求"
-            value="utf-8" />
+            value="utf-8"/>
         <item
             name="isDebug"
             description="调试模式,控制log输出"
-            value="true" />
+            value="true"/>
+        <item
+            name="disableWebViewCache"
+            description="是否采用webview重用机制,(此配置项用于少数情况，如每次进入activity或fragmeng需要构建新的webview)"
+            value="false"/>
         <item
             name="webviewCount"
             description="webview管理池中webview的个数，根据项目中用到多少h5模块来指定"
-            value="7" />
+            value="5"/>
         <item
             name="TOAST_WHEN_QUERY_UPDATE_FAILED"
             description="是否提示更新失败"
-            value="false" />
+            value="false"/>
         <item
             name="IS_THIRD_INTEGRATION"
             description="是否为第三方集成版本，true表示是，false表示不是"
-            value="false" />
+            value="false"/>
         <item
             name="VIDEO_SAVE_PATH"
-            value="/mobiletrader" />
+            value="/mobiletrader"/>
         <item
             name="IMG_SIZE"
             description="影像大小，单位为KB"
-            value="150" />
+            value="150"/>
         <item
             name="SMS_CHANNEL"
             description="发送验证码的短信通道号码"
-            value="10698000088536606" />
+            value="10698000088536606"/>
         <item
             name="LICENSE"
             description="思迪证书签名控件License"
-            value="CngtA/owAwLB0TvE7+KM5Y3WsL3zIWiwvsGpoE4Yj3HTispE+njECfCC/jqO1SCX6Lhmhf9nnsbvBWFsnb2YjpLsT4LbTmiSRrohpqIDjZQRJ3xKBieQjJ5NbHoWbbv/oZMIgM2qTkVnxmCXfuvf+thWlp3qsfJK/mbHbx5TdAk=" />
+            value="CngtA/owAwLB0TvE7+KM5Y3WsL3zIWiwvsGpoE4Yj3HTispE+njECfCC/jqO1SCX6Lhmhf9nnsbvBWFsnb2YjpLsT4LbTmiSRrohpqIDjZQRJ3xKBieQjJ5NbHoWbbv/oZMIgM2qTkVnxmCXfuvf+thWlp3qsfJK/mbHbx5TdAk="/>
         <item
             name="CHECK_SUCCESS"
             description="视频见证成功消息"
-            value="SYS:10000" />
+            value="SYS:10000"/>
         <item
             name="CHECK_FAILED"
             description="视频见证失败消息"
-            value="SYS:10001" />
+            value="SYS:10001"/>
         <item
             name="USER_LEAVE_ROOM"
             description="手动退出房间"
-            value="SYS:10002" />
+            value="SYS:10002"/>
         <item
             name="SEAT_LEAVE_ROOM"
             description="坐席退出房间，针对恶意账户清除出队列"
-            value="SYS:10003" />
+            value="SYS:10003"/>
         <item
             name="SEAT_FORCE_QUIT"
             description="坐席强制退出房间"
-            value="SYS:10004" />
+            value="SYS:10004"/>
         <item
             name="USER_CONFIRM_QUIT"
             description="用户确认退出房间"
-            value="SYS:10005" />
+            value="SYS:10005"/>
         <item
             name="SEAT_REFRESH_IE"
             description="坐席刷新浏览器"
-            value="SYS:10006" />
+            value="SYS:10006"/>
         <item
             name="NETWORK_PROBLEM"
             description="网络问题"
-            value="SYS:10007" />
+            value="SYS:10007"/>
         <item
             name="VIDEO_PROBLEM"
             description="视频问题 "
-            value="SYS:10008" />
+            value="SYS:10008"/>
         <item
             name="CHECK_REJECT"
             description="用户驳回"
-            value="SYS:10009" />
+            value="SYS:10009"/>
         <item
             name="TEXT_MSG"
             description="文字消息"
-            value="USR:0:" />
+            value="USR:0:"/>
         <item
             name="STATUS_BAR_COLOR"
             description="状态栏颜色"
-            value="#4359aa" />
+            value="#4359aa"/>
     </system-config>
 
     <!--配置系统中需要用到的网络访问地址
@@ -100,7 +104,7 @@
         <address
             name="ABOUT_URL"
             description="关于我们的地址 "
-            value="https://e.ebscn.com/m/gd_about/aboutUs.html" />
+            value="https://e.ebscn.com/m/gd_about/aboutUs.html"/>
 
         <address
             name="HQ_URL_HTTP"
@@ -115,34 +119,34 @@
         <address
             name="ABOUT_URL"
             description="关于我们的地址 "
-            value="https://e.ebscn.com/m/gd_about/aboutUs.html" />
+            value="https://e.ebscn.com/m/gd_about/aboutUs.html"/>
         <address
             name="UPGRADE_URL"
+            certificatePath="trade.ebscn.cer"
             description="版本升级地址"
             timeout="60000"
-            certificatePath="trade.ebscn.cer"
-            value="https://trade.ebscn.com/servlet/json?" />
+            value="https://trade.ebscn.com/servlet/json?"/>
         <address
             name="URL_FRIST_DATAGD"
-            description="首页广告、菜单、推荐的地址"
             certificatePath="e.ebscn.com.cer"
+            description="首页广告、菜单、推荐的地址"
             value="https://e.ebscn.com/servlet/json?"/>
 
         <address
             name="URL_FRIST_DATAGD_SC"
-            description="首页推荐的地址"
             certificatePath="sc.ebscn.com.cer"
+            description="首页推荐的地址"
             value="https://sc.ebscn.com/servlet/json?"/>
         <address
             name="URL_FRIST_IMAGEGD"
-            description="首页加载图片时需要拼上的头部"
             certificatePath="e.ebscn.com.cer"
+            description="首页加载图片时需要拼上的头部"
             value="https://e.ebscn.com"/>
 
         <address
             name="URL_HTTP_LOGIN"
-            description="光大登录URL接口"
             certificatePath="e.ebscn.com.cer"
+            description="光大登录URL接口"
             value="https://e.ebscn.com/servlet/json?"/>
 
         <!--<address-->
@@ -152,44 +156,50 @@
         <!--value="https://ekh.ebscn.com/servlet/json?"/>-->
         <address
             name="URL_HTTP_GET_ACTIVATE_STATE"
-            description="光大获取用户激活状态URL接口"
             certificatePath="trade.ebscn.cer"
+            description="光大获取用户激活状态URL接口"
             value="https://trade.ebscn.com/servlet/json?"/>
-        <address name="LOGIN_VERIFY_ICON_URL"
-            description="登录验证码图片url"
+        <address
+            name="LOGIN_VERIFY_ICON_URL"
             certificatePath="e.ebscn.com.cer"
+            description="登录验证码图片url"
             value="https://e.ebscn.com/servlet/Image?"/>
 
         <!--配置退出地址-->
-        <address name="URL_EXIT_FUND"
-            description="富尊退出地址"
+        <address
+            name="URL_EXIT_FUND"
             certificatePath="e.ebscn.com.cer"
+            description="富尊退出地址"
             value="https://e.ebscn.com/servlet/json?"/>
 
-        <address name="URL_EXIT_TRADE"
-            description="交易退出地址"
+        <address
+            name="URL_EXIT_TRADE"
             certificatePath="sc.ebscn.com.cer"
+            description="交易退出地址"
             value="https://sc.ebscn.com/servlet/json?funcNo=1000013"/>
 
-        <address name="URL_EXIT_MALL"
-            description="商城退出地址"
+        <address
+            name="URL_EXIT_MALL"
             certificatePath="sc.ebscn.com.cer"
+            description="商城退出地址"
             value="https://sc.ebscn.com/servlet/json?"/>
 
-        <address name="URL_EXIT_XD"
-            description="小贷退出地址"
+        <address
+            name="URL_EXIT_XD"
             certificatePath="e.ebscn.com.cer"
+            description="小贷退出地址"
             value="https://e.ebscn.com/rz/servlet/json?"/>
 
-        <address name="URL_EXIT_GGT"
-            description="港股通退出地址"
+        <address
+            name="URL_EXIT_GGT"
             certificatePath="ekh.ebscn.com.cer"
+            description="港股通退出地址"
             value="https://ekh.ebscn.com/ggtqy/servlet/TokenAction?function=loginOut"/>
 
         <address
             name="NEWS_URL_HTTP"
-            description="微资讯url"
             certificatePath="e.ebscn.com.cer"
+            description="微资讯url"
             value="https://e.ebscn.com/servlet/json?"/>
         <address
             name="WEIZIXUN_URL_PHOTO"
@@ -217,11 +227,11 @@
         <addressm
             name="URL_WARN"
             description="行情预警接口地址"
-            value="http://183.57.43.60:8081/servlet/json?" />
+            value="http://183.57.43.60:8081/servlet/json?"/>
         <address
             name="URL_INFO"
             description="行情资讯接口地址"
-            value="http://120.24.73.231:8089/servlet/json?" />
+            value="http://120.24.73.231:8089/servlet/json?"/>
         <!--<address-->
         <!--name="URL_NDO_HTTP"-->
         <!--description="行情股期权接口地址"-->
@@ -229,20 +239,20 @@
         <address
             name="H5_url_pre"
             description="H5页面加载地址前缀"
-            value="www/" />
+            value="www/"/>
         <!-- 行情地址 -->
         <address
             name="URL_MARKET"
             description="行情base"
             timeout="20000"
-            value="http://stock.ebscn.com:8888/market/json?" />
+            value="http://stock.ebscn.com:8888/market/json?"/>
 
         <!-- 交易地址 -->
         <address
             name="LOGIN_HTTP_VERIFY_CODE_URL"
             description="交易登录验证码"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/NewImage?" />
+            value="http://10.84.132.63:9999/servlet/NewImage?"/>
 
         <address
             name="URL_TRADE"
@@ -250,7 +260,7 @@
             retry="1"
             route="true"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/json?" />
+            value="http://10.84.132.63:9999/servlet/json?"/>
 
         <address
             name="CREDIT_URL_TRADE"
@@ -258,13 +268,13 @@
             retry="1"
             route="true"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/json?" />
+            value="http://10.84.132.63:9999/servlet/json?"/>
 
         <address
             name="CREDIT_LOGIN_HTTP_VERIFY_CODE_URL"
             description="融资融券交易登录验证码"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/NewImage?" />
+            value="http://10.84.132.63:9999/servlet/NewImage?"/>
 
     </address-config>
 
@@ -274,39 +284,39 @@
         <module
             name="home"
             class="com.android.thinkive.invest_sd.activities.MainActivity"
-            description="" />
+            description=""/>
         <module
-        name="self-stock"
-        class="com.thinkive.android.quotation.fragments.OptionalFragment"
-        description="" />
+            name="self-stock"
+            class="com.thinkive.android.quotation.fragments.OptionalFragment"
+            description=""/>
         <module
             name="comm_h5"
             class="com.android.thinkive.invest_sd.fragment.WebCacheFragment"
-            description="" />
+            description=""/>
         <module
             name="user-center"
             class="com.android.thinkive.invest_sd.fragment.UserCenterFragment"
-            description="" />
+            description=""/>
         <module
             name="open"
             class="com.android.thinkive.invest_sd.fragment.OpenAccountFragment"
-            description="股票开户" />
+            description="股票开户"/>
         <module
             name="price"
             class="com.thinkive.android.quotation.fragments.GNewOptionalFragment"
-            description="" />
+            description=""/>
         <module
             name="trade"
             class="com.android.thinkive.invest_sd.fragment.TradeFragment"
-            description="" />
+            description=""/>
         <module
             name="main"
             class="com.android.thinkive.invest_sd.fragment.MainPageFragment"
-            description="" />
+            description=""/>
         <module
             name="financial-mall"
             class="com.android.thinkive.invest_sd.fragment.MallFragment"
-            description="" />
+            description=""/>
         <!--<module-->
         <!--name="ggt"-->
         <!--class="com.android.thinkive.invest_sd.fragment.GgtFragment"-->
@@ -322,10 +332,22 @@
         <module
             name="news"
             class="com.android.thinkive.invest_sd.activities.NewsActivity"
-            description="" />
+            description=""/>
+        <module
+            name="new-stock"
+            class="com.thinkive.android.trade_bz.a_stock.fragment.NewStockWebFragment"
+            description=""/>
         <!--<module-->
         <!--name="open-account-home"-->
         <!--class="com.android.thinkive.invest_sd.activities.OpenAccountHomeActivity"-->
         <!--description="开户首页" />-->
     </module-config>
+    <requestQueue-config>
+        <requestQueue
+            name="trade-queen"
+            description=""
+            threadCount="6"
+            value="http://10.84.132.63:9999/servlet/json?|https://trade.ebscn.com/servlet/json?"
+            />
+    </requestQueue-config>
 </configs>

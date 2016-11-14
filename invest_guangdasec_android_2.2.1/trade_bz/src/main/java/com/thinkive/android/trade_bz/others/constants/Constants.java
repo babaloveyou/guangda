@@ -48,4 +48,14 @@ public class Constants {
     public static final String URL_CREDIT_TRADE_CODE = "CREDIT_LOGIN_HTTP_VERIFY_CODE_URL";
 
     public static final String LOGIN_TYPE = "login_type";
+    public static final String NORMAL_LOGIN_USERINFO_FORH5="stock_userInfo";
+    public static final String CREDIT_LOGIN_USERINFO_FORH5="credit_userInfo";
+    public static final String TRADE_TYPE_KEY = "trade_type_key";
+    public static final String TOH5PAGE = "toh5page";
+
+    public static final String ACTION_TO_H5_PAGE = "com.toh5.broadcast.action";
+    public static final String STOCK_CREDIT_FLAG = "stock_credit_flag";
+    public static final String NORMAL_LOGIN_SESSIONID ="normal_login_sessionid" ;
+    public static final String CREDIT_COOKIE_KEY="credit_cookie_key";
+
 }

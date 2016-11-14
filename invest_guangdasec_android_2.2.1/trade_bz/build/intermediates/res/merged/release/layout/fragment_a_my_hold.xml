@@ -2,28 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:background="@color/bg_main_french_gray"
               android:orientation="vertical">
 
     <com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_gradient_blue"
         android:orientation="vertical"
         android:id="@+id/hsll_part1">
-
-        <LinearLayout
-            android:id="@+id/ll_points"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal"
-            android:paddingRight="5dp"
-            android:paddingTop="5dp"/>
 
         <com.thinkive.android.trade_bz.views.ChildViewPager
             android:id="@+id/vp_multi_trade"
             android:layout_width="match_parent"
-            android:layout_height="220dp"/>
+            android:layout_height="145dp"/>
         <!--</RelativeLayout>-->
     </com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout>
 
@@ -38,51 +31,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@color/trade_color_white"
-                android:orientation="horizontal">
+                android:layout_height="20dp"
+                android:background="@color/trade_normal_background"
+                android:gravity="center">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/store_market_value"
-                    android:textColor="@color/trade_text_color6"/>
+                <LinearLayout
+                    android:id="@+id/circle_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+            </RelativeLayout>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/store_win_lose"
-                    android:textColor="@color/trade_text_color6"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/store_usable"
-                    android:textColor="@color/trade_text_color6"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/store_now_price"
-                    android:textColor="@color/trade_text_color6"/>
-
-            </LinearLayout>
-
-            <View
+            <TextView
+                android:id="@+id/tv_header_of_grade_bottom"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/trade_text_color1"/>
+                android:layout_height="28dp"
+                android:background="@color/trade_normal_background"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="@string/store_usable"
+                android:textColor="@color/trade_text_color6"/>
 
             <!-- 正在加载时显示的界面 -->
             <LinearLayout

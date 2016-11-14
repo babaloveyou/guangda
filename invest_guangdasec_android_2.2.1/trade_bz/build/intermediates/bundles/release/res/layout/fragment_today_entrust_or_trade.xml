@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="@color/bg_main_french_gray"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textSize="14sp"
+                android:id="@+id/tv_tab_left"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textColor="@color/statusbar_main"
+                android:background="@drawable/shape_bg_tab_trade_left_normal"
+                android:gravity="center"
+                android:text="当日委托"/>
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/statusbar_main"
+                android:id="@+id/tv_tab_right"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/shape_bg_tab_trade_right_normal"
+                android:gravity="center"
+                android:text="当日成交"/>
+        </LinearLayout>
+    </RelativeLayout>
+    <FrameLayout
+        android:background="@color/white"
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

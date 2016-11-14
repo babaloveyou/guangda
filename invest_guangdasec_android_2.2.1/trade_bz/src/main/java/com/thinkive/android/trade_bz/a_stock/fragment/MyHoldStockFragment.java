@@ -5,12 +5,13 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.message.AppMessage;
@@ -30,6 +31,7 @@ import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ScreenUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ChildViewPager;
 import com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshScrollView;
 import com.thinkive.android.trade_bz.views.listViewInScrollview;
@@ -43,11 +45,12 @@ import java.util.List;
 
 /**
  * 我的持仓 ListView列表
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 15/6/26
  */
-public class MyHoldStockFragment extends AbsBaseFragment{
+public class MyHoldStockFragment extends AbsBaseFragment {
     /**
      * 该类的宿主Activity
      */
@@ -67,7 +70,7 @@ public class MyHoldStockFragment extends AbsBaseFragment{
     /**
      * 头部viewpager
      */
-    private ViewPager mViewPager;
+    private ChildViewPager mViewPager;
     /**
      * 装载头部fragment的集合类
      */
@@ -77,19 +80,15 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      */
     private BasePagerAdapter mPagerAdapter = null;
     /**
+     * 上一个小圆点
+     */
+    private int preSelectPagePos = 0;
+    /**
      * 头部pager的三个fragment
      */
     private HoldPagerFragment mFragmentPagerOne;
     private HoldPagerFragment mFragmentPagerTwo;
     private HoldPagerFragment mFragmentPagerThird;
-    /**
-     * 显示小圆点的容器
-     */
-    private ViewGroup mGroup;
-    /**
-     * 存放小圆点的集合类
-     */
-    private View[] mPointForViewPager;
     /**
      * 如果没有数据就显示该图片
      */
@@ -107,6 +106,10 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      * 父类布局ScrollView
      */
     private ScrollView mScrollView;
+    /*
+    * 小圆点容器
+     */
+    private LinearLayout mCirclrIndicator;
     /**
      * 自定义的ScrollView
      */
@@ -127,17 +130,18 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      * 下半部分的横向滑动监听布局，负责ViewPager以下部分的横滑监听
      */
     private HorizontalSlideLinearLayout mHsllPart2;
-    private int mViewPagerLastPos;
     /**
      * 开启定时器，每隔4秒刷新持仓
      */
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
-        public void run () {
+        public void run() {
             mServiceImpl.requestMyHoldStock();
-            handler.postDelayed(this,4000);
+            handler.postDelayed(this, 4000);
         }
     };
+    private int mLastHeaderPage;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -153,11 +157,10 @@ public class MyHoldStockFragment extends AbsBaseFragment{
     @Override
     public void onResume() {
         super.onResume();
-        //刷新货币信息数据
-        mFragmentPagerOne.getMoneyData();
-        mFragmentPagerTwo.getMoneyData();
-        mFragmentPagerThird.getMoneyData();
-
+//        //刷新货币信息数据
+//        mFragmentPagerOne.getMoneyData();
+//        mFragmentPagerTwo.getMoneyData();
+//        mFragmentPagerThird.getMoneyData();
         // 设置宿主Activity的横滑监听不可用
         HorizontalSlideLinearLayout hsll_inActivity = mActivity.getHorizontalSlideLinearLayout();
         hsll_inActivity.setRightSlideable(false);
@@ -165,6 +168,32 @@ public class MyHoldStockFragment extends AbsBaseFragment{
         mListView.setAdapter(mAdapter, R.id.ll_hold_list_item_view, R.id.ll_hold_list_item_expand);
         handler.removeCallbacks(runnable);
         handler.postDelayed(runnable, 4000);
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if (!isVisibleToUser) {
+            mLastHeaderPage = mViewPager.getCurrentItem();
+        } else {
+            switch (mLastHeaderPage) {
+                case 0:
+                    if (mFragmentPagerOne != null) {
+                        mFragmentPagerOne.getMoneyData();
+                    }
+                    break;
+                case 1:
+                    if (mFragmentPagerTwo != null) {
+                        mFragmentPagerTwo.getMoneyData();
+                    }
+                    break;
+                case 2:
+                    if (mFragmentPagerThird != null) {
+                        mFragmentPagerThird.getMoneyData();
+                    }
+                    break;
+            }
+        }
     }
 
     @Override
@@ -190,11 +219,11 @@ public class MyHoldStockFragment extends AbsBaseFragment{
         //解决第一次进入显示ListView的焦点问题
         mListView.setFocusable(false);
         mLlLoading = (LinearLayout) mScrollChild.findViewById(R.id.ll_myhold_list_loading);
-        mViewPager = (ViewPager) mScrollChild.findViewById(R.id.vp_multi_trade);
-        mGroup = (ViewGroup) mScrollChild.findViewById(R.id.ll_points);
+        mViewPager = (ChildViewPager) mScrollChild.findViewById(R.id.vp_multi_trade);
         mLiNoData = (LinearLayout) mScrollChild.findViewById(R.id.lin_not_data_set);
         mHsllPart1 = (HorizontalSlideLinearLayout) mScrollChild.findViewById(R.id.hsll_part1);
         mHsllPart2 = (HorizontalSlideLinearLayout) mScrollChild.findViewById(R.id.hsll_part2);
+        mCirclrIndicator = (LinearLayout) mScrollChild.findViewById(R.id.circle_ll);
     }
 
     @Override
@@ -218,42 +247,26 @@ public class MyHoldStockFragment extends AbsBaseFragment{
         mFragmentPagerThird = new HoldPagerFragment();
 
         //设置pager头部的货币信息
-        mFragmentPagerOne.setOriginalViews(R.string.money_type_num1, R.string.money_type_name1);
-        mFragmentPagerTwo.setOriginalViews(R.string.money_type_num2, R.string.money_type_name2);
-        mFragmentPagerThird.setOriginalViews(R.string.money_type_num3, R.string.money_type_name3);
+        mFragmentPagerOne.setOriginalViews(R.string.money_type_num1,R.mipmap.ic_launcher);
+        mFragmentPagerTwo.setOriginalViews(R.string.money_type_num2,R.mipmap.ic_launcher);
+        mFragmentPagerThird.setOriginalViews(R.string.money_type_num3,R.mipmap.ic_launcher);
 
         Bundle bundle = new Bundle();
-        bundle.putInt("moneyType", 0);
+        bundle.putInt("page", 0);
         mFragmentPagerOne.setArguments(bundle);
 
         bundle = new Bundle();
-        bundle.putInt("moneyType", 2);
+        bundle.putInt("page", 1);
         mFragmentPagerTwo.setArguments(bundle);
 
         bundle = new Bundle();
-        bundle.putInt("moneyType", 1);
+        bundle.putInt("page", 2);
         mFragmentPagerThird.setArguments(bundle);
-
         mFragmentList.add(mFragmentPagerOne);
         mFragmentList.add(mFragmentPagerTwo);
         mFragmentList.add(mFragmentPagerThird);
         mPagerAdapter = new BasePagerAdapter(getChildFragmentManager());
-        mPointForViewPager = new View[mFragmentList.size()];
-        for (int i = 0; i < mFragmentList.size(); i++) {
-            //设置小圆点的相关参数,默认选中第一个
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(20, 20);
-            params.setMargins(10, 0, 10, 0);
-            TextView textView = new TextView(mActivity);
-            textView.setLayoutParams(params);
-            mPointForViewPager[i] = textView;
-            if (i == 0) {
-                mPointForViewPager[i].setBackgroundResource(R.drawable.radio_dark);
-            } else {
-                mPointForViewPager[i].setBackgroundResource(R.drawable.radio_light);
-            }
-            mGroup.addView(mPointForViewPager[i]);
-        }
-        mViewPagerLastPos = 0;
+
     }
 
     @Override
@@ -267,24 +280,28 @@ public class MyHoldStockFragment extends AbsBaseFragment{
         mPullToRefreshScrollView.setPullLoadEnabled(false);
         //设置listview父布局
         mListView.setmParentScrollView(mScrollView);
+//        mViewPager.setmParentScrollView(mScrollView);
         //得到状态栏的高度（PX）
         int stateHeight = getStatusHeight(mActivity);
         //动态获取ListView高度 ，342为已知控件高度（dp）
         // 单位：dp，头部蓝色标题栏高度：44   基本交易的标签栏高度：37
         // 资产信息滑动页高度：220   持仓列表“头部”高度：40dp   其他（线条）：1
         float height = ScreenUtils.getScreenHeight(mActivity) - stateHeight -
-                ScreenUtils.dpToPx(mActivity, 342);
+                ScreenUtils.dpToPx(mActivity, 203);
         //设置ListView的高度（px）
         mListView.setMaxHeight((int) height);
         mListView.setDivider(null);
         mLlLoading.setMinimumHeight((int) height);
         mHsllPart1.initslideStandard(mActivity);
         mHsllPart2.initslideStandard(mActivity);
-        if (mViewPagerLastPos == 0) {
+        if (preSelectPagePos == 0) {
             // 当前页是第一页时，ViewPager不需要右滑，设置横滑监听控件的右滑不可用
             mHsllPart1.setLeftSlideable(false);
             mHsllPart1.setRightSlideable(true);
-        } else if (mViewPagerLastPos == mPointForViewPager.length - 1) {
+
+        }
+        //// TODO: 2016/11/7
+        else if (preSelectPagePos == mPagerAdapter.getCount() - 1) {
             // 当前页是最后一页时，ViewPager不需要左滑，设置横滑监听控件的左滑不可用
             mHsllPart1.setLeftSlideable(true);
             mHsllPart1.setRightSlideable(false);
@@ -295,8 +312,31 @@ public class MyHoldStockFragment extends AbsBaseFragment{
             mHsllPart1.setRightSlideable(false);
         }
         mListView.setAdapter(mAdapter, R.id.ll_hold_list_item_view, R.id.ll_hold_list_item_expand);
+        addCircles();
+        preSelectPagePos = 0;
         mServiceImpl.requestMyHoldStock();
         setTheme();
+    }
+
+       private void addCircles() {
+        //动态添加白色点所有对应的indicator的内容
+        for (int i = 0; i < mPagerAdapter.getCount(); i++) {
+            ImageView ivIndicator = new ImageView(getContext());
+            if (i != 0) {
+                ivIndicator.setImageResource(R.drawable.enablefalse);
+            } else {
+                ivIndicator.setImageResource(R.drawable.enabletrue);
+            }
+            int unit = (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()) + .5f);
+            int width = unit;//10dp<--->10px
+            int height = unit;
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
+
+            if (i != 0) {//不是第一个点的时候设置对应的marginLeft
+                params.leftMargin = unit;
+            }
+            mCirclrIndicator.addView(ivIndicator, params);
+        }
     }
 
     @Override
@@ -324,14 +364,13 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      * 点击此按钮时，进入买入模块，并显示被点击的股票联动数据
      */
     public void onClickHoldListviewExpandBuy(int position) {
-        if(TradeUtils.isFastClick()){
+        if (TradeUtils.isFastClick()) {
             return;
         }
         // 获取被点击的项的股票代码
         String stockCode = mAdapter.getItem(position).getStock_code();
-        String market = mAdapter.getItem(position).getMarket();
         // 通知activity做相应跳转和通知买卖Fragment操作
-        mActivity.transferFragmentToBuySaleFromHold(stockCode,market, 0);
+        mActivity.transferFragmentToBuySaleFromOthers(stockCode, 0);
     }
 
     /**
@@ -339,14 +378,14 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      * 点击此按钮时，进入卖出模块，并显示被点击的股票联动数据
      */
     public void onClickHoldListviewExpandSale(int position) {
-        if(TradeUtils.isFastClick()){
+        if (TradeUtils.isFastClick()) {
             return;
         }
         // 获取被点击的项的股票代码
         String stockCode = mAdapter.getItem(position).getStock_code();
         String market = mAdapter.getItem(position).getMarket();
         // 通知activity做相应跳转和通知买卖Fragment操作
-        mActivity.transferFragmentToBuySaleFromHold(stockCode,market,1);
+        mActivity.transferFragmentToBuySaleFromOthers(stockCode,  1);
     }
 
     /**
@@ -354,7 +393,7 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      * 点击后，进入行情模块中的个股详情页面，但是返回后，还是本Fragment的界面
      */
     public void onClickHoldListviewExpandHq(int position) {
-        if(TradeUtils.isFastClick()){
+        if (TradeUtils.isFastClick()) {
             return;
         }
         // 获取被点击的是哪支股票，并获取其股票代码
@@ -376,7 +415,7 @@ public class MyHoldStockFragment extends AbsBaseFragment{
      * 给行情模块发送消息，让行情模块给本类返回股票搜索提示列表
      * 这里的模块通信异步返回结果。
      */
-    private void sendMsgToHqForStockList(String curEditStockCode, final IHqCallBackStock iHqCallBackStock){
+    private void sendMsgToHqForStockList(String curEditStockCode, final IHqCallBackStock iHqCallBackStock) {
         try {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("searchKey", curEditStockCode);
@@ -387,7 +426,7 @@ public class MyHoldStockFragment extends AbsBaseFragment{
                 public void callback(Object o) {
                     ArrayList<CodeTableBean> dataList = new ArrayList<CodeTableBean>();
                     try {
-                        if(o != null && !o.equals("")){
+                        if (o != null && !o.equals("")) {
                             String result = o.toString();
                             JSONObject resultJsonObject = new JSONObject(result);
                             JSONArray resultJsonArray = resultJsonObject.getJSONArray("results");
@@ -398,7 +437,7 @@ public class MyHoldStockFragment extends AbsBaseFragment{
                                 dataList.add(tempBean);
                             }
                             iHqCallBackStock.onGetStockMsg(dataList);
-                        }else{
+                        } else {
                             ToastUtils.toast(CoreApplication.getInstance(), CoreApplication.getInstance().getResources().getString(R.string.toast_call_back_hq));
                         }
                     } catch (JSONException je) {
@@ -419,10 +458,11 @@ public class MyHoldStockFragment extends AbsBaseFragment{
 
     /**
      * 获取持仓数据
+     *
      * @param dataList
      */
     public void getStoreData(ArrayList<MyStoreStockBean> dataList) {
-        if (dataList == null || dataList.size()==0){
+        if (dataList == null || dataList.size() == 0) {
             mLiNoData.setVisibility(View.VISIBLE);
             mListView.setVisibility(View.GONE);
             mLlLoading.setVisibility(View.GONE);
@@ -493,31 +533,12 @@ public class MyHoldStockFragment extends AbsBaseFragment{
         //当新的页面被选中时调用
         @Override
         public void onPageSelected(int position) {
-            // 更新三个小圆点的选中状态
-            for (int i = 0; i < mPointForViewPager.length; i++) {
-                if (position == i) {
-                    mPointForViewPager[position].setBackgroundResource(R.drawable.radio_dark);
-                }
-                if (position != i) {
-                    mPointForViewPager[i].setBackgroundResource(R.drawable.radio_light);
-                }
-            }
-            // 根据上方ViewPager的当前页位置，设置上方的横滑监听控件是否可用，防止两个横滑事件冲突
-            if (position == 0) {
-                // 当前页是第一页时，ViewPager不需要右滑，设置横滑监听控件的右滑不可用
-                mHsllPart1.setLeftSlideable(false);
-                mHsllPart1.setRightSlideable(true);
-            } else if (position == mPointForViewPager.length - 1) {
-                // 当前页是最后一页时，ViewPager不需要左滑，设置横滑监听控件的左滑不可用
-                mHsllPart1.setLeftSlideable(true);
-                mHsllPart1.setRightSlideable(false);
-            } else {
-                // 如果既不是第一页，也不是最后一页，
-                // 那么Viewpager的左右滑动都需要，因此横滑控件的左右滑动都不能可用。
-                mHsllPart1.setLeftSlideable(false);
-                mHsllPart1.setRightSlideable(false);
-            }
-            mViewPagerLastPos = position;
+            ImageView iv = (ImageView) mCirclrIndicator.getChildAt(position);
+            iv.setImageResource(R.drawable.enabletrue);
+            ImageView preIv = (ImageView) mCirclrIndicator.getChildAt(preSelectPagePos);
+            preIv.setImageResource(R.drawable.enablefalse);
+            preSelectPagePos = position;
+            mCirclrIndicator.invalidate();
         }
     }
 }

@@ -44,8 +44,6 @@ public class MyHoldStockViewController extends AbsBaseController implements
                 ((HorizontalSlideLinearLayout)view).setOnSlideListener(this);
                 break;
         }
-
-
     }
 
     @Override

@@ -21,9 +21,7 @@ public class ARevocationConfirmDialog extends AbsTradeDialog {
     private TextView stockCodeTextView;
     private TextView entrustPriceTextView;
     private TextView entrustNumTextView;
-    private TextView tradeCompleteNumTextView;
-    private TextView buyOrSellTextView;
-
+    private TextView entrustTimeTextView;
     /**
      * 调用方的业务类
      */
@@ -45,14 +43,12 @@ public class ARevocationConfirmDialog extends AbsTradeDialog {
         stockNameTextView = (TextView) view.findViewById(R.id.tv_pop_name);
         // 显示股票代码
         stockCodeTextView = (TextView) view.findViewById(R.id.tv_pop_code);
+        //时间
+        entrustTimeTextView = (TextView) view.findViewById(R.id.tv_pop_time);
         // 显示委托价格
         entrustPriceTextView = (TextView) view.findViewById(R.id.tv_pop_price);
         // 显示委托数量
         entrustNumTextView = (TextView) view.findViewById(R.id.tv_pop_entrust_number);
-        //
-        tradeCompleteNumTextView = (TextView) view.findViewById(R.id.tv_pop_trade);
-        //
-        buyOrSellTextView = (TextView) view.findViewById(R.id.tv_pop_buy);
         setSubViewToParent(view);
     }
 
@@ -65,8 +61,7 @@ public class ARevocationConfirmDialog extends AbsTradeDialog {
         stockCodeTextView.setText(mDataBean.getStock_code());
         entrustPriceTextView.setText(mDataBean.getEntrust_price());
         entrustNumTextView.setText(mDataBean.getEntrust_amount());
-        tradeCompleteNumTextView.setText(mDataBean.getBusiness_amount());
-        buyOrSellTextView.setText(mDataBean.getEntrust_name());
+        entrustTimeTextView.setText(mDataBean.getEntrust_time());
     }
 
     @Override

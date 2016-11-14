@@ -2,25 +2,32 @@ package com.thinkive.android.trade_bz.a_stock.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.thinkive.framework.compatible.ListenerControllerAdapter;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TransferBanktActivity;
-import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
+import com.thinkive.android.trade_bz.a_stock.bean.MoneyBean;
 import com.thinkive.android.trade_bz.a_stock.bll.MyholdPagerServicesImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
-import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
-import com.thinkive.android.trade_bz.utils.StringUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+
+import static com.thinkive.android.trade_bz.R.color.trade_down_green;
+import static com.thinkive.android.trade_bz.R.color.trade_text;
+import static com.thinkive.android.trade_bz.R.color.trade_text_color3;
+import static com.thinkive.android.trade_bz.R.color.trade_text_color9;
 
 /**
  * 我的持仓 头部资金账户（货币信息）
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/6/29
@@ -34,57 +41,38 @@ public class HoldPagerFragment extends AbsBaseFragment {
      * 关联的Activity
      */
     private MultiTradeActivity mActivity;
-
+    private boolean mIsVisibleToUser = false;
     /**
      * 控制器
      */
     private PagerHoldViewController mPagerHoldViewController;
-    /**
-     * 动态设置头部的 钱名
-     */
-    private TextView mTvMoneyName;
-    private int mResIdMoneyTypeText;
+
     /**
      * 动态设置头部的 代号
      */
     private TextView mTvMoneyNumber;
     private int mResIdMoneyNumId;
+    private int mResIdImgIcon;
     /**
      * 总资产
      */
     private TextView mTvAllMoney;
-    private TextView mTvAllMoneya;
-    /**
-     * 总盈亏
-     */
-    private TextView mTvAllPorfit;
-    private TextView mTvAllPorfita;
-    /**
-     * 总市值
-     */
-    private TextView mTvAllMarketValue;
-    private TextView mTvAllMarketValuea;
     /**
      * 可用
      */
     private TextView mTvCanUse;
-    private TextView mTvCanUsea;
-    /**
-     * 可取
-     */
-    private TextView mTvCanGet;
-    private TextView mTvCanGeta;
+    private boolean isPrepare = false;
 
     /**
      * 银行转账按钮
      */
     private TextView mTvBlankMoney;
-    /**
-     * 设置字体
-     */
-    private FontManager mFontManager;
 
-    private int mType;
+    private int page;
+    private ImageView mIvIcon;
+    private TextView mTvReferPofit;
+    private TextView mTvTodayReferPofit;
+    private TextView mTvFundAccount;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -93,59 +81,99 @@ public class HoldPagerFragment extends AbsBaseFragment {
         initData();
         setListeners();
         initViews();
+        isPrepare = true;
+        System.out.println(this.toString() + "     HoldPagerFragment.............oncreateView");
         return rootView;
     }
 
     @Override
     protected void findViews(View view) {
-        mTvMoneyName = (TextView) view.findViewById(R.id.tv_money_unit);
-        mTvMoneyNumber = (TextView) view.findViewById(R.id.tv_money_number);
         mTvAllMoney = (TextView) view.findViewById(R.id.tv_myhold_money);
-        mTvAllPorfit = (TextView) view.findViewById(R.id.tv_myhold_port);
-        mTvAllMarketValue = (TextView) view.findViewById(R.id.tv_myhold_value);
-        mTvCanUse = (TextView) view.findViewById(R.id.tv_myhold_canuse);
-        mTvCanGet = (TextView) view.findViewById(R.id.tv_myhold_canget);
-
-        mTvAllMoneya = (TextView) view.findViewById(R.id.tv_myhold_moneya);
-        mTvAllPorfita = (TextView) view.findViewById(R.id.tv_myhold_porta);
-        mTvAllMarketValuea = (TextView) view.findViewById(R.id.tv_myhold_valuea);
-        mTvCanUsea = (TextView) view.findViewById(R.id.tv_myhold_canusea);
-        mTvCanGeta = (TextView) view.findViewById(R.id.tv_myhold_cangeta);
+        mTvMoneyNumber = (TextView) view.findViewById(R.id.tv_monetary_unit);
+        mIvIcon = (ImageView) view.findViewById(R.id.iv_icon);
         mTvBlankMoney = (TextView) view.findViewById(R.id.tv_holdpager_bank);
+        mTvFundAccount = (TextView) view.findViewById(R.id.tv_fund_account);
+
+        mTvCanUse = (TextView) view.findViewById(R.id.tv_myhold_canuse);
+        mTvReferPofit = (TextView) view.findViewById(R.id.tv_refer_pofit);
+        mTvTodayReferPofit = (TextView) view.findViewById(R.id.tv_today_refer_profit);
+
     }
 
     @Override
     protected void setListeners() {
         registerListener(ListenerControllerAdapter.ON_CLICK, mTvBlankMoney, mPagerHoldViewController);
+
+        mTvCanUse.addTextChangedListener(new MyTextWatcher() {
+            @Override
+            public void doAfterChange(Editable s) {
+                if (mTvCanUse.getText().toString().startsWith(getResources().getString(R.string.common_emp_text))) {
+                    mTvCanUse.setTextColor(getResources().getColor(trade_text_color9));
+                } else {
+                    mTvCanUse.setTextColor(getResources().getColor(trade_text_color3));
+                }
+            }
+        });
+        mTvReferPofit.addTextChangedListener(new MyTextWatcher() {
+            @Override
+            public void doAfterChange(Editable s) {
+                if (mTvReferPofit.getText().toString().startsWith(getResources().getString(R.string.common_emp_text))) {
+                    mTvReferPofit.setTextColor(getResources().getColor(trade_text_color9));
+                } else if (mTvReferPofit.getText().toString().startsWith("-")) {
+                    mTvReferPofit.setTextColor(getResources().getColor(trade_down_green));
+                } else {
+                    mTvReferPofit.setTextColor(getResources().getColor(trade_text));
+                }
+
+            }
+        });
+        mTvTodayReferPofit.addTextChangedListener(new MyTextWatcher() {
+            @Override
+            public void doAfterChange(Editable s) {
+                if (mTvTodayReferPofit.getText().toString().startsWith(getResources().getString(R.string.common_emp_text))) {
+                    mTvTodayReferPofit.setTextColor(getResources().getColor(trade_text_color9));
+                } else if (mTvTodayReferPofit.getText().toString().startsWith("-")) {
+                    mTvTodayReferPofit.setTextColor(getResources().getColor(trade_down_green));
+                } else {
+                    mTvTodayReferPofit.setTextColor(getResources().getColor(trade_text));
+                }
+            }
+        });
+
+
     }
 
     @Override
     protected void initData() {
         mActivity = (MultiTradeActivity) getActivity();
         mPagerHoldViewController = new PagerHoldViewController(this);
-        mFontManager = FontManager.getInstance(mActivity);
         Bundle bundle = getArguments();
-        mType = bundle.getInt("moneyType");
+        page = bundle.getInt("page");
+        if (page != 0) {
+            page = (page + 1) % 2==0?(page+1):(page+1)%2;
+        }
         mServices = new MyholdPagerServicesImpl(this);
     }
 
     @Override
     protected void initViews() {
-        mTvMoneyName.setText(mResIdMoneyTypeText);
         mTvMoneyNumber.setText(mResIdMoneyNumId);
-        mServices.requestMyHoldPager(mType);
-        mFontManager.setTextFont(mTvAllMoney, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvAllMoneya, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvCanUse, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvCanUsea, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvAllPorfit, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvAllPorfita, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvCanGet, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvCanGeta, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvAllMarketValue, FontManager.FONT_DINPRO_BOLD);
-        mFontManager.setTextFont(mTvAllMarketValuea, FontManager.FONT_DINPRO_BOLD);
+        mIvIcon.setImageResource(mResIdImgIcon);
+        if (mIsVisibleToUser) {
+            mServices.requestMyHoldPager(page);
+        }
         setTheme();
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        mIsVisibleToUser = isVisibleToUser;
+        if (mIsVisibleToUser && isPrepare && mServices != null) {
+            mServices.requestMyHoldPager(page);
+        }
+        System.out.println(this.toString() + "  isVisibleToUser===" + isVisibleToUser);
+    }
+
 
     /**
      * 从业务类中获得货币类型数据信息
@@ -154,7 +182,7 @@ public class HoldPagerFragment extends AbsBaseFragment {
         if (mServices == null) {
             mServices = new MyholdPagerServicesImpl(this);
         }
-        mServices.requestMyHoldPager(mType);
+        mServices.requestMyHoldPager(page);
     }
 
     @Override
@@ -165,31 +193,21 @@ public class HoldPagerFragment extends AbsBaseFragment {
     /**
      * 设置通用的头部信息
      */
-    public void setOriginalViews(int moneyNumId, int moneyTypeTextId) {
+    public void setOriginalViews(int moneyNumId, int iconId) {
         mResIdMoneyNumId = moneyNumId;
-        mResIdMoneyTypeText = moneyTypeTextId;
+        mResIdImgIcon = iconId;
     }
 
     /**
      * 接收业务类传递过来的数据,并设置
      */
-    public void getMoneyAccountData(MoneySelectBean bean) {
+    public void getMoneyAccountData(MoneyBean bean) {
         try {
-            mTvAllMoney.setText(StringUtils.subStringBefor(bean.getAssert_val()));
-            mTvAllMoneya.setText(StringUtils.subStringAfter(bean.getAssert_val()));
-
-            mTvAllPorfit.setText(StringUtils.subStringBefor(bean.getTotal_income_balance()));
-            mTvAllPorfita.setText(StringUtils.subStringAfter(bean.getTotal_income_balance()));
-
-            mTvAllMarketValue.setText(StringUtils.subStringBefor(bean.getDaily_income_balance()));
-            mTvAllMarketValuea.setText(StringUtils.subStringAfter(bean.getDaily_income_balance()));
-
-            mTvCanUse.setText(StringUtils.subStringBefor(bean.getEnable_balance()));
-            mTvCanUsea.setText(StringUtils.subStringAfter(bean.getEnable_balance()));
-
-            mTvCanGet.setText(StringUtils.subStringBefor(bean.getFetch_balance()));
-            mTvCanGeta.setText(StringUtils.subStringAfter(bean.getFetch_balance()));
-
+            mTvFundAccount.setText("资金账号:" + TradeLoginManager.sNormalLoginAccount + " -  ");
+            mTvAllMoney.setText(bean.getAssert_val().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getAssert_val()));
+            mTvCanUse.setText(bean.getEnable_balance().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getEnable_balance()));
+            mTvReferPofit.setText(bean.getZ_float_yk().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getZ_float_yk()));
+            mTvTodayReferPofit.setText(bean.getDayfloat_yk().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getDayfloat_yk()));
         } catch (NullPointerException npe) {
             npe.printStackTrace();
         }
@@ -210,6 +228,26 @@ public class HoldPagerFragment extends AbsBaseFragment {
             mActivity.startActivity(intent);
         }
     }
+}
+
+abstract class MyTextWatcher implements TextWatcher {
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        doAfterChange(s);
+    }
+
+    public abstract void doAfterChange(Editable s);
 }
 
 /**
@@ -239,4 +277,6 @@ class PagerHoldViewController extends AbsBaseController implements View.OnClickL
             mHoldPagerFragment.onClickBank();
         }
     }
+
+
 }

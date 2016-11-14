@@ -21,8 +21,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.thinkive.framework.compatible.ListenerController;
+import com.android.thinkive.framework.config.ConfigManager;
 import com.android.thinkive.framework.keyboard.BaseKeyboard;
+import com.android.thinkive.framework.network.NetWorkService;
+import com.android.thinkive.framework.util.CommonUtil;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
 import com.thinkive.android.trade_bz.a_stock.bll.TradeLoginServiceImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.TradeLoginViewController;
@@ -119,6 +123,7 @@ public class FundLoginFragment extends AbsBaseFragment {
      */
     private String mSaveAccount = "";
     private String mLoginType;
+    private String mToH5Page;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -159,7 +164,7 @@ public class FundLoginFragment extends AbsBaseFragment {
                 TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, true);
             }
         }
-        if (TradeLoginManager.LOGIN_TYPE_CREDIT .equals(mLoginType) ) {
+        if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
             //是否记住账号
             if (PreferencesUtils.getBoolean(mActivity, Constants.IS_SAVE_CREDIT_ACCOUNT_KEY)) {
                 mSwitchBtn.setToggleOn(true);
@@ -197,7 +202,7 @@ public class FundLoginFragment extends AbsBaseFragment {
                 PreferencesUtils.putString(mActivity, Constants.USER_NORMAL_ACCOUNT_KEY, "");
             }
         }
-        if (TradeLoginManager.LOGIN_TYPE_CREDIT .equals(mLoginType)) {
+        if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
             // 信用账户登录时
             if (PreferencesUtils.getBoolean(mActivity, Constants.IS_SAVE_CREDIT_ACCOUNT_KEY)) {
                 PreferencesUtils.putString(mActivity, Constants.USER_CREDIT_ACCOUNT_KEY, getLoginAccount());
@@ -215,19 +220,18 @@ public class FundLoginFragment extends AbsBaseFragment {
     @Override
     protected void initData() {
         Bundle bundle = getArguments();
-        System.out.println("TradeLoginActivity--logintype="+bundle.getString(Constants.LOGIN_TYPE).toString());
-        System.out.println("TradeLoginActivity--preId="+bundle.getInt(NormalTradeFragment.MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID) + "".toString());
         if (bundle != null) {
             mClickIdBeforeLogin = bundle.getInt(NormalTradeFragment.MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID);
             mJsonDataFromHq = bundle.getString("jsonDataFormHq");
             mLoginType = bundle.getString(Constants.LOGIN_TYPE);
+            mToH5Page = bundle.getString(Constants.TOH5PAGE);
         }
         mActivity = (TradeLoginActivity) getActivity();
-        if (TradeLoginManager.LOGIN_TYPE_NORMAL .equals(mLoginType)) {
+        if (TradeLoginManager.LOGIN_TYPE_NORMAL.equals(mLoginType)) {
 
             mPhoneNum = PreferencesUtils.getString(mActivity, NormalTradeFragment.PREFERENCE_KEY_PHONE_NUMBER);
         }
-        if (TradeLoginManager.LOGIN_TYPE_CREDIT .equals(mLoginType)) {
+        if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
             mPhoneNum = PreferencesUtils.getString(mActivity, CreditTradeFragment.PREFERENCE_KEY_PHONE_NUMBER);
         }
         mController = new TradeLoginViewController(mActivity, TradeLoginManager.LOGIN_TYPE_NORMAL);
@@ -264,11 +268,11 @@ public class FundLoginFragment extends AbsBaseFragment {
             public void onToggle(boolean on) {
                 //保存账号生效需要在登录成功回调中实现
                 if (!on) {
-                    if (TradeLoginManager.LOGIN_TYPE_NORMAL .equals(mLoginType)) {
+                    if (TradeLoginManager.LOGIN_TYPE_NORMAL.equals(mLoginType)) {
                         PreferencesUtils.putBoolean(mActivity, Constants.IS_SAVE_NORMAL_ACCOUNT_KEY, on);
                         PreferencesUtils.putString(mActivity, Constants.USER_NORMAL_ACCOUNT_KEY, "");
                     }
-                    if (TradeLoginManager.LOGIN_TYPE_CREDIT .equals(mLoginType)) {
+                    if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
                         PreferencesUtils.putBoolean(mActivity, Constants.IS_SAVE_CREDIT_ACCOUNT_KEY, on);
                         PreferencesUtils.putString(mActivity, Constants.USER_CREDIT_ACCOUNT_KEY, "");
                     }
@@ -430,6 +434,11 @@ public class FundLoginFragment extends AbsBaseFragment {
                     intent.putExtra(NormalTradeFragment.MainBroadcastReceiver.INTENT_KEY_JSON_FORM_HQ,
                             mJsonDataFromHq);
                 }
+                //普通登录会话同步
+                String url1 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sNormalUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sNormalUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sNormalUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sNormalUserInfo.getOp_station();
+                System.out.println("普通登录url同步---" + url1);
+                String cookie1 = NetWorkService.getInstance().getCookie(ConfigManager.getInstance().getAddressConfigValue(url1));
+                CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.NORMAL_URL,cookie1);
                 break;
             case TradeLoginManager.LOGIN_TYPE_CREDIT:
                 TradeFlags.addFlag(TradeFlags.FLAG_CREDIT_TRADE_YES);
@@ -443,6 +452,11 @@ public class FundLoginFragment extends AbsBaseFragment {
                     intent.putExtra(CreditTradeFragment.MainBroadcastReceiver.INTENT_KEY_JSON_FORM_HQ,
                             mJsonDataFromHq);
                 }
+                //信用登录会话
+                String url2 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sCreditUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sCreditUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sCreditUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sCreditUserInfo.getOp_station();
+                System.out.println("信用登录url同步---" + url2);
+                String cookie2 = NetWorkService.getInstance().getCookie(ConfigManager.getInstance().getAddressConfigValue(url2));
+                CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.CREDIT_URL,cookie2);
                 break;
             case TradeLoginManager.LOGIN_TYPE_OPTION:
                 TradeFlags.addFlag(TradeFlags.FLAG_OPTION_TRADE_YES);
@@ -454,6 +468,19 @@ public class FundLoginFragment extends AbsBaseFragment {
         TradeBaseBroadcastReceiver.sendBroadcast(mActivity, intent, TradeBaseBroadcastReceiver.ACTION_START_ACTIVITY);
         Intent uumsIntent = new Intent();
         TradeBaseBroadcastReceiver.sendBroadcast(mActivity, uumsIntent, TradeBaseBroadcastReceiver.ACTION_TRADE_LOGIN_SUCCESS);
+        if (mToH5Page != null) {
+            Intent broadIntent = new Intent(Constants.ACTION_TO_H5_PAGE);
+            intent.putExtra(Constants.TOH5PAGE, mToH5Page);
+            if (TradeLoginManager.LOGIN_TYPE_NORMAL.equals(mLoginType)) {
+
+                intent.putExtra(Constants.STOCK_CREDIT_FLAG, "stock");
+            }
+            if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
+                intent.putExtra(Constants.STOCK_CREDIT_FLAG, "credit");
+            }
+            getContext().sendBroadcast(broadIntent);
+            mToH5Page = null;
+        }
         mActivity.finish();
     }
 
@@ -530,11 +557,11 @@ public class FundLoginFragment extends AbsBaseFragment {
             }
             if (TextUtils.isEmpty(mInputAccountEdt.getText())) {
                 mSwitchBtn.setToggleOn(false);
-                if (TradeLoginManager.LOGIN_TYPE_NORMAL .equals(mLoginType)) {
+                if (TradeLoginManager.LOGIN_TYPE_NORMAL.equals(mLoginType)) {
 
                     PreferencesUtils.putBoolean(mActivity, Constants.IS_SAVE_NORMAL_ACCOUNT_KEY, false);
                 }
-                if (TradeLoginManager.LOGIN_TYPE_CREDIT .equals(mLoginType)) {
+                if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
                     PreferencesUtils.putBoolean(mActivity, Constants.IS_SAVE_CREDIT_ACCOUNT_KEY, false);
                 }
             }

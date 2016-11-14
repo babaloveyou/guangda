@@ -29,6 +29,7 @@ public class OptionRevocationDialog extends AbsTradeDialog {
      */
     private OptionRevocationServicesImpl mServices;
     private OptionRevocationBean mDataBean;
+    private TextView mEntrustTimeTextView;
 
     public OptionRevocationDialog(Context context, OptionRevocationServicesImpl services) {
         super(context);
@@ -44,18 +45,17 @@ public class OptionRevocationDialog extends AbsTradeDialog {
         super.initDialogLayout();
         setTitleText(R.string.dialog_entrust_buy);
         View view = LayoutInflater.from(mContext).inflate(R.layout.dialog_revocation, null);
-        // 显示股票名称
-        stockNameTextView = (TextView)view.findViewById(R.id.tv_pop_name);
+
+
+        stockNameTextView = (TextView) view.findViewById(R.id.tv_pop_name);
         // 显示股票代码
-        stockCodeTextView = (TextView)view.findViewById(R.id.tv_pop_code);
+        stockCodeTextView = (TextView) view.findViewById(R.id.tv_pop_code);
+        //时间
+        mEntrustTimeTextView = (TextView) view.findViewById(R.id.tv_pop_time);
         // 显示委托价格
-        entrustPriceTextView = (TextView)view.findViewById(R.id.tv_pop_price);
+        entrustPriceTextView = (TextView) view.findViewById(R.id.tv_pop_price);
         // 显示委托数量
-        entrustNumTextView = (TextView)view.findViewById(R.id.tv_pop_entrust_number);
-        //
-        tradeCompleteNumTextView = (TextView)view.findViewById(R.id.tv_pop_trade);
-        //
-        buyOrSellTextView=(TextView)view.findViewById(R.id.tv_pop_buy);
+        entrustNumTextView = (TextView) view.findViewById(R.id.tv_pop_entrust_number);
         setSubViewToParent(view);
     }
 
@@ -68,11 +68,11 @@ public class OptionRevocationDialog extends AbsTradeDialog {
      */
     public void setDataToViews() {
         stockNameTextView.setText(mDataBean.getOption_name());
-        stockCodeTextView.setText(mDataBean.getOption_code());
+        stockCodeTextView.setText(mDataBean.getStock_code());
         entrustPriceTextView.setText(mDataBean.getOpt_entrust_price());
         entrustNumTextView.setText(mDataBean.getEntrust_amount());
-        tradeCompleteNumTextView.setText(mDataBean.getBusiness_amount());
-        buyOrSellTextView.setText(mDataBean.getEntrust_type_name());
+        mEntrustTimeTextView.setText(mDataBean.getEntrust_time());
+
     }
 
     @Override

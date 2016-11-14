@@ -48,7 +48,6 @@ public class RSelectTodayEntrustServicesImpl extends BasicServiceImpl {
                 String date = bundle.getString(Request306000.BUNDLE_KEY_306000);
                 HashMap<String, String> map303016 = new HashMap<>();
                 map303016.put("date", date);
-                System.out.println("30600 date==" + date);
                 new Request303016(map303016, new IRequestAction() {
                     @Override
                     public void onSuccess(Context context, Bundle bundle) {

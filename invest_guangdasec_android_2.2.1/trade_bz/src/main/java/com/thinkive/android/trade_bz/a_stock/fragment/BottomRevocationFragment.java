@@ -128,9 +128,19 @@ public class BottomRevocationFragment extends BaseLazzyFragment {
             mAdapter.setListData(dataList);
             if (mFragment.getBuyOrSell()==0) {//如果是买
                 mAdapter.setListData(revocationBeensBuy);
+                if (revocationBeensBuy.size() == 0) {
+                    mRevotionLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                    mLoadingLl.setVisibility(View.GONE);
+                }
                 revocationBeensSell = null;
             } else {//卖
                 mAdapter.setListData(revocationBeensSell);
+                if (revocationBeensSell.size() == 0) {
+                    mRevotionLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                    mLoadingLl.setVisibility(View.GONE);
+                }
                 revocationBeensBuy = null;
             }
             mRevotionLv.setAdapter(mAdapter);

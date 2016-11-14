@@ -154,6 +154,7 @@
     <color name="bthumbnail_background">#00000000</color>
     <color name="bthumbnail_border">#dbdbdb</color>
     <color name="bthumbnail_font">#7e7e7e</color>
+    <color name="btn_hq_yellow">#d9bd3c</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#FF4081</color>
@@ -482,6 +483,7 @@
     <string name="change_pwd_sure_hint">再次输入交易密码</string>
     <string name="change_pwd_text">   您最多可以设置12位新密码，建议使用6位新密码，只允许输入0-9、a-z、A-Z</string>
     <string name="change_pwd_title">修改交易密码</string>
+    <string name="common_emp_text">--</string>
     <string name="contract_not0">方向</string>
     <string name="contract_not1">合约编号</string>
     <string name="contract_not10">合同序号</string>
@@ -537,8 +539,9 @@
     <string name="dialog_not">取消</string>
     <string name="dialog_ok">确认</string>
     <string name="dialog_price">委托价格</string>
-    <string name="dialog_stock_code">证券代码</string>
-    <string name="dialog_stock_name">证券名称</string>
+    <string name="dialog_stock_code">股票代码</string>
+    <string name="dialog_stock_name">股票名称</string>
+    <string name="dialog_time">委托时间</string>
     <string name="dialog_trade">成交数量</string>
     <string name="distributeNum_inem_dcount">配号数量</string>
     <string name="distributeNum_item_count">委托数量</string>
@@ -782,6 +785,7 @@
     <string name="hk_delivery_item7">剩余数量</string>
     <string name="hk_delivery_item8">印花税</string>
     <string name="hk_delivery_item9">佣金</string>
+    <string name="hk_entrust">委托</string>
     <string name="hk_exchange_item0">币种</string>
     <string name="hk_exchange_item1">交易所名称</string>
     <string name="hk_exchange_item2">买入参考汇率</string>
@@ -797,6 +801,7 @@
     <string name="hk_liabilities_item1">已支付金额</string>
     <string name="hk_liabilities_item2">应付总金额</string>
     <string name="hk_liabilities_item3">币种</string>
+    <string name="hk_mine">个人</string>
     <string name="hk_not_paid_detail_item0">委托价格</string>
     <string name="hk_not_paid_detail_item1">成交价格</string>
     <string name="hk_not_paid_detail_item10">币种</string>
@@ -845,6 +850,7 @@
     <string name="hk_order34">成交金额</string>
     <string name="hk_order35">成交数</string>
     <string name="hk_order36">(港币)</string>
+    <string name="hk_order37">参考盈亏</string>
     <string name="hk_order5">总资产</string>
     <string name="hk_order6">总盈亏</string>
     <string name="hk_order7">当日参考盈亏</string>
@@ -1075,9 +1081,9 @@
     <string name="money_type_name1">¥</string>
     <string name="money_type_name2">$</string>
     <string name="money_type_name3">$</string>
-    <string name="money_type_num1">CNY</string>
-    <string name="money_type_num2">HKD</string>
-    <string name="money_type_num3">USD</string>
+    <string name="money_type_num1">人民币总资产CNY</string>
+    <string name="money_type_num2">港元总资产HKD</string>
+    <string name="money_type_num3">美元总资产USD</string>
     <string name="msg_amount_limit">Select images amount is limit</string>
     <string name="msg_no_camera">No system camera found</string>
     <string name="net_vote0">投票</string>

@@ -27,6 +27,9 @@ public class TradeFlags {
      */
     public static final int FLAG_CREATE_SESSION_SUCCESS = 0x00000004;
 
+
+
+
     //账户校验  0x00000100~0x0000FF00   预留8位
     /**
      * 普通交易账户校验成功

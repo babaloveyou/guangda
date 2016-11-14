@@ -135,6 +135,7 @@ public class RevocationBean extends BaseBean {
     @JsonKey("entrust_type_name")
     private String entrust_type_name="";
 
+
     public RevocationBean() {
     }
 

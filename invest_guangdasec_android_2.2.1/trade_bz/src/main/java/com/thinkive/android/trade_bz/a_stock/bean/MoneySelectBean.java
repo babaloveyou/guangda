@@ -45,14 +45,20 @@ import com.thinkive.android.trade_bz.others.JsonKey;
      */
     @JsonKey("assert_val")
     private String assert_val="";
+
+    @JsonKey("fund_account")
+    private String fund_account="";
     /**
      *  持仓市值
      */
     @JsonKey("market_val")
-    private String market_val="";
+    private String market_val = "";
+
+
     /**
      * 基金市值
      */
+
     @JsonKey("fund_val")
     private String fund_val="";
     /**
@@ -156,4 +162,12 @@ import com.thinkive.android.trade_bz.others.JsonKey;
     public void setDaily_income_balance(String daily_income_balance) {
         this.daily_income_balance = daily_income_balance;
     }
+    public String getFund_account() {
+        return fund_account;
+    }
+
+    public void setFund_account(String fund_account) {
+        this.fund_account = fund_account;
+    }
+
 }
