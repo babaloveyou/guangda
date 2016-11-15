@@ -177,6 +177,7 @@
 
     <!-- 横向显示三个按钮的LinearLayout -->
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/ll_today_entrust_list_item_expand"
         android:layout_width="match_parent"
         android:layout_height="44dp"
@@ -247,7 +248,7 @@
                 android:drawablePadding="-30dp"
                 android:gravity="center"
                 android:paddingLeft="30dp"
-                android:text="@string/listview_expand_hq"
+                android:text="@string/listview_expand_xq"
 
                 android:textColor="@color/white"/>
         </FrameLayout>

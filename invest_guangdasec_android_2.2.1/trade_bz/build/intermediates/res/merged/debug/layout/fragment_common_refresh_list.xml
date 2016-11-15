@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sll_back_out"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/trade_normal_background"
-    android:id="@+id/sll_back_out">
-
+    android:orientation="vertical">
     <!-- 正在加载时显示的界面 -->
     <LinearLayout
         android:id="@+id/lin_loading_set"
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:visibility="visible">
 
         <ProgressBar
@@ -21,41 +21,43 @@
             android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
 
         <TextView
-            android:text="@string/home_loading_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:text="@string/home_loading_text"/>
 
     </LinearLayout>
 
 
     <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
-        android:layout_marginTop="10dp"
+        android:id="@+id/lv_refresh_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_refresh_list"
+        android:layout_marginTop="10dp"
         android:visibility="gone"/>
 
 
     <LinearLayout
+        android:id="@+id/lin_not_data_set"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lin_not_data_set"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:visibility="gone">
 
-        <ImageView android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/not_data_listview" />
+            android:src="@drawable/not_data_listview"/>
 
-        <TextView android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/tv_no_data_set"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/no_data_listview"
             android:layout_marginTop="15dp"
+            android:text="@string/no_data_listview"
             android:textColor="@color/trade_text_color6"
-            android:textSize="@dimen/lsv_no_data_text"
-            android:id="@+id/tv_no_data_set"/>
+            android:textSize="@dimen/lsv_no_data_text"/>
 
     </LinearLayout>
 

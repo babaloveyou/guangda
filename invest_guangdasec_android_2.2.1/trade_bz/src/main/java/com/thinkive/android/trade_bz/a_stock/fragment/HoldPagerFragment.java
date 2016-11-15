@@ -3,6 +3,7 @@ package com.thinkive.android.trade_bz.a_stock.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,7 +83,6 @@ public class HoldPagerFragment extends AbsBaseFragment {
         setListeners();
         initViews();
         isPrepare = true;
-        System.out.println(this.toString() + "     HoldPagerFragment.............oncreateView");
         return rootView;
     }
 
@@ -150,7 +150,7 @@ public class HoldPagerFragment extends AbsBaseFragment {
         Bundle bundle = getArguments();
         page = bundle.getInt("page");
         if (page != 0) {
-            page = (page + 1) % 2==0?(page+1):(page+1)%2;
+            page = (page + 1) % 2 == 0 ? (page + 1) : (page + 1) % 2;
         }
         mServices = new MyholdPagerServicesImpl(this);
     }
@@ -202,16 +202,41 @@ public class HoldPagerFragment extends AbsBaseFragment {
      * 接收业务类传递过来的数据,并设置
      */
     public void getMoneyAccountData(MoneyBean bean) {
-        try {
-            mTvFundAccount.setText("资金账号:" + TradeLoginManager.sNormalLoginAccount + " -  ");
-            mTvAllMoney.setText(bean.getAssert_val().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getAssert_val()));
-            mTvCanUse.setText(bean.getEnable_balance().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getEnable_balance()));
-            mTvReferPofit.setText(bean.getZ_float_yk().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getZ_float_yk()));
-            mTvTodayReferPofit.setText(bean.getDayfloat_yk().equals("0.00")?bean.getAssert_val(): TradeUtils.formatDouble2(bean.getDayfloat_yk()));
-        } catch (NullPointerException npe) {
-            npe.printStackTrace();
+        String assert_val = bean.getAssert_val();
+        String balance = bean.getEnable_balance();
+        String z_float_yk = bean.getZ_float_yk();
+        String dayfloat_yk = bean.getDayfloat_yk();
+        mTvFundAccount.setText("资金账号:" + TradeLoginManager.sNormalLoginAccount + " -  ");
+        mTvAllMoney.setText(formateString(true, assert_val));
+        mTvCanUse.setText(formateString(false, balance));
+        mTvReferPofit.setText(formateString(false, z_float_yk));
+        mTvTodayReferPofit.setText(formateString(false, dayfloat_yk));
+    }
+
+    private String formateString(boolean isBig, String s) {
+        if (TextUtils.isEmpty(s)) {
+            s = "--";
+        } else {
+            if ("0.00".equals(s) || "0.000".equals(s)) {
+                s = "--";
+            }
+        }
+        if ("--".equals(s)) {
+            if (isBig) {
+                return "    " + s;
+            } else {
+                return s;
+            }
+        } else {
+            if (!s.startsWith("-")) {
+                return TradeUtils.formatDouble2(s);
+            } else {
+                int i = s.lastIndexOf(".");
+                return s.substring(0, i + 3);
+            }
         }
     }
+
 
 
     /**

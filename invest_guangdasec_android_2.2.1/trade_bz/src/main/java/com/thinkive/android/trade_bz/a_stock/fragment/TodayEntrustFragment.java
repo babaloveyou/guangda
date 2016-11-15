@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_stock.fragment;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.util.JsonParseUtil;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.TodayEntrustDetailActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.TodayEntrustAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.bean.RevocationBean;
@@ -52,11 +54,11 @@ public class TodayEntrustFragment extends AbsBaseFragment {
      */
     private MultiTradeActivity mActivity;
     /**
-     * 持仓数据的ListView
+     * 委托列表
      */
     private listViewInScrollview mListView;
     /**
-     * 我的持仓数据的LisView的适配器
+     * 数据的LisView的适配器
      */
     private TodayEntrustAdapter mAdapter;
     /**
@@ -119,6 +121,7 @@ public class TodayEntrustFragment extends AbsBaseFragment {
         mListView.setAdapter(mAdapter, R.id.ll_today_entrust_list_item_view, R.id.ll_today_entrust_list_item_expand);
     }
 
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -151,7 +154,7 @@ public class TodayEntrustFragment extends AbsBaseFragment {
     @Override
     protected void initData() {
         mActivity = (MultiTradeActivity) getActivity();
-        mServiceImpl = new TodayEntrustServicesImpl (this);
+        mServiceImpl = new TodayEntrustServicesImpl(this);
         mController = new TodayEntrustController(this);
         mAdapter = new TodayEntrustAdapter(mActivity);
     }
@@ -175,10 +178,14 @@ public class TodayEntrustFragment extends AbsBaseFragment {
         mLlLoading.setMinimumHeight((int) height);
         mHsllPart.initslideStandard(mActivity);
         mListView.setAdapter(mAdapter, R.id.ll_today_entrust_list_item_view, R.id.ll_today_entrust_list_item_expand);
-        mServiceImpl.requestTodayEntrust();
         setTheme();
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        mServiceImpl.requestTodayEntrust();
+    }
 
     @Override
     protected void setTheme() {
@@ -203,7 +210,7 @@ public class TodayEntrustFragment extends AbsBaseFragment {
         }
         // 获取被点击的项的股票代码
         String stockCode = mAdapter.getItem(position).getStock_code();
-//        String market = mAdapter.getItem(position).getMarket();
+        //        String market = mAdapter.getItem(position).getMarket();
         // 通知activity做相应跳转和通知买卖Fragment操作
         mActivity.transferFragmentToBuySaleFromOthers(stockCode, 0);
     }
@@ -218,7 +225,7 @@ public class TodayEntrustFragment extends AbsBaseFragment {
         }
         // 获取被点击的项的股票代码
         String stockCode = mAdapter.getItem(position).getStock_code();
-//        String market = mAdapter.getItem(position).getMarket();
+        //        String market = mAdapter.getItem(position).getMarket();
         // 通知activity做相应跳转和通知买卖Fragment操作
         mActivity.transferFragmentToBuySaleFromOthers(stockCode, 1);
     }
@@ -228,23 +235,15 @@ public class TodayEntrustFragment extends AbsBaseFragment {
      * 点击后，进入行情模块中的个股详情页面，但是返回后，还是本Fragment的界面
      */
     public void onClickExpandDetails(int position) {
-//        if (TradeUtils.isFastClick()) {
-//            return;
-//        }
-//        // 获取被点击的是哪支股票，并获取其股票代码
-//        String stockCode = mAdapter.getItem(position).getStock_code();
-//        // 给行情发消息，通过股票代码查询这支股票的其他信息，
-//        // 行情的个股详情页面需要提供“股票名称”、“市场”、“股票代码”、“股票类型”四个参数。
-//        sendMsgToHqForStockList(stockCode, new MyHoldStockFragment.IHqCallBackStock() {
-//            @Override
-//            public void onGetStockMsg(ArrayList<CodeTableBean> dataList) {
-//                if (dataList != null && dataList.size() > 0) {
-//                    CodeTableBean codeTableBean = dataList.get(0);
-//                    TradeUtils.startPriceDetailStock(mActivity, codeTableBean);
-//                }
-//            }
-//        });
-        //// TODO: 2016/11/12 详情 
+        if (TradeUtils.isFastClick()) {
+            return;
+        }
+        RevocationBean bean = mAdapter.getItem(position);
+        Intent intent = new Intent(getActivity(), TodayEntrustDetailActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("bean", bean);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     /**

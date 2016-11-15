@@ -220,15 +220,15 @@
     <string name="change_pwd_error2">新密码不能与原密码一致</string>
     <string name="change_pwd_error3">新密码重复数字超过3位</string>
     <string name="change_pwd_error4">新密码不能为递增或递减数字组合</string>
-    <string name="change_pwd_new">新密码</string>
-    <string name="change_pwd_new_hint">请输入新密码</string>
+    <string name="change_pwd_new">新交易密码</string>
+    <string name="change_pwd_new_hint">6位数字</string>
     <string name="change_pwd_ok">修改密码成功</string>
-    <string name="change_pwd_old">原密码</string>
+    <string name="change_pwd_old">原交易密码</string>
     <string name="change_pwd_old_hint">请输入原密码</string>
     <string name="change_pwd_regex">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
-    <string name="change_pwd_sure">确认密码</string>
+    <string name="change_pwd_sure">确认新交易密码</string>
     <string name="change_pwd_sure_hint">再次输入交易密码</string>
-    <string name="change_pwd_text">   您最多可以设置12位新密码，建议使用6位新密码，只允许输入0-9、a-z、A-Z</string>
+    <string name="change_pwd_text">账户登录时需要输入交易密码,请妥善保管您的交易密码</string>
     <string name="change_pwd_title">修改交易密码</string>
     <string name="common_emp_text">--</string>
     <string name="contract_not0">方向</string>
@@ -295,6 +295,7 @@
     <string name="distributeNum_item_date">申购日期</string>
     <string name="distributeNum_title">配号</string>
     <string name="entrust_info">委托信息</string>
+    <string name="entrust_price">成交价格</string>
     <string name="error_999">重新登陆</string>
     <string name="fund_account0">基金账号</string>
     <string name="fund_account1">公司代码</string>
@@ -795,6 +796,7 @@
     <string name="listview_expand_buy">买入</string>
     <string name="listview_expand_hq">行情</string>
     <string name="listview_expand_sale">卖出</string>
+    <string name="listview_expand_xq">详情</string>
     <string name="login_account">请输入资金账号</string>
     <string name="login_account_hint">登录账号不能为空</string>
     <string name="login_account_text">账号</string>
@@ -819,6 +821,7 @@
     <string name="main_my_hold">我的持仓</string>
     <string name="main_today_entrust">当日委托</string>
     <string name="main_today_trade">当日成交</string>
+    <string name="money_title">资金流水</string>
     <string name="money_type_name1">¥</string>
     <string name="money_type_name2">$</string>
     <string name="money_type_name3">$</string>
@@ -1273,11 +1276,13 @@
     <string name="store_usable">我的持仓</string>
     <string name="store_win_lose">盈亏</string>
     <string name="sune_login">阳光E账通登录</string>
+    <string name="time_select">选择日期</string>
     <string name="to_active">用户激活</string>
     <string name="toast_call_back_hq">行情回调失败！</string>
     <string name="toast_data_error">找不到该股票！</string>
     <string name="toast_data_from_service_error_nodata">服务器没有返回数据！</string>
     <string name="today_entrust">当日委托</string>
+    <string name="today_entrust_details">委托查询详情</string>
     <string name="today_head_one">名称/时间</string>
     <string name="today_head_three">委托/成交数</string>
     <string name="today_head_two">委托/成交价</string>
@@ -1290,6 +1295,7 @@
     <string name="today_money_use">发生金额</string>
     <string name="today_money_use_count">成交数量</string>
     <string name="today_trade">当日成交</string>
+    <string name="today_trade_details">成交查询详情</string>
     <string name="trade_add">+</string>
     <string name="trade_buy1">买1</string>
     <string name="trade_buy2">买2</string>
@@ -1422,6 +1428,7 @@
     <string name="trans_stock8">做市商买入</string>
     <string name="trans_stock9">做市商卖出</string>
     <string name="trunover_info">成交信息</string>
+    <string name="trunover_num">成交数量</string>
     <string name="unity_login_failed0">600002调用失败！原因是：</string>
     <string name="unity_login_failed1">600003调用失败！原因是：</string>
     <string name="unity_login_failed2">600002请求太过频繁！</string>

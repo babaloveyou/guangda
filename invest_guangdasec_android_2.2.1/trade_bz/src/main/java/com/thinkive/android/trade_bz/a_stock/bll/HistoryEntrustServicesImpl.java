@@ -14,6 +14,7 @@ import java.util.HashMap;
 
 /**
  * 历史委托的业务类
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/6/23
@@ -28,11 +29,12 @@ public class HistoryEntrustServicesImpl {
 
     /**
      * 初始化请求到的历史委托数据
+     *
      * @param begin
      * @param end
      */
-    public void requestHistoryEntrust(String begin, String end) {
-        HashMap<String, String> map = new HashMap<String, String>();
+    public void requestHistoryEntrust(final String begin, final String end) {
+        HashMap<String, String> map = new HashMap<>();
         map.put("begin_time", begin);
         map.put("end_time", end);
         new Request301510(map, new IRequestAction() {
@@ -40,12 +42,13 @@ public class HistoryEntrustServicesImpl {
             public void onSuccess(Context context, Bundle bundle) {
                 ArrayList<HistoryEntrustBean> dataList = bundle.getParcelableArrayList(Request301510.BUNDLE_KEY_HISTORY_ENTRUST);
                 //保留小数点后两位
-//                for (HistoryEntrustBean bean : dataList) {
-//                    bean.setBusiness_price(TradeUtils.formatDouble2(bean.getBusiness_price()));
-//                    bean.setEntrust_price(TradeUtils.formatDouble2(bean.getEntrust_price()));
-//                }
+                //                for (HistoryEntrustBean bean : dataList) {
+                //                    bean.setBusiness_price(TradeUtils.formatDouble2(bean.getBusiness_price()));
+                //                    bean.setEntrust_price(TradeUtils.formatDouble2(bean.getEntrust_price()));
+                //                }
                 mHistoryEntrustFragment.onGetHistoryEntrustData(dataList);
             }
+
             @Override
             public void onFailed(Context context, Bundle bundle) {
                 ToastUtils.toast(context, bundle.getString(Request301510.ERROR_INFO));

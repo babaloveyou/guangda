@@ -1,5 +1,8 @@
 package com.thinkive.android.trade_bz.a_stock.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
@@ -9,7 +12,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  * @date 2015/6/16
  */
 
-public class RevocationBean extends BaseBean {
+public class RevocationBean extends BaseBean implements Parcelable {
     /**
      *  限价or市价
      */
@@ -291,7 +294,7 @@ public class RevocationBean extends BaseBean {
         this.business_balance = business_balance;
     }
 
-//    public String getCancel_amount() {
+    //    public String getCancel_amount() {
 //        return cancel_amount;
 //    }
 //
@@ -314,4 +317,69 @@ public class RevocationBean extends BaseBean {
     public void setEntrust_type_name(String entrust_type_name) {
         this.entrust_type_name = entrust_type_name;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_limit);
+        dest.writeString(this.entrust_bs);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.entrust_type);
+        dest.writeString(this.entrust_state_name);
+        dest.writeString(this.exchange_type);
+        dest.writeString(this.exchange_type_name);
+        dest.writeString(this.stock_account);
+        dest.writeString(this.entrust_date);
+        dest.writeString(this.entrust_time);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.report_no);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.entrust_price);
+        dest.writeString(this.entrust_amount);
+        dest.writeString(this.business_price);
+        dest.writeString(this.business_amount);
+        dest.writeString(this.business_balance);
+        dest.writeString(this.entrust_type_name);
+    }
+
+    protected RevocationBean(Parcel in) {
+        this.entrust_limit = in.readString();
+        this.entrust_bs = in.readString();
+        this.entrust_name = in.readString();
+        this.entrust_type = in.readString();
+        this.entrust_state_name = in.readString();
+        this.exchange_type = in.readString();
+        this.exchange_type_name = in.readString();
+        this.stock_account = in.readString();
+        this.entrust_date = in.readString();
+        this.entrust_time = in.readString();
+        this.stock_code = in.readString();
+        this.stock_name = in.readString();
+        this.report_no = in.readString();
+        this.entrust_no = in.readString();
+        this.entrust_price = in.readString();
+        this.entrust_amount = in.readString();
+        this.business_price = in.readString();
+        this.business_amount = in.readString();
+        this.business_balance = in.readString();
+        this.entrust_type_name = in.readString();
+    }
+
+    public static final Creator<RevocationBean> CREATOR = new Creator<RevocationBean>() {
+        @Override
+        public RevocationBean createFromParcel(Parcel source) {
+            return new RevocationBean(source);
+        }
+
+        @Override
+        public RevocationBean[] newArray(int size) {
+            return new RevocationBean[size];
+        }
+    };
 }

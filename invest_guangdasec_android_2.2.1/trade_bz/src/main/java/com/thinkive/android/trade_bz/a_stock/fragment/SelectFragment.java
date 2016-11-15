@@ -11,10 +11,10 @@ import com.android.thinkive.framework.compatible.ListenerControllerAdapter;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_new.activity.NewStockMainActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.HistoryEntrustOrTradeActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.HistoryMoneyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.StatementAccountActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TodayEntrustOrTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TodayMoneyActivity;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
@@ -185,7 +185,7 @@ public class SelectFragment extends AbsBaseFragment {
      * 点击今日资金流水所执行的操作
      */
     public void TodayMoney() {
-        startActivity(new Intent(mMultiTradeActivity, TodayMoneyActivity.class));
+        startActivity(new Intent(mMultiTradeActivity, HistoryMoneyActivity.class));
     }
 
     /**

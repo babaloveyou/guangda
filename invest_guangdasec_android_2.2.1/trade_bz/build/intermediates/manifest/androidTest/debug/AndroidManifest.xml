@@ -79,7 +79,17 @@
             android:screenOrientation="portrait" />
  <!-- 当日资金流水 -->
         <activity
-            android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayMoneyActivity"
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.HistoryMoneyActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+ <!-- 今日委托详情 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayEntrustDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+ <!-- 今日成交详情 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TodayTradeDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
  <!-- 退市板块协议签署 -->

@@ -1,141 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/trade_normal_background">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/common_all_corner_transparent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_height="55dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/lin_select_data_start"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:id="@+id/lin_select_data_start">
+            android:gravity="center"
+            android:orientation="vertical">
+
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/fund_pledge5"
+                android:id="@+id/tv_set_data_start"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_bg_tv_time_picker"
                 android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/tv_set_data_start"/>
 
         </LinearLayout>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="8dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/arrows_right_trade_color1"/>
 
         <LinearLayout
+            android:id="@+id/lin_select_data_end"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
             android:gravity="center"
-            android:id="@+id/lin_select_data_end">
+            android:orientation="vertical">
+
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:text="@string/fund_pledge6"
+                android:id="@+id/tv_set_data_end"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:background="@drawable/shape_bg_tv_time_picker"
                 android:gravity="center"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:id="@+id/tv_set_data_end"/>
 
         </LinearLayout>
 
-        <TextView
-            android:layout_width="0dp"
+        <RelativeLayout
+            android:layout_width="90dp"
             android:layout_height="match_parent"
-            android:text="@string/r_select_title"
-            android:layout_weight="0.4"
-            android:gravity="center"
-            android:background="@drawable/common_all_corner_shi"
-            android:textColor="@color/trade_color_white"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
-            android:layout_marginRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:id="@+id/tv_select_data"/>
+            >
+
+            <TextView
+                android:id="@+id/tv_select_data"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/selector_bg_btn_toactive"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="@string/r_select_title"
+                android:textColor="@color/tv_bt_brown"
+                android:textSize="14sp"/>
+        </RelativeLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/today_head_one"
-            android:gravity="center"
-            android:textSize="@dimen/select_table_text"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1.2"
-            android:text="@string/revocation_a5"
-            android:gravity="center"
-            android:textSize="@dimen/select_table_text"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1"
-            android:text="@string/statement_trade_money"
-            android:gravity="center"
-            android:textSize="@dimen/select_table_text"
-            android:textColor="@color/trade_text_color6"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="0.8"
-            android:text="@string/revocation_a6"
-            android:gravity="center"
-            android:textSize="@dimen/select_table_text"
-            android:textColor="@color/trade_text_color6"/>
-
-    </LinearLayout>
 
     <!-- 正在加载时显示的界面 -->
     <LinearLayout
         android:id="@+id/lin_loading_set"
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
         android:visibility="visible">
 
         <ProgressBar
@@ -145,36 +91,38 @@
             android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
 
         <TextView
-            android:text="@string/home_loading_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:text="@string/home_loading_text"/>
 
     </LinearLayout>
 
     <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
+        android:id="@+id/lv_refresh_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_refresh_list"
         android:visibility="gone"/>
 
     <LinearLayout
+        android:id="@+id/lin_not_data_set"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lin_not_data_set"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:visibility="gone">
 
-        <ImageView android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/not_data_listview"/>
 
-        <TextView android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/no_data_listview"
-            android:layout_marginTop="15dp"
             android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/no_data_listview"
             android:textColor="@color/trade_text_color6"
             android:textSize="@dimen/lsv_no_data_text"/>
 

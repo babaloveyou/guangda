@@ -56,6 +56,19 @@ public class RCollaterLinkBean extends BaseBean {
      */
     @JsonKey("stock_code")
     private String stock_code = "";
+    /**
+     * 证券名称
+     */
+    @JsonKey("stock_name")
+    private String stock_name = "";
+
+    public String getStock_name() {
+        return stock_name;
+    }
+
+    public void setStock_name(String stock_name) {
+        this.stock_name = stock_name;
+    }
 
     public RCollaterLinkBean() {
 

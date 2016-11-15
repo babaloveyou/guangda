@@ -145,7 +145,7 @@ public class MyHoldStockFragment extends AbsBaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootview = inflater.inflate(R.layout.fragment_common_refresh_scrollview, null);
+        mRootview = inflater.inflate(R.layout.myhold_refresh_scrollview, null);
         mScrollChild = inflater.inflate(R.layout.fragment_a_my_hold, null);
         findViews(mRootview);
         initData();

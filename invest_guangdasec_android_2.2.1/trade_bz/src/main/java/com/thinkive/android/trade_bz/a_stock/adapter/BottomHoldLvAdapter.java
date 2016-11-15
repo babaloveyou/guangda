@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_stock.adapter;
 
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -133,6 +134,9 @@ public class BottomHoldLvAdapter extends BaseAdapter {
 
     private void setWinLostRate(HoldViewHolder holder, MyStoreStockBean myStoreStockBean) {
         String winlostRate = myStoreStockBean.getFloat_yk_per();
+        if (!TextUtils.isEmpty(winlostRate)&&!winlostRate.startsWith("-")) {
+            winlostRate = "+" + winlostRate;
+        }
         String winLostRateTvString = "盈亏" + winlostRate + "%";
         SpannableStringBuilder styleWinLostRate = new SpannableStringBuilder(winLostRateTvString);
         if (winlostRate.startsWith(mActivity.getResources().getString(R.string.common_emp_text))) {

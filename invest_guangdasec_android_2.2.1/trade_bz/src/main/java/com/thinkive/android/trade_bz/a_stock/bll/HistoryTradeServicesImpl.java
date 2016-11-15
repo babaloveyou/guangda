@@ -14,24 +14,26 @@ import java.util.HashMap;
 
 /**
  * 历史成交的业务类
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/6/23
  */
 
 public class HistoryTradeServicesImpl {
-    private HistoryTradeFragment mHistoryTradeFragment=null;
+    private HistoryTradeFragment mHistoryTradeFragment = null;
 
     public HistoryTradeServicesImpl(HistoryTradeFragment mFragment) {
-        mHistoryTradeFragment=mFragment;
+        mHistoryTradeFragment = mFragment;
     }
 
     /**
      * 初始化请求到的历史成交数据
+     *
      * @param begin
      * @param end
      */
-    public void reuqestHistoryTrade(String begin, String end){
+    public void reuqestHistoryTrade(final String begin, final String end) {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("begin_time", begin);
         map.put("end_time", end);
@@ -41,10 +43,10 @@ public class HistoryTradeServicesImpl {
                 ArrayList<HistoryTradeBean> dataList = bundle.getParcelableArrayList(Request301511.BUNDLE_KEY_HISTORY_TRADE);
 
                 //保留小数点后两位
-//                for (HistoryTradeBean bean : dataList) {
-//                    bean.setBusiness_price(TradeUtils.formatDouble2(bean.getBusiness_price()));
-//                    bean.setBusiness_balance(TradeUtils.formatDouble2(bean.getBusiness_balance()));
-//                }
+                //                for (HistoryTradeBean bean : dataList) {
+                //                    bean.setBusiness_price(TradeUtils.formatDouble2(bean.getBusiness_price()));
+                //                    bean.setBusiness_balance(TradeUtils.formatDouble2(bean.getBusiness_balance()));
+                //                }
                 mHistoryTradeFragment.onGetHistoryTradeData(dataList);
             }
 

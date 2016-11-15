@@ -12,7 +12,7 @@ import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.adapter.RCollaterInAdapter;
 import com.thinkive.android.trade_bz.a_rr.bean.RCollaterLinkBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RCollaterInServiceImpl;
-import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
+import com.thinkive.android.trade_bz.a_stock.bean.RCollaterInBean;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.utils.DateUtils;
@@ -108,7 +108,7 @@ public class RCollaterInFragment extends AbsBaseFragment {
     /**
      * 获得当前持仓列表
      */
-    public void getRollaterList(ArrayList<MyStoreStockBean> dataList){
+    public void getRollaterList(ArrayList<RCollaterInBean> dataList){
         if(dataList == null || dataList.size()==0){
             mLinLoading.setVisibility(View.GONE);
             mLinNoData.setVisibility(View.VISIBLE);
@@ -127,17 +127,18 @@ public class RCollaterInFragment extends AbsBaseFragment {
      *请求联动数据
      * @param bean
      */
-    public void requestLink(MyStoreStockBean bean){
+    public void requestLink(RCollaterInBean bean){
         mServices.requestLinkageData(bean);
     }
 
     /**
      * 得到联动数据
      * @param bean
+     * @param rCollaterInBean
      */
-    public void onGetLinkData(RCollaterLinkBean bean){
+    public void onGetLinkData(RCollaterLinkBean bean, RCollaterInBean rCollaterInBean){
         if(bean != null){
-            mAdapter.onGetLinkData(bean);
+            mAdapter.onGetLinkData(bean,rCollaterInBean);
         }
     }
 

@@ -1,7 +1,9 @@
 package com.thinkive.android.trade_bz.a_stock.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.fragment.FundLoginFragment;
@@ -42,6 +44,19 @@ public class TradeLoginActivity extends AbsNavBarActivity {
         setBackBtnVisibility(View.VISIBLE);
         mLoginParentFragment.setArguments(getIntent().getExtras());
         replaceFragment(R.id.fl_container, mLoginParentFragment);
+    }
+    public static void hideSystemKeyBoard(Activity activity) {
+        // 收起系统键盘
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        hideSystemKeyBoard(this);
     }
 
     /**

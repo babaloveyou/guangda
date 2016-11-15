@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_stock.bean;
 
 
 import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.thinkive.android.trade_bz.others.JsonKey;
 
@@ -11,7 +12,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  * @company Thinkive
  * @date 2015/6/23
  */
-public class MyStoreStockBean extends BaseBean {
+public class MyStoreStockBean extends BaseBean implements Parcelable{
     /**
      *  证券名称
      */

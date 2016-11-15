@@ -29,7 +29,6 @@ public class Request306001 extends BaseNormalRequest {
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
-        //jsonObj={"error_no":"0","results":[{"copy_date":"20160902","sys_type":"1","type_name":"当日交易","date":"2016-10-20","err_state":"Y"}],"dsName":["results"],"error_info":""}
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
             JSONArray jsonArray = jsonObject.getJSONArray(resultTarget);

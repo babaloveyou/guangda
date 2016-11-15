@@ -5,12 +5,13 @@ import android.os.Bundle;
 
 import com.thinkive.android.trade_bz.a_rr.bean.RCollaterLinkBean;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCollaterInFragment;
-import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
+import com.thinkive.android.trade_bz.a_stock.bean.RCollaterInBean;
 import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
-import com.thinkive.android.trade_bz.request.RR303046;
 import com.thinkive.android.trade_bz.request.RR303014;
 import com.thinkive.android.trade_bz.request.RR303015;
+import com.thinkive.android.trade_bz.request.RR303046;
+import com.thinkive.android.trade_bz.request.RR303057;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 
@@ -47,10 +48,10 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
      */
     public void requestMyHoldStock() {
         HashMap<String, String> map = new HashMap<String, String>();
-        new RR303046(map, new IRequestAction() {
+        new RR303057(map, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
-                ArrayList<MyStoreStockBean> dataList = bundle.getParcelableArrayList(RR303046.BUNDLE_KEY_RESULT);
+                ArrayList<RCollaterInBean> dataList = bundle.getParcelableArrayList(RR303057.BUNDLE_KEY_RESULT);
                 mFragment.getRollaterList(dataList);
             }
             @Override
@@ -62,7 +63,7 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
     /**
      * 请求划转联动
      */
-    public void requestLinkageData(final MyStoreStockBean bean){
+    public void requestLinkageData(final RCollaterInBean bean){
         loadingDialogUtil.showLoadingDialog(0);
         HashMap<String, String> map = new HashMap<String, String>();
 //        map.put("entrust_way", TradeLoginManager.sNormalUserInfo_in_credit.getEntrust_way());
@@ -76,6 +77,7 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
 //        map.put("client_id_crdt",TradeLoginManager.sCreditUserInfo.getCust_code());
 
         map.put("stock_code",bean.getStock_code());
+        map.put("cost_price",bean.getCost_price());
         map.put("last_price",bean.getLast_price());
         map.put("stock_account",bean.getStock_account());
         map.put("exchange_type",bean.getExchange_type());
@@ -85,7 +87,7 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
                 RCollaterLinkBean data = (RCollaterLinkBean)bundle.getSerializable(RR303014.BUNDLE_KEY_TRANSFER_LIAN);
-                mFragment.onGetLinkData(data);
+                mFragment.onGetLinkData(data,bean);
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {
@@ -96,9 +98,9 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
     }
 
     /**
-     * 请求划转
+     * 请求划转   RCollaterLinkBean内的stockName有问题 暂用adapter的bean.getStockName
      */
-    public void requestTranferredResult(RCollaterLinkBean bean, String enableAmount) {
+    public void requestTranferredResult(RCollaterLinkBean bean, RCollaterInBean nameAndCodeBean, String enableAmount) {
         loadingDialogUtil.showLoadingDialog(0);
         HashMap<String, String> map = new HashMap<String, String>();
 //        map.put("entrust_way", TradeLoginManager.sNormalUserInfo_in_credit.getEntrust_way());
@@ -111,7 +113,7 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
         map.put("stock_account",bean.getStock_account_crdt());
         map.put("seat_no",bean.getSeat_no_crdt());
         map.put("exchange_type",bean.getExchange_type());
-        map.put("stock_code",bean.getStock_code());
+        map.put("stock_code",nameAndCodeBean.getStock_code());
         map.put("entrust_amount",enableAmount);
 
 //        map.put("branch_no_crdt", TradeLoginManager.sCreditUserInfo.getBranch_no());

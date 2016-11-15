@@ -17,7 +17,7 @@ public class Constants {
     public static final String MODULE_NAME_HOME = "home";
     // 普通交易验证码保存
 
-    public static final String SAVED_VERTIFYCATION= "saved_vertifycation";
+    public static final String SAVED_VERTIFYCATION = "saved_vertifycation";
     // 标记普通登录时，是否选择了记住账号的key
     public static final String IS_SAVE_NORMAL_ACCOUNT_KEY = "isSaveAccount";
     // 保存用户普通账号的key
@@ -48,14 +48,18 @@ public class Constants {
     public static final String URL_CREDIT_TRADE_CODE = "CREDIT_LOGIN_HTTP_VERIFY_CODE_URL";
 
     public static final String LOGIN_TYPE = "login_type";
-    public static final String NORMAL_LOGIN_USERINFO_FORH5="stock_userInfo";
-    public static final String CREDIT_LOGIN_USERINFO_FORH5="credit_userInfo";
+    public static final String NORMAL_LOGIN_USERINFO_FORH5 = "stock_userInfo";
+    public static final String CREDIT_LOGIN_USERINFO_FORH5 = "credit_userInfo";
     public static final String TRADE_TYPE_KEY = "trade_type_key";
     public static final String TOH5PAGE = "toh5page";
 
     public static final String ACTION_TO_H5_PAGE = "com.toh5.broadcast.action";
     public static final String STOCK_CREDIT_FLAG = "stock_credit_flag";
-    public static final String NORMAL_LOGIN_SESSIONID ="normal_login_sessionid" ;
-    public static final String CREDIT_COOKIE_KEY="credit_cookie_key";
+    public static final String NORMAL_LOGIN_SESSIONID = "normal_login_sessionid";
+    public static final String CREDIT_COOKIE_KEY = "credit_cookie_key";
 
+    public static final int TIME_LIMIT = 7;
+    public static String  TODAY_DATE = null;
+    public static String HISTORY_START_DATE = null;
+    public static String HISTORY_END_DATE = null;
 }

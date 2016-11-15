@@ -1,5 +1,8 @@
 package com.thinkive.android.trade_bz.a_stock.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
@@ -9,7 +12,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  * @date 2015/6/23
  */
 
-public class HistoryTradeBean extends BaseBean {
+public class HistoryTradeBean extends BaseBean implements Parcelable{
     /**
      * 委托标志
      */
@@ -323,4 +326,77 @@ public class HistoryTradeBean extends BaseBean {
     public void setOther_fare(String other_fare) {
         this.other_fare = other_fare;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_bs);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.entrust_type);
+        dest.writeString(this.entrust_type_name);
+        dest.writeString(this.real_status);
+        dest.writeString(this.real_status_name);
+        dest.writeString(this.exchange_type);
+        dest.writeString(this.exchange_type_name);
+        dest.writeString(this.stock_account);
+        dest.writeString(this.business_date);
+        dest.writeString(this.business_time);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.report_no);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.business_price);
+        dest.writeString(this.business_amount);
+        dest.writeString(this.business_balance);
+        dest.writeString(this.fare0);
+        dest.writeString(this.fare1);
+        dest.writeString(this.fare2);
+        dest.writeString(this.remark);
+        dest.writeString(this.serial_no);
+        dest.writeString(this.other_fare);
+    }
+
+    protected HistoryTradeBean(Parcel in) {
+        this.entrust_bs = in.readString();
+        this.entrust_name = in.readString();
+        this.entrust_type = in.readString();
+        this.entrust_type_name = in.readString();
+        this.real_status = in.readString();
+        this.real_status_name = in.readString();
+        this.exchange_type = in.readString();
+        this.exchange_type_name = in.readString();
+        this.stock_account = in.readString();
+        this.business_date = in.readString();
+        this.business_time = in.readString();
+        this.stock_code = in.readString();
+        this.stock_name = in.readString();
+        this.report_no = in.readString();
+        this.entrust_no = in.readString();
+        this.business_price = in.readString();
+        this.business_amount = in.readString();
+        this.business_balance = in.readString();
+        this.fare0 = in.readString();
+        this.fare1 = in.readString();
+        this.fare2 = in.readString();
+        this.remark = in.readString();
+        this.serial_no = in.readString();
+        this.other_fare = in.readString();
+    }
+
+    public static final Creator<HistoryTradeBean> CREATOR = new Creator<HistoryTradeBean>() {
+        @Override
+        public HistoryTradeBean createFromParcel(Parcel source) {
+            return new HistoryTradeBean(source);
+        }
+
+        @Override
+        public HistoryTradeBean[] newArray(int size) {
+            return new HistoryTradeBean[size];
+        }
+    };
 }

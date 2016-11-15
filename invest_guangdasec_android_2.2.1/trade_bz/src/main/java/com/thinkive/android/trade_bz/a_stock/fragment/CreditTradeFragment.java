@@ -388,18 +388,18 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                         setLogout();
                         break;
                     case 7060403: // 统一账户校验成功（手机号登录成功）
-//                        try {
-//                            String temp_token_key = jsonObject.getString("moduleName");
-//                            if (temp_token_key.contains(Constants.MODULE_NAME_TRADE)) {
-//                                mTemp_token_key = temp_token_key;
-//                                TradeFlags.addFlag(TradeFlags.FLAG_PHONE_LOGIN);
-//                                MemoryStorage memoryStorage = new MemoryStorage();
-//                                String temp_token = memoryStorage.loadData(temp_token_key);
-//                                mServices.startServerSession(temp_token);
-//                            }
-//                        } catch (JSONException je) {
-//                            je.printStackTrace();
-//                        }
+                        //                        try {
+                        //                            String temp_token_key = jsonObject.getString("moduleName");
+                        //                            if (temp_token_key.contains(Constants.MODULE_NAME_TRADE)) {
+                        //                                mTemp_token_key = temp_token_key;
+                        //                                TradeFlags.addFlag(TradeFlags.FLAG_PHONE_LOGIN);
+                        //                                MemoryStorage memoryStorage = new MemoryStorage();
+                        //                                String temp_token = memoryStorage.loadData(temp_token_key);
+                        //                                mServices.startServerSession(temp_token);
+                        //                            }
+                        //                        } catch (JSONException je) {
+                        //                            je.printStackTrace();
+                        //                        }
                         break;
                     case 60200: // 资金账号校验成功（业务模块登录成功）
                         try {
@@ -931,10 +931,10 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             startLogin(1009, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
 
-    }    /*
+    }
+    /*
     * 担保品划转
-    * */
-
+    */
     private void onClickGuaranteeTransfer() {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
             Intent intent = new Intent(mActivity, RCollaterTransActivity.class);
@@ -945,7 +945,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         } else {
             startLogin(1010, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
-
     }
 
     /*
@@ -1141,7 +1140,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     mServices.startServerSession(temp_token);
                 }
             }
-//            sendMsgToSSO(loginType);
+            //            sendMsgToSSO(loginType);
 
         } else {
             Intent intent = new Intent(mActivity, TradeLoginActivity.class);
@@ -1182,13 +1181,14 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         //清除供给H5的用户信息
         MemoryStorage memoryStorage = new MemoryStorage();
         memoryStorage.removeData(Constants.CREDIT_LOGIN_USERINFO_FORH5);
-        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.CREDIT_URL,"");
+        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.CREDIT_URL, "");
         try {
             sendMessageCireditLogout(getNewStockWebFragment());
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+
     private void sendMessageCireditLogout(BaseWebFragment baseWebFragment) throws JSONException {
         JSONObject param = new JSONObject();
         //退出登录发个消息

@@ -94,6 +94,9 @@ public abstract class AbsTradeDialog extends Dialog {
         }
     }
 
+    public void showBottomViewVisiable() {
+     findViewById(R.id.view_bottom).setVisibility(View.VISIBLE);
+    }
     /**
      * 设置取消按钮是否可见
      * @param isVisiable

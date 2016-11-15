@@ -3,6 +3,7 @@ package com.thinkive.android.trade_bz.a_rr.adapter;
 import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.TextView;
@@ -98,17 +99,22 @@ public class CreditBottomHoldLvAdapter extends AbsBaseAdapter<MyStoreStockBean> 
     }
 
     private void setWinLoseNumText(TextView view, MyStoreStockBean myStoreStockBean) {
-      view.setText(myStoreStockBean.getFloat_yk());
-      view.setTextColor(getContext().getResources().getColor(R.color.trade_text));
+        view.setText(myStoreStockBean.getFloat_yk());
+      view.setTextColor(view.getText().toString().startsWith("-") ?mSubContext.getResources().getColor(R.color.trade_down_green) : mSubContext.getResources().getColor(R.color.trade_text));
     }
 
     private void setWinLostRate(TextView view, MyStoreStockBean myStoreStockBean) {
         String winlostRate = myStoreStockBean.getFloat_yk_per();
+        if (!TextUtils.isEmpty(winlostRate)&&!winlostRate.startsWith("-")) {
+            winlostRate = "+" + winlostRate;
+        }
         String winLostRateTvString = "盈亏" + winlostRate + "%";
         SpannableStringBuilder styleWinLostRate = new SpannableStringBuilder(winLostRateTvString);
-        styleWinLostRate.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        styleWinLostRate.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.trade_text)), 2, winLostRateTvString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-       view.setText(styleWinLostRate);
+        if (winlostRate.startsWith(mSubContext.getResources().getString(R.string.common_emp_text))) {
+            styleWinLostRate.setSpan(new ForegroundColorSpan(mSubContext.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            styleWinLostRate.setSpan(new ForegroundColorSpan(winlostRate.startsWith("-") ? mSubContext.getResources().getColor(R.color.trade_down_green) : mSubContext.getResources().getColor(R.color.trade_text)), 2, winLostRateTvString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
+      view.setText(styleWinLostRate);
     }
-
 }

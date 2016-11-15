@@ -4,4 +4,5 @@
     <color name="pop_bg_press_alph90">#E6888888</color>
     <color name="pop_total_price">#ff3300</color>
     <color name="btn_hq_yellow">#d9bd3c</color>
+    <color name="common_bg_stroke">#808080</color>
 </resources>

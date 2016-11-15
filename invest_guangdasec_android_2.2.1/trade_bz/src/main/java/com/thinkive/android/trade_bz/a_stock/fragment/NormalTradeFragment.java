@@ -42,6 +42,8 @@ import com.thinkive.android.trade_bz.a_option.activity.OptionMainActivity;
 import com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSecuritiesMarginActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.ChangePasswordActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.HistoryEntrustOrTradeActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.HistoryMoneyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
@@ -164,6 +166,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     public static NewStockWebFragment getNewStockWebFragment() {
         return mNewStockWebFragment;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -185,7 +188,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         }
         return mRootView;
     }
-
 
 
     private void fillData() {
@@ -287,7 +289,16 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                 }
             }
         });
-
+        mMoreMenuGv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    System.out.println("mMoreMenuGv   获取焦点");
+                } else {
+                    System.out.println("mMoreMenuGv   失去焦点");
+                }
+            }
+        });
 
     }
 
@@ -379,18 +390,18 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                         setLogout();
                         break;
                     case 7060403: // 统一账户校验成功（手机号登录成功）
-//                        try {
-//                            String temp_token_key = jsonObject.getString("moduleName");
-//                            if (temp_token_key.contains(Constants.MODULE_NAME_TRADE)) {
-//                                mTemp_token_key = temp_token_key;
-//                                TradeFlags.addFlag(TradeFlags.FLAG_PHONE_LOGIN);
-//                                MemoryStorage memoryStorage = new MemoryStorage();
-//                                String temp_token = memoryStorage.loadData(temp_token_key);
-//                                mServices.startServerSession(temp_token);
-//                            }
-//                        } catch (JSONException je) {
-//                            je.printStackTrace();
-//                        }
+                        //                        try {
+                        //                            String temp_token_key = jsonObject.getString("moduleName");
+                        //                            if (temp_token_key.contains(Constants.MODULE_NAME_TRADE)) {
+                        //                                mTemp_token_key = temp_token_key;
+                        //                                TradeFlags.addFlag(TradeFlags.FLAG_PHONE_LOGIN);
+                        //                                MemoryStorage memoryStorage = new MemoryStorage();
+                        //                                String temp_token = memoryStorage.loadData(temp_token_key);
+                        //                                mServices.startServerSession(temp_token);
+                        //                            }
+                        //                        } catch (JSONException je) {
+                        //                            je.printStackTrace();
+                        //                        }
                         break;
                     case 60200: // 资金账号校验成功（业务模块登录成功）
                         try {
@@ -536,7 +547,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             return;
         }
         if (parent.getCount() == 8) {
-
             switch (position) {
                 case 0:
                     onClickBuying();
@@ -548,7 +558,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                     onClickRevocation();
                     break;
                 case 3:
-//                    onClickQuery();
+                    //                    onClickQuery();
                     ToastUtil.showToast("todo:个人资产");
                     break;
                 case 4:
@@ -566,20 +576,64 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             }
         } else if (parent.getCount() == 4) {
             switch (position) {
-
                 case 0:
-
+                    onclickHistoryEntrust();
                     break;
                 case 1:
+                    onclickHistoryTrade();
                     break;
                 case 2:
+                    ToastUtil.showToast("资金查询");
                     break;
                 case 3:
+                    onclickMoneyWater();
                     break;
                 case 4:
                     break;
             }
 
+        }
+    }
+
+       /*
+        * 资金流水
+        */
+    private void onclickMoneyWater() {
+        if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) { // 未登录时，调转到登录页面
+            startLogin(2503, TradeLoginManager.LOGIN_TYPE_NORMAL);
+        } else { // 已登录时
+            Intent intent = new Intent(mActivity, HistoryMoneyActivity.class);
+            mActivity.startActivity(intent);
+        }
+    }
+
+    /*
+    * 历史成交点击事件
+    */
+    private void onclickHistoryTrade() {
+        if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) { // 未登录时，调转到登录页面
+            startLogin(2501, TradeLoginManager.LOGIN_TYPE_NORMAL);
+        } else { // 已登录时
+            Intent intent = new Intent(mActivity, HistoryEntrustOrTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("childePos", 0);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+        }
+    }
+
+    /*
+    * 历史委托点击事件
+    */
+    private void onclickHistoryEntrust() {
+        if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) { // 未登录时，调转到登录页面
+            startLogin(2500, TradeLoginManager.LOGIN_TYPE_NORMAL);
+        } else { // 已登录时
+            Intent intent = new Intent(mActivity, HistoryEntrustOrTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("childePos", 1);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
         }
     }
 
@@ -592,9 +646,15 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         if (viewId == R.id.rl_more) {
             if (!isShowMore) {
                 mMoreMenuGv.setVisibility(View.VISIBLE);
+                mMoreMenuGv.setFocusable(true);
+                mMoreMenuGv.setFocusableInTouchMode(true);
+                mMoreMenuGv.requestFocus();
+                mMoreMenuGv.requestFocusFromTouch();
+                mMoreMenuGv.performClick();
                 expandGv();
                 arrowTrunRight();
                 isShowMore = true;
+
             } else {
                 closeGv();
                 arrowTurnLeft();
@@ -632,6 +692,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
 
     private void closeGv() {
         ValueAnimator animator = createDropAnimator(mMoreMenuGv, mHiddenViewMeasuredHeight, 0);
+        animator.setDuration(200);
         animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -644,7 +705,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     private void expandGv() {
         mMoreMenuGv.setVisibility(View.VISIBLE);
         ValueAnimator animator = createDropAnimator(mMoreMenuGv, 0, mHiddenViewMeasuredHeight);
+        animator.setDuration(200);
         animator.start();
+
     }
 
     //关闭显示更多时箭头动画
@@ -652,6 +715,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         if (mArrowCcwsAnimator == null) {
             mArrowCcwsAnimator = ObjectAnimator.ofFloat(mRotateArrow, "rotation", 90F, 0F);
         }
+        mArrowCcwsAnimator.setDuration(200);
         mArrowCcwsAnimator.start();
     }
 
@@ -660,6 +724,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         if (mArrowClwsAnimator == null) {
             mArrowClwsAnimator = ObjectAnimator.ofFloat(mRotateArrow, "rotation", 0F, 90F);
         }
+        mArrowClwsAnimator.setDuration(200);
         mArrowClwsAnimator.start();
     }
 
@@ -766,8 +831,8 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) { // 未登录时，调转到登录页面
             startLogin(2005, TradeLoginManager.LOGIN_TYPE_NORMAL);
         } else { // 已登录时
-//            Intent intent = new Intent(mActivity, TodayEntrustOrTradeActivity.class);
-//            Bundle bundle = new Bundle();
+            //            Intent intent = new Intent(mActivity, TodayEntrustOrTradeActivity.class);
+            //            Bundle bundle = new Bundle();
             //            bundle.putInt("ViewPagerFragmentPos", 0);
             //            intent.putExtras(bundle);
             //            mActivity.startActivity(intent);
@@ -787,11 +852,11 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) { // 未登录时，调转到登录页面
             startLogin(2006, TradeLoginManager.LOGIN_TYPE_NORMAL);
         } else { // 已登录时
-//            Intent intent = new Intent(mActivity, TodayEntrustOrTradeActivity.class);
-//            Bundle bundle = new Bundle();
-//            bundle.putInt("ViewPagerFragmentPos", 1);
-//            intent.putExtras(bundle);
-//            mActivity.startActivity(intent);
+            //            Intent intent = new Intent(mActivity, TodayEntrustOrTradeActivity.class);
+            //            Bundle bundle = new Bundle();
+            //            bundle.putInt("ViewPagerFragmentPos", 1);
+            //            intent.putExtras(bundle);
+            //            mActivity.startActivity(intent);
             Intent intent = new Intent(mActivity, MultiTradeActivity.class);
             Bundle bundle = new Bundle();
             bundle.putInt("ViewPagerFragmentPos", 3);
@@ -808,9 +873,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         mNewStockWebFragment.setUrl(NewStockWebActivity.NORMAL_URL);
         mNewStockWebFragment.setWebViewName("new-stock");
         MyWebView webView = mNewStockWebFragment.getWebView();
-        mNewStockWebFragment.preloadUrl(mActivity,NewStockWebActivity.NORMAL_URL);
+        mNewStockWebFragment.preloadUrl(mActivity, NewStockWebActivity.NORMAL_URL);
         Intent intent = new Intent(mActivity, NewStockWebActivity.class);
-        intent.putExtra("loginType",NewStockWebActivity.NORMAL);
+        intent.putExtra("loginType", NewStockWebActivity.NORMAL);
         mActivity.startActivity(intent);
     }
 
@@ -1022,7 +1087,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                     mServices.startServerSession(temp_token);
                 }
             }
-//            sendMsgToSSO(loginType);
+            //            sendMsgToSSO(loginType);
         } else {
             Intent intent = new Intent(mActivity, TradeLoginActivity.class);
             intent.putExtra(MainBroadcastReceiver.INTENT_KEY_CLICK_VIEW_ID, clickIdBeforeLogin);
@@ -1060,23 +1125,25 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         clearAllUserInfo();
         //更新页面状态
         updateLogoutBtnState();
-       //清除供给H5的用户信息
+        //清除供给H5的用户信息
         MemoryStorage memoryStorage = new MemoryStorage();
         memoryStorage.removeData(Constants.NORMAL_LOGIN_USERINFO_FORH5);
         memoryStorage.removeData(Constants.CREDIT_COOKIE_KEY);
-//        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.NORMAL_URL,"");
+        //        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.NORMAL_URL,"");
         try {
             sendMessageNormalLogout(getNewStockWebFragment());
         } catch (JSONException e) {
             e.printStackTrace();
         }
     }
+
     private void sendMessageNormalLogout(BaseWebFragment baseWebFragment) throws JSONException {
         JSONObject param = new JSONObject();
         //退出登录发个消息
         AppMessage appMessage = new AppMessage(111111, param);
         baseWebFragment.sendMessageToH5(appMessage);
     }
+
     /**
      * 清除标志位
      */
@@ -1219,8 +1286,13 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                 case ACTION_START_ACTIVITY:  // 如果是登录后跳转指令广播
                     int viewId = intent.getIntExtra(INTENT_KEY_CLICK_VIEW_ID, 2000);
                     if (viewId != -1) { // 此时，说明当初是未登录时，在交易主页点击某个按钮，触发登录的
-                        viewId = viewId - 2000;
-                        onItemClick(mFastMenuGv,viewId);
+                        if (viewId - 2000 >= 50) {
+                            viewId = viewId - 2500;
+                            onItemClick(mMoreMenuGv, viewId);
+                        } else {
+                            viewId = viewId - 2000;
+                            onItemClick(mFastMenuGv, viewId);
+                        }
                     } else { // 此时，说明当初是在未登录时，从行情模块点击“买入”或“卖出”按钮，触发登录的
                         onClickBuyOrSaleInHq(mJsonDataFromHq);
                     }

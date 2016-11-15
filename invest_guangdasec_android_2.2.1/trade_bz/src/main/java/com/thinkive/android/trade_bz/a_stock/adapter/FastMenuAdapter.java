@@ -28,9 +28,7 @@ public class FastMenuAdapter extends AbsBaseAdapter<TradeFastItemBean> {
     protected void onFillComponentData(ViewHolder holder, TradeFastItemBean bean) {
         TextView tvMenuItem = holder.getComponentById(R.id.tv_menu_item);
         ImageView imgview = holder.getComponentById(R.id.iv_fast_menu_icon);
-        if (bean.getImageRes() != 1000) {
-            imgview.setImageResource(bean.getImageRes());
-        }
+        imgview.setImageResource(bean.getImageRes());
         tvMenuItem.setText(bean.getItemName());
     }
 }

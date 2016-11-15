@@ -1,58 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:layout_marginBottom="10dp">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_centerHorizontal="true"
+              android:background="@color/white"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:weightSum="1">
 
-    <LinearLayout android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@drawable/common_all_corner_white">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/r_layout_rb11"
+        android:textColor="@color/trade_text_color2"
+        android:textSize="18sp"/>
 
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="10dp"
-            android:text="@string/r_collater4"
-            android:padding="10dp"/>
-
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_collater_out_max"
-            android:layout_weight="1"
-            android:singleLine="true"
-            android:inputType="number"
-            android:textSize="@dimen/text_size"
-            android:text="@string/no_text_set"
-            android:textColor="@color/trade_text_color9"/>
-
-    </LinearLayout>
-
-    <LinearLayout android:layout_width="220dp"
-        android:layout_height="45dp"
-        android:orientation="horizontal"
-        android:background="@drawable/common_all_corner_white"
+    <TextView
+        android:id="@+id/tv_name_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:gravity="center">
+        android:textColor="@color/trade_text_color2"
+        android:textSize="12sp"/>
 
-        <TextView android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/r_collater7"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/shape_common_bg_of_edittext">
 
-        <EditText android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/edt_collater_out_num"
+        <EditText
+            android:id="@+id/edt_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@null"
-            android:singleLine="true"
+            android:gravity="center"
             android:inputType="number"
-            android:textSize="@dimen/text_size"
-            android:hint="@string/r_collater6"
-            android:textColorHint="@color/trade_normal_background"
-            android:textColor="@color/trade_text_color9"/>
+            android:maxLength="10"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:textColorHint="@color/trade_text_color9"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_unit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:gravity="center"
+            android:text="股"
+            android:textColor="@color/trade_top_tab_dark_gray"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+    <!-- 横向显示三个按钮的LinearLayout -->
+    <LinearLayout
+        android:id="@+id/ll_today_entrust_list_item_expand"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="7.5dp"
+                android:background="@drawable/shape_bg_btn_buy"
+                android:gravity="center"
+                android:text="转入"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_cancle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="7.5dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_common_bg_of_edittext_corner"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="18sp"
+                />
+        </FrameLayout>
+
 
     </LinearLayout>
 

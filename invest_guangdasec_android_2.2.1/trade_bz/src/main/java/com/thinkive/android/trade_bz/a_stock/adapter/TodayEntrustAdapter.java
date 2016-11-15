@@ -56,7 +56,5 @@ public class TodayEntrustAdapter extends AbsBaseAdapter<RevocationBean> {
         TextView turnoverInfoTv = (TextView) holder.getComponentById(R.id.tv_trunover_info);
         turnoverInfoTv.setText(bean.getBusiness_price() + "元/" + bean.getBusiness_amount() + "股");
 
-//        LinearLayout bottomParentLl = (LinearLayout) holder.getComponentById(R.id.ll_bottom_parent);
-//        bottomParentLl.setVisibility(bean.isExpand() ? View.VISIBLE : View.GONE);
     }
 }
