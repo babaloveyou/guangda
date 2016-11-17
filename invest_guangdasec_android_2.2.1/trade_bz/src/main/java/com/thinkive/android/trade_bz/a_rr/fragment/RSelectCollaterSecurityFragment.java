@@ -2,6 +2,8 @@ package com.thinkive.android.trade_bz.a_rr.fragment;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Selection;
+import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -11,9 +13,9 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectCollateralSecurityActivity;
 import com.thinkive.android.trade_bz.a_rr.adapter.RSelectCollaterSecurityAdapter;
@@ -22,10 +24,10 @@ import com.thinkive.android.trade_bz.a_rr.bll.RSelectCollaterSecurityServiceImpl
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
+import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.utils.DateUtils;
-import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshBase;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView;
@@ -35,11 +37,12 @@ import java.util.ArrayList;
 /**
  * 融资融券--查询--担保品证券
  * Announcements：
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/8/19
  */
-public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
+public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements KeyboardManager.OnKeyCodeDownListener {
     /**
      * ListView
      */
@@ -77,17 +80,9 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
      */
     private EditText mEdtCode;
     /**
-     * 证券名称
-     */
-    private TextView mTvName;
-    /**
-     * 查询按钮
-     */
-    private TextView mTvClick;
-    /**
      * 整个收缩框的外布局
      */
-    private LinearLayout mLinLayout;
+    private RelativeLayout mRlLayout;
     /**
      * 股票模糊查询管理器
      */
@@ -96,7 +91,11 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
      * 框架内的原生自绘键盘管理器
      */
     private KeyboardManager mStockCodeEdKeyboardManager;
-
+    /*
+    * 搜索输入框之前的布局
+    * */
+    private TextView mTvPreCode;
+    private int lastLenth = -1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_r_select_collater_security, null);
@@ -110,8 +109,8 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        mStockFuzzyQueryManager.setPopupwindowWidth(mLinLayout.getWidth());
-        mStockFuzzyQueryManager.setPopupWindowReserveWidthReferView(mLinLayout);
+        mStockFuzzyQueryManager.setPopupwindowWidth(mRlLayout.getWidth());
+        mStockFuzzyQueryManager.setPopupWindowReserveWidthReferView(mRlLayout);
         mStockFuzzyQueryManager.initListViewPopupwindow(mController);
         TradeUtils.hideSystemKeyBoard(mActivity);
     }
@@ -130,16 +129,25 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
         mLoading = (LinearLayout) view.findViewById(R.id.ll_collater_list_loading);
         mLiNoData = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
         mEdtCode = (EditText) view.findViewById(R.id.edt_collater_code);
-        mTvName = (TextView) view.findViewById(R.id.tv_collater_name);
-        mTvClick = (TextView) view.findViewById(R.id.tv_collater_click);
-        mLinLayout=(LinearLayout)view.findViewById(R.id.lin_lay_collater);
+        mRlLayout = (RelativeLayout) view.findViewById(R.id.lin_lay_collater);
+        mTvPreCode = (TextView) view.findViewById(R.id.tv_collater_code_pre);
     }
 
     @Override
     protected void setListeners() {
         registerListener(AbsBaseController.ON_LISTVIEW_REFLASH, mPullToRefreshListView, mController);
-        registerListener(AbsBaseController.ON_CLICK, mTvClick, mController);
         registerListener(AbsBaseController.ON_TEXT_CHANGE, mEdtCode, mController);
+        registerListener(AbsBaseController.ON_CLICK, mTvPreCode, mController);
+
+
+        mEdtCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+                    setEdtCursor(mEdtCode);
+                }
+            }
+        });
     }
 
     @Override
@@ -159,6 +167,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
         mPullToRefreshListView.setPullLoadEnabled(false);
         mListView.addHeaderView(LayoutInflater.from(mActivity).inflate(R.layout.head_r_select_collater_security, null));
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdtCode, KeyboardManager.KEYBOARD_TYPE_STOCK);
+        mStockCodeEdKeyboardManager.setOnKeyCodeDownListener(this);
         setTheme();
     }
 
@@ -167,8 +176,13 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
 
     }
 
+    public void saveData(ArrayList<RSelectCollaterSecurityBean> list) {
+        mActivity.saveData(list);
+    }
+
     /**
      * 得到担保品证券的数据列表
+     *
      * @param datalist
      */
     public void getCollaterSecurityData(ArrayList<RSelectCollaterSecurityBean> datalist) {
@@ -185,49 +199,107 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
         }
         refreshComplete();
     }
-    /**
-     * 点击‘查询’所执行的操作
-     */
-    public void clickTvSelect() {
-        if (TradeUtils.isFastClick()) {
-            return;
+
+    /*
+    * 以空股票代码作为key查询时 先去加载内存数据
+    * */
+    public boolean processMemoryOriginDataList() {
+        if (mActivity.getData().size() == 0) {
+            return false;
+        } else {
+            mLiNoData.setVisibility(View.GONE);
+            mLoading.setVisibility(View.GONE);
+            mPullToRefreshListView.setVisibility(View.VISIBLE);
+            mAdapter.setListData(mActivity.getData());
+            mAdapter.notifyDataSetChanged();
+            refreshComplete();
+            return true;
         }
-        String inputCode = mEdtCode.getText().toString().trim();
-        if(TextUtils.isEmpty(inputCode) || inputCode.length() == 6) {
-            onSelectShow(inputCode);
-        }else{
-            ToastUtils.toast(mActivity, mActivity.getResources().getString(R.string.r_revocation_error));
-        }
+
     }
 
     /**
      * 实时监听代码输入
      */
-    public void onTextChange(){
+    public void onTextChange() {
         String inputCode = mEdtCode.getText().toString().trim();
         int length = inputCode.length();
+
         if (length == 0) {
+            if (lastLenth > 0) {
+                showPreTv();
+            }
             mStockFuzzyQueryManager.dismissQueryPopupWindow();
-        } else if (length > 2 && length < 6) { // 输入了，但没有输入完成的时候
-            // 发消息给行情，查询股票输入提示列表
-            mStockFuzzyQueryManager.execQuery(inputCode,"1", mLinLayout);
-        } else if (length == 6) {
-            mStockFuzzyQueryManager.dismissQueryPopupWindow();
-            onSelectShow(inputCode);
+            if (!processMemoryOriginDataList()) {
+                mServices.requestCollaterSecurity("");
+            }
+        } else {
+            setEdtCursor(mEdtCode);
+            if (length > 2 && length < 6) { // 输入了，但没有输入完成的时候
+                // 发消息给行情，查询股票输入提示列表
+                mStockFuzzyQueryManager.execQuery(inputCode, "1", mRlLayout);
+            } else if (length == 6) {
+                mStockFuzzyQueryManager.dismissQueryPopupWindow();
+                onSelectShow(inputCode);
+            }
         }
         mStockFuzzyQueryManager.dismissQueryPopupWindow();
+        lastLenth = length;
+    }
+
+    void showRealEdt() {
+        mEdtCode.setVisibility(View.VISIBLE);
+        mTvPreCode.setVisibility(View.GONE);
+        mEdtCode.setFocusable(true);
+        mEdtCode.setFocusableInTouchMode(true);
+        mEdtCode.requestFocus();
+        mEdtCode.requestFocusFromTouch();
+        setEdtCursor(mEdtCode);
+//        mEdtCode.performClick();
+    }
+
+    void showPreTv() {
+        mTvPreCode.setVisibility(View.VISIBLE);
+        mEdtCode.setVisibility(View.GONE);
     }
 
     /**
      * 查询时的状态
      */
-    private void onSelectShow(String code){
-        mServices.requestCollaterSecurity(code);
-        mLiNoData.setVisibility(View.GONE);
-        mLoading.setVisibility(View.VISIBLE);
-        mPullToRefreshListView.setVisibility(View.GONE);
-        mStockCodeEdKeyboardManager.dismiss();
-        TradeUtils.hideSystemKeyBoard(mActivity);
+    private void onSelectShow(String code) {
+        boolean isMatching = false;
+        //先去内存中匹配 如果匹配不到或者内存还未初始化再去查询
+        if (mActivity.getData().size() != 0) {
+            ArrayList<RSelectCollaterSecurityBean> newList = new ArrayList<>();
+            for (int i = 0; i < mActivity.getData().size(); i++) {
+                RSelectCollaterSecurityBean bean = mActivity.getData().get(i);
+                String stock_code = bean.getStock_code();
+                if (stock_code.equals(code)) {
+                    newList.add(bean);
+                    mAdapter.setListData(newList);
+                    mAdapter.notifyDataSetChanged();
+                    isMatching = true;
+                    newList = null;
+                    break;
+                }
+            }
+            if (!isMatching) {
+                mServices.requestCollaterSecurity(code);
+                mLiNoData.setVisibility(View.GONE);
+                mLoading.setVisibility(View.VISIBLE);
+                mPullToRefreshListView.setVisibility(View.GONE);
+                mStockCodeEdKeyboardManager.dismiss();
+                TradeUtils.hideSystemKeyBoard(mActivity);
+            }
+        } else {
+            mServices.requestCollaterSecurity(code);
+            mLiNoData.setVisibility(View.GONE);
+            mLoading.setVisibility(View.VISIBLE);
+            mPullToRefreshListView.setVisibility(View.GONE);
+            mStockCodeEdKeyboardManager.dismiss();
+            TradeUtils.hideSystemKeyBoard(mActivity);
+        }
+
     }
 
     /**
@@ -236,8 +308,22 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
     public void onSearchListViewItemClick(int position) {
         CodeTableBean SelectBean = mStockFuzzyQueryManager.getSearchStocksAdapter().getItem(position);
         mEdtCode.setText(SelectBean.getCode());
-        mTvName.setText(SelectBean.getName());
+        setEdtCursor(mEdtCode);
         onSelectShow(SelectBean.getCode());
+    }
+
+    private void setEdtCursor(EditText et) {
+        if (et == null) {
+            return;
+        }
+        CharSequence text = et.getText();
+        if (TextUtils.isEmpty(text)) {
+            return;
+        }
+        if (text instanceof Spannable) {
+            Spannable spanText = (Spannable) text;
+            Selection.setSelection(spanText, text.length());
+        }
     }
 
     /**
@@ -253,7 +339,27 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
      * 被下拉时执行
      */
     public void onDownRefresh() {
-        mServices.requestCollaterSecurity("");
+        showPreTv();
+        if (!processMemoryOriginDataList()) {
+            mServices.requestCollaterSecurity("");
+        }
+    }
+
+    public void clearFocus() {
+        mEdtCode.clearFocus();
+    }
+
+    @Override
+    public void onKeyCodeDown() {
+        if (mStockCodeEdKeyboardManager != null) {
+            mStockCodeEdKeyboardManager.dismiss();
+        }
+        if (TextUtils.isEmpty(mEdtCode.getText())) {
+            showPreTv();
+        } else if (mEdtCode.getText().length() == 6) {
+            onSelectShow(mEdtCode.getText().toString());
+        }
+
     }
 }
 
@@ -261,14 +367,15 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment {
  * 控制类
  */
 class RCollaterSecurityController extends AbsBaseController implements
-        PullToRefreshListView.OnRefreshListener,View.OnClickListener,
-        TextWatcher,ListView.OnItemClickListener{
+        PullToRefreshListView.OnRefreshListener, View.OnClickListener,
+        TextWatcher, ListView.OnItemClickListener {
 
     private RSelectCollaterSecurityFragment mFragment;
 
     public RCollaterSecurityController(RSelectCollaterSecurityFragment fragment) {
         this.mFragment = fragment;
     }
+
     @Override
     public void register(int eventType, View view) {
         switch (eventType) {
@@ -283,11 +390,12 @@ class RCollaterSecurityController extends AbsBaseController implements
                 break;
         }
     }
+
     @Override
     public void onClick(View v) {
         int resId = v.getId();
-        if (resId == R.id.tv_collater_click) { // 查询
-            mFragment.clickTvSelect();
+        if (resId == R.id.tv_collater_code_pre) { // 查询
+            mFragment.showRealEdt();
         }
     }
 
@@ -303,7 +411,7 @@ class RCollaterSecurityController extends AbsBaseController implements
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
-//        mFragment.onTextChange();
+        mFragment.onTextChange();
     }
 
     @Override
@@ -315,6 +423,7 @@ class RCollaterSecurityController extends AbsBaseController implements
     public void onPullDownToRefresh(PullToRefreshBase refreshView) {
         mFragment.onDownRefresh();
     }
+
     @Override
     public void onPullUpToRefresh(PullToRefreshBase refreshView) {
     }

@@ -46,6 +46,19 @@ public class StringUtils {
         return result;
     }
 
+    public static int getNumOfInnerString(String outString, String innerString) {
+         int counter = 0;
+        if (outString.indexOf(innerString) == -1) {
+            return 0;
+        } else if (outString.indexOf(innerString) != -1) {
+            counter++;
+            getNumOfInnerString(outString.substring(outString.indexOf(innerString) +
+                    innerString.length()), innerString);
+            return counter;
+        }
+        return 0;
+    }
+
     public static boolean isEmpty(String str) {
         return str == null || str.length() == 0;
     }

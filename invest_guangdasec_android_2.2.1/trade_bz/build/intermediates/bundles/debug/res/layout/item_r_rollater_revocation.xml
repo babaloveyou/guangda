@@ -1,131 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <View android:layout_width="match_parent"
-        android:layout_height="10dp"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:id="@+id/lin_lin_r"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_height="40dp">
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="浦发银行"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/text_et_input_french_black"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/tv_code"
+            android:layout_marginLeft="5dp"
+            android:text="000000"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="@color/text_reming"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
         android:background="@color/trade_normal_background"/>
-
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/lin_lin_r"
-        android:background="@drawable/selector_press_list_item">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp">
-
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_collater_revocation_bs"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"/>
-
+                android:id="@+id/tv_title_status"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/select_table_text"
+                android:textColor="@color/trade_text_color9" />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_collater_revocation_name"
-                android:layout_marginLeft="10dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_collater_revocation_code"
-                android:layout_marginLeft="5dp"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"/>
-
+                android:id="@+id/tv_time"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/select_table_text"
+                android:textColor="@color/trade_text" />
         </LinearLayout>
-
         <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/trade_divide_line"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"/>
-
+            android:layout_gravity="center_vertical"
+            android:layout_width="0.5dp"
+            android:layout_height="30dp"
+            android:background="@color/trader_door_gv_divider"/>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-
-            <TextView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="@string/r_hold_pager20"
-                android:paddingTop="8dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_collater_revocation_price"
-                android:paddingTop="8dp"
-                android:gravity="center|left"/>
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="@string/r_hold_pager21"
-                android:paddingTop="8dp"
-                android:gravity="center"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/entrust_info"
+                    android:gravity="center"
+                    android:textSize="@dimen/select_table_text"
+                    android:textColor="@color/trade_text_color9"
+                    android:id="@+id/textView5"/>
 
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/trunover_info"
+                    android:gravity="center"
+                    android:textSize="@dimen/select_table_text"
+                    android:textColor="@color/trade_text_color9" />
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_collater_revocation_count"
-                android:paddingTop="8dp"
-                android:gravity="center|left"/>
+                android:orientation="vertical">
+                <HorizontalScrollView
+                    android:scrollbars="none"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/tv_entrust_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="@dimen/select_table_text"
+                        android:textColor="@color/trade_text_color9" />
+                </HorizontalScrollView>
+                <HorizontalScrollView
+                    android:scrollbars="none"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:id="@+id/tv_trunover_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="@dimen/select_table_text"
+                        android:textColor="@color/trade_text_color9" />
+                </HorizontalScrollView>
 
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="@string/r_hold_pager27"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2.6"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_collater_revocation_time"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp"
-                android:gravity="center|left"/>
-
-        </LinearLayout>
-
     </LinearLayout>
 
+    <View android:layout_width="match_parent"
+          android:id="@+id/view_indicator"
+          android:layout_height="5dp"
+          android:background="@color/bg_main_french_gray"/>
 </LinearLayout>

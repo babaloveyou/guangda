@@ -922,6 +922,7 @@
     <string name="r_layout_rb1">转入</string>
     <string name="r_layout_rb3">转出</string>
     <string name="r_layout_rb2">撤单</string>
+    <string name="r_layout_rb4">划转担保品</string>
     <string name="r_layout_rb11">转入担保品</string>
     <string name="r_layout_rb22">转出担保品</string>
     <string name="r_transfer_title">担保品划转</string>
@@ -1011,16 +1012,27 @@
     <string name="r_limit_other_quan">剩余融券授信额度</string>
 
     <!--融资融券之查询之担保品证券-->
-    <string name="r_collater_title">担保品证券</string>
+    <string name="r_collater_title">担保品查询</string>
     <string name="r_collater_ed_hint">证券代码</string>
-    <string name="r_collater_ed_hint2">请输入证券代码</string>
+    <string name="r_collater_ed_hint2">请输入股票名称/代码</string>
     <string name="r_collater_tv_hint">证券名称</string>
     <string name="r_collater_bt_hint">查询</string>
     <string name="r_head_code">证券代码</string>
-    <string name="r_head_name">证券名称</string>
+    <string name="r_head_name">名称/代码</string>
     <string name="r_head_market">市场名称</string>
     <string name="r_head_profit">证券折算率</string>
-    <string name="r_exchange_type">深股A</string>
+    <string name="r_exchange_type1">深股A</string>
+    <string name="r_exchange_type2">深股B</string>
+    <string name="r_exchange_type3">沪股A</string>
+    <string name="r_exchange_type4">沪股B</string>
+    <string name="r_exchange_type5">三板</string>
+    <string name="r_exchange_type6">特转A</string>
+    <string name="r_exchange_type7">特转B</string>
+    <string name="r_exchange_type8">郑州交易所</string>
+    <string name="r_exchange_type9">大连交易所</string>
+    <string name="r_exchange_type10">上海交易所</string>
+    <string name="r_exchange_type11">金融交易所</string>
+    <string name="r_exchange_type12">港股</string>
 
 
     <!--标的证券-->

@@ -85,6 +85,12 @@
             android:text="@string/dialog_not"
             android:textColor="@color/trade_text_color6"
             />
-    </LinearLayout>
 
+    </LinearLayout>
+    <View
+        android:visibility="gone"
+        android:id="@+id/view_bottom"
+        android:background="@drawable/shape_common_bg_of_edittext_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
 </LinearLayout>

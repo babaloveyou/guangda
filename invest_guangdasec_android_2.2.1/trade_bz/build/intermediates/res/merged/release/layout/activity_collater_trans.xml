@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+    <com.thinkive.android.trade_bz.views.NavigatorView
+        android:id="@+id/nsv_multi_trade"
+        android:layout_width="match_parent"
+        android:background="@color/trade_normal_background"
+        android:layout_height="37dp"/>
+    <com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout
+        android:id="@+id/hsll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/nsv_multi_trade"/>
+
+</RelativeLayout>

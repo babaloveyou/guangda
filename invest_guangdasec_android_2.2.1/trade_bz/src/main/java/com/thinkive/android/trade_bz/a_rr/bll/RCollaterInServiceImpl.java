@@ -8,6 +8,7 @@ import com.thinkive.android.trade_bz.a_rr.fragment.RCollaterInFragment;
 import com.thinkive.android.trade_bz.a_stock.bean.RCollaterInBean;
 import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
+import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.request.RR303014;
 import com.thinkive.android.trade_bz.request.RR303015;
 import com.thinkive.android.trade_bz.request.RR303046;
@@ -116,13 +117,16 @@ public class RCollaterInServiceImpl extends BasicServiceImpl {
         map.put("stock_code",nameAndCodeBean.getStock_code());
         map.put("entrust_amount",enableAmount);
 
-//        map.put("branch_no_crdt", TradeLoginManager.sCreditUserInfo.getBranch_no());
-//        map.put("client_id_crdt",TradeLoginManager.sCreditUserInfo.getCust_code());
-//        map.put("fund_account_crdt",TradeLoginManager.sCreditUserInfo.getFund_account());
-//        map.put("stock_account_crdt",bean.getStock_account_crdt());
-//        map.put("seat_no_crdt",bean.getSeat_no_crdt());
+        map.put("branch_no_crdt", TradeLoginManager.sCreditUserInfo.getBranch_no());
+        map.put("client_id_crdt",TradeLoginManager.sCreditUserInfo.getCust_code());
+        map.put("fund_account_crdt",TradeLoginManager.sCreditUserInfo.getFund_account());
+        map.put("stock_account_crdt",bean.getStock_account_crdt());
+        map.put("seat_no_crdt",bean.getSeat_no_crdt());
         map.put("entrust_bs","76");
         map.put("last_price",bean.getLast_price());
+        map.put("cost_price",bean.getCost_price());
+        map.put("password_crdt",TradeLoginManager.sCreditUserInfo.getPassword());
+
         new RR303015(map, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {

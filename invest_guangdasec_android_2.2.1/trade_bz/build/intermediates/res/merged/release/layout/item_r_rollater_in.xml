@@ -135,7 +135,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_store"
+                    android:id="@+id/tv_usable"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -148,7 +148,7 @@
                     android:textSize="14sp"/>
 
                 <TextView
-                    android:id="@+id/tv_usable"
+                    android:id="@+id/tv_market_price"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"

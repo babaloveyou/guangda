@@ -51,6 +51,7 @@ import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectCollateralSecurityActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
@@ -953,8 +954,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
    * */
     private void onGuaranteeSearch() {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            //// TODO: 2016/10/24
-            //            RPropertyFragment
+            //点击右侧按钮所执行的操作
+            startActivity(new Intent(mActivity, RSelectCollateralSecurityActivity.class));
         } else {
             startLogin(1011, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }

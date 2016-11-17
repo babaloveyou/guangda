@@ -45,7 +45,7 @@ public class RCollaterInAdapter extends AbsBaseAdapter<RCollaterInBean> {
         TextView winLoseNumTv = (TextView) holder.getComponentById(R.id.tv_win_lose_num);
         TextView costPriceTv = (TextView) holder.getComponentById(R.id.tv_cost_price);
         TextView currentPriceTv = (TextView) holder.getComponentById(R.id.tv_current_price);
-        TextView storeTv = (TextView) holder.getComponentById(R.id.tv_store);
+        TextView marketPriceTv = (TextView) holder.getComponentById(R.id.tv_market_price);
         TextView usebleTv = (TextView) holder.getComponentById(R.id.tv_usable);
         TextView nameTv = (TextView) holder.getComponentById(R.id.tv_name);
         TextView codeTv = (TextView) holder.getComponentById(R.id.tv_code);
@@ -62,13 +62,11 @@ public class RCollaterInAdapter extends AbsBaseAdapter<RCollaterInBean> {
         //现价
         setCurrentPrice(currentPriceTv, bean);
 
-        //持仓
-
-        setStoreText(storeTv, bean);
-
-
         //可用
         setEnableText(usebleTv, bean);
+
+        //市值
+        setMarketPrice(marketPriceTv, bean);
         //点击列表项弹出对话框
         final LinearLayout lClick = (LinearLayout) holder.getComponentById(R.id.lin_lin_r);
         lClick.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +78,14 @@ public class RCollaterInAdapter extends AbsBaseAdapter<RCollaterInBean> {
 
     }
 
+    private void setMarketPrice(TextView view, RCollaterInBean bean) {
+        String enableText = "市值:" + bean.getMarket_value();
+        SpannableStringBuilder styleEnable = new SpannableStringBuilder(enableText);
+        styleEnable.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        styleEnable.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.trade_text_color2)), 3, enableText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        view.setText(styleEnable);
+    }
+
     private void setEnableText(TextView view, RCollaterInBean myStoreStockBean) {
         String enableText = "可用:" + myStoreStockBean.getEnable_amount();
         SpannableStringBuilder styleEnable = new SpannableStringBuilder(enableText);
@@ -88,13 +94,6 @@ public class RCollaterInAdapter extends AbsBaseAdapter<RCollaterInBean> {
         view.setText(styleEnable);
     }
 
-    private void setStoreText(TextView view, RCollaterInBean myStoreStockBean) {
-        String storeText = "持仓:" + myStoreStockBean.getLast_price();
-        SpannableStringBuilder styleStore = new SpannableStringBuilder(storeText);
-        styleStore.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        styleStore.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.trade_text_color2)), 3, storeText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        view.setText(styleStore);
-    }
 
     private void setCurrentPrice(TextView view, RCollaterInBean myStoreStockBean) {
         String currentPriceText = "现价:" + myStoreStockBean.getLast_price();
@@ -119,7 +118,7 @@ public class RCollaterInAdapter extends AbsBaseAdapter<RCollaterInBean> {
 
     private void setWinLostRate(TextView view, RCollaterInBean myStoreStockBean) {
         String winlostRate = myStoreStockBean.getFloat_yk_per();
-        if (!TextUtils.isEmpty(winlostRate)&&!winlostRate.startsWith("-")) {
+        if (!TextUtils.isEmpty(winlostRate) && !winlostRate.startsWith("-")) {
             winlostRate = "+" + winlostRate;
         }
         String winLostRateTvString = "盈亏" + winlostRate + "%";
@@ -140,7 +139,7 @@ public class RCollaterInAdapter extends AbsBaseAdapter<RCollaterInBean> {
      */
     public void onGetLinkData(RCollaterLinkBean bean, RCollaterInBean rCollaterInBean) {
         RCollaterInDialog dialog = new RCollaterInDialog(mContext, mServices);
-        dialog.setDataBean(bean,rCollaterInBean);
+        dialog.setDataBean(bean, rCollaterInBean);
         dialog.show();
     }
 }

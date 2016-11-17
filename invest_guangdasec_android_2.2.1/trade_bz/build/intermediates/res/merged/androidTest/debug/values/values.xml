@@ -160,6 +160,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="common_bg_stroke">#808080</color>
     <color name="dim_foreground_disabled_material_dark">#80bebebe</color>
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
@@ -1354,6 +1355,7 @@
     <string name="r_collater5">转出数量：</string>
     <string name="r_collater6">请输入转入数量</string>
     <string name="r_collater7">转入金额：</string>
+    <string name="r_collater8">转入数量：</string>
     <string name="r_collater_bt_hint">查询</string>
     <string name="r_collater_ed_hint">证券代码</string>
     <string name="r_collater_ed_hint2">请输入证券代码</string>
@@ -1408,7 +1410,9 @@
     <string name="r_hold_pager9">开仓/未还</string>
     <string name="r_hold_title">股份持仓</string>
     <string name="r_layout_rb1">转入</string>
+    <string name="r_layout_rb11">转入担保品</string>
     <string name="r_layout_rb2">撤单</string>
+    <string name="r_layout_rb22">转出担保品</string>
     <string name="r_layout_rb3">转出</string>
     <string name="r_limit_all">授信总额度</string>
     <string name="r_limit_other_quan">剩余融券授信额度</string>

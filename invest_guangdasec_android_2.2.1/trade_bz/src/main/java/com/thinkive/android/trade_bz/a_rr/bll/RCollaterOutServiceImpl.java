@@ -8,6 +8,7 @@ import com.thinkive.android.trade_bz.a_rr.fragment.RCollaterOutFragment;
 import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
 import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
+import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.request.RR303003;
 import com.thinkive.android.trade_bz.request.RR303014;
 import com.thinkive.android.trade_bz.request.RR303015;
@@ -62,6 +63,7 @@ public class RCollaterOutServiceImpl extends BasicServiceImpl {
 
     /**
      * 请求划转联动
+     * @param bean
      */
     public void requestLinkageData(final MyStoreStockBean bean) {
         loadingDialogUtil.showLoadingDialog(0);
@@ -86,7 +88,7 @@ public class RCollaterOutServiceImpl extends BasicServiceImpl {
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
                 RCollaterLinkBean data = (RCollaterLinkBean)bundle.getSerializable(RR303014.BUNDLE_KEY_TRANSFER_LIAN);
-                mFragment.onGetLinkData(data);
+                mFragment.onGetLinkData(bean,data);
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {
@@ -99,7 +101,7 @@ public class RCollaterOutServiceImpl extends BasicServiceImpl {
     /**
      * 请求划转
      */
-    public void requestTranferredResult(RCollaterLinkBean bean,String enableAmount) {
+    public void requestTranferredResult(RCollaterLinkBean bean, MyStoreStockBean nameAndCodeBean, String enableAmount) {
         loadingDialogUtil.showLoadingDialog(0);
         HashMap<String, String> map = new HashMap<String, String>();
 //        map.put("entrust_way", TradeLoginManager.sNormalUserInfo_in_credit.getEntrust_way());
@@ -112,16 +114,18 @@ public class RCollaterOutServiceImpl extends BasicServiceImpl {
         map.put("stock_account",bean.getStock_account_crdt());
         map.put("seat_no",bean.getSeat_no_crdt());
         map.put("exchange_type",bean.getExchange_type());
-        map.put("stock_code",bean.getStock_code());
+        map.put("stock_code",nameAndCodeBean.getStock_code());
         map.put("entrust_amount",enableAmount);
 
-//        map.put("branch_no_crdt", TradeLoginManager.sCreditUserInfo.getBranch_no());
-//        map.put("client_id_crdt",TradeLoginManager.sCreditUserInfo.getCust_code());
-//        map.put("fund_account_crdt",TradeLoginManager.sCreditUserInfo.getFund_account());
-//        map.put("stock_account_crdt",bean.getStock_account_crdt());
-//        map.put("seat_no_crdt",bean.getSeat_no_crdt());
+//   map.put("branch_no_crdt", TradeLoginManager.sCreditUserInfo.getBranch_no());
+        map.put("client_id_crdt", TradeLoginManager.sCreditUserInfo.getCust_code());
+        map.put("fund_account_crdt",TradeLoginManager.sCreditUserInfo.getFund_account());
+        map.put("stock_account_crdt",bean.getStock_account_crdt());
+        map.put("seat_no_crdt",bean.getSeat_no_crdt());
         map.put("entrust_bs","77");
         map.put("last_price",bean.getLast_price());
+        map.put("cost_price",bean.getCost_price());
+        map.put("password_crdt",TradeLoginManager.sCreditUserInfo.getPassword());
         new RR303015(map, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {

@@ -23,6 +23,7 @@ public class RR303015 extends BaseCreditRequest {
         super(action);
         paramMap.put("funcNo", "303015");
         setParamHashMap(paramMap);
+        System.out.println("转入参数request303015" + paramMap.toString());
         setUrlName(Constants.URL_CREDIT_TRADE);
     }
 

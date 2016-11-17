@@ -289,16 +289,16 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                 }
             }
         });
-        mMoreMenuGv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    System.out.println("mMoreMenuGv   获取焦点");
-                } else {
-                    System.out.println("mMoreMenuGv   失去焦点");
-                }
-            }
-        });
+//        mMoreMenuGv.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//            @Override
+//            public void onFocusChange(View v, boolean hasFocus) {
+//                if (hasFocus) {
+//                    System.out.println("mMoreMenuGv   获取焦点");
+//                } else {
+//                    System.out.println("mMoreMenuGv   失去焦点");
+//                }
+//            }
+//        });
 
     }
 

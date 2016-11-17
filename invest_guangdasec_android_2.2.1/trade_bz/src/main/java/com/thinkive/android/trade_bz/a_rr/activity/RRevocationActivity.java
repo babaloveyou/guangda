@@ -32,8 +32,6 @@ public class RRevocationActivity extends AbsNavBarActivity {
         //左边按钮
         setBackBtnVisibility(View.VISIBLE);
         //右边按钮
-//        setLogoutBtnVisibility(View.VISIBLE);
-//        setLogoutBtnText(R.string.r_revocation_title_right);
     }
 
     @Override

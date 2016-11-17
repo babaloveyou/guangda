@@ -48,13 +48,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:text="@string/limit_price_tobuy"
                 android:gravity="center"
                 android:textSize="@dimen/select_table_text"
                 android:textColor="@color/trade_text_color9" />
             <TextView
                 android:id="@+id/tv_time"
-                android:text="11:10:11"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -77,6 +75,7 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -84,7 +83,9 @@
                     android:text="@string/entrust_info"
                     android:gravity="center"
                     android:textSize="@dimen/select_table_text"
-                    android:textColor="@color/trade_text_color9" />
+                    android:textColor="@color/trade_text_color9"
+                    android:id="@+id/textView5"/>
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -110,7 +111,6 @@
                     android:id="@+id/tv_entrust_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12.12元/10000股"
                     android:gravity="center"
                     android:textSize="@dimen/select_table_text"
                     android:textColor="@color/trade_text_color9" />
@@ -125,7 +125,6 @@
                     android:id="@+id/tv_trunover_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="12.12元/10000股"
                     android:gravity="center"
                     android:textSize="@dimen/select_table_text"
                     android:textColor="@color/trade_text_color9" />

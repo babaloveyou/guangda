@@ -133,11 +133,12 @@ public class RCollaterOutFragment extends AbsBaseFragment {
 
     /**
      * 得到联动数据
+     * @param stockBean
      * @param bean
      */
-    public void onGetLinkData(RCollaterLinkBean bean){
+    public void onGetLinkData(MyStoreStockBean stockBean, RCollaterLinkBean bean){
         if(bean != null){
-            mAdapter.onGetLinkData(bean);
+            mAdapter.onGetLinkData(stockBean,bean);
         }
     }
 
