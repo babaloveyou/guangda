@@ -103,6 +103,7 @@ public class TradeLoginServiceImpl {
      * 此方法在请求完加密密码方法后执行
      */
     public void requestLogin() {
+        System.out.println("2:requestLogin();");
         String pwd = mFragment.getLoginPassword();
         requestNormalLogin(mFragment.getLoginAccount(), pwd, mFragment.getSecurityCode());
     }
@@ -116,6 +117,7 @@ public class TradeLoginServiceImpl {
      */
     public void requestNormalLogin(final String loginAccount, final String loginPassword,
                                    String verifyCode) {
+        System.out.println("3:requestNormalLogin();");
         HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("input_content", loginAccount);
         paramMap.put("ticket", verifyCode);
@@ -126,9 +128,9 @@ public class TradeLoginServiceImpl {
         paramMap.put("op_station", TradeLoginManager.OP_STATION_2);
         paramMap.put("phone_no", "18607026105");
         paramMap.put("login_type", mLoginType);
-        if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_NORMAL)) { // 如果是融资融券登录
+        if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_NORMAL)) {
             paramMap.put("funcNo", "300100");
-        } else if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {
+        } else if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {// 如果是融资融券登录
             paramMap.put("funcNo", "1000010");
         }
         mFragment.onLoginStart();
@@ -136,8 +138,8 @@ public class TradeLoginServiceImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 TradeFlags.addFlag(TradeFlags.FLAG_NOT_UNITY_LOGIN_TYPE);
+                System.out.println("4: ++++登录成功");
                 mFragment.onLoginSuccess(loginAccount, mLoginType);
-
                 ToastUtils.toast(context, R.string.login_success);
                 if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_NORMAL)) {
                     //普通用户登录的用户信息保存

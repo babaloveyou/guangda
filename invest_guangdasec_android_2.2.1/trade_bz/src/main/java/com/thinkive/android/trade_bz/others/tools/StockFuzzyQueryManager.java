@@ -75,7 +75,6 @@ public class StockFuzzyQueryManager {
         }
         return sInstance;
     }
-
     /**
      * 单例模式下的私有构造方法
      */

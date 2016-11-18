@@ -922,10 +922,13 @@
     <string name="r_layout_rb1">转入</string>
     <string name="r_layout_rb3">转出</string>
     <string name="r_layout_rb2">撤单</string>
-    <string name="r_layout_rb4">划转担保品</string>
+    <string name="r_layout_rb4">划转查询</string>
     <string name="r_layout_rb11">转入担保品</string>
     <string name="r_layout_rb22">转出担保品</string>
     <string name="r_transfer_title">担保品划转</string>
+    <string name="r_subbond_title">标的证券</string>
+    <string name="r_sub_financing_title">融资标的</string>
+    <string name="r_sub_securities_title">融券标的</string>
 
     <string name="r_collater_select_title">非交易过户查询</string>
     <string name="r_revocation_title">融资融券撤单</string>

@@ -11,7 +11,7 @@ public class SizeUtil {
      * dp转px
      */public static int dp2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
-
+        System.out.println(("像素密度=" + scale));
         return (int) (dpValue * scale + 0.5f);
     }
 

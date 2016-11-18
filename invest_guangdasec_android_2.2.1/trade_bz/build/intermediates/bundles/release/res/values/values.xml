@@ -1135,7 +1135,7 @@
     <string name="r_layout_rb2">撤单</string>
     <string name="r_layout_rb22">转出担保品</string>
     <string name="r_layout_rb3">转出</string>
-    <string name="r_layout_rb4">划转担保品</string>
+    <string name="r_layout_rb4">划转查询</string>
     <string name="r_limit_all">授信总额度</string>
     <string name="r_limit_other_quan">剩余融券授信额度</string>
     <string name="r_limit_other_zi">剩余融资授信额度</string>
@@ -1206,6 +1206,9 @@
     <string name="r_select_title">查询</string>
     <string name="r_select_today_entrust">当日委托</string>
     <string name="r_select_today_trade">当日成交</string>
+    <string name="r_sub_financing_title">融资标的</string>
+    <string name="r_sub_securities_title">融券标的</string>
+    <string name="r_subbond_title">标的证券</string>
     <string name="r_three_five">融券可用额度</string>
     <string name="r_three_four">融资可用额度</string>
     <string name="r_three_one">融资融券授信额度</string>

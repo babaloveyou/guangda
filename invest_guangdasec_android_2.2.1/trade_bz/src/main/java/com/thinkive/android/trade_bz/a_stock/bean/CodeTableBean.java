@@ -10,9 +10,6 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 public class CodeTableBean extends BaseBean {
 	//名称：市场：代码：涨停：跌停：是否停牌:股票类型:现价
-
-
-
 	/**
 	 * 股票名称
 	 */

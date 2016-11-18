@@ -35,6 +35,7 @@ public class RequestLogin extends BaseRequest {
 
     public RequestLogin(HashMap<String, String> paramMap, IRequestAction action, String loginType) {
         super(action);
+        System.out.println("__________________________________请求登录");
         setParamHashMap(paramMap);
         mLoginType = loginType;
         // 如果是融资融券账户登录
@@ -178,7 +179,6 @@ public class RequestLogin extends BaseRequest {
         paramMap.put("jsessionid", jsonObject.optString("jsessionid"));
         paramMap.put("trade_flag", jsonObject.optString("trade_flag"));
         paramMap.put("op_station", TradeLoginManager.OP_STATION_2 );
-        System.out.println(paramMap.toString());
         new Request300115(paramMap, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {

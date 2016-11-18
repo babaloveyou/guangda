@@ -1,6 +1,7 @@
 package com.thinkive.android.trade_bz.a_rr.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
@@ -74,7 +75,9 @@ public class RSelectCollaterSecurityAdapter extends AbsBaseAdapter<RSelectCollat
 
         }
         TextView tvProfit = (TextView) holder.getComponentById(R.id.tv_collater_profit);
-        tvProfit.setText(TradeUtils.formatDouble2(Double.parseDouble(bean.getAssure_ratio()) * 100) + "%");
+        if (!TextUtils.isEmpty(bean.getAssure_ratio())) {
+            tvProfit.setText(TradeUtils.formatDouble2(Double.parseDouble(bean.getAssure_ratio()) * 100) + "%");
+        }
 
     }
 }

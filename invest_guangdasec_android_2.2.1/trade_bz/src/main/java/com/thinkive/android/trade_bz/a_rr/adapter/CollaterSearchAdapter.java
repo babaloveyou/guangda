@@ -86,7 +86,6 @@ public class CollaterSearchAdapter extends AbsBaseAdapter<RCollaterSearchBean> {
 
     private void setText(TextView view, String textString) {
         int numOfInnerString = StringUtils.getNumOfInnerString(textString, " ");
-        System.out.println("空格个数   ==" + numOfInnerString);
         if (numOfInnerString == 1) {
             SpannableStringBuilder styleEnable = new SpannableStringBuilder(textString);
             styleEnable.setSpan(new ForegroundColorSpan(mSubContext.getResources().getColor(R.color.text_reming)), 0, 4, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

@@ -64,7 +64,19 @@
                 <ImageView
                     style="@style/style_iv_right"/>
             </RelativeLayout>
+            <include layout="@layout/include_devider_view"/>
+            <RelativeLayout
+                android:id="@+id/rl_sub_bond"
+                style="@style/style_rl_click_expandable"
+                >
 
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="标的证券"/>
+
+                <ImageView
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
 
             <include layout="@layout/include_devider_view"/>
 

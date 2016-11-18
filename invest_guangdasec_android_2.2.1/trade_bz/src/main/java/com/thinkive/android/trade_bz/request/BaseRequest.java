@@ -96,8 +96,6 @@ public abstract class BaseRequest {
                 } else  { //调用接口出现其他异常
                     if (jsonObject.has(ERROR_INFO)) {
                         errorInfo = jsonObject.optString(ERROR_INFO);
-                        //// TODO: 2016/10/20 delete
-                        System.out.println("jsonObject.has(ERROR_NO)"+errorInfo);
                     }
                     bundle.putString(ERROR_INFO, errorInfo);
                     bundle.putString(ERROR_NO, String.valueOf(errorCode));

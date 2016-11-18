@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/trade_color_white">
+
+    <LinearLayout
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_marginTop="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/trade_top_tab_dark_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_collater_name"
+                android:hint="@string/no_text_set"
+                />
+
+            <TextView
+                android:id="@+id/tv_collater_code"
+                android:textSize="10sp"
+                android:textColor="@color/text_reming"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/no_text_set"
+                />
+        </LinearLayout>
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/trade_top_tab_dark_gray"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_collater_market"
+            android:layout_weight="1"
+            android:hint="@string/no_text_set"
+            android:gravity="center" />
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/trade_top_tab_dark_gray"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_sale_amount"
+            android:layout_weight="1"
+            android:hint="@string/no_text_set"
+            android:gravity="center" />
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/trade_top_tab_dark_gray"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_collater_profit"
+            android:layout_weight="1"
+            android:hint="--    "
+            android:gravity="center_vertical|right" />
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/trade_divide_line"/>
+
+</LinearLayout>

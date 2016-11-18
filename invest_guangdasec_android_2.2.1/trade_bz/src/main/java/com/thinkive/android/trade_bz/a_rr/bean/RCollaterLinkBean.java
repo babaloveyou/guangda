@@ -12,22 +12,22 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 public class RCollaterLinkBean extends BaseBean {
     /**
-     *普通证券账号
+     * 普通证券账号
      */
     @JsonKey("stock_account")
     private String stock_account = "";
     /**
-     *普通席位编号
+     * 普通席位编号
      */
     @JsonKey("seat_no")
     private String seat_no = "";
     /**
-     *交易类别(见数据字典)
+     * 交易类别(见数据字典)
      */
     @JsonKey("exchange_type")
     private String exchange_type = "";
     /**
-     *  信用证券账号
+     * 信用证券账号
      */
     @JsonKey("stock_account_crdt")
     private String stock_account_crdt = "";
@@ -42,7 +42,7 @@ public class RCollaterLinkBean extends BaseBean {
     @JsonKey("cost_price")
     private String cost_price = "";
     /**
-     *  最大可转数量（根据买卖方向不同查询不同的持仓）
+     * 最大可转数量（根据买卖方向不同查询不同的持仓）
      */
     @JsonKey("enable_amount")
     private String enable_amount = "";
@@ -51,24 +51,6 @@ public class RCollaterLinkBean extends BaseBean {
      */
     @JsonKey("last_price")
     private String last_price = "";
-    /**
-     * 证券代码
-     */
-    @JsonKey("stock_code")
-    private String stock_code = "";
-    /**
-     * 证券名称
-     */
-    @JsonKey("stock_name")
-    private String stock_name = "";
-
-    public String getStock_name() {
-        return stock_name;
-    }
-
-    public void setStock_name(String stock_name) {
-        this.stock_name = stock_name;
-    }
 
     public RCollaterLinkBean() {
 
@@ -138,11 +120,4 @@ public class RCollaterLinkBean extends BaseBean {
         this.last_price = last_price;
     }
 
-    public String getStock_code() {
-        return stock_code;
-    }
-
-    public void setStock_code(String stock_code) {
-        this.stock_code = stock_code;
-    }
 }

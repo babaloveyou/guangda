@@ -32,7 +32,6 @@ import com.android.thinkive.framework.module.IModule;
 import com.android.thinkive.framework.module.ModuleManager;
 import com.android.thinkive.framework.storage.MemoryStorage;
 import com.android.thinkive.framework.util.Constant;
-import com.android.thinkive.framework.view.MyWebView;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_hk.activity.HKMultiTradeActivity;
 import com.thinkive.android.trade_bz.a_in.activity.InFundMainActivity;
@@ -161,11 +160,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     private TradeParentFragment mParentFragment;//持有的 在TradeParentFragment初始化好的TradeParentFragment对象
     private ScrollView mScrollView;
 
-    private static NewStockWebFragment mNewStockWebFragment = new NewStockWebFragment();
-
-    public static NewStockWebFragment getNewStockWebFragment() {
-        return mNewStockWebFragment;
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -870,10 +864,8 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      * 新股申购
      */
     private void onClickNewStock() {
-        mNewStockWebFragment.setUrl(NewStockWebActivity.NORMAL_URL);
-        mNewStockWebFragment.setWebViewName("new-stock");
-        MyWebView webView = mNewStockWebFragment.getWebView();
-        mNewStockWebFragment.preloadUrl(mActivity, NewStockWebActivity.NORMAL_URL);
+        NewStockWebActivity.getNormalNewStockFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"));
+        NewStockWebActivity.getNormalNewStockFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"));
         Intent intent = new Intent(mActivity, NewStockWebActivity.class);
         intent.putExtra("loginType", NewStockWebActivity.NORMAL);
         mActivity.startActivity(intent);
@@ -1034,7 +1026,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             mActivity.startActivity(intent);
             //什么账号都没有登录，默认使用普通交易登录
         } else {
-            startLogin(R.id.tv_modified_trade_password, TradeLoginManager.LOGIN_TYPE_NORMAL);
+            startLogin(2201, TradeLoginManager.LOGIN_TYPE_NORMAL);
             //只登录了一种账户类型
         }
     }
@@ -1131,7 +1123,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         memoryStorage.removeData(Constants.CREDIT_COOKIE_KEY);
         //        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.NORMAL_URL,"");
         try {
-            sendMessageNormalLogout(getNewStockWebFragment());
+            sendMessageNormalLogout(NewStockWebActivity.getNormalNewStockFragment());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -1284,81 +1276,91 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             String action = intent.getAction();
             switch (action) {
                 case ACTION_START_ACTIVITY:  // 如果是登录后跳转指令广播
+
                     int viewId = intent.getIntExtra(INTENT_KEY_CLICK_VIEW_ID, 2000);
-                    if (viewId != -1) { // 此时，说明当初是未登录时，在交易主页点击某个按钮，触发登录的
-                        if (viewId - 2000 >= 50) {
-                            viewId = viewId - 2500;
-                            onItemClick(mMoreMenuGv, viewId);
-                        } else {
-                            viewId = viewId - 2000;
-                            onItemClick(mFastMenuGv, viewId);
+
+                        if (viewId != -1) { // 此时，说明当初是未登录时，在交易主页点击某个按钮，触发登录的
+                            if (viewId >= 2000 && viewId < 3000) {
+                                if (viewId - 2000 >= 500) {
+                                    viewId = viewId - 2500;
+                                    onItemClick(mMoreMenuGv, viewId);
+                                } else if (viewId - 2000 < 100) {
+                                    viewId = viewId - 2000;
+                                    onItemClick(mFastMenuGv, viewId);
+                                } else if (viewId - 2000 < 500&&viewId - 2000>=100) {
+                                    viewId = viewId - 2200;
+                                    if (viewId == 1) {
+                                        onClickModifiedTradePwd();
+                                    }
+                                }
+                            }
+                        } else { // 此时，说明当初是在未登录时，从行情模块点击“买入”或“卖出”按钮，触发登录的
+                            onClickBuyOrSaleInHq(mJsonDataFromHq);
                         }
-                    } else { // 此时，说明当初是在未登录时，从行情模块点击“买入”或“卖出”按钮，触发登录的
-                        onClickBuyOrSaleInHq(mJsonDataFromHq);
-                    }
-                    break;
-                case ACTION_CHANGE_PWD_SUCCESS:  // 如果是修改密码成功的广播
-                    //修改了那种账户的密码
-                    String userType = intent.getStringExtra(CHANGE_PWD_TYPE_RESULT);
-                    //登陆类型  单独登陆还是统一账户登陆
-                    boolean notUnityLogin = intent.getBooleanExtra(CHANGE_PWD_TYPE, true);
-                    //如果是统一登陆
-                    if (notUnityLogin) {
-                        switch (userType) {
-                            case TradeLoginManager.LOGIN_TYPE_CREDIT:  //信用
-                                mClickBtnBeforeLogin = 0;
-                                mTradeLoginManager.clearCreditUserInfo();
-                                startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_CREDIT);
-                                break;
-                            case TradeLoginManager.LOGIN_TYPE_OPTION:  //期权
-                                mClickBtnBeforeLogin = 0;
-                                mTradeLoginManager.clearOptionUserInfo();
-                                startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_OPTION);
-                                break;
-                            default:   //普通交易
-                                mClickBtnBeforeLogin = 0;
-                                mTradeLoginManager.clearNormalUserInfo();
-                                startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_NORMAL);
-                                break;
-                        }
-                        // 如果交易单独登录
-                    } else {
-                        startLoginWithoutUnity();
-                    }
-                    break;
-                case ACTION_ERROR_999:  //所有已登录的账户都清空
-                    Bundle bundle = intent.getExtras();
-                    mFuncNo999 = bundle.getString(Constant.FUNC_NO);
-                    boolean isUnityLogin = bundle.getBoolean("isUnityLogin", true);
-                    //统一账户才会执行重建会话操作
-                    if (isUnityLogin) {
-                        if (!mFuncNo999.equals("600003")) { //不是600003报的超时
-                            clearAllUserInfo();//清除用户信息
-                            clearAllFlags(); //清除所有标志位
+
+                        break;
+                        case ACTION_CHANGE_PWD_SUCCESS:  // 如果是修改密码成功的广播
+                            //修改了那种账户的密码
+                            String userType = intent.getStringExtra(CHANGE_PWD_TYPE_RESULT);
+                            //登陆类型  单独登陆还是统一账户登陆
+                            boolean notUnityLogin = intent.getBooleanExtra(CHANGE_PWD_TYPE, true);
+                            //如果是统一登陆
+                            if (notUnityLogin) {
+                                switch (userType) {
+                                    case TradeLoginManager.LOGIN_TYPE_CREDIT:  //信用
+                                        mClickBtnBeforeLogin = 0;
+                                        mTradeLoginManager.clearCreditUserInfo();
+                                        startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_CREDIT);
+                                        break;
+                                    case TradeLoginManager.LOGIN_TYPE_OPTION:  //期权
+                                        mClickBtnBeforeLogin = 0;
+                                        mTradeLoginManager.clearOptionUserInfo();
+                                        startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_OPTION);
+                                        break;
+                                    default:   //普通交易
+                                        mClickBtnBeforeLogin = 0;
+                                        mTradeLoginManager.clearNormalUserInfo();
+                                        startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_NORMAL);
+                                        break;
+                                }
+                                // 如果交易单独登录
+                            } else {
+                                startLoginWithoutUnity();
+                            }
+                            break;
+                        case ACTION_ERROR_999:  //所有已登录的账户都清空
+                            Bundle bundle = intent.getExtras();
+                            mFuncNo999 = bundle.getString(Constant.FUNC_NO);
+                            boolean isUnityLogin = bundle.getBoolean("isUnityLogin", true);
+                            //统一账户才会执行重建会话操作
+                            if (isUnityLogin) {
+                                if (!mFuncNo999.equals("600003")) { //不是600003报的超时
+                                    clearAllUserInfo();//清除用户信息
+                                    clearAllFlags(); //清除所有标志位
+                                    mClickBtnBeforeLogin = 0;
+                                    // 先发送广播，退出资金账号校验状态。外壳、交易模块分别接收处理
+                                    TradeBaseBroadcastReceiver.sendBroadcast(mActivity, new Intent(), ACTION_LOGOUT_FUND_ACCOUNT);
+                                    // 退出所有的二级页面
+                                    clearSecondPage();
+                                    // 开启资金账号校验页面
+                                    startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_NORMAL);
+                                } else {
+                                    mTradeLoginManager.reGetToken();//重构token
+                                }
+                            } else {  //如果交易单独登录
+                                startLoginWithoutUnity();
+                            }
+                            break;
+                        case ACTION_LOGOUT_FUND_ACCOUNT:  // 发起退出资金账号校验状态
                             mClickBtnBeforeLogin = 0;
-                            // 先发送广播，退出资金账号校验状态。外壳、交易模块分别接收处理
-                            TradeBaseBroadcastReceiver.sendBroadcast(mActivity, new Intent(), ACTION_LOGOUT_FUND_ACCOUNT);
-                            // 退出所有的二级页面
-                            clearSecondPage();
-                            // 开启资金账号校验页面
-                            startLogin(mClickBtnBeforeLogin, TradeLoginManager.LOGIN_TYPE_NORMAL);
-                        } else {
-                            mTradeLoginManager.reGetToken();//重构token
-                        }
-                    } else {  //如果交易单独登录
-                        startLoginWithoutUnity();
+                            break;
+                        case ACTION_TRANSFORM_TRADE_LOGIN:
+                            Intent intent2 = new Intent(mActivity, TradeLoginActivity.class);
+                            intent2.putExtra("clickIdBeforeLogin", mClickBtnBeforeLogin);
+                            intent2.putExtra("loginType", TradeLoginManager.LOGIN_TYPE_NORMAL);
+                            mActivity.startActivity(intent2);
+                            break;
                     }
-                    break;
-                case ACTION_LOGOUT_FUND_ACCOUNT:  // 发起退出资金账号校验状态
-                    mClickBtnBeforeLogin = 0;
-                    break;
-                case ACTION_TRANSFORM_TRADE_LOGIN:
-                    Intent intent2 = new Intent(mActivity, TradeLoginActivity.class);
-                    intent2.putExtra("clickIdBeforeLogin", mClickBtnBeforeLogin);
-                    intent2.putExtra("loginType", TradeLoginManager.LOGIN_TYPE_NORMAL);
-                    mActivity.startActivity(intent2);
-                    break;
-            }
         }
     }
 

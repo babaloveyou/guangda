@@ -33,7 +33,6 @@ public class Request303017 extends BaseCreditRequest{
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         try {
-            System.out.println("303017的jsonObject字符串====" + jsonObject.toString());
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
             JSONArray jsonArray = jsonObject.getJSONArray(resultTarget);
             if (jsonArray != null) {

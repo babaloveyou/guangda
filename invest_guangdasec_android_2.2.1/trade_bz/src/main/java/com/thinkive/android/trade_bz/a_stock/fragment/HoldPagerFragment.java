@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_stock.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -80,10 +81,16 @@ public class HoldPagerFragment extends AbsBaseFragment {
         View rootView = inflater.inflate(R.layout.fragment_a_head_pager, null);
         findViews(rootView);
         initData();
-        setListeners();
+
         initViews();
         isPrepare = true;
         return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setListeners();
     }
 
     @Override

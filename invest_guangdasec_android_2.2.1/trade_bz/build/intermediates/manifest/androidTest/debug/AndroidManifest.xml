@@ -409,6 +409,11 @@
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" />
+ <!-- 标的证券 -->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.SubBondMultiActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
  <!-- 融资融券之划转之担保品划转查询 -->
         <activity
             android:name="com.thinkive.android.trade_bz.a_rr.activity.RCollaterSelectActivity"

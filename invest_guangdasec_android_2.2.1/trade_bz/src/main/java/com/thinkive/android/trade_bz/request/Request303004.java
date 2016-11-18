@@ -36,7 +36,6 @@ public class Request303004 extends BaseCreditRequest {
         Bundle bundle = new Bundle();
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
-            System.out.println("信用交易可用资金resultTarget=" + resultTarget);
             JSONArray jArray = jsonObject.getJSONArray(resultTarget);
             if (jArray != null) {
                 for (int i = 0; i < jArray.length(); i++) {

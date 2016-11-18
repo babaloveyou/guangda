@@ -36,9 +36,7 @@ import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.module.IModule;
 import com.android.thinkive.framework.module.ModuleManager;
 import com.android.thinkive.framework.storage.MemoryStorage;
-import com.android.thinkive.framework.util.CommonUtil;
 import com.android.thinkive.framework.util.Constant;
-import com.android.thinkive.framework.view.MyWebView;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_hk.activity.HKMultiTradeActivity;
 import com.thinkive.android.trade_bz.a_in.activity.InFundMainActivity;
@@ -52,6 +50,7 @@ import com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectCollateralSecurityActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.SubBondMultiActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
@@ -157,6 +156,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private ObjectAnimator mArrowCcwsAnimator;
     private RelativeLayout mNotCloseOutRl;//未平仓合约
     private RelativeLayout mBuyNewRl;//新股申购
+    private RelativeLayout mSubBondRl;//标的证券
     private RelativeLayout mCloseOutRl;//已平仓合约
     private TextView mLogOutTv;//底部注销按钮
     private float mDensity;//像素密度
@@ -167,11 +167,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private RelativeLayout mShowDateRl;
     private Dialog mDialog;
     private ScrollView mScrollView;
-    private static NewStockWebFragment mNewStockWebFragment = new NewStockWebFragment();
-
-    public static NewStockWebFragment getNewStockWebFragment() {
-        return mNewStockWebFragment;
-    }
 
 
     @Override
@@ -270,6 +265,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mRotateArrow = (ImageView) view.findViewById(R.id.iv_more_can_rotate_credit);
 
         mBuyNewRl = (RelativeLayout) view.findViewById(R.id.rl_new_buy_credit);
+        mSubBondRl = (RelativeLayout) view.findViewById(R.id.rl_sub_bond);
         mNotCloseOutRl = (RelativeLayout) view.findViewById(R.id.rl_not_close_out_credit);
         mCloseOutRl = (RelativeLayout) view.findViewById(R.id.rl_close_out_credit);
         mShowDateRl = (RelativeLayout) view.findViewById(R.id.contract_show_data_credit);
@@ -288,6 +284,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         registerListener(ListenerController.ON_CLICK, mNotCloseOutRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mCloseOutRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mShowDateRl, mHomeController);
+        registerListener(ListenerController.ON_CLICK, mSubBondRl, mHomeController);
 
         mLogOutTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -653,10 +650,11 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             ToastUtil.showToast("已平仓合约");
         } else if (viewId == R.id.contract_show_data_credit) {
             ToastUtil.showToast("和约展期");
-        } else if (viewId == R.id.tv_exit_logout) {
-
+        } else if (viewId == R.id.rl_sub_bond) {
+            onClickSubBond();
         }
     }
+
 
     private ValueAnimator createDropAnimator(final View v, int start, int end) {
         ValueAnimator animator = ValueAnimator.ofInt(start, end);
@@ -730,17 +728,25 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      * 新股申购
      */
     private void onClickNewStock() {
-        mNewStockWebFragment.setUrl(NewStockWebActivity.CREDIT_URL);
-        mNewStockWebFragment.setWebViewName("new-stock");
-        MyWebView webView = mNewStockWebFragment.getWebView();
-        if (webView == null) {
-            System.out.println("webView没有加载好2333333333333333");
-        }
-        mNewStockWebFragment.preloadUrl(getActivity(), NewStockWebActivity.CREDIT_URL);
+        NewStockWebActivity.getCreditNewStockFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"));
+        NewStockWebActivity.getCreditNewStockFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"));
         Intent intent = new Intent(mActivity, NewStockWebActivity.class);
         intent.putExtra("loginType", NewStockWebActivity.CREDIT);
         mActivity.startActivity(intent);
 
+
+    }
+
+    /**
+     * 标的证券
+     */
+    private void onClickSubBond() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, SubBondMultiActivity.class);
+            mActivity.startActivity(intent);
+        } else {
+            startLogin(1201, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
     }
 
     /**
@@ -933,6 +939,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         }
 
     }
+
     /*
     * 担保品划转
     */
@@ -1182,9 +1189,9 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         //清除供给H5的用户信息
         MemoryStorage memoryStorage = new MemoryStorage();
         memoryStorage.removeData(Constants.CREDIT_LOGIN_USERINFO_FORH5);
-        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.CREDIT_URL, "");
+//        CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getUrlName("CREDIT_NEWSTOCK_URL"), "");
         try {
-            sendMessageCireditLogout(getNewStockWebFragment());
+            sendMessageCireditLogout(NewStockWebActivity.getCreditNewStockFragment());
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -1339,18 +1346,33 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             switch (action) {
                 case ACTION_START_ACTIVITY:  // 如果是登录后跳转指令广播
                     int viewId = intent.getIntExtra(INTENT_KEY_CLICK_VIEW_ID, 1000);
+
                     if (viewId != -1) { // 此时，说明当初是未登录时，在交易主页点击某个按钮，触发登录的
-                        viewId = viewId - 1000;
-                        if (viewId == 4) {
-                            onClickCreditRefund();
-                        } else if (viewId == 5) {
-                            onClickCreditTicket();
-                        } else if (viewId >= 0 && viewId < 11) {
-                            onItemClick(mFastMenuGv, viewId);
+                        if (viewId >= 1000 && viewId <= 2000) {
+                            if (viewId - 1000 < 200) {
+                                viewId = viewId - 1000;
+                                if (viewId == 4) {
+                                    onClickCreditRefund();
+                                } else if (viewId == 5) {
+                                    onClickCreditTicket();
+                                } else if (viewId >= 0 && viewId <= 11) {
+                                    onItemClick(mFastMenuGv, viewId);
+                                }
+                            } else if (viewId - 1000 > 500) {
+                                viewId = viewId - 1500;
+                                onItemClick(mMoreMenuGv, viewId);
+                            } else if (viewId - 1000 > 200 && viewId - 1000 < 500) {
+                                viewId = viewId - 1200;
+                                if (viewId == 1) {
+                                    onClickSubBond();
+                                }
+                            }
                         }
                     } else { // 此时，说明当初是在未登录时，从行情模块点击“买入”或“卖出”按钮，触发登录的
                         onClickBuyOrSaleInHq(mJsonDataFromHq);
                     }
+
+
                     break;
                 case ACTION_CHANGE_PWD_SUCCESS:  // 如果是修改密码成功的广播
                     //修改了那种账户的密码

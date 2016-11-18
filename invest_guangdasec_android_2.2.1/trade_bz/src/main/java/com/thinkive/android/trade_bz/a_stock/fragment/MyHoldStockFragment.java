@@ -145,7 +145,7 @@ public class MyHoldStockFragment extends AbsBaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootview = inflater.inflate(R.layout.myhold_refresh_scrollview, null);
+        mRootview = inflater.inflate(R.layout.fragment_common_refresh_scrollview, null);
         mScrollChild = inflater.inflate(R.layout.fragment_a_my_hold, null);
         findViews(mRootview);
         initData();
@@ -287,11 +287,12 @@ public class MyHoldStockFragment extends AbsBaseFragment {
         // 单位：dp，头部蓝色标题栏高度：44   基本交易的标签栏高度：37
         // 资产信息滑动页高度：220   持仓列表“头部”高度：40dp   其他（线条）：1
         float height = ScreenUtils.getScreenHeight(mActivity) - stateHeight -
-                ScreenUtils.dpToPx(mActivity, 203);
+                ScreenUtils.dpToPx(mActivity, (90+70+20+290+96)/2);
         //设置ListView的高度（px）
         mListView.setMaxHeight((int) height);
         mListView.setDivider(null);
         mLlLoading.setMinimumHeight((int) height);
+        mLiNoData.setMinimumHeight((int) height);
         mHsllPart1.initslideStandard(mActivity);
         mHsllPart2.initslideStandard(mActivity);
         if (preSelectPagePos == 0) {

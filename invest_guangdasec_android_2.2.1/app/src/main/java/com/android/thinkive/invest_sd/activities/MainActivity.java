@@ -58,6 +58,7 @@ import com.android.thinkive.invest_sd.fragment.UserCenterFragment;
 import com.android.thinkive.invest_sd.fragment.WebCacheFragment;
 import com.android.thinkive.invest_sd.message.handler.Message50102;
 import com.android.thinkive.invest_sd.message.handler.Message50108;
+import com.android.thinkive.invest_sd.message.handler.Message50114;
 import com.android.thinkive.invest_sd.message.handler.Message50115;
 import com.android.thinkive.invest_sd.message.handler.Message50222;
 import com.android.thinkive.invest_sd.message.handler.Message50240;
@@ -324,6 +325,7 @@ public class MainActivity extends BaseActivity implements IModule {
      * @param baseWebFragment
      */
     private void sendMessage50114(BaseWebFragment baseWebFragment, JSONObject param) {
+        new Message50114();
         AppMessage appMessage = new AppMessage(50114, param);
         baseWebFragment.sendMessageToH5(appMessage);
     }

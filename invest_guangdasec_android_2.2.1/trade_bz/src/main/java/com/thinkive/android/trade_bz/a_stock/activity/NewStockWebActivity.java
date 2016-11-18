@@ -6,23 +6,40 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
+import com.android.thinkive.framework.fragment.BaseWebFragment;
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_stock.fragment.CreditTradeFragment;
-import com.thinkive.android.trade_bz.a_stock.fragment.NewStockWebFragment;
-import com.thinkive.android.trade_bz.a_stock.fragment.NormalTradeFragment;
+import com.thinkive.android.trade_bz.a_rr.fragment.CreditNewStockFragment;
+import com.thinkive.android.trade_bz.a_stock.fragment.NormalNewStockFragment;
 
 /**
  * Created by Administrator on 2016/11/9.
  */
-public class NewStockWebActivity  extends AppCompatActivity  {
+public class NewStockWebActivity extends AppCompatActivity {
     private String mSourceModule;
-    private NewStockWebFragment webFragment = null;
-    public static final String NORMAL_URL= "http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=stock";
-    public static final String CREDIT_URL= "http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=credit";
+    private BaseWebFragment webFragment = null;
     private String mLoginType;
     public final static String NORMAL = "normal";
     public final static String CREDIT = "credit";
     private FragmentManager mFragmentManager;
+    private static NormalNewStockFragment sNormalNewStockFragment = new NormalNewStockFragment();
+    private static CreditNewStockFragment sCreditNewStockFragment = new CreditNewStockFragment();
+
+    public static NormalNewStockFragment getNormalNewStockFragment() {
+        return sNormalNewStockFragment;
+    }
+
+    public static CreditNewStockFragment getCreditNewStockFragment() {
+        return sCreditNewStockFragment;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webFragment == sNormalNewStockFragment) {
+            sNormalNewStockFragment.sendMessage50107();
+        }if(webFragment == sCreditNewStockFragment) {
+            sCreditNewStockFragment.sendMessage50107();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,24 +50,14 @@ public class NewStockWebActivity  extends AppCompatActivity  {
         if (intent != null) {
             mLoginType = intent.getStringExtra("loginType");
         }
-
-        if (webFragment == null) {
-            if (NORMAL.equals(mLoginType)) {
-                webFragment = NormalTradeFragment.getNewStockWebFragment();
-            }
-            if (CREDIT.equals(mLoginType)) {
-                webFragment = CreditTradeFragment.getNewStockWebFragment();
-                webFragment.setUrl(CREDIT_URL);
-            }
+        if (NORMAL.equals(mLoginType)) {
+            webFragment = sNormalNewStockFragment;
         }
-
+        if (CREDIT.equals(mLoginType)) {
+            webFragment = sCreditNewStockFragment;
+        }
         mFragmentManager = getSupportFragmentManager();
-        mFragmentManager.beginTransaction().add(R.id.fl_container, webFragment).commit();
+        mFragmentManager.beginTransaction().replace(R.id.fl_container, webFragment).commit();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-    }
 }
