@@ -8,10 +8,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.adapter.RRevocationAdapter;
 import com.thinkive.android.trade_bz.a_rr.bean.RRevocationBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RRevocationServiceImpl;
+import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.utils.DateUtils;
@@ -30,7 +30,7 @@ public class RRevocationFragment extends AbsBaseFragment {
     /**
      * 宿主
      */
-    private RRevocationActivity mActivity;
+    private MultiCreditTradeActivity mActivity;
     /**
      * 控制器
      */
@@ -76,7 +76,6 @@ public class RRevocationFragment extends AbsBaseFragment {
         mListView.setDivider(null);
         mLinLoading = (LinearLayout) view.findViewById(R.id.lin_loading_set);
         mLinNoData = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
-
     }
 
     @Override
@@ -86,7 +85,7 @@ public class RRevocationFragment extends AbsBaseFragment {
 
     @Override
     protected void initData() {
-        mActivity = (RRevocationActivity) getActivity();
+        mActivity = (MultiCreditTradeActivity) getActivity();
         mController = new RRevocationController(this);
         mServices = new RRevocationServiceImpl(this);
         mAdapter=new RRevocationAdapter(mActivity,mServices);

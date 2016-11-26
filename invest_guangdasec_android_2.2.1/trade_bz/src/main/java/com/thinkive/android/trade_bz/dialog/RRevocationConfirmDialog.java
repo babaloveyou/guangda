@@ -21,8 +21,6 @@ public class RRevocationConfirmDialog extends AbsTradeDialog {
     private TextView stockCodeTextView;
     private TextView entrustPriceTextView;
     private TextView entrustNumTextView;
-    private TextView tradeCompleteNumTextView;
-    private TextView buyOrSellTextView;
 
     /**
      * 调用方的业务类

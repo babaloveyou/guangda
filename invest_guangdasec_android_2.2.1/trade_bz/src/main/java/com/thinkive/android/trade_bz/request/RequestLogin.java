@@ -35,7 +35,6 @@ public class RequestLogin extends BaseRequest {
 
     public RequestLogin(HashMap<String, String> paramMap, IRequestAction action, String loginType) {
         super(action);
-        System.out.println("__________________________________请求登录");
         setParamHashMap(paramMap);
         mLoginType = loginType;
         // 如果是融资融券账户登录

@@ -87,14 +87,14 @@
 
             <!--暂无数据-->
             <LinearLayout
+                android:visibility="gone"
                 android:id="@+id/lin_not_data_set"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/trade_color_white"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:paddingTop="120dp"
-                android:visibility="gone">
+               >
 
                 <ImageView
                     android:layout_width="wrap_content"

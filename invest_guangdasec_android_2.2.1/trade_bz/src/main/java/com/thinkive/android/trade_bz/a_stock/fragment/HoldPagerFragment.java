@@ -178,7 +178,6 @@ public class HoldPagerFragment extends AbsBaseFragment {
         if (mIsVisibleToUser && isPrepare && mServices != null) {
             mServices.requestMyHoldPager(page);
         }
-        System.out.println(this.toString() + "  isVisibleToUser===" + isVisibleToUser);
     }
 
 

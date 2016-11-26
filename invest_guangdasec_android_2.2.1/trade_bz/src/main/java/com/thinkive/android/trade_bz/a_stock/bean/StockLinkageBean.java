@@ -6,11 +6,38 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
  * 交易模块，买卖界面中股票联动使用的Java bean
+ *
  * @author 王志鸿
  * @company Thinkive
  * @date 2015/6/24
  */
 public class StockLinkageBean extends BaseBean {
+    /*
+    * 风险提示参数
+    * */
+    @JsonKey("limited_type")
+    private String limited_type = "";
+    /*
+    * 股票数量输入框中控制整数倍的基数
+    * */
+    @JsonKey("store_unit")
+    private String store_unit = "";
+
+    public String getStore_unit() {
+        return store_unit;
+    }
+
+    public void setStore_unit(String store_unit) {
+        this.store_unit = store_unit;
+    }
+
+    public String getLimited_type() {
+        return limited_type;
+    }
+
+    public void setLimited_type(String limited_type) {
+        this.limited_type = limited_type;
+    }
 
     @JsonKey("exchange_type")
     private String exchange_type = "";
@@ -92,6 +119,7 @@ public class StockLinkageBean extends BaseBean {
     public void setType(int type) {
         this.type = type;
     }
+
     public String getBuy_unit() {
         return buy_unit;
     }

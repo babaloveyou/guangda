@@ -59,22 +59,6 @@
         android:paddingTop="5dp">
 
         <TextView
-            android:id="@+id/tv_pop_ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp"
-            android:text="@string/dialog_ok"
-            android:textColor="@color/trade_color1" />
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/trade_divide_line"/>
-
-        <TextView
             android:id="@+id/tv_pop_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,6 +69,22 @@
             android:text="@string/dialog_not"
             android:textColor="@color/trade_text_color6"
             />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+        <TextView
+            android:id="@+id/tv_pop_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:text="@string/dialog_ok"
+            android:textColor="@color/trade_color1" />
+
 
     </LinearLayout>
     <View

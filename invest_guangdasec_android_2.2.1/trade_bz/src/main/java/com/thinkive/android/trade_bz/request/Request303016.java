@@ -26,14 +26,12 @@ public class Request303016 extends BaseCreditRequest{
         paramMap.put("funcNo", "303016");
         setParamHashMap(paramMap);
         paramMap.put("entrust_way", "SJWT");
-        System.out.println("request303016param=====" + paramMap.toString());
         setUrlName(Constants.URL_TRADE);
     }
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         try {
-            System.out.println("303016的jsonObject字符串====" + jsonObject.toString());
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
             JSONArray jsonArray = jsonObject.getJSONArray(resultTarget);
             if (jsonArray != null) {

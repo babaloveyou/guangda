@@ -132,39 +132,27 @@
                     android:layout_weight="1"
                     android:orientation="vertical">
 
-                    <HorizontalScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:scrollbars="none">
 
                         <TextView
                             android:id="@+id/tv_entrust_info"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="12.12元/10000股"
                             android:textColor="@color/trade_text_color9"
                             android:textSize="@dimen/select_table_text"/>
-                    </HorizontalScrollView>
 
-                    <HorizontalScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:scrollbars="none">
 
                         <TextView
                             android:id="@+id/tv_trunover_info"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
                             android:layout_gravity="center"
                             android:gravity="center"
-                            android:text="12.12元/10000股"
                             android:textColor="@color/trade_text_color9"
                             android:textSize="@dimen/select_table_text"/>
-                    </HorizontalScrollView>
 
                 </LinearLayout>
             </LinearLayout>

@@ -385,7 +385,6 @@ public class FundLoginFragment extends AbsBaseFragment {
             ToastUtils.toast(mActivity, getString(R.string.login_verify_code_hint));
             resetVerifyEdt();
         } else { // 一切输入正常时
-            System.out.println("1:mService.requestLogin();");
             mService.requestLogin();
         }
     }
@@ -418,12 +417,10 @@ public class FundLoginFragment extends AbsBaseFragment {
      * 登录请求成功
      */
     public void onLoginSuccess(String account, String loginType) {
-        System.out.println("5: fundLoginFragment回调方法onLoginSuccess()");
         Intent intent = new Intent();
         //普通账户登录
         switch (loginType) {
             case TradeLoginManager.LOGIN_TYPE_NORMAL:
-                System.out.println("6:  case TradeLoginManager.LOGIN_TYPE_NORMAL");
                 TradeFlags.addFlag(TradeFlags.FLAG_NORMAL_TRADE_YES);
                 TradeLoginManager.sNormalLoginAccount = account;
                 //普通登录
@@ -439,7 +436,6 @@ public class FundLoginFragment extends AbsBaseFragment {
                 //普通登录会话同步
                 String url1 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sNormalUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sNormalUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sNormalUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sNormalUserInfo.getOp_station();
                 String cookie1 = NetWorkService.getInstance().getCookie(url1);
-                System.out.println("普通登录的cookiel====" + cookie1);
                 CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"), cookie1);
                 break;
             case TradeLoginManager.LOGIN_TYPE_CREDIT:
@@ -457,7 +453,6 @@ public class FundLoginFragment extends AbsBaseFragment {
                 //信用登录会话
                 String url2 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sCreditUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sCreditUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sCreditUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sCreditUserInfo.getOp_station();
                 String cookie2 = NetWorkService.getInstance().getCookie(url2);
-                System.out.println("信用登录的cookie2====" + cookie2);
                 CommonUtil.syncWebviewCookies(getActivity(),ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"), cookie2);
                 break;
             case TradeLoginManager.LOGIN_TYPE_OPTION:
@@ -467,7 +462,6 @@ public class FundLoginFragment extends AbsBaseFragment {
         }
 
         // 期望接收广播的代码在TradeMainFragment.java中
-        System.out.println("7:   TradeBaseBroadcastReceiver.sendBroadcast(mActivity, intent, TradeBaseBroadcastReceiver.ACTION_START_ACTIVITY);");
         TradeBaseBroadcastReceiver.sendBroadcast(mActivity, intent, TradeBaseBroadcastReceiver.ACTION_START_ACTIVITY);
         Intent uumsIntent = new Intent();
         TradeBaseBroadcastReceiver.sendBroadcast(mActivity, uumsIntent, TradeBaseBroadcastReceiver.ACTION_TRADE_LOGIN_SUCCESS);

@@ -72,6 +72,7 @@ public abstract class AbsTradeDialog extends Dialog {
     void setSubViewToParent(View subView) {
         FrameLayout frameLayout = (FrameLayout) findViewById(R.id.fl_dialog_container);
         frameLayout.addView(subView);
+
     }
 
     /**

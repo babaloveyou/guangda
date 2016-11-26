@@ -47,7 +47,6 @@ import com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity;
-import com.thinkive.android.trade_bz.a_rr.activity.RRevocationActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectCollateralSecurityActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.SubBondMultiActivity;
@@ -575,6 +574,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     //                    ToastUtil.showToast("银行转账");
                     break;
                 case 7:
+                    onClickCreditHolderStock();
                     //                    ToastUtil.showToast("个人资产");
                     break;
                 case 8:
@@ -774,7 +774,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                 intent.putExtras(bundle);
                 mActivity.startActivity(intent);
             }
-
         } else {
             if (flag == 0) {
                 //1001 fastmenu第一个按钮
@@ -789,12 +788,15 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     //信用交易撤单
     private void onClickCreditRevotion() {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            Intent intent = new Intent(mActivity, RRevocationActivity.class);
-            mActivity.startActivity(intent);
-        } else {
-            startLogin(1002, TradeLoginManager.LOGIN_TYPE_CREDIT);
-        }
+            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
+            Bundle bundle = new Bundle();
+                bundle.putInt("pos", 2);
+                intent.putExtras(bundle);
+                mActivity.startActivity(intent);
 
+        } else {
+                startLogin(1002, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
     }
 
     /*
@@ -802,12 +804,17 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     * 个人持仓
     * */
     private void onClickCreditHolderStock() {
-        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            //// TODO: 2016/10/24
-            //            RPropertyFragment
-        } else {
-            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
-        }
+//        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+//            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
+//            Bundle bundle = new Bundle();
+//            bundle.putInt("pos", 3);
+//            intent.putExtras(bundle);
+//            mActivity.startActivity(intent);
+//
+//        } else {
+//            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
+//        }
+
     }
 
     /*

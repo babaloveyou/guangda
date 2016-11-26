@@ -28,13 +28,11 @@ public class Request303025 extends BaseCreditRequest {
         super(action);
         paramMap.put("funcNo", "303025");
         setParamHashMap(paramMap);
-        System.out.println("303025入参" + paramMap.toString());
         setUrlName(Constants.URL_TRADE);
     }
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
-        System.out.println("划转查询的bean" + jsonObject.toString());
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
             JSONArray jsonArray = jsonObject.getJSONArray(resultTarget);

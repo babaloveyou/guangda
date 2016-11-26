@@ -419,7 +419,23 @@ public class TradeUtils {
         }
         return String.valueOf(tempNum);
     }
-
+    public static String formatNumToHundreds(int intNum,int storeUnit) {
+        int tempNum = 0;
+        if(intNum >= 1000000){
+            tempNum = 1000000;
+        } else if(intNum < 1000000) {
+            if(intNum <= storeUnit){
+                tempNum = intNum;
+            }else if(intNum > storeUnit){
+                if(intNum % storeUnit != 0){
+                    tempNum = intNum - (intNum % storeUnit);
+                }else if(intNum % storeUnit == 0){
+                    tempNum = intNum;
+                }
+            }
+        }
+        return String.valueOf(tempNum);
+    }
     /**
      * 判断开始日期和截止日期的大小
      * @param beginDate

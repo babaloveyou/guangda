@@ -109,7 +109,6 @@ public abstract class BaseRequest {
                 } else { //调用接口异常
                     if (jsonObject.has(ERRORINFO)) {
                         errorInfo = jsonObject.optString(ERRORINFO);
-                        System.out.println("jsonObject.has(ERROR)"+errorInfo);
                     }
                     bundle.putString(ERRORINFO, errorInfo);
                     bundle.putString(ERRORNO, String.valueOf(errorCode));

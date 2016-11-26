@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditBuyFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditSaleFragment;
+import com.thinkive.android.trade_bz.a_rr.fragment.RRevocationFragment;
 import com.thinkive.android.trade_bz.a_stock.controll.MultiTradeViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.a_stock.fragment.BuyOrSellFragment;
@@ -37,6 +38,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     private RCreditBuyFragment mRCreditBuyFragment;
     private RCreditSaleFragment mRCreditSaleFragment;
     private TextView mBackTv;
+    private RRevocationFragment mRRevocationFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +68,12 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         mRCreditBuyFragment.setName("融买");
         mRCreditSaleFragment = new RCreditSaleFragment();
         mRCreditSaleFragment.setName("融卖");
+        mRRevocationFragment = new RRevocationFragment();
+        mRRevocationFragment.setName("撤单");
+//        MyRRHoldStockFragment myRRHoldStockFragment = new MyRRHoldStockFragment();
         mFragmentList.add(mRCreditBuyFragment);
         mFragmentList.add(mRCreditSaleFragment);
+        mFragmentList.add(mRRevocationFragment);
         mController = new MultiTradeViewController(this);
         Bundle bundle = getIntent().getExtras();
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);

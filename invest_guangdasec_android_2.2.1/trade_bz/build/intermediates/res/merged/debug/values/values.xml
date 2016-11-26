@@ -1648,12 +1648,12 @@
     <string name="trade_stock_name">股票名称</string>
     <string name="trade_subtract">一</string>
     <string name="trade_toast_input_amount">请输入委托数量</string>
-    <string name="trade_toast_input_buy_amount_error">买入数量应为100的整数倍</string>
+    <string name="trade_toast_input_buy_amount_error">买入数量应为%1$d的整数倍</string>
     <string name="trade_toast_input_code">请输入股票代码</string>
     <string name="trade_toast_input_code2">未获取到证券信息</string>
     <string name="trade_toast_input_error">未获取到市价委托方式</string>
     <string name="trade_toast_input_price">请输入委托价格</string>
-    <string name="trade_toast_input_sale_amount_error">卖出的数量应为100的整数倍或等于最大可卖数量</string>
+    <string name="trade_toast_input_sale_amount_error">卖出的数量应为%1$d的整数倍或等于最大可卖数量</string>
     <string name="trade_toast_select_bs">请选择买卖类别</string>
     <string name="trade_toast_select_stock_first">请先选择一支有效股票</string>
     <string name="trans_buy_or_sale0">证券代码</string>

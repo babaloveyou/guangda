@@ -552,8 +552,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                     onClickRevocation();
                     break;
                 case 3:
-                    //                    onClickQuery();
-                    ToastUtil.showToast("todo:个人资产");
+                    onClickMyHold();
                     break;
                 case 4:
                     onClickMyHold();

@@ -1,169 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
-
-    <LinearLayout android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+              android:id="@+id/lin_bottom_revocation"
+              android:orientation="vertical"
+              android:background="@color/white"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@drawable/selector_press_list_item2"
         android:orientation="vertical"
-        android:id="@+id/lin_r_revocation"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/selector_press_list_item">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-
+            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_height="40dp">
             <TextView
+                android:id="@+id/tv_name"
+                android:text="浦发银行"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="@color/text_et_input_french_black"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_r_revocation_bs"/>
-
-
+                android:layout_height="match_parent"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
+                android:id="@+id/tv_code"
                 android:layout_marginLeft="5dp"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"
-                android:id="@+id/tv_r_revocation_name"/>
-
-            <TextView
+                android:text="000000"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:textColor="@color/text_reming"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingTop="5dp"
-                android:layout_marginLeft="5dp"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_r_revocation_code"/>
-
+                android:layout_height="match_parent"/>
         </LinearLayout>
-
         <View
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/trade_divide_line"/>
-
+            android:layout_height="0.5dp"
+            android:background="@color/trade_normal_background"/>
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:paddingBottom="5dp"
-                android:text="@string/r_revocation1"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="5dp"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"
-                android:id="@+id/tv_r_revocation_entrust_price"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:paddingBottom="5dp"
-                android:text="@string/r_revocation3"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="5dp"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"
-                android:id="@+id/tv_r_revocation_entrust_num"/>
-
-
-        </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
+            android:layout_height="wrap_content">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:paddingBottom="5dp"
-                android:text="@string/r_revocation2"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_weight="1"
-                android:paddingBottom="5dp"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"
-                android:id="@+id/tv_r_revocation_trade_price"/>
-
-            <TextView
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/tv_title_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/limit_price_tobuy"
+                    android:gravity="center"
+                    android:textSize="@dimen/select_table_text"
+                    android:textColor="@color/trade_text_color9" />
+                <TextView
+                    android:id="@+id/tv_time"
+                    android:text="11:10:11"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="@dimen/select_table_text"
+                    android:textColor="@color/trade_text" />
+            </LinearLayout>
+            <View
+                android:layout_gravity="center_vertical"
+                android:layout_width="0.5dp"
+                android:layout_height="30dp"
+                android:background="@color/trader_door_gv_divider"/>
+            <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:paddingBottom="5dp"
-                android:text="@string/r_revocation4"/>
+                android:layout_height="60dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/entrust_info"
+                        android:gravity="center"
+                        android:textSize="@dimen/select_table_text"
+                        android:textColor="@color/trade_text_color9" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/trunover_info"
+                        android:gravity="center"
+                        android:textSize="@dimen/select_table_text"
+                        android:textColor="@color/trade_text_color9" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:paddingBottom="5dp"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"
-                android:id="@+id/tv_r_revocation_trade_num"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <HorizontalScrollView
+                        android:scrollbars="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:id="@+id/tv_entrust_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12.12元/10000股"
+                            android:gravity="center"
+                            android:textSize="@dimen/select_table_text"
+                            android:textColor="@color/trade_text_color9" />
+                    </HorizontalScrollView>
+                    <HorizontalScrollView
+                        android:scrollbars="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <TextView
+                            android:layout_gravity="center"
+                            android:id="@+id/tv_trunover_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12.12元/10000股"
+                            android:gravity="center"
+                            android:textSize="@dimen/select_table_text"
+                            android:textColor="@color/trade_text_color9" />
+                    </HorizontalScrollView>
 
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.6"
-                android:text="@string/r_hold_pager27"
-                android:paddingBottom="8dp"
-                android:gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2.6"
-                android:hint="@string/no_text_set"
-                android:id="@+id/tv_r_revocation_time"
-                android:paddingBottom="8dp"
-                android:gravity="center|left"/>
-
-        </LinearLayout>
-
     </LinearLayout>
-
+    <View android:layout_width="match_parent"
+          android:id="@+id/view_indicator"
+          android:layout_height="10dp"
+          android:background="@color/bg_main_french_gray"/>
 </LinearLayout>

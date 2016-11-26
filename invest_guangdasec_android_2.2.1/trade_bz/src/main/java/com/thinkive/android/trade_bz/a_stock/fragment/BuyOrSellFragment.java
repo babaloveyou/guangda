@@ -51,11 +51,14 @@ import com.thinkive.android.trade_bz.a_stock.bll.BuyOrSellServiceImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.BuyOrSellViewController;
 import com.thinkive.android.trade_bz.dialog.ATradeComfirmDialog;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
+import com.thinkive.android.trade_bz.dialog.RiskHintDialog;
+import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.keyboard.KeyboardEventListener;
 import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
+import com.thinkive.android.trade_bz.request.Request301513;
 import com.thinkive.android.trade_bz.utils.SizeUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
@@ -67,6 +70,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -438,6 +442,16 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         }
     };
     private String mStockCodeFromOther = null;
+    /*
+    * 股票数量单位
+    * */
+    private TextView mStockUnitTv;
+    /*
+    * 股票数量加减单位
+    * */
+    private int mStoreUnit = 100;
+    private StockLinkageBean mStockLinkageBean;
+    private Bundle mBundle;
 
     public BuyOrSellFragment() {
     }
@@ -508,6 +522,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mEdStockPrice = (EditText) view.findViewById(R.id.edt_stock_price_after);
         mEdStockPricePre = (TextView) view.findViewById(R.id.edt_stock_price_pre);
         mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mStockUnitTv = (TextView) view.findViewById(R.id.tv_stock_unit);
 
         mBtnBuyOrSell = (Button) view.findViewById(R.id.btn_buy_or_sell);
         mLlStockCodeName = (LinearLayout) mRootView.findViewById(R.id.ll_code_name);
@@ -900,12 +915,19 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         }
     }
 
+    public void setArguments(Bundle bundle) {
+        mBundle = bundle;
+    }
+
+    public  Bundle getArgument() {
+        return mBundle;
+    }
     /**
      * 在其他界面，点击买卖跳转至此
      */
     private void setDataToViewsFromOther() {
         if (TextUtils.isEmpty(mStockCodeFromOther)) {
-            Bundle bundle = getArguments();
+            Bundle bundle = getArgument();
             if (bundle != null) {
                 String default_stock_code = bundle.getString("hold_stock_code");
                 mEdStockCode.setText(default_stock_code);
@@ -915,8 +937,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             mEdStockCode.setText(mStockCodeFromOther);
             onStockLengthMax(mEdStockCode.getText().toString().trim(), mEdStockCode);
         }
-
-
     }
 
     /**
@@ -1082,8 +1102,8 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     public void onClickTradeAdd() {
         double curTradePrice = getTradePriceEditText();
         if (curTradePrice != 0) {
-            if (mCodeTableBean != null) {
-                double step = Double.parseDouble(mCodeTableBean.getStep_unit());
+            if (mStockLinkageBean != null) {
+                double step = Double.parseDouble(mStockLinkageBean.getPoint());
                 if (mService.mCount == 2) {
                     mEdStockPrice.setText(TradeUtils.formatDouble2(curTradePrice + step));
                 } else {
@@ -1107,8 +1127,8 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     public void onClickTradeSubstract() {
         double curTradePrice = getTradePriceEditText();
         if (curTradePrice != 0) {
-            if (mCodeTableBean != null) {
-                double step = Double.parseDouble(mCodeTableBean.getStep_unit());
+            if (mStockLinkageBean != null) {
+                double step = Double.parseDouble(mStockLinkageBean.getPoint());
                 if (mService.mCount == 2) {
                     mEdStockPrice.setText(TradeUtils.formatDouble2(curTradePrice - step));
                 } else {
@@ -1185,13 +1205,13 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             double entrustAmountDouble = Double.parseDouble(entrustAmount);
             double entrustMaxAmountDouble = Double.parseDouble(mMaxCanUseStock);
             // 如果是买入，那么数量必须能被100整除，否则报错
-            if (mBuyOrSell == 0 && entrustAmountDouble % 100 != 0) {
+            if (mBuyOrSell == 0 && entrustAmountDouble % mStoreUnit != 0) {
                 ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_buy_amount_error));
                 TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
                 return;
-                // 如果是卖出，那么数量必须能被100整除，或者等于最大可卖数量，否则报错
-            } else if (mBuyOrSell == 1 && entrustAmountDouble % 100 != 0 && entrustAmountDouble != entrustMaxAmountDouble) {
-                ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_sale_amount_error));
+                // 如果是卖出，那么数量必须能被mStoreUnit整除，或者等于最大可卖数量，否则报错
+            } else if (mBuyOrSell == 1 && entrustAmountDouble % mStoreUnit != 0 && entrustAmountDouble != entrustMaxAmountDouble) {
+                ToastUtils.toast(mActivity,String.format( mResources.getString(R.string.trade_toast_input_sale_amount_error),mStoreUnit));
                 TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
                 return;
             }
@@ -1201,12 +1221,60 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
+
+        if (mBuyOrSell == 1) {
+            showBuyOrSaleClickDialog();
+        } else {
+            HashMap<String, String> map = new HashMap<>();
+            map.put("stock_code", mStockLinkageBean.getStock_code());
+            map.put("stock_name", mStockLinkageBean.getStock_name());
+            map.put("exchange_type", mStockLinkageBean.getExchange_type());
+            map.put("limited_type", mStockLinkageBean.getLimited_type());
+            map.put("trade_flag", "2");
+            new Request301513(map, new IRequestAction() {
+                @Override
+                public void onSuccess(Context context, Bundle bundle) {
+                    ArrayList<String> dataList = bundle.getStringArrayList(Request301513.BUNDLE_KEY_Request301513);
+                    String erroString = bundle.getString(Request301513.BUNDLE_KEY_Request301513);
+                    //如果按照这样的格式解析服务器返回的数据不出错的话则证明需要给出风险提示
+                    if (TextUtils.isEmpty(erroString)) {
+                        if (dataList.size() == 0) {
+                            //不弹窗拦截
+                            showBuyOrSaleClickDialog();
+                        } else {
+                            new RiskHintDialog(getActivity(), BuyOrSellFragment.this, dataList, 0).show();
+                        }
+                    } else {//返回数据为空会解析出错,不提示风险信息
+                        showBuyOrSaleClickDialog();
+                    }
+
+                }
+
+                @Override
+                public void onFailed(Context context, Bundle bundle) {
+                    ToastUtils.toast(context, bundle.getString(Request301513.ERROR_INFO));
+                }
+            }).request();
+        }
+
+    }
+
+    //风险弹窗点击按钮回调方法
+    public void onDialogClick(ArrayList<String> dataList, int index) {
+        if (index == dataList.size() && dataList.size() < 3) {
+            showBuyOrSaleClickDialog();
+        } else if (index < dataList.size() && dataList.size() < 3) {
+            new RiskHintDialog(getActivity(), BuyOrSellFragment.this, dataList, index).show();
+        } else if (dataList.size() == 3 && TextUtils.isEmpty(dataList.get(index))) {
+            //什么都不做
+        }
+    }
+
+    private void showBuyOrSaleClickDialog() {
         ATradeComfirmDialog dialog = new ATradeComfirmDialog(mActivity, mBuyOrSell, mService);
         dialog.setDataToViews(mCodeTableBean, getEntrustPrice(), getEntrustAmount());
         dialog.setEntrustBs(mEntrustBs);
         dialog.show();
-
-
     }
 
     /**
@@ -1293,6 +1361,12 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
      */
     public void
     onGetStockLinkAgeData(StockLinkageBean bean) {
+        mStockLinkageBean = bean;
+        setStep(Double.parseDouble(mStockLinkageBean.getPoint()));
+        mStockUnitTv.setText(bean.getBuy_unit());
+        if (!TextUtils.isEmpty(bean.getStore_unit())) {
+            mStoreUnit = Integer.parseInt(bean.getStore_unit());
+        }
         mMaxCanUseStock = bean.getStock_max_amount();
         setLinkageState(true);
         mMaxStockNumTv.setText(mMaxCanUseStock + "");
@@ -1369,8 +1443,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
     public void onGetHqData(CodeTableBean bean) {
         mCodeTableBean = bean;
         mEdStockCode.setText(mCodeTableBean.getCode() + "(" + mCodeTableBean.getName() + ")");
-        double step = Double.parseDouble(mCodeTableBean.getStep_unit());
-        setStep(step);
         mTvUpLimit.setText(mCodeTableBean.getUpLimit());
         mTvDownLimit.setText(mCodeTableBean.getDownLimit());
         mNowPrice = mCodeTableBean.getNow();
@@ -1447,6 +1519,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
         mEdEntrustAmount.setHint(blankStr);
         mMaxCanUseStock = "";
         mCodeTableBean = null;
+        mStockLinkageBean = null;
         mNowPrice = blankStr;
         mLastEntrustPrice = blankStr;
         mService.mCount = 2;
@@ -1628,32 +1701,32 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
                     public void onKeyCode(int i) {
                         switch (i) {
                             case -11: // 单击了1/4仓
-                                setAmountPos(4);
+                                setAmountPos(4,mStoreUnit);
                                 setEdtCursor(mEdEntrustAmount);
                                 break;
                             case -12: // 单击了1/3仓
-                                setAmountPos(3);
+                                setAmountPos(3,mStoreUnit);
                                 setEdtCursor(mEdEntrustAmount);
                                 break;
                             case -13: // 单击了半仓
-                                setAmountPos(2);
+                                setAmountPos(2,mStoreUnit);
                                 setEdtCursor(mEdEntrustAmount);
                                 break;
                             case -14: // 单击了全仓
-                                setAmountPos(1);
+                                setAmountPos(1,mStoreUnit);
                                 setEdtCursor(mEdEntrustAmount);
                                 break;
                             case KeyboardEventListener.KEY_CODE_INCREMENT:
                                 //// TODO: 2016/10/19  +100
                                 if (!TextUtils.isEmpty(mEdEntrustAmount.getText())) {
-                                    mEdEntrustAmount.setText((Integer.parseInt(mEdEntrustAmount.getText().toString()) + 100) / 100 * 100 + "");
+                                    mEdEntrustAmount.setText((Integer.parseInt(mEdEntrustAmount.getText().toString()) + mStoreUnit) / mStoreUnit * mStoreUnit + "");
                                     setEdtCursor(mEdEntrustAmount);
                                 }
                                 break;
                             //// TODO: 2016/10/19  -100 
                             case KeyboardEventListener.KEY_CODE_DECREMENT:
                                 if (!TextUtils.isEmpty(mEdEntrustAmount.getText())) {
-                                    int num = Integer.parseInt(mEdEntrustAmount.getText().toString()) / 100 * 100 - 100;
+                                    int num = Integer.parseInt(mEdEntrustAmount.getText().toString()) / mStoreUnit * mStoreUnit - mStoreUnit;
                                     mEdEntrustAmount.setText(num > 0 ? num + "" : "0");
                                     setEdtCursor(mEdEntrustAmount);
                                 }
@@ -1704,7 +1777,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
      *
      * @param pos 对应的1/pos仓位，例如，传入2时，就表示1/2仓
      */
-    public void setAmountPos(int pos) {
+    public void setAmountPos(int pos,int storeUnit) {
         int max_amount = 1;
         String amountStr = "";
         try {
@@ -1712,7 +1785,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             if (mBuyOrSell == 1 && pos == 1) { //卖出时点击全仓
                 amountStr = String.valueOf(max_amount);
             } else {
-                amountStr = TradeUtils.formatNumToHundreds(max_amount / pos);
+                amountStr = TradeUtils.formatNumToHundreds(max_amount / pos,storeUnit);
             }
         } catch (NumberFormatException nfe) {
             nfe.printStackTrace();
@@ -2006,28 +2079,28 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
 
     //全仓
     public void setStockNumAll() {
-        setAmountPos(1);
+        setAmountPos(1,mStoreUnit);
         mEdEntrustAmount.requestFocus();
         setEdtCursor(mEdEntrustAmount);
     }
 
     //半仓
     public void setStockNumHalf() {
-        setAmountPos(2);
+        setAmountPos(2,mStoreUnit);
         mEdEntrustAmount.requestFocus();
         setEdtCursor(mEdEntrustAmount);
     }
 
     //1/3仓
     public void setStockNumThird() {
-        setAmountPos(3);
+        setAmountPos(3,mStoreUnit);
         mEdEntrustAmount.requestFocus();
         setEdtCursor(mEdEntrustAmount);
     }
 
     //1/4仓
     public void setStockNumQuarter() {
-        setAmountPos(4);
+        setAmountPos(4,mStoreUnit);
         mEdEntrustAmount.requestFocus();
         setEdtCursor(mEdEntrustAmount);
     }

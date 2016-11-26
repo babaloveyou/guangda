@@ -47,10 +47,10 @@ public class BottomTodayEntrustAdapter extends AbsBaseAdapter<RevocationBean> {
         timeTv.setText( bean.getEntrust_time());
 
         TextView entrustInfoTv = (TextView) holder.getComponentById(R.id.tv_entrust_info);
-        entrustInfoTv.setText(bean.getEntrust_price() + "元/" + bean.getEntrust_amount() + "股");
+        entrustInfoTv.setText(bean.getEntrust_price() + "/" + bean.getEntrust_amount() );
 
         TextView turnoverInfoTv = (TextView) holder.getComponentById(R.id.tv_trunover_info);
-        turnoverInfoTv.setText(bean.getBusiness_price() + "元/" + bean.getBusiness_amount() + "股");
+        turnoverInfoTv.setText(bean.getBusiness_price() + "/" + bean.getBusiness_amount() );
 
     }
 }

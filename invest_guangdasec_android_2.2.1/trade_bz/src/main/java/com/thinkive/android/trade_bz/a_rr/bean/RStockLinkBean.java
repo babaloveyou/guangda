@@ -4,29 +4,50 @@ import com.thinkive.android.trade_bz.a_stock.bean.BaseBean;
 import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
- *  融资融券--证券买卖联动实体类（303000）
+ * 融资融券--证券买卖联动实体类（303000）
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2016/1/21
  */
 public class RStockLinkBean extends BaseBean {
+    /*
+  * 股票数量输入框中控制整数倍的基数
+  * */
+    @JsonKey("store_unit")
+    private String store_unit = "";
+
+    /*
+    * 加减单位
+    * */
+    @JsonKey("point")
+    private String point = "";
+
+    public String getPoint() {
+        return point;
+    }
+
+    public void setPoint(String point) {
+        this.point = point;
+    }
+
     /**
      * 证券代码
      */
     @JsonKey("stock_code")
     private String stock_code = "";
     /**
-     *证券名称
+     * 证券名称
      */
     @JsonKey("stock_name")
     private String stock_name = "";
     /**
-     *交易市场类别
+     * 交易市场类别
      */
     @JsonKey("exchange_type")
     private String exchange_type = "";
     /**
-     *证券类别（见数据字典)
+     * 证券类别（见数据字典)
      */
     @JsonKey("stock_type")
     private String stock_type = "";
@@ -51,7 +72,7 @@ public class RStockLinkBean extends BaseBean {
     @JsonKey("stock_account")
     private String stock_account = "";
     /**
-     *证券最大可买/卖数量
+     * 证券最大可买/卖数量
      */
     @JsonKey("stock_max_amount")
     private String stock_max_amount = "";
@@ -66,12 +87,12 @@ public class RStockLinkBean extends BaseBean {
     @JsonKey("buy_unit")
     private String buy_unit = "";
     /**
-     *价差
+     * 价差
      */
     @JsonKey("step_price")
     private String step_price = "";
     /**
-     *还券数量
+     * 还券数量
      */
     @JsonKey("repay_amount")
     private String repay_amount = "";
@@ -154,6 +175,14 @@ public class RStockLinkBean extends BaseBean {
 
     public void setStock_max_amount(String stock_max_amount) {
         this.stock_max_amount = stock_max_amount;
+    }
+
+    public String getStore_unit() {
+        return store_unit;
+    }
+
+    public void setStore_unit(String store_unit) {
+        this.store_unit = store_unit;
     }
 
     public String getPrice() {
