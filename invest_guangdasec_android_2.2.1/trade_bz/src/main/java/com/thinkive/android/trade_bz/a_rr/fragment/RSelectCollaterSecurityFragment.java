@@ -1,14 +1,18 @@
 package com.thinkive.android.trade_bz.a_rr.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -60,10 +64,6 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
      */
     private RSelectCollaterSecurityServiceImpl mServices;
     /**
-     * 如果没有数据就显示该图片
-     */
-    private LinearLayout mLiNoData;
-    /**
      * 该类的控制器
      */
     private RCollaterSecurityController mController;
@@ -96,6 +96,8 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
     * */
     private TextView mTvPreCode;
     private int lastLenth = -1;
+    private Dialog mProgressDialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_r_select_collater_security, null);
@@ -127,7 +129,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
         mLoading = (LinearLayout) view.findViewById(R.id.ll_collater_list_loading);
-        mLiNoData = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
+        mProgressDialog.dismiss();
         mEdtCode = (EditText) view.findViewById(R.id.edt_collater_code);
         mRlLayout = (RelativeLayout) view.findViewById(R.id.lin_lay_collater);
         mTvPreCode = (TextView) view.findViewById(R.id.tv_collater_code_pre);
@@ -169,8 +171,23 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdtCode, KeyboardManager.KEYBOARD_TYPE_STOCK);
         mStockCodeEdKeyboardManager.setOnKeyCodeDownListener(this);
         setTheme();
+        initProcessDialog();
     }
-
+    private void initProcessDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new Dialog(getContext(),R.style.transparent);
+            View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_progress, null);
+            mProgressDialog.setContentView(view);
+            Window dialogWindow = mProgressDialog.getWindow();
+            dialogWindow.setGravity(Gravity.CENTER);
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+            lp.y = 20;
+            //            lp.alpha = 0.5f;// 透明度
+            //            lp.dimAmount = 0.5f;// 黑暗度
+            dialogWindow.setAttributes(lp);
+        }
+        mProgressDialog .show();
+    }
     @Override
     protected void setTheme() {
 
@@ -187,11 +204,11 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
      */
     public void getCollaterSecurityData(ArrayList<RSelectCollaterSecurityBean> datalist) {
         if (datalist == null || datalist.size() == 0) {
-            mLiNoData.setVisibility(View.VISIBLE);
+            mProgressDialog.dismiss();
             mLoading.setVisibility(View.GONE);
             mPullToRefreshListView.setVisibility(View.GONE);
         } else {
-            mLiNoData.setVisibility(View.GONE);
+            mProgressDialog.dismiss();
             mLoading.setVisibility(View.GONE);
             mPullToRefreshListView.setVisibility(View.VISIBLE);
             mAdapter.setListData(datalist);
@@ -207,7 +224,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         if (mActivity.getData().size() == 0) {
             return false;
         } else {
-            mLiNoData.setVisibility(View.GONE);
+            mProgressDialog.dismiss();
             mLoading.setVisibility(View.GONE);
             mPullToRefreshListView.setVisibility(View.VISIBLE);
             mAdapter.setListData(mActivity.getData());
@@ -239,6 +256,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
                 // 发消息给行情，查询股票输入提示列表
                 mStockFuzzyQueryManager.execQuery(inputCode, "1", mRlLayout);
             } else if (length == 6) {
+                mStockCodeEdKeyboardManager.dismiss();
                 mStockFuzzyQueryManager.dismissQueryPopupWindow();
                 onSelectShow(inputCode);
             }
@@ -284,16 +302,16 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
                 }
             }
             if (!isMatching) {
-                mServices.requestCollaterSecurity(code);
-                mLiNoData.setVisibility(View.GONE);
-                mLoading.setVisibility(View.VISIBLE);
+                mProgressDialog.dismiss();
+                mLoading.setVisibility(View.GONE);
                 mPullToRefreshListView.setVisibility(View.GONE);
                 mStockCodeEdKeyboardManager.dismiss();
                 TradeUtils.hideSystemKeyBoard(mActivity);
+                mStockCodeEdKeyboardManager.dismiss();
             }
         } else {
             mServices.requestCollaterSecurity(code);
-            mLiNoData.setVisibility(View.GONE);
+            mProgressDialog.dismiss();
             mLoading.setVisibility(View.VISIBLE);
             mPullToRefreshListView.setVisibility(View.GONE);
             mStockCodeEdKeyboardManager.dismiss();

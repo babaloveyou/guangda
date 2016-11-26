@@ -33,7 +33,7 @@
     <color name="trade_text_color9">#999999</color>
     <color name="trade_text_color0">#CBCBCB</color>
     <color name="trade_text_color1">#DDDDDD</color>
-
+    <color name="transparent_background">#44000000</color>
     <!--用于list 区分颜色-->
     <color name="trade_list_item">#EFF7FF</color>
     <!--用于list 按下时改变色-->

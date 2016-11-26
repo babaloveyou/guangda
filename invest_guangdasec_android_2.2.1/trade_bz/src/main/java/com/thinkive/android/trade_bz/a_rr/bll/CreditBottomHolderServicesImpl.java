@@ -18,7 +18,6 @@ import java.util.HashMap;
 public class CreditBottomHolderServicesImpl {
     private CreditBottomHolderFragment mCreditBottomHolderFragment;
 
-
     public CreditBottomHolderServicesImpl(CreditBottomHolderFragment mFragment) {
         mCreditBottomHolderFragment = mFragment;
     }

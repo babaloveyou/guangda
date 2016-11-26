@@ -804,16 +804,16 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     * 个人持仓
     * */
     private void onClickCreditHolderStock() {
-//        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-//            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
-//            Bundle bundle = new Bundle();
-//            bundle.putInt("pos", 3);
-//            intent.putExtras(bundle);
-//            mActivity.startActivity(intent);
-//
-//        } else {
-//            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
-//        }
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("pos", 3);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+
+        } else {
+            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
 
     }
 

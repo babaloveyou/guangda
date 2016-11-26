@@ -110,7 +110,7 @@
             name="HQ_URL_HTTP"
             description="行情接口地址"
             socketType="A"
-            value="stock.ebscn.com:10000"/>
+            value="http:10.84.132.71:10000"/>
         <address
             name="PUSH_SOCKET_HTTP"
             description="行情推送地址"
@@ -171,14 +171,22 @@
             certificatePath="e.ebscn.com.cer"
             description="富尊退出地址"
             value="https://e.ebscn.com/servlet/json?"/>
+        <!--<address-->
+            <!--name="NORMAL_NEWSTOCK_URL"-->
+            <!--description="普通交易新股申购"-->
+            <!--value="http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=stock"/>-->
+        <!--<address-->
+            <!--name="CREDIT_NEWSTOCK_URL"-->
+            <!--description="信用交易新股申购"-->
+            <!--value="http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=credit"/>-->
         <address
             name="NORMAL_NEWSTOCK_URL"
             description="普通交易新股申购"
-            value="http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=stock"/>
+            value="http://116.236.247.174:8071/m/trade/views/transfer/bankSecuritiesTransfer.html?stock_credit_flag=stock"/>
         <address
             name="CREDIT_NEWSTOCK_URL"
             description="信用交易新股申购"
-            value="http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=credit"/>
+            value="http://116.236.247.174:8071/m/trade/views/transfer/bankSecuritiesTransfer.html?stock_credit_flag=credit"/>
         <address
             name="URL_EXIT_TRADE"
             certificatePath="sc.ebscn.com.cer"

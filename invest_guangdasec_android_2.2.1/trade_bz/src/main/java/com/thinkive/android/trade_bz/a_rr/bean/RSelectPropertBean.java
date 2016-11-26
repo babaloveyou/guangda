@@ -1,5 +1,8 @@
 package com.thinkive.android.trade_bz.a_rr.bean;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.thinkive.android.trade_bz.a_stock.bean.BaseBean;
 import com.thinkive.android.trade_bz.others.JsonKey;
 
@@ -12,7 +15,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  * @date 2015/8/17
  */
 
-public class RSelectPropertBean extends BaseBean {
+public class RSelectPropertBean extends BaseBean implements Parcelable {
     /**
      * 币种类别
      */
@@ -441,4 +444,95 @@ public class RSelectPropertBean extends BaseBean {
     public void setSum_compact_interest(String sum_compact_interest) {
         this.sum_compact_interest = sum_compact_interest;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.money_type);
+        dest.writeString(this.money_type_name);
+        dest.writeString(this.current_balance);
+        dest.writeString(this.enable_balance);
+        dest.writeString(this.fetch_balance);
+        dest.writeString(this.assert_val);
+        dest.writeString(this.fund_asset);
+        dest.writeString(this.market_value);
+        dest.writeString(this.total_debit);
+        dest.writeString(this.net_asset);
+        dest.writeString(this.fin_debit);
+        dest.writeString(this.slo_debit);
+        dest.writeString(this.per_assurescale_value);
+        dest.writeString(this.enable_bail_balance);
+        dest.writeString(this.fin_enrepaid_balance);
+        dest.writeString(this.fin_used_quota);
+        dest.writeString(this.fin_compact_fare);
+        dest.writeString(this.slo_used_quota);
+        dest.writeString(this.underly_market_value);
+        dest.writeString(this.fin_unbusi_balance);
+        dest.writeString(this.slo_unbusi_balance);
+        dest.writeString(this.slo_sell_balance);
+        dest.writeString(this.fin_enable_balance);
+        dest.writeString(this.ffee);
+        dest.writeString(this.dfee);
+        dest.writeString(this.acreditavl);
+        dest.writeString(this.fcreditbal);
+        dest.writeString(this.dcreditbal);
+        dest.writeString(this.fcreditavl);
+        dest.writeString(this.dcreditavl);
+        dest.writeString(this.fundavl);
+        dest.writeString(this.guaranteeout);
+        dest.writeString(this.sum_compact_interest);
+    }
+
+    protected RSelectPropertBean(Parcel in) {
+        this.money_type = in.readString();
+        this.money_type_name = in.readString();
+        this.current_balance = in.readString();
+        this.enable_balance = in.readString();
+        this.fetch_balance = in.readString();
+        this.assert_val = in.readString();
+        this.fund_asset = in.readString();
+        this.market_value = in.readString();
+        this.total_debit = in.readString();
+        this.net_asset = in.readString();
+        this.fin_debit = in.readString();
+        this.slo_debit = in.readString();
+        this.per_assurescale_value = in.readString();
+        this.enable_bail_balance = in.readString();
+        this.fin_enrepaid_balance = in.readString();
+        this.fin_used_quota = in.readString();
+        this.fin_compact_fare = in.readString();
+        this.slo_used_quota = in.readString();
+        this.underly_market_value = in.readString();
+        this.fin_unbusi_balance = in.readString();
+        this.slo_unbusi_balance = in.readString();
+        this.slo_sell_balance = in.readString();
+        this.fin_enable_balance = in.readString();
+        this.ffee = in.readString();
+        this.dfee = in.readString();
+        this.acreditavl = in.readString();
+        this.fcreditbal = in.readString();
+        this.dcreditbal = in.readString();
+        this.fcreditavl = in.readString();
+        this.dcreditavl = in.readString();
+        this.fundavl = in.readString();
+        this.guaranteeout = in.readString();
+        this.sum_compact_interest = in.readString();
+    }
+
+    public static final Creator<RSelectPropertBean> CREATOR = new Creator<RSelectPropertBean>() {
+        @Override
+        public RSelectPropertBean createFromParcel(Parcel source) {
+            return new RSelectPropertBean(source);
+        }
+
+        @Override
+        public RSelectPropertBean[] newArray(int size) {
+            return new RSelectPropertBean[size];
+        }
+    };
 }

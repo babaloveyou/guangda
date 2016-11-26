@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.fragment.MyRRHoldStockFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditBuyFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditSaleFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RRevocationFragment;
@@ -39,6 +40,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     private RCreditSaleFragment mRCreditSaleFragment;
     private TextView mBackTv;
     private RRevocationFragment mRRevocationFragment;
+    private MyRRHoldStockFragment mMyRRHoldStockFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +72,12 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         mRCreditSaleFragment.setName("融卖");
         mRRevocationFragment = new RRevocationFragment();
         mRRevocationFragment.setName("撤单");
-//        MyRRHoldStockFragment myRRHoldStockFragment = new MyRRHoldStockFragment();
+        mMyRRHoldStockFragment = new MyRRHoldStockFragment();
+        mMyRRHoldStockFragment.setName("个人");
         mFragmentList.add(mRCreditBuyFragment);
         mFragmentList.add(mRCreditSaleFragment);
         mFragmentList.add(mRRevocationFragment);
+        mFragmentList.add(mMyRRHoldStockFragment);
         mController = new MultiTradeViewController(this);
         Bundle bundle = getIntent().getExtras();
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);
@@ -150,7 +154,30 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         //设置标题栏标题
         //        setTitleStr(str);
     }
+    /**
+     * 当其他Fragment中的列表的item展开布局中的“买入”、“卖出”按钮
+     *
+     * @param stockCode 在持仓列表中点击的那支股票的股票代码
+     * @param buyOrSale 0:单击的是“买入”；1：单机的是“卖出”
+     */
+    public void transferFragmentToBuySaleFromOthers(String stockCode, int buyOrSale) {
+        BuyOrSellFragment buyOrSellFragment = null;
+        if (buyOrSale == 0) { // 如果单击的是“买入”
+            buyOrSellFragment = mBuyFragment;
+        } else if (buyOrSale == 1) { // 如果单击的是“卖出”
+            buyOrSellFragment = mSaleFragment;
+        }
+        Bundle bundle = buyOrSellFragment.getArguments();
+        if (bundle == null) {
+            bundle = new Bundle();
+            bundle.putString("hold_stock_code", stockCode);
+            buyOrSellFragment.setArguments(bundle);
+        } else {
+            buyOrSellFragment.setStockCodeFromOther(stockCode);
+        }
 
+        mRadioTabs.setCurTab(buyOrSale);
+    }
 
     public NavigatorView getNavSlide() {
         return mNavSlide;

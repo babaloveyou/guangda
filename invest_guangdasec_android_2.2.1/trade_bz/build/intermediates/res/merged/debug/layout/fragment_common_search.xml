@@ -39,28 +39,28 @@
 
     </RelativeLayout>
 
-    <!-- 正在加载时显示的界面 -->
-    <LinearLayout
-        android:id="@+id/ll_collater_list_loading"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:visibility="visible">
+    <!--&lt;!&ndash; 正在加载时显示的界面 &ndash;&gt;-->
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll_collater_list_loading"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="visible">-->
 
-        <ProgressBar
-            android:id="@+id/fragment_ab_list_info_progressbar"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+        <!--<ProgressBar-->
+            <!--android:id="@+id/fragment_ab_list_info_progressbar"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="@string/hk_order0"/>
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="5dp"-->
+            <!--android:text="@string/hk_order0"/>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
 
     <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
         android:id="@+id/lv_r_select_collater"

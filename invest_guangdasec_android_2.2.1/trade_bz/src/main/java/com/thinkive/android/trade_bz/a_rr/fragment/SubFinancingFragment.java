@@ -1,14 +1,18 @@
 package com.thinkive.android.trade_bz.a_rr.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -68,10 +72,6 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
      */
     private PullToRefreshListView mPullToRefreshListView;
     /**
-     * 正在加载的旋转进度条
-     */
-    private LinearLayout mLoading;
-    /**
      * 证券代码
      */
     private EditText mEdtCode;
@@ -93,7 +93,7 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
     private TextView mTvPreCode;
     private int lastLenth = -1;
     private View mRootView;
-
+    private Dialog mProgressDialog;
 
 
     @Override
@@ -129,7 +129,6 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
         mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_r_select_collater);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
-        mLoading = (LinearLayout) view.findViewById(R.id.ll_collater_list_loading);
         mLiNoData = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
         mEdtCode = (EditText) view.findViewById(R.id.edt_collater_code);
         mRlLayout = (RelativeLayout) view.findViewById(R.id.lin_lay_collater);
@@ -172,6 +171,23 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdtCode, KeyboardManager.KEYBOARD_TYPE_STOCK);
         mStockCodeEdKeyboardManager.setOnKeyCodeDownListener(this);
         setTheme();
+        initProcessDialog();
+    }
+
+    private void initProcessDialog() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new Dialog(getContext(),R.style.transparent);
+            View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_progress, null);
+            mProgressDialog.setContentView(view);
+            Window dialogWindow = mProgressDialog.getWindow();
+            dialogWindow.setGravity(Gravity.CENTER);
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+            lp.y = 20;
+//            lp.alpha = 0.5f;// 透明度
+//            lp.dimAmount = 0.5f;// 黑暗度
+            dialogWindow.setAttributes(lp);
+        }
+        mProgressDialog .show();
     }
 
     @Override
@@ -191,11 +207,11 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
     public void getCollaterSecurityData(ArrayList<RSelectCollaterSecurityBean> datalist) {
         if (datalist == null || datalist.size() == 0) {
             mLiNoData.setVisibility(View.VISIBLE);
-            mLoading.setVisibility(View.GONE);
+            mProgressDialog.dismiss();
             mPullToRefreshListView.setVisibility(View.GONE);
         } else {
             mLiNoData.setVisibility(View.GONE);
-            mLoading.setVisibility(View.GONE);
+            mProgressDialog.dismiss();
             mPullToRefreshListView.setVisibility(View.VISIBLE);
             mAdapter.setListData(datalist);
             mListView.setAdapter(mAdapter);
@@ -211,7 +227,7 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
             return false;
         } else {
             mLiNoData.setVisibility(View.GONE);
-            mLoading.setVisibility(View.GONE);
+            mProgressDialog.dismiss();
             mPullToRefreshListView.setVisibility(View.VISIBLE);
             mAdapter.setListData(mActivity.getFinancingData());
             mAdapter.notifyDataSetChanged();
@@ -242,6 +258,7 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
                 // 发消息给行情，查询股票输入提示列表
                 mStockFuzzyQueryManager.execQuery(inputCode, "1", mRlLayout);
             } else if (length == 6) {
+                mStockCodeEdKeyboardManager.dismiss();
                 mStockFuzzyQueryManager.dismissQueryPopupWindow();
                 onSelectShow(inputCode);
             }
@@ -258,7 +275,6 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
         mEdtCode.requestFocus();
         mEdtCode.requestFocusFromTouch();
         setEdtCursor(mEdtCode);
-        //        mEdtCode.performClick();
     }
 
     void showPreTv() {
@@ -287,17 +303,17 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
                 }
             }
             if (!isMatching) {
-                mServices.requestCollaterSecurity(code);
-                mLiNoData.setVisibility(View.GONE);
-                mLoading.setVisibility(View.VISIBLE);
+                mLiNoData.setVisibility(View.VISIBLE);
+                mProgressDialog.dismiss();
                 mPullToRefreshListView.setVisibility(View.GONE);
                 mStockCodeEdKeyboardManager.dismiss();
                 TradeUtils.hideSystemKeyBoard(mActivity);
+                mStockCodeEdKeyboardManager.dismiss();
             }
         } else {
             mServices.requestCollaterSecurity(code);
             mLiNoData.setVisibility(View.GONE);
-            mLoading.setVisibility(View.VISIBLE);
+            mProgressDialog.dismiss();
             mPullToRefreshListView.setVisibility(View.GONE);
             mStockCodeEdKeyboardManager.dismiss();
             TradeUtils.hideSystemKeyBoard(mActivity);
@@ -343,9 +359,7 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
      */
     public void onDownRefresh() {
         showPreTv();
-//        if (!processMemoryOriginDataList()) {
             mServices.requestCollaterSecurity("");
-//        }
     }
 
     public void clearFocus() {

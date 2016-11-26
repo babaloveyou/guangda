@@ -162,6 +162,7 @@
     <color name="trader_door_gv_divider">#e5e5e5</color>
     <color name="trans_white">#ccffffff</color>
     <color name="transparent">#00000000</color>
+    <color name="transparent_background">#44000000</color>
     <color name="tv_bt_brown">#7c5d48</color>
     <color name="white">#ffffff</color>
     <declare-styleable name="BottomCircleIndicator"><attr format="reference|integer" name="circleNum"/><attr format="dimension" name="indicator_spacing"/><attr format="enum" name="indicator_type"><enum name="circle" value="0"/><enum name="fraction" value="1"/></attr></declare-styleable>
@@ -1619,6 +1620,11 @@
         <item name="android:textColor">@color/trade_text_color6</item>
         <item name="android:gravity">center</item>
         <item name="android:hint">@string/blank</item>
+    </style>
+    <style name="transparent">
+        <item name="android:windowBackground">@color/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
     </style>
     <style name="tv_normal_show">
         <item name="android:gravity">left|center_vertical</item>

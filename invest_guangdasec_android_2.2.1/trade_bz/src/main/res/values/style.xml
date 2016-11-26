@@ -56,6 +56,7 @@
     <style name="new_subscribe_normal_num_style" parent="new_subscribe_normal_text_style">
         <item name="android:textStyle">bold</item>
     </style>
+
     <style name="fund_fisk_test_result_text">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/trade_text_color9</item>
@@ -91,11 +92,10 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_marginRight">15dp</item>
     </style>
+
     <style name="ClubToolbar" parent="Widget.AppCompat.Toolbar">
         <item name="contentInsetStart">0dp</item><!-- 设置该属性解决空白部分-->
     </style>
-
-
 
 
     <style name="tv_tab_top">
@@ -187,5 +187,6 @@
         <item name="android:textSize">16sp</item>
 
     </style>
+
 
 </resources>

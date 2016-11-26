@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_main_french_gray"
+              android:orientation="vertical">
+
+    <com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/hsll_part1">
+
+        <com.thinkive.android.trade_bz.views.ChildViewPager
+            android:id="@+id/vp_multi_trade"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+        <!--</RelativeLayout>-->
+    </com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout>
+
+
+    <com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/hsll_part2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/trade_normal_background"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/circle_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_header_of_grade_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:background="@color/trade_normal_background"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="@string/store_usable"
+                android:textColor="@color/trade_text_color6"/>
+
+            <!-- 正在加载时显示的界面 -->
+            <LinearLayout
+                android:id="@+id/ll_myhold_list_loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/trade_color_white"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/fragment_ab_list_info_progressbar"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/home_loading_text" />
+
+            </LinearLayout>
+
+
+            <com.thinkive.android.trade_bz.views.listViewInScrollview
+                android:id="@+id/lv_my_hold_stock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/trade_color_white"
+                android:visibility="gone"/>
+
+            <!--暂无数据-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/lin_not_data_set"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/trade_color_white"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/not_data_listview"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/no_data_listview"
+                    android:textColor="@color/trade_text_color6"
+                    android:textSize="@dimen/lsv_no_data_text"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout>
+</LinearLayout>

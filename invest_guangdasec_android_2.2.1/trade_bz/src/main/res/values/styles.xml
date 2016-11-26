@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="style_btn_num">
         <item name="android:background">@drawable/shape_bg_btn_num</item>
         <item name="android:textSize">16sp</item>
@@ -33,4 +34,12 @@
         <item name="android:windowEnterAnimation">@anim/actionsheet_dialog_in</item>
         <item name="android:windowExitAnimation">@anim/actionsheet_dialog_out</item>
     </style>
+
+    <style name="transparent">
+        <item name="android:windowBackground">@color/transparent_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <!--<item name="android:windowAnimationStyle">@+android:style/Animation.Translucent</item>-->
+
 </resources>

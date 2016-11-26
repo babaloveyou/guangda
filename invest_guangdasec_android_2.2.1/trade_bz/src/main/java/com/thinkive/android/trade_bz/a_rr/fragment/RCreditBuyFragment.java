@@ -318,6 +318,8 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
     private CreditBottomRevocationFragment mCreditBottomRevocationFragment;
     private TextView mStockUnitTv;
     private int mStoreUnit=100;
+    private Bundle mBundle;
+    private CharSequence mStockCodeFromOther=null;
 
     public RCreditBuyFragment() {
 
@@ -341,6 +343,7 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         mStockFuzzyQueryManager.setPopupwindowWidth(mLlStockCodeName.getWidth());
         mStockFuzzyQueryManager.setPopupWindowReserveWidthReferView(mLlStockCodeName);
         mStockFuzzyQueryManager.initListViewPopupwindow(mController);
+        setDataToViewsFromOther();
         // 开启自动刷新模式
         handler.removeCallbacks(runnable);
         handler.postDelayed(runnable, 2000);
@@ -351,6 +354,7 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         super.onPause();
         //关闭定时刷新
         handler.removeCallbacks(runnable);
+        mStockCodeFromOther = null;
     }
 
     @Override
@@ -1544,5 +1548,29 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         }
         mBottomFragmentVp.setCurrentItem(2);
         mCreditBottomRevocationFragment.requestNewData();
+    }
+
+    public void setArguments(Bundle bundle) {
+        mBundle = bundle;
+    }
+
+    public  Bundle getArgument() {
+        return mBundle;
+    }
+    /**
+     * 在其他界面，点击买卖跳转至此
+     */
+    private void setDataToViewsFromOther() {
+        if (TextUtils.isEmpty(mStockCodeFromOther)) {
+            Bundle bundle = getArgument();
+            if (bundle != null) {
+                String default_stock_code = bundle.getString("hold_stock_code");
+                mEdStockCode.setText(default_stock_code);
+                onStockLengthMax(mEdStockCode.getText().toString().trim(), mEdStockCode);
+            }
+        } else {
+            mEdStockCode.setText(mStockCodeFromOther);
+            onStockLengthMax(mEdStockCode.getText().toString().trim(), mEdStockCode);
+        }
     }
 }

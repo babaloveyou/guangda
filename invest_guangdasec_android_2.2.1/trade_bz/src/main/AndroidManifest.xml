@@ -70,6 +70,11 @@
             android:name=".a_stock.activity.TodayTradeDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+        <!--今日成交详情-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.BalanceDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
         <!--退市板块协议签署-->
         <activity
             android:name=".a_stock.activity.SignAgreementActivity"
