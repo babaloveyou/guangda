@@ -4,19 +4,14 @@ import android.content.Context;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_stock.bean.StatementAccountBean;
+import com.thinkive.android.trade_bz.a_stock.bean.TodayMoneyBean;
 
 import static com.thinkive.android.trade_bz.R.id.tv_time;
 
 /**
- * 今日资金流水ListView适配器
- *
- * @author 张雪梅
- * @company Thinkive
- * @date 2015/6/25
+ * Created by Administrator on 2016/11/29.
  */
-
-public class TodayMoneyAdapter extends AbsBaseAdapter<StatementAccountBean> {
+public class TodayMoneyAdapter extends AbsBaseAdapter<TodayMoneyBean> {
 
 
     public TodayMoneyAdapter(Context context) {
@@ -24,7 +19,7 @@ public class TodayMoneyAdapter extends AbsBaseAdapter<StatementAccountBean> {
     }
 
     @Override
-    protected void onFillComponentData(ViewHolder holder, StatementAccountBean bean) {
+    protected void onFillComponentData(ViewHolder holder, TodayMoneyBean bean) {
         TextView titleTv = (TextView) holder.getComponentById(R.id.tv_title);
         TextView timeTv = (TextView) holder.getComponentById(tv_time);
         TextView noTv = (TextView) holder.getComponentById(R.id.tv_no);

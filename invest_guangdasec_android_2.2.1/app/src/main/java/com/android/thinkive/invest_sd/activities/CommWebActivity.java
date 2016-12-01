@@ -1,41 +1,24 @@
 package com.android.thinkive.invest_sd.activities;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Message;
-import android.provider.ContactsContract;
 import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
-import android.view.View;
 
-import com.android.thinkive.framework.compatible.DialogFrame;
 import com.android.thinkive.framework.compatible.TKFragmentActivity;
 import com.android.thinkive.framework.config.ConfigManager;
 import com.android.thinkive.framework.fragment.BaseWebFragment;
 import com.android.thinkive.framework.message.AppMessage;
-import com.android.thinkive.framework.module.ModuleManager;
-import com.android.thinkive.framework.network.ResponseListener;
-import com.android.thinkive.framework.network.http.HttpService;
-import com.android.thinkive.framework.storage.MemoryStorage;
-import com.android.thinkive.framework.util.Log;
 import com.android.thinkive.invest_sd.R;
 import com.android.thinkive.invest_sd.constants.Constant;
 import com.android.thinkive.invest_sd.fragment.WebCacheFragment;
 import com.android.thinkive.invest_sd.util.WebFragmentManager;
 import com.umeng.analytics.MobclickAgent;
 
-import org.apache.http.entity.mime.content.FileBody;
-import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.File;
-import java.util.HashMap;
 
 
 /**

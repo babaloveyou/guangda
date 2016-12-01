@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_rr.bll;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 
 import com.thinkive.android.trade_bz.a_rr.bean.RRevocationBean;
 import com.thinkive.android.trade_bz.a_rr.fragment.CreditBottomRevocationFragment;
@@ -107,7 +108,12 @@ public class RRevocationServiceImpl extends BasicServiceImpl {
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
                 //显示撤单结果
-                // ToastUtils.toast(context, bundle.getString(RR303018.BUNDLE_KEY_REVOCATION_DIALOG));
+                if (!TextUtils.isEmpty(bundle.getString(RR303018.BUNDLE_KEY_REVOCATION_DIALOG))) {
+
+                    ToastUtils.toast(context, bundle.getString(RR303018.BUNDLE_KEY_REVOCATION_DIALOG));
+                } else {
+                    ToastUtils.toast(context, "撤单成功");
+                }
                 //请求成功后刷新数据
                 requestRevocationData();
             }

@@ -22,7 +22,7 @@ public class FundRevocationConfirmDialog extends AbsTradeDialog {
     private TextView stockCodeTextView;
     private TextView entrustPriceTextView;
     private TextView entrustNumTextView;
-    private TextView buyOrSellTextView;
+//    private TextView buyOrSellTextView;
 
     /**
      * 调用方的业务类
@@ -49,7 +49,7 @@ public class FundRevocationConfirmDialog extends AbsTradeDialog {
         // 显示股票代码
         stockCodeTextView = (TextView) view.findViewById(R.id.tv_pop_code);
         // 显示买卖方向
-        buyOrSellTextView = (TextView) view.findViewById(R.id.tv_pop_buy);
+//        buyOrSellTextView = (TextView) view.findViewById(R.id.tv_pop_buy);
         // 显示委托价格
         entrustPriceTextView = (TextView) view.findViewById(R.id.tv_pop_price);
         // 显示委托数量
@@ -69,7 +69,7 @@ public class FundRevocationConfirmDialog extends AbsTradeDialog {
         stockCodeTextView.setText(mDataBean.getFund_code());
         entrustPriceTextView.setText(mDataBean.getDeal_balance());
         entrustNumTextView.setText(mDataBean.getShares());
-        buyOrSellTextView.setText(mDataBean.getBusiness_name());
+//        buyOrSellTextView.setText(mDataBean.getBusiness_name());
     }
 
     @Override

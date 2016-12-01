@@ -7,13 +7,13 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.fragment.CreditTodayEntrustOrTradeFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.MyRRHoldStockFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditBuyFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RCreditSaleFragment;
 import com.thinkive.android.trade_bz.a_rr.fragment.RRevocationFragment;
 import com.thinkive.android.trade_bz.a_stock.controll.MultiTradeViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
-import com.thinkive.android.trade_bz.a_stock.fragment.BuyOrSellFragment;
 import com.thinkive.android.trade_bz.others.RadioTabs;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout;
@@ -32,8 +32,6 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     private HorizontalSlideLinearLayout mHorizontalSlideLinearLayout;
     private ArrayList<AbsBaseFragment> mFragmentList = null;
 
-    private BuyOrSellFragment mBuyFragment;
-    private BuyOrSellFragment mSaleFragment;
 
     private int defaultViewPagerPos;
     private RCreditBuyFragment mRCreditBuyFragment;
@@ -41,6 +39,8 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     private TextView mBackTv;
     private RRevocationFragment mRRevocationFragment;
     private MyRRHoldStockFragment mMyRRHoldStockFragment;
+    private CreditTodayEntrustOrTradeFragment mCreditTodayEntrustOrTradeFragment;
+    private int mChildePos=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +65,9 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
 
     @Override
     protected void initData() {
+        Bundle bundle = getIntent().getExtras();
+        defaultViewPagerPos = bundle.getInt("ViewPagerFragmentPos", 0);
+        mChildePos = bundle.getInt("childePos", 0);
         mFragmentList = new ArrayList<AbsBaseFragment>();
         mRCreditBuyFragment = new RCreditBuyFragment();
         mRCreditBuyFragment.setName("融买");
@@ -72,14 +75,19 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         mRCreditSaleFragment.setName("融卖");
         mRRevocationFragment = new RRevocationFragment();
         mRRevocationFragment.setName("撤单");
+        mCreditTodayEntrustOrTradeFragment = new   CreditTodayEntrustOrTradeFragment();
+        mCreditTodayEntrustOrTradeFragment.setName("委托");
+        Bundle bundle1 = new Bundle();
+        bundle1.putInt("childePos",mChildePos);
+        mCreditTodayEntrustOrTradeFragment.setArguments(bundle1);
         mMyRRHoldStockFragment = new MyRRHoldStockFragment();
         mMyRRHoldStockFragment.setName("个人");
         mFragmentList.add(mRCreditBuyFragment);
         mFragmentList.add(mRCreditSaleFragment);
         mFragmentList.add(mRRevocationFragment);
+//        mFragmentList.add(mCreditEntrustFragment);
         mFragmentList.add(mMyRRHoldStockFragment);
         mController = new MultiTradeViewController(this);
-        Bundle bundle = getIntent().getExtras();
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);
     }
 
@@ -93,6 +101,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
 
     @Override
     protected void initViews() {
+
         mHorizontalSlideLinearLayout.initslideStandard(this);
         mNavSlide.setTabNormalTextColor(getResources().getColor(R.color.trade_text_color9));
         mNavSlide.setTabLightTextColor(getResources().getColor(R.color.trade_color1));
@@ -118,7 +127,6 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
                 mNavSlide.setCurrentIndex(position);
             }
         });
-        defaultViewPagerPos = getIntent().getExtras().getInt("pos");
         mRadioTabs.setCurTab(defaultViewPagerPos);
         //        setTitleStr(mFragmentList.get(defaultViewPagerPos).getName());
     }
@@ -161,20 +169,29 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
      * @param buyOrSale 0:单击的是“买入”；1：单机的是“卖出”
      */
     public void transferFragmentToBuySaleFromOthers(String stockCode, int buyOrSale) {
-        BuyOrSellFragment buyOrSellFragment = null;
         if (buyOrSale == 0) { // 如果单击的是“买入”
-            buyOrSellFragment = mBuyFragment;
+
+            Bundle bundle = mRCreditBuyFragment.getArguments();
+            if (bundle == null) {
+                bundle = new Bundle();
+                bundle.putString("hold_stock_code", stockCode);
+                mRCreditBuyFragment.setArguments(bundle);
+            } else {
+                mRCreditBuyFragment.setStockCodeFromOther(stockCode);
+            }
+
+
         } else if (buyOrSale == 1) { // 如果单击的是“卖出”
-            buyOrSellFragment = mSaleFragment;
+            Bundle bundle = mRCreditSaleFragment.getArguments();
+            if (bundle == null) {
+                bundle = new Bundle();
+                bundle.putString("hold_stock_code", stockCode);
+                mRCreditSaleFragment.setArguments(bundle);
+            } else {
+                mRCreditSaleFragment.setStockCodeFromOther(stockCode);
+            }
         }
-        Bundle bundle = buyOrSellFragment.getArguments();
-        if (bundle == null) {
-            bundle = new Bundle();
-            bundle.putString("hold_stock_code", stockCode);
-            buyOrSellFragment.setArguments(bundle);
-        } else {
-            buyOrSellFragment.setStockCodeFromOther(stockCode);
-        }
+
 
         mRadioTabs.setCurTab(buyOrSale);
     }

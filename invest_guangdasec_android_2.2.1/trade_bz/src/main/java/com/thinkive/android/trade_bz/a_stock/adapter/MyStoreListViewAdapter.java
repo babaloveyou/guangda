@@ -3,6 +3,7 @@ package com.thinkive.android.trade_bz.a_stock.adapter;
 import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
@@ -116,16 +117,17 @@ public class MyStoreListViewAdapter extends AbsBaseAdapter<MyStoreStockBean> {
     }
 
     private void setWinLostRate(TextView view, MyStoreStockBean myStoreStockBean) {
-        String winlostRate = myStoreStockBean.getFloat_yk_per();
-        int sColor = -1;
-        if (winlostRate.startsWith(empString)) {
-            sColor = mContext.getResources().getColor(R.color.text_reming);
-        } else {
-            sColor = winlostRate.startsWith("-") ? mContext.getResources().getColor(R.color.trade_down_green) : mContext.getResources().getColor(R.color.trade_text);
+         String winlostRate = myStoreStockBean.getFloat_yk_per();
+        if (!TextUtils.isEmpty(winlostRate)&&!winlostRate.startsWith("-")) {
+            winlostRate = "+" + winlostRate;
         }
         String winLostRateTvString = "盈亏" + winlostRate + "%";
         SpannableStringBuilder styleWinLostRate = new SpannableStringBuilder(winLostRateTvString);
-        styleWinLostRate.setSpan(new ForegroundColorSpan(sColor), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        if (winlostRate.startsWith(mContext.getResources().getString(R.string.common_emp_text))) {
+            styleWinLostRate.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        } else {
+            styleWinLostRate.setSpan(new ForegroundColorSpan(winlostRate.startsWith("-") ? mContext.getResources().getColor(R.color.trade_down_green) : mContext.getResources().getColor(R.color.trade_text)), 2, winLostRateTvString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        }
         view.setText(styleWinLostRate);
     }
 

@@ -110,7 +110,7 @@
             name="HQ_URL_HTTP"
             description="行情接口地址"
             socketType="A"
-            value="http:10.84.132.71:10000"/>
+            value="stock.ebscn.com:10000"/>
         <address
             name="PUSH_SOCKET_HTTP"
             description="行情推送地址"

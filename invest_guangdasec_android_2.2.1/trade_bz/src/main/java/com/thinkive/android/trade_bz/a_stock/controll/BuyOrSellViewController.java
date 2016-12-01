@@ -85,6 +85,8 @@ public class BuyOrSellViewController extends AbsBaseController implements
             mFragment.onClickUpLimit();
         } else if (resId == R.id.tv_stock_name) { // 股票名称
             mFragment.onClickStockName();
+        } else if (resId == R.id.ll_now_price) {//带入现价
+            mFragment.onClickNowPrice();
         }
     }
 

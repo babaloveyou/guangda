@@ -52,7 +52,7 @@ public class ActionSlideExpandableListView extends SlideExpandableListView {
         public void onClick(View itemView, View clickedView, int position);
     }
 
-    public void setAdapter(ListAdapter adapter, int toggleButtonId, int expandableViewId) {
+    public void setAdapter(final ListAdapter adapter, int toggleButtonId, int expandableViewId) {
         super.setAdapter(new WrapperListAdapterImpl(adapter) {
 
             @Override
@@ -77,5 +77,13 @@ public class ActionSlideExpandableListView extends SlideExpandableListView {
                 return listView;
             }
         }, toggleButtonId, expandableViewId);
+    }
+
+    @Override
+    protected void updateLvLocation() {
+        updateLocation();
+    }
+
+    public void updateLocation() {
     }
 }

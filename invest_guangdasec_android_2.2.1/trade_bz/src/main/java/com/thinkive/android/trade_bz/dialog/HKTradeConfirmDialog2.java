@@ -26,7 +26,7 @@ public class HKTradeConfirmDialog2 extends AbsTradeDialog {
     /**
      * 买卖方向
      */
-    private TextView buyOrSaleView;
+//    private TextView buyOrSaleView;
     /**
      * 委托价格
      */
@@ -60,7 +60,7 @@ public class HKTradeConfirmDialog2 extends AbsTradeDialog {
         // 显示股票代码
         stockCodeTextView = (TextView)view.findViewById(R.id.tv_pop_code);
         //买卖方向
-        buyOrSaleView = (TextView) view.findViewById(R.id.tv_pop_buy);
+//        buyOrSaleView = (TextView) view.findViewById(R.id.tv_pop_buy);
         // 显示委托价格
         entrustPriceTextView = (TextView)view.findViewById(R.id.tv_pop_price);
         // 显示委托数量
@@ -78,7 +78,7 @@ public class HKTradeConfirmDialog2 extends AbsTradeDialog {
     public void setDataToViews(String stockName, String stockCode, String EntrustPrice, String EntrustAmount) {
         stockNameTextView.setText(stockName);
         stockCodeTextView.setText(stockCode);
-        buyOrSaleView.setText(R.string.trade_sell);
+//        buyOrSaleView.setText(R.string.trade_sell);
         entrustPriceTextView.setText(EntrustPrice);
         entrustNumTextView.setText(EntrustAmount);
     }

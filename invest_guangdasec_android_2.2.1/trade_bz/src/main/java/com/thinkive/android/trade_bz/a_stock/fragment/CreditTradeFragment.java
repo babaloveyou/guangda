@@ -198,10 +198,15 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mFastAdapter.setListData(mFastBeansList);
         mFastAdapter.notifyDataSetChanged();
 
+        mMoreBeanList.add(new TradeFastItemBean(0, "当日委托", null));
         mMoreBeanList.add(new TradeFastItemBean(0, "历史委托", null));
-        mMoreBeanList.add(new TradeFastItemBean(0, "历史成交", null));
-        mMoreBeanList.add(new TradeFastItemBean(0, "资金查询", null));
         mMoreBeanList.add(new TradeFastItemBean(0, "资金流水", null));
+        mMoreBeanList.add(new TradeFastItemBean(0, "当日成交", null));
+        mMoreBeanList.add(new TradeFastItemBean(0, "历史成交", null));
+        mMoreBeanList.add(new TradeFastItemBean(0, "交割单", null));
+        mMoreBeanList.add(new TradeFastItemBean(0, "授信额度", null));
+        mMoreBeanList.add(new TradeFastItemBean(0, "融资明细", null));
+        mMoreBeanList.add(new TradeFastItemBean(0, "融券明细", null));
         mMoreAdapter.setListData(mMoreBeanList);
         mMoreAdapter.notifyDataSetChanged();
     }
@@ -595,23 +600,81 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     //                    ToastUtil.showToast("担保品查询");
                     break;
             }
-        } else if (parent.getCount() == 4) {
+        } else if (parent.getCount() == 9) {
             mMoreMenuPosBeforeLogin = position;
             switch (position) {
 
                 case 0:
-
+                    onClickTodayEntrust();
                     break;
                 case 1:
+                    onclickHistoryEntrust();
                     break;
                 case 2:
+                    onClickFundFlow();
                     break;
                 case 3:
+                    onClickTodayTrade();
                     break;
                 case 4:
+                    onClickHistoryTrade();
+                    break;
+                case 5:
+                    onClickDelivery();
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
                     break;
             }
 
+        }
+    }
+
+    private void onClickDelivery() {
+
+
+    }
+
+    private void onClickHistoryTrade() {
+
+    }
+
+    private void onClickTodayTrade() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("pos", 3);
+            bundle.putInt("childePos", 1);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+
+        } else {
+            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
+    }
+
+    private void onClickFundFlow() {
+
+    }
+
+    private void onclickHistoryEntrust() {
+
+    }
+
+    private void onClickTodayEntrust() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("pos", 3);
+            bundle.putInt("childePos", 0);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+
+        } else {
+            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
     }
 
@@ -754,12 +817,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      */
     private void onClickTwoFinance(int flag) {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            //            final Intent intent = new Intent(mActivity, TradeH5Activity.class);
-            //            TradeWebFragmentManager.sWebCacheFragment.setFuncModule("1");
-            //            TradeWebFragmentManager.sWebCacheFragment.preloadUrl(mActivity);
-            //            TradeWebFragmentManager.sWebCacheFragment.prepareMsgToH5ForSkip(TradeLoginManager.LOGIN_TYPE_CREDIT);
-            //            intent.setClass(mActivity, TradeH5Activity.class);
-            //            mActivity.startActivity(intent);
             Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
             Bundle bundle = new Bundle();
             if (flag == 0) {
@@ -807,12 +864,12 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
             Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
             Bundle bundle = new Bundle();
-            bundle.putInt("pos", 3);
+            bundle.putInt("pos", 4);
             intent.putExtras(bundle);
             mActivity.startActivity(intent);
 
         } else {
-            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
+            startLogin(1004, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
 
     }
@@ -944,7 +1001,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         } else {
             startLogin(1009, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
-
     }
 
     /*

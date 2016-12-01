@@ -976,12 +976,12 @@ public class OptionBuyOrSaleOpenFragment extends AbsBaseFragment {
                 // 显示证券代码
                 TextView stockCodeTextView = (TextView) view.findViewById(R.id.tv_pop_code);
                 //买卖方向
-                TextView buyOrSaleView = (TextView) view.findViewById(R.id.tv_pop_buy);
-                if (mBuyOrSell == 0) { // 如果单击的是买入
-                    buyOrSaleView.setText(R.string.trade_buying);
-                } else if (mBuyOrSell == 1) { // 如果单机的是卖出
-                    buyOrSaleView.setText(R.string.trade_sell);
-                }
+//                TextView buyOrSaleView = (TextView) view.findViewById(R.id.tv_pop_buy);
+//                if (mBuyOrSell == 0) { // 如果单击的是买入
+//                    buyOrSaleView.setText(R.string.trade_buying);
+//                } else if (mBuyOrSell == 1) { // 如果单机的是卖出
+//                    buyOrSaleView.setText(R.string.trade_sell);
+//                }
                 // 显示委托价格
                 TextView entrustPriceTextView = (TextView) view.findViewById(R.id.tv_pop_price);
                 // 显示委托数量

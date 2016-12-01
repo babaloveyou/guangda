@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
+
 import com.android.thinkive.framework.CoreApplication;
 import com.thinkive.android.trade_bz.R;
 
@@ -45,7 +46,7 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
      * A list of positions of all list items that are expanded.
      * Normally only one is expanded. But a mode to expand
      * multiple will be added soon.
-     *
+     * <p>
      * If an item onj position x is open, its bit is set
      */
     private BitSet openItems = new BitSet();
@@ -77,7 +78,7 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
      * <pre>
      * return parent.findViewById(R.id.expand_toggle_button)
      * </pre>
-     *
+     * <p>
      * A listener will be attached to the button which will
      * either expand or collapse the expandable view
      *
@@ -226,14 +227,17 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
                             }
                             openItems.set(lastOpenPosition, false);
                         }
+                        updateLocation(position);
                         lastOpen = target;
                         lastOpenPosition = position;
                     } else if (lastOpenPosition == position) {
+
                         lastOpenPosition = -1;
                     }
                     animateView(target, type, position);
                 }
             }
+
         });
     }
 
@@ -242,11 +246,14 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
         if (openItems.get(position)) {
             target.setVisibility(View.VISIBLE);
             params.bottomMargin = 0;
+
         } else {
             target.setVisibility(View.GONE);
             params.bottomMargin = 0 - viewHeights.get(position);
         }
     }
+
+    protected abstract void updateLocation(int position);
 
     /**
      * Performs either COLLAPSE or EXPAND animation on the target view

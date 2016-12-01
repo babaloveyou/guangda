@@ -30,6 +30,7 @@ import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.compatible.ListenerController;
+import com.android.thinkive.framework.keyboard.BaseKeyboard;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectObjectSecurityActivity;
@@ -316,6 +317,9 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
     private CreditBottomRevocationFragment mCreditBottomRevocationFragment;
     private TextView mStockUnitTv;
     private int mStoreUnit=100;
+    private LinearLayout mPriceParentLl;
+    private KeyboardManager mKeyboardManagerPrice;
+
     public RSaleStockToMoneyFragment() {
 
     }
@@ -355,10 +359,12 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
         super.closeFrameworkKeyBroad();
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
+        mKeyboardManagerPrice.dismiss();
     }
 
     @Override
     protected void findViews(View view) {
+        mPriceParentLl = (LinearLayout) view.findViewById(R.id.ll_now_price);
         mStockUnitTv = (TextView) view.findViewById(R.id.tv_stock_unit);
         mEdStockCode = (ClearEditText) view.findViewById(R.id.edt_stock_code);
         mTvStockUnit = (TextView) view.findViewById(R.id.tv_stock_unit);
@@ -433,6 +439,7 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
 
     @Override
     protected void setListeners() {
+        registerListener(ListenerController.ON_CLICK, mPriceParentLl, mController);
         registerListener(ListenerController.ON_CLICK, mTvSubtract, mController);
         registerListener(ListenerController.ON_CLICK, mTvAdd, mController);
         registerListener(ListenerController.ON_CLICK, mBtnBuyOrSell, mController);
@@ -539,6 +546,7 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
 
     @Override
     protected void initViews() {
+        mKeyboardManagerPrice = TradeTools.initKeyBoard(mActivity, mEdStockPrice, KeyboardManager.KEYBOARD_TYPE_DIGITAL, BaseKeyboard.THEME_LIGHT);
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdStockCode, KeyboardManager.KEYBOARD_TYPE_STOCK, new TradeTools.OnFocusChangeWithKeyboard() {
             @Override
             public void onFocusChange(boolean hasFocus) {
@@ -711,7 +719,11 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
         mLastInputStockCodeLength = 6;
     }
 
-
+    //现价涨幅带入价格
+    public void onClickNowPrice() {
+        mEdStockPrice.setText(mNowPriceTv.getText());
+        setEdtCursor(mEdStockPrice);
+    }
     /**
      * 当价格输入框的内容发生改变时，执行此方法
      */
@@ -860,6 +872,7 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
                 ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_price));
                 mEntrustNumEDKeyboardManager.dismiss();
                 mStockCodeEdKeyboardManager.dismiss();
+                mKeyboardManagerPrice.dismiss();
                 TradeUtils.showKeyBoard(mActivity, mEdStockPrice, true);
                 return;
             }
@@ -869,25 +882,26 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
             ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_select_bs));
             return;
         }
-        try{
-            double  entrustAmountDouble = Double.parseDouble(entrustAmount);
-            double entrustMaxAmountDouble = Double.parseDouble(mStockLinkageBean.getStock_max_amount());
-            if (entrustAmountDouble % mStoreUnit != 0 && entrustAmountDouble != entrustMaxAmountDouble) {
-                ToastUtils.toast(mActivity,String.format( mResources.getString(R.string.trade_toast_input_sale_amount_error),mStoreUnit));
-                TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
-                return;
-            }
-        }catch (NullPointerException e){
-            e.printStackTrace();
-        }catch (NumberFormatException e){
-            e.printStackTrace();
-        }
+//        try{
+//            double  entrustAmountDouble = Double.parseDouble(entrustAmount);
+//            double entrustMaxAmountDouble = Double.parseDouble(mStockLinkageBean.getStock_max_amount());
+//            if (entrustAmountDouble % mStoreUnit != 0 && entrustAmountDouble>= mStoreUnit) {
+//                ToastUtils.toast(mActivity,mResources.getString(R.string.trade_toast_input_sale_amount_error,mStoreUnit));
+//                TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
+//                return;
+//            }
+//        }catch (NullPointerException e){
+//            e.printStackTrace();
+//        }catch (NumberFormatException e){
+//            e.printStackTrace();
+//        }
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
+        mKeyboardManagerPrice.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
-        RSaleStockToMoneyDialog dialog = new RSaleStockToMoneyDialog(mActivity, mService);
-        dialog.setDataToViews(mStockLinkageBean.getStock_name(),
-                mStockLinkageBean.getStock_code(), getEntrustPrice(), getEntrustAmount());
+        boolean showWarning = Integer.parseInt(getEntrustAmount()) > Integer.parseInt(mMaxStockNumTv.getText().toString());
+        RSaleStockToMoneyDialog dialog = new RSaleStockToMoneyDialog(mActivity, mService,showWarning);
+        dialog.setDataToViews(mStockLinkageBean, getEntrustPrice(), getEntrustAmount());
         dialog.setEntrustBs(mEntrustBs,limitOrMarketPriceFlag,entrustBsXjNum);
         dialog.show();
     }
@@ -1020,6 +1034,8 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
      * 清空界面上的所有数字
      */
     public void clearDataInViews() {
+        mTvAdd.setText("0.01");
+        mTvSubtract.setText("0.01");
         // 空字符串常量
         final String blankStr = "";
         // 清除股票代码输入框上的数据
@@ -1029,6 +1045,7 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
         clearDataInViewsExpectStockCodeEd();
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
+        mKeyboardManagerPrice.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
         hideRealNumLayout();
     }
@@ -1037,6 +1054,8 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
      * 清除除了股票代码输入框外的其他布局控件上的数据
      */
     public void clearDataInViewsExpectStockCodeEd() {
+        mTvAdd.setText("0.01");
+        mTvSubtract.setText("0.01");
         final String blankStr = "";
         mTvUpLimit.setText(blankStr);
         mTvDownLimit.setText(blankStr);
@@ -1096,10 +1115,10 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
                 if (buyFloat > 0) {
                     mLastEntrustPrice = buyOne;
                 } else if (buyFloat <= 0) {
-                    mLastEntrustPrice = mNowPrice;
+                    mLastEntrustPrice = "";
                 }
             } else {
-                mLastEntrustPrice = mNowPrice;
+                mLastEntrustPrice = "";
             }
             mEdStockPrice.setText(mLastEntrustPrice);
             setEdtCursor(mEdStockPrice);

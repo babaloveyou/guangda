@@ -23,8 +23,6 @@ public class BalanceDebtsFragment extends AbsNavbarFragment {
     private TextView mTv1;
     private TextView mTv2;
     private TextView mTv3;
-    private TextView mTv4;
-    private TextView mTv5;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,8 +38,6 @@ public class BalanceDebtsFragment extends AbsNavbarFragment {
         mTv1 = (TextView) view.findViewById(R.id.tv1);
         mTv2 = (TextView) view.findViewById(R.id.tv2);
         mTv3 = (TextView) view.findViewById(R.id.tv3);
-        mTv4 = (TextView) view.findViewById(R.id.tv4);
-        mTv5 = (TextView) view.findViewById(R.id.tv5);
     }
 
     @Override
@@ -59,10 +55,8 @@ public class BalanceDebtsFragment extends AbsNavbarFragment {
     protected void initViews() {
         setTheme();
         mTv1.setText(mBean.getTotal_debit());
-        mTv2.setText(mBean.getFin_debit());
-        mTv3.setText(mBean.getSlo_debit());
-//        mTv4.setText(bean.get);
-        mTv5.setText(mBean.getFin_enable_balance());
+        mTv2.setText(mBean.getPer_assurescale_value()+"%");
+        mTv3.setText(mBean.getFin_enable_balance());
     }
 
     @Override

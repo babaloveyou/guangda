@@ -30,6 +30,7 @@ import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.compatible.ListenerController;
+import com.android.thinkive.framework.keyboard.BaseKeyboard;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectObjectSecurityActivity;
@@ -328,6 +329,9 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
     * */
     private int mStoreUnit = 100;
     private Bundle mBundle;
+    private LinearLayout mPriceParentLl;
+    private KeyboardManager mKeyboardManagerPrice;
+
     public RCollaterBuyOrSellFragment() {
 
     }
@@ -367,10 +371,12 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
         super.closeFrameworkKeyBroad();
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
+        mKeyboardManagerPrice.dismiss();
     }
 
     @Override
     protected void findViews(View view) {
+        mPriceParentLl = (LinearLayout) view.findViewById(R.id.ll_now_price);
         mStockUnitTv = (TextView) view.findViewById(R.id.tv_stock_unit);
         mEdStockCode = (ClearEditText) view.findViewById(R.id.edt_stock_code);
         mTvStockUnit = (TextView) view.findViewById(R.id.tv_stock_unit);
@@ -446,6 +452,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
 
     @Override
     protected void setListeners() {
+        registerListener(ListenerController.ON_CLICK, mPriceParentLl, mController);
         registerListener(ListenerController.ON_CLICK, mTvSubtract, mController);
         registerListener(ListenerController.ON_CLICK, mTvAdd, mController);
         registerListener(ListenerController.ON_CLICK, mBtnBuyOrSell, mController);
@@ -593,6 +600,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
             mQuarterNumTv.setTextColor(mResources.getColor(R.color.trade_sale));
             mShowContent.setText("卖担保品");
         }
+        mKeyboardManagerPrice = TradeTools.initKeyBoard(mActivity, mEdStockPrice, KeyboardManager.KEYBOARD_TYPE_DIGITAL, BaseKeyboard.THEME_LIGHT);
         mStockCodeEdKeyboardManager = TradeTools.initKeyBoard(mActivity, mEdStockCode, KeyboardManager.KEYBOARD_TYPE_STOCK, new TradeTools.OnFocusChangeWithKeyboard() {
             @Override
             public void onFocusChange(boolean hasFocus) {
@@ -643,7 +651,11 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
         mFontManager.setTextFont(mAmountSale2, FontManager.FONT_DINPRO_MEDIUM);
         mFontManager.setTextFont(mAmountSale1, FontManager.FONT_DINPRO_MEDIUM);
     }
-
+    //现价涨幅带入价格
+    public void onClickNowPrice() {
+        mEdStockPrice.setText(mNowPriceTv.getText());
+        setEdtCursor(mEdStockPrice);
+    }
 
     /**
      * 为弹出窗口实现监听类
@@ -900,32 +912,34 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
                     ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_price));
                     this.mEntrustNumEDKeyboardManager.dismiss();
                     this.mStockCodeEdKeyboardManager.dismiss();
+                    mKeyboardManagerPrice.dismiss();
                     TradeUtils.showKeyBoard(this.mActivity, this.mEdStockPrice, true);
                 } else if ("1".equals(this.limitOrMarketPriceFlag) && TextUtils.isEmpty(this.entrustBsXjNum)) {
                     ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_select_bs));
                 } else {
-                    try {
-                        double dialog = Double.parseDouble(entrustAmount);
-                        double entrustMaxAmountDouble = Double.parseDouble(this.mStockLinkageBean.getStock_max_amount());
-                        if (this.mBuyOrSell == 0 && dialog % mStoreUnit != 0) {
-                            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_buy_amount_error));
-                            TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
-                            return;
-                        }
-
-                        if (this.mBuyOrSell == 1 && dialog % mStoreUnit != 0 && dialog != entrustMaxAmountDouble) {
-                            ToastUtils.toast(mActivity,String.format( mResources.getString(R.string.trade_toast_input_sale_amount_error),mStoreUnit));
-                            TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
-                            return;
-                        }
-                    } catch (NullPointerException var8) {
-                        var8.printStackTrace();
-                    } catch (NumberFormatException var9) {
-                        var9.printStackTrace();
-                    }
+//                    try {
+//                        double dialog = Double.parseDouble(entrustAmount);
+//                        double entrustMaxAmountDouble = Double.parseDouble(this.mStockLinkageBean.getStock_max_amount());
+//                        if (this.mBuyOrSell == 0 && dialog % mStoreUnit != 0) {
+//                            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_buy_amount_error,mStoreUnit));
+//                            TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
+//                            return;
+//                        }
+//
+//                        if (this.mBuyOrSell == 1 && dialog % mStoreUnit != 0 && dialog >= mStoreUnit) {
+//                            ToastUtils.toast(mActivity,mResources.getString(R.string.trade_toast_input_sale_amount_error,mStoreUnit));
+//                            TradeUtils.showKeyBoard(this.mActivity, this.mEdEntrustAmount, false);
+//                            return;
+//                        }
+//                    } catch (NullPointerException var8) {
+//                        var8.printStackTrace();
+//                    } catch (NumberFormatException var9) {
+//                        var9.printStackTrace();
+//                    }
 
                     this.mEntrustNumEDKeyboardManager.dismiss();
                     this.mStockCodeEdKeyboardManager.dismiss();
+                    mKeyboardManagerPrice.dismiss();
                     TradeUtils.hideSystemKeyBoard(this.mActivity);
                     RCollaterComfirmDialog dialog1 = new RCollaterComfirmDialog(this.mActivity, this.mBuyOrSell, this.mService);
                     dialog1.setDataToViews(this.mStockLinkageBean.getStock_name(), this.mStockLinkageBean.getStock_code(), this.getEntrustPrice(), this.getEntrustAmount());
@@ -1057,6 +1071,8 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
      * 请求行情接口发现股票停牌时
      */
     public void onGetSuspendStock(String stockName, String stockCode) {
+        mTvAdd.setText("0.01");
+        mTvSubtract.setText("0.01");
         clearDataInViewsExpectStockCodeEd();
         mEdStockCode.setText(stockCode + "(" + stockName + ")");
         mEdStockCode.setText(stockCode);
@@ -1075,6 +1091,7 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
         clearDataInViewsExpectStockCodeEd();
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
+        mKeyboardManagerPrice.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
         hideRealNumLayout();
     }
@@ -1083,6 +1100,8 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
      * 清除除了股票代码输入框外的其他布局控件上的数据
      */
     public void clearDataInViewsExpectStockCodeEd() {
+        mTvAdd.setText("0.01");
+        mTvSubtract.setText("0.01");
         final String blankStr = "";
         mTvUpLimit.setText(blankStr);
         mTvDownLimit.setText(blankStr);
@@ -1136,16 +1155,30 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
         setWuDangDataToViews(mAmountBuy5, valueList.get(19), priceColorList.get(19));
         //是否是自动刷新，如果是自动刷新，则不需要执行下面的逻辑
         if (isSetText) {
-            String buyOne = valueList.get(4);
-            if (buyOne != null && !TextUtils.isEmpty(buyOne)) {
-                float buyFloat = Float.parseFloat(buyOne);
-                if (buyFloat > 0) {
-                    mLastEntrustPrice = buyOne;
-                } else if (buyFloat <= 0) {
-                    mLastEntrustPrice = mNowPrice;
+            if (mBuyOrSell == 0) { // 如果是买入，设置卖1价格到股票价格数据框中
+                String buyOne = valueList.get(4);
+                if (buyOne != null && !TextUtils.isEmpty(buyOne)) {
+                    float buyFloat = Float.parseFloat(buyOne);
+                    if (buyFloat > 0) {
+                        mLastEntrustPrice = buyOne;
+                    } else if (buyFloat <= 0) {
+                        mLastEntrustPrice = "";
+                    }
+                } else {
+                    mLastEntrustPrice = "";
                 }
-            } else {
-                mLastEntrustPrice = mNowPrice;
+            } else if (mBuyOrSell == 1) { // 如果是卖出，设置买1价格到股票价格数据框中
+                String saleOne = valueList.get(10);
+                if (saleOne != null && !TextUtils.isEmpty(saleOne)) {
+                    float saleFloat = Float.parseFloat(saleOne);
+                    if (saleFloat > 0) {
+                        mLastEntrustPrice = saleOne;
+                    } else if (saleFloat <= 0) {
+                        mLastEntrustPrice = "";
+                    }
+                } else {
+                    mLastEntrustPrice = "";
+                }
             }
             mEdStockPrice.setText(mLastEntrustPrice);
             setEdtCursor(mEdStockPrice);

@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.android.thinkive.framework.CoreApplication;
 import com.android.thinkive.framework.compatible.ListenerController;
-import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.adapter.SearchStocksAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
@@ -32,7 +31,7 @@ import com.thinkive.android.trade_bz.a_trans.bean.TransStockLinkBean;
 import com.thinkive.android.trade_bz.a_trans.bll.TransLimitBuyOrSaleServiceImpl;
 import com.thinkive.android.trade_bz.a_trans.controll.TransLimitBuyOrSellViewController;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
-import com.thinkive.android.trade_bz.dialog.TransLimitBuyOrSaleDialog;
+import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
 import com.thinkive.android.trade_bz.others.tools.StockFuzzyQueryManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
@@ -586,9 +585,9 @@ public class TransLimitBuyOrSaleFragment extends AbsBaseFragment {
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
-        TransLimitBuyOrSaleDialog dialog = new TransLimitBuyOrSaleDialog(mActivity,mBuyOrSell,mService);
-        dialog.setDataToViews(mCodeTableBean.getName(),mCodeTableBean.getCode(), getEntrustPrice(), getEntrustAmount());
-        dialog.show();
+//        TransLimitBuyOrSaleDialog dialog = new TransLimitBuyOrSaleDialog(mActivity,mBuyOrSell,mService);
+//        dialog.setDataToViews(mCodeTableBean.getName(),mCodeTableBean.getCode(), getEntrustPrice(), getEntrustAmount());
+//        dialog.show();
     }
 
     /**

@@ -16,11 +16,23 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class RSelectPropertBean extends BaseBean implements Parcelable {
+
+
+
     /**
      * 币种类别
      */
     @JsonKey("money_type")
     private String money_type="";
+
+
+
+    /**
+     * 额度
+
+     */
+    @JsonKey("credit_up")
+    private String credit_up="";
     /**
      *币种类别名称
      */
@@ -177,7 +189,34 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
     @JsonKey("guaranteeout")
     private String guaranteeout ="";
     /**
-     *利息/费用
+     *融资保证金比例
+     */
+    @JsonKey("fin_ratio")
+    private String fin_ratio = "";
+    /**
+     *融券保证金比例
+     */
+    @JsonKey("slo_ratio")
+    private String slo_ratio = "";
+
+    public String getFin_ratio() {
+        return fin_ratio;
+    }
+
+    public void setFin_ratio(String fin_ratio) {
+        this.fin_ratio = fin_ratio;
+    }
+
+    public String getSlo_ratio() {
+        return slo_ratio;
+    }
+
+    public void setSlo_ratio(String slo_ratio) {
+        this.slo_ratio = slo_ratio;
+    }
+
+    /**
+     * 利息/费用
      */
     @JsonKey("sum_compact_interest")
     private String sum_compact_interest = "";
@@ -444,6 +483,14 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
     public void setSum_compact_interest(String sum_compact_interest) {
         this.sum_compact_interest = sum_compact_interest;
     }
+    public String getCredit_up() {
+        return credit_up;
+    }
+
+    public void setCredit_up(String credit_up) {
+        this.credit_up = credit_up;
+    }
+
 
     @Override
     public int describeContents() {
@@ -454,6 +501,7 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
         dest.writeString(this.money_type);
+        dest.writeString(this.credit_up);
         dest.writeString(this.money_type_name);
         dest.writeString(this.current_balance);
         dest.writeString(this.enable_balance);
@@ -485,11 +533,14 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
         dest.writeString(this.dcreditavl);
         dest.writeString(this.fundavl);
         dest.writeString(this.guaranteeout);
+        dest.writeString(this.fin_ratio);
+        dest.writeString(this.slo_ratio);
         dest.writeString(this.sum_compact_interest);
     }
 
     protected RSelectPropertBean(Parcel in) {
         this.money_type = in.readString();
+        this.credit_up = in.readString();
         this.money_type_name = in.readString();
         this.current_balance = in.readString();
         this.enable_balance = in.readString();
@@ -521,6 +572,8 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
         this.dcreditavl = in.readString();
         this.fundavl = in.readString();
         this.guaranteeout = in.readString();
+        this.fin_ratio = in.readString();
+        this.slo_ratio = in.readString();
         this.sum_compact_interest = in.readString();
     }
 

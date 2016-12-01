@@ -239,7 +239,7 @@
                     android:drawablePadding="-30dp"
                     android:gravity="center"
                     android:paddingLeft="30dp"
-                    android:text="@string/listview_expand_hq"
+                    android:text="@string/listview_expand_xq"
                     android:textColor="@color/white"/>
             </FrameLayout>
 

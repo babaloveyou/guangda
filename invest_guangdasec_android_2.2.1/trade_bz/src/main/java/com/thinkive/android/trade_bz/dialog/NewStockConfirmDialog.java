@@ -55,8 +55,8 @@ public class NewStockConfirmDialog extends AbsTradeDialog {
         super.initDialogLayout();
         setTitleText(R.string.dialog_entrust_buy);
         View view = LayoutInflater.from(mContext).inflate(R.layout.dialog_trade_comfirm, null);
-        TextView entrust = (TextView) view.findViewById(R.id.tv_pop_buy);
-        entrust.setText(mContext.getResources().getString(R.string.home_new_stock));
+//        TextView entrust = (TextView) view.findViewById(R.id.tv_pop_buy);
+//        entrust.setText(mContext.getResources().getString(R.string.home_new_stock));
         // 显示股票名称
         stockNameTextView = (TextView)view.findViewById(R.id.tv_pop_name);
         // 显示股票代码

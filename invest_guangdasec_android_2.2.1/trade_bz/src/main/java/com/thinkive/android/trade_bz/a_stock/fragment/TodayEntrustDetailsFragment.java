@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.bean.RevocationBean;
-import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 
 /**
@@ -66,11 +65,11 @@ public class TodayEntrustDetailsFragment extends Fragment {
         //        mTv1.setText(b.get);
         mTv2.setText(b.getEntrust_time());
         mTv3.setText(b.getBusiness_price());
-        mTv4.setText(b.getBusiness_amount().equals(b.getEntrust_amount()) ? "全部成交" : "部分成交");
-        mTv5.setText(TradeLoginManager.sNormalUserInfo.getFund_account());
+//        mTv4.setText(b.getBusiness_amount().equals(b.getEntrust_amount()) ? "全部成交" : "部分成交");
+//        mTv5.setText(b.getStock_account());
         //        mTv6.setText(b.getStock_account());
         mTv7.setText(b.getStock_account());
-        mTv8.setText(b.getReport_no());
+        mTv8.setText(b.getEntrust_no());
         //        mTv9.setText(get);
         //        mTv10.setText();
         mTv11.setText("0".equals(b.getEntrust_bs()) ? "买入" : "卖出");

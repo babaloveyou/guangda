@@ -33,24 +33,20 @@ public class BottomTodayEntrustAdapter extends AbsBaseAdapter<RevocationBean> {
         TextView titleStatus = (TextView) holder.getComponentById(R.id.tv_title_status);
         String entrust_bs = bean.getEntrust_bs();
         String entrust_limit = bean.getEntrust_limit();
-        titleStatus.setText(("0".equals(entrust_limit)?"限价":"市价")+("0".equals(entrust_bs)?"买入":"卖出"));
+        titleStatus.setText(("0".equals(entrust_limit) ? "限价" : "市价") + ("0".equals(entrust_bs) ? "买入" : "卖出"));
 
         String entrust_amount = bean.getEntrust_amount();//委托数量
         String business_amount = bean.getBusiness_amount();//成交数目
         TextView statusTv = (TextView) holder.getComponentById(R.id.tv_turn_status);
-        if (entrust_amount == business_amount) {
-            statusTv.setText("全部成交");
-        } else {
-            statusTv.setText("部分成交");
-        }
+        statusTv.setText(bean.getEntrust_state_name());
         TextView timeTv = (TextView) holder.getComponentById(R.id.tv_time);
-        timeTv.setText( bean.getEntrust_time());
+        timeTv.setText(bean.getEntrust_time());
 
         TextView entrustInfoTv = (TextView) holder.getComponentById(R.id.tv_entrust_info);
-        entrustInfoTv.setText(bean.getEntrust_price() + "/" + bean.getEntrust_amount() );
+        entrustInfoTv.setText(bean.getEntrust_price() + "/" + bean.getEntrust_amount());
 
         TextView turnoverInfoTv = (TextView) holder.getComponentById(R.id.tv_trunover_info);
-        turnoverInfoTv.setText(bean.getBusiness_price() + "/" + bean.getBusiness_amount() );
+        turnoverInfoTv.setText(bean.getBusiness_price() + "/" + bean.getBusiness_amount());
 
     }
 }

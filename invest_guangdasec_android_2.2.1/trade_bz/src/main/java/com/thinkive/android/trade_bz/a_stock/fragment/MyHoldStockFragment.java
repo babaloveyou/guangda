@@ -1,6 +1,7 @@
 package com.thinkive.android.trade_bz.a_stock.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,6 +20,7 @@ import com.android.thinkive.framework.message.ICallBack;
 import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.util.JsonParseUtil;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.activity.MyHoldStockDetailsActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.BasePagerAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.MyStoreListViewAdapter;
@@ -237,6 +239,8 @@ public class MyHoldStockFragment extends AbsBaseFragment {
 
     @Override
     protected void initData() {
+        //设置当前可见item个数和 expandview高度    当点击listview最后一个可见item时会顶上去
+        mListView.setScrollParam(3, 100);
         mActivity = (MultiTradeActivity) getActivity();
         mServiceImpl = new MyHoldStockServiceImpl(this);
         mController = new MyHoldStockViewController(this);
@@ -373,7 +377,20 @@ public class MyHoldStockFragment extends AbsBaseFragment {
         // 通知activity做相应跳转和通知买卖Fragment操作
         mActivity.transferFragmentToBuySaleFromOthers(stockCode, 0);
     }
+    public void onClickHoldListviewExpandDetails(int position) {
+        if (TradeUtils.isFastClick()) {
+            return;
+        }
+        MyStoreStockBean bean = mAdapter.getItem(position);
+        // 通知activity做相应跳转和通知买卖Fragment操作
+        Intent intent = new Intent(getActivity(), MyHoldStockDetailsActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("bean",bean);
+        intent.putExtras(bundle);
+        startActivity(intent);
 
+
+    }
     /**
      * 持仓列表展开界面中的“卖出”按钮的点击事件
      * 点击此按钮时，进入卖出模块，并显示被点击的股票联动数据
@@ -389,28 +406,28 @@ public class MyHoldStockFragment extends AbsBaseFragment {
         mActivity.transferFragmentToBuySaleFromOthers(stockCode,  1);
     }
 
-    /**
-     * 持仓列表展开界面中的“行情”按钮的点击事件
-     * 点击后，进入行情模块中的个股详情页面，但是返回后，还是本Fragment的界面
-     */
-    public void onClickHoldListviewExpandHq(int position) {
-        if (TradeUtils.isFastClick()) {
-            return;
-        }
-        // 获取被点击的是哪支股票，并获取其股票代码
-        String stockCode = mAdapter.getItem(position).getStock_code();
-        // 给行情发消息，通过股票代码查询这支股票的其他信息，
-        // 行情的个股详情页面需要提供“股票名称”、“市场”、“股票代码”、“股票类型”四个参数。
-        sendMsgToHqForStockList(stockCode, new IHqCallBackStock() {
-            @Override
-            public void onGetStockMsg(ArrayList<CodeTableBean> dataList) {
-                if (dataList != null && dataList.size() > 0) {
-                    CodeTableBean codeTableBean = dataList.get(0);
-                    TradeUtils.startPriceDetailStock(mActivity, codeTableBean);
-                }
-            }
-        });
-    }
+//    /**
+//     * 持仓列表展开界面中的“行情”按钮的点击事件
+//     * 点击后，进入行情模块中的个股详情页面，但是返回后，还是本Fragment的界面
+//     */
+//    public void onClickHoldListviewExpandHq(int position) {
+//        if (TradeUtils.isFastClick()) {
+//            return;
+//        }
+//        // 获取被点击的是哪支股票，并获取其股票代码
+//        String stockCode = mAdapter.getItem(position).getStock_code();
+//        // 给行情发消息，通过股票代码查询这支股票的其他信息，
+//        // 行情的个股详情页面需要提供“股票名称”、“市场”、“股票代码”、“股票类型”四个参数。
+//        sendMsgToHqForStockList(stockCode, new IHqCallBackStock() {
+//            @Override
+//            public void onGetStockMsg(ArrayList<CodeTableBean> dataList) {
+//                if (dataList != null && dataList.size() > 0) {
+//                    CodeTableBean codeTableBean = dataList.get(0);
+//                    TradeUtils.startPriceDetailStock(mActivity, codeTableBean);
+//                }
+//            }
+//        });
+//    }
 
     /**
      * 给行情模块发送消息，让行情模块给本类返回股票搜索提示列表
@@ -451,6 +468,8 @@ public class MyHoldStockFragment extends AbsBaseFragment {
             je.printStackTrace();
         }
     }
+
+
 
     interface IHqCallBackStock {
         void onGetStockMsg(ArrayList<CodeTableBean> dataList);

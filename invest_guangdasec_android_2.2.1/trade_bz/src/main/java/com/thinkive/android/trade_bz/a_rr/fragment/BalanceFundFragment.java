@@ -63,7 +63,7 @@ public class BalanceFundFragment extends AbsNavbarFragment{
     protected void initViews() {
         mTv1.setText(mBean.getAssert_val());
         mTv2.setText(mBean.getNet_asset());
-        mTv3.setText(mBean.getPer_assurescale_value());
+        mTv3.setText(mBean.getPer_assurescale_value()+"%");
         mTv4.setText(mBean.getMarket_value());
         mTv5.setText(mBean.getEnable_bail_balance());
         mTv6.setText(mBean.getCurrent_balance());

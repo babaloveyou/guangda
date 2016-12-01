@@ -13,7 +13,7 @@ import com.jzxiang.pickerview.data.Type;
 import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.activity.HistoryMoneyActivity;
-import com.thinkive.android.trade_bz.a_stock.adapter.TodayMoneyAdapter;
+import com.thinkive.android.trade_bz.a_stock.adapter.HistoryMoneyAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.StatementAccountBean;
 import com.thinkive.android.trade_bz.a_stock.bll.HistoryMoneyServiceImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
@@ -38,7 +38,7 @@ public class HistoryMoneyFragment extends AbsBaseFragment implements OnDateSetLi
     /**
      * 资金流水数据适配器
      */
-    private TodayMoneyAdapter mTodayMoneyAdapter;
+    private HistoryMoneyAdapter mTodayMoneyAdapter;
     /**
      * 资金流水Fragment的宿主
      */
@@ -135,7 +135,7 @@ public class HistoryMoneyFragment extends AbsBaseFragment implements OnDateSetLi
     @Override
     protected void initData() {
         mTodayMoneyActivity = (HistoryMoneyActivity) getActivity();
-        mTodayMoneyAdapter = new TodayMoneyAdapter(mTodayMoneyActivity);
+        mTodayMoneyAdapter = new HistoryMoneyAdapter(mTodayMoneyActivity);
         mServices = new HistoryMoneyServiceImpl(this);
         mController = new TodayMoneyViewController(this);
         mDialogYearMonthDay = new TimePickerDialog.Builder()

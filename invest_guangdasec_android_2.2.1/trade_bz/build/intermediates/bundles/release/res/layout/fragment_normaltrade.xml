@@ -84,18 +84,6 @@
 
             <include layout="@layout/include_devider_view"/>
 
-            <RelativeLayout
-                android:id="@+id/rl_change_fundpwd"
-                style="@style/style_rl_click_expandable"
-                >
-
-                <TextView
-                    style="@style/style_tv_left"
-                    android:text="修改资金密码"/>
-
-                <ImageView
-                    style="@style/style_iv_right"/>
-            </RelativeLayout>
         </LinearLayout>
 
         <RelativeLayout

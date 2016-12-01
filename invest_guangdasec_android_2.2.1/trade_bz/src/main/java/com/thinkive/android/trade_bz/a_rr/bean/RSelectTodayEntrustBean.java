@@ -1,5 +1,7 @@
 package com.thinkive.android.trade_bz.a_rr.bean;
 
+import android.os.Parcel;
+
 import com.thinkive.android.trade_bz.a_stock.bean.BaseBean;
 import com.thinkive.android.trade_bz.others.JsonKey;
 
@@ -12,6 +14,14 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class RSelectTodayEntrustBean extends BaseBean {
+
+
+    /**
+     * 资金账号
+     */
+    @JsonKey("fund_account")
+
+    private String fund_account = "";
     /**
      * 委托标志
      */
@@ -203,7 +213,13 @@ public class RSelectTodayEntrustBean extends BaseBean {
     public RSelectTodayEntrustBean() {
 
     }
+    public String getFund_account() {
+        return fund_account;
+    }
 
+    public void setFund_account(String fund_account) {
+        this.fund_account = fund_account;
+    }
     public String getEntrust_bs() {
         return entrust_bs;
     }
@@ -403,4 +419,91 @@ public class RSelectTodayEntrustBean extends BaseBean {
     public void setOrderfrzamt(String orderfrzamt) {
         this.orderfrzamt = orderfrzamt;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_bs);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.entrust_type);
+        dest.writeString(this.entrust_type_name);
+        dest.writeString(this.entrust_state);
+        dest.writeString(this.entrust_state_name);
+        dest.writeString(this.exchange_type);
+        dest.writeString(this.exchange_type_name);
+        dest.writeString(this.stock_account);
+        dest.writeString(this.entrust_date);
+        dest.writeString(this.entrust_time);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.report_no);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.entrust_price);
+        dest.writeString(this.entrust_amount);
+        dest.writeString(this.business_price);
+        dest.writeString(this.business_amount);
+        dest.writeString(this.business_balance);
+        dest.writeString(this.cancel_amount);
+        dest.writeString(this.trade_name);
+        dest.writeString(this.compact_id);
+        dest.writeString(this.cancel_flag);
+        dest.writeString(this.orderfrzamt);
+        dest.writeString(this.buy_amount);
+        dest.writeString(this.available_amount);
+        dest.writeString(this.sell_amount);
+        dest.writeString(this.ztrade_flage);
+        dest.writeString(this.cc_amount);
+        dest.writeString(this.ztrade_amount);
+    }
+
+    protected RSelectTodayEntrustBean(Parcel in) {
+        this.entrust_bs = in.readString();
+        this.entrust_name = in.readString();
+        this.entrust_type = in.readString();
+        this.entrust_type_name = in.readString();
+        this.entrust_state = in.readString();
+        this.entrust_state_name = in.readString();
+        this.exchange_type = in.readString();
+        this.exchange_type_name = in.readString();
+        this.stock_account = in.readString();
+        this.entrust_date = in.readString();
+        this.entrust_time = in.readString();
+        this.stock_code = in.readString();
+        this.stock_name = in.readString();
+        this.report_no = in.readString();
+        this.entrust_no = in.readString();
+        this.entrust_price = in.readString();
+        this.entrust_amount = in.readString();
+        this.business_price = in.readString();
+        this.business_amount = in.readString();
+        this.business_balance = in.readString();
+        this.cancel_amount = in.readString();
+        this.trade_name = in.readString();
+        this.compact_id = in.readString();
+        this.cancel_flag = in.readString();
+        this.orderfrzamt = in.readString();
+        this.buy_amount = in.readString();
+        this.available_amount = in.readString();
+        this.sell_amount = in.readString();
+        this.ztrade_flage = in.readString();
+        this.cc_amount = in.readString();
+        this.ztrade_amount = in.readString();
+    }
+
+    public static final Creator<RSelectTodayEntrustBean> CREATOR = new Creator<RSelectTodayEntrustBean>() {
+        @Override
+        public RSelectTodayEntrustBean createFromParcel(Parcel source) {
+            return new RSelectTodayEntrustBean(source);
+        }
+
+        @Override
+        public RSelectTodayEntrustBean[] newArray(int size) {
+            return new RSelectTodayEntrustBean[size];
+        }
+    };
 }

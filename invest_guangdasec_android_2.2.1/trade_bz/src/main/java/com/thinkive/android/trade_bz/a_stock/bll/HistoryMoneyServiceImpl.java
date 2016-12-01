@@ -24,9 +24,6 @@ public class HistoryMoneyServiceImpl {
     }
 
 
-    /**
-     * 请求服务器，获取当日资金流水数据
-     */
     public void requestHistoryMoney(String begin, String end) {
         HashMap<String, String> map301520 = new HashMap<String, String>();
         map301520.put("begin_time", begin);

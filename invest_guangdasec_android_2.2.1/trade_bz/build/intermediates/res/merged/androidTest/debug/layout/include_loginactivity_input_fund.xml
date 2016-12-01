@@ -12,10 +12,11 @@
             style="@style/tv_normal_show"/>
 
         <EditText
-            android:maxLength="12"
-            android:inputType="number"
+            android:maxLength="8"
+            android:inputType=""
             android:hint="请输入资金账号"
             android:id="@+id/tv_username"
+            android:digits="@string/change_pwd_regex"
             style="@style/style_login_et"/>
     </LinearLayout>
 
@@ -28,8 +29,9 @@
             style="@style/tv_normal_show"/>
 
         <EditText
-            android:maxLength="12"
+            android:maxLength="6"
             android:inputType="textPassword"
+            android:digits="0123456789"
             android:hint="请输入交易密码"
             android:id="@+id/et_password"
             style="@style/style_login_et"/>
@@ -44,8 +46,9 @@
             style="@style/tv_normal_show"/>
 
         <EditText
+            android:digits="@string/change_pwd_regex"
             android:inputType="number"
-            android:maxLength="6"
+            android:maxLength="4"
             android:hint="请输入右侧验证码"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -59,7 +62,7 @@
                 android:id="@+id/iv_show_security_code"
                 android:layout_marginRight="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:visibility="gone"/>
             <ProgressBar

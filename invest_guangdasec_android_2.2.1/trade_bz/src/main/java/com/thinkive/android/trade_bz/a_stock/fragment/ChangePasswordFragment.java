@@ -2,24 +2,26 @@ package com.thinkive.android.trade_bz.a_stock.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.android.thinkive.framework.compatible.ListenerControllerAdapter;
 import com.android.thinkive.framework.keyboard.BaseKeyboard;
-import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_stock.activity.ChangePasswordActivity;
 import com.thinkive.android.trade_bz.a_stock.bll.ChangePassWordServicesImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
+import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.receivers.TradeBaseBroadcastReceiver;
-import com.thinkive.android.trade_bz.a_stock.activity.ChangePasswordActivity;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ClearEditText;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -44,15 +46,15 @@ public class ChangePasswordFragment extends AbsBaseFragment {
     /**
      * 原密码
      */
-    private EditText mEdtOldPwd;
+    private ClearEditText mEdtOldPwd;
     /**
      * 新密码
      */
-    private EditText mEdtNewPwd;
+    private ClearEditText mEdtNewPwd;
     /**
      * 确认新密码
      */
-    private EditText mEdtSureNewPwd;
+    private ClearEditText mEdtSureNewPwd;
     /**
      * 确认按钮
      */
@@ -95,15 +97,51 @@ public class ChangePasswordFragment extends AbsBaseFragment {
 
     @Override
     protected void findViews(View view) {
-        mEdtOldPwd = (EditText) view.findViewById(R.id.edt_pwd_old);
-        mEdtNewPwd = (EditText) view.findViewById(R.id.edt_pwd_new);
-        mEdtSureNewPwd = (EditText) view.findViewById(R.id.edt_pwd_sure);
+        mEdtOldPwd = (ClearEditText) view.findViewById(R.id.edt_pwd_old);
+        mEdtNewPwd = (ClearEditText) view.findViewById(R.id.edt_pwd_new);
+        mEdtSureNewPwd = (ClearEditText) view.findViewById(R.id.edt_pwd_sure);
         mBtnClickSure = (Button) view.findViewById(R.id.btn_pwd_click);
     }
 
     @Override
     protected void setListeners() {
         registerListener(ListenerControllerAdapter.ON_CLICK, mBtnClickSure, mController);
+        mEdtOldPwd.addTextChangedListener(new TextListener() {
+            @Override
+            void onTextChange() {
+                if (!TextUtils.isEmpty(mEdtOldPwd.getText()) ) {
+                    mEdtOldPwd.setClearIconVisible(true);
+                    mEdtOldPwd.invalidate();
+                } else {
+                    mEdtOldPwd.setClearIconVisible(false);
+                    mEdtOldPwd.invalidate();
+                }
+            }
+        });
+        mEdtNewPwd.addTextChangedListener(new TextListener() {
+            @Override
+            void onTextChange() {
+                if (!TextUtils.isEmpty(mEdtNewPwd.getText()) ) {
+                    mEdtNewPwd.setClearIconVisible(true);
+                    mEdtNewPwd.invalidate();
+                } else {
+                    mEdtNewPwd.setClearIconVisible(false);
+                    mEdtNewPwd.invalidate();
+                }
+            }
+        });
+        mEdtSureNewPwd.addTextChangedListener(new TextListener() {
+            @Override
+            void onTextChange() {
+                if (!TextUtils.isEmpty(mEdtSureNewPwd.getText()) ) {
+                    mEdtSureNewPwd.setClearIconVisible(true);
+                    mEdtSureNewPwd.invalidate();
+                } else {
+                    mEdtSureNewPwd.setClearIconVisible(false);
+                    mEdtSureNewPwd.invalidate();
+                }
+            }
+        });
     }
 
     @Override
@@ -145,20 +183,16 @@ public class ChangePasswordFragment extends AbsBaseFragment {
             ToastUtils.toast(mActivity,this.getString(R.string.change_pwd_new_hint));
             return;
         }
+        if(TextUtils.isEmpty(surePwd)){ //确认密码不能为空
+            ToastUtils.toast(mActivity,this.getString(R.string.change_pwd_sure_hint));
+            return;
+        }
         if(!newPwd.equals(surePwd)){ // 新密码与确认密码不一致
             ToastUtils.toast(mActivity, this.getString(R.string.change_pwd_error));
             return;
         }
-        if(newPwd.equals(oldPwd)){ //新密码不能等于旧密码
+        if(newPwd.equals(oldPwd)){ //新密码和原密码不能相同
             ToastUtils.toast(mActivity, this.getString(R.string.change_pwd_error2));
-            return;
-        }
-        if(test1(newPwd)){ //新密码不能为递增或递减数字组合
-            ToastUtils.toast(mActivity, this.getString(R.string.change_pwd_error4));
-            return;
-        }
-        if(test2(newPwd)){ // 新密码重复数字超过3位
-            ToastUtils.toast(mActivity, this.getString(R.string.change_pwd_error3));
             return;
         }
         mServices.requestChangePwd(oldPwd,newPwd);
@@ -241,6 +275,23 @@ public class ChangePasswordFragment extends AbsBaseFragment {
     }
 }
 
+abstract class TextListener implements TextWatcher {
+    abstract void onTextChange();
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+    }
+}
 /**
  * ChangePasswordFragment的控制类
  */

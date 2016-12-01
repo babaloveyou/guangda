@@ -123,6 +123,8 @@ public class FundLoginFragment extends AbsBaseFragment {
     private String mSaveAccount = "";
     private String mLoginType;
     private String mToH5Page;
+    private KeyboardManager mKeyboardManagerPassWord;
+    private KeyboardManager mKeyboardManagerVeri;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -183,6 +185,15 @@ public class FundLoginFragment extends AbsBaseFragment {
         if (mKeyboardManager != null && mKeyboardManager.isShowing()) {
             mKeyboardManager.dismiss();
         }
+        if (mKeyboardManagerPassWord != null && mKeyboardManagerPassWord.isShowing()) {
+            mKeyboardManagerPassWord.dismiss();
+        }
+        if (mKeyboardManagerVeri != null && mKeyboardManagerVeri.isShowing()) {
+            mKeyboardManagerVeri.dismiss();
+        }
+
+
+
     }
 
     @Override
@@ -236,8 +247,9 @@ public class FundLoginFragment extends AbsBaseFragment {
         mController = new TradeLoginViewController(mActivity, TradeLoginManager.LOGIN_TYPE_NORMAL);
         mService = new TradeLoginServiceImpl(this, getArguments().getString(Constants.LOGIN_TYPE));
         mAccTypeTexts = new ArrayList<>();
-        mKeyboardManager = TradeTools.initKeyBoard(mActivity, mInputPasswordEdt,
-                KeyboardManager.KEYBOARD_TYPE_RANDOM_DIGITAL, BaseKeyboard.THEME_LIGHT);
+        mKeyboardManager = TradeTools.initKeyBoard(mActivity, mInputPasswordEdt, KeyboardManager.KEYBOARD_TYPE_RANDOM_DIGITAL, BaseKeyboard.THEME_LIGHT);
+        mKeyboardManagerPassWord = TradeTools.initKeyBoard(mActivity, mInputAccountEdt, KeyboardManager.KEYBOARD_TYPE_DIGITAL, BaseKeyboard.THEME_LIGHT);
+        mKeyboardManagerVeri = TradeTools.initKeyBoard(mActivity, mInputVerifyCodeEdt, KeyboardManager.KEYBOARD_TYPE_COMMON, BaseKeyboard.THEME_LIGHT);
     }
 
     @Override
@@ -453,7 +465,7 @@ public class FundLoginFragment extends AbsBaseFragment {
                 //信用登录会话
                 String url2 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sCreditUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sCreditUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sCreditUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sCreditUserInfo.getOp_station();
                 String cookie2 = NetWorkService.getInstance().getCookie(url2);
-                CommonUtil.syncWebviewCookies(getActivity(),ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"), cookie2);
+                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"), cookie2);
                 break;
             case TradeLoginManager.LOGIN_TYPE_OPTION:
                 TradeFlags.addFlag(TradeFlags.FLAG_OPTION_TRADE_YES);

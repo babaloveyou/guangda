@@ -151,7 +151,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     private ObjectAnimator mArrowCcwsAnimator;
     private RelativeLayout mChageTradePwdRl;//修改交易密码
     private RelativeLayout mBuyNewRl;//新股申购
-    private RelativeLayout mChangeFundPwdRl;//修改资金密码
     private TextView mLogOutTv;//底部注销按钮
     private float mDensity;//像素密度
     private int mHiddenViewMeasuredHeight;//点击更多拉出的父布局高度
@@ -258,7 +257,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
 
         mBuyNewRl = (RelativeLayout) view.findViewById(R.id.rl_new_buy);
         mChageTradePwdRl = (RelativeLayout) view.findViewById(R.id.rl_change_tradepwd);
-        mChangeFundPwdRl = (RelativeLayout) view.findViewById(R.id.rl_change_fundpwd);
         mLogOutTv = (TextView) view.findViewById(R.id.tv_exit_logout);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_parent);
 
@@ -273,7 +271,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         registerListener(ListenerController.ON_CLICK, mShowMoreRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mBuyNewRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mChageTradePwdRl, mHomeController);
-        registerListener(ListenerController.ON_CLICK, mChangeFundPwdRl, mHomeController);
 
         mLogOutTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -662,8 +659,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
             onClickNewStock();
         } else if (viewId == R.id.rl_change_tradepwd) {
             onClickModifiedTradePwd();
-        } else if (viewId == R.id.rl_change_fundpwd) {
-            ToastUtil.showToast("修改资金密码");
         } else if (viewId == R.id.tv_exit_logout) {
 
         }

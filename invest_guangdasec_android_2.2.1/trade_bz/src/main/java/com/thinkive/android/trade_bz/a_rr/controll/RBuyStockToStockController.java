@@ -80,6 +80,8 @@ public class RBuyStockToStockController extends AbsBaseController implements
             mFragment.setStockNumThird();
         }else if (resId == R.id.tv_quarter_num) {//1/4仓
             mFragment.setStockNumQuarter();
+        }else if (resId == R.id.ll_now_price) {//带入现价
+            mFragment.onClickNowPrice();
         }
     }
 

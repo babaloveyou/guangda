@@ -22,10 +22,6 @@ public class BalanceLimitFragment extends AbsNavbarFragment{
     private TextView mTv1;
     private TextView mTv2;
     private TextView mTv3;
-    private TextView mTv4;
-    private TextView mTv5;
-    private TextView mTv6;
-    private TextView mTv7;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -41,7 +37,6 @@ public class BalanceLimitFragment extends AbsNavbarFragment{
         mTv1 = (TextView) view.findViewById(R.id.tv1);
         mTv2 = (TextView) view.findViewById(R.id.tv2);
         mTv3 = (TextView) view.findViewById(R.id.tv3);
-        mTv4 = (TextView) view.findViewById(R.id.tv4);
     }
 
     @Override
@@ -57,10 +52,9 @@ public class BalanceLimitFragment extends AbsNavbarFragment{
 
     @Override
     protected void initViews() {
-//        mTv1.setText(bean.get);
-//        mTv2.setText(bean.get);
-//        mTv3.setText(bean.get);
-//        mTv4.setText(bean.get);
+        mTv1.setText(mBean.getCredit_up());
+        mTv2.setText(mBean.getFin_ratio());
+        mTv3.setText(mBean.getSlo_ratio());
         setTheme();
     }
 

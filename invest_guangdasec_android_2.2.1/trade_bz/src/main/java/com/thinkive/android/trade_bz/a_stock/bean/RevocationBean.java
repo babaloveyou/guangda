@@ -132,11 +132,16 @@ public class RevocationBean extends BaseBean implements Parcelable {
 //     */
 //    @JsonKey("entrust_bs")
 // private String cancel_flag="";
-    /**
-     * 新增字段
-     */
-    @JsonKey("entrust_type_name")
-    private String entrust_type_name="";
+
+    public String getEntrust_state_name() {
+        return entrust_state_name;
+    }
+
+    public void setEntrust_state_name(String entrust_state_name) {
+        this.entrust_state_name = entrust_state_name;
+    }
+
+
 
 
     public RevocationBean() {
@@ -174,13 +179,6 @@ public class RevocationBean extends BaseBean implements Parcelable {
 //        this.entrust_state = entrust_state;
 //    }
 
-    public String getEntrust_state_name() {
-        return entrust_state_name;
-    }
-
-    public void setEntrust_state_name(String entrust_state_name) {
-        this.entrust_state_name = entrust_state_name;
-    }
 
     public String getExchange_type() {
         return exchange_type;
@@ -294,29 +292,6 @@ public class RevocationBean extends BaseBean implements Parcelable {
         this.business_balance = business_balance;
     }
 
-    //    public String getCancel_amount() {
-//        return cancel_amount;
-//    }
-//
-//    public void setCancel_amount(String cancel_amount) {
-//        this.cancel_amount = cancel_amount;
-//    }
-//
-//    public String getCancel_flag() {
-//        return cancel_flag;
-//    }
-//
-//    public void setCancel_flag(String cancel_flag) {
-//        this.cancel_flag = cancel_flag;
-//    }
-
-    public String getEntrust_type_name() {
-        return entrust_type_name;
-    }
-
-    public void setEntrust_type_name(String entrust_type_name) {
-        this.entrust_type_name = entrust_type_name;
-    }
 
     @Override
     public int describeContents() {
@@ -345,7 +320,7 @@ public class RevocationBean extends BaseBean implements Parcelable {
         dest.writeString(this.business_price);
         dest.writeString(this.business_amount);
         dest.writeString(this.business_balance);
-        dest.writeString(this.entrust_type_name);
+        dest.writeString(this.entrust_state_name);
     }
 
     protected RevocationBean(Parcel in) {
@@ -368,7 +343,7 @@ public class RevocationBean extends BaseBean implements Parcelable {
         this.business_price = in.readString();
         this.business_amount = in.readString();
         this.business_balance = in.readString();
-        this.entrust_type_name = in.readString();
+        this.entrust_state_name = in.readString();
     }
 
     public static final Creator<RevocationBean> CREATOR = new Creator<RevocationBean>() {

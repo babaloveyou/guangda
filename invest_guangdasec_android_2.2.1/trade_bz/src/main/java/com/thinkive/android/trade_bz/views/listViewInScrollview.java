@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.widget.ScrollView;
+
 import com.thinkive.android.trade_bz.views.slideexpandlistview.ActionSlideExpandableListView;
 
 /**
@@ -14,6 +15,7 @@ import com.thinkive.android.trade_bz.views.slideexpandlistview.ActionSlideExpand
  * 默认Scrollview不会拦截listView的焦点，
  * 只有当listView滑动到底部或顶部将其监听拦截
  * 这个类还有点击展开功能
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 15/7/18
@@ -25,6 +27,10 @@ public class listViewInScrollview extends ActionSlideExpandableListView {
      * 父布局
      */
     ScrollView mParentScrollView;
+    private int scrollY = 0;
+    private int mVisibleCount=-1;
+
+
 
     /**
      * 获取父布局对象
@@ -42,6 +48,16 @@ public class listViewInScrollview extends ActionSlideExpandableListView {
      */
     public void setmParentScrollView(ScrollView mParentScrollView) {
         this.mParentScrollView = mParentScrollView;
+    }
+
+    /*
+    * 从adapter中传递下来的方法,点击可见的最后item时候要向上滑动
+    * */
+    public void updateLocation() {
+        if (mVisibleCount != -1) {
+            setSelection(getLastVisiblePosition() - mVisibleCount+1);
+        }
+        scrollTo(0,scrollY);
     }
 
     private int maxHeight;
@@ -129,32 +145,9 @@ public class listViewInScrollview extends ActionSlideExpandableListView {
             mParentScrollView.requestDisallowInterceptTouchEvent(mDisallow);
         return super.dispatchTouchEvent(ev);
     }
-}
 
-//    @Override
-//    public boolean onInterceptTouchEvent(MotionEvent ev) {
-//
-//        switch (ev.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                //不让父类拦截子类监听
-//                setParentScrollAble(false);
-//            case MotionEvent.ACTION_MOVE:
-//
-//                break;
-//            case MotionEvent.ACTION_UP:
-//
-//            case MotionEvent.ACTION_CANCEL:
-//                setParentScrollAble(true);
-//                break;
-//            default:
-//                break;
-//        }
-//        return super.onInterceptTouchEvent(ev);
-//    }
-//
-//    /**
-//     * @param flag
-//     */
-//    public void setParentScrollAble(boolean flag) {
-//        mParentScrollView.requestDisallowInterceptTouchEvent(!flag);
-//    }
+    public void setScrollParam(int i, int i1) {
+        scrollY = i1;
+        mVisibleCount = i;
+    }
+}

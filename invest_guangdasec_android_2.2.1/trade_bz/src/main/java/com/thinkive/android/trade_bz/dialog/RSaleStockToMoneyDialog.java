@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.bean.RStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RSaleStockToMoneyServiceImpl;
 
 /**
@@ -15,27 +16,15 @@ import com.thinkive.android.trade_bz.a_rr.bll.RSaleStockToMoneyServiceImpl;
  * @date 2016/8/23
  */
 public class RSaleStockToMoneyDialog extends AbsTradeDialog {
-    /**
-     * 股票名称
-     */
-    private TextView stockNameTextView;
-    /**
-     * 股票代码
-     */
-    private TextView stockCodeTextView;
-    /**
-     * 买卖方向
-     */
-    private TextView buyOrSaleView;
-    /**
-     * 委托价格
-     */
-    private TextView entrustPriceTextView;
-    /**
-     * 委托数量
-     */
-    private TextView entrustNumTextView;
-
+    private TextView mBuyOrSellTv;
+    private TextView mAccountTv;
+    private TextView mNameTv;
+    private TextView mCodeTv;
+    private TextView mEntrustPriceTv;
+    private TextView mEntrustNumberTv;
+    private TextView mWarnTv1;
+    private TextView mWarnTv2;
+    private boolean mShowWarning = false;
     /**
      * 调用方的业务类
      */
@@ -44,13 +33,29 @@ public class RSaleStockToMoneyDialog extends AbsTradeDialog {
     private String entrustBsXjNum = "";
     private String limitOrMarketPriceFlag = "";
 
-    public RSaleStockToMoneyDialog(Context context,RSaleStockToMoneyServiceImpl service) {
+    public RSaleStockToMoneyDialog(Context context,RSaleStockToMoneyServiceImpl service,boolean showWarning) {
         super(context);
+        mShowWarning = showWarning;
         mService = service;
         initDialogLayout();
         setLayout();
     }
+    private void hideWarnText() {
+        mWarnTv1.setVisibility(View.GONE);
+        mWarnTv2.setVisibility(View.GONE);
+    }
 
+    private void showWarningText(int i) {
+        if (i == 0) {
+            mWarnTv1.setText("买入数量大于最大可买,交易可能不会成功");
+            mWarnTv2.setText("确认买入该证券?");
+        } else {
+            mWarnTv1.setText("卖出数量大于最大可卖,交易可能不会成功");
+            mWarnTv2.setText("确认卖出该证券?");
+        }
+        mWarnTv1.setVisibility(View.VISIBLE);
+        mWarnTv2.setVisibility(View.VISIBLE);
+    }
     /**
      * 初始化对话框布局
      */
@@ -58,32 +63,29 @@ public class RSaleStockToMoneyDialog extends AbsTradeDialog {
         super.initDialogLayout();
         setTitleText(R.string.dialog_entrust_buy);
         View view = LayoutInflater.from(mContext).inflate(R.layout.dialog_trade_comfirm, null);
-        // 显示股票名称
-        stockNameTextView = (TextView)view.findViewById(R.id.tv_pop_name);
-        // 显示股票代码
-        stockCodeTextView = (TextView)view.findViewById(R.id.tv_pop_code);
-        //买卖方向
-        buyOrSaleView = (TextView) view.findViewById(R.id.tv_pop_buy);
-        // 显示委托价格
-        entrustPriceTextView = (TextView)view.findViewById(R.id.tv_pop_price);
-        // 显示委托数量
-        entrustNumTextView = (TextView)view.findViewById(R.id.tv_pop_entrust_number);
+        mAccountTv = (TextView) view.findViewById(R.id.tv_account);
+        mNameTv = (TextView) view.findViewById(R.id.tv_name);
+        mCodeTv = (TextView) view.findViewById(R.id.tv_stock_code);
+        mEntrustPriceTv = (TextView) view.findViewById(R.id.tv_entrust_price);
+        mEntrustNumberTv = (TextView) view.findViewById(R.id.tv_entrust_number);
+        mBuyOrSellTv = (TextView) view.findViewById(R.id.tv_buyorsell);
+        mWarnTv1 = (TextView) view.findViewById(R.id.tv_warn1);
+        mWarnTv2 = (TextView) view.findViewById(R.id.tv_warn2);
         setSubViewToParent(view);
     }
 
-    /**
-     * 设置数据到对话框的控件中
-     * @param stockName
-     * @param stockCode
-     * @param EntrustPrice
-     * @param EntrustAmount
-     */
-    public void setDataToViews(String stockName, String stockCode, String EntrustPrice, String EntrustAmount) {
-        stockNameTextView.setText(stockName);
-        stockCodeTextView.setText(stockCode);
-        buyOrSaleView.setText(R.string.trade_sell);
-        entrustPriceTextView.setText(EntrustPrice);
-        entrustNumTextView.setText(EntrustAmount);
+    public void setDataToViews(RStockLinkBean bean, String entrustPrice, String entrustAmount) {
+        if (mShowWarning) {
+            showWarningText(0);
+        } else {
+            hideWarnText();
+        }
+        mBuyOrSellTv.setText("融券卖出:    ");
+        mAccountTv.setText(bean.getStock_account());
+        mNameTv.setText(bean.getStock_name());
+        mCodeTv.setText(bean.getStock_code());
+        mEntrustPriceTv.setText(entrustPrice);
+        mEntrustNumberTv.setText(entrustAmount);
     }
 
     /**
@@ -93,9 +95,6 @@ public class RSaleStockToMoneyDialog extends AbsTradeDialog {
         this.mEntrustBs = entrustBs;
         this.entrustBsXjNum = entrustBsXjNum;
         this.limitOrMarketPriceFlag = limitOrMarketPriceFlag;
-        if("1".equals(limitOrMarketPriceFlag)){
-            entrustPriceTextView.setText(mContext.getResources().getString(R.string.trade_buy_rb1));
-        }
     }
 
     @Override

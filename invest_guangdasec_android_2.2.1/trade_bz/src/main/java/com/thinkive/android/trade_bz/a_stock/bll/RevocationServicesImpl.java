@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.a_stock.bll;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 
 import com.thinkive.android.trade_bz.a_stock.bean.RevocationBean;
 import com.thinkive.android.trade_bz.a_stock.fragment.BottomRevocationFragment;
@@ -92,8 +93,11 @@ public class RevocationServicesImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();//隐藏状态显示框
-//                //显示撤单结果
-//                ToastUtils.toast(context, bundle.getString(Request301502.BUNDLE_KEY_REVOCATION_DIALOG));
+                if (!TextUtils.isEmpty(bundle.getString(Request301502.BUNDLE_KEY_REVOCATION_DIALOG))) {
+                    ToastUtils.toast(context, bundle.getString(Request301502.BUNDLE_KEY_REVOCATION_DIALOG));
+                } else {
+                    ToastUtils.toast(context,"撤单成功");
+                }
                 //请求成功后刷新数据
                 requestRevocation();
                 if (isBottom) {

@@ -30,7 +30,6 @@ import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.controll.BuyOrSellViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
-import com.thinkive.android.trade_bz.dialog.HKTradeConfirmDialog;
 import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
 import com.thinkive.android.trade_bz.keyboard.KeyboardManager;
 import com.thinkive.android.trade_bz.others.tools.FontManager;
@@ -699,9 +698,9 @@ public class HKBuySellFragment extends AbsBaseFragment {
         mEntrustNumEDKeyboardManager.dismiss();
         mStockCodeEdKeyboardManager.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
-        HKTradeConfirmDialog dialog = new HKTradeConfirmDialog(mActivity, mBuyOrSell, mService);
-        dialog.setDataToViews(mStockMsgBean.getName(),mStockMsgBean.getCode(), getEntrustPrice(), getEntrustAmount());
-        dialog.show();
+//        HKTradeConfirmDialog dialog = new HKTradeConfirmDialog(mActivity, mBuyOrSell, mService);
+//        dialog.setDataToViews(mStockMsgBean.getName(),mStockMsgBean.getCode(), getEntrustPrice(), getEntrustAmount());
+//        dialog.show();
     }
 
     /**

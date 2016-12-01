@@ -64,7 +64,7 @@ public class MyHoldStockViewController extends AbsBaseController implements
         } else if (clickedViewId == R.id.tv_hold_list_item_expend_sale) { // item展开布局中的“卖出”按钮
             mFragment.onClickHoldListviewExpandSale(position);
         } else if (clickedViewId == R.id.tv_hold_list_item_expend_hq) { // item展开布局中的“行情”按钮
-            mFragment.onClickHoldListviewExpandHq(position);
+            mFragment.onClickHoldListviewExpandDetails(position);
         }
     }
 
