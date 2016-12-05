@@ -907,7 +907,12 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
             } else if (this.mStockLinkageBean == null) {
                 ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_code2));
                 TradeUtils.showKeyBoard(this.mActivity, this.mEdStockCode, false);
-            } else if (entrustAmount != null && !entrustAmount.equals("")) {
+            }    // 委托价格为0
+            if ("0".equals(entrustPrice)) {
+                ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_price2));
+                TradeUtils.showKeyBoard(mActivity, mEdStockPrice, false);
+                return;
+            }else if (entrustAmount != null && !entrustAmount.equals("")) {
                 if (this.mRootView.findViewById(R.id.ll_input_price).getVisibility() == View.VISIBLE && (entrustPrice == null || entrustPrice.equals(""))) {
                     ToastUtils.toast(this.mActivity, this.mResources.getString(R.string.trade_toast_input_price));
                     this.mEntrustNumEDKeyboardManager.dismiss();

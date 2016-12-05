@@ -44,11 +44,19 @@ import com.thinkive.android.trade_bz.a_level.activity.LFundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_net.activity.NetVoteMainActivity;
 import com.thinkive.android.trade_bz.a_option.activity.OptionMainActivity;
 import com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.CreditHistoryEntrustOrTradeActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.CreditMoneyFlowActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RCashReturnActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterTransActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSaleStockToMoneyActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectCollateralSecurityActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditLimitActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditQuanDetailActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditZiDetailActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RSelectDOselectActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.RStockReturnStockActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.SubBondMultiActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
@@ -57,7 +65,7 @@ import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TransferBanktActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.TradnsferActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.FastMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.MoreMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
@@ -166,6 +174,15 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private RelativeLayout mShowDateRl;
     private Dialog mDialog;
     private ScrollView mScrollView;
+    private OnSpeciallClickType onSpecialClickType = null;
+
+    //主题枚举
+    public enum OnSpeciallClickType {
+        RepayByMoney,
+        RepayByStock,
+        ReStockByOwnStock,
+        ReStockByBuyStock
+    }
 
 
     @Override
@@ -305,7 +322,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private void initGrid() {
         //更多展开的参数
         mDensity = getResources().getDisplayMetrics().density;
-        mHiddenViewMeasuredHeight = (int) (mDensity * 76 + 0.5);
+        mHiddenViewMeasuredHeight = (int) (mDensity * 114 + 0.5);
 
 
         mFastAdapter = new FastMenuAdapter(getActivity());
@@ -603,7 +620,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         } else if (parent.getCount() == 9) {
             mMoreMenuPosBeforeLogin = position;
             switch (position) {
-
                 case 0:
                     onClickTodayEntrust();
                     break;
@@ -623,23 +639,68 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                     onClickDelivery();
                     break;
                 case 6:
+                    onClickCreditLimitSelect();
                     break;
                 case 7:
+                    onClickCreditZiDetail();
                     break;
                 case 8:
+                    onClickCreditQuanDetail();
                     break;
             }
 
         }
     }
 
-    private void onClickDelivery() {
+    private void onClickCreditQuanDetail() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, RSelectCreditQuanDetailActivity.class);
+            mActivity.startActivity(intent);
+        } else {
+            startLogin(1508, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
+    }
 
+    private void onClickCreditZiDetail() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, RSelectCreditZiDetailActivity.class);
+            mActivity.startActivity(intent);
+        } else {
+            startLogin(1507, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
+    }
+
+    private void onClickCreditLimitSelect() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, RSelectCreditLimitActivity.class);
+            mActivity.startActivity(intent);
+
+        } else {
+            startLogin(1506, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
+    }
+
+    private void onClickDelivery() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, RSelectDOselectActivity.class);
+            mActivity.startActivity(intent);
+
+        } else {
+            startLogin(1505, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
 
     }
 
     private void onClickHistoryTrade() {
-
+        if (!TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) { // 未登录时，调转到登录页面
+            startLogin(1504, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        } else { // 已登录时
+            Intent intent = new Intent(mActivity, CreditHistoryEntrustOrTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("childePos", 0);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+        }
     }
 
     private void onClickTodayTrade() {
@@ -652,16 +713,31 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             mActivity.startActivity(intent);
 
         } else {
-            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
+            startLogin(1503, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
     }
 
     private void onClickFundFlow() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, CreditMoneyFlowActivity.class);
+            mActivity.startActivity(intent);
+
+        } else {
+            startLogin(1502, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
 
     }
 
     private void onclickHistoryEntrust() {
-
+        if (!TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) { // 未登录时，调转到登录页面
+            startLogin(1501, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        } else { // 已登录时
+            Intent intent = new Intent(mActivity, CreditHistoryEntrustOrTradeActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putInt("childePos", 1);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+        }
     }
 
     private void onClickTodayEntrust() {
@@ -672,9 +748,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             bundle.putInt("childePos", 0);
             intent.putExtras(bundle);
             mActivity.startActivity(intent);
-
         } else {
-            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
+            startLogin(1500, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
     }
 
@@ -796,8 +871,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         Intent intent = new Intent(mActivity, NewStockWebActivity.class);
         intent.putExtra("loginType", NewStockWebActivity.CREDIT);
         mActivity.startActivity(intent);
-
-
     }
 
     /**
@@ -847,12 +920,12 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
             Intent intent = new Intent(mActivity, MultiCreditTradeActivity.class);
             Bundle bundle = new Bundle();
-                bundle.putInt("pos", 2);
-                intent.putExtras(bundle);
-                mActivity.startActivity(intent);
+            bundle.putInt("pos", 2);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
 
         } else {
-                startLogin(1002, TradeLoginManager.LOGIN_TYPE_CREDIT);
+            startLogin(1002, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
     }
 
@@ -869,7 +942,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
             mActivity.startActivity(intent);
 
         } else {
-            startLogin(1004, TradeLoginManager.LOGIN_TYPE_CREDIT);
+            startLogin(1003, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
 
     }
@@ -895,7 +968,6 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     private void onClickCreditTicket() {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
             Intent intent = new Intent(mActivity, RBuyStockToStockActivity.class);//买券还券
-            //            Intent intent = new Intent(mActivity, RStockReturnStockActivity.class);//现券还券
             mActivity.startActivity(intent);
         } else {
             startLogin(1005, TradeLoginManager.LOGIN_TYPE_CREDIT);
@@ -911,13 +983,15 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mFundRefundBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showToast("现金还款");
+                onSpecialClickType = OnSpeciallClickType.RepayByMoney;
+                onClickRepay();
                 mDialog.dismiss();
             }
         });
         mStockRefundBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                onSpecialClickType = OnSpeciallClickType.RepayByStock;
                 onClickCreditRefund();
                 mDialog.dismiss();
             }
@@ -937,6 +1011,24 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mDialog.show();
     }
 
+    private void onClickRepay() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, RCashReturnActivity.class);//现金还款
+            mActivity.startActivity(intent);
+        } else {
+            startLogin(1004, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
+    }
+
+    private void onClickReStockByOwnStock() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, RStockReturnStockActivity.class);//现券还券
+            mActivity.startActivity(intent);
+        } else {
+            startLogin(1005, TradeLoginManager.LOGIN_TYPE_CREDIT);
+        }
+    }
+
     public void showBottomReStockDialog() {
         mDialog = new Dialog(getContext(), R.style.ActionSheetDialogStyle);
         View inflate = LayoutInflater.from(getContext()).inflate(R.layout.dialog_layout_restock, null);
@@ -946,13 +1038,15 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         sFundReStockBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showToast("现券还券");
+                onSpecialClickType = OnSpeciallClickType.ReStockByOwnStock;
+                onClickReStockByOwnStock();
                 mDialog.dismiss();
             }
         });
         sStockReStockBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                onSpecialClickType = OnSpeciallClickType.ReStockByBuyStock;
                 onClickCreditTicket();
                 mDialog.dismiss();
             }
@@ -1139,14 +1233,13 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      */
     private void onClickTransferAccount() {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            Intent intent = new Intent(mActivity, TransferBanktActivity.class);
-            Bundle bundle = new Bundle();
-            bundle.putString("userType", TradeLoginManager.LOGIN_TYPE_CREDIT);
-            intent.putExtras(bundle);
+            TradnsferActivity.getCreditFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("CREDIT_TRANSFER_URL"));
+            TradnsferActivity.getCreditFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("CREDIT_TRANSFER_URL"));
+            Intent intent = new Intent(mActivity, TradnsferActivity.class);
+            intent.putExtra("loginType", TradnsferActivity.CREDIT);
             mActivity.startActivity(intent);
         } else {
             startLogin(1106, TradeLoginManager.LOGIN_TYPE_CREDIT);
-            // 只登登录了一种账户类型
         }
     }
 
@@ -1252,7 +1345,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         //清除供给H5的用户信息
         MemoryStorage memoryStorage = new MemoryStorage();
         memoryStorage.removeData(Constants.CREDIT_LOGIN_USERINFO_FORH5);
-//        CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getUrlName("CREDIT_NEWSTOCK_URL"), "");
+        //        CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getUrlName("CREDIT_NEWSTOCK_URL"), "");
         try {
             sendMessageCireditLogout(NewStockWebActivity.getCreditNewStockFragment());
         } catch (JSONException e) {
@@ -1415,13 +1508,24 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                             if (viewId - 1000 < 200) {
                                 viewId = viewId - 1000;
                                 if (viewId == 4) {
-                                    onClickCreditRefund();
+                                    if (onSpecialClickType == OnSpeciallClickType.RepayByStock) {
+                                        onClickCreditRefund();//卖券还款
+                                    }
+                                    if (onSpecialClickType == OnSpeciallClickType.RepayByMoney) {
+                                        onClickRepay();//现金还款
+                                    }
                                 } else if (viewId == 5) {
-                                    onClickCreditTicket();
+                                    if (onSpecialClickType == OnSpeciallClickType.ReStockByBuyStock) {
+                                        onClickCreditTicket();//买券还券
+                                    }
+                                    if (onSpecialClickType == OnSpeciallClickType.ReStockByOwnStock) {
+                                        onClickReStockByOwnStock();//现券还券
+                                    }
+
                                 } else if (viewId >= 0 && viewId <= 11) {
                                     onItemClick(mFastMenuGv, viewId);
                                 }
-                            } else if (viewId - 1000 > 500) {
+                            } else if (viewId - 1000 >= 500) {
                                 viewId = viewId - 1500;
                                 onItemClick(mMoreMenuGv, viewId);
                             } else if (viewId - 1000 > 200 && viewId - 1000 < 500) {
@@ -1502,6 +1606,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         }
 
     }
+
 
     /**
      * 退出所有二级页面

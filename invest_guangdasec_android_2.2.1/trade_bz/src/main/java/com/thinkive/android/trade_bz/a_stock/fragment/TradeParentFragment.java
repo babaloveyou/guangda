@@ -149,10 +149,12 @@ public class TradeParentFragment extends Fragment implements View.OnClickListene
 
 
     public void setLoginToExit() {
-        mLoginTv.setText("注销");
+        mLoginTv.setVisibility(View.GONE);
+//        mLoginTv.setText("注销");
     }
 
     public void setExitTologin() {
+        mLoginTv.setVisibility(View.VISIBLE);
         mLoginTv.setText("登录");
     }
 

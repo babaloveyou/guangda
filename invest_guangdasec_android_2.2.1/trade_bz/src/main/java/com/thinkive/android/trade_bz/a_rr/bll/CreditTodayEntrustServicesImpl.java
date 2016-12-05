@@ -29,9 +29,9 @@ public class CreditTodayEntrustServicesImpl {
 
 
     public void requestTodayEntrust() {
-        if (!TextUtils.isEmpty(Constants.CREDIT_DOTAY_DATE)) {
+        if (!TextUtils.isEmpty(Constants.CREDIT_TOTAY_DATE)) {
             HashMap<String, String> map303016 = new HashMap<>();
-            map303016.put("date", Constants.CREDIT_DOTAY_DATE);
+            map303016.put("date", Constants.CREDIT_TOTAY_DATE);
             new Request303016(map303016, new IRequestAction() {
                 @Override
                 public void onSuccess(Context context, Bundle bundle) {

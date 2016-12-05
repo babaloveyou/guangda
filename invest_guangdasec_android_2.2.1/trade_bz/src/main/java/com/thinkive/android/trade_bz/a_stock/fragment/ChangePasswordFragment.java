@@ -162,6 +162,14 @@ public class ChangePasswordFragment extends AbsBaseFragment {
     }
 
     @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mKeyboardManagerOld.dismiss();
+        mKeyboardManagerNew.dismiss();
+        mKeyboardManagerSure.dismiss();
+    }
+
+    @Override
     protected void setTheme() {
 
     }

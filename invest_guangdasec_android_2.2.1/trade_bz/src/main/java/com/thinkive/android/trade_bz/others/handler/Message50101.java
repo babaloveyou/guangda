@@ -19,6 +19,7 @@ public class Message50101 implements com.android.thinkive.framework.message.IMes
     private Context mContext;
     private String moduleName;
 
+
     @Override
     public String handlerMessage(Context context, AppMessage appMessage) {
         mContext = context;
@@ -37,9 +38,7 @@ public class Message50101 implements com.android.thinkive.framework.message.IMes
                 mContext.startActivity(intent);
             } catch (Exception e) {
                 ToastUtil.showToast(e.toString());
-
             }
-
         }
         return MessageManager.getInstance(context).buildMessageReturn(1, null, null);
     }

@@ -11,7 +11,6 @@ import com.thinkive.android.trade_bz.a_stock.bll.BasicServiceImpl;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.request.RR303010;
 import com.thinkive.android.trade_bz.request.RR303012;
-import com.thinkive.android.trade_bz.request.RR303021;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 
@@ -45,30 +44,30 @@ public class RCashReturnServiceImpl extends BasicServiceImpl {
     public void onStop() {
 
     }
-
-    /**
-     * 请求合约数据，接口功能号303021
-     */
-    public void requestChooseContract(String code) {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("compact_type","0"); //合约类型(0-融资，1-融券)
-        map.put("query_type","0"); //查询模式(0-未了结，1-当日已了结)
-        if(code != null && !TextUtils.isEmpty(code)){
-            map.put("stock_code",code);
-        }
-        new RR303021(map, new IRequestAction() {
-            @Override
-            public void onSuccess(Context context, Bundle bundle) {
-                ArrayList<RChooseContractBean> dataList = bundle.getParcelableArrayList(RR303021.BUNDLE_KEY_R_REVOCATION);
-                mFragment.getChooseContractData(dataList);
-            }
-
-            @Override
-            public void onFailed(Context context, Bundle bundle) {
-                ToastUtils.toast(context, bundle.getString(RR303021.ERROR_INFO));
-            }
-        }).request();
-    }
+//
+//    /**
+//     * 请求合约数据，接口功能号303021
+//     */
+//    public void requestChooseContract(String code) {
+//        HashMap<String, String> map = new HashMap<String, String>();
+//        map.put("compact_type","0"); //合约类型(0-融资，1-融券)
+//        map.put("query_type","0"); //查询模式(0-未了结，1-当日已了结)
+//        if(code != null && !TextUtils.isEmpty(code)){
+//            map.put("stock_code",code);
+//        }
+//        new RR303021(map, new IRequestAction() {
+//            @Override
+//            public void onSuccess(Context context, Bundle bundle) {
+//                ArrayList<RChooseContractBean> dataList = bundle.getParcelableArrayList(RR303021.BUNDLE_KEY_R_REVOCATION);
+//                mFragment.getChooseContractData(dataList);
+//            }
+//
+//            @Override
+//            public void onFailed(Context context, Bundle bundle) {
+//                ToastUtils.toast(context, bundle.getString(RR303021.ERROR_INFO));
+//            }
+//        }).request();
+//    }
 
     /**
      * 联动获得可用金额和需还金额
@@ -95,16 +94,13 @@ public class RCashReturnServiceImpl extends BasicServiceImpl {
         loadingDialogUtil.showLoadingDialog(0);
         HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("occur_balance",balance);
-        if(mIsContractEntrust){ //合约模式才会使用
-            paramMap.put("compact_id",getCompactIdForMate(mFragment.getSelectContractList()));
-        }
         new RR303010(paramMap, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
-                ToastUtils.toast(context, bundle.getString(RR303010.BUNDLE_KEY_ENTRUST_COMMIT));
+                ToastUtils.toast(context, "委托成功");
                 mFragment.clearAllData();
-                requestChooseContract("");//请求合约
+//                requestChooseContract("");//请求合约
                 requestStockLink(); // 联动获得可用金额和需还金额
             }
             @Override

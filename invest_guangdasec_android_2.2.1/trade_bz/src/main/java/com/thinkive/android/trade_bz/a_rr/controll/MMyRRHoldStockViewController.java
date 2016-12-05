@@ -18,7 +18,7 @@ public class MMyRRHoldStockViewController extends AbsBaseController implements
         PullToRefreshListView.OnRefreshListener, ActionSlideExpandableListView.OnActionClickListener,
         HorizontalSlideLinearLayout.OnSlideListener {
 
-    public static final int ON_ACTION_CLICK = 7974939;
+    public static final int ON_ACTION_CLICK = 7974940;
 
     private MyRRHoldStockFragment mFragment = null;
 

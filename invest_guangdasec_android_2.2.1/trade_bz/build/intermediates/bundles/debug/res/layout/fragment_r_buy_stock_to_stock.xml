@@ -205,6 +205,8 @@
                     <com.thinkive.android.trade_bz.views.ClearEditText
                         android:longClickable="false"
                         android:paddingLeft="2dp"
+                        android:digits="@string/change_pwd_regex2"
+                        android:inputType="number"
                         android:maxLength="7"
                         android:id="@+id/ed_entrust_num"
                         android:layout_width="0dp"
@@ -212,7 +214,6 @@
                         android:layout_weight="1"
                         android:background="@null"
                         android:gravity="center|left"
-                        android:inputType="numberDecimal"
                         android:textColor="@color/trade_text_color3"
                         android:textSize="16sp"
                         android:textStyle="normal"

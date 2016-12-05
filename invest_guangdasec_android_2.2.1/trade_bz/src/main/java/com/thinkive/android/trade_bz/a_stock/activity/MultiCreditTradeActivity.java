@@ -66,7 +66,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     @Override
     protected void initData() {
         Bundle bundle = getIntent().getExtras();
-        defaultViewPagerPos = bundle.getInt("ViewPagerFragmentPos", 0);
+        defaultViewPagerPos = bundle.getInt("pos", 0);
         mChildePos = bundle.getInt("childePos", 0);
         mFragmentList = new ArrayList<AbsBaseFragment>();
         mRCreditBuyFragment = new RCreditBuyFragment();
@@ -85,7 +85,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         mFragmentList.add(mRCreditBuyFragment);
         mFragmentList.add(mRCreditSaleFragment);
         mFragmentList.add(mRRevocationFragment);
-//        mFragmentList.add(mCreditEntrustFragment);
+        mFragmentList.add(mCreditTodayEntrustOrTradeFragment);
         mFragmentList.add(mMyRRHoldStockFragment);
         mController = new MultiTradeViewController(this);
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);

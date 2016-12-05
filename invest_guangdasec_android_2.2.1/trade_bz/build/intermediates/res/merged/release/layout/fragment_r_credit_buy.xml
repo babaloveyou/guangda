@@ -206,13 +206,14 @@
                         android:longClickable="false"
                         android:paddingLeft="2dp"
                         android:maxLength="7"
+                        android:digits="@string/change_pwd_regex2"
+                        android:inputType="number"
                         android:id="@+id/ed_entrust_num"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@null"
                         android:gravity="center|left"
-                        android:inputType="numberDecimal"
                         android:textColor="@color/trade_text_color3"
                         android:textSize="16sp"
                         android:textStyle="normal"
@@ -718,6 +719,7 @@
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
     <TextView
         android:id="@+id/tv_header_of_grade_bottom"
         android:layout_width="match_parent"

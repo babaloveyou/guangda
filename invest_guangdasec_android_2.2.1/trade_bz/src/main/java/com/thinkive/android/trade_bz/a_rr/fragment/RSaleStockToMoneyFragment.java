@@ -866,6 +866,12 @@ public class RSaleStockToMoneyFragment extends AbsBaseFragment implements ViewPa
             TradeUtils.showKeyBoard(mActivity, mEdEntrustAmount, false);
             return;
         }
+        // 委托价格为0
+        if ("0".equals(entrustPrice)) {
+            ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_price2));
+            TradeUtils.showKeyBoard(mActivity, mEdStockPrice, false);
+            return;
+        }
         //若是限价委托
         if (mRootView.findViewById(R.id.ll_input_price).getVisibility() == View.VISIBLE) {
             if (entrustPrice == null || entrustPrice.equals("")) { // 没输入委托价格时

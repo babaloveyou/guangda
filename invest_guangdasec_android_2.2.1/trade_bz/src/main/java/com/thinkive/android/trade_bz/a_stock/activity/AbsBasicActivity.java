@@ -52,6 +52,7 @@ public abstract class AbsBasicActivity extends SwipeBackActivity {
 //            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //            startActivity(intent);
 //        }
+        setIsSwipeBackEnable(false);
     }
 
     @Override

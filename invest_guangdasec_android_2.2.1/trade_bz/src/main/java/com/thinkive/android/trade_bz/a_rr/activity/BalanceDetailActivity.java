@@ -23,7 +23,7 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/11/26.
  */
-public class BalanceDetailActivity  extends AbsNavBarActivity {
+public class BalanceDetailActivity extends AbsNavBarActivity {
     private BalanceDetailViewController mController = null;
     private NavigatorView mNavSlide = null;
     private RadioTabs mRadioTabs;
@@ -58,7 +58,7 @@ public class BalanceDetailActivity  extends AbsNavBarActivity {
     protected void initData() {
         Intent intent = getIntent();
         if (intent != null) {
-            mBean = (RSelectPropertBean)intent.getParcelableExtra("bean");
+            mBean = (RSelectPropertBean) intent.getParcelableExtra("bean");
         }
         Bundle bundle = new Bundle();
         bundle.putParcelable("bean", mBean);
@@ -70,8 +70,11 @@ public class BalanceDetailActivity  extends AbsNavBarActivity {
         balanceDebtsFragment.setArguments(bundle);
         balanceDebtsFragment.setName("负债");
         BalanceLimitFragment balanceLimitFragment = new BalanceLimitFragment();
-        balanceFundFragment.setArguments(bundle);
+        balanceLimitFragment.setArguments(bundle);
         balanceLimitFragment.setName("额度");
+        mFragmentList.add(balanceFundFragment);
+        mFragmentList.add(balanceDebtsFragment);
+        mFragmentList.add(balanceLimitFragment);
         mController = new BalanceDetailViewController(this);
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);
     }

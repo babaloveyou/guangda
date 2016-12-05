@@ -25,7 +25,7 @@ import org.json.JSONObject;
 /**
  * Created by Administrator on 2016/11/17.
  */
-public class NormalNewStockFragment  extends BaseWebFragment implements IModule {
+public class NormalNewStockFragment extends BaseWebFragment implements IModule {
     private String mSourceModule;
     private String mUrl;
     private boolean canReceive = false;
@@ -35,12 +35,12 @@ public class NormalNewStockFragment  extends BaseWebFragment implements IModule 
         public void onReceive(Context context, Intent intent) {
             String toH5Page = intent.getStringExtra(Constants.TOH5PAGE);
             String stock_credit_flag = intent.getStringExtra(Constants.STOCK_CREDIT_FLAG);
-                        try {
-                            sendMessage60250(NormalNewStockFragment.this, toH5Page,stock_credit_flag);
-                        } catch (JSONException e) {
-                            Log.e(e.getMessage());
-                        }
-            ToastUtil.showToast(toH5Page+ "   "+stock_credit_flag);
+            try {
+                sendMessage60250(NormalNewStockFragment.this, toH5Page, stock_credit_flag);
+            } catch (JSONException e) {
+                Log.e(e.getMessage());
+            }
+            ToastUtil.showToast(toH5Page + "   " + stock_credit_flag);
         }
     };
 
@@ -75,6 +75,7 @@ public class NormalNewStockFragment  extends BaseWebFragment implements IModule 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        getContext().unregisterReceiver(mToH5PageReceiver);
         canReceive = false;
     }
 
@@ -116,23 +117,28 @@ public class NormalNewStockFragment  extends BaseWebFragment implements IModule 
         }
         return null;
     }
-    private void sendMessage60250(BaseWebFragment baseWebFragment,String toPage,String stock_credit_flag) throws JSONException {
+
+    private void sendMessage60250(BaseWebFragment baseWebFragment, String toPage, String stock_credit_flag) throws JSONException {
         JSONObject param = new JSONObject();
         param.put("moduleName", "trade");
-        param.put("to_page",toPage);
-        param.put("stock_credit_flag",stock_credit_flag);
+        param.put("to_page", toPage);
+        param.put("stock_credit_flag", stock_credit_flag);
         AppMessage appMessage = new AppMessage(60250, param);
         baseWebFragment.sendMessageToH5(appMessage);
     }
+
     @Override
     public void onDetach() {
         super.onDetach();
     }
+
     /**
      * 发送50107消息给H5，通知他们，用户单击了手机的物理返回键
      */
     public void sendMessage50107() {
-        if (getWebView() != null) {
+        if (!isH5Prepare) {
+            getActivity().finish();
+        }else if (getWebView() != null) {
             AppMessage appMessage = new AppMessage(50107, new JSONObject());
             sendMessageToH5(appMessage);
         }

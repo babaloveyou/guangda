@@ -14,21 +14,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="21dp"
+           android:layout_centerVertical="true"
             android:text="科大讯飞 002333"
             android:textColor="@color/white"
             android:textSize="18sp"/>
-
-        <TextView
-            android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="25dp"
-            android:text="成交时间 2016-10-11 09:02:02"
-            android:textColor="@color/normal_hint_color"
-            android:textSize="10sp"/>
 
         <ImageView
             android:id="@+id/iv_flag"
@@ -144,10 +133,12 @@
         android:background="@color/bg_main_french_gray"/>
 
     <ScrollView
+        android:background="@color/bg_main_french_gray"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:background="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -163,9 +154,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="80dp"
-                    android:text="委托时间"
+                    android:text="成交时间"
                     android:textColor="@color/trade_text_color9"
-                    android:textSize="14sp"/>
+                    android:textSize="14sp"
+                    android:id="@+id/textView11"/>
 
                 <TextView
                     android:id="@+id/tv1"
@@ -175,6 +167,13 @@
                     android:textSize="14sp"/>
 
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="15dp"
+                android:background="@color/bg_main_french_gray"/>
+
 
             <View
                 android:layout_width="match_parent"
@@ -193,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="80dp"
-                    android:text="成交时间"
+                    android:text="资金账号"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="14sp"/>
 
@@ -223,7 +222,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="80dp"
-                    android:text="交易类型"
+                    android:text="币种"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="14sp"/>
 
@@ -253,7 +252,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="80dp"
-                    android:text="资金账号"
+                    android:text="股东代码"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="14sp"/>
 
@@ -283,7 +282,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="80dp"
-                    android:text="币种"
+                    android:text="委托编号"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="14sp"/>
 
@@ -313,72 +312,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:minWidth="80dp"
-                    android:text="股东代码"
-                    android:textColor="@color/trade_text_color9"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:id="@+id/tv6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/trade_text_color3"
-                    android:textSize="14sp"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/bg_main_french_gray"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="80dp"
-                    android:text="委托编号"
-                    android:textColor="@color/trade_text_color9"
-                    android:textSize="14sp"/>
-
-                <TextView
-                    android:id="@+id/tv7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/trade_text_color3"
-                    android:textSize="14sp"/>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="15dp"
-                android:background="@color/bg_main_french_gray"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="80dp"
                     android:text="市场"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="14sp"/>
 
                 <TextView
-                    android:id="@+id/tv8"
+                    android:id="@+id/tv6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/trade_text_color3"

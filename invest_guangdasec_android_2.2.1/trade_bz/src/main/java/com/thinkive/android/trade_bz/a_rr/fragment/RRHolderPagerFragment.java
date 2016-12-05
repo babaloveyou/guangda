@@ -82,9 +82,7 @@ public class RRHolderPagerFragment extends AbsBaseFragment {
     @Override
     protected void setListeners() {
         registerListener(ListenerControllerAdapter.ON_CLICK, mTvBlankMoney, mPagerHoldViewController);
-
-
-
+        registerListener(ListenerControllerAdapter.ON_CLICK, mQuerryIndebtednessTv, mPagerHoldViewController);
     }
 
     @Override
@@ -121,7 +119,7 @@ public class RRHolderPagerFragment extends AbsBaseFragment {
      */
     public void getMoneyAccountData(RSelectPropertBean bean) {
         mSelectPropertBean = bean;
-        mKeepTv.setText(bean.getPer_assurescale_value());
+        mKeepTv.setText(bean.getPer_assurescale_value()+"%");
         mTotalAssetsTv.setText(bean.getAssert_val());
         mNetAssetsTv.setText(bean.getNet_asset());
         mTotalIndebtednessTv.setText(bean.getTotal_debit());

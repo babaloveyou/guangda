@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/trade_color_white">
+
+    <View android:layout_width="match_parent"
+          android:layout_height="10dp"
+          android:background="@color/trade_normal_background"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="序号"
+            android:id="@+id/textView9"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv1"/>
+
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="开仓流水号"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv2"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="开仓日期"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv3"/>
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="仓单到期日"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv4"/>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="证券代码"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv5"/>
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="证券名称"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv6"/>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="融资买入金额"
+            android:id="@+id/textView10"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv7"/>
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="已偿还金额"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv8"/>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="融资利息已计"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv9"/>
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="融资利息已还"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv10"/>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/trade_divide_line"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="预期罚息已计"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv11"/>
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:text="预期罚息已还"/>
+
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv12"/>
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent"
+          android:layout_height="0.5dp"
+          android:background="@color/trade_divide_line"/>
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="融资负债余额"/>
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv13"/>
+        <View
+            android:background="@color/trade_divide_line"
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:textColor="@color/trade_text_color9"
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="仓单状态"/>
+        <TextView
+            android:paddingLeft="15dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:hint="@string/no_text_set"
+            android:singleLine="true"
+            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv14"
+           />
+
+
+    </LinearLayout>
+
+</LinearLayout>

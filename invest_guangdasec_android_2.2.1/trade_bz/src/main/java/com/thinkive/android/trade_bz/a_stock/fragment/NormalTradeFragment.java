@@ -49,7 +49,7 @@ import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TransferBanktActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.TradnsferActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.FastMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.MoreMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
@@ -858,7 +858,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      * 新股申购
      */
     private void onClickNewStock() {
-        NewStockWebActivity.getNormalNewStockFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"));
+        String normal_newstock_url = ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL");
+        System.out.println("111111111111111111" + normal_newstock_url);
+        NewStockWebActivity.getNormalNewStockFragment().setUrl(normal_newstock_url);
         NewStockWebActivity.getNormalNewStockFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"));
         Intent intent = new Intent(mActivity, NewStockWebActivity.class);
         intent.putExtra("loginType", NewStockWebActivity.NORMAL);
@@ -985,10 +987,10 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      */
     private void onClickTransferAccount() {
         if (TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
-            Intent intent = new Intent(mActivity, TransferBanktActivity.class);
-            final Bundle bundle = new Bundle();
-            bundle.putString("userType", TradeLoginManager.LOGIN_TYPE_NORMAL);
-            intent.putExtras(bundle);
+           TradnsferActivity.getNormalFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL"));
+            TradnsferActivity.getNormalFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL"));
+            Intent intent = new Intent(mActivity, TradnsferActivity.class);
+            intent.putExtra("loginType", TradnsferActivity.NORMAL);
             mActivity.startActivity(intent);
         } else {
             startLogin(2007, TradeLoginManager.LOGIN_TYPE_NORMAL);
@@ -1118,6 +1120,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         //        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.NORMAL_URL,"");
         try {
             sendMessageNormalLogout(NewStockWebActivity.getNormalNewStockFragment());
+            sendMessageNormalLogout(TradnsferActivity.getNormalFragment());
         } catch (JSONException e) {
             e.printStackTrace();
         }

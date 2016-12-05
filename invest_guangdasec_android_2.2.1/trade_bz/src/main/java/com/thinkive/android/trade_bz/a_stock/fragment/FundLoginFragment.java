@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,6 +38,7 @@ import com.thinkive.android.trade_bz.utils.PreferencesUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ClearEditText;
 import com.thinkive.android.trade_bz.views.SqqSwitchButton;
 
 import java.util.ArrayList;
@@ -68,15 +68,15 @@ public class FundLoginFragment extends AbsBaseFragment {
     /**
      * 用于输入账号信息
      */
-    private EditText mInputAccountEdt;
+    private ClearEditText mInputAccountEdt;
     /**
      * 用于输入密码
      */
-    private EditText mInputPasswordEdt;
+    private ClearEditText mInputPasswordEdt;
     /**
      * 用于输入验证码
      */
-    private EditText mInputVerifyCodeEdt;
+    private ClearEditText mInputVerifyCodeEdt;
     /**
      * 用于显示验证码图片
      */
@@ -162,7 +162,7 @@ public class FundLoginFragment extends AbsBaseFragment {
                 mInputAccountEdt.setText(PreferencesUtils.getString(mActivity, Constants.USER_NORMAL_ACCOUNT_KEY));
             } else {
                 mSwitchBtn.setToggleOn(false);
-                TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, true);
+                TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, false);
             }
         }
         if (TradeLoginManager.LOGIN_TYPE_CREDIT.equals(mLoginType)) {
@@ -173,7 +173,7 @@ public class FundLoginFragment extends AbsBaseFragment {
                 mInputAccountEdt.setText(PreferencesUtils.getString(mActivity, Constants.USER_CREDIT_ACCOUNT_KEY));
             } else {
                 mSwitchBtn.setToggleOn(false);
-                TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, true);
+                TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, false);
             }
             mSwitchBtn.setToggleOn(PreferencesUtils.getBoolean(mActivity, Constants.IS_SAVE_CREDIT_ACCOUNT_KEY));
         }
@@ -191,9 +191,6 @@ public class FundLoginFragment extends AbsBaseFragment {
         if (mKeyboardManagerVeri != null && mKeyboardManagerVeri.isShowing()) {
             mKeyboardManagerVeri.dismiss();
         }
-
-
-
     }
 
     @Override
@@ -250,13 +247,14 @@ public class FundLoginFragment extends AbsBaseFragment {
         mKeyboardManager = TradeTools.initKeyBoard(mActivity, mInputPasswordEdt, KeyboardManager.KEYBOARD_TYPE_RANDOM_DIGITAL, BaseKeyboard.THEME_LIGHT);
         mKeyboardManagerPassWord = TradeTools.initKeyBoard(mActivity, mInputAccountEdt, KeyboardManager.KEYBOARD_TYPE_DIGITAL, BaseKeyboard.THEME_LIGHT);
         mKeyboardManagerVeri = TradeTools.initKeyBoard(mActivity, mInputVerifyCodeEdt, KeyboardManager.KEYBOARD_TYPE_COMMON, BaseKeyboard.THEME_LIGHT);
+
     }
 
     @Override
     protected void findViews(View view) {
-        mInputAccountEdt = (EditText) view.findViewById(R.id.tv_username);
-        mInputPasswordEdt = (EditText) view.findViewById(R.id.et_password);
-        mInputVerifyCodeEdt = (EditText) view.findViewById(R.id.et_verify);
+        mInputAccountEdt = (ClearEditText) view.findViewById(R.id.tv_username);
+        mInputPasswordEdt = (ClearEditText) view.findViewById(R.id.et_password);
+        mInputVerifyCodeEdt = (ClearEditText) view.findViewById(R.id.et_verify);
         mShowVerifyCodeIv = (ImageView) view.findViewById(R.id.iv_show_security_code);
         mLoginBtn = (Button) view.findViewById(R.id.btn_login);
         mLoadVerifyImagePb = (ProgressBar) view.findViewById(R.id.pb_loadImage);
@@ -274,6 +272,42 @@ public class FundLoginFragment extends AbsBaseFragment {
         registerListener(ListenerController.ON_TOUCH, mSwitchBtn, mController);
         registerListener(ListenerController.ON_CLICK, mFaqTv, mController);
         registerListener(ListenerController.ON_CLICK, mOpenAccountTv, mController);
+        //        mInputAccountEdt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        //            @Override
+        //            public void onFocusChange(View v, boolean hasFocus) {
+        //                if (!hasFocus) {
+        //                    mInputAccountEdt.setClearIconVisible(false);
+        //                    mInputAccountEdt.invalidate();
+        //                } else {
+        //                    mInputAccountEdt.setClearIconVisible(true);
+        //                    mInputAccountEdt.invalidate();
+        //                }
+        //            }
+        //        });
+        //        mInputPasswordEdt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        //            @Override
+        //            public void onFocusChange(View v, boolean hasFocus) {
+        //                if (!hasFocus) {
+        //                    mInputPasswordEdt.setClearIconVisible(false);
+        //                    mInputPasswordEdt.invalidate();
+        //                }else {
+        //                    mInputPasswordEdt.setClearIconVisible(true);
+        //                    mInputPasswordEdt.invalidate();
+        //                }
+        //            }
+        //        });
+        //        mInputVerifyCodeEdt.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        //            @Override
+        //            public void onFocusChange(View v, boolean hasFocus) {
+        //                if (!hasFocus) {
+        //                    mInputVerifyCodeEdt.setClearIconVisible(false);
+        //                    mInputVerifyCodeEdt.invalidate();
+        //                }else {
+        //                    mInputVerifyCodeEdt.setClearIconVisible(true);
+        //                    mInputVerifyCodeEdt.invalidate();
+        //                }
+        //            }
+        //        });
         mSwitchBtn.setOnToggleChanged(new SqqSwitchButton.OnToggleChanged() {
             @Override
             public void onToggle(boolean on) {
@@ -433,6 +467,7 @@ public class FundLoginFragment extends AbsBaseFragment {
         //普通账户登录
         switch (loginType) {
             case TradeLoginManager.LOGIN_TYPE_NORMAL:
+
                 TradeFlags.addFlag(TradeFlags.FLAG_NORMAL_TRADE_YES);
                 TradeLoginManager.sNormalLoginAccount = account;
                 //普通登录
@@ -446,9 +481,20 @@ public class FundLoginFragment extends AbsBaseFragment {
                             mJsonDataFromHq);
                 }
                 //普通登录会话同步
-                String url1 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sNormalUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sNormalUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sNormalUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sNormalUserInfo.getOp_station();
-                String cookie1 = NetWorkService.getInstance().getCookie(url1);
-                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"), cookie1);
+                String newStockNormalUrl = "http://116.236.247.174:8071/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" +
+                        TradeLoginManager.sNormalUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sNormalUserInfo.getFund_account() +
+                        "&cust_code=" + TradeLoginManager.sNormalUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" +
+                        TradeLoginManager.sNormalUserInfo.getOp_station();
+
+                String newStockNormalCookie = NetWorkService.getInstance().getCookie(newStockNormalUrl);
+
+
+                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"), newStockNormalCookie);
+                String tansferNormalUrl = "http://116.236.247.174:8071/servlet/json?funcNo=300200&entrust_way=SJWT&branch_no=" + TradeLoginManager.sNormalUserInfo.getBranch_no() + "&fund_account=" +
+                        TradeLoginManager.sNormalUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sNormalUserInfo.getCust_code() + "&password=" + TradeLoginManager.sNormalUserInfo.getPassword();
+                String transferNormalCookie = NetWorkService.getInstance().getCookie(tansferNormalUrl);
+                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL"), transferNormalCookie);
+
                 break;
             case TradeLoginManager.LOGIN_TYPE_CREDIT:
                 TradeFlags.addFlag(TradeFlags.FLAG_CREDIT_TRADE_YES);
@@ -463,9 +509,19 @@ public class FundLoginFragment extends AbsBaseFragment {
                             mJsonDataFromHq);
                 }
                 //信用登录会话
-                String url2 = "http://10.84.132.63:9999/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" + TradeLoginManager.sCreditUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sCreditUserInfo.getFund_account() + "&cust_code=" + TradeLoginManager.sCreditUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station=" + TradeLoginManager.sCreditUserInfo.getOp_station();
-                String cookie2 = NetWorkService.getInstance().getCookie(url2);
-                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"), cookie2);
+                String newStockCreditlUrl = "http://116.236.247.174:8071/servlet/json?funcNo=303028&entrust_way=SJWT&branch_no=" +
+                        TradeLoginManager.sCreditUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sCreditUserInfo.getFund_account()
+                        + "&cust_code=" + TradeLoginManager.sCreditUserInfo.getCust_code() + "&password=&sessionid=&jsessionid=&exchange_type=&op_station="
+                        + TradeLoginManager.sCreditUserInfo.getOp_station();
+
+                String newStockCreditCookie = NetWorkService.getInstance().getCookie(newStockCreditlUrl);
+                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"), newStockCreditCookie);
+                //普通登录会话同步
+                String transferCreditUrl = "http://116.236.247.174:8071/servlet/json?funcNo=300200&entrust_way=" + TradeLoginManager.sCreditUserInfo.getEntrust_way() + "&branch_no=" +
+                        TradeLoginManager.sCreditUserInfo.getBranch_no() + "&fund_account=" + TradeLoginManager.sCreditUserInfo.getFund_account() + "&cust_code=" +
+                        TradeLoginManager.sCreditUserInfo.getCust_code() + "&password=" + TradeLoginManager.sCreditUserInfo.getPassword();
+                String transferCreditCookie = NetWorkService.getInstance().getCookie(transferCreditUrl);
+                CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL"), transferCreditCookie);
                 break;
             case TradeLoginManager.LOGIN_TYPE_OPTION:
                 TradeFlags.addFlag(TradeFlags.FLAG_OPTION_TRADE_YES);
@@ -525,7 +581,7 @@ public class FundLoginFragment extends AbsBaseFragment {
      */
     public void resetAccountEdt() {
         mInputAccountEdt.setText("");
-        TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, true);
+        TradeUtils.showKeyBoard(mActivity, mInputAccountEdt, false);
     }
 
     /**
@@ -533,7 +589,7 @@ public class FundLoginFragment extends AbsBaseFragment {
      */
     public void resetVerifyEdt() {
         mInputVerifyCodeEdt.setText("");
-        TradeUtils.showKeyBoard(mActivity, mInputVerifyCodeEdt, true);
+        TradeUtils.showKeyBoard(mActivity, mInputVerifyCodeEdt, false);
     }
 
 

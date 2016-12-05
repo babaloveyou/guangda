@@ -15,7 +15,8 @@
         <!--交易登录-->
         <activity
             android:name=".a_stock.activity.TradeLoginActivity"
-            android:launchMode="singleTop"
+            android:launchMode="singleInstance"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:screenOrientation="portrait"/>
 
         <!-- 普通交易页面 -->
@@ -42,10 +43,35 @@
             android:name="com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+        <!--印证转账-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.TradnsferActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
 
         <!--历史成交、历史委托-->
         <activity
             android:name=".a_stock.activity.HistoryEntrustOrTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--信用交易资金流水-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.CreditMoneyFlowActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--信用交易历史委托历史成交-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.CreditHistoryEntrustOrTradeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--融资明细-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditZiDetailActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--融券明细-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditQuanDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
 
@@ -65,6 +91,7 @@
             android:name=".a_stock.activity.TodayEntrustDetailActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
+
         <!--今日成交详情-->
         <activity
             android:name=".a_stock.activity.TodayTradeDetailActivity"

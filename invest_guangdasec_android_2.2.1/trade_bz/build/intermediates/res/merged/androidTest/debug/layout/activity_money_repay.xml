@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/bg_main_french_gray"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:paddingLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="需还金额"
+            android:textColor="@color/trade_text_color2"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_need_repay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/bg_main_french_gray"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:paddingLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="可还金额"
+            android:textColor="@color/trade_text_color2"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_could_repay"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="还款金额"
+            android:textColor="@color/trade_text_color2"
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/et_verify"
+            style="@style/style_login_ll"
+            android:layout_width="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:digits="@string/change_pwd_regex"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/tv_all_repay"
+            android:layout_width="65dp"
+            android:layout_height="25dp"
+            android:background="@drawable/shape_bg_gradius4"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="全额还款"
+            android:textColor="@color/statusbar_main"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="如果需要印证转账,请"
+            android:textColor="@color/trade_text_color6"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tv_to_stock_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击这里"
+            android:textColor="@color/trade_sale"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_sure_repay"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/selector_bg_btn_toactive"
+        android:text="提交还款"
+        android:textColor="#7c5d48"
+        android:textSize="18sp"/>
+</LinearLayout>

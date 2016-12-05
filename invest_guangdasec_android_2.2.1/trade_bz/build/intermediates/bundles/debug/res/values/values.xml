@@ -459,6 +459,7 @@
     <string name="history_money_water">历史资金流水</string>
     <string name="history_trade_fund">找不到该基金！</string>
     <string name="history_trade_title">历史成交</string>
+    <string name="hitn_num6">6位数字</string>
     <string name="hk_amount">每手</string>
     <string name="hk_buy">买入</string>
     <string name="hk_buy_or_sell0">买入数量应为</string>
@@ -1172,13 +1173,13 @@
     <string name="r_order_sell">融券卖出</string>
     <string name="r_order_subscribut">新股申购</string>
     <string name="r_order_three">买券还券</string>
-    <string name="r_order_two">直接还款</string>
+    <string name="r_order_two">现金还款</string>
     <string name="r_property_list10">密码</string>
     <string name="r_property_list12">请登录普通股票资金账号</string>
     <string name="r_property_list4">请选择证券</string>
     <string name="r_property_list5">还款金额</string>
     <string name="r_property_list6">请输入还款金额</string>
-    <string name="r_property_list7">可用金额</string>
+    <string name="r_property_list7">可还金额</string>
     <string name="r_property_list8">需还金额</string>
     <string name="r_property_list9">账户</string>
     <string name="r_rb_one">资产</string>
@@ -1357,6 +1358,7 @@
     <string name="trade_toast_input_code2">未获取到证券信息</string>
     <string name="trade_toast_input_error">未获取到市价委托方式</string>
     <string name="trade_toast_input_price">请输入委托价格</string>
+    <string name="trade_toast_input_price2">委托价格不能为0</string>
     <string name="trade_toast_input_sale_amount_error">卖出的数量应为%1$d的整数倍</string>
     <string name="trade_toast_select_bs">请选择买卖类别</string>
     <string name="trade_toast_select_stock_first">请先选择一支有效股票</string>

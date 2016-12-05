@@ -1,5 +1,7 @@
 package com.thinkive.android.trade_bz.a_rr.bean;
 
+import android.os.Parcel;
+
 import com.thinkive.android.trade_bz.a_stock.bean.BaseBean;
 import com.thinkive.android.trade_bz.others.JsonKey;
 
@@ -11,6 +13,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class RSelectTodayTradeBean extends BaseBean {
+
     /**
      *  委托标志
      */
@@ -287,4 +290,71 @@ public class RSelectTodayTradeBean extends BaseBean {
     public void setFare2(String fare2) {
         this.fare2 = fare2;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_bs);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.entrust_type);
+        dest.writeString(this.entrust_type_name);
+        dest.writeString(this.real_status);
+        dest.writeString(this.real_status_name);
+        dest.writeString(this.exchange_type);
+        dest.writeString(this.exchange_type_name);
+        dest.writeString(this.stock_account);
+        dest.writeString(this.business_date);
+        dest.writeString(this.business_time);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.report_no);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.business_price);
+        dest.writeString(this.business_amount);
+        dest.writeString(this.business_balance);
+        dest.writeString(this.fare0);
+        dest.writeString(this.fare1);
+        dest.writeString(this.fare2);
+    }
+
+    protected RSelectTodayTradeBean(Parcel in) {
+        this.entrust_bs = in.readString();
+        this.entrust_name = in.readString();
+        this.entrust_type = in.readString();
+        this.entrust_type_name = in.readString();
+        this.real_status = in.readString();
+        this.real_status_name = in.readString();
+        this.exchange_type = in.readString();
+        this.exchange_type_name = in.readString();
+        this.stock_account = in.readString();
+        this.business_date = in.readString();
+        this.business_time = in.readString();
+        this.stock_code = in.readString();
+        this.stock_name = in.readString();
+        this.report_no = in.readString();
+        this.entrust_no = in.readString();
+        this.business_price = in.readString();
+        this.business_amount = in.readString();
+        this.business_balance = in.readString();
+        this.fare0 = in.readString();
+        this.fare1 = in.readString();
+        this.fare2 = in.readString();
+    }
+
+    public static final Creator<RSelectTodayTradeBean> CREATOR = new Creator<RSelectTodayTradeBean>() {
+        @Override
+        public RSelectTodayTradeBean createFromParcel(Parcel source) {
+            return new RSelectTodayTradeBean(source);
+        }
+
+        @Override
+        public RSelectTodayTradeBean[] newArray(int size) {
+            return new RSelectTodayTradeBean[size];
+        }
+    };
 }

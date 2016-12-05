@@ -29,7 +29,7 @@ public class ClearEditText extends EditText implements
     /**
      * 控件是否有焦点
      */
-    private boolean hasFoucs;
+    private boolean mHasFoucs;
 
     public ClearEditText(Context context) {
         this(context, null);
@@ -57,10 +57,10 @@ public class ClearEditText extends EditText implements
         mClearDrawable.setBounds(0, 0, mClearDrawable.getIntrinsicWidth()/2, mClearDrawable.getIntrinsicHeight()/2);
         //默认设置隐藏图标
         setClearIconVisible(false);
-        //设置焦点改变的监听
-        setOnFocusChangeListener(this);
         //设置输入框里面内容发生改变的监听
         addTextChangedListener(this);
+        //设置焦点改变的监听
+        setOnFocusChangeListener(this);
     }
 
 
@@ -91,9 +91,9 @@ public class ClearEditText extends EditText implements
      */
     @Override
     public void onFocusChange(View v, boolean hasFocus) {
-        this.hasFoucs = hasFocus;
-        if (hasFocus) {
-            setClearIconVisible(getText().length() > 0);
+        this.mHasFoucs = hasFocus;
+        if (mHasFoucs) {
+            setClearIconVisible(getText().toString().length() > 0);
         } else {
             setClearIconVisible(false);
         }
@@ -118,7 +118,7 @@ public class ClearEditText extends EditText implements
     @Override
     public void onTextChanged(CharSequence s, int start, int count,
                               int after) {
-        if (hasFoucs) {
+        if (mHasFoucs) {
             setClearIconVisible(s.length() > 0);
         }
     }

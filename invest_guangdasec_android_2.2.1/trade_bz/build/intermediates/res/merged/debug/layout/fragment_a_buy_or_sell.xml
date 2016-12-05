@@ -312,9 +312,10 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:digits="@string/change_pwd_regex2"
+                        android:inputType="number"
                         android:background="@null"
                         android:gravity="center|left"
-                        android:inputType="numberDecimal"
                         android:longClickable="false"
                         android:maxLength="7"
                         android:paddingLeft="2dp"
@@ -337,6 +338,7 @@
                             android:textSize="12sp"/>
 
                         <TextView
+                            android:digits="@string/change_pwd_regex2"
                             android:id="@+id/tv_stock_max_num"
                             android:layout_width="50dp"
                             android:layout_height="match_parent"

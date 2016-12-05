@@ -11,8 +11,9 @@
             android:text="资金账号"
             style="@style/tv_normal_show"/>
 
-        <EditText
+        <com.thinkive.android.trade_bz.views.ClearEditText
             android:maxLength="8"
+            android:paddingRight="85dp"
             android:inputType=""
             android:hint="请输入资金账号"
             android:id="@+id/tv_username"
@@ -28,8 +29,9 @@
             android:text="交易密码"
             style="@style/tv_normal_show"/>
 
-        <EditText
+        <com.thinkive.android.trade_bz.views.ClearEditText
             android:maxLength="6"
+            android:paddingRight="85dp"
             android:inputType="textPassword"
             android:digits="0123456789"
             android:hint="请输入交易密码"
@@ -45,7 +47,7 @@
             android:text="验证码"
             style="@style/tv_normal_show"/>
 
-        <EditText
+        <com.thinkive.android.trade_bz.views.ClearEditText
             android:digits="@string/change_pwd_regex"
             android:inputType="number"
             android:maxLength="4"

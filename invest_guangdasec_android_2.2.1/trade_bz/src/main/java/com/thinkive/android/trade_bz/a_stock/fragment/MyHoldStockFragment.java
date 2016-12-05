@@ -231,16 +231,16 @@ public class MyHoldStockFragment extends AbsBaseFragment {
     @Override
     protected void setListeners() {
         registerListener(AbsBaseController.ON_SCROLLVIEW_REFLASH, mPullToRefreshScrollView, mController);
-        registerListener(MyHoldStockViewController.ON_ACTION_CLICK, mListView, mController);
         registerListener(MyHoldStockViewController.ON_SLIDE, mHsllPart1, mController);
         registerListener(MyHoldStockViewController.ON_SLIDE, mHsllPart2, mController);
+        registerListener(MyHoldStockViewController.ON_ACTION_CLICK, mListView, mController);
     }
 
 
     @Override
     protected void initData() {
         //设置当前可见item个数和 expandview高度    当点击listview最后一个可见item时会顶上去
-        mListView.setScrollParam(3, 100);
+//        mListView.setScrollParam(3, 100);
         mActivity = (MultiTradeActivity) getActivity();
         mServiceImpl = new MyHoldStockServiceImpl(this);
         mController = new MyHoldStockViewController(this);

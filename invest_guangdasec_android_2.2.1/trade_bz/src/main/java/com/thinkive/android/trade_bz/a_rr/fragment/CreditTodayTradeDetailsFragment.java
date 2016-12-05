@@ -21,7 +21,6 @@ public class CreditTodayTradeDetailsFragment extends Fragment {
     private View mView;
     private ImageView mFlagIv;
     private TextView mNameAndCodeTv;
-    private TextView mTimeTv;
     private TextView mTv2;
     private TextView mTv3;
     private TextView mTv4;
@@ -54,7 +53,6 @@ public class CreditTodayTradeDetailsFragment extends Fragment {
     private void initView() {
         mFlagIv.setImageResource("0".equals(b.getEntrust_bs()) ? R.mipmap.flag_buy : R.mipmap.flag_sale);
         mNameAndCodeTv.setText(b.getStock_name() + " " + b.getStock_code());
-        mTimeTv.setText(b.getBusiness_date() + "" + b.getBusiness_time());
         mNumTv.setText(b.getBusiness_amount());
         mPriceTv.setText(TradeUtils.formatDouble2(b.getBusiness_price()));
         mTotalPriceTv.setText(Double.parseDouble(b.getBusiness_price()) * Double.parseDouble(b.getBusiness_amount()) + "");
@@ -69,7 +67,6 @@ public class CreditTodayTradeDetailsFragment extends Fragment {
     private void findViews(View v) {
         mFlagIv = (ImageView) v.findViewById(R.id.iv_flag);
         mNameAndCodeTv = (TextView) v.findViewById(R.id.tv_name_code);
-        mTimeTv = (TextView) v.findViewById(R.id.tv_time);
         mNumTv = (TextView) v.findViewById(R.id.tv_num);
         mPriceTv = (TextView) v.findViewById(R.id.tv_price);
         mTotalPriceTv = (TextView) v.findViewById(R.id.tv_total_price);

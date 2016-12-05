@@ -9,11 +9,11 @@
     <!-- 正在加载时显示的界面 -->
     <LinearLayout
         android:id="@+id/lin_loading_set"
-        android:gravity="center"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible">
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <ProgressBar
             android:layout_width="20dp"
@@ -21,211 +21,153 @@
             android:indeterminateDrawable="@drawable/rotate_blue_trade_refresh_progressbar"/>
 
         <TextView
-            android:text="@string/home_loading_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:text="@string/home_loading_text"/>
 
     </LinearLayout>
 
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        android:id="@+id/rg_cash_return">
-
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:checked="true"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:text="@string/r_order_two"
-            android:textColor="@color/trade_color_white"
-            android:background="@drawable/common_selector_left1"
-            android:id="@+id/rb_cash_return"/>
-
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:gravity="center"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:layout_marginLeft="-1dp"
-            android:text="@string/r_return_contract"
-            android:textColor="@color/trade_color1"
-            android:background="@drawable/common_selector_right1"
-            android:id="@+id/rb_cash_return_contract" />
-
-    </RadioGroup>
-
-    <LinearLayout
-        android:id="@+id/ll_r_choose_contract"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
-        android:background="@color/trade_color_white"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="@string/contract_not20"/>
-
-        <TextView
-            android:id="@+id/tv_r_choose_contract"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:drawableRight="@drawable/arrows_right_gray"
-            android:gravity="right|center_vertical"
-            android:drawablePadding="10dp"
-            android:hint="@string/r_choose_contract_loading"
-            android:textColor="@color/trade_text_color6"/>
-
-    </LinearLayout>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/trade_color_white"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:background="@color/bg_main_french_gray"
+        android:orientation="vertical">
+
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="@string/r_property_list7"/>
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/r_property_list8"
+                android:textColor="@color/trade_text_color2"
+                android:textSize="16sp"/>
 
             <TextView
-                android:id="@+id/tv_r_cash_can_use"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"/>
+                android:paddingRight="100dp"
+                android:id="@+id/tv_r_cash_other"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"/>
+
         </LinearLayout>
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="@color/trade_normal_background"/>
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/bg_main_french_gray"/>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:text="@string/r_property_list8"/>
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/r_property_list7"
+                android:textColor="@color/trade_text_color2"
+                android:textSize="16sp"/>
 
             <TextView
-                android:id="@+id/tv_r_cash_other"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="@string/no_text_set"
-                android:textColor="@color/trade_text_color6"/>
-
+                android:paddingRight="100dp"
+                android:id="@+id/tv_r_cash_can_use"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/r_property_list5"
+                android:textColor="@color/trade_text_color2"
+                android:textSize="16sp"/>
+
+            <com.thinkive.android.trade_bz.views.ClearEditText
+                android:id="@+id/edt_r_cash_num"
+                style="@style/style_login_ll"
+                android:layout_width="0dp"
+                android:paddingRight="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:hint="@string/r_property_list6"
+                android:inputType="numberDecimal"
+                android:textColorHint="@color/trade_text_color9"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tv_r_return_all"
+                android:layout_width="65dp"
+                android:layout_height="25dp"
+                android:background="@drawable/shape_bg_gradius4"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="全额还款"
+                android:textColor="@color/statusbar_main"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="如果需要印证转账,请"
+                android:textColor="@color/trade_text_color6"
+                android:textSize="12sp"/>
+
+            <TextView
+                android:id="@+id/tv_to_stock_bank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="点击这里"
+                android:textColor="@color/trade_sale"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_r_cash_commit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/selector_bg_btn_toactive"
+            android:text="提交还款"
+            android:textColor="#7c5d48"
+            android:textSize="18sp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/trade_color_white"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="@string/r_property_list5"
-            android:textColor="@color/trade_text_color6"
-            android:textSize="@dimen/buysell_button_text_size"/>
-
-        <EditText
-            android:id="@+id/edt_r_cash_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="center_vertical"
-            android:hint="@string/r_property_list6"
-            android:inputType="numberDecimal"
-            android:padding="10dp"
-            android:singleLine="true"
-            android:textSize="@dimen/buysell_button_text_size" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:text="@string/fund_subscribe_unit"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="10dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:background="@drawable/common_all_corner_shi"
-            android:text="@string/r_all_cash"
-            android:textColor="@color/trade_color_white"
-            android:gravity="center"
-            android:id="@+id/tv_r_return_all"/>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_r_cash_commit"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/common_all_corner_shi"
-        android:text="@string/r_commit_delegation"
-        android:textColor="@color/trade_color_white"
-        android:textSize="@dimen/login_button_text_size"/>
 
 </LinearLayout>
 

@@ -35,22 +35,6 @@ public class RSelectCreditLimitFragment extends AbsBaseFragment {
      */
     private TextView mTvAllLimit;
     /**
-     *融资授信额度
-     */
-    private TextView mTvLimitZi;
-    /**
-     *融券授信额度
-     */
-    private TextView mTvLimitQuan;
-    /**
-     *融资使用额度
-     */
-    private TextView mTvUseZi;
-    /**
-     *融券使用额度
-     */
-    private TextView mTvUseQuan;
-    /**
      *融资剩余额度
      */
     private TextView mTvOtherZi;
@@ -76,10 +60,6 @@ public class RSelectCreditLimitFragment extends AbsBaseFragment {
     @Override
     protected void findViews(View view) {
         mTvAllLimit=(TextView)view.findViewById(R.id.tv_limit_all);
-        mTvLimitZi=(TextView)view.findViewById(R.id.tv_limit_zi);
-        mTvLimitQuan=(TextView)view.findViewById(R.id.tv_limit_quan);
-        mTvUseZi=(TextView)view.findViewById(R.id.tv_limit_use_zi);
-        mTvUseQuan=(TextView)view.findViewById(R.id.tv_limit_use_quan);
         mTvOtherZi=(TextView)view.findViewById(R.id.tv_limit_other_zi);
         mTvOtherQuan=(TextView)view.findViewById(R.id.tv_limit_other_quan);
         mLinLoading = (LinearLayout)view.findViewById(R.id.lin_loading_set);
@@ -114,10 +94,6 @@ public class RSelectCreditLimitFragment extends AbsBaseFragment {
     public void getCreditLimit(RSelectPropertBean data) {
         mLinLoading.setVisibility(View.GONE);
         mTvAllLimit.setText(data.getAcreditavl());
-        mTvLimitZi.setText(data.getFcreditbal());
-        mTvLimitQuan.setText(data.getDcreditbal());
-        mTvUseZi.setText(data.getFin_used_quota());
-        mTvUseQuan.setText(data.getSlo_used_quota());
         mTvOtherZi.setText(data.getFcreditavl());
         mTvOtherQuan.setText(data.getDcreditavl());
     }

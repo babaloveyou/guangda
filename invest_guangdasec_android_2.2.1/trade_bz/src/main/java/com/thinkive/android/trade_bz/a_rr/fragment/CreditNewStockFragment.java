@@ -57,6 +57,7 @@ public class CreditNewStockFragment extends BaseWebFragment implements IModule {
     public void onDestroyView() {
         super.onDestroyView();
         canReceive = false;
+        getContext().unregisterReceiver(mToH5PageReceiver);
     }
     //    @Override
 //    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -144,13 +145,17 @@ public class CreditNewStockFragment extends BaseWebFragment implements IModule {
     @Override
     public void onDetach() {
         super.onDetach();
-        getContext().unregisterReceiver(mToH5PageReceiver);
+        if (mToH5PageReceiver != null) {
+            getContext().unregisterReceiver(mToH5PageReceiver);
+        }
     }
     /**
      * 发送50107消息给H5，通知他们，用户单击了手机的物理返回键
      */
     public void sendMessage50107() {
-        if (getWebView() != null) {
+        if (!isH5Prepare) {
+            getActivity().finish();
+        }else if (getWebView() != null) {
             AppMessage appMessage = new AppMessage(50107, new JSONObject());
             sendMessageToH5(appMessage);
         }

@@ -4,6 +4,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
  * 当日资金流水数据实体类
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/6/25
@@ -94,12 +95,12 @@ public class TodayMoneyBean extends BaseBean {
     /**
      * 添加
      */
-//    private String matchamt="";
+    //    private String matchamt="";
     @JsonKey("orderprice")
     private String orderprice = "";//自定义为委托价格
     //    private String stkbal="";
-//    private String fundbal="";
-//    private String matchqty="";
+    //    private String fundbal="";
+    //    private String matchqty="";
     @JsonKey("entrust_no")
     private String entrust_no = "";//委托编号
     @JsonKey("orderqty")
@@ -123,13 +124,13 @@ public class TodayMoneyBean extends BaseBean {
         this.orderprice = orderprice;
     }
 
-//    public String getMatchamt() {
-//        return matchamt;
-//    }
-//
-//    public void setMatchamt(String matchamt) {
-//        this.matchamt = matchamt;
-//    }
+    //    public String getMatchamt() {
+    //        return matchamt;
+    //    }
+    //
+    //    public void setMatchamt(String matchamt) {
+    //        this.matchamt = matchamt;
+    //    }
 
     public String getBusiness_price() {
         return business_price;
@@ -251,13 +252,13 @@ public class TodayMoneyBean extends BaseBean {
         this.entrust_bs = entrust_bs;
     }
 
-//    public String getJzwin_business_price() {
-//        return business_price;
-//    }
-//
-//    public void setJzwin_business_price(String business_price) {
-//        this.business_price = business_price;
-//    }
+    //    public String getJzwin_business_price() {
+    //        return business_price;
+    //    }
+    //
+    //    public void setJzwin_business_price(String business_price) {
+    //        this.business_price = business_price;
+    //    }
 
     public String getOccur_amount() {
         return occur_amount;
@@ -275,30 +276,30 @@ public class TodayMoneyBean extends BaseBean {
         this.remark = remark;
     }
 
-//    public String getStkbal() {
-//        return stkbal;
-//    }
-//
-//    public void setStkbal(String stkbal) {
-//        this.stkbal = stkbal;
-//    }
-//
-//    public String getFundbal() {
-//        return fundbal;
-//    }
-//
-//    public void setFundbal(String fundbal) {
-//        this.fundbal = fundbal;
-//    }
+    //    public String getStkbal() {
+    //        return stkbal;
+    //    }
+    //
+    //    public void setStkbal(String stkbal) {
+    //        this.stkbal = stkbal;
+    //    }
+    //
+    //    public String getFundbal() {
+    //        return fundbal;
+    //    }
+    //
+    //    public void setFundbal(String fundbal) {
+    //        this.fundbal = fundbal;
+    //    }
 
     //    public String getMatchqty() {
-//        return matchqty;
-//    }
-//
-//    public void setMatchqty(String matchqty) {
-//        this.matchqty = matchqty;
-//    }
-//
+    //        return matchqty;
+    //    }
+    //
+    //    public void setMatchqty(String matchqty) {
+    //        this.matchqty = matchqty;
+    //    }
+    //
     public String getEntrust_no() {
         return entrust_no;
     }
@@ -357,14 +358,14 @@ public class TodayMoneyBean extends BaseBean {
         this.stock_code = stock_code;
         this.stock_name = stock_name;
         this.entrust_bs = entrust_bs;
-//        this.business_price = business_price;
+        //        this.business_price = business_price;
         this.occur_amount = occur_amount;
         this.remark = remark;
-//        this.matchamt = matchamt;
+        //        this.matchamt = matchamt;
         this.orderprice = orderprice;
-//        this.stkbal = stkbal;
-//        this.fundbal = fundbal;
-//        this.matchqty = matchqty;
+        //        this.stkbal = stkbal;
+        //        this.fundbal = fundbal;
+        //        this.matchqty = matchqty;
         this.entrust_no = entrust_no;
         this.orderqty = orderqty;
         this.matchprice = matchprice;

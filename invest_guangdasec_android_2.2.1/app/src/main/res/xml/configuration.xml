@@ -171,22 +171,25 @@
             certificatePath="e.ebscn.com.cer"
             description="富尊退出地址"
             value="https://e.ebscn.com/servlet/json?"/>
-        <!--<address-->
-            <!--name="NORMAL_NEWSTOCK_URL"-->
-            <!--description="普通交易新股申购"-->
-            <!--value="http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=stock"/>-->
-        <!--<address-->
-            <!--name="CREDIT_NEWSTOCK_URL"-->
-            <!--description="信用交易新股申购"-->
-            <!--value="http://10.84.132.63:9999/m/trade/views/shares/sharesIndex.html?stock_credit_flag=credit"/>-->
+        <address
+            name="NORMAL_TRANSFER_URL"
+            description="普通交易银证转账"
+            value="http://116.236.247.174:8071/m/index.html?module_flag=transfer&amp;stock_credit_flag=stock"/>
+        <address
+            name="CREDIT_TRANSFER_URL"
+            description="信用交易银证转账"
+            value="http://116.236.247.174:8071/m/index.html?module_flag=transfer&amp;stock_credit_flag=credit"/>
+
+
         <address
             name="NORMAL_NEWSTOCK_URL"
             description="普通交易新股申购"
-            value="http://116.236.247.174:8071/m/trade/views/transfer/bankSecuritiesTransfer.html?stock_credit_flag=stock"/>
+            value="http://116.236.247.174:8071/m/index.html?module_flag=shares&amp;stock_credit_flag=stock"/>
         <address
             name="CREDIT_NEWSTOCK_URL"
             description="信用交易新股申购"
-            value="http://116.236.247.174:8071/m/trade/views/transfer/bankSecuritiesTransfer.html?stock_credit_flag=credit"/>
+            value="http://116.236.247.174:8071/m/index.html?module_flag=shares&amp;stock_credit_flag=credit"/>
+
         <address
             name="URL_EXIT_TRADE"
             certificatePath="sc.ebscn.com.cer"
@@ -267,7 +270,7 @@
             name="LOGIN_HTTP_VERIFY_CODE_URL"
             description="交易登录验证码"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/NewImage?"/>
+            value="http://116.236.247.174:8071/servlet/NewImage?"/>
 
         <address
             name="URL_TRADE"
@@ -275,7 +278,7 @@
             retry="1"
             route="true"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/json?"/>
+            value="http://116.236.247.174:8071/servlet/json?"/>
 
         <address
             name="CREDIT_URL_TRADE"
@@ -283,13 +286,13 @@
             retry="1"
             route="true"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/json?"/>
+            value="http://116.236.247.174:8071/servlet/json?"/>
 
         <address
             name="CREDIT_LOGIN_HTTP_VERIFY_CODE_URL"
             description="融资融券交易登录验证码"
             timeout="20000"
-            value="http://10.84.132.63:9999/servlet/NewImage?"/>
+            value="http://116.236.247.174:8071/servlet/NewImage?"/>
 
     </address-config>
 
@@ -355,6 +358,14 @@
         <module
             name="new-stock-credit"
             class="com.thinkive.android.trade_bz.a_rr.fragment.CreditNewStockFragment"
+            description=""/>
+        <module
+            name="yzzz-normal"
+            class="com.thinkive.android.trade_bz.a_stock.fragment.NormalTransferFragment"
+            description=""/>
+        <module
+            name="yzzz-credit"
+            class="com.thinkive.android.trade_bz.a_rr.fragment.CreditTransferFragment"
             description=""/>
         <!--<module-->
         <!--name="open-account-home"-->

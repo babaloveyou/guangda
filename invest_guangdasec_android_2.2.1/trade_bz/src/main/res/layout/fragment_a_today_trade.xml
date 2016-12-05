@@ -4,17 +4,20 @@
               android:layout_height="match_parent"
               android:background="@color/bg_main_french_gray"
               android:orientation="vertical">
+
     <com.thinkive.android.trade_bz.views.HorizontalSlideLinearLayout
+        android:id="@+id/hsll_part"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/hsll_part">
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <!-- 正在加载时显示的界面 -->
             <LinearLayout
+                android:paddingBottom="120dp"
                 android:id="@+id/ll_loading"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -32,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="@string/home_loading_text" />
+                    android:text="@string/home_loading_text"/>
 
             </LinearLayout>
 

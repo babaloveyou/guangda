@@ -59,8 +59,10 @@ public class Constants {
     public static final String CREDIT_COOKIE_KEY = "credit_cookie_key";
 
     public static final int TIME_LIMIT = 7;
-    public static String  TODAY_DATE = null;
-    public static String  CREDIT_DOTAY_DATE = null;
+    public static final String H5SOURCEMODULE = "h5sourcemodule";
+    public static String TODAY_DATE = null;
+    public static String CREDIT_BEGIN_DATE = null;
+    public static String CREDIT_TOTAY_DATE = null;
     public static String HISTORY_START_DATE = null;
     public static String HISTORY_END_DATE = null;
 }

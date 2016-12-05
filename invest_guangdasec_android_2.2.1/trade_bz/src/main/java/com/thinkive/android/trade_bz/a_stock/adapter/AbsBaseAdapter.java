@@ -57,6 +57,11 @@ public abstract class AbsBaseAdapter<T> extends BaseAdapter {
      * 是否对listview进行界面复用
      */
     private boolean isReuseView = true;
+    private int mPosition = -1;
+
+    public int getCurrentPosition() {
+        return   mPosition;
+    }
 
     /**
      * 万能抽象器的构造器
@@ -111,6 +116,8 @@ public abstract class AbsBaseAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        mPosition = position;
+
         final ViewHolder holder = ViewHolder.getInstance(getContext(), convertView, null, mItemLayoutId, position, isReuseView);
         onFillComponentData(holder, getItem(position));
         return holder.getConvertView();
@@ -164,9 +171,11 @@ public abstract class AbsBaseAdapter<T> extends BaseAdapter {
          * 使之不然显示层混乱
          */
         private int mPosition = 0;
+
         public int getPosition() {
             return mPosition;
         }
+
         /**
          * 用于存储item布局视图控件
          */
@@ -297,7 +306,7 @@ public abstract class AbsBaseAdapter<T> extends BaseAdapter {
 
         @Override
         protected Bitmap doInBackground(String... params) {
-//            return ImageUtils.getBitmapFromUrl(params[0], 30 * 1000);
+            //            return ImageUtils.getBitmapFromUrl(params[0], 30 * 1000);
             return null;
         }
 

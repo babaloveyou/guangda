@@ -1,6 +1,7 @@
 package com.thinkive.android.trade_bz.a_stock.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.thinkive.android.trade_bz.a_stock.adapter.HistoryMoneyAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.StatementAccountBean;
 import com.thinkive.android.trade_bz.a_stock.bll.HistoryMoneyServiceImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
+import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
@@ -50,7 +52,7 @@ public class HistoryMoneyFragment extends AbsBaseFragment implements OnDateSetLi
     /**
      * 控制当日资金流失
      */
-    private TodayMoneyViewController mController;
+    private HistoryMoneyViewController mController;
     /**
      *  ListView
      */
@@ -137,7 +139,7 @@ public class HistoryMoneyFragment extends AbsBaseFragment implements OnDateSetLi
         mTodayMoneyActivity = (HistoryMoneyActivity) getActivity();
         mTodayMoneyAdapter = new HistoryMoneyAdapter(mTodayMoneyActivity);
         mServices = new HistoryMoneyServiceImpl(this);
-        mController = new TodayMoneyViewController(this);
+        mController = new HistoryMoneyViewController(this);
         mDialogYearMonthDay = new TimePickerDialog.Builder()
                 .setType(Type.YEAR_MONTH_DAY)
                 .setTitleStringId("选择日期")
@@ -147,10 +149,17 @@ public class HistoryMoneyFragment extends AbsBaseFragment implements OnDateSetLi
 
     @Override
     protected void initViews() {
-        mBegin = TradeUtils.getLastWeek();
-        mEnd = TradeUtils.getYesterday();
-        mTvDateBegin.setText(mBegin);
-        mTvDateEnd.setText(mEnd);
+        if (!TextUtils.isEmpty(Constants.HISTORY_START_DATE)) {
+            mBegin = Constants.HISTORY_START_DATE;
+            mEnd = Constants.HISTORY_END_DATE;
+            mTvDateBegin.setText(mBegin);
+            mTvDateEnd.setText(mEnd);
+        } else {
+            mBegin = TradeUtils.getLastWeek();
+            mEnd = TradeUtils.getYesterday();
+            mTvDateBegin.setText(mBegin);
+            mTvDateEnd.setText(mEnd);
+        }
         //调用业务类中，初始化当日资金流水的方法
         mServices.requestHistoryMoney(mBegin,mEnd);
         //设置禁止上拉加载更多
@@ -247,12 +256,12 @@ public class HistoryMoneyFragment extends AbsBaseFragment implements OnDateSetLi
     }
 }
 
-class TodayMoneyViewController extends AbsBaseController implements
+class HistoryMoneyViewController extends AbsBaseController implements
         PullToRefreshListView.OnRefreshListener, View.OnClickListener {
 
     private HistoryMoneyFragment mFragment = null;
 
-    public TodayMoneyViewController(HistoryMoneyFragment Fragment) {
+    public HistoryMoneyViewController(HistoryMoneyFragment Fragment) {
         mFragment = Fragment;
     }
 

@@ -101,6 +101,7 @@
     <string name="trade_sale5">卖5</string>
     <string name="trade_toast_input_price">请输入委托价格</string>
     <string name="trade_toast_input_amount">请输入委托数量</string>
+    <string name="trade_toast_input_price2">委托价格不能为0</string>
     <string name="trade_toast_input_code">请输入股票代码</string>
     <string name="trade_toast_input_code2">未获取到证券信息</string>
     <string name="trade_toast_input_error">未获取到市价委托方式</string>
@@ -322,6 +323,7 @@
     <string name="change_pwd_title">修改交易密码</string>
     <string name="change_pwd_text">账户登录时需要输入交易密码,请妥善保管您的交易密码</string>
     <string name="change_pwd_old">原交易密码</string>
+    <string name="hitn_num6">6位数字</string>
     <string name="change_pwd_old_hint">原密码不能为空</string>
     <string name="change_pwd_new">新交易密码</string>
     <string name="change_pwd_new_hint">新密码不能为空</string>
@@ -879,7 +881,7 @@
     <string name="r_property_list4">请选择证券</string>
     <string name="r_property_list5">还款金额</string>
     <string name="r_property_list6">请输入还款金额</string>
-    <string name="r_property_list7">可用金额</string>
+    <string name="r_property_list7">可还金额</string>
     <string name="r_property_list8">需还金额</string>
     <string name="r_property_list9">账户</string>
     <string name="r_property_list10">密码</string>
@@ -1092,7 +1094,7 @@
     <string name="r_order_d_buy">普通买入</string>
     <string name="r_order_d_sell">普通卖出</string>
     <string name="r_order_one">卖券还款</string>
-    <string name="r_order_two">直接还款</string>
+    <string name="r_order_two">现金还款</string>
     <string name="r_order_three">买券还券</string>
     <string name="r_order_four">现券还券</string>
     <string name="r_order_revocation">撤单</string>

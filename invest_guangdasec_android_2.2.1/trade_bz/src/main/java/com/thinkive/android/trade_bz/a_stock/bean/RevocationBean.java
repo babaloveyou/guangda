@@ -7,6 +7,7 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
  * 撤单列表 、今日委托
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/6/16
@@ -14,124 +15,140 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 public class RevocationBean extends BaseBean implements Parcelable {
     /**
-     *  限价or市价
+     * 交易类型
+     */
+    @JsonKey("entrust_nature")
+    private String entrust_nature = "";
+    /**
+     * 资金账号
+     */
+    @JsonKey("fund_account")
+    private String fund_account = "";
+    /**
+     * 限价or市价
      */
     @JsonKey("entrust_limit")
-    private String entrust_limit="";
+    private String entrust_limit = "";
 
-    public String getEntrust_limit() {
-        return entrust_limit;
-    }
 
-    public void setEntrust_limit(String entrust_limit) {
-        this.entrust_limit = entrust_limit;
-    }
-
+    /**
+     * 成交状态
+     */
+    @JsonKey("business_state_name")
+    private String business_state_name = "";
     /**
      * 委托标志
      */
     @JsonKey("entrust_bs")
-    private String entrust_bs="";
+    private String entrust_bs = "";
     /**
-     *   业务名称
+     * 业务名称
      */
     @JsonKey("entrust_name")
-    private String entrust_name="";
+    private String entrust_name = "";
     /**
      * 委托类别名称
      */
     @JsonKey("entrust_type")
-    private String entrust_type="";
-//    /**
-//     *  委托状态
-//     */
-//    @JsonKey("entrust_bs")
-// private String entrust_state="";
+    private String entrust_type = "";
+    //    /**
+    //     *  委托状态
+    //     */
+    //    @JsonKey("entrust_bs")
+    // private String entrust_state="";
     /**
-     *委托状态名称
+     * 委托状态名称
      */
     @JsonKey("entrust_state_name")
-    private String entrust_state_name="";
+    private String entrust_state_name = "";
     /**
-     *交易市场类别
+     * 交易市场类别
      */
     @JsonKey("exchange_type")
-    private String exchange_type="";
+    private String exchange_type = "";
     /**
-     *交易市场名称
+     * 交易市场名称
      */
     @JsonKey("exchange_type_name")
-    private String exchange_type_name="";
+    private String exchange_type_name = "";
     /**
      * 证券账号
      */
     @JsonKey("stock_account")
-    private String stock_account="";
+    private String stock_account = "";
     /**
      * 委托日期
      */
     @JsonKey("entrust_date")
-    private String entrust_date="";
+    private String entrust_date = "";
     /**
-     *  委托时间
+     * 委托时间
      */
     @JsonKey("entrust_time")
-    private String entrust_time="";
+    private String entrust_time = "";
     /**
      * 证券代码
      */
     @JsonKey("stock_code")
-    private String stock_code="";
+    private String stock_code = "";
     /**
-     *   证券名称
+     * 证券名称
      */
     @JsonKey("stock_name")
-    private String stock_name="";
+    private String stock_name = "";
     /**
      * 申请编号
      */
     @JsonKey("report_no")
-    private String report_no="";
+    private String report_no = "";
     /**
-     *   成交编号
+     * 成交编号
      */
     @JsonKey("entrust_no")
-    private String entrust_no="";
+    private String entrust_no = "";
     /**
-     *  委托价格
+     * 委托价格
      */
     @JsonKey("entrust_price")
-    private String entrust_price="";
+    private String entrust_price = "";
     /**
      * 委托数量
      */
     @JsonKey("entrust_amount")
-    private String entrust_amount="";
+    private String entrust_amount = "";
     /**
      * 成交价格
      */
     @JsonKey("business_price")
-    private String business_price="";
+    private String business_price = "";
     /**
      * 成交数目
      */
     @JsonKey("business_amount")
-    private String business_amount="";
+    private String business_amount = "";
     /**
-     *  成交金额
+     * 成交金额
      */
     @JsonKey("business_balance")
-    private String business_balance="";
-//    /**
-//     * 撤单数目
-//     */
-//    @JsonKey("entrust_bs")
-// private String cancel_amount="";
-//    /**
-//     * 撤单标志（0:可撤 1：不可撤）
-//     */
-//    @JsonKey("entrust_bs")
-// private String cancel_flag="";
+    private String business_balance = "";
+    //    /**
+    //     * 撤单数目
+    //     */
+    //    @JsonKey("entrust_bs")
+    // private String cancel_amount="";
+    //    /**
+    //     * 撤单标志（0:可撤 1：不可撤）
+    //     */
+    //    @JsonKey("entrust_bs")
+    // private String cancel_flag="";
+
+    public String getBusiness_state_name() {
+        return business_state_name;
+    }
+
+    public void setBusiness_state_name(String business_state_name) {
+        this.business_state_name = business_state_name;
+    }
 
     public String getEntrust_state_name() {
         return entrust_state_name;
@@ -140,8 +157,6 @@ public class RevocationBean extends BaseBean implements Parcelable {
     public void setEntrust_state_name(String entrust_state_name) {
         this.entrust_state_name = entrust_state_name;
     }
-
-
 
 
     public RevocationBean() {
@@ -171,13 +186,13 @@ public class RevocationBean extends BaseBean implements Parcelable {
         this.entrust_type = entrust_type;
     }
 
-//    public String getEntrust_state() {
-//        return entrust_state;
-//    }
-//
-//    public void setEntrust_state(String entrust_state) {
-//        this.entrust_state = entrust_state;
-//    }
+    //    public String getEntrust_state() {
+    //        return entrust_state;
+    //    }
+    //
+    //    public void setEntrust_state(String entrust_state) {
+    //        this.entrust_state = entrust_state;
+    //    }
 
 
     public String getExchange_type() {
@@ -293,6 +308,35 @@ public class RevocationBean extends BaseBean implements Parcelable {
     }
 
 
+    public String getEntrust_limit() {
+        return entrust_limit;
+    }
+
+    public void setEntrust_limit(String entrust_limit) {
+        this.entrust_limit = entrust_limit;
+    }
+
+
+    public String getFund_account() {
+        return fund_account;
+    }
+
+    public void setFund_account(String fund_account) {
+        this.fund_account = fund_account;
+    }
+
+    public static Creator<RevocationBean> getCREATOR() {
+        return CREATOR;
+    }
+
+    public String getEntrust_nature() {
+        return entrust_nature;
+    }
+
+    public void setEntrust_nature(String entrust_nature) {
+        this.entrust_nature = entrust_nature;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -301,7 +345,10 @@ public class RevocationBean extends BaseBean implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_nature);
+        dest.writeString(this.fund_account);
         dest.writeString(this.entrust_limit);
+        dest.writeString(this.business_state_name);
         dest.writeString(this.entrust_bs);
         dest.writeString(this.entrust_name);
         dest.writeString(this.entrust_type);
@@ -320,11 +367,13 @@ public class RevocationBean extends BaseBean implements Parcelable {
         dest.writeString(this.business_price);
         dest.writeString(this.business_amount);
         dest.writeString(this.business_balance);
-        dest.writeString(this.entrust_state_name);
     }
 
     protected RevocationBean(Parcel in) {
+        this.entrust_nature = in.readString();
+        this.fund_account = in.readString();
         this.entrust_limit = in.readString();
+        this.business_state_name = in.readString();
         this.entrust_bs = in.readString();
         this.entrust_name = in.readString();
         this.entrust_type = in.readString();
@@ -343,7 +392,6 @@ public class RevocationBean extends BaseBean implements Parcelable {
         this.business_price = in.readString();
         this.business_amount = in.readString();
         this.business_balance = in.readString();
-        this.entrust_state_name = in.readString();
     }
 
     public static final Creator<RevocationBean> CREATOR = new Creator<RevocationBean>() {

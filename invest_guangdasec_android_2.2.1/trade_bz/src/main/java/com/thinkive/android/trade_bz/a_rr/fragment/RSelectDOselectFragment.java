@@ -1,6 +1,7 @@
 package com.thinkive.android.trade_bz.a_rr.fragment;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.jzxiang.pickerview.TimePickerDialog;
+import com.jzxiang.pickerview.data.Type;
+import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectDOselectActivity;
 import com.thinkive.android.trade_bz.a_rr.adapter.RSelectDOselectAdapter;
@@ -15,14 +19,17 @@ import com.thinkive.android.trade_bz.a_rr.bean.RSelectDOSelectBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RSelectDOselectServiceImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
+import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
-import com.thinkive.android.trade_bz.views.DatePickerSelect;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshBase;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * 融资融券--查询--交割单（303027）
@@ -31,7 +38,7 @@ import java.util.ArrayList;
  * @date 2015/8/19
  */
 
-public class RSelectDOselectFragment extends AbsBaseFragment {
+public class RSelectDOselectFragment extends AbsBaseFragment implements OnDateSetListener {
     /**
      *适配器
      */
@@ -93,10 +100,10 @@ public class RSelectDOselectFragment extends AbsBaseFragment {
      */
     private TextView mTvDateSelect;
     /**
-     * 日期选择器
+     * 时间选择器
      */
-    private DatePickerSelect mDateSelect;
-
+    TimePickerDialog mDialogYearMonthDay;
+    private int mCurrentPickerTarget;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_common_refresh_list_date, null);
@@ -135,19 +142,29 @@ public class RSelectDOselectFragment extends AbsBaseFragment {
         mAdapter = new RSelectDOselectAdapter(mActivity);
         mServices = new RSelectDOselectServiceImpl(this);
         mController = new RDOViewController(this);
-        mDateSelect=new DatePickerSelect(mActivity);
+        mDialogYearMonthDay = new TimePickerDialog.Builder()
+                .setType(Type.YEAR_MONTH_DAY)
+                .setTitleStringId("选择日期")
+                .setCallBack(this)
+                .build();
     }
 
     @Override
     protected void initViews() {
-        //调用业务类中，初始请求数据的方法
-        mBegin = TradeUtils.getLastWeek();
-        mEnd = TradeUtils.getCurrentDate();
+        if (!TextUtils.isEmpty(Constants.CREDIT_BEGIN_DATE)) {
+            mBegin = Constants.CREDIT_BEGIN_DATE;
+            mEnd = Constants.CREDIT_TOTAY_DATE;
+            mTvDateBegin.setText(mBegin);
+            mTvDateEnd.setText(mEnd);
+        } else {
+            mBegin = TradeUtils.getLastWeek();
+            mEnd = TradeUtils.getYesterday();
+            mTvDateBegin.setText(mBegin);
+            mTvDateEnd.setText(mEnd);
+        }
         mServices.requestDeliveryOrderData(mBegin, mEnd);
         //设置禁止上拉加载更多
         mRefreshListView.setPullLoadEnabled(false);
-        mTvDateBegin.setText(mBegin);
-        mTvDateEnd.setText(mEnd);
         setTheme();
     }
 
@@ -191,14 +208,16 @@ public class RSelectDOselectFragment extends AbsBaseFragment {
      * 开始日期
      */
     public void onClickBeginDate(){
-        mDateSelect.showDateDialog(mTvDateBegin,mTvDateBegin.getText().toString().trim());
+        mDialogYearMonthDay.show(getActivity().getSupportFragmentManager(), "year_month_day");
+        mCurrentPickerTarget = 0;
     }
 
     /**
      * 结束日期
      */
     public void onClickEndDate(){
-        mDateSelect.showDateDialog(mTvDateEnd,mTvDateEnd.getText().toString().trim());
+        mDialogYearMonthDay.show(getActivity().getSupportFragmentManager(), "year_month_day");
+        mCurrentPickerTarget = 1;
     }
 
     /**
@@ -217,6 +236,20 @@ public class RSelectDOselectFragment extends AbsBaseFragment {
             mLinNoData.setVisibility(View.GONE);
             mLinLoading.setVisibility(View.VISIBLE);
             mServices.requestDeliveryOrderData(mBegin, mEnd);
+        }
+    }
+
+    @Override
+    public void onDateSet(TimePickerDialog timePickerView, long millseconds) {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = Calendar.getInstance();
+        Date date = new Date(millseconds);
+        c.setTime(date);
+        String dataString = df.format(c.getTime());
+        if (mCurrentPickerTarget == 0) {
+            mTvDateBegin.setText(dataString.trim());
+        } else {
+            mTvDateEnd.setText(dataString.trim());
         }
     }
 }

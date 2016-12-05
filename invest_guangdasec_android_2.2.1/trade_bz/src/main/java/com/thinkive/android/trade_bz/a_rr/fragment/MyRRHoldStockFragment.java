@@ -1,15 +1,13 @@
 package com.thinkive.android.trade_bz.a_rr.fragment;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.view.ViewPager;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
@@ -19,6 +17,7 @@ import com.android.thinkive.framework.message.ICallBack;
 import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.util.JsonParseUtil;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.activity.MyHoldStockDetailsActivity;
 import com.thinkive.android.trade_bz.a_rr.bll.MyRRHoldStockServiceImpl;
 import com.thinkive.android.trade_bz.a_rr.controll.MMyRRHoldStockViewController;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
@@ -27,11 +26,9 @@ import com.thinkive.android.trade_bz.a_stock.adapter.MyStoreListViewAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.CodeTableBean;
 import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
-import com.thinkive.android.trade_bz.a_stock.controll.MyHoldStockViewController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ScreenUtils;
-import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 import com.thinkive.android.trade_bz.views.ChildViewPager;
@@ -49,8 +46,8 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/11/24.
  */
-public class MyRRHoldStockFragment  extends AbsBaseFragment {
-        /**
+public class MyRRHoldStockFragment extends AbsBaseFragment {
+    /**
      * 该类的宿主Activity
      */
     private MultiCreditTradeActivity mActivity;
@@ -83,7 +80,7 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
      */
     private int preSelectPagePos = 0;
     /**
-     * 头部pager的三个fragment
+     * 头部pager fragment
      */
     private RRHolderPagerFragment mFragmentPagerOne;
     /**
@@ -103,10 +100,6 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
      * 父类布局ScrollView
      */
     private ScrollView mScrollView;
-    /*
-    * 小圆点容器
-     */
-    private LinearLayout mCirclrIndicator;
     /**
      * 自定义的ScrollView
      */
@@ -194,15 +187,14 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
         mLiNoData = (LinearLayout) mScrollChild.findViewById(R.id.lin_not_data_set);
         mHsllPart1 = (HorizontalSlideLinearLayout) mScrollChild.findViewById(R.id.hsll_part1);
         mHsllPart2 = (HorizontalSlideLinearLayout) mScrollChild.findViewById(R.id.hsll_part2);
-        mCirclrIndicator = (LinearLayout) mScrollChild.findViewById(R.id.circle_ll);
     }
 
     @Override
     protected void setListeners() {
         registerListener(AbsBaseController.ON_SCROLLVIEW_REFLASH, mPullToRefreshScrollView, mController);
-        registerListener(MyHoldStockViewController.ON_ACTION_CLICK, mListView, mController);
-        registerListener(MyHoldStockViewController.ON_SLIDE, mHsllPart1, mController);
-        registerListener(MyHoldStockViewController.ON_SLIDE, mHsllPart2, mController);
+        registerListener(MMyRRHoldStockViewController.ON_SLIDE, mHsllPart1, mController);
+        registerListener(MMyRRHoldStockViewController.ON_SLIDE, mHsllPart2, mController);
+        registerListener(MMyRRHoldStockViewController.ON_ACTION_CLICK, mListView, mController);
     }
 
 
@@ -214,8 +206,6 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
         mAdapter = new MyStoreListViewAdapter(mActivity);
         mFragmentList = new ArrayList<AbsBaseFragment>();
         mFragmentPagerOne = new RRHolderPagerFragment();
-
-
         mFragmentList.add(mFragmentPagerOne);
         mPagerAdapter = new BasePagerAdapter(getChildFragmentManager());
 
@@ -227,7 +217,6 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
         mPagerAdapter.notifyDataSetChanged();
         mViewPager.setAdapter(mPagerAdapter);
         mViewPager.setOffscreenPageLimit(mFragmentList.size() - 1);
-        mViewPager.addOnPageChangeListener(new MyListener());
         //设置禁止上拉加载更多
         mPullToRefreshScrollView.setPullLoadEnabled(false);
         //设置listview父布局
@@ -239,7 +228,7 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
         // 单位：dp，头部蓝色标题栏高度：44   基本交易的标签栏高度：37
         // 资产信息滑动页高度：220   持仓列表“头部”高度：40dp   其他（线条）：1
         float height = ScreenUtils.getScreenHeight(mActivity) - stateHeight -
-                ScreenUtils.dpToPx(mActivity, (90+70+20+290+96)/2);
+                ScreenUtils.dpToPx(mActivity, (90 + 70 + 20 + 400 + 76) / 2);
         //设置ListView的高度（px）
         mListView.setMaxHeight((int) height);
         mListView.setDivider(null);
@@ -265,32 +254,11 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
             mHsllPart1.setRightSlideable(false);
         }
         mListView.setAdapter(mAdapter, R.id.ll_hold_list_item_view, R.id.ll_hold_list_item_expand);
-        addCircles();
         preSelectPagePos = 0;
         mServiceImpl.requestMyHoldStock();
         setTheme();
     }
 
-    private void addCircles() {
-        //动态添加白色点所有对应的indicator的内容
-        for (int i = 0; i < mPagerAdapter.getCount(); i++) {
-            ImageView ivIndicator = new ImageView(getContext());
-            if (i != 0) {
-                ivIndicator.setImageResource(R.drawable.enablefalse);
-            } else {
-                ivIndicator.setImageResource(R.drawable.enabletrue);
-            }
-            int unit = (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10, getResources().getDisplayMetrics()) + .5f);
-            int width = unit;//10dp<--->10px
-            int height = unit;
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(width, height);
-
-            if (i != 0) {//不是第一个点的时候设置对应的marginLeft
-                params.leftMargin = unit;
-            }
-            mCirclrIndicator.addView(ivIndicator, params);
-        }
-    }
 
     @Override
     protected void setTheme() {
@@ -338,32 +306,33 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
         String stockCode = mAdapter.getItem(position).getStock_code();
         String market = mAdapter.getItem(position).getMarket();
         // 通知activity做相应跳转和通知买卖Fragment操作
-        mActivity.transferFragmentToBuySaleFromOthers(stockCode,  1);
+        mActivity.transferFragmentToBuySaleFromOthers(stockCode, 1);
     }
 
-//    /**
-//     * 持仓列表展开界面中的“行情”按钮的点击事件
-//     * 点击后，进入行情模块中的个股详情页面，但是返回后，还是本Fragment的界面
-//     */
-//    public void onClickHoldListviewExpandHq(int position) {
-//        if (TradeUtils.isFastClick()) {
-//            return;
-//        }
-//        // 获取被点击的是哪支股票，并获取其股票代码
-//        String stockCode = mAdapter.getItem(position).getStock_code();
-//        // 给行情发消息，通过股票代码查询这支股票的其他信息，
-//        // 行情的个股详情页面需要提供“股票名称”、“市场”、“股票代码”、“股票类型”四个参数。
-//        sendMsgToHqForStockList(stockCode, new MyHoldStockFragment.IHqCallBackStock() {
-//            @Override
-//            public void onGetStockMsg(ArrayList<CodeTableBean> dataList) {
-//                if (dataList != null && dataList.size() > 0) {
-//                    CodeTableBean codeTableBean = dataList.get(0);
-//                    TradeUtils.startPriceDetailStock(mActivity, codeTableBean);
-//                }
-//            }
-//        });
-//    }
- /**
+    //    /**
+    //     * 持仓列表展开界面中的“行情”按钮的点击事件
+    //     * 点击后，进入行情模块中的个股详情页面，但是返回后，还是本Fragment的界面
+    //     */
+    //    public void onClickHoldListviewExpandHq(int position) {
+    //        if (TradeUtils.isFastClick()) {
+    //            return;
+    //        }
+    //        // 获取被点击的是哪支股票，并获取其股票代码
+    //        String stockCode = mAdapter.getItem(position).getStock_code();
+    //        // 给行情发消息，通过股票代码查询这支股票的其他信息，
+    //        // 行情的个股详情页面需要提供“股票名称”、“市场”、“股票代码”、“股票类型”四个参数。
+    //        sendMsgToHqForStockList(stockCode, new MyHoldStockFragment.IHqCallBackStock() {
+    //            @Override
+    //            public void onGetStockMsg(ArrayList<CodeTableBean> dataList) {
+    //                if (dataList != null && dataList.size() > 0) {
+    //                    CodeTableBean codeTableBean = dataList.get(0);
+    //                    TradeUtils.startPriceDetailStock(mActivity, codeTableBean);
+    //                }
+    //            }
+    //        });
+    //    }
+
+    /**
      * 持仓列表展开界面中的“详情”按钮的点击事件
      * 点击后，进入个股详情页面
      */
@@ -371,10 +340,13 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
         if (TradeUtils.isFastClick()) {
             return;
         }
-        // 获取被点击的项的股票代码
-        String stockCode = mAdapter.getItem(position).getStock_code();
-        String market = mAdapter.getItem(position).getMarket();
-        ToastUtil.showToast("持仓详情");
+        MyStoreStockBean bean = mAdapter.getItem(position);
+        // 通知activity做相应跳转和通知买卖Fragment操作
+        Intent intent = new Intent(getActivity(), MyHoldStockDetailsActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("bean",bean);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
     /**
@@ -483,29 +455,6 @@ public class MyRRHoldStockFragment  extends AbsBaseFragment {
             }
         }
         return statusHeight;
-    }
-
-    // 头部ViewPager的监听实现类
-    class MyListener implements ViewPager.OnPageChangeListener {
-        @Override
-        public void onPageScrollStateChanged(int status) {
-        }
-
-        @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
-        }
-
-        //当新的页面被选中时调用
-        @Override
-        public void onPageSelected(int position) {
-            ImageView iv = (ImageView) mCirclrIndicator.getChildAt(position);
-            iv.setImageResource(R.drawable.enabletrue);
-            ImageView preIv = (ImageView) mCirclrIndicator.getChildAt(preSelectPagePos);
-            preIv.setImageResource(R.drawable.enablefalse);
-            preSelectPagePos = position;
-            mCirclrIndicator.invalidate();
-        }
     }
 }
 

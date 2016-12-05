@@ -2,6 +2,8 @@ package com.thinkive.android.trade_bz.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
@@ -27,6 +29,8 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static android.content.Context.TELEPHONY_SERVICE;
+
 /**
  * <p>
  * 描述：交易需要用到的工具类
@@ -41,8 +45,8 @@ public class TradeUtils {
 
     /**
      * 获取一个Url的“#！”之前的东西
-     * @param url
-     * 完整的Url
+     *
+     * @param url 完整的Url
      */
     public static String getPreUrl(String url) {
         String results = "";
@@ -70,6 +74,7 @@ public class TradeUtils {
         }
         return data.toString();
     }
+
     /**
      * 获取前一天时间
      *
@@ -86,6 +91,7 @@ public class TradeUtils {
 
     /**
      * 获取当前时间
+     *
      * @return
      */
     public static String getCurrentDate() {
@@ -105,6 +111,7 @@ public class TradeUtils {
         c.add(Calendar.DAY_OF_WEEK, -7); //将当前日期减7天
         return df.format(c.getTime());
     }
+
     /**
      * 获取一星期后时间
      */
@@ -116,6 +123,7 @@ public class TradeUtils {
         c.add(Calendar.DAY_OF_WEEK, +7); //将当前日期加7天
         return df.format(c.getTime());
     }
+
     /**
      * 获取60天前时间
      */
@@ -162,15 +170,17 @@ public class TradeUtils {
         c.set(Calendar.YEAR, c.get(Calendar.YEAR) - 1);
         return df.format(c.getTime());
     }
+
     /**
      * 截取掉股票代码的第一位数
+     *
      * @param str
      * @return
      */
-    public static String subOneNum(String str){
-        if(str != null && str.length() == 6){
+    public static String subOneNum(String str) {
+        if (str != null && str.length() == 6) {
             str = str.substring(1);
-        }else if(str == null || TextUtils.isEmpty(str)){
+        } else if (str == null || TextUtils.isEmpty(str)) {
             str = "";
         }
         return str;
@@ -178,7 +188,8 @@ public class TradeUtils {
 
     /**
      * 取整数，逢千进位
-     * @return 0,000,000,00
+     *
+     * @return 0, 000, 000, 00
      */
     public static String formatDouble(Double num) {
         DecimalFormat df = new DecimalFormat(",##0");
@@ -188,11 +199,12 @@ public class TradeUtils {
 
     /**
      * 取整数，逢千进位
-     * @return 0,000,000,00
+     *
+     * @return 0, 000, 000, 00
      */
     public static String formatDouble(String str) {
         Double num = 0.0;
-        if(str != null){
+        if (str != null) {
             num = Double.parseDouble(str);
         }
         DecimalFormat df = new DecimalFormat(",##0");
@@ -202,7 +214,8 @@ public class TradeUtils {
 
     /**
      * 逢千进位，保留小数
-     * @return 0,000,000,00
+     *
+     * @return 0, 000, 000, 00
      */
     public static String formatDoubleUnit(Double num) {
         DecimalFormat df = new DecimalFormat(",##0.00");
@@ -212,6 +225,7 @@ public class TradeUtils {
 
     /**
      * 保留小数点后三位
+     *
      * @param num 处理前的小数
      * @return num保留两位小数后的结果
      */
@@ -229,7 +243,8 @@ public class TradeUtils {
 
     /**
      * 逢千进位，保留小数
-     * @return 0,000,000,00
+     *
+     * @return 0, 000, 000, 00
      */
     public static String formatDouble3(Double num) {
         DecimalFormat df = new DecimalFormat("##0.000");
@@ -239,6 +254,7 @@ public class TradeUtils {
 
     /**
      * 保留小数点后两位
+     *
      * @param num 处理前的小数
      * @return num保留两位小数后的结果
      */
@@ -256,13 +272,14 @@ public class TradeUtils {
 
     /**
      * 保留小数点后两位
+     *
      * @param num 处理前的小数
      * @return num保留两位小数后的结果
      */
     public static String formatDouble2(Double num) {
         String str = "";
         //保留小数点后两位
-        if(num != 0 && num > 0){
+        if (num != 0 && num > 0) {
             DecimalFormat df = new DecimalFormat("##0.00");
             str = df.format(num);
         }
@@ -282,18 +299,19 @@ public class TradeUtils {
 
     /**
      * 银行账号隐藏中间部分
+     *
      * @param str
      * @return
      */
-    public static String HideSomeData(String str){
+    public static String HideSomeData(String str) {
         String result = "";
         try {
             if (str != null && !TextUtils.isEmpty(str)) {
                 String start = str.substring(0, 4);
                 String end = str.substring(str.length() - 4, str.length());
-                result = start+"****"+end;
+                result = start + "****" + end;
             }
-        }catch(IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             e.printStackTrace();
         }
         return result;
@@ -301,6 +319,7 @@ public class TradeUtils {
 
     /**
      * 防止科学计数法出现
+     *
      * @return 被格式化后的数据，不包含科学计数法中的那个E
      */
     public static String formatDoubleE(String originalNumStr) {
@@ -324,25 +343,25 @@ public class TradeUtils {
      * @param right    小数点右边限制位数
      */
     public static void onLimitAfterPoint(EditText editText, CharSequence s, int left, int right) {
-        if(s == null || TextUtils.isEmpty(s))
+        if (s == null || TextUtils.isEmpty(s))
             return;
         String text = s.toString();
         //此时已经输入了小数点
-        if(s.toString().contains(".")){
-            CharSequence left1 = text.subSequence(0,text.lastIndexOf("."));
-            CharSequence right1 = text.subSequence(text.lastIndexOf(".")+1,s.length());
+        if (s.toString().contains(".")) {
+            CharSequence left1 = text.subSequence(0, text.lastIndexOf("."));
+            CharSequence right1 = text.subSequence(text.lastIndexOf(".") + 1, s.length());
             if (left1.length() > left) {
                 left1 = left1.subSequence(0, left);
-                editText.setText(left1+"."+right1);
+                editText.setText(left1 + "." + right1);
                 editText.setSelection(editText.getText().length());
             }
             if (right1.length() > right) {
                 right1 = right1.subSequence(0, right);
-                editText.setText(left1+"."+right1);
+                editText.setText(left1 + "." + right1);
                 editText.setSelection(editText.getText().length());
             }
             //还没有输入小数位
-        }else if(!s.toString().contains(".")){
+        } else if (!s.toString().contains(".")) {
             if (s.length() > left) {
                 s = s.subSequence(0, left);
                 editText.setText(s);
@@ -375,7 +394,7 @@ public class TradeUtils {
      * @return 格式化完毕后的数字
      */
     public static String formateDataWithQUnit(String num) {
-        if(num == null || TextUtils.isEmpty(num))
+        if (num == null || TextUtils.isEmpty(num))
             return "";
         String result = num;
         //保留小数点后两位
@@ -395,55 +414,59 @@ public class TradeUtils {
         }
         return result;
     }
+
     /**
      * 注：根据股票交易规则，单笔委托最大不可超过1000000股
      * 1.若是最大可买大于1000000股，默认返回1000000股
      * 2.若最大可买数不能被100整除，则去减去余数变整数
+     *
      * @param intNum 传入进来的最大可买
-     * @return  返回最大可买数
+     * @return 返回最大可买数
      */
     public static String formatNumToHundreds(int intNum) {
         int tempNum = 0;
-        if(intNum >= 1000000){
+        if (intNum >= 1000000) {
             tempNum = 1000000;
-        } else if(intNum < 1000000) {
-            if(intNum <= 100){
+        } else if (intNum < 1000000) {
+            if (intNum <= 100) {
                 tempNum = intNum;
-            }else if(intNum > 100){
-                if(intNum % 100 != 0){
+            } else if (intNum > 100) {
+                if (intNum % 100 != 0) {
                     tempNum = intNum - (intNum % 100);
-                }else if(intNum % 100 == 0){
+                } else if (intNum % 100 == 0) {
                     tempNum = intNum;
                 }
             }
         }
         return String.valueOf(tempNum);
     }
-    public static String formatNumToHundreds(int intNum,int storeUnit) {
+
+    public static String formatNumToHundreds(int intNum, int storeUnit) {
         int tempNum = 0;
-        if(intNum >= 1000000){
+        if (intNum >= 1000000) {
             tempNum = 1000000;
-        } else if(intNum < 1000000) {
-            if(intNum <= storeUnit){
+        } else if (intNum < 1000000) {
+            if (intNum <= storeUnit) {
                 tempNum = intNum;
-            }else if(intNum > storeUnit){
-                if(intNum % storeUnit != 0){
+            } else if (intNum > storeUnit) {
+                if (intNum % storeUnit != 0) {
                     tempNum = intNum - (intNum % storeUnit);
-                }else if(intNum % storeUnit == 0){
+                } else if (intNum % storeUnit == 0) {
                     tempNum = intNum;
                 }
             }
         }
         return String.valueOf(tempNum);
     }
+
     /**
      * 判断开始日期和截止日期的大小
+     *
      * @param beginDate
-     * @param endDate
-     * 1.开始日期不能大于于当前日期
-     * 2.开始日期不能大于截止日期
+     * @param endDate   1.开始日期不能大于于当前日期
+     *                  2.开始日期不能大于截止日期
      */
-    public static boolean checkOutDate(String beginDate,String endDate){
+    public static boolean checkOutDate(String beginDate, String endDate) {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         String curDate = df.format(new Date());
         try {
@@ -464,18 +487,18 @@ public class TradeUtils {
 
     /**
      * 正则表达式，判断当前字符串是否为数字类型
+     *
      * @param str
      * @return
      */
-    public static boolean isNumeric(String str){
+    public static boolean isNumeric(String str) {
         Pattern pattern = Pattern.compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
-        if( !isNum.matches() ){
+        if (!isNum.matches()) {
             return false;
         }
         return true;
     }
-
 
 
     public static void hideSystemKeyBoard(Activity activity) {
@@ -507,7 +530,7 @@ public class TradeUtils {
                 } else { // 执行一次EditText的点击事件就可以弹出自绘键盘
                     editText.performClick();
                 }
-//                editText.performClick();
+                //                editText.performClick();
             }
         }, 500);
     }
@@ -516,16 +539,18 @@ public class TradeUtils {
      * 获取本机当前手机号码
      */
     public static String getCurPhoneNumber(Context context) {
-        TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        TelephonyManager tm = (TelephonyManager) context.getSystemService(TELEPHONY_SERVICE);
         return tm.getLine1Number();//获取本机号码
     }
 
     /**
      * 检测用户是否操作过快
+     *
      * @return 用户是否操作过快
      * 注：此处的值不建议修改，为了延长持仓刷新，如果时间过长请使用下一个
      */
     private static long lastClickTime;
+
     public synchronized static boolean isFastClick() {
         long time = System.currentTimeMillis();
         if (time - lastClickTime < 3000) {
@@ -537,9 +562,11 @@ public class TradeUtils {
 
     /**
      * 检测用户是否操作过快
+     *
      * @return 用户是否操作过快
      */
     private static long lastClickTime2;
+
     public synchronized static boolean isFastClick2() {
         long time = System.currentTimeMillis();
         if (time - lastClickTime2 < 1000) {
@@ -569,18 +596,33 @@ public class TradeUtils {
         appMessage.setTargetModule("self-stock");
         MessageManager.getInstance(context).sendMessage(appMessage);
     }
-
+    public static String getAppVersionName(Context context) {
+        String versionName = "";
+        try {
+            // ---get the package info---
+            PackageManager pm = context.getPackageManager();
+            PackageInfo pi = pm.getPackageInfo(context.getPackageName(), 0);
+            versionName = pi.versionName;
+            if (versionName == null || versionName.length() <= 0) {
+                return "";
+            }
+        } catch (Exception e) {
+        }
+        return versionName;
+    }
     /**
      * 设置操作站点
      *
      * @param context
      */
     public static String setOpStation2(Context context) {
-        String phone_no = ThinkiveTools.getDataByMsg(context,"activePhone");
+        TelephonyManager TelephonyMgr = (TelephonyManager)context.getSystemService(TELEPHONY_SERVICE);
+        String szImei = TelephonyMgr.getDeviceId();
+        String phone_no = ThinkiveTools.getDataByMsg(context, "activePhone");
         String macAddress = DeviceUtil.getMacAddress(context);
         // 校验mac地址是否合法
         boolean isMacValid = false;
-        if (!TextUtils.isEmpty(macAddress)){
+        if (!TextUtils.isEmpty(macAddress)) {
             for (char macChar : macAddress.toCharArray()) {
                 if (macChar != '0' && macChar != ':') {
                     isMacValid = true;
@@ -591,11 +633,19 @@ public class TradeUtils {
         if (!isMacValid) {
             macAddress = " ";
         }
-        String opStation2 = "tncf|" +
-                phone_no + "|" +
-                DeviceUtil.getIpAddress(context) + "|" +
-                macAddress;
-        LogUtil.printLog("d", "获取到的op_station：" + TradeLoginManager.OP_STATION_2);
+        String mobile_number = PreferencesUtils.getString(context, "mobile_number");
+        String opStation2 =
+                       "1" + "|" +
+                        DeviceUtil.getIpAddress(context) + "|" +
+                        macAddress + "|" +
+                        " " + "|" +
+                        " " + "|" +
+                        (TextUtils.isEmpty(mobile_number) ? " " : "FZ-" + mobile_number) + "|" +
+                        "Android " + szImei + "|" +
+                        "FZ" + "|" + getAppVersionName(context);
+
+
+                        LogUtil.printLog("d", "获取到的op_station：" + TradeLoginManager.OP_STATION_2);
         return opStation2;
     }
 }

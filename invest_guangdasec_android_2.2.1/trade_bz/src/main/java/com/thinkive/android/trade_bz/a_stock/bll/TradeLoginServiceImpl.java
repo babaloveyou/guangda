@@ -147,11 +147,9 @@ public class TradeLoginServiceImpl {
                     if (s != null) {
                         int i = s.lastIndexOf("results\":[{")+10;
                         s=s.substring(0, i + 1) + "\"loginClass\":\"0\",\"loginType\":\"5\"," + s.substring(i + 1, s.length());
-
+                        System.out.println("sssssssssssssssssssssssssssss" + s.toString());
                         ThinkiveTools.putDataToMemoryByMsg(Constants.NORMAL_LOGIN_USERINFO_FORH5, s);
                     }
-
-
                 }
                 if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {
                     CreditLoginInfo.setPassword(loginPassword);

@@ -12,12 +12,15 @@ import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
-import com.thinkive.android.trade_bz.a_stock.fragment.TodayTradeFragment;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.request.Request306000;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -55,7 +58,7 @@ public class CreditTodayEntrustOrTradeFragment extends AbsBaseFragment implement
     @Override
     public void onDetach() {
         super.onDetach();
-        Constants.CREDIT_DOTAY_DATE = null;
+        Constants.CREDIT_TOTAY_DATE = null;
     }
 
     private void processRequst360000() {
@@ -64,7 +67,19 @@ public class CreditTodayEntrustOrTradeFragment extends AbsBaseFragment implement
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 String date = bundle.getString(Request306000.BUNDLE_KEY_306000);
-                Constants.CREDIT_DOTAY_DATE = date;
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                String beginTime = null;
+                try {
+                    Date dateTimeStamp = format.parse(date);
+                    Calendar beginCalendar = Calendar.getInstance();
+                    beginCalendar.setTime(dateTimeStamp);
+                    beginCalendar.add(Calendar.HOUR, -Constants.TIME_LIMIT * 24);
+                    beginTime = format.format(beginCalendar.getTime());
+                    Constants.CREDIT_BEGIN_DATE =beginTime;
+                    Constants.CREDIT_TOTAY_DATE =date;
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {

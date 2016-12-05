@@ -3,6 +3,7 @@ package com.thinkive.android.trade_bz.request;
 import android.content.Context;
 import android.os.Bundle;
 
+import com.android.thinkive.framework.storage.MemoryStorage;
 import com.thinkive.android.trade_bz.a_stock.bean.LoginInfo;
 import com.thinkive.android.trade_bz.a_stock.bean.SignStockAccountLimitBean;
 import com.thinkive.android.trade_bz.a_stock.bean.UserInfo;
@@ -65,6 +66,8 @@ public class RequestLogin extends BaseRequest {
                 int jArrayLength = jArray.length();
                 for (int i = 0; i < jArrayLength; i++) {
                     tempJsonObject = jArray.getJSONObject(i);
+                    MemoryStorage storage = new MemoryStorage();
+//                    storage.saveData("stock_userInfo",tempJsonObject.toString());
                     tempUserInfo = JsonParseUtils.createBean(UserInfo.class, tempJsonObject);
                     tempUserInfo.setEntrust_way(TradeLoginManager.ENTRUST_WAY);
                     tempUserInfo.setOp_station(TradeLoginManager.OP_STATION_2);
@@ -102,6 +105,8 @@ public class RequestLogin extends BaseRequest {
                 UserInfo tempUserInfo;
                 for (int i = 0; i < jArray.length(); i++) {
                     tempJsonObject = jArray.getJSONObject(i);
+                    MemoryStorage storage1 = new MemoryStorage();
+//                    storage1.saveData("credit_userInfo",tempJsonObject.toString());
                     tempUserInfo = JsonParseUtils.createBean(UserInfo.class, tempJsonObject);
                     tempUserInfo.setEntrust_way(TradeLoginManager.ENTRUST_WAY);
                     tempUserInfo.setOp_station(TradeLoginManager.OP_STATION_2);

@@ -23,27 +23,25 @@
 
 
         <RelativeLayout
+            android:gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp">
+            android:layout_marginTop="5dp">
 
             <TextView
                 android:id="@+id/tv_keep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="103.22%"
                 android:textColor="@color/trade_text_color3"
                 android:textSize="30sp"/>
 
             <TextView
                 android:id="@+id/tv_holdpager_bank"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/tv_keep"
-                android:layout_alignParentEnd="true"
+                android:layout_height="25dp"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
                 android:background="@drawable/shape_bg_btn_buy"
+                android:layout_centerVertical="true"
                 android:gravity="center"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
@@ -83,6 +81,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:paddingTop="3.5dp"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -92,12 +91,13 @@
                         android:textSize="@dimen/trade_buysell_text_size"/>
 
                     <TextView
+                        android:paddingBottom="3dp"
                         android:id="@+id/tv_total_assets"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:textColor="@color/trade_text_color9"
+                        android:textColor="@color/trade_text_color2"
                         android:textSize="@dimen/select_table_text"/>
                 </LinearLayout>
 
@@ -110,6 +110,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:paddingTop="3.5dp"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
@@ -120,13 +121,14 @@
                         android:textSize="@dimen/trade_buysell_text_size"/>
 
                     <TextView
+                        android:paddingBottom="3dp"
                         android:id="@+id/tv_net_assets"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:textColor="@color/trade_text_color9"
+                        android:textColor="@color/trade_text_color2"
                         android:textSize="@dimen/select_table_text"/>
 
                 </LinearLayout>
@@ -144,12 +146,14 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
                     <TextView
+                        android:paddingTop="3.5dp"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
@@ -159,12 +163,13 @@
                         android:textSize="@dimen/trade_buysell_text_size"/>
 
                     <TextView
+                        android:paddingBottom="3dp"
                         android:id="@+id/tv_total_indebtedness"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
-                        android:textColor="@color/trade_text_color9"
+                        android:textColor="@color/trade_text_color2"
                         android:textSize="@dimen/select_table_text"/>
                 </LinearLayout>
 
@@ -175,10 +180,9 @@
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:orientation="vertical">
-
                     <TextView
                         android:id="@+id/tv_querry_indebtedness"
-                        android:paddingRight="70dp"
+                        android:paddingRight="55dp"
                         android:drawableRight="@mipmap/show_more_arrwo"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"

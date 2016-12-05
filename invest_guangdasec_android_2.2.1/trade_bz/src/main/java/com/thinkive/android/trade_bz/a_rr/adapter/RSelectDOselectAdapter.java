@@ -6,7 +6,6 @@ import android.widget.TextView;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.bean.RSelectDOSelectBean;
 import com.thinkive.android.trade_bz.a_stock.adapter.AbsBaseAdapter;
-import com.thinkive.android.trade_bz.others.tools.FontManager;
 
 /**
  * 融资融券--查询--交割单（303027）
@@ -17,12 +16,10 @@ import com.thinkive.android.trade_bz.others.tools.FontManager;
 
 public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> {
     private Context mSubContext;
-    private FontManager mFontManager;
 
     public RSelectDOselectAdapter(Context context) {
         super(context, R.layout.item_r_select_do);
         mSubContext = context;
-        mFontManager = FontManager.getInstance(mSubContext);
     }
 
     @Override
@@ -44,7 +41,6 @@ public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> 
         TextView moneyYu = (TextView) holder.getComponentById(R.id.tv_r_do_money_yu);
         TextView stockAccount = (TextView) holder.getComponentById(R.id.tv_r_do_stock_account);
         TextView market = (TextView) holder.getComponentById(R.id.tv_r_do_market);
-//        TextView remark = (TextView) holder.getComponentById(R.id.tv_r_do_remark);
 
         entrustBs.setText(bean.getBusiness_name());
         date.setText(bean.getInit_date());
@@ -65,23 +61,5 @@ public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> 
         market.setText(bean.getExchange_type_name());
 //        remark.setText(bean.getRemark());
 
-        mFontManager.setTextFont(entrustBs, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(date, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(tradeNum, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(tradePrice, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(tradeBalance, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(qingMoney, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(fareShou, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(fareQing, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(fareTrade, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(fareYinHua, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(fareGuoHu, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(compactId, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(tradeId, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(stockYu, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(moneyYu, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(stockAccount, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(market, FontManager.FONT_DINPRO_MEDIUM);
-//        mFontManager.setTextFont(remark, FontManager.FONT_DINPRO_MEDIUM);
     }
 }
