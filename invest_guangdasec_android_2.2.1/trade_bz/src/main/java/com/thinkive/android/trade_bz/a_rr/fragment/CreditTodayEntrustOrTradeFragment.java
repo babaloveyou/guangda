@@ -55,11 +55,6 @@ public class CreditTodayEntrustOrTradeFragment extends AbsBaseFragment implement
         processRequst360000();
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        Constants.CREDIT_TOTAY_DATE = null;
-    }
 
     private void processRequst360000() {
         HashMap<String, String> map306000 = new HashMap<String, String>();

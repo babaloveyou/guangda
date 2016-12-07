@@ -32,7 +32,7 @@ public class CreditHistoryMoneyAdapter extends AbsBaseAdapter<RSelectHistoryWate
         titleTv.setText(bean.getBusiness_name());
         timeTv.setText(bean.getInit_date());
         noTv.setText(bean.getEntrust_no());
-        stockCodeTv.setText(bean.getInit_date());
+        stockCodeTv.setText(bean.getMoney_type_name());
         turnoverPriceTv.setText(bean.getBusiness_price());
         trunoverAmountTv.setText(bean.getOccur_amount());
         happenPriceTv.setText(bean.getOccur_balance());

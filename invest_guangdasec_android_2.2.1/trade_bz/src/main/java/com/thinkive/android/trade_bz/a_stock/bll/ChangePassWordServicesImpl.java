@@ -61,6 +61,7 @@ public class ChangePassWordServicesImpl {
                 public void onFailed(Context context, Bundle bundle) {
                     loadingDialogUtil.hideDialog();
                     ToastUtils.toast(context, bundle.getString(Request300101.ERROR_INFO));
+                    mFragment.onGetChangePwdResultError();
                 }
             }).request();
         }else if (mUserType.equals(TradeLoginManager.LOGIN_TYPE_CREDIT)) {  //融资融券账户
@@ -78,6 +79,7 @@ public class ChangePassWordServicesImpl {
                 public void onFailed(Context context, Bundle bundle) {
                     loadingDialogUtil.hideDialog();
                     ToastUtils.toast(context, bundle.getString(Request303042.ERROR_INFO));
+                    mFragment.onGetChangePwdResultError();
                 }
             }).request();
         }else if (mUserType != null && mUserType.equals(TradeLoginManager.LOGIN_TYPE_OPTION)) {  //个股期权账户

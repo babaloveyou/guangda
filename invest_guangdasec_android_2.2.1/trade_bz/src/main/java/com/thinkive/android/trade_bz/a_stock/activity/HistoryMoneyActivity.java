@@ -81,12 +81,6 @@ public class HistoryMoneyActivity extends AbsNavBarActivity implements View.OnCl
             }
         }).request();
     }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Constants.HISTORY_START_DATE =null;
-        Constants.HISTORY_END_DATE =null;
-    }
 
     @Override
     public void onClick(View v) {

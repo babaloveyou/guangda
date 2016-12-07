@@ -281,6 +281,12 @@ public class ChangePasswordFragment extends AbsBaseFragment {
         }
         return flag;
     }
+
+    public void onGetChangePwdResultError() {
+        mEdtNewPwd.setText("");
+        mEdtOldPwd.setText("");
+        mEdtSureNewPwd.setText("");
+    }
 }
 
 abstract class TextListener implements TextWatcher {

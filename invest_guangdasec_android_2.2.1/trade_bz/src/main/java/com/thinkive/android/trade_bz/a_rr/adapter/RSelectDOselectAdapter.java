@@ -24,35 +24,35 @@ public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> 
 
     @Override
     protected void onFillComponentData(ViewHolder holder, final RSelectDOSelectBean bean) {
-        TextView entrustBs = (TextView) holder.getComponentById(R.id.tv_r_do_bs);
-        TextView date = (TextView) holder.getComponentById(R.id.tv_r_do_date);
-        TextView tradeNum = (TextView) holder.getComponentById(R.id.tv_r_do_trade_num);
-        TextView tradePrice = (TextView) holder.getComponentById(R.id.tv_r_do_trade_price);
-        TextView tradeBalance = (TextView) holder.getComponentById(R.id.tv_r_do_trade_balances);
-        TextView qingMoney = (TextView) holder.getComponentById(R.id.tv_r_do_qing_money);
-        TextView fareShou = (TextView) holder.getComponentById(R.id.tv_r_do_fare_shou);
-        TextView fareQing = (TextView) holder.getComponentById(R.id.tv_r_do_fare_qing);
-        TextView fareTrade = (TextView) holder.getComponentById(R.id.tv_r_do_fare_trade);
-        TextView fareYinHua = (TextView) holder.getComponentById(R.id.tv_r_do_fare_yin);
-        TextView fareGuoHu = (TextView) holder.getComponentById(R.id.tv_r_do_fare_guo_hu);
-        TextView tradeId = (TextView) holder.getComponentById(R.id.tv_r_do_trade_id);
-        TextView stockYu = (TextView) holder.getComponentById(R.id.tv_r_do_stock_yu);
-        TextView moneyYu = (TextView) holder.getComponentById(R.id.tv_r_do_money_yu);
+        TextView tv1 = (TextView) holder.getComponentById(R.id.tv1);
+        TextView tv2 = (TextView) holder.getComponentById(R.id.tv2);
+        TextView tv3 = (TextView) holder.getComponentById(R.id.tv3);
+        TextView tv4 = (TextView) holder.getComponentById(R.id.tv4);
+        TextView tv5 = (TextView) holder.getComponentById(R.id.tv5);
+        TextView tv6 = (TextView) holder.getComponentById(R.id.tv6);
+        TextView tv7 = (TextView) holder.getComponentById(R.id.tv7);
+        TextView tv8 = (TextView) holder.getComponentById(R.id.tv8);
+        TextView tv9 = (TextView) holder.getComponentById(R.id.tv9);
+        TextView tv10 = (TextView) holder.getComponentById(R.id.tv10);
+        TextView tv11 = (TextView) holder.getComponentById(R.id.tv11);
+        TextView tv12 = (TextView) holder.getComponentById(R.id.tv12);
+        TextView tv13 = (TextView) holder.getComponentById(R.id.tv13);
+        TextView tv14 = (TextView) holder.getComponentById(R.id.tv14);
 
-        entrustBs.setText(bean.getBusiness_name());
-        date.setText(bean.getInit_date());
-        tradeNum.setText(bean.getOccur_amount());
-        tradePrice.setText(bean.getBusiness_price());
-        tradeBalance.setText(bean.getBusiness_balance());
-        qingMoney.setText(bean.getFundeffect());
-        fareShou.setText(bean.getFee_sxf());
-        fareQing.setText(bean.getFee_qsf());
-        fareTrade.setText(bean.getFee_jygf());
-        fareYinHua.setText(bean.getFare1());
-        fareGuoHu.setText(bean.getFare2());
-        tradeId.setText(bean.getBusiness_no());
-        stockYu.setText(bean.getPost_amount());
-        moneyYu.setText(bean.getPost_balance());
+        tv1.setText(bean.getBusiness_name());
+        tv2.setText(bean.getInit_date());
+        tv3.setText(bean.getOccur_amount());
+        tv4.setText(bean.getBusiness_price());
+        tv5.setText(bean.getBusiness_balance());
+        tv6.setText(bean.getFundeffect());
+        tv7.setText(bean.getFee_sxf());
+        tv8.setText(bean.getFee_qsf());
+        tv9.setText(bean.getFee_jygf());
+        tv10.setText(bean.getFare1());
+        tv11.setText(bean.getFare2());
+        tv12.setText(bean.getBusiness_no());
+        tv13.setText(bean.getPost_amount());
+        tv14.setText(bean.getPost_balance());
 
     }
 }

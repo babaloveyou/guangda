@@ -75,10 +75,6 @@
 
     </LinearLayout>
 
-    <View
-        android:background="@color/bg_main_french_gray"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
     <!-- 正在加载时显示的界面 -->
     <LinearLayout
         android:id="@+id/lin_loading_set"
@@ -106,7 +102,6 @@
         android:id="@+id/lv_refresh_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
         android:visibility="gone"/>
 
 

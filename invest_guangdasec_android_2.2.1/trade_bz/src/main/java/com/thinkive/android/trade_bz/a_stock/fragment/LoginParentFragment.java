@@ -110,7 +110,6 @@ public class LoginParentFragment extends Fragment implements View.OnClickListene
     }
 
     private void showRight() {
-        mHeaderText.setText("信用登录");
         mIndicLeft.setVisibility(View.INVISIBLE);
         mIndicRight.setVisibility(View.VISIBLE);
         mSuneLoginTv.setTextColor(getResources().getColor(R.color.statusbar_main));
@@ -121,7 +120,6 @@ public class LoginParentFragment extends Fragment implements View.OnClickListene
     }
 
     private void showLeft() {
-        mHeaderText.setText("普通登录");
         mFundLoginTv.setTextColor(getResources().getColor(R.color.statusbar_main));
         mSuneLoginTv.setTextColor(getResources().getColor(R.color.trade_top_tab_dark_gray));
         mIndicLeft.setVisibility(View.VISIBLE);

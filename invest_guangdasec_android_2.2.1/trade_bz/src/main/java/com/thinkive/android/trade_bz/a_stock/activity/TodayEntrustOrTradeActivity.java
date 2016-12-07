@@ -71,9 +71,4 @@ public class TodayEntrustOrTradeActivity extends AbsNavBarActivity {
         mFragment.setArguments(getIntent().getExtras());
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Constants.TODAY_DATE = null;
-    }
 }

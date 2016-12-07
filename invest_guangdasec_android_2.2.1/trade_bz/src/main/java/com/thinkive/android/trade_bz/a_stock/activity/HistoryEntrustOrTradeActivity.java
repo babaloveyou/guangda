@@ -82,12 +82,6 @@ public class HistoryEntrustOrTradeActivity extends AbsNavBarActivity implements 
         }).request();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Constants.HISTORY_START_DATE =null;
-        Constants.HISTORY_END_DATE =null;
-    }
 
     @Override
     public void onClick(View v) {
