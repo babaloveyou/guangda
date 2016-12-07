@@ -47,7 +47,7 @@ public class RCollaterRevocationAdapter extends AbsBaseAdapter<RCollaterRevocati
         entrustInfoTv.setText(bean.getEntrust_price() + "/" + bean.getEntrust_amount());
 
         TextView turnoverInfoTv = (TextView) holder.getComponentById(R.id.tv_trunover_info);
-        turnoverInfoTv.setText(bean.getBusiness_price() + "/" + bean.getBusiness_amount());
+        turnoverInfoTv.setText(bean.getEntrust_no());
         final LinearLayout lClick = (LinearLayout) holder.getComponentById(R.id.lin_bottom_revocation);
         //点击列表项弹出对话框
         final LinearLayout llParent = (LinearLayout) holder.getComponentById(R.id.lin_lin_r);
