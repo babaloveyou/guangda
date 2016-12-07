@@ -118,7 +118,7 @@ public class CreditNewStockFragment extends BaseWebFragment implements IModule {
                             public void run() {
                                 JSONObject param = new JSONObject();
                                 //退出登录发个消息
-                                AppMessage msg = new AppMessage(22222, param);
+                                AppMessage msg = new AppMessage(222222, param);
                                 sendMessageToH5(msg);
                             }
                         });

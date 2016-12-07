@@ -20,7 +20,10 @@ import com.thinkive.android.trade_bz.a_rr.bll.RStockReturnOrderStockServiceImpl;
 import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
+import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
+import com.thinkive.android.trade_bz.dialog.RStockReturnConfirmDialog;
 import com.thinkive.android.trade_bz.others.tools.StockStoreQueryManager;
+import com.thinkive.android.trade_bz.utils.EditUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -88,15 +91,15 @@ public class RStockReturnOrderStockFragment extends AbsBaseFragment {
     @Override
     public void onResume() {
         super.onResume();
-        mQueryManager.setPopupwindowWidth(mTvSelectCode.getWidth()*2/3);
+        mQueryManager.setPopupwindowWidth(mTvSelectCode.getWidth() * 2 / 3);
         mQueryManager.setPopupWindowReserveWidthReferView(mTvSelectCode);
         mQueryManager.initListViewPopupwindow(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MyStoreStockBean bean = mQueryManager.getSearchStocksAdapter().getItem(position);
+                mServices.requestStockLink(bean); //联动最大可还
                 mStockCode = bean.getStock_code();
-                mServices.requestStockLink(mStockCode); //联动最大可还
-                mTvSelectCode.setText(mStockCode + " " + bean.getStock_name());
+                mTvSelectCode.setText(bean.getStock_code() + " " + bean.getStock_name());
                 mQueryManager.dismissQueryPopupWindow();
             }
         });
@@ -158,12 +161,11 @@ public class RStockReturnOrderStockFragment extends AbsBaseFragment {
     public void onClickStockCode() {
         mQueryManager.dismissQueryPopupWindow();
         if (mHoldDataList != null && mHoldDataList.size() > 0) {
-           mQueryManager.execQueryStoreList(mHoldDataList,mTvSelectCode);
+            mQueryManager.execQueryStoreList(mHoldDataList, mTvSelectCode);
         } else {
             ToastUtils.toast(mActivity, mActivity.getResources().getString(R.string.r_select_not));
         }
     }
-
 
 
     /**
@@ -178,11 +180,11 @@ public class RStockReturnOrderStockFragment extends AbsBaseFragment {
      * 点击全部
      */
     public void onClickAll() {
-        if (!TextUtils.isEmpty(mEdtInputNum.getText()) && !"--".equals(mEdtInputNum.getText().toString())) {
+        if (!TextUtils.isEmpty(mTvMaxCanReturn.getText()) && !"--".equals(mTvMaxCanReturn.getText().toString())) {
             mEdtInputNum.setText(mTvMaxCanReturn.getText().toString());
+            EditUtils.setEdtCursor(mEdtInputNum);
         }
     }
-
 
 
     /**
@@ -198,7 +200,13 @@ public class RStockReturnOrderStockFragment extends AbsBaseFragment {
             ToastUtils.toast(mActivity, mResources.getString(R.string.trade_toast_input_amount));
             return;
         }
-        mServices.requestCommit(mStockLinkBean, entrustNum);
+        RStockReturnConfirmDialog dialog = new RStockReturnConfirmDialog(getActivity(), mServices);
+        dialog.setDataBean(mStockLinkBean);
+        dialog.setEntrustNum(entrustNum);
+        dialog.setDataToViews();
+        dialog.show();
+
+
     }
 
     /**
@@ -208,10 +216,16 @@ public class RStockReturnOrderStockFragment extends AbsBaseFragment {
         mStockCode = "";
         mStockLinkBean = null;
         mTvSelectCode.setText("");
-        mTvMaxCanReturn.setText("");
+        mTvMaxCanReturn.setText("--");
         mEdtInputNum.setText("");
     }
 
+    public void onSuccessEntrust(String string) {
+        MessageOkCancelDialog dialog = new MessageOkCancelDialog(mActivity, null);
+        dialog.setMsgText(string);
+        dialog.setCancelBtnVisiable(false);
+        dialog.show();
+    }
 }
 
 /**
@@ -240,7 +254,7 @@ class RStockReturnOrderStockController extends AbsBaseController
         int resId = v.getId();
         if (resId == R.id.btn_r_stock_return_commit) {
             mFragment.onClickCommit();
-        }  else if (resId == R.id.tv_r_stock_code) {
+        } else if (resId == R.id.tv_r_stock_code) {
             mFragment.onClickStockCode();
         } else if (resId == R.id.tv_r_return_stock_all) {
             mFragment.onClickAll();

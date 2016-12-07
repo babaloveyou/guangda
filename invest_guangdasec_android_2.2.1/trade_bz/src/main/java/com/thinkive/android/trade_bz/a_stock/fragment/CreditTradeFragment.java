@@ -59,13 +59,13 @@ import com.thinkive.android.trade_bz.a_rr.activity.RSelectCreditZiDetailActivity
 import com.thinkive.android.trade_bz.a_rr.activity.RSelectDOselectActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RStockReturnStockActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.SubBondMultiActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.ChangePasswordActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TradnsferActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.FastMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.MoreMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
@@ -84,7 +84,6 @@ import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.others.tools.TradeWebFragmentManager;
 import com.thinkive.android.trade_bz.receivers.TradeBaseBroadcastReceiver;
 import com.thinkive.android.trade_bz.utils.LogUtil;
-import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 import com.thinkive.android.trade_bz.views.TrimGridView;
 
@@ -161,20 +160,18 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
     */
     private ObjectAnimator mArrowClwsAnimator;
     private ObjectAnimator mArrowCcwsAnimator;
-    private RelativeLayout mNotCloseOutRl;//未平仓合约
     private RelativeLayout mBuyNewRl;//新股申购
     private RelativeLayout mSubBondRl;//标的证券
-    private RelativeLayout mCloseOutRl;//已平仓合约
     private TextView mLogOutTv;//底部注销按钮
     private float mDensity;//像素密度
     private int mHiddenViewMeasuredHeight;//点击更多拉出的父布局高度
     private String[] mFastMenuTitles = {"融资买入", "融券卖出", "撤单", "个人持仓", "还款", "还券", "银行转账", "个人资产", "买担保品", "卖担保品", "划转担保品", "担保品查询"};
     private int[] mImgRes = {R.mipmap.financing_buy, R.mipmap.securities_sell, R.mipmap.credit_revocation, R.mipmap.credit_hold, R.mipmap.credit_refund, R.mipmap.credit_bond, R.mipmap.credit_bank_transfer, R.mipmap.credit_fund, R.mipmap.buy_collateral, R.mipmap.sell_collateral, R.mipmap.collateral_transfer, R.mipmap.collateral_search};
     private TradeParentFragment mParentFragment;//持有的 在TradeParentFragment初始化好的TradeParentFragment对象
-    private RelativeLayout mShowDateRl;
     private Dialog mDialog;
     private ScrollView mScrollView;
     private OnSpeciallClickType onSpecialClickType = null;
+    private RelativeLayout mChangePwdRl;
 
     //主题枚举
     public enum OnSpeciallClickType {
@@ -286,10 +283,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mRotateArrow = (ImageView) view.findViewById(R.id.iv_more_can_rotate_credit);
 
         mBuyNewRl = (RelativeLayout) view.findViewById(R.id.rl_new_buy_credit);
+        mChangePwdRl = (RelativeLayout) view.findViewById(R.id.rl_change_password);
         mSubBondRl = (RelativeLayout) view.findViewById(R.id.rl_sub_bond);
-        mNotCloseOutRl = (RelativeLayout) view.findViewById(R.id.rl_not_close_out_credit);
-        mCloseOutRl = (RelativeLayout) view.findViewById(R.id.rl_close_out_credit);
-        mShowDateRl = (RelativeLayout) view.findViewById(R.id.contract_show_data_credit);
         mLogOutTv = (TextView) view.findViewById(R.id.tv_exit_logout_credit);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_parent);
 
@@ -302,10 +297,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         registerListener(ListenerController.ON_ITEM_CLICK, mMoreMenuGv, mHomeController);
         registerListener(ListenerController.ON_CLICK, mShowMoreRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mBuyNewRl, mHomeController);
-        registerListener(ListenerController.ON_CLICK, mNotCloseOutRl, mHomeController);
-        registerListener(ListenerController.ON_CLICK, mCloseOutRl, mHomeController);
-        registerListener(ListenerController.ON_CLICK, mShowDateRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mSubBondRl, mHomeController);
+        registerListener(ListenerController.ON_CLICK, mChangePwdRl, mHomeController);
 
         mLogOutTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -782,14 +775,22 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         mClickBtnBeforeLogin = viewId;
         if (viewId == R.id.rl_new_buy_credit) {
             onClickNewStock();
-        } else if (viewId == R.id.rl_not_close_out_credit) {
-            ToastUtil.showToast("未平仓合约");
-        } else if (viewId == R.id.rl_close_out_credit) {
-            ToastUtil.showToast("已平仓合约");
-        } else if (viewId == R.id.contract_show_data_credit) {
-            ToastUtil.showToast("和约展期");
         } else if (viewId == R.id.rl_sub_bond) {
             onClickSubBond();
+        } else if (viewId == R.id.rl_change_password) {
+            onClickChangePwd();
+        }
+    }
+
+    private void onClickChangePwd() {
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, ChangePasswordActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("userType", TradeLoginManager.LOGIN_TYPE_CREDIT);
+            intent.putExtras(bundle);
+            mActivity.startActivity(intent);
+        } else {
+            startLogin(1202, TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
     }
 
@@ -1514,6 +1515,9 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
                                 viewId = viewId - 1200;
                                 if (viewId == 1) {
                                     onClickSubBond();
+                                }
+                                if (viewId == 2) {
+                                    onClickChangePwd();
                                 }
                             }
                         }

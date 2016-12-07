@@ -50,7 +50,7 @@ public class MyStoreListViewAdapter extends AbsBaseAdapter<MyStoreStockBean> {
         TextView marketPriceTv = (TextView) holder.getComponentById(R.id.tv_market_price);
         nameTv.setText(bean.getStock_name());
         codeTv.setText(bean.getStock_code());
-        marketPriceTv.setText("市值" + bean.getMarket_value() + "万");
+        marketPriceTv.setText("市值" + bean.getMarket_value());
 
         //盈亏百分比
         setWinLostRate(winLoseRateTv, bean);

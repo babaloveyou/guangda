@@ -98,7 +98,7 @@ public class RCashReturnServiceImpl extends BasicServiceImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
-                ToastUtils.toast(context, "委托成功");
+                mFragment.onSuccessEntrust(bundle.getString(RR303010.BUNDLE_KEY_ENTRUST_COMMIT));
                 mFragment.clearAllData();
 //                requestChooseContract("");//请求合约
                 requestStockLink(); // 联动获得可用金额和需还金额

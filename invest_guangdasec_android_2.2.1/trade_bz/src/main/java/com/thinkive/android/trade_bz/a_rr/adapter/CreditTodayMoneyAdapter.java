@@ -32,7 +32,7 @@ public class CreditTodayMoneyAdapter extends AbsBaseAdapter<RSelectHistoryWaterM
         titleTv.setText(bean.getBusiness_name());
         timeTv.setText(bean.getInit_date());
         noTv.setText(bean.getEntrust_no());
-        stockCodeTv.setText(bean.getStock_code());
+        stockCodeTv.setText(bean.getInit_date());
         turnoverPriceTv.setText(bean.getBusiness_price());
         trunoverAmountTv.setText(bean.getOccur_amount());
         happenPriceTv.setText(bean.getOccur_balance());

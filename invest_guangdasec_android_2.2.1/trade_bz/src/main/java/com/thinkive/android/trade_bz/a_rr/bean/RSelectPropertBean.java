@@ -16,8 +16,19 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class RSelectPropertBean extends BaseBean implements Parcelable {
+    public String getSlo_enable_quota() {
+        return slo_enable_quota;
+    }
 
+    public void setSlo_enable_quota(String slo_enable_quota) {
+        this.slo_enable_quota = slo_enable_quota;
+    }
 
+    /**
+     * 融券授信额度
+     */
+    @JsonKey("slo_enable_quota")
+    private String slo_enable_quota="";
 
     /**
      * 币种类别
@@ -500,6 +511,7 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
+        dest.writeString(this.slo_enable_quota);
         dest.writeString(this.money_type);
         dest.writeString(this.credit_up);
         dest.writeString(this.money_type_name);
@@ -539,6 +551,7 @@ public class RSelectPropertBean extends BaseBean implements Parcelable {
     }
 
     protected RSelectPropertBean(Parcel in) {
+        this.slo_enable_quota = in.readString();
         this.money_type = in.readString();
         this.credit_up = in.readString();
         this.money_type_name = in.readString();

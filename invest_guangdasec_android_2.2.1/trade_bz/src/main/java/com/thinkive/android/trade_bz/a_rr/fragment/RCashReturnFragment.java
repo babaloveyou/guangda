@@ -1,5 +1,6 @@
 package com.thinkive.android.trade_bz.a_rr.fragment;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,14 +14,20 @@ import android.widget.TextView;
 
 import com.android.thinkive.framework.compatible.ListenerControllerAdapter;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_rr.activity.CreditTradnsferActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCashReturnActivity;
 import com.thinkive.android.trade_bz.a_rr.bean.RChooseContractBean;
 import com.thinkive.android.trade_bz.a_rr.bean.RStockToStockLinkBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RCashReturnServiceImpl;
+import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
+import com.thinkive.android.trade_bz.dialog.CashReturnConfirmDialog;
+import com.thinkive.android.trade_bz.dialog.MessageOkCancelDialog;
+import com.thinkive.android.trade_bz.others.constants.Constants;
+import com.thinkive.android.trade_bz.others.tools.TradeFlags;
+import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.utils.EditUtils;
-import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 import com.thinkive.android.trade_bz.views.ClearEditText;
@@ -53,6 +60,7 @@ public class RCashReturnFragment extends AbsBaseFragment {
     private String mAllNeedReturnMoney = "";
     private String mSelectNeedReturnMoney = "";
     private TextView mToBankTv;
+    private RStockToStockLinkBean mRStockToStockLinkBean;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -113,11 +121,13 @@ public class RCashReturnFragment extends AbsBaseFragment {
     protected void setTheme() {
 
     }
+
     /**
      * 获得可用金额和需还金额
      */
     public void onGetCanUseMoney(RStockToStockLinkBean data) {
         mLinLoading.setVisibility(View.GONE);
+        mRStockToStockLinkBean = data;
         mTvCanUseCash.setText(data.getFin_enrepaid_balance());
         mAllNeedReturnMoney = data.getReal_compact_balance();
         if (!mServices.isIsContractEntrust()) {
@@ -153,7 +163,14 @@ public class RCashReturnFragment extends AbsBaseFragment {
     * 跳转银证转账
     * */
     public void onClickToBank() {
-        ToastUtil.showToast("银证转账");
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, CreditTradnsferActivity.class);
+            mActivity.startActivity(intent);
+        } else {
+            Intent intent = new Intent(mActivity, TradeLoginActivity.class);
+            intent.putExtra(Constants.LOGIN_TYPE, TradeLoginManager.LOGIN_TYPE_CREDIT);
+            mActivity.startActivity(intent);
+        }
     }
 
     /**
@@ -167,7 +184,11 @@ public class RCashReturnFragment extends AbsBaseFragment {
         if (TextUtils.isEmpty(entrustNum)) {
             ToastUtils.toast(mActivity, mResources.getString(R.string.r_property_list6));
         } else {
-            mServices.requrstCommit(entrustNum);
+            CashReturnConfirmDialog dialog = new CashReturnConfirmDialog(getActivity(), mServices);
+            dialog.setDataBean(mRStockToStockLinkBean);
+            dialog.setBalance(entrustNum);
+            dialog.setDataToViews();
+            dialog.show();
         }
     }
 
@@ -187,6 +208,12 @@ public class RCashReturnFragment extends AbsBaseFragment {
         return mContractDataList;
     }
 
+    public void onSuccessEntrust(String string) {
+        MessageOkCancelDialog dialog = new MessageOkCancelDialog(mActivity, null);
+        dialog.setMsgText(string);
+        dialog.setCancelBtnVisiable(false);
+        dialog.show();
+    }
 }
 
 /**

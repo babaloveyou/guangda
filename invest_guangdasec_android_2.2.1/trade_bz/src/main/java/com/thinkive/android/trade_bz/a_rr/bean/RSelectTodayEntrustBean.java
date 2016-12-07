@@ -15,11 +15,27 @@ import com.thinkive.android.trade_bz.others.JsonKey;
 
 public class RSelectTodayEntrustBean extends BaseBean {
 
+    public static Creator<RSelectTodayEntrustBean> getCREATOR() {
+        return CREATOR;
+    }
 
+    public String getEntrust_type_flag() {
+        return entrust_type_flag;
+    }
+
+    public void setEntrust_type_flag(String entrust_type_flag) {
+        this.entrust_type_flag = entrust_type_flag;
+    }
+
+    /**
+     * 筛选标记
+     */
+    @JsonKey("entrust_type_flag")
+    private String entrust_type_flag = "";
     /**
      * 资金账号
      */
-    @JsonKey("fund_account")
+    @JsonKey("entrust_type_flag")
 
     private String fund_account = "";
     /**
@@ -213,6 +229,7 @@ public class RSelectTodayEntrustBean extends BaseBean {
     public RSelectTodayEntrustBean() {
 
     }
+
     public String getFund_account() {
         return fund_account;
     }
@@ -220,6 +237,7 @@ public class RSelectTodayEntrustBean extends BaseBean {
     public void setFund_account(String fund_account) {
         this.fund_account = fund_account;
     }
+
     public String getEntrust_bs() {
         return entrust_bs;
     }
@@ -428,6 +446,8 @@ public class RSelectTodayEntrustBean extends BaseBean {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_type_flag);
+        dest.writeString(this.fund_account);
         dest.writeString(this.entrust_bs);
         dest.writeString(this.entrust_name);
         dest.writeString(this.entrust_type);
@@ -462,6 +482,8 @@ public class RSelectTodayEntrustBean extends BaseBean {
     }
 
     protected RSelectTodayEntrustBean(Parcel in) {
+        this.entrust_type_flag = in.readString();
+        this.fund_account = in.readString();
         this.entrust_bs = in.readString();
         this.entrust_name = in.readString();
         this.entrust_type = in.readString();

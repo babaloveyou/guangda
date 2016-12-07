@@ -1,5 +1,7 @@
 package com.thinkive.android.trade_bz.a_rr.bean;
 
+import android.os.Parcel;
+
 import com.thinkive.android.trade_bz.a_stock.bean.BaseBean;
 import com.thinkive.android.trade_bz.others.JsonKey;
 
@@ -10,6 +12,19 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  * @date 2015/8/24
  */
 public class RRevocationBean extends BaseBean {
+    public String getEntrust_type_flag() {
+        return entrust_type_flag;
+    }
+
+    public void setEntrust_type_flag(String entrust_type_flag) {
+        this.entrust_type_flag = entrust_type_flag;
+    }
+
+    /**
+     *6个委托页面筛选标记
+     */
+    @JsonKey("entrust_type_flag")
+    private String entrust_type_flag="";
     /**
      *委托标志
      */
@@ -312,4 +327,77 @@ public class RRevocationBean extends BaseBean {
     public void setCompact_id(String compact_id) {
         this.compact_id = compact_id;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_type_flag);
+        dest.writeString(this.entrust_bs);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.entrust_type);
+        dest.writeString(this.entrust_type_name);
+        dest.writeString(this.entrust_state);
+        dest.writeString(this.entrust_state_name);
+        dest.writeString(this.exchange_type);
+        dest.writeString(this.exchange_type_name);
+        dest.writeString(this.stock_account);
+        dest.writeString(this.entrust_date);
+        dest.writeString(this.entrust_time);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.report_no);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.entrust_price);
+        dest.writeString(this.entrust_amount);
+        dest.writeString(this.business_price);
+        dest.writeString(this.business_amount);
+        dest.writeString(this.business_balance);
+        dest.writeString(this.cancel_amount);
+        dest.writeString(this.trade_name);
+        dest.writeString(this.compact_id);
+    }
+
+    protected RRevocationBean(Parcel in) {
+        this.entrust_type_flag = in.readString();
+        this.entrust_bs = in.readString();
+        this.entrust_name = in.readString();
+        this.entrust_type = in.readString();
+        this.entrust_type_name = in.readString();
+        this.entrust_state = in.readString();
+        this.entrust_state_name = in.readString();
+        this.exchange_type = in.readString();
+        this.exchange_type_name = in.readString();
+        this.stock_account = in.readString();
+        this.entrust_date = in.readString();
+        this.entrust_time = in.readString();
+        this.stock_code = in.readString();
+        this.stock_name = in.readString();
+        this.report_no = in.readString();
+        this.entrust_no = in.readString();
+        this.entrust_price = in.readString();
+        this.entrust_amount = in.readString();
+        this.business_price = in.readString();
+        this.business_amount = in.readString();
+        this.business_balance = in.readString();
+        this.cancel_amount = in.readString();
+        this.trade_name = in.readString();
+        this.compact_id = in.readString();
+    }
+
+    public static final Creator<RRevocationBean> CREATOR = new Creator<RRevocationBean>() {
+        @Override
+        public RRevocationBean createFromParcel(Parcel source) {
+            return new RRevocationBean(source);
+        }
+
+        @Override
+        public RRevocationBean[] newArray(int size) {
+            return new RRevocationBean[size];
+        }
+    };
 }

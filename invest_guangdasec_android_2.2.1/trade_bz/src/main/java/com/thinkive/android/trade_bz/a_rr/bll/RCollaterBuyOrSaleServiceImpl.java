@@ -233,6 +233,7 @@ public class RCollaterBuyOrSaleServiceImpl extends BasicServiceImpl {
                 mFragment.onSuccessEntrustTrade(bundle.getString(Request303001.BUNDLE_KEY_ENTRUST_ORDER));
                 // 委托成功后，清空界面上的数据
                 mFragment.clearDataInViews();
+                mFragment.jumpToRevotion();
             }
 
             @Override

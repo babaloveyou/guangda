@@ -62,10 +62,14 @@ public class RStockReturnOrderStockServiceImpl extends BasicServiceImpl {
 
     /**
      * 联动
+     * @param bean
      */
-    public void requestStockLink(String stockCode) {
+    public void requestStockLink(MyStoreStockBean bean) {
         HashMap<String, String> paramMap = new HashMap<String, String>();
-        paramMap.put("stock_code",stockCode);
+        paramMap.put("stock_code",bean.getStock_code());
+        paramMap.put("stock_name",bean.getStock_name());
+        paramMap.put("stock_account",bean.getStock_account());
+        paramMap.put("exchange_type",bean.getExchange_type());
         new RR303013(paramMap, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
@@ -93,7 +97,7 @@ public class RStockReturnOrderStockServiceImpl extends BasicServiceImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
-                ToastUtils.toast(context, bundle.getString(RR303011.BUNDLE_KEY_STOCK_RETURN));
+                mFragment.onSuccessEntrust(bundle.getString(RR303011.BUNDLE_KEY_STOCK_RETURN));
                 mFragment.clearAllData();
                 getHoldList();
             }

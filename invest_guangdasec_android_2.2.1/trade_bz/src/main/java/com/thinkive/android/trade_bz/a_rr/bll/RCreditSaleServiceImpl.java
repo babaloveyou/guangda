@@ -160,7 +160,7 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
         }
         HashMap<String, String> paramMap = new HashMap<String, String>();
         paramMap.put("entrust_bs", "1");
-        paramMap.put("entrust_type", "6");
+        paramMap.put("entrust_type", "7");
         paramMap.put("stock_code", stock_code);
         paramMap.put("exchange_type", exchangeType);
         paramMap.put("stock_account", stock_account);
@@ -216,7 +216,7 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
         HashMap<String, String> paramMap = new HashMap<String, String>();
         RStockLinkBean stockLinkageBean = mFragment.getStockLinkageBean();
         paramMap.put("entrust_bs", "1");//卖出
-        paramMap.put("entrust_type", "7z");
+        paramMap.put("entrust_type", "7");
         paramMap.put("exchange_type", stockLinkageBean.getExchange_type());
         paramMap.put("stock_account", stockLinkageBean.getStock_account());
         paramMap.put("stock_code", stockLinkageBean.getStock_code());
@@ -228,6 +228,7 @@ public class RCreditSaleServiceImpl extends BasicServiceImpl {
                 loadingDialogUtil.hideDialog();
                 mFragment.clearDataInViews();
                 mFragment.onSuccessEntrustTrade(bundle.getString(Request303001.BUNDLE_KEY_ENTRUST_ORDER));
+                mFragment.jumpToRevotion();
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {

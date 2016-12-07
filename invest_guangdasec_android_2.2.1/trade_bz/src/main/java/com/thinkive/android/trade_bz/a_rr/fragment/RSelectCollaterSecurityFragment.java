@@ -15,6 +15,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -92,6 +93,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
     private TextView mTvPreCode;
     private int lastLenth = -1;
     private Dialog mProgressDialog;
+    private LinearLayout mMNoDataLl;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -123,10 +125,8 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_r_select_collater);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
-//        if (mProgressDialog != null) {
-//            mProgressDialog.dismiss();
-//        }
         mEdtCode = (EditText) view.findViewById(R.id.edt_collater_code);
+        mMNoDataLl = (LinearLayout) view.findViewById(R.id.lin_not_data_set);
         mRlLayout = (RelativeLayout) view.findViewById(R.id.lin_lay_collater);
         mTvPreCode = (TextView) view.findViewById(R.id.tv_collater_code_pre);
     }
@@ -136,8 +136,6 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         registerListener(AbsBaseController.ON_LISTVIEW_REFLASH, mPullToRefreshListView, mController);
         registerListener(AbsBaseController.ON_TEXT_CHANGE, mEdtCode, mController);
         registerListener(AbsBaseController.ON_CLICK, mTvPreCode, mController);
-
-
         mEdtCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
@@ -169,9 +167,10 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         setTheme();
         initProcessDialog();
     }
+
     private void initProcessDialog() {
         if (mProgressDialog == null) {
-            mProgressDialog = new Dialog(getContext(),R.style.transparent);
+            mProgressDialog = new Dialog(getContext(), R.style.transparent);
             View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_progress, null);
             mProgressDialog.setContentView(view);
             Window dialogWindow = mProgressDialog.getWindow();
@@ -182,11 +181,11 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
             //            lp.dimAmount = 0.5f;// 黑暗度
             dialogWindow.setAttributes(lp);
         }
-        mProgressDialog .show();
+        mProgressDialog.show();
     }
+
     @Override
     protected void setTheme() {
-
     }
 
     public void saveData(ArrayList<RSelectCollaterSecurityBean> list) {
@@ -202,9 +201,11 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         if (datalist == null || datalist.size() == 0) {
             mProgressDialog.dismiss();
             mPullToRefreshListView.setVisibility(View.GONE);
+            mMNoDataLl.setVisibility(View.VISIBLE);
         } else {
             mProgressDialog.dismiss();
             mPullToRefreshListView.setVisibility(View.VISIBLE);
+            mMNoDataLl.setVisibility(View.GONE);
             mAdapter.setListData(datalist);
             mListView.setAdapter(mAdapter);
         }
@@ -245,7 +246,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
             }
         } else {
             setEdtCursor(mEdtCode);
-            if (length > 2 && length < 6) { // 输入了，但没有输入完成的时候
+            if (length >=2 && length < 6) { // 输入了，但没有输入完成的时候
                 // 发消息给行情，查询股票输入提示列表
                 mStockFuzzyQueryManager.execQuery(inputCode, "1", mRlLayout);
             } else if (length == 6) {
@@ -266,7 +267,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         mEdtCode.requestFocus();
         mEdtCode.requestFocusFromTouch();
         setEdtCursor(mEdtCode);
-//        mEdtCode.performClick();
+        //        mEdtCode.performClick();
     }
 
     void showPreTv() {
@@ -297,6 +298,7 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
             if (!isMatching) {
                 mProgressDialog.dismiss();
                 mPullToRefreshListView.setVisibility(View.GONE);
+                mMNoDataLl.setVisibility(View.VISIBLE);
                 mStockCodeEdKeyboardManager.dismiss();
                 TradeUtils.hideSystemKeyBoard(mActivity);
                 mStockCodeEdKeyboardManager.dismiss();

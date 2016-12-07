@@ -35,12 +35,9 @@ public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> 
         TextView fareTrade = (TextView) holder.getComponentById(R.id.tv_r_do_fare_trade);
         TextView fareYinHua = (TextView) holder.getComponentById(R.id.tv_r_do_fare_yin);
         TextView fareGuoHu = (TextView) holder.getComponentById(R.id.tv_r_do_fare_guo_hu);
-        TextView compactId = (TextView) holder.getComponentById(R.id.tv_r_do_compact_id);
         TextView tradeId = (TextView) holder.getComponentById(R.id.tv_r_do_trade_id);
         TextView stockYu = (TextView) holder.getComponentById(R.id.tv_r_do_stock_yu);
         TextView moneyYu = (TextView) holder.getComponentById(R.id.tv_r_do_money_yu);
-        TextView stockAccount = (TextView) holder.getComponentById(R.id.tv_r_do_stock_account);
-        TextView market = (TextView) holder.getComponentById(R.id.tv_r_do_market);
 
         entrustBs.setText(bean.getBusiness_name());
         date.setText(bean.getInit_date());
@@ -53,13 +50,9 @@ public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> 
         fareTrade.setText(bean.getFee_jygf());
         fareYinHua.setText(bean.getFare1());
         fareGuoHu.setText(bean.getFare2());
-        compactId.setText(bean.getReport_no());
         tradeId.setText(bean.getBusiness_no());
         stockYu.setText(bean.getPost_amount());
         moneyYu.setText(bean.getPost_balance());
-        stockAccount.setText(bean.getStock_account());
-        market.setText(bean.getExchange_type_name());
-//        remark.setText(bean.getRemark());
 
     }
 }

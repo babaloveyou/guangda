@@ -35,10 +35,9 @@ public class CreditTodayTradeAdapter extends AbsBaseAdapter<RSelectTodayTradeBea
         timeTv.setText(bean.getBusiness_time());
 
         TextView entrustInfoTv = (TextView) holder.getComponentById(R.id.tv_entrust_info);
-        entrustInfoTv.setText(bean.getBusiness_price() + "元" );
-
+        entrustInfoTv.setText(bean.getEntrust_no()+"/"+bean.getBusiness_balance() );
         TextView turnoverInfoTv = (TextView) holder.getComponentById(R.id.tv_trunover_info);
-        turnoverInfoTv.setText( bean.getBusiness_amount() + "股");
+        turnoverInfoTv.setText( bean.getBusiness_price()+"/"+bean.getBusiness_amount());
     }
 }
 

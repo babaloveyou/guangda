@@ -72,7 +72,7 @@ public class BottomHoldLvAdapter extends BaseAdapter {
         MyStoreStockBean myStoreStockBean = mDataList.get(position);
         holder.nameTv.setText(myStoreStockBean.getStock_name());
         holder.codeTv.setText(myStoreStockBean.getStock_code());
-        holder.marketPriceTv.setText("市值" + myStoreStockBean.getMarket_value() + "万");
+        holder.marketPriceTv.setText("市值" + myStoreStockBean.getMarket_value());
         //盈亏百分比
         setWinLostRate(holder, myStoreStockBean);
 

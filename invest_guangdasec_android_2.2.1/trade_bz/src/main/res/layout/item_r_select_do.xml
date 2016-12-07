@@ -1,454 +1,389 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/trade_color_white">
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/trade_color_white"
+              android:orientation="vertical">
 
-    <View android:layout_width="match_parent"
+    <View
+        android:layout_width="match_parent"
         android:layout_height="10dp"
         android:background="@color/trade_normal_background"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:orientation="horizontal"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="15dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
-            android:textSize="16sp"
-            android:textColor="@color/trade_text_color2"
+            android:id="@+id/tv_r_do_bs"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="@string/no_text_set"
-            android:id="@+id/tv_r_do_bs"/>
+            android:textColor="@color/trade_text_color2"
+            android:textSize="16sp"/>
 
         <TextView
-            android:textSize="14sp"
-            android:textColor="@color/trade_text_color9"
+            android:id="@+id/tv_r_do_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/no_text_set"
-            android:id="@+id/tv_r_do_date"/>
+            android:textColor="@color/trade_text_color9"
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
-    <View android:layout_width="match_parent"
+    <View
+        android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/trade_divide_line"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-      >
+        >
 
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
+            android:id="@+id/textView9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
             android:text="@string/contract_not_trade_count"
-            android:id="@+id/textView9"/>
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_trade_num"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_trade_num"/>
+            android:textColor="@color/trade_text_color2"/>
 
         <View
-            android:background="@color/trade_divide_line"
             android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
+
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="@string/contract_not3"/>
+            android:text="@string/contract_not3"
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_trade_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_trade_price"/>
+            android:textColor="@color/trade_text_color2"/>
 
     </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-      >
+        >
 
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="@string/contract_not_trade_money"/>
+            android:text="@string/contract_not_trade_money"
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_trade_balances"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_trade_balances"/>
+            android:textColor="@color/trade_text_color2"/>
+
         <View
-            android:background="@color/trade_divide_line"
             android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not4"/>
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
+            android:text="@string/contract_not4"
+            android:textColor="@color/trade_text_color9"/>
+
+        <TextView
+            android:id="@+id/tv_r_do_qing_money"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_qing_money"/>
+            android:textColor="@color/trade_text_color2"/>
 
     </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-      >
+        >
 
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="@string/contract_not5"/>
+            android:text="@string/contract_not5"
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_fare_shou"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_fare_shou"/>
+            android:textColor="@color/trade_text_color2"/>
+
         <View
-            android:background="@color/trade_divide_line"
             android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not6"/>
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
+            android:text="@string/contract_not6"
+            android:textColor="@color/trade_text_color9"/>
+
+        <TextView
+            android:id="@+id/tv_r_do_fare_qing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_fare_qing"/>
+            android:textColor="@color/trade_text_color2"/>
 
     </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-       >
+        >
 
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="@string/contract_not7"/>
+            android:text="@string/contract_not7"
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_fare_trade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_fare_trade"/>
+            android:textColor="@color/trade_text_color2"/>
+
         <View
-            android:background="@color/trade_divide_line"
             android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not8"/>
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
+            android:text="@string/contract_not8"
+            android:textColor="@color/trade_text_color9"/>
+
+        <TextView
+            android:id="@+id/tv_r_do_fare_yin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_fare_yin"/>
+            android:textColor="@color/trade_text_color2"/>
 
     </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
-      >
+        >
 
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="@string/contract_not9"/>
+            android:text="@string/contract_not9"
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_fare_guo_hu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_fare_guo_hu"/>
+            android:textColor="@color/trade_text_color2"/>
+
         <View
-            android:background="@color/trade_divide_line"
             android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not10"/>
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
+            android:text="@string/contract_not11"
+            android:textColor="@color/trade_text_color9"/>
+
+        <TextView
+            android:id="@+id/tv_r_do_trade_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_compact_id"/>
+            android:textColor="@color/trade_text_color2"/>
 
     </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
 
     <LinearLayout
-        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:orientation="horizontal"
-       >
-
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not11"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="5dp"
-            android:hint="@string/no_text_set"
-            android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_trade_id"/>
-        <View
-            android:background="@color/trade_divide_line"
-            android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not12"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="5dp"
-            android:hint="@string/no_text_set"
-            android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_stock_yu"/>
-
-    </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
-
-    <LinearLayout
         android:gravity="center_vertical"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
         android:orientation="horizontal"
-       >
+        >
 
         <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
-            android:text="@string/contract_not13"/>
+            android:text="@string/contract_not12"
+            android:textColor="@color/trade_text_color9"/>
 
         <TextView
+            android:id="@+id/tv_r_do_stock_yu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingTop="5dp"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_money_yu"/>
+            android:textColor="@color/trade_text_color2"/>
+
         <View
-            android:background="@color/trade_divide_line"
             android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:text="@string/contract_not14"/>
+            android:layout_height="match_parent"
+            android:background="@color/trade_divide_line"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
+            android:paddingLeft="15dp"
             android:paddingTop="5dp"
+            android:text="@string/contract_not13"
+            android:textColor="@color/trade_text_color9"/>
+
+        <TextView
+            android:id="@+id/tv_r_do_money_yu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="@string/no_text_set"
+            android:paddingTop="5dp"
             android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_stock_account"/>
+            android:textColor="@color/trade_text_color2"/>
 
     </LinearLayout>
-    <View android:layout_width="match_parent"
-          android:layout_height="0.5dp"
-          android:background="@color/trade_divide_line"/>
 
-    <LinearLayout
-        android:gravity="center_vertical"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:orientation="horizontal"
-       >
+        android:layout_height="0.5dp"
+        android:background="@color/trade_divide_line"/>
 
-        <TextView
-            android:textColor="@color/trade_text_color9"
-            android:paddingLeft="15dp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.8"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:text="@string/contract_not15"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:paddingTop="5dp"
-            android:hint="@string/no_text_set"
-            android:singleLine="true"
-            android:textColor="@color/trade_text_color2"
-            android:id="@+id/tv_r_do_market"/>
-        <View
-            android:background="@color/trade_divide_line"
-            android:layout_width="0.5dp"
-            android:layout_height="match_parent"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.8"
-            />
-
-
-    </LinearLayout>
 
 </LinearLayout>

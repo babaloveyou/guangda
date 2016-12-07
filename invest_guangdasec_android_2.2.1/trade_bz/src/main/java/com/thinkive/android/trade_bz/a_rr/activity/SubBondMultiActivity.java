@@ -181,17 +181,4 @@ public class SubBondMultiActivity extends AbsNavBarActivity {
     public List<RSelectCollaterSecurityBean> getSecuritiesData() {
         return  dataListSecurities;
     }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        dataListSecurities.clear();
-        dataListFinancing.clear();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        dataListSecurities.clear();
-        dataListFinancing.clear();
-    }
 }

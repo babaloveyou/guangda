@@ -255,7 +255,7 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
             }
         } else {
             setEdtCursor(mEdtCode);
-            if (length > 2 && length < 6) { // 输入了，但没有输入完成的时候
+            if (length >= 2 && length < 6) { // 输入了，但没有输入完成的时候
                 // 发消息给行情，查询股票输入提示列表
                 mStockFuzzyQueryManager.execQuery(inputCode, "1", mRlLayout);
             } else if (length == 6) {

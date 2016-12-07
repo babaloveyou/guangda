@@ -26,6 +26,8 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
     private RCreditBuyFragment mRCreditBuyFragment;
     private RCreditSaleFragment mRCreditSaleFragment;
     private RCollaterBuyOrSellFragment mRCollaterBuyOrSellFragment;
+    private RSaleStockToMoneyFragment mRSaleStockToMoneyFragment;
+    private RBuyStockToStockFragment mRBuyStockToStockFragment;
     private View mView;
     private ListView mLv;
     private LinearLayout mNoDataLl;
@@ -33,8 +35,7 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
     private CreditBottomTodayEntrustAdapter mAdapter;
     private boolean isBuy = true;
     private String mCurrentFragment = null;
-    private RSaleStockToMoneyFragment mRSaleStockToMoneyFragment;
-    private RBuyStockToStockFragment mRBuyStockToStockFragment;
+
 
     @Nullable
     @Override
@@ -73,6 +74,7 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
     private void initData() {
         mServices = new RSelectTodayEntrustServicesImpl(this);
         mAdapter = new CreditBottomTodayEntrustAdapter(getContext(), mServices);
+        mLv.setAdapter(mAdapter);
     }
 
     private void initListener() {
@@ -111,7 +113,7 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
             mRCreditSaleFragment = (RCreditSaleFragment) fragment;
             mCurrentFragment = RCreditSaleFragment.class.getSimpleName();
             isBuy = false;
-        } else if(fragment instanceof RCollaterBuyOrSellFragment){
+        } else if (fragment instanceof RCollaterBuyOrSellFragment) {
             mCurrentFragment = RCollaterBuyOrSellFragment.class.getSimpleName();
             mRCollaterBuyOrSellFragment = (RCollaterBuyOrSellFragment) fragment;
             int buyOrSell = mRCollaterBuyOrSellFragment.getBuyOrSell();
@@ -124,7 +126,7 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
             mCurrentFragment = RSaleStockToMoneyFragment.class.getSimpleName();
             mRSaleStockToMoneyFragment = (RSaleStockToMoneyFragment) fragment;
             isBuy = false;
-        }else if (fragment instanceof RBuyStockToStockFragment) {
+        } else if (fragment instanceof RBuyStockToStockFragment) {
             mCurrentFragment = RBuyStockToStockFragment.class.getSimpleName();
             mRBuyStockToStockFragment = (RBuyStockToStockFragment) fragment;
             isBuy = true;
@@ -145,21 +147,30 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
             mNoDataLl.setVisibility(View.VISIBLE);
             mLoadingLl.setVisibility(View.GONE);
         } else {
-            //买入卖出通过entrust_bs筛选数据
-            ArrayList<RSelectTodayEntrustBean> revocationBeensBuy = new ArrayList<>();
-            ArrayList<RSelectTodayEntrustBean> revocationBeensSell = new ArrayList<>();
-
-
+            ArrayList<RSelectTodayEntrustBean> flag1List = new ArrayList<>();
+            ArrayList<RSelectTodayEntrustBean> flag2List = new ArrayList<>();
+            ArrayList<RSelectTodayEntrustBean> flag3List = new ArrayList<>();
+            ArrayList<RSelectTodayEntrustBean> flag4List = new ArrayList<>();
+            ArrayList<RSelectTodayEntrustBean> flag5List = new ArrayList<>();
+            ArrayList<RSelectTodayEntrustBean> flag6List = new ArrayList<>();
             for (RSelectTodayEntrustBean bean : dataList) {
-                String entrust_bs = bean.getEntrust_bs();
-                if ("0".equals(entrust_bs)) {
-                    revocationBeensBuy.add(bean);
-                } else if ("1".equals(entrust_bs)) {
-                    revocationBeensSell.add(bean);
+                String entrust_bs = bean.getEntrust_type_flag();
+                if ("1".equals(entrust_bs)) {
+                    flag1List.add(bean);
+                } else if ("2".equals(entrust_bs)) {
+                    flag2List.add(bean);
+                } else if ("3".equals(entrust_bs)) {
+                    flag3List.add(bean);
+                } else if ("4".equals(entrust_bs)) {
+                    flag4List.add(bean);
+                } else if ("5".equals(entrust_bs)) {
+                    flag5List.add(bean);
+                } else if ("6".equals(entrust_bs)) {
+                    flag6List.add(bean);
                 }
             }
-            if (isBuy) {//如果是买
-                if (revocationBeensBuy.size() == 0) {
+            if (mCurrentFragment.equals(RCreditBuyFragment.class.getSimpleName())) {
+                if (flag1List.size() == 0) {
                     mLoadingLl.setVisibility(View.GONE);
                     mLv.setVisibility(View.GONE);
                     mNoDataLl.setVisibility(View.VISIBLE);
@@ -167,23 +178,70 @@ public class CreditBottomTodayEntrustFragment extends BaseLazzyFragment {
                     mLoadingLl.setVisibility(View.GONE);
                     mLv.setVisibility(View.VISIBLE);
                     mNoDataLl.setVisibility(View.GONE);
+                    mAdapter.setListData(flag1List);
+                    mAdapter.notifyDataSetChanged();
                 }
-                mAdapter.setListData(revocationBeensBuy);
-                revocationBeensSell = null;
-            } else {//卖
-                if (revocationBeensSell.size() == 0) {
+            } else if (mCurrentFragment.equals(RCreditSaleFragment.class.getSimpleName())) {
+                if (flag2List.size() == 0) {
                     mLoadingLl.setVisibility(View.GONE);
                     mLv.setVisibility(View.GONE);
                     mNoDataLl.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     mLoadingLl.setVisibility(View.GONE);
                     mLv.setVisibility(View.VISIBLE);
                     mNoDataLl.setVisibility(View.GONE);
+                    mAdapter.setListData(flag2List);
+                    mAdapter.notifyDataSetChanged();
                 }
-                mAdapter.setListData(revocationBeensSell);
-                revocationBeensBuy = null;
+            } else if (mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName()) && isBuy == true) {
+                if (flag3List.size() == 0) {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                } else {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.VISIBLE);
+                    mNoDataLl.setVisibility(View.GONE);
+                    mAdapter.setListData(flag3List);
+                    mAdapter.notifyDataSetChanged();
+                }
+            } else if (mCurrentFragment.equals(RCollaterBuyOrSellFragment.class.getSimpleName()) && isBuy == false) {
+                if (flag4List.size() == 0) {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                } else {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.VISIBLE);
+                    mNoDataLl.setVisibility(View.GONE);
+                    mAdapter.setListData(flag4List);
+                    mAdapter.notifyDataSetChanged();
+                }
+            } else if (mCurrentFragment.equals(RBuyStockToStockFragment.class.getSimpleName())) {
+                if (flag5List.size() == 0) {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                } else {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.VISIBLE);
+                    mNoDataLl.setVisibility(View.GONE);
+                    mAdapter.setListData(flag5List);
+                    mAdapter.notifyDataSetChanged();
+                }
+            } else if (mCurrentFragment.equals(RSaleStockToMoneyFragment.class.getSimpleName())) {
+                if (flag6List.size() == 0) {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.GONE);
+                    mNoDataLl.setVisibility(View.VISIBLE);
+                } else {
+                    mLoadingLl.setVisibility(View.GONE);
+                    mLv.setVisibility(View.VISIBLE);
+                    mNoDataLl.setVisibility(View.GONE);
+                    mAdapter.setListData(flag6List);
+                    mAdapter.notifyDataSetChanged();
+                }
             }
-            mLv.setAdapter(mAdapter);
         }
     }
 }

@@ -94,8 +94,8 @@ public class RSelectCreditLimitFragment extends AbsBaseFragment {
     public void getCreditLimit(RSelectPropertBean data) {
         mLinLoading.setVisibility(View.GONE);
         mTvAllLimit.setText(data.getAcreditavl());
-        mTvOtherZi.setText(data.getFcreditavl());
-        mTvOtherQuan.setText(data.getDcreditavl());
+        mTvOtherZi.setText(data.getFin_enable_balance());
+        mTvOtherQuan.setText(data.getSlo_enable_quota());
     }
 }
 

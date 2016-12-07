@@ -74,13 +74,11 @@
                     android:text="流 水 号  "
                     android:textColor="@color/trade_text_color9"
                     android:textSize="12sp"/>
-
                 <TextView
                     android:id="@+id/tv_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="0000000000000000"
                     android:textSize="12sp"/>
             </LinearLayout>
 
@@ -102,7 +100,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="0.000"
                     android:textSize="12sp"/>
             </LinearLayout>
 
@@ -124,7 +121,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="100.000"
                     android:textSize="12sp"/>
             </LinearLayout>
 
@@ -146,7 +142,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="证券代码"
+                    android:text="发生日期"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="12sp"/>
 
@@ -154,7 +150,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="863001"
                     android:textSize="12sp"
                     android:id="@+id/tv_stockcode"/>
             </LinearLayout>
@@ -177,7 +172,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="1000"
                     android:textSize="12sp"/>
             </LinearLayout>
 
@@ -199,7 +193,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="3000.000"
                     android:textSize="12sp"/>
             </LinearLayout>
 
