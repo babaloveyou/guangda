@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 
+import com.android.thinkive.framework.config.ConfigManager;
 import com.android.thinkive.framework.fragment.BaseWebFragment;
 import com.android.thinkive.framework.message.AppMessage;
 import com.android.thinkive.framework.message.IMessageHandler;
@@ -16,6 +17,7 @@ import com.android.thinkive.framework.util.Constant;
 import com.android.thinkive.framework.util.Log;
 import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.others.handler.Message50101;
+import com.thinkive.android.trade_bz.others.tools.TradeFlags;
 import com.thinkive.android.trade_bz.request.Message50114;
 import com.thinkive.android.trade_bz.utils.ToastUtil;
 
@@ -27,7 +29,7 @@ import org.json.JSONObject;
  */
 public class NormalTransferFragment extends BaseWebFragment implements IModule {
     private String mSourceModule;
-    private String mUrl;
+    private String mUrl= ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL");
     private boolean canReceive = false;
     private boolean isH5Prepare = false;
     private BroadcastReceiver mToH5PageReceiver = new BroadcastReceiver() {
@@ -53,13 +55,29 @@ public class NormalTransferFragment extends BaseWebFragment implements IModule {
         getContext().registerReceiver(mToH5PageReceiver, filter);
         canReceive = true;
     }
-
-    //对应replace使用  第一次不走
     @Override
-    public void onViewStateRestored(Bundle savedInstanceState) {
-        super.onViewStateRestored(savedInstanceState);
-        if (savedInstanceState != null && savedInstanceState.getInt("loadurl") == 1) {
-            loadUrl(mUrl);
+    public void onStart() {
+        super.onStart();
+        loadUrl(mUrl);
+        if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
+            JSONObject param = new JSONObject();
+            //退出登录发个消息
+            AppMessage msg = new AppMessage(111111, param);
+            sendMessageToH5(msg);
+        }
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        canReceive = false;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        try {
+            getContext().unregisterReceiver(mToH5PageReceiver);
+        } catch (Exception e) {
         }
     }
 
@@ -71,12 +89,6 @@ public class NormalTransferFragment extends BaseWebFragment implements IModule {
         }
     }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        canReceive = false;
-    }
 
     @Override
     public String returnWebViewName() {
@@ -98,6 +110,18 @@ public class NormalTransferFragment extends BaseWebFragment implements IModule {
             switch (msgId) {
                 case 50100:
                     isH5Prepare = true;
+                    if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                JSONObject param = new JSONObject();
+                                //退出登录发个消息
+                                AppMessage msg = new AppMessage(111111, param);
+                                sendMessageToH5(msg);
+                            }
+                        });
+
+                    }
                     break;
                 case 50041:
                     messageHandler = new Message50041();
@@ -126,10 +150,6 @@ public class NormalTransferFragment extends BaseWebFragment implements IModule {
         baseWebFragment.sendMessageToH5(appMessage);
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
 
     /**
      * 发送50107消息给H5，通知他们，用户单击了手机的物理返回键

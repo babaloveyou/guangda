@@ -30,7 +30,6 @@ import com.android.thinkive.framework.ThinkiveInitializer;
 import com.android.thinkive.framework.WebViewManager;
 import com.android.thinkive.framework.compatible.ListenerController;
 import com.android.thinkive.framework.config.ConfigManager;
-import com.android.thinkive.framework.fragment.BaseWebFragment;
 import com.android.thinkive.framework.message.AppMessage;
 import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.module.IModule;
@@ -46,6 +45,8 @@ import com.thinkive.android.trade_bz.a_option.activity.OptionMainActivity;
 import com.thinkive.android.trade_bz.a_out.activity.FundTradeMainActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.CreditHistoryEntrustOrTradeActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.CreditMoneyFlowActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.CreditNewStockActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.CreditTradnsferActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RBuyStockToStockActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCashReturnActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.RCollaterBuyOrSaleActivity;
@@ -60,7 +61,6 @@ import com.thinkive.android.trade_bz.a_rr.activity.RStockReturnStockActivity;
 import com.thinkive.android.trade_bz.a_rr.activity.SubBondMultiActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity;
@@ -866,10 +866,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      * 新股申购
      */
     private void onClickNewStock() {
-        NewStockWebActivity.getCreditNewStockFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"));
-        NewStockWebActivity.getCreditNewStockFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("CREDIT_NEWSTOCK_URL"));
-        Intent intent = new Intent(mActivity, NewStockWebActivity.class);
-        intent.putExtra("loginType", NewStockWebActivity.CREDIT);
+        Intent intent = new Intent(mActivity, CreditNewStockActivity.class);
         mActivity.startActivity(intent);
     }
 
@@ -1233,10 +1230,7 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
      */
     private void onClickTransferAccount() {
         if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
-            TradnsferActivity.getCreditFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("CREDIT_TRANSFER_URL"));
-            TradnsferActivity.getCreditFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("CREDIT_TRANSFER_URL"));
-            Intent intent = new Intent(mActivity, TradnsferActivity.class);
-            intent.putExtra("loginType", TradnsferActivity.CREDIT);
+            Intent intent = new Intent(mActivity, CreditTradnsferActivity.class);
             mActivity.startActivity(intent);
         } else {
             startLogin(1106, TradeLoginManager.LOGIN_TYPE_CREDIT);
@@ -1345,20 +1339,8 @@ public class CreditTradeFragment extends AbsTitlebarFragment implements IModule 
         //清除供给H5的用户信息
         MemoryStorage memoryStorage = new MemoryStorage();
         memoryStorage.removeData(Constants.CREDIT_LOGIN_USERINFO_FORH5);
-        //        CommonUtil.syncWebviewCookies(getActivity(), ConfigManager.getInstance().getUrlName("CREDIT_NEWSTOCK_URL"), "");
-        try {
-            sendMessageCireditLogout(NewStockWebActivity.getCreditNewStockFragment());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
-    private void sendMessageCireditLogout(BaseWebFragment baseWebFragment) throws JSONException {
-        JSONObject param = new JSONObject();
-        //退出登录发个消息
-        AppMessage appMessage = new AppMessage(222222, param);
-        baseWebFragment.sendMessageToH5(appMessage);
-    }
 
     /**
      * 清除标志位

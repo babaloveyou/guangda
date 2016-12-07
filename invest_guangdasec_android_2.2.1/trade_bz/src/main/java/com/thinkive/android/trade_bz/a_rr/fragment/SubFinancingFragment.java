@@ -117,6 +117,9 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
         mStockFuzzyQueryManager.setPopupWindowReserveWidthReferView(mRlLayout);
         mStockFuzzyQueryManager.initListViewPopupwindow(mController);
         TradeUtils.hideSystemKeyBoard(mActivity);
+        if (TextUtils.isEmpty(mEdtCode.getText())) {
+            showPreTv();
+        }
     }
     @Override
     public void closeFrameworkKeyBroad() {
@@ -140,8 +143,6 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
         registerListener(AbsBaseController.ON_LISTVIEW_REFLASH, mPullToRefreshListView, mController);
         registerListener(AbsBaseController.ON_TEXT_CHANGE, mEdtCode, mController);
         registerListener(AbsBaseController.ON_CLICK, mTvPreCode, mController);
-
-
         mEdtCode.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {

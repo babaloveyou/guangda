@@ -76,11 +76,11 @@ public class RSaleStockToMoneyDialog extends AbsTradeDialog {
 
     public void setDataToViews(RStockLinkBean bean, String entrustPrice, String entrustAmount) {
         if (mShowWarning) {
-            showWarningText(0);
+            showWarningText(1);
         } else {
             hideWarnText();
         }
-        mBuyOrSellTv.setText("融券卖出:    ");
+        mBuyOrSellTv.setText("卖出数量:    ");
         mAccountTv.setText(bean.getStock_account());
         mNameTv.setText(bean.getStock_name());
         mCodeTv.setText(bean.getStock_code());

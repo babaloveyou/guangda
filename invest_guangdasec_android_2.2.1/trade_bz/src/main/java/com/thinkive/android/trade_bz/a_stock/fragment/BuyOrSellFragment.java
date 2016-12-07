@@ -1250,7 +1250,6 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
             map.put("stock_name", mCodeTableBean.getName());
             map.put("exchange_type",mStockLinkageBean!=null? mStockLinkageBean.getExchange_type():"");
             map.put("limited_type", mStockLinkageBean!=null?mStockLinkageBean.getLimited_type():"");
-
             map.put("trade_flag", "2");
             new Request301513(map, new IRequestAction() {
                 @Override
@@ -1268,9 +1267,7 @@ public class BuyOrSellFragment extends AbsBaseFragment implements Serializable, 
                     } else {//返回数据为空会解析出错,不提示风险信息
                         showBuyOrSaleClickDialog();
                     }
-
                 }
-
                 @Override
                 public void onFailed(Context context, Bundle bundle) {
                     ToastUtils.toast(context, bundle.getString(Request301513.ERROR_INFO));

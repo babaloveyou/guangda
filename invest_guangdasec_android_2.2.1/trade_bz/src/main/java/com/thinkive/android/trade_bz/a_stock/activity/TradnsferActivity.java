@@ -45,7 +45,7 @@ public class TradnsferActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newstockweb);
+        setContentView(R.layout.activity_yzzz);
         Intent intent = getIntent();
         if (intent != null) {
             mLoginType = intent.getStringExtra("loginType");

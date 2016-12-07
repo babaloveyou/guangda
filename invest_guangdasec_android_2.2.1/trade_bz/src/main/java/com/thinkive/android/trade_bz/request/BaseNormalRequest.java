@@ -2,6 +2,7 @@ package com.thinkive.android.trade_bz.request;
 
 import com.thinkive.android.trade_bz.a_stock.bean.LoginInfo;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
+import com.thinkive.android.trade_bz.others.tools.EncryptManager;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 
 import org.json.JSONObject;
@@ -43,7 +44,7 @@ public class BaseNormalRequest extends BaseRequest {
         paramHashMap.put("op_station", TradeLoginManager.sNormalUserInfo.getOp_station());
         paramHashMap.put("sessionid", TradeLoginManager.sNormalUserInfo.getJsessionid());
         paramHashMap.put("fund_account", TradeLoginManager.sNormalUserInfo.getFund_account());
-        paramHashMap.put("password", LoginInfo.getPassword());
+        paramHashMap.put("password", EncryptManager.getInstance().getRsaEncryptStr(LoginInfo.getPassword()) );
         paramHashMap.put("stock_account", LoginInfo.getSelectHolderAccount());
         if (TradeLoginManager.LOGIN_TYPE_SHEN_A_ACCOUNT.equals(TradeLoginManager.sNormalLoginType) ||
                 TradeLoginManager.LOGIN_TYPE_SHEN_B_ACCOUNT.equals(TradeLoginManager.sNormalLoginType) ||

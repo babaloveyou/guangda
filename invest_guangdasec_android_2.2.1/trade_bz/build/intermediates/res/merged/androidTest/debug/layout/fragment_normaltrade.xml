@@ -69,6 +69,22 @@
             <include layout="@layout/include_devider_view"/>
 
             <RelativeLayout
+                android:id="@+id/rl_one_key"
+                style="@style/style_rl_click_expandable"
+                >
+
+                <TextView
+                    style="@style/style_tv_left"
+                    android:text="一键归集"/>
+
+                <ImageView
+                    style="@style/style_iv_right"/>
+            </RelativeLayout>
+
+
+            <include layout="@layout/include_devider_view"/>
+
+            <RelativeLayout
                 android:id="@+id/rl_change_tradepwd"
                 style="@style/style_rl_click_expandable"
                 >

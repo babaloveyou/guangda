@@ -5,7 +5,6 @@ import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.bean.OneKeyBean;
-import com.thinkive.android.trade_bz.others.tools.FontManager;
 
 /**
  * 一键归集--归集数据信息
@@ -16,11 +15,9 @@ import com.thinkive.android.trade_bz.others.tools.FontManager;
 
 public class OneKeyAdapter extends AbsBaseAdapter<OneKeyBean> {
     private Context mContext;
-    private FontManager mFontManager;
     public OneKeyAdapter(Context context) {
         super(context,R.layout.item_a_one_key);
         mContext = context;
-        mFontManager = FontManager.getInstance(mContext);
     }
     @Override
     protected void onFillComponentData(ViewHolder holder, OneKeyBean bean) {
@@ -40,10 +37,5 @@ public class OneKeyAdapter extends AbsBaseAdapter<OneKeyBean> {
         }else if(bean.getFundseq().equals("1")){
             oneKeyType.setText(this.getContext().getString(R.string.one_key_fu));
         }
-
-        mFontManager.setTextFont(ontKeyName, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(oneKeyType, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(oneKeyMoney, FontManager.FONT_DINPRO_MEDIUM);
-        mFontManager.setTextFont(oneKeyCanUse, FontManager.FONT_DINPRO_MEDIUM);
     }
 }

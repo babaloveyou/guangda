@@ -646,6 +646,7 @@ public class TradeUtils {
 
 
                         LogUtil.printLog("d", "获取到的op_station：" + TradeLoginManager.OP_STATION_2);
+        System.out.println("ppppppppppppppppppppppp===" + opStation2);
         return opStation2;
     }
 }

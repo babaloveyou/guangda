@@ -7,6 +7,7 @@ import com.thinkive.android.trade_bz.a_stock.bean.OneKeyBean;
 import com.thinkive.android.trade_bz.a_stock.fragment.OneKeyMoneyFragment;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.tools.EncryptManager;
+import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.request.Request300207;
 import com.thinkive.android.trade_bz.request.Request300208;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
@@ -54,10 +55,10 @@ public class OneKeySelectServicesImpl {
     /**
      * 请求资金转账
      */
-    public void requestTransferMoney(String pwd,String moneyType,String money,String outAccount,String inAccount) {
+    public void requestTransferMoney(String moneyType,String money,String outAccount,String inAccount) {
         loadingDialogUtil.showLoadingDialog(0);
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("out_password",mEncryptManager.getRsaEncryptStr(pwd));
+        map.put("out_password",mEncryptManager.getRsaEncryptStr(TradeLoginManager.sNormalUserInfo.getPassword()));
         map.put("money_type", moneyType); //主资金账号的币种类型
         map.put("tranamt",money);
         map.put("out_fundid",outAccount);

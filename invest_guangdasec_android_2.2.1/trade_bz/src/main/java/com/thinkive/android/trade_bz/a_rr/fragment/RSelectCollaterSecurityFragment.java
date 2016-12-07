@@ -15,7 +15,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -72,10 +71,6 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
      */
     private PullToRefreshListView mPullToRefreshListView;
     /**
-     * 正在加载的旋转进度条
-     */
-    private LinearLayout mLoading;
-    /**
      * 证券代码
      */
     private EditText mEdtCode;
@@ -128,8 +123,9 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_r_select_collater);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
-        mLoading = (LinearLayout) view.findViewById(R.id.ll_collater_list_loading);
-        mProgressDialog.dismiss();
+//        if (mProgressDialog != null) {
+//            mProgressDialog.dismiss();
+//        }
         mEdtCode = (EditText) view.findViewById(R.id.edt_collater_code);
         mRlLayout = (RelativeLayout) view.findViewById(R.id.lin_lay_collater);
         mTvPreCode = (TextView) view.findViewById(R.id.tv_collater_code_pre);
@@ -205,11 +201,9 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
     public void getCollaterSecurityData(ArrayList<RSelectCollaterSecurityBean> datalist) {
         if (datalist == null || datalist.size() == 0) {
             mProgressDialog.dismiss();
-            mLoading.setVisibility(View.GONE);
             mPullToRefreshListView.setVisibility(View.GONE);
         } else {
             mProgressDialog.dismiss();
-            mLoading.setVisibility(View.GONE);
             mPullToRefreshListView.setVisibility(View.VISIBLE);
             mAdapter.setListData(datalist);
             mListView.setAdapter(mAdapter);
@@ -225,7 +219,6 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
             return false;
         } else {
             mProgressDialog.dismiss();
-            mLoading.setVisibility(View.GONE);
             mPullToRefreshListView.setVisibility(View.VISIBLE);
             mAdapter.setListData(mActivity.getData());
             mAdapter.notifyDataSetChanged();
@@ -303,7 +296,6 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
             }
             if (!isMatching) {
                 mProgressDialog.dismiss();
-                mLoading.setVisibility(View.GONE);
                 mPullToRefreshListView.setVisibility(View.GONE);
                 mStockCodeEdKeyboardManager.dismiss();
                 TradeUtils.hideSystemKeyBoard(mActivity);
@@ -312,7 +304,6 @@ public class RSelectCollaterSecurityFragment extends AbsBaseFragment implements 
         } else {
             mServices.requestCollaterSecurity(code);
             mProgressDialog.dismiss();
-            mLoading.setVisibility(View.VISIBLE);
             mPullToRefreshListView.setVisibility(View.GONE);
             mStockCodeEdKeyboardManager.dismiss();
             TradeUtils.hideSystemKeyBoard(mActivity);

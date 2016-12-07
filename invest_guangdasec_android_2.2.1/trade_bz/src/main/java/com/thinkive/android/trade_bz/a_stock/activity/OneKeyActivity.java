@@ -1,13 +1,12 @@
 package com.thinkive.android.trade_bz.a_stock.activity;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 import com.thinkive.android.trade_bz.R;
-import com.thinkive.android.trade_bz.a_stock.fragment.RadioButtonFragment2;
-import com.thinkive.android.trade_bz.a_stock.fragment.OneKeyFragment;
-import com.thinkive.android.trade_bz.a_stock.fragment.OneKeyMoneyFragment;
-import com.thinkive.android.trade_bz.others.tools.TradeTools;
+import com.thinkive.android.trade_bz.a_stock.fragment.OneKeyParentFragment;
 
 /**
  *   一键归集的Activity
@@ -16,31 +15,45 @@ import com.thinkive.android.trade_bz.others.tools.TradeTools;
  * @date 15/7/14
  */
 public class OneKeyActivity extends AbsNavBarActivity {
-    private RadioButtonFragment2 mFragment = null;
+    /**
+     * 交易登录碎片，用于显示交易登录的界面元素
+     */
+    private OneKeyParentFragment mParentFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // 发消息，让登录页关闭
-        TradeTools.sendMsgToLoginForSubmitFinish(this);
+        setTitleBarVisible(View.GONE);
         initData();
         initViews();
     }
 
     @Override
-    protected void initViews() {
-        addFragment(R.id.fl_container, mFragment);
-        //隐藏Activity的标题栏
-        setTitleBarVisible(View.GONE);
-    }
-    @Override
     protected void initData() {
-        OneKeyFragment fragment1 = new OneKeyFragment();
-        fragment1.setName(this.getResources().getString(R.string.one_key_title));
+        mParentFragment = new OneKeyParentFragment();
 
-        OneKeyMoneyFragment fragment2 = new OneKeyMoneyFragment();
-        fragment2.setName(this.getResources().getString(R.string.one_key_fragment_title));
-
-        mFragment = new RadioButtonFragment2(fragment1, fragment2);
     }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+        setBackBtnVisibility(View.VISIBLE);
+        mParentFragment.setArguments(getIntent().getExtras());
+        replaceFragment(R.id.fl_container, mParentFragment);
+    }
+    public static void hideSystemKeyBoard(Activity activity) {
+        // 收起系统键盘
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(), 0);
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        hideSystemKeyBoard(this);
+    }
+
+
 }

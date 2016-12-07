@@ -40,12 +40,22 @@
             android:screenOrientation="portrait"/>
         <!--普通交易新股申购-->
         <activity
-            android:name="com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity"
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.NormalNewstockActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
-        <!--印证转账-->
+        <!--信用交易新股申购-->
         <activity
-            android:name="com.thinkive.android.trade_bz.a_stock.activity.TradnsferActivity"
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.CreditNewStockActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--普通印证转账-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_stock.activity.NormalTradnsferActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"/>
+        <!--信用印证转账-->
+        <activity
+            android:name="com.thinkive.android.trade_bz.a_rr.activity.CreditTradnsferActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"/>
 

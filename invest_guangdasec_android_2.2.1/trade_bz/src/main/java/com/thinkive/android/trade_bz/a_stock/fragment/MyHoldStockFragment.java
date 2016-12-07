@@ -251,9 +251,9 @@ public class MyHoldStockFragment extends AbsBaseFragment {
         mFragmentPagerThird = new HoldPagerFragment();
 
         //设置pager头部的货币信息
-        mFragmentPagerOne.setOriginalViews(R.string.money_type_num1,R.mipmap.ic_launcher);
-        mFragmentPagerTwo.setOriginalViews(R.string.money_type_num2,R.mipmap.ic_launcher);
-        mFragmentPagerThird.setOriginalViews(R.string.money_type_num3,R.mipmap.ic_launcher);
+        mFragmentPagerOne.setOriginalViews(R.string.money_type_num1,R.mipmap.icon_cn);
+        mFragmentPagerTwo.setOriginalViews(R.string.money_type_num2,R.mipmap.icon_hk);
+        mFragmentPagerThird.setOriginalViews(R.string.money_type_num3,R.mipmap.icon_us);
 
         Bundle bundle = new Bundle();
         bundle.putInt("page", 0);

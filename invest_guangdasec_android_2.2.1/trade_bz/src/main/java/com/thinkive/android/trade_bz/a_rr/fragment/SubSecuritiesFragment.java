@@ -113,6 +113,9 @@ public class SubSecuritiesFragment extends AbsBaseFragment implements KeyboardMa
         mStockFuzzyQueryManager.setPopupWindowReserveWidthReferView(mRlLayout);
         mStockFuzzyQueryManager.initListViewPopupwindow(mController);
         TradeUtils.hideSystemKeyBoard(mActivity);
+        if (TextUtils.isEmpty(mEdtCode.getText())) {
+            showPreTv();
+        }
     }
 
     @Override

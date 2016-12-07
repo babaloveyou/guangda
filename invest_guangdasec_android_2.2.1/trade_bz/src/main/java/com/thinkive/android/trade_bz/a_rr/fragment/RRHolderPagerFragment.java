@@ -11,14 +11,16 @@ import android.widget.TextView;
 import com.android.thinkive.framework.compatible.ListenerControllerAdapter;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_rr.activity.BalanceDetailActivity;
+import com.thinkive.android.trade_bz.a_rr.activity.CreditTradnsferActivity;
 import com.thinkive.android.trade_bz.a_rr.bean.RSelectPropertBean;
 import com.thinkive.android.trade_bz.a_rr.bll.RRHolderPagerServicesImpl;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiCreditTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TransferBanktActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.a_stock.fragment.AbsBaseFragment;
+import com.thinkive.android.trade_bz.others.constants.Constants;
+import com.thinkive.android.trade_bz.others.tools.TradeFlags;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
-import com.thinkive.android.trade_bz.utils.TradeUtils;
 
 /**
  * Created by Administrator on 2016/11/26.
@@ -131,14 +133,17 @@ public class RRHolderPagerFragment extends AbsBaseFragment {
      * 使用普通账户进入模块
      */
     public void onClickBank() {
-        if (!TradeUtils.isFastClick()) {
-            Intent intent = new Intent();
-            Bundle bundle = new Bundle();
-            bundle.putString("userType", TradeLoginManager.LOGIN_TYPE_CREDIT);
-            intent.setClass(mActivity, TransferBanktActivity.class);
-            intent.putExtras(bundle);
+        if (TradeFlags.check(TradeFlags.FLAG_CREDIT_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, CreditTradnsferActivity.class);
             mActivity.startActivity(intent);
+        } else {
+            startLogin(TradeLoginManager.LOGIN_TYPE_CREDIT);
         }
+    }
+    private void startLogin(String loginType) {
+        Intent intent = new Intent(mActivity, TradeLoginActivity.class);
+        intent.putExtra(Constants.LOGIN_TYPE, loginType);
+        mActivity.startActivity(intent);
     }
     /**
      * 资产负债汇总查询

@@ -946,8 +946,9 @@ public class RCollaterBuyOrSellFragment extends AbsBaseFragment implements ViewP
                     this.mStockCodeEdKeyboardManager.dismiss();
                     mKeyboardManagerPrice.dismiss();
                     TradeUtils.hideSystemKeyBoard(this.mActivity);
-                    RCollaterComfirmDialog dialog1 = new RCollaterComfirmDialog(this.mActivity, this.mBuyOrSell, this.mService);
-                    dialog1.setDataToViews(this.mStockLinkageBean.getStock_name(), this.mStockLinkageBean.getStock_code(), this.getEntrustPrice(), this.getEntrustAmount());
+                    boolean showWarning = Integer.parseInt(getEntrustAmount()) > Integer.parseInt(mStockLinkageBean.getStock_max_amount());
+                    RCollaterComfirmDialog dialog1 = new RCollaterComfirmDialog(this.mActivity, this.mBuyOrSell,showWarning, this.mService);
+                    dialog1.setDataToViews(this.mStockLinkageBean, this.getEntrustPrice(), this.getEntrustAmount());
                     dialog1.setEntrustBs(this.mEntrustBs, this.limitOrMarketPriceFlag, this.entrustBsXjNum);
                     dialog1.show();
                 }

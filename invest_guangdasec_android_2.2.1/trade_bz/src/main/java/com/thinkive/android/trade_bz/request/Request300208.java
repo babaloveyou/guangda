@@ -16,7 +16,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *  一键归集--资产信息账户查询
+ * 一键归集--资产信息账户查询
+ *
  * @author 张雪梅
  * @company Thinkive
  * @date 2015/8/12
@@ -34,17 +35,20 @@ public class Request300208 extends BaseNormalRequest {
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
+        System.out.println("300208========================");
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
-            JSONArray jArray=jsonObject.getJSONArray(resultTarget);
+            JSONArray jArray = jsonObject.getJSONArray(resultTarget);
+            JSONObject o = (JSONObject) jArray.get(0);
+            System.out.println("0000000000000000" + o.toString());
             if (jArray != null) {
                 ArrayList<OneKeyBean> dataList = JsonParseUtils.createBeanList(OneKeyBean.class, jArray);
-                Bundle bundle=new Bundle();
+                Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList(BUNDLE_KEY_ONE_KEY_SELECT, dataList);
                 transferAction(REQUEST_SUCCESS, bundle);
-            }else {
+            } else {
                 Bundle bundle = new Bundle();
-                bundle.putString(BUNDLE_KEY_ONE_KEY_SELECT,mContext.getResources().getString(R.string.data_error));
+                bundle.putString(BUNDLE_KEY_ONE_KEY_SELECT, mContext.getResources().getString(R.string.data_error));
                 transferAction(REQUEST_SUCCESS, bundle);
             }
         } catch (JSONException je) {

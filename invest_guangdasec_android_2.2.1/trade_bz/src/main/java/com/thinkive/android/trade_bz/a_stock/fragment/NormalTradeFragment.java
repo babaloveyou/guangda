@@ -25,7 +25,6 @@ import com.android.thinkive.framework.ThinkiveInitializer;
 import com.android.thinkive.framework.WebViewManager;
 import com.android.thinkive.framework.compatible.ListenerController;
 import com.android.thinkive.framework.config.ConfigManager;
-import com.android.thinkive.framework.fragment.BaseWebFragment;
 import com.android.thinkive.framework.message.AppMessage;
 import com.android.thinkive.framework.message.MessageManager;
 import com.android.thinkive.framework.module.IModule;
@@ -44,12 +43,12 @@ import com.thinkive.android.trade_bz.a_stock.activity.ChangePasswordActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.HistoryEntrustOrTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.HistoryMoneyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.NewStockWebActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.NormalNewstockActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.NormalTradnsferActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.OneKeyActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.SignAgreementActivity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeH5Activity;
 import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TradnsferActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.FastMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.adapter.MoreMenuAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneySelectBean;
@@ -158,6 +157,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     private int[] mImgRes = {R.mipmap.buyin, R.mipmap.sellout, R.mipmap.repeal_bill, R.mipmap.personal_ass, R.mipmap.take_position, R.mipmap.today_trust, R.mipmap.today_vol, R.mipmap.bank_trans};
     private TradeParentFragment mParentFragment;//持有的 在TradeParentFragment初始化好的TradeParentFragment对象
     private ScrollView mScrollView;
+    private RelativeLayout mOneKeyRl;
 
 
     @Override
@@ -256,6 +256,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         mRotateArrow = (ImageView) view.findViewById(R.id.iv_more_can_rotate);
 
         mBuyNewRl = (RelativeLayout) view.findViewById(R.id.rl_new_buy);
+        mOneKeyRl = (RelativeLayout) view.findViewById(R.id.rl_one_key);
         mChageTradePwdRl = (RelativeLayout) view.findViewById(R.id.rl_change_tradepwd);
         mLogOutTv = (TextView) view.findViewById(R.id.tv_exit_logout);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_parent);
@@ -270,6 +271,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
 
         registerListener(ListenerController.ON_CLICK, mShowMoreRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mBuyNewRl, mHomeController);
+        registerListener(ListenerController.ON_CLICK, mOneKeyRl, mHomeController);
         registerListener(ListenerController.ON_CLICK, mChageTradePwdRl, mHomeController);
 
         mLogOutTv.setOnClickListener(new View.OnClickListener() {
@@ -657,6 +659,8 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         mClickBtnBeforeLogin = viewId;
         if (viewId == R.id.rl_new_buy) {
             onClickNewStock();
+        } else if (viewId == R.id.rl_one_key) {
+            onClickOneKeyCollect();
         } else if (viewId == R.id.rl_change_tradepwd) {
             onClickModifiedTradePwd();
         } else if (viewId == R.id.tv_exit_logout) {
@@ -858,12 +862,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      * 新股申购
      */
     private void onClickNewStock() {
-        String normal_newstock_url = ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL");
-        System.out.println("111111111111111111" + normal_newstock_url);
-        NewStockWebActivity.getNormalNewStockFragment().setUrl(normal_newstock_url);
-        NewStockWebActivity.getNormalNewStockFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("NORMAL_NEWSTOCK_URL"));
-        Intent intent = new Intent(mActivity, NewStockWebActivity.class);
-        intent.putExtra("loginType", NewStockWebActivity.NORMAL);
+        Intent intent = new Intent(mActivity, NormalNewstockActivity.class);
         mActivity.startActivity(intent);
     }
 
@@ -987,10 +986,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
      */
     private void onClickTransferAccount() {
         if (TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
-           TradnsferActivity.getNormalFragment().setUrl(ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL"));
-            TradnsferActivity.getNormalFragment().preloadUrl(mActivity, ConfigManager.getInstance().getAddressConfigValue("NORMAL_TRANSFER_URL"));
-            Intent intent = new Intent(mActivity, TradnsferActivity.class);
-            intent.putExtra("loginType", TradnsferActivity.NORMAL);
+            Intent intent = new Intent(mActivity, NormalTradnsferActivity.class);
             mActivity.startActivity(intent);
         } else {
             startLogin(2007, TradeLoginManager.LOGIN_TYPE_NORMAL);
@@ -1004,8 +1000,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         if (TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
             Intent intent = new Intent(mActivity, OneKeyActivity.class);
             mActivity.startActivity(intent);
-        } else { // 未登录时，调转到登录页面
-            startLogin(R.id.tv_oneKey_collection, TradeLoginManager.LOGIN_TYPE_NORMAL);
+        } else {
+            startLogin(2202, TradeLoginManager.LOGIN_TYPE_NORMAL);
+            //只登录了一种账户类型
         }
     }
 
@@ -1117,21 +1114,8 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         MemoryStorage memoryStorage = new MemoryStorage();
         memoryStorage.removeData(Constants.NORMAL_LOGIN_USERINFO_FORH5);
         memoryStorage.removeData(Constants.CREDIT_COOKIE_KEY);
-        //        CommonUtil.syncWebviewCookies(getActivity(), NewStockWebActivity.NORMAL_URL,"");
-        try {
-            sendMessageNormalLogout(NewStockWebActivity.getNormalNewStockFragment());
-            sendMessageNormalLogout(TradnsferActivity.getNormalFragment());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
     }
 
-    private void sendMessageNormalLogout(BaseWebFragment baseWebFragment) throws JSONException {
-        JSONObject param = new JSONObject();
-        //退出登录发个消息
-        AppMessage appMessage = new AppMessage(111111, param);
-        baseWebFragment.sendMessageToH5(appMessage);
-    }
 
     /**
      * 清除标志位
@@ -1288,6 +1272,9 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                                     viewId = viewId - 2200;
                                     if (viewId == 1) {
                                         onClickModifiedTradePwd();
+                                    }
+                                    if (viewId == 2) {
+                                        onClickOneKeyCollect();
                                     }
                                 }
                             }

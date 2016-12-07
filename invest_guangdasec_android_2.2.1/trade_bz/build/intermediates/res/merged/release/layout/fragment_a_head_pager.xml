@@ -30,7 +30,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="6dp"
                 android:gravity="bottom"
-                android:text="资金账号:00000000 - "
                 android:textColor="@color/trade_text_color3"
                 android:textSize="12sp"/>
 

@@ -84,8 +84,12 @@ public class RCreditBuyDialog extends AbsTradeDialog {
         } else {
             hideWarnText();
         }
-        mBuyOrSellTv.setText("融资买入:    ");
-        mAccountTv.setText(stockLinkageBean.getStock_account());
+        mBuyOrSellTv.setText("买入数量:    ");
+        String stock_account = stockLinkageBean.getStock_account();
+        if (stock_account.contains(",")) {
+            stock_account = stock_account.split(",")[0];
+        }
+        mAccountTv.setText(stock_account);
         mNameTv.setText(stockLinkageBean.getStock_name());
         mCodeTv.setText(stockLinkageBean.getStock_code());
         mEntrustPriceTv.setText(entrustPrice);

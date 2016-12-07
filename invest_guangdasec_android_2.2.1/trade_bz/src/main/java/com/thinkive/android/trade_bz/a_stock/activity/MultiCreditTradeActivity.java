@@ -117,7 +117,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         setBackBtnVisibility(View.VISIBLE);
         // 设置页面上方中间的标题
         setTitleText("信用交易");
-//        setTitleDrawableLedt();
+        setTitleDrawableLedt(R.mipmap.credit_header);
         mRadioTabs.setFragments(mFragmentList);
         mRadioTabs.initViews();
         // mRadioTabs对象的类不是View子类，所以这个监听器的设置不能写在mController中

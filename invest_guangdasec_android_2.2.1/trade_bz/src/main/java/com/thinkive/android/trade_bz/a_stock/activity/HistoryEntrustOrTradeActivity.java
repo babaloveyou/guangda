@@ -75,7 +75,6 @@ public class HistoryEntrustOrTradeActivity extends AbsNavBarActivity implements 
                     e.printStackTrace();
                 }
             }
-
             @Override
             public void onFailed(Context context, Bundle bundle) {
                 ToastUtils.toast(context, bundle.getString(Request306001.ERROR_INFO));

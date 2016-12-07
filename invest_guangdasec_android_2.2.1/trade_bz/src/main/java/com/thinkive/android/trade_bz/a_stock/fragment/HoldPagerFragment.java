@@ -15,10 +15,13 @@ import android.widget.TextView;
 import com.android.thinkive.framework.compatible.ListenerControllerAdapter;
 import com.thinkive.android.trade_bz.R;
 import com.thinkive.android.trade_bz.a_stock.activity.MultiTradeActivity;
-import com.thinkive.android.trade_bz.a_stock.activity.TransferBanktActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.NormalTradnsferActivity;
+import com.thinkive.android.trade_bz.a_stock.activity.TradeLoginActivity;
 import com.thinkive.android.trade_bz.a_stock.bean.MoneyBean;
 import com.thinkive.android.trade_bz.a_stock.bll.MyholdPagerServicesImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
+import com.thinkive.android.trade_bz.others.constants.Constants;
+import com.thinkive.android.trade_bz.others.tools.TradeFlags;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 
@@ -124,7 +127,7 @@ public class HoldPagerFragment extends AbsBaseFragment {
         mTvReferPofit.addTextChangedListener(new MyTextWatcher() {
             @Override
             public void doAfterChange(Editable s) {
-                if (mTvReferPofit.getText().toString().startsWith(getResources().getString(R.string.common_emp_text))) {
+                if (mTvReferPofit.getText().toString().startsWith(getResources().getString(R.string.common_emp_text)) || "0.000".equals(mTvReferPofit.getText().toString()) || "0.00".equals(mTvReferPofit.getText().toString())) {
                     mTvReferPofit.setTextColor(getResources().getColor(trade_text_color9));
                 } else if (mTvReferPofit.getText().toString().startsWith("-")) {
                     mTvReferPofit.setTextColor(getResources().getColor(trade_down_green));
@@ -137,7 +140,7 @@ public class HoldPagerFragment extends AbsBaseFragment {
         mTvTodayReferPofit.addTextChangedListener(new MyTextWatcher() {
             @Override
             public void doAfterChange(Editable s) {
-                if (mTvTodayReferPofit.getText().toString().startsWith(getResources().getString(R.string.common_emp_text))) {
+                if (mTvTodayReferPofit.getText().toString().startsWith(getResources().getString(R.string.common_emp_text)) || "0.000".equals(mTvTodayReferPofit.getText().toString()) || "0.00".equals(mTvTodayReferPofit.getText().toString())) {
                     mTvTodayReferPofit.setTextColor(getResources().getColor(trade_text_color9));
                 } else if (mTvTodayReferPofit.getText().toString().startsWith("-")) {
                     mTvTodayReferPofit.setTextColor(getResources().getColor(trade_down_green));
@@ -213,10 +216,14 @@ public class HoldPagerFragment extends AbsBaseFragment {
         String z_float_yk = bean.getZ_float_yk();
         String dayfloat_yk = bean.getDayfloat_yk();
         mTvFundAccount.setText("资金账号:" + TradeLoginManager.sNormalLoginAccount + " -  ");
-        mTvAllMoney.setText(formateString(true, assert_val));
-        mTvCanUse.setText(formateString(false, balance));
-        mTvReferPofit.setText(formateString(false, z_float_yk));
-        mTvTodayReferPofit.setText(formateString(false, dayfloat_yk));
+        //        mTvAllMoney.setText(formateString(true, assert_val));
+        //        mTvCanUse.setText(formateString(false, balance));
+        //        mTvReferPofit.setText(formateString(false, z_float_yk));
+        //        mTvTodayReferPofit.setText(formateString(false, dayfloat_yk));
+        mTvAllMoney.setText(assert_val);
+        mTvCanUse.setText(balance);
+        mTvReferPofit.setText(z_float_yk);
+        mTvTodayReferPofit.setText(dayfloat_yk);
     }
 
     private String formateString(boolean isBig, String s) {
@@ -224,7 +231,7 @@ public class HoldPagerFragment extends AbsBaseFragment {
             s = "--";
         } else {
             if ("0.00".equals(s) || "0.000".equals(s)) {
-                s = "--";
+                //                s = "--";
             }
         }
         if ("--".equals(s)) {
@@ -244,20 +251,24 @@ public class HoldPagerFragment extends AbsBaseFragment {
     }
 
 
-
     /**
      * 点击银证转账按钮所执行的操作
      * 使用普通账户进入模块
      */
     public void onClickBank() {
-        if (!TradeUtils.isFastClick()) {
-            Intent intent = new Intent();
-            Bundle bundle = new Bundle();
-            bundle.putString("userType", TradeLoginManager.LOGIN_TYPE_NORMAL);
-            intent.setClass(mActivity, TransferBanktActivity.class);
-            intent.putExtras(bundle);
+        if (TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) {
+            Intent intent = new Intent(mActivity, NormalTradnsferActivity.class);
             mActivity.startActivity(intent);
+        } else {
+            startLogin(TradeLoginManager.LOGIN_TYPE_NORMAL);
         }
+    }
+
+
+    private void startLogin(String loginType) {
+        Intent intent = new Intent(mActivity, TradeLoginActivity.class);
+        intent.putExtra(Constants.LOGIN_TYPE, loginType);
+        mActivity.startActivity(intent);
     }
 }
 

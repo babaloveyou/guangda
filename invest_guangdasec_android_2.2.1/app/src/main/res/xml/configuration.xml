@@ -377,7 +377,7 @@
             name="trade-queen"
             description=""
             threadCount="6"
-            value="http://10.84.132.63:9999/servlet/json?|https://trade.ebscn.com/servlet/json?"
+            value="http://116.236.247.174:8071/servlet/json?|https://trade.ebscn.com/servlet/json?"
             />
     </requestQueue-config>
 </configs>

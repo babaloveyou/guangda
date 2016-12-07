@@ -17,24 +17,26 @@ import com.thinkive.android.trade_bz.a_stock.bll.BuyOrSellServiceImpl;
  */
 public class ATradeComfirmDialog extends AbsTradeDialog {
 
-    private boolean mShowWarning = false;
-    /**
-     * 是委托买入还是委托卖出
-     */
-    private int mBuyOrSale;
-
 
     /**
      * 调用方的业务类
      */
     private BuyOrSellServiceImpl mService;
+
+
     /**
      * 设置委托标准
      */
     private String mEntrustBs = "";
     private CodeTableBean mStockBean;
 
+
+    /**
+     * 是委托买入还是委托卖出
+     */
+    private int mBuyOrSale;
     private TextView mBuyOrSellTv;
+    private boolean mShowWarning = false;
     private TextView mAccountTv;
     private TextView mNameTv;
     private TextView mCodeTv;
@@ -86,7 +88,7 @@ public class ATradeComfirmDialog extends AbsTradeDialog {
                 hideWarnText();
             }
         } else if (mBuyOrSale == 1) { // 如果单机的是卖出
-            mBuyOrSellTv.setText("买入数量:    ");
+            mBuyOrSellTv.setText("卖出数量:    ");
             if (mShowWarning) {
                 showWarningText(1);
             } else {

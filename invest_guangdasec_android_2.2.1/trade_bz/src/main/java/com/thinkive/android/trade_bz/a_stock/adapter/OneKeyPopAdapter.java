@@ -32,7 +32,7 @@ public class OneKeyPopAdapter extends AbsBaseAdapter<OneKeyBean> {
         }
 
         TextView tvName=(TextView) holder.getComponentById(R.id.tv_pop_fund_code);
-        tvName.setText(" "+bean.getBank_name()+"  "+bean.getFund_account());
+        tvName.setText(" "+bean.getBank_name()+"  "+bean.getFundid());
         tvName.setTextColor(mContext.getResources().getColor(R.color.trade_color_black));
 
         TextView tvNum=(TextView) holder.getComponentById(R.id.tv_pop_fund_name);

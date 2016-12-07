@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/trade_color_white">
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:background="@color/trade_color_white"
+              android:gravity="center_vertical"
+              android:orientation="horizontal">
 
     <TextView
+        android:paddingLeft="15dp"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.9"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
         android:text="@string/one_key_bank_name"
-        android:gravity="center"
-        android:textColor="@color/trade_text_color9"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:textColor="@color/trade_top_tab_dark_gray"
+        />
 
     <TextView
+        android:id="@+id/textView12"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.6"
-        android:text="@string/one_key_account_type"
+        android:layout_weight="1"
         android:gravity="center"
-        android:textColor="@color/trade_text_color9"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:text="@string/one_key_account_type"
+
+        android:textColor="@color/trade_top_tab_dark_gray"/>
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="@string/one_key_money_other"
         android:gravity="center"
         android:paddingLeft="10dp"
-        android:textColor="@color/trade_text_color9"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:text="@string/one_key_money_other"
+        android:textColor="@color/trade_top_tab_dark_gray"
+        />
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical|right"
         android:text="@string/one_key_can_transfer"
-        android:gravity="center"
-        android:textColor="@color/trade_text_color9"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"/>
+        android:textColor="@color/trade_top_tab_dark_gray"
+        />
 </LinearLayout>

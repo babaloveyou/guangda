@@ -904,9 +904,9 @@ public class RBuyStockToStockFragment extends AbsBaseFragment implements ViewPag
         mStockCodeEdKeyboardManager.dismiss();
         mKeyboardManagerPrice.dismiss();
         TradeUtils.hideSystemKeyBoard(mActivity);
-        RBuyStockToStockDialog dialog = new RBuyStockToStockDialog(mActivity,mService);
-        dialog.setDataToViews(mStockLinkageBean.getStock_name(),
-                mStockLinkageBean.getStock_code(), getEntrustPrice(), getEntrustAmount());
+        boolean showWarning = Integer.parseInt(getEntrustAmount()) > Integer.parseInt(mStockLinkageBean.getStock_max_amount());
+        RBuyStockToStockDialog dialog = new RBuyStockToStockDialog(mActivity, showWarning, mService);
+        dialog.setDataToViews(mStockLinkageBean, getEntrustPrice(), getEntrustAmount());
         dialog.setEntrustBs(mEntrustBs,limitOrMarketPriceFlag,entrustBsXjNum);
         dialog.show();
     }
