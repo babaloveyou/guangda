@@ -70,7 +70,7 @@
             android:name="com.android.thinkive.invest_sd.activities.MainActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
-            android:launchMode="singleTask"
+            android:launchMode="singleTop"
            />
         <activity
             android:name="com.android.thinkive.invest_sd.activities.VideoPlayerActivity"

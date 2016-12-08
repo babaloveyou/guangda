@@ -75,7 +75,7 @@ public class CreditBottomHoldLvAdapter extends AbsBaseAdapter<MyStoreStockBean> 
     }
 
     private void setStoreText(TextView view, MyStoreStockBean myStoreStockBean) {
-        String storeText = "持仓:" + myStoreStockBean.getLast_price();
+        String storeText = "持仓:" + myStoreStockBean.getCost_amount();
         SpannableStringBuilder styleStore = new SpannableStringBuilder(storeText);
         styleStore.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleStore.setSpan(new ForegroundColorSpan(getContext().getResources().getColor(R.color.trade_text_color2)), 3, storeText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

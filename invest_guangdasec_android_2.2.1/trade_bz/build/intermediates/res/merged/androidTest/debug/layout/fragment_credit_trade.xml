@@ -79,31 +79,14 @@
             </RelativeLayout>
 
             <include layout="@layout/include_devider_view"/>
-
             <RelativeLayout
-                android:id="@+id/rl_not_close_out_credit"
+                android:id="@+id/rl_change_password"
                 style="@style/style_rl_click_expandable"
                 >
 
                 <TextView
                     style="@style/style_tv_left"
-                    android:text="未平仓合约"/>
-
-                <ImageView
-                    style="@style/style_iv_right"/>
-            </RelativeLayout>
-
-
-            <include layout="@layout/include_devider_view"/>
-
-            <RelativeLayout
-                android:id="@+id/rl_close_out_credit"
-                style="@style/style_rl_click_expandable"
-                >
-
-                <TextView
-                    style="@style/style_tv_left"
-                    android:text="已平仓合约"/>
+                    android:text="修改交易密码"/>
 
                 <ImageView
                     style="@style/style_iv_right"/>
@@ -111,18 +94,7 @@
 
             <include layout="@layout/include_devider_view"/>
 
-            <RelativeLayout
-                android:id="@+id/contract_show_data_credit"
-                style="@style/style_rl_click_expandable"
-                >
 
-                <TextView
-                    style="@style/style_tv_left"
-                    android:text="合约展期"/>
-
-                <ImageView
-                    style="@style/style_iv_right"/>
-            </RelativeLayout>
 
         </LinearLayout>
 

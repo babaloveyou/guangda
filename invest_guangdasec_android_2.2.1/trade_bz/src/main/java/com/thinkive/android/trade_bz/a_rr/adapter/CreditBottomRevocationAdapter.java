@@ -36,7 +36,7 @@ public class CreditBottomRevocationAdapter extends AbsBaseAdapter<RRevocationBea
 
         TextView titleStatus = (TextView) holder.getComponentById(R.id.tv_title_status);
         String entrust_bs = bean.getEntrust_bs();
-        titleStatus.setText((true?"限价":"市价")+("0".equals(entrust_bs)?"买入":"卖出"));
+        titleStatus.setText(bean.getEntrust_type_name());
 
 
         TextView timeTv=(TextView) holder.getComponentById(R.id.tv_time);

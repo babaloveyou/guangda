@@ -356,6 +356,7 @@ public class RCreditSaleFragment extends AbsBaseFragment implements ViewPager.On
         super.onPause();
         //关闭定时刷新
         handler.removeCallbacks(runnable);
+        clearDataInViews();
     }
 
     @Override
@@ -1039,6 +1040,8 @@ public class RCreditSaleFragment extends AbsBaseFragment implements ViewPager.On
      * 清空界面上的所有数字
      */
     public void clearDataInViews() {
+        mTvAdd.setText("0.01");
+        mTvSubtract.setText("0.01");
         // 空字符串常量
         final String blankStr = "";
         // 清除股票代码输入框上的数据

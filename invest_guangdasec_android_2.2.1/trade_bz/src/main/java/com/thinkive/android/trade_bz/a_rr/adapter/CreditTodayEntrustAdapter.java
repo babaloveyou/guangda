@@ -22,6 +22,11 @@ public class CreditTodayEntrustAdapter extends AbsBaseAdapter<RSelectTodayEntrus
 
     @Override
     protected void onFillComponentData(ViewHolder holder, RSelectTodayEntrustBean bean) {
+        TextView buy = (TextView) holder.getComponentById(R.id.tv_today_entrust_item_expend_buy);
+        TextView sale = (TextView) holder.getComponentById(R.id.tv_today_entrust_item_expend_sale);
+        buy.setText("融买");
+        sale.setText("融卖");
+
         TextView nameTv = (TextView) holder.getComponentById(R.id.tv_name);
         nameTv.setText(bean.getStock_name());
 
@@ -31,7 +36,7 @@ public class CreditTodayEntrustAdapter extends AbsBaseAdapter<RSelectTodayEntrus
 
         TextView titleStatus = (TextView) holder.getComponentById(R.id.tv_title_status);
         String entrust_bs = bean.getEntrust_bs();
-        titleStatus.setText("限价" + ("0".equals(entrust_bs) ? "买入" : "卖出"));
+        titleStatus.setText(bean.getEntrust_type_name());
 
         String entrust_amount = bean.getEntrust_amount();//委托数量
         String business_amount = bean.getBusiness_amount();//成交数目

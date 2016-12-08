@@ -33,6 +33,8 @@ public class SubBondMultiActivity extends AbsNavBarActivity {
     private HorizontalSlideLinearLayout mHorizontalSlideLinearLayout;
     private ArrayList<AbsBaseFragment> mFragmentList = null;
     private int defaultViewPagerPos=0;
+    private SubFinancingFragment mFragment1;
+    private SubSecuritiesFragment mFragment2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +62,15 @@ public class SubBondMultiActivity extends AbsNavBarActivity {
         mFragmentList = new ArrayList<AbsBaseFragment>();
 
 
-        SubFinancingFragment fragment1 = new SubFinancingFragment();
-        fragment1.setName(this.getResources().getString(R.string.r_sub_financing_title));
+        mFragment1 = new SubFinancingFragment();
+        mFragment1.setName(this.getResources().getString(R.string.r_sub_financing_title));
 
-        SubSecuritiesFragment fragment2 = new SubSecuritiesFragment();
-        fragment2.setName(this.getResources().getString(R.string.r_sub_securities_title));
+        mFragment2 = new SubSecuritiesFragment();
+        mFragment2.setName(this.getResources().getString(R.string.r_sub_securities_title));
 
 
-        mFragmentList.add(fragment1);
-        mFragmentList.add(fragment2);
+        mFragmentList.add(mFragment1);
+        mFragmentList.add(mFragment2);
 
 
         mController = new SubBondMultiActivityController(this);
@@ -133,6 +135,11 @@ public class SubBondMultiActivity extends AbsNavBarActivity {
      */
     public void onTabClick(int clickIndex) {
         mRadioTabs.setCurTab(clickIndex);
+        if (clickIndex == 0) {
+            mFragment2.clearEdt();
+        } else {
+            mFragment1.clearEdt();
+        }
     }
 
     /**

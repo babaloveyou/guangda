@@ -32,6 +32,11 @@ public class RequestHQ50000 extends BaseSocketRequest {
     }
 
     @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
+    @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         Bundle bundle = new Bundle();
         try {

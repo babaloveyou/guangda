@@ -22,6 +22,7 @@ import com.thinkive.android.trade_bz.a_stock.bean.MyStoreStockBean;
  */
 public class MyStoreListViewAdapter extends AbsBaseAdapter<MyStoreStockBean> {
 
+    private final boolean mIsCredit;
     private Context mContext;
     private String empString ;
 
@@ -30,8 +31,9 @@ public class MyStoreListViewAdapter extends AbsBaseAdapter<MyStoreStockBean> {
      *
      * @param context 外部调用环境
      */
-    public MyStoreListViewAdapter(Context context) {
+    public MyStoreListViewAdapter(Context context,boolean isCredit) {
         super(context, R.layout.item_a_hold_stock_expand);
+        mIsCredit = isCredit;
         mContext = context;
         setIsReuseView(true);
         empString= mContext.getResources().getString(R.string.common_emp_text);
@@ -39,6 +41,12 @@ public class MyStoreListViewAdapter extends AbsBaseAdapter<MyStoreStockBean> {
 
     @Override
     protected void onFillComponentData(ViewHolder holder, MyStoreStockBean bean) {
+        TextView tvBuy = (TextView) holder.getComponentById(R.id.tv_hold_list_item_expend_buy);
+        TextView tvSale = (TextView) holder.getComponentById(R.id.tv_hold_list_item_expend_sale);
+        if (mIsCredit) {
+            tvBuy.setText("融买");
+            tvSale.setText("融卖");
+        }
         TextView winLoseRateTv = (TextView) holder.getComponentById(R.id.tv_win_lose_rate);
         TextView winLoseNumTv = (TextView) holder.getComponentById(R.id.tv_win_lose_num);
         TextView costPriceTv = (TextView) holder.getComponentById(R.id.tv_cost_price);
@@ -82,7 +90,7 @@ public class MyStoreListViewAdapter extends AbsBaseAdapter<MyStoreStockBean> {
     }
 
     private void setStoreText(TextView view, MyStoreStockBean myStoreStockBean) {
-        String storeText = "持仓:" + myStoreStockBean.getLast_price();
+        String storeText = "持仓:" + myStoreStockBean.getCost_amount();
         SpannableStringBuilder styleStore = new SpannableStringBuilder(storeText);
         styleStore.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.text_reming)), 0, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         styleStore.setSpan(new ForegroundColorSpan(mContext.getResources().getColor(R.color.trade_text_color2)), 3, storeText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);

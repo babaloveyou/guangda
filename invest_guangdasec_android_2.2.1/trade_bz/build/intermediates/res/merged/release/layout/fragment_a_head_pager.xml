@@ -25,6 +25,7 @@
                 />
 
             <TextView
+                android:hint="资金账号:--"
                 android:id="@+id/tv_fund_account"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -51,6 +52,7 @@
             android:layout_marginBottom="15dp">
 
             <TextView
+                android:hint="--"
                 android:id="@+id/tv_myhold_money"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,6 +112,7 @@
                     android:textSize="@dimen/trade_buysell_text_size"/>
 
                 <TextView
+                    android:hint="--"
                     android:id="@+id/tv_myhold_canuse"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -141,6 +144,7 @@
                     android:textSize="@dimen/trade_buysell_text_size"/>
 
                 <TextView
+                    android:hint="--"
                     android:id="@+id/tv_refer_pofit"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -174,6 +178,7 @@
                     android:textSize="@dimen/trade_buysell_text_size"/>
 
                 <TextView
+                    android:hint="--"
                     android:id="@+id/tv_today_refer_profit"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

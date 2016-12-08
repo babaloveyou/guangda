@@ -39,7 +39,7 @@ public class RSelectDOselectAdapter extends AbsBaseAdapter<RSelectDOSelectBean> 
         TextView tv13 = (TextView) holder.getComponentById(R.id.tv13);
         TextView tv14 = (TextView) holder.getComponentById(R.id.tv14);
 
-        tv1.setText(bean.getBusiness_name());
+        tv1.setText(bean.getRemark());
         tv2.setText(bean.getInit_date());
         tv3.setText(bean.getOccur_amount());
         tv4.setText(bean.getBusiness_price());

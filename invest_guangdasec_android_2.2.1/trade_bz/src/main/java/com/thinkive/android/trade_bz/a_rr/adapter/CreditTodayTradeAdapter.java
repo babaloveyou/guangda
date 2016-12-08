@@ -19,6 +19,13 @@ public class CreditTodayTradeAdapter extends AbsBaseAdapter<RSelectTodayTradeBea
 
     @Override
     protected void onFillComponentData(ViewHolder holder, RSelectTodayTradeBean bean) {
+        TextView buy = (TextView) holder.getComponentById(R.id.tv_item_expend_buy);
+        TextView sale = (TextView) holder.getComponentById(R.id.tv_item_expend_sale);
+        buy.setText("融买");
+        sale.setText("融卖");
+
+
+
         TextView nameTv = (TextView) holder.getComponentById(R.id.tv_name);
         nameTv.setText(bean.getStock_name());
 
@@ -29,7 +36,7 @@ public class CreditTodayTradeAdapter extends AbsBaseAdapter<RSelectTodayTradeBea
         TextView titleStatus = (TextView) holder.getComponentById(R.id.tv_title_status);
         String entrust_bs = bean.getEntrust_bs();
         //        String entrust_limit = bean.getEntrust_limit();
-        titleStatus.setText("限价"  + ("0".equals(entrust_bs) ? "买入" : "卖出"));
+        titleStatus.setText(bean.getEntrust_type_name());
 
         TextView timeTv = (TextView) holder.getComponentById(R.id.tv_time);
         timeTv.setText(bean.getBusiness_time());

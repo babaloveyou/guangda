@@ -82,7 +82,7 @@ public class OnKeyInAccountQueryManager {
      */
     public void showQueryPopupWindow(View parentView) {
         if (mPopupwindowWidth == 0 && mWidthReferView != null) {
-            mPopupwindowWidth = mWidthReferView.getWidth()*2/3;
+            mPopupwindowWidth = mWidthReferView.getWidth()-15;
         }
         dismissQueryPopupWindow();
         int count = mAdapter.getCount();

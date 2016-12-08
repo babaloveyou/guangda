@@ -56,7 +56,7 @@ public class CreditTodayTradeDetailsFragment extends Fragment {
         mNumTv.setText(b.getBusiness_amount());
         mPriceTv.setText(TradeUtils.formatDouble2(b.getBusiness_price()));
         mTotalPriceTv.setText(Double.parseDouble(b.getBusiness_price()) * Double.parseDouble(b.getBusiness_amount()) + "");
-        mTv2.setText(b.getBusiness_date() + "" + b.getBusiness_time());
+        mTv2.setText(b.getBusiness_date() + " " + b.getBusiness_time());
         mTv3.setText(b.getEntrust_type_name());
         mTv4.setText(b.getStock_account());
         mTv5.setText("人民币");

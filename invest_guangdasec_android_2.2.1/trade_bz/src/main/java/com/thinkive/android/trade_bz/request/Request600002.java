@@ -30,6 +30,11 @@ public class Request600002 extends BaseRequest {
     }
 
     @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
+    @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         LogUtil.printLog("d", jsonObject.toString());
         transferAction(REQUEST_SUCCESS, new Bundle());

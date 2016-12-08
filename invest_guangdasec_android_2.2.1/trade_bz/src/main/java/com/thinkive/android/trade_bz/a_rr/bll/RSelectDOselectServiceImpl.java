@@ -41,8 +41,8 @@ public class RSelectDOselectServiceImpl extends BasicServiceImpl {
      */
     public void requestDeliveryOrderData(String begin, String end) {
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("begin_date",begin);
-        map.put("end_date",end);
+        map.put("begin_time",begin);
+        map.put("end_time",end);
         new RR303027(map, new IRequestAction() {
             @Override
             public void onSuccess(Context context, Bundle bundle) {

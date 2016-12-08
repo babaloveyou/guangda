@@ -50,7 +50,7 @@ public class HoldDetailsFragment extends Fragment {
     private void initView() {
         mWinLoseTv.setText(b.getFloat_yk());
         mWinLoseRatioTv.setText(b.getFloat_yk_per());
-        mNewMarketTv.setText(b.getLast_price());
+        mNewMarketTv.setText(b.getMarket_value());
         mTv1.setText(b.getStock_name());
         mTv2.setText(b.getStock_code());
         mTv3.setText(b.getCost_amount());

@@ -36,6 +36,11 @@ public class RequestHQ20003 extends BaseSocketRequest {
     }
 
     @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
+    @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         try {
             JSONArray resultDataArray = jsonObject.getJSONArray("results").getJSONArray(0);

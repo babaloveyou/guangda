@@ -8,6 +8,7 @@ import com.thinkive.android.trade_bz.a_stock.fragment.OneKeyMoneyFragment;
 import com.thinkive.android.trade_bz.interfaces.IRequestAction;
 import com.thinkive.android.trade_bz.others.tools.EncryptManager;
 import com.thinkive.android.trade_bz.others.tools.TradeLoginManager;
+import com.thinkive.android.trade_bz.request.BaseRequest;
 import com.thinkive.android.trade_bz.request.Request300207;
 import com.thinkive.android.trade_bz.request.Request300208;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
@@ -67,13 +68,14 @@ public class OneKeySelectServicesImpl {
             @Override
             public void onSuccess(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
-                OneKeyBean data = (OneKeyBean)bundle.getSerializable(Request300207.BUNDLE_KEY_ONE_KEY_MONEY);
-                mFragment.getTransferMoneyResult(data);
+                String string = bundle.getString(BaseRequest.ERROR_INFO);
+                mFragment.getTransferMoneyResult(string);
             }
             @Override
             public void onFailed(Context context, Bundle bundle) {
                 loadingDialogUtil.hideDialog();
-                ToastUtils.toast(context, bundle.getString(Request300207.ERROR_INFO));
+                String string = bundle.getString(BaseRequest.ERROR_INFO);
+                mFragment.getTransferMoneyResult(string);
             }
         }).request();
     }

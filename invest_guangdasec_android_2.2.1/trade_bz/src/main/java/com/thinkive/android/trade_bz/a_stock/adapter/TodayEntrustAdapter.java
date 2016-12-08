@@ -37,7 +37,7 @@ public class TodayEntrustAdapter extends AbsBaseAdapter<RevocationBean> {
         TextView titleStatus = (TextView) holder.getComponentById(R.id.tv_title_status);
         String entrust_bs = bean.getEntrust_bs();
         String entrust_limit = bean.getEntrust_limit();
-        titleStatus.setText(("0".equals(entrust_limit) ? "限价" : "市价") + ("0".equals(entrust_bs) ? "买入" : "卖出"));
+        titleStatus.setText(bean.getExchange_type_name());
 
         String entrust_amount = bean.getEntrust_amount();//委托数量
         String business_amount = bean.getBusiness_amount();//成交数目

@@ -15,26 +15,22 @@ public class TodayMoneyAdapter extends AbsBaseAdapter<TodayMoneyBean> {
 
 
     public TodayMoneyAdapter(Context context) {
-        super(context, R.layout.item_a_money_water);
+        super(context, R.layout.item_a_today_money_water);
     }
 
     @Override
     protected void onFillComponentData(ViewHolder holder, TodayMoneyBean bean) {
         TextView titleTv = (TextView) holder.getComponentById(R.id.tv_title);
         TextView timeTv = (TextView) holder.getComponentById(tv_time);
-        TextView noTv = (TextView) holder.getComponentById(R.id.tv_no);
         TextView stockCodeTv = (TextView) holder.getComponentById(R.id.tv_stockcode);
         TextView turnoverPriceTv = (TextView) holder.getComponentById(R.id.tv_turnover_price);
         TextView trunoverAmountTv = (TextView) holder.getComponentById(R.id.tv_turnover_amount);
         TextView happenPriceTv = (TextView) holder.getComponentById(R.id.tv_happen_price);
-        TextView balanceTv = (TextView) holder.getComponentById(R.id.tv_balance);
         titleTv.setText(bean.getBusiness_name());
         timeTv.setText(bean.getBusiness_date());
-        noTv.setText(bean.getEntrust_no());
         stockCodeTv.setText(bean.getStock_code());
         turnoverPriceTv.setText(bean.getBusiness_price());
         trunoverAmountTv.setText(bean.getOccur_amount());
         happenPriceTv.setText(bean.getOrderprice());
-        balanceTv.setText(bean.getEnable_balance());
     }
 }

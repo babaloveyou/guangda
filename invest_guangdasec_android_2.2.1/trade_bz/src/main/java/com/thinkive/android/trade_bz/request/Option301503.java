@@ -35,6 +35,11 @@ public class Option301503 extends BaseRequest{
     }
 
     @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
+    @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();

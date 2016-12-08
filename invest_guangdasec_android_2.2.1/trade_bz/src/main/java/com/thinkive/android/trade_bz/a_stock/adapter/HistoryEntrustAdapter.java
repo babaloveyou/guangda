@@ -34,7 +34,7 @@ public class HistoryEntrustAdapter extends AbsBaseAdapter<HistoryEntrustBean> {
 
         TextView titleStatus = (TextView) holder.getComponentById(R.id.tv_title_status);
         String entrust_bs = bean.getEntrust_bs();
-        titleStatus.setText(("限价") + ("0".equals(entrust_bs) ? "买入" : "卖出"));
+        titleStatus.setText(bean.getEntrust_type_name());
 
         String entrust_amount = bean.getEntrust_amount();//委托数量
         String business_amount = bean.getBusiness_amount();//成交数目

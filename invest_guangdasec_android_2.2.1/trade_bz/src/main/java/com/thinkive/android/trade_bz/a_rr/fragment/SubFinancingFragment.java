@@ -109,7 +109,6 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
         return mRootView;
     }
 
-
     @Override
     public void onResume() {
         super.onResume();
@@ -121,6 +120,8 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
             showPreTv();
         }
     }
+
+
     @Override
     public void closeFrameworkKeyBroad() {
         super.closeFrameworkKeyBroad();
@@ -378,6 +379,10 @@ public class SubFinancingFragment extends AbsBaseFragment implements KeyboardMan
             onSelectShow(mEdtCode.getText().toString());
         }
 
+    }
+
+    public void clearEdt() {
+        mEdtCode.setText("");
     }
 
     /**

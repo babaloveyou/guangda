@@ -20,19 +20,19 @@ import java.util.HashMap;
  * @date 2015/8/12
  */
 public class Request300207 extends BaseNormalRequest {
-
     public static final String BUNDLE_KEY_ONE_KEY_MONEY= "Request300207_result";
+    Bundle bundle = new Bundle();
 
     public Request300207(HashMap<String, String> paramMap, IRequestAction action) {
         super(action);
         paramMap.put("funcNo", "300207");
         setParamHashMap(paramMap);
         setUrlName(Constants.URL_TRADE);
+
     }
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
-        Bundle bundle = new Bundle();
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
             JSONObject jsonResult = jsonObject.getJSONArray(resultTarget).getJSONObject(0);
@@ -50,4 +50,9 @@ public class Request300207 extends BaseNormalRequest {
         }
     }
 
+    @Override
+    public void getErrorInfowithoutError(String string) {
+        bundle.putString(ERROR_INFO, string);
+        transferAction(REQUEST_SUCCESS, bundle);
+    }
 }

@@ -358,6 +358,7 @@ public class RCreditBuyFragment extends AbsBaseFragment implements KeyboardManag
         //关闭定时刷新
         handler.removeCallbacks(runnable);
         mStockCodeFromOther = null;
+        clearDataInViews();
     }
 
     @Override

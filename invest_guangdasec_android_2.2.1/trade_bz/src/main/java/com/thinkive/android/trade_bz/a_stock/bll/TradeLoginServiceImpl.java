@@ -137,7 +137,7 @@ public class TradeLoginServiceImpl {
             public void onSuccess(Context context, Bundle bundle) {
                 TradeFlags.addFlag(TradeFlags.FLAG_NOT_UNITY_LOGIN_TYPE);
                 mFragment.onLoginSuccess(loginAccount, mLoginType);
-                ToastUtils.toast(context, R.string.login_success);
+                ToastUtils.toast(context,"登录成功");
                 if (mLoginType.equals(TradeLoginManager.LOGIN_TYPE_NORMAL)) {
                     //普通用户登录的用户信息保存
                     LoginInfo.setUsername(loginAccount);

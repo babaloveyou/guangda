@@ -612,12 +612,12 @@ public final class R {
 		public static final int cmp_customer_actionbar = 0x7f040033;
 		public static final int fragment_multi_image = 0x7f040091;
 		public static final int include_optionspicker = 0x7f0400d5;
-		public static final int layout_circle_thumbnail = 0x7f040150;
-		public static final int list_item_camera = 0x7f040151;
-		public static final int list_item_folder = 0x7f040152;
-		public static final int list_item_image = 0x7f040153;
-		public static final int pw_options = 0x7f040162;
-		public static final int support_simple_spinner_dropdown_item = 0x7f040166;
+		public static final int layout_circle_thumbnail = 0x7f040151;
+		public static final int list_item_camera = 0x7f040152;
+		public static final int list_item_folder = 0x7f040153;
+		public static final int list_item_image = 0x7f040154;
+		public static final int pw_options = 0x7f040163;
+		public static final int support_simple_spinner_dropdown_item = 0x7f040167;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f060000;

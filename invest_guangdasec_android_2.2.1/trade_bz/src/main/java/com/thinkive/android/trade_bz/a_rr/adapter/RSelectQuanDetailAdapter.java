@@ -34,7 +34,7 @@ public class RSelectQuanDetailAdapter extends AbsBaseAdapter<RSelectContractBean
         TextView tv13 = (TextView) holder.getComponentById(R.id.tv13);
         TextView tv14 = (TextView) holder.getComponentById(R.id.tv14);
 
-        tv1.setText(getCurrentPosition()+1);
+        tv1.setText(getCurrentPosition()+1+"");
         tv2.setText(b.getCompact_id());
         tv3.setText(b.getopen_date());
         tv4.setText(b.getRet_end_date());

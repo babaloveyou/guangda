@@ -14,6 +14,17 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class RevocationBean extends BaseBean implements Parcelable {
+    public String getEntrust_type_name() {
+
+        return entrust_type_name;
+    }
+
+    public void setEntrust_type_name(String entrust_type_name) {
+        this.entrust_type_name = entrust_type_name;
+    }
+
+    @JsonKey("entrust_type_name")
+    private String entrust_type_name = "";
     /**
      * 交易类型
      */
@@ -345,6 +356,7 @@ public class RevocationBean extends BaseBean implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_type_name);
         dest.writeString(this.entrust_nature);
         dest.writeString(this.fund_account);
         dest.writeString(this.entrust_limit);
@@ -370,6 +382,7 @@ public class RevocationBean extends BaseBean implements Parcelable {
     }
 
     protected RevocationBean(Parcel in) {
+        this.entrust_type_name = in.readString();
         this.entrust_nature = in.readString();
         this.fund_account = in.readString();
         this.entrust_limit = in.readString();

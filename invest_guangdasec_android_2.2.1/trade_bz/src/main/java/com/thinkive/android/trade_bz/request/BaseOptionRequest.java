@@ -13,6 +13,11 @@ import java.util.HashMap;
  * @des 个股期权请求基类
  */
 public class BaseOptionRequest extends BaseRequest{
+    @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
     /**
      * @param action
      */

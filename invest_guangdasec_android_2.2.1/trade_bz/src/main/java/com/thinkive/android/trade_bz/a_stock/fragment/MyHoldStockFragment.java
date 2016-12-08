@@ -244,7 +244,7 @@ public class MyHoldStockFragment extends AbsBaseFragment {
         mActivity = (MultiTradeActivity) getActivity();
         mServiceImpl = new MyHoldStockServiceImpl(this);
         mController = new MyHoldStockViewController(this);
-        mAdapter = new MyStoreListViewAdapter(mActivity);
+        mAdapter = new MyStoreListViewAdapter(mActivity,false);
         mFragmentList = new ArrayList<AbsBaseFragment>();
         mFragmentPagerOne = new HoldPagerFragment();
         mFragmentPagerTwo = new HoldPagerFragment();

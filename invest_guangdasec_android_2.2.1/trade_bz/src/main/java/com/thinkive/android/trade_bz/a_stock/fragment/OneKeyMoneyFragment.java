@@ -190,6 +190,7 @@ public class OneKeyMoneyFragment extends AbsBaseFragment {
     protected void initViews() {
         mListView.addHeaderView(LayoutInflater.from(getActivity()).inflate(
                 R.layout.head_a_one_key, null));
+        mListView.setDivider(null);
         setTheme();
 
     }
@@ -215,6 +216,9 @@ public class OneKeyMoneyFragment extends AbsBaseFragment {
      * @param dataList
      */
     public void onGetMoneySelectList(ArrayList<OneKeyBean> dataList) {
+        if (mFuDataList != null) {
+            mFuDataList.clear();
+        }
         if (dataList == null || dataList.size() == 0) {
             setInVisibleView();
         } else {
@@ -252,7 +256,7 @@ public class OneKeyMoneyFragment extends AbsBaseFragment {
 
 
     /**
-     * 点击转入账号跳转页面
+     * 点击转入账号
      */
     public void clickTransferInAccount() {
         if (mQueryManager != null) {
@@ -273,30 +277,23 @@ public class OneKeyMoneyFragment extends AbsBaseFragment {
             return;
         }
         String money = mEdtTransferMoney.getText().toString();
-        if (mMainDataBean == null) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.one_key4));
-            return;
-        }
         if (mFuDataBean == null) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.one_key5));
+            ToastUtils.toast(mActivity, "请选择转入账号");
             return;
         }
         if (TextUtils.isEmpty(money)) {
-            ToastUtils.toast(mActivity, mResources.getString(R.string.one_key_three));
+            ToastUtils.toast(mActivity, "请输入转账金额");
             return;
         }
         mServices.requestTransferMoney(mMainDataBean.getMoney_type(), money,
                 mMainDataBean.getFundid(), mFuDataBean.getFundid());
     }
 
-    /**
-     * 得到资金转账的返回结果
-     *
-     * @param data
-     */
-    public void getTransferMoneyResult(OneKeyBean data) {
+    public void getTransferMoneyResult(String toast) {
         mEdtTransferMoney.setText("");
         mTvInAccount.setText("");
+        ToastUtils.toast(getActivity(),toast);
+        mServices.requestOneKeyMessage();
     }
 
     /**
@@ -316,6 +313,7 @@ public class OneKeyMoneyFragment extends AbsBaseFragment {
 
     public void onListViewItemClick(int position) {
         OneKeyBean bean = mQueryManager.getAdapter().getItem(position);
+        mFuDataBean = bean;
         mTvInAccount.setText(forMateAccount(bean.getFundseq()) + "" + bean.getBank_name()
                 + "  " + bean.getFundid() );
         mQueryManager.dismissQueryPopupWindow();

@@ -12,7 +12,6 @@ import com.thinkive.android.trade_bz.request.BaseRequest;
 import com.thinkive.android.trade_bz.request.Request300207;
 import com.thinkive.android.trade_bz.request.Request300208;
 import com.thinkive.android.trade_bz.utils.LoadingDialogUtil;
-import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 
 import java.util.ArrayList;
@@ -41,7 +40,6 @@ public class OneKeyServicesImpl {
      * 请求当前账户归集数据列表
      */
     public void requestOneKeyMessage() {
-        System.out.println("一键归集init300208");
         HashMap<String, String> map = new HashMap<String, String>();
         new Request300208(map, new IRequestAction() {
             @Override
@@ -90,14 +88,15 @@ public class OneKeyServicesImpl {
                 @Override
                 public void onSuccess(Context context, Bundle bundle) {
                     loadingDialogUtil.hideDialog();
+                    String string = bundle.getString(BaseRequest.ERROR_INFO);
+                    mFragment.onOnKeyResult(string);
                 }
 
                 @Override
                 public void onFailed(Context context, Bundle bundle) {
                     loadingDialogUtil.hideDialog();
                     String string = bundle.getString(BaseRequest.ERROR_INFO);
-                    ToastUtil.showToast(string);
-
+                    mFragment.onOnKeyResult(string);
                 }
             }).request();
         }

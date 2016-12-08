@@ -375,6 +375,10 @@ public class SubSecuritiesFragment extends AbsBaseFragment implements KeyboardMa
         }
 
     }
+
+    public void clearEdt() {
+        mEdtCode.setText("");
+    }
 }
 
 /**

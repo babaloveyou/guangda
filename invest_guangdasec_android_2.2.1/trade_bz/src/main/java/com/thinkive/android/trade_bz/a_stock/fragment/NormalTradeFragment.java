@@ -67,7 +67,6 @@ import com.thinkive.android.trade_bz.others.tools.TradeTools;
 import com.thinkive.android.trade_bz.others.tools.TradeWebFragmentManager;
 import com.thinkive.android.trade_bz.receivers.TradeBaseBroadcastReceiver;
 import com.thinkive.android.trade_bz.utils.LogUtil;
-import com.thinkive.android.trade_bz.utils.ToastUtil;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
 import com.thinkive.android.trade_bz.views.TrimGridView;
 
@@ -192,7 +191,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
 
         mMoreBeanList.add(new TradeFastItemBean(0, "历史委托", null));
         mMoreBeanList.add(new TradeFastItemBean(0, "历史成交", null));
-        mMoreBeanList.add(new TradeFastItemBean(0, "资金查询", null));
         mMoreBeanList.add(new TradeFastItemBean(0, "资金流水", null));
         mMoreAdapter.setListData(mMoreBeanList);
         mMoreAdapter.notifyDataSetChanged();
@@ -261,7 +259,6 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         mLogOutTv = (TextView) view.findViewById(R.id.tv_exit_logout);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_parent);
 
-
     }
 
     @Override
@@ -298,7 +295,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
     private void initGrid() {
         //更多展开的参数
         mDensity = getResources().getDisplayMetrics().density;
-        mHiddenViewMeasuredHeight = (int) (mDensity * 76 + 0.5);
+        mHiddenViewMeasuredHeight = (int) (mDensity * 38 + 0.5);
 
 
         mFastAdapter = new FastMenuAdapter(getActivity());
@@ -566,7 +563,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                     onClickTransferAccount();
                     break;
             }
-        } else if (parent.getCount() == 4) {
+        } else if (parent.getCount() == 3) {
             switch (position) {
                 case 0:
                     onclickHistoryEntrust();
@@ -575,12 +572,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
                     onclickHistoryTrade();
                     break;
                 case 2:
-                    ToastUtil.showToast("资金查询");
-                    break;
-                case 3:
                     onclickMoneyWater();
-                    break;
-                case 4:
                     break;
             }
 
@@ -592,7 +584,7 @@ public class NormalTradeFragment extends AbsTitlebarFragment implements IModule 
         */
     private void onclickMoneyWater() {
         if (!TradeFlags.check(TradeFlags.FLAG_NORMAL_TRADE_YES)) { // 未登录时，调转到登录页面
-            startLogin(2503, TradeLoginManager.LOGIN_TYPE_NORMAL);
+            startLogin(2502, TradeLoginManager.LOGIN_TYPE_NORMAL);
         } else { // 已登录时
             Intent intent = new Intent(mActivity, HistoryMoneyActivity.class);
             mActivity.startActivity(intent);

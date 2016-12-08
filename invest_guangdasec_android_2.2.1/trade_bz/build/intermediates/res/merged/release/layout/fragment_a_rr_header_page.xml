@@ -29,6 +29,7 @@
             android:layout_marginTop="5dp">
 
             <TextView
+                android:hint="--"
                 android:id="@+id/tv_keep"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -91,6 +92,7 @@
                         android:textSize="@dimen/trade_buysell_text_size"/>
 
                     <TextView
+                        android:hint="--"
                         android:paddingBottom="3dp"
                         android:id="@+id/tv_total_assets"
                         android:layout_width="match_parent"
@@ -121,6 +123,7 @@
                         android:textSize="@dimen/trade_buysell_text_size"/>
 
                     <TextView
+                        android:hint="--"
                         android:paddingBottom="3dp"
                         android:id="@+id/tv_net_assets"
                         android:layout_width="match_parent"
@@ -163,6 +166,7 @@
                         android:textSize="@dimen/trade_buysell_text_size"/>
 
                     <TextView
+                        android:hint="--"
                         android:paddingBottom="3dp"
                         android:id="@+id/tv_total_indebtedness"
                         android:layout_width="match_parent"

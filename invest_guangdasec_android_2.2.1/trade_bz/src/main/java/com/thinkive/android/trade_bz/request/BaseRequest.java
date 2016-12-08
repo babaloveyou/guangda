@@ -82,6 +82,8 @@ public abstract class BaseRequest {
                 //调用接口正常
                 if (errorCode == 0) {
                     getJsonDataWithoutError(jsonObject);
+                    String error_info = jsonObject.optString(ERROR_INFO);
+                    getErrorInfoWithoutError(error_info);
                 } else if(errorCode == -999||errorCode== -919) { // 如果error_no为-999，说明是未登录，此时要特殊处理
                     Intent intent = new Intent();
                     Bundle bundle999 = new Bundle();
@@ -120,6 +122,7 @@ public abstract class BaseRequest {
                 transferAction(REQUEST_FAILED, bundle);
             }
         }
+
 
         /**
          * 出错了，服务器没有返回任何结果时执行
@@ -186,6 +189,7 @@ public abstract class BaseRequest {
      */
     abstract void getJsonDataWithoutError(JSONObject jsonObject);
 
+    abstract void getErrorInfoWithoutError(String string);
     /**
      * 设置请求入参
      *

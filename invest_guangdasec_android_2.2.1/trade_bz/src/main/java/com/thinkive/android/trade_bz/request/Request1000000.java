@@ -31,6 +31,11 @@ public class Request1000000 extends BaseRequest {
     }
 
     @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
+    @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         LogUtil.printLog("d", jsonObject.toString());
         try {

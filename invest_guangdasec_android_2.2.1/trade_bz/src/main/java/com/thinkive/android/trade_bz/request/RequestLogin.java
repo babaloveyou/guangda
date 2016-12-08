@@ -51,6 +51,11 @@ public class RequestLogin extends BaseRequest {
     }
 
     @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
+    @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
         Bundle bundle = new Bundle();
         bundle.putString(BUNDLE_KEY_LOGIN,jsonObject.toString());

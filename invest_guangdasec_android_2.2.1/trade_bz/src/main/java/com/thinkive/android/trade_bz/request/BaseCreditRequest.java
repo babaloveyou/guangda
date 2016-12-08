@@ -15,6 +15,11 @@ import java.util.HashMap;
  * @des 信用交易的请求基类   主要作用是实现一些个性补充  例如添加公共入参
  */
 public class BaseCreditRequest extends BaseRequest{
+    @Override
+    void getErrorInfoWithoutError(String string) {
+
+    }
+
     /**
      * @param action
      */

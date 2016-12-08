@@ -18,7 +18,6 @@ import com.thinkive.android.trade_bz.a_stock.bean.OneKeyBean;
 import com.thinkive.android.trade_bz.a_stock.bll.OneKeyServicesImpl;
 import com.thinkive.android.trade_bz.a_stock.controll.AbsBaseController;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
-import com.thinkive.android.trade_bz.utils.TradeUtils;
 
 import java.util.ArrayList;
 
@@ -130,6 +129,7 @@ public class OneKeyFragment extends AbsBaseFragment {
     @Override
     protected void initViews() {
         mListView.addHeaderView(LayoutInflater.from(getActivity()).inflate(R.layout.head_a_one_key, null));
+        mListView.setDivider(null);
         setTheme();
     }
 
@@ -178,16 +178,19 @@ public class OneKeyFragment extends AbsBaseFragment {
      * 点击 ‘一键归集’按钮
      */
     public void onClickBtnOneKey() {
-        if (TradeUtils.isFastClick()) {
-            return;
-        }
         if (mMsgBean == null) {
             ToastUtils.toast(mActivity, this.getString(R.string.one_key1));
             return;
         }
+        mBtnClick.setClickable(false);
         mServices.requestOneKey(mOneKeyBeans, mMsgBean.getMoney_type(), mMsgBean.getFundid());
     }
 
+    public void onOnKeyResult(String toast) {
+        mBtnClick.setClickable(true);
+        ToastUtils.toast(getActivity(),toast);
+        mServices.requestOneKeyMessage();
+    }
 }
 
 

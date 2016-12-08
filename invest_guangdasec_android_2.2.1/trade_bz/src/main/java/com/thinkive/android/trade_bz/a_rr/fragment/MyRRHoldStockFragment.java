@@ -203,7 +203,7 @@ public class MyRRHoldStockFragment extends AbsBaseFragment {
         mActivity = (MultiCreditTradeActivity) getActivity();
         mServiceImpl = new MyRRHoldStockServiceImpl(this);
         mController = new MMyRRHoldStockViewController(this);
-        mAdapter = new MyStoreListViewAdapter(mActivity);
+        mAdapter = new MyStoreListViewAdapter(mActivity,true);
         mFragmentList = new ArrayList<AbsBaseFragment>();
         mFragmentPagerOne = new RRHolderPagerFragment();
         mFragmentList.add(mFragmentPagerOne);

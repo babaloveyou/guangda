@@ -1,5 +1,7 @@
 package com.thinkive.android.trade_bz.a_stock.bean;
 
+import android.os.Parcel;
+
 import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
@@ -10,6 +12,16 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class HistoryEntrustBean extends BaseBean {
+    public String getEntrust_type_name() {
+        return entrust_type_name;
+    }
+
+    public void setEntrust_type_name(String entrust_type_name) {
+        this.entrust_type_name = entrust_type_name;
+    }
+
+    @JsonKey("entrust_type_name")
+    private String entrust_type_name = "";
     /**
      * 是否委托买入
      */
@@ -266,4 +278,55 @@ public class HistoryEntrustBean extends BaseBean {
 //    public void setCancel_flag(String cancel_flag) {
 //        this.cancel_flag = cancel_flag;
 //    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.entrust_type_name);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.entrust_date);
+        dest.writeString(this.entrust_time);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.entrust_state_name);
+        dest.writeString(this.entrust_price);
+        dest.writeString(this.entrust_amount);
+        dest.writeString(this.business_price);
+        dest.writeString(this.business_amount);
+        dest.writeString(this.entrust_bs);
+    }
+
+    protected HistoryEntrustBean(Parcel in) {
+        this.entrust_type_name = in.readString();
+        this.entrust_name = in.readString();
+        this.entrust_date = in.readString();
+        this.entrust_time = in.readString();
+        this.stock_name = in.readString();
+        this.stock_code = in.readString();
+        this.entrust_no = in.readString();
+        this.entrust_state_name = in.readString();
+        this.entrust_price = in.readString();
+        this.entrust_amount = in.readString();
+        this.business_price = in.readString();
+        this.business_amount = in.readString();
+        this.entrust_bs = in.readString();
+    }
+
+    public static final Creator<HistoryEntrustBean> CREATOR = new Creator<HistoryEntrustBean>() {
+        @Override
+        public HistoryEntrustBean createFromParcel(Parcel source) {
+            return new HistoryEntrustBean(source);
+        }
+
+        @Override
+        public HistoryEntrustBean[] newArray(int size) {
+            return new HistoryEntrustBean[size];
+        }
+    };
 }

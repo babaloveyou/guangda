@@ -27,6 +27,15 @@ public class BaseNormalRequest extends BaseRequest {
 
     }
 
+    @Override
+    public void getErrorInfoWithoutError(String string) {
+        this.getErrorInfowithoutError(string);
+    }
+
+    protected void getErrorInfowithoutError(String string) {
+
+    }
+
     /**
      * 普通交易都需要添加公共入参
      *

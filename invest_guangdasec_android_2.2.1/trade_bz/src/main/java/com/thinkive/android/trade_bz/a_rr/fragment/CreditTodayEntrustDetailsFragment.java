@@ -57,7 +57,7 @@ public class CreditTodayEntrustDetailsFragment extends Fragment {
         mEntrustPriceTv.setText(TradeUtils.formatDouble2(b.getEntrust_price()));
         mEntrustAmountTv.setText(b.getEntrust_amount());
         mBusinessAmountTv.setText(b.getBusiness_amount());
-        mTv2.setText(b.getEntrust_date() + "" + b.getEntrust_time());
+        mTv2.setText(b.getEntrust_date() + " " + b.getEntrust_time());
         mTv3.setText(b.getBusiness_price());
         mTv4.setText(b.getEntrust_state());
         mTv5.setText(b.getFund_account());
