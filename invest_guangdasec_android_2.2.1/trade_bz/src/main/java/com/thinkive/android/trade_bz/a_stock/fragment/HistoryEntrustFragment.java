@@ -6,14 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.thinkive.framework.compatible.TKFragmentActivity;
 import com.jzxiang.pickerview.TimePickerDialog;
 import com.jzxiang.pickerview.data.Type;
 import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_stock.activity.HistoryEntrustOrTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.HistoryEntrustAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.HistoryEntrustBean;
 import com.thinkive.android.trade_bz.a_stock.bll.HistoryEntrustServicesImpl;
@@ -22,8 +21,9 @@ import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ExpandRefreshListView;
+import com.thinkive.android.trade_bz.views.ExpandableLayoutListView;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshBase;
-import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,11 +41,11 @@ public class HistoryEntrustFragment extends AbsBaseFragment implements OnDateSet
     /**
      * 自定义的listView对象
      */
-    private PullToRefreshListView mPullToRefreshListView;
+    private ExpandRefreshListView mPullToRefreshListView;
     /**
      * 承载历史委托数据的ListView
      */
-    private ListView mListView;
+    private ExpandableLayoutListView mListView;
     /**
      * 历史委托数据适配器
      */
@@ -53,7 +53,7 @@ public class HistoryEntrustFragment extends AbsBaseFragment implements OnDateSet
     /**
      * 历史委托 Fragment的宿主
      */
-    private TKFragmentActivity mActivity;
+    private HistoryEntrustOrTradeActivity mActivity;
     /**
      * 该Fragement的业务类
      */
@@ -122,7 +122,7 @@ public class HistoryEntrustFragment extends AbsBaseFragment implements OnDateSet
 
     @Override
     protected void findViews(View view) {
-        mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_refresh_list);
+        mPullToRefreshListView = (ExpandRefreshListView) view.findViewById(R.id.lv_refresh_list);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
         mLoading = (LinearLayout) view.findViewById(R.id.lin_loading_set);
@@ -133,7 +133,6 @@ public class HistoryEntrustFragment extends AbsBaseFragment implements OnDateSet
         mTvDateEnd = (TextView) view.findViewById(R.id.tv_set_data_end);
         mTvDateSelect = (TextView) view.findViewById(R.id.tv_select_data);
     }
-
     @Override
     protected void setListeners() {
         registerListener(AbsBaseController.ON_LISTVIEW_REFLASH, mPullToRefreshListView, mController);
@@ -144,7 +143,7 @@ public class HistoryEntrustFragment extends AbsBaseFragment implements OnDateSet
 
     @Override
     protected void initData() {
-        mActivity = (TKFragmentActivity) getActivity();
+        mActivity = (HistoryEntrustOrTradeActivity) getActivity();
         mHistoryEntrustAdapter = new HistoryEntrustAdapter(mActivity);
         mServices = new HistoryEntrustServicesImpl(this);
         mController = new HistoryEntrustViewController(this);
@@ -271,7 +270,7 @@ public class HistoryEntrustFragment extends AbsBaseFragment implements OnDateSet
  * 历史委托的控制类
  */
 class HistoryEntrustViewController extends AbsBaseController implements
-        PullToRefreshListView.OnRefreshListener, View.OnClickListener {
+        ExpandRefreshListView.OnRefreshListener, View.OnClickListener {
 
     private HistoryEntrustFragment mFragment;
 
@@ -283,7 +282,7 @@ class HistoryEntrustViewController extends AbsBaseController implements
     public void register(int eventType, View view) {
         switch (eventType) {
             case ON_LISTVIEW_REFLASH:
-                ((PullToRefreshListView) view).setOnRefreshListener(this);
+                ((ExpandRefreshListView) view).setOnRefreshListener(this);
                 break;
             case ON_CLICK:
                 view.setOnClickListener(this);

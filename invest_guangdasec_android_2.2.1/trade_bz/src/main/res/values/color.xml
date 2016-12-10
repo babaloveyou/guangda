@@ -42,8 +42,6 @@
     <color name="trade_color_hold_line01">#A8DBF9</color>
     <!--我的持仓头部字体颜色-->
     <color name="trade_color15">#E9E9E9</color>
-    <!--我的持仓列表的item展开时的背景色 -->
-    <color name="trade_color_hold_list_item_expand_backgound">#EFF7FF</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

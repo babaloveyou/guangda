@@ -16,7 +16,7 @@ public class CreditHistoryMoneyAdapter extends AbsBaseAdapter<RSelectHistoryWate
 
 
     public CreditHistoryMoneyAdapter(Context context) {
-        super(context, R.layout.item_a_money_water);
+        super(context, R.layout.item_a_rr_money_water);
     }
 
     @Override

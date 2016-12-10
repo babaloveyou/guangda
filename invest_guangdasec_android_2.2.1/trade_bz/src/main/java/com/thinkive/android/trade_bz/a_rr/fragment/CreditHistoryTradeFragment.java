@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jzxiang.pickerview.TimePickerDialog;
@@ -23,8 +22,9 @@ import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ExpandRefreshListView;
+import com.thinkive.android.trade_bz.views.ExpandableLayoutListView;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshBase;
-import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class CreditHistoryTradeFragment extends AbsBaseFragment implements OnDat
     /**
      * 承载历史成交数据的ListView
      */
-    private ListView mListView;
+    private ExpandableLayoutListView mListView;
     /**
      * 历史成交数据适配器
      */
@@ -70,7 +70,7 @@ public class CreditHistoryTradeFragment extends AbsBaseFragment implements OnDat
     /**
      * 自定义的listView对象
      */
-    private PullToRefreshListView mPullToRefreshListView;
+    private ExpandRefreshListView mPullToRefreshListView;
     /**
      * 正在加载的旋转进度条
      */
@@ -116,7 +116,7 @@ public class CreditHistoryTradeFragment extends AbsBaseFragment implements OnDat
     }
     @Override
     protected void findViews(View view) {
-        mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_refresh_list);
+        mPullToRefreshListView = (ExpandRefreshListView) view.findViewById(R.id.lv_refresh_list);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
         mLlLoading = (LinearLayout) view.findViewById(R.id.lin_loading_set);
@@ -266,7 +266,7 @@ public class CreditHistoryTradeFragment extends AbsBaseFragment implements OnDat
  * 历史成交控制器
  */
 class CreditHistoryTradeViewController extends AbsBaseController implements
-        PullToRefreshListView.OnRefreshListener, View.OnClickListener {
+        ExpandRefreshListView.OnRefreshListener, View.OnClickListener {
 
     private CreditHistoryTradeFragment mFragment;
 
@@ -278,7 +278,7 @@ class CreditHistoryTradeViewController extends AbsBaseController implements
     public void register(int eventType, View view) {
         switch (eventType) {
             case ON_LISTVIEW_REFLASH:
-                ((PullToRefreshListView) view).setOnRefreshListener(this);
+                ((ExpandRefreshListView) view).setOnRefreshListener(this);
                 break;
             case ON_CLICK:
                 view.setOnClickListener(this);

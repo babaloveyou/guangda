@@ -98,7 +98,7 @@
 
     </LinearLayout>
 
-    <com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView
+    <com.thinkive.android.trade_bz.views.ExpandRefreshListView
         android:id="@+id/lv_refresh_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

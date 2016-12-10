@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.jzxiang.pickerview.TimePickerDialog;
@@ -23,8 +22,9 @@ import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ExpandRefreshListView;
+import com.thinkive.android.trade_bz.views.ExpandableLayoutListView;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshBase;
-import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,11 +38,11 @@ public class CreditHistoryEntrustFragment  extends AbsBaseFragment implements On
     /**
      * 自定义的listView对象
      */
-    private PullToRefreshListView mPullToRefreshListView;
+    private ExpandRefreshListView mPullToRefreshListView;
     /**
      * 承载历史委托数据的ListView
      */
-    private ListView mListView;
+    private ExpandableLayoutListView mListView;
     /**
      * 历史委托数据适配器
      */
@@ -119,7 +119,7 @@ public class CreditHistoryEntrustFragment  extends AbsBaseFragment implements On
 
     @Override
     protected void findViews(View view) {
-        mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_refresh_list);
+        mPullToRefreshListView = (ExpandRefreshListView) view.findViewById(R.id.lv_refresh_list);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
         mLoading = (LinearLayout) view.findViewById(R.id.lin_loading_set);
@@ -268,7 +268,7 @@ public class CreditHistoryEntrustFragment  extends AbsBaseFragment implements On
  * 历史委托的控制类
  */
 class CreditHistoryEntrustViewController extends AbsBaseController implements
-        PullToRefreshListView.OnRefreshListener, View.OnClickListener {
+        ExpandRefreshListView.OnRefreshListener, View.OnClickListener {
 
     private CreditHistoryEntrustFragment mFragment;
 
@@ -280,7 +280,7 @@ class CreditHistoryEntrustViewController extends AbsBaseController implements
     public void register(int eventType, View view) {
         switch (eventType) {
             case ON_LISTVIEW_REFLASH:
-                ((PullToRefreshListView) view).setOnRefreshListener(this);
+                ((ExpandRefreshListView) view).setOnRefreshListener(this);
                 break;
             case ON_CLICK:
                 view.setOnClickListener(this);

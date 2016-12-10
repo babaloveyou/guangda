@@ -34,6 +34,7 @@ public class Request301520 extends BaseNormalRequest {
 
     @Override
     void getJsonDataWithoutError(JSONObject jsonObject) {
+        System.out.println("--------------------" + jsonObject.toString());
         try {
             String resultTarget = jsonObject.getJSONArray("dsName").get(0).toString();
             JSONArray jsonArray = jsonObject.getJSONArray(resultTarget);

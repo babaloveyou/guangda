@@ -64,12 +64,13 @@ public class MultiTradeActivity extends AbsNavBarActivity {
         Bundle bundle = getIntent().getExtras();
         defaultViewPagerPos = bundle.getInt("ViewPagerFragmentPos", 0);
         mChildePos = bundle.getInt("childePos", 0);
+        final String stock_code = bundle.getString("stock_code");
         mFragmentList = new ArrayList<AbsBaseFragment>();
         RevocationFragment revocationFragment = new RevocationFragment();
         MyHoldStockFragment myHoldStockFragment = new MyHoldStockFragment();
         TodayEntrustOrTradeFragment mTodayEntrustOrTradeFragment = new TodayEntrustOrTradeFragment();
         Bundle bundle1 = new Bundle();
-        bundle1.putInt("childePos",mChildePos);
+        bundle1.putInt("childePos", mChildePos);
         mTodayEntrustOrTradeFragment.setArguments(bundle1);
         // 初始化“买入”、“卖出”两个Fragment
         mBuyFragment = new BuyOrSellFragment();
@@ -93,8 +94,17 @@ public class MultiTradeActivity extends AbsNavBarActivity {
         mFragmentList.add(mTodayEntrustOrTradeFragment);
         mFragmentList.add(myHoldStockFragment);
         mController = new MultiTradeViewController(this);
-
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);
+        mRadioTabs.setFragments(mFragmentList);
+        if (stock_code != null & (defaultViewPagerPos == 0 || defaultViewPagerPos == 1)) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    transferFragmentToBuySaleFromOthers(stock_code, defaultViewPagerPos);
+                }
+            }).start();
+
+        }
     }
 
     @Override
@@ -122,7 +132,7 @@ public class MultiTradeActivity extends AbsNavBarActivity {
         setBackBtnVisibility(View.VISIBLE);
         // 设置页面上方中间的标题
         setTitleText(R.string.trade_multi_title);
-        mRadioTabs.setFragments(mFragmentList);
+
         mRadioTabs.initViews();
         // mRadioTabs对象的类不是View子类，所以这个监听器的设置不能写在mController中
         mRadioTabs.setTabChangeListener(new RadioTabs.OnTabChangeListener() {
@@ -132,7 +142,7 @@ public class MultiTradeActivity extends AbsNavBarActivity {
             }
         });
         mRadioTabs.setCurTab(defaultViewPagerPos);
-//        setTitleStr(mFragmentList.get(defaultViewPagerPos).getName());
+        //        setTitleStr(mFragmentList.get(defaultViewPagerPos).getName());
     }
 
     /**
@@ -164,7 +174,7 @@ public class MultiTradeActivity extends AbsNavBarActivity {
      */
     public void onTabLightChange(int index, String str) {
         //设置标题栏标题
-//        setTitleStr(str);
+        //        setTitleStr(str);
     }
 
     /**
@@ -173,14 +183,14 @@ public class MultiTradeActivity extends AbsNavBarActivity {
      * @param stockCode 在持仓列表中点击的那支股票的股票代码
      * @param buyOrSale 0:单击的是“买入”；1：单机的是“卖出”
      */
-    public void transferFragmentToBuySaleFromOthers(String stockCode, int buyOrSale) {
+    public void transferFragmentToBuySaleFromOthers(String stockCode, final int buyOrSale) {
         BuyOrSellFragment buyOrSellFragment = null;
         if (buyOrSale == 0) { // 如果单击的是“买入”
             buyOrSellFragment = mBuyFragment;
         } else if (buyOrSale == 1) { // 如果单击的是“卖出”
             buyOrSellFragment = mSaleFragment;
         }
-            Bundle bundle = buyOrSellFragment.getArguments();
+        Bundle bundle = buyOrSellFragment.getArguments();
         if (bundle == null) {
             bundle = new Bundle();
             bundle.putString("hold_stock_code", stockCode);
@@ -188,8 +198,13 @@ public class MultiTradeActivity extends AbsNavBarActivity {
         } else {
             buyOrSellFragment.setStockCodeFromOther(stockCode);
         }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mRadioTabs.setCurTab(buyOrSale);
+            }
+        });
 
-        mRadioTabs.setCurTab(buyOrSale);
     }
 
     public NavigatorView getNavSlide() {

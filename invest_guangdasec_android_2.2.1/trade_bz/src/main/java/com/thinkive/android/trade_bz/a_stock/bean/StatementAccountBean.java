@@ -1,5 +1,7 @@
 package com.thinkive.android.trade_bz.a_stock.bean;
 
+import android.os.Parcel;
+
 import com.thinkive.android.trade_bz.others.JsonKey;
 
 /**
@@ -10,6 +12,10 @@ import com.thinkive.android.trade_bz.others.JsonKey;
  */
 
 public class StatementAccountBean extends BaseBean {
+
+
+    @JsonKey("post_balance")
+    private String post_balance ="";
     @JsonKey("matchamt")
     private String matchamt ="";
     @JsonKey("orderprice")
@@ -68,7 +74,29 @@ public class StatementAccountBean extends BaseBean {
     private String fare1="";//印花税
     @JsonKey("fee_ghf")
     private String fee_ghf ="";//过户费
+    /**
+     * zy : 可取同名转入
+     * entrust_bs_name : 转
+     * lsh : 2016120900000587
+     */
+    @JsonKey("zy")
+    private String zy;
+    @JsonKey("entrust_bs_name")
+    private String entrust_bs_name;
+    @JsonKey("lsh")
+    private String lsh;
 
+    public String getPost_balance() {
+        return post_balance;
+    }
+
+    public void setPost_balance(String post_balance) {
+        this.post_balance = post_balance;
+    }
+
+    public static Creator<StatementAccountBean> getCREATOR() {
+        return CREATOR;
+    }
 
     public StatementAccountBean() {
     }
@@ -303,4 +331,119 @@ public class StatementAccountBean extends BaseBean {
     public void setFundbal(String fundbal) {
         this.fundbal = fundbal;
     }
+
+    public String getZy() {
+        return zy;
+    }
+
+    public void setZy(String zy) {
+        this.zy = zy;
+    }
+
+    public String getEntrust_bs_name() {
+        return entrust_bs_name;
+    }
+
+    public void setEntrust_bs_name(String entrust_bs_name) {
+        this.entrust_bs_name = entrust_bs_name;
+    }
+
+    public String getLsh() {
+        return lsh;
+    }
+
+    public void setLsh(String lsh) {
+        this.lsh = lsh;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        super.writeToParcel(dest, flags);
+        dest.writeString(this.post_balance);
+        dest.writeString(this.matchamt);
+        dest.writeString(this.orderprice);
+        dest.writeString(this.business_date);
+        dest.writeString(this.remark);
+        dest.writeString(this.stkbal);
+        dest.writeString(this.entrust_bs);
+        dest.writeString(this.money_type_name);
+        dest.writeString(this.money_type);
+        dest.writeString(this.matchqty);
+        dest.writeString(this.exchange_type);
+        dest.writeString(this.stock_code);
+        dest.writeString(this.business_name);
+        dest.writeString(this.business_flag);
+        dest.writeString(this.exchange_type_name);
+        dest.writeString(this.entrust_no);
+        dest.writeString(this.enable_balance);
+        dest.writeString(this.fund_account);
+        dest.writeString(this.stock_account);
+        dest.writeString(this.stock_name);
+        dest.writeString(this.occur_balance);
+        dest.writeString(this.business_price);
+        dest.writeString(this.occur_amount);
+        dest.writeString(this.entrust_name);
+        dest.writeString(this.fundbal);
+        dest.writeString(this.eremark);
+        dest.writeString(this.serial_no);
+        dest.writeString(this.fee_sxf);
+        dest.writeString(this.fare1);
+        dest.writeString(this.fee_ghf);
+        dest.writeString(this.zy);
+        dest.writeString(this.entrust_bs_name);
+        dest.writeString(this.lsh);
+    }
+
+    protected StatementAccountBean(Parcel in) {
+        this.post_balance = in.readString();
+        this.matchamt = in.readString();
+        this.orderprice = in.readString();
+        this.business_date = in.readString();
+        this.remark = in.readString();
+        this.stkbal = in.readString();
+        this.entrust_bs = in.readString();
+        this.money_type_name = in.readString();
+        this.money_type = in.readString();
+        this.matchqty = in.readString();
+        this.exchange_type = in.readString();
+        this.stock_code = in.readString();
+        this.business_name = in.readString();
+        this.business_flag = in.readString();
+        this.exchange_type_name = in.readString();
+        this.entrust_no = in.readString();
+        this.enable_balance = in.readString();
+        this.fund_account = in.readString();
+        this.stock_account = in.readString();
+        this.stock_name = in.readString();
+        this.occur_balance = in.readString();
+        this.business_price = in.readString();
+        this.occur_amount = in.readString();
+        this.entrust_name = in.readString();
+        this.fundbal = in.readString();
+        this.eremark = in.readString();
+        this.serial_no = in.readString();
+        this.fee_sxf = in.readString();
+        this.fare1 = in.readString();
+        this.fee_ghf = in.readString();
+        this.zy = in.readString();
+        this.entrust_bs_name = in.readString();
+        this.lsh = in.readString();
+    }
+
+    public static final Creator<StatementAccountBean> CREATOR = new Creator<StatementAccountBean>() {
+        @Override
+        public StatementAccountBean createFromParcel(Parcel source) {
+            return new StatementAccountBean(source);
+        }
+
+        @Override
+        public StatementAccountBean[] newArray(int size) {
+            return new StatementAccountBean[size];
+        }
+    };
 }

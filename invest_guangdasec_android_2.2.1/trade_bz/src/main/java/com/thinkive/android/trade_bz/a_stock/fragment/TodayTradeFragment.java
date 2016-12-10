@@ -168,7 +168,7 @@ public class TodayTradeFragment extends AbsBaseFragment {
         // 单位：dp，头部蓝色标题栏高度：44   基本交易的标签栏高度：37
         // 资产信息滑动页高度：220   持仓列表“头部”高度：40dp   其他（线条）：1
         float height = ScreenUtils.getScreenHeight(mActivity) - stateHeight -
-                ScreenUtils.dpToPx(mActivity, 95);
+                ScreenUtils.dpToPx(mActivity, 190);
         //设置ListView的高度（px）
         mListView.setMaxHeight((int) height);
         mListView.setDivider(null);

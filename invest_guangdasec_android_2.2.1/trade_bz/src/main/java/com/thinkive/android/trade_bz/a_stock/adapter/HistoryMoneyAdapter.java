@@ -1,6 +1,7 @@
 package com.thinkive.android.trade_bz.a_stock.adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.widget.TextView;
 
 import com.thinkive.android.trade_bz.R;
@@ -35,11 +36,13 @@ public class HistoryMoneyAdapter extends AbsBaseAdapter<StatementAccountBean> {
         TextView balanceTv = (TextView) holder.getComponentById(R.id.tv_balance);
         titleTv.setText(bean.getBusiness_name());
         timeTv.setText(bean.getBusiness_date());
-        noTv.setText(bean.getEntrust_no());
-        stockCodeTv.setText(bean.getStock_code());
+        noTv.setText(bean.getLsh());
+        if (!TextUtils.isEmpty(bean.getStock_code())) {
+            stockCodeTv.setText(bean.getStock_code());
+        }
         turnoverPriceTv.setText(bean.getBusiness_price());
         trunoverAmountTv.setText(bean.getOccur_amount());
-        happenPriceTv.setText(bean.getOrderprice());
-        balanceTv.setText(bean.getEnable_balance());
+        happenPriceTv.setText(bean.getOccur_balance());
+        balanceTv.setText(bean.getPost_balance());
     }
 }

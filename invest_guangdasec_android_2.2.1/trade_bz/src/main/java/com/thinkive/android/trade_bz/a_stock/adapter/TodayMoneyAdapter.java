@@ -12,8 +12,6 @@ import static com.thinkive.android.trade_bz.R.id.tv_time;
  * Created by Administrator on 2016/11/29.
  */
 public class TodayMoneyAdapter extends AbsBaseAdapter<TodayMoneyBean> {
-
-
     public TodayMoneyAdapter(Context context) {
         super(context, R.layout.item_a_today_money_water);
     }
@@ -29,7 +27,7 @@ public class TodayMoneyAdapter extends AbsBaseAdapter<TodayMoneyBean> {
         titleTv.setText(bean.getBusiness_name());
         timeTv.setText(bean.getBusiness_date());
         stockCodeTv.setText(bean.getStock_code());
-        turnoverPriceTv.setText(bean.getBusiness_price());
+        turnoverPriceTv.setText(bean.getOccur_balance());
         trunoverAmountTv.setText(bean.getOccur_amount());
         happenPriceTv.setText(bean.getOrderprice());
     }

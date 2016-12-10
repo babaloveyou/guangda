@@ -171,7 +171,7 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
                 // 如果是第一次点击
                 if (lastOpenPosition < 0) {
                     view.setBackgroundColor(CoreApplication.getInstance().
-                            getResources().getColor(R.color.trade_color_hold_list_item_expand_backgound));
+                            getResources().getColor(R.color.white));
                 } else if ((lastOpenPosition >= 0 && mLastClickHoldListItem != null)
                         && position == lastOpenPosition) { // 如果不是第一次点击，且本次和上次点击的是同一项，
                     // 那就把之前的清除了.
@@ -179,7 +179,7 @@ public abstract class AbstractSlideExpandableListAdapter extends WrapperListAdap
                             getResources().getColor(R.color.transparent));
                 } else { // 否则，点击的肯定就是不同的项了
                     view.setBackgroundColor(CoreApplication.getInstance().
-                            getResources().getColor(R.color.trade_color_hold_list_item_expand_backgound));
+                            getResources().getColor(R.color.white));
                     mLastClickHoldListItem.setBackgroundColor(CoreApplication.getInstance().
                             getResources().getColor(R.color.transparent));
                 }

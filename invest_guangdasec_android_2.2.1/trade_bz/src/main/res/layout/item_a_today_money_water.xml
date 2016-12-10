@@ -75,6 +75,7 @@
                     android:textColor="@color/trade_text_color9"
                     android:textSize="12sp"/>
                 <TextView
+                    android:hint="--"
                     android:id="@+id/tv_turnover_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -96,6 +97,7 @@
                     android:textSize="12sp"/>
 
                 <TextView
+                    android:hint="--"
                     android:id="@+id/tv_happen_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -122,11 +124,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="人民币    "
+                    android:text="证券代码"
                     android:textColor="@color/trade_text_color9"
                     android:textSize="12sp"/>
 
                 <TextView
+                    android:hint="--"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -148,6 +151,7 @@
                     android:textSize="12sp"/>
 
                 <TextView
+                    android:hint="--"
                     android:id="@+id/tv_turnover_amount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

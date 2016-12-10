@@ -6,14 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import com.android.thinkive.framework.compatible.TKFragmentActivity;
 import com.jzxiang.pickerview.TimePickerDialog;
 import com.jzxiang.pickerview.data.Type;
 import com.jzxiang.pickerview.listener.OnDateSetListener;
 import com.thinkive.android.trade_bz.R;
+import com.thinkive.android.trade_bz.a_stock.activity.HistoryEntrustOrTradeActivity;
 import com.thinkive.android.trade_bz.a_stock.adapter.HistoryTradeAdapter;
 import com.thinkive.android.trade_bz.a_stock.bean.HistoryTradeBean;
 import com.thinkive.android.trade_bz.a_stock.bll.HistoryTradeServicesImpl;
@@ -22,8 +21,9 @@ import com.thinkive.android.trade_bz.others.constants.Constants;
 import com.thinkive.android.trade_bz.utils.DateUtils;
 import com.thinkive.android.trade_bz.utils.ToastUtils;
 import com.thinkive.android.trade_bz.utils.TradeUtils;
+import com.thinkive.android.trade_bz.views.ExpandRefreshListView;
+import com.thinkive.android.trade_bz.views.ExpandableLayoutListView;
 import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshBase;
-import com.thinkive.android.trade_bz.views.PullToRefresh.PullToRefreshListView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -41,7 +41,7 @@ public class HistoryTradeFragment extends AbsBaseFragment implements OnDateSetLi
     /**
      * 承载历史成交数据的ListView
      */
-    private ListView mListView;
+    private ExpandableLayoutListView mListView;
     /**
      * 历史成交数据适配器
      */
@@ -49,7 +49,7 @@ public class HistoryTradeFragment extends AbsBaseFragment implements OnDateSetLi
     /**
      * 历史成交Fragment的宿主
      */
-    private TKFragmentActivity mActivity;
+    private HistoryEntrustOrTradeActivity mActivity;
     /**
      * 该Fragement的业务类
      */
@@ -73,7 +73,7 @@ public class HistoryTradeFragment extends AbsBaseFragment implements OnDateSetLi
     /**
      * 自定义的listView对象
      */
-    private PullToRefreshListView mPullToRefreshListView;
+    private ExpandRefreshListView mPullToRefreshListView;
     /**
      * 正在加载的旋转进度条
      */
@@ -119,7 +119,7 @@ public class HistoryTradeFragment extends AbsBaseFragment implements OnDateSetLi
     }
     @Override
     protected void findViews(View view) {
-        mPullToRefreshListView = (PullToRefreshListView) view.findViewById(R.id.lv_refresh_list);
+        mPullToRefreshListView = (ExpandRefreshListView) view.findViewById(R.id.lv_refresh_list);
         mListView = mPullToRefreshListView.getRefreshableView();
         mListView.setDivider(null);
         mLlLoading = (LinearLayout) view.findViewById(R.id.lin_loading_set);
@@ -141,7 +141,7 @@ public class HistoryTradeFragment extends AbsBaseFragment implements OnDateSetLi
 
     @Override
     protected void initData() {
-        mActivity = (TKFragmentActivity) getActivity();
+        mActivity = (HistoryEntrustOrTradeActivity) getActivity();
         mAdapter = new HistoryTradeAdapter(mActivity);
         mServices = new HistoryTradeServicesImpl(this);
         mController = new HistoryTradeViewController(this);
@@ -269,7 +269,7 @@ public class HistoryTradeFragment extends AbsBaseFragment implements OnDateSetLi
  * 历史成交控制器
  */
 class HistoryTradeViewController extends AbsBaseController implements
-        PullToRefreshListView.OnRefreshListener, View.OnClickListener {
+        ExpandRefreshListView.OnRefreshListener, View.OnClickListener {
 
     private HistoryTradeFragment mFragment;
 
@@ -281,7 +281,7 @@ class HistoryTradeViewController extends AbsBaseController implements
     public void register(int eventType, View view) {
         switch (eventType) {
             case ON_LISTVIEW_REFLASH:
-                ((PullToRefreshListView) view).setOnRefreshListener(this);
+                ((ExpandRefreshListView) view).setOnRefreshListener(this);
                 break;
             case ON_CLICK:
                 view.setOnClickListener(this);

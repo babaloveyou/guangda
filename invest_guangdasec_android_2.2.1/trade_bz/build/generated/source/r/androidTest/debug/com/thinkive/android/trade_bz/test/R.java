@@ -23,33 +23,35 @@ public final class R {
         public static final int actionsheet_dialog_out=0x7f05000b;
         public static final int bottom_in=0x7f05000c;
         public static final int bottom_out=0x7f05000d;
-        public static final int fade=0x7f05000e;
-        public static final int fade_in=0x7f05000f;
-        public static final int fade_out=0x7f050010;
-        public static final int h_fragment_enter=0x7f050011;
-        public static final int h_fragment_exit=0x7f050012;
-        public static final int h_fragment_pop_enter=0x7f050013;
-        public static final int h_fragment_pop_exit=0x7f050014;
-        public static final int left_in=0x7f050015;
-        public static final int left_out=0x7f050016;
-        public static final int no_anim=0x7f050017;
-        public static final int pop_enter_anim=0x7f050018;
-        public static final int pop_exit_anim=0x7f050019;
-        public static final int pop_exit_no_anim=0x7f05001a;
-        public static final int pull_to_refresh_update_loading_progressbar_anim=0x7f05001b;
-        public static final int right_in=0x7f05001c;
-        public static final int right_out=0x7f05001d;
-        public static final int shake=0x7f05001e;
-        public static final int slide_in_bottom=0x7f05001f;
-        public static final int slide_out_bottom=0x7f050020;
-        public static final int timepicker_anim_enter_bottom=0x7f050021;
-        public static final int timepicker_anim_exit_bottom=0x7f050022;
-        public static final int top_in=0x7f050023;
-        public static final int top_out=0x7f050024;
-        public static final int v_fragment_enter=0x7f050025;
-        public static final int v_fragment_exit=0x7f050026;
-        public static final int v_fragment_pop_enter=0x7f050027;
-        public static final int v_fragment_pop_exit=0x7f050028;
+        public static final int expandable_hide=0x7f05000e;
+        public static final int expandable_show=0x7f05000f;
+        public static final int fade=0x7f050010;
+        public static final int fade_in=0x7f050011;
+        public static final int fade_out=0x7f050012;
+        public static final int h_fragment_enter=0x7f050013;
+        public static final int h_fragment_exit=0x7f050014;
+        public static final int h_fragment_pop_enter=0x7f050015;
+        public static final int h_fragment_pop_exit=0x7f050016;
+        public static final int left_in=0x7f050017;
+        public static final int left_out=0x7f050018;
+        public static final int no_anim=0x7f050019;
+        public static final int pop_enter_anim=0x7f05001a;
+        public static final int pop_exit_anim=0x7f05001b;
+        public static final int pop_exit_no_anim=0x7f05001c;
+        public static final int pull_to_refresh_update_loading_progressbar_anim=0x7f05001d;
+        public static final int right_in=0x7f05001e;
+        public static final int right_out=0x7f05001f;
+        public static final int shake=0x7f050020;
+        public static final int slide_in_bottom=0x7f050021;
+        public static final int slide_out_bottom=0x7f050022;
+        public static final int timepicker_anim_enter_bottom=0x7f050023;
+        public static final int timepicker_anim_exit_bottom=0x7f050024;
+        public static final int top_in=0x7f050025;
+        public static final int top_out=0x7f050026;
+        public static final int v_fragment_enter=0x7f050027;
+        public static final int v_fragment_exit=0x7f050028;
+        public static final int v_fragment_pop_enter=0x7f050029;
+        public static final int v_fragment_pop_exit=0x7f05002a;
     }
     public static final class array {
         public static final int hk_business_type_num=0x7f0c0000;
@@ -144,7 +146,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int actionLayout=0x7f0100b9;
+        public static final int actionLayout=0x7f0100bc;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -222,7 +224,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int actionProviderClass=0x7f0100bb;
+        public static final int actionProviderClass=0x7f0100be;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -230,7 +232,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int actionViewClass=0x7f0100ba;
+        public static final int actionViewClass=0x7f0100bd;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -290,7 +292,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int aspect=0x7f0100b7;
+        public static final int aspect=0x7f0100ba;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -328,7 +330,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int backgroundTint=0x7f0100e5;
+        public static final int backgroundTint=0x7f0100e8;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -342,7 +344,7 @@ containing a value of this type.
 <tr><td><code>screen</code></td><td>15</td><td></td></tr>
 </table>
          */
-        public static final int backgroundTintMode=0x7f0100e6;
+        public static final int backgroundTintMode=0x7f0100e9;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -452,7 +454,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int closeIcon=0x7f0100c3;
+        public static final int closeIcon=0x7f0100c6;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -464,11 +466,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int collapseContentDescription=0x7f0100dc;
+        public static final int collapseContentDescription=0x7f0100df;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int collapseIcon=0x7f0100db;
+        public static final int collapseIcon=0x7f0100de;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -553,7 +555,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int commitIcon=0x7f0100c8;
+        public static final int commitIcon=0x7f0100cb;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -634,7 +636,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int defaultQueryHint=0x7f0100c2;
+        public static final int defaultQueryHint=0x7f0100c5;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -682,7 +684,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int dividerPadding=0x7f0100b6;
+        public static final int dividerPadding=0x7f0100b9;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -729,6 +731,22 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int editTextStyle=0x7f01008c;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int el_contentLayout=0x7f0100b5;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int el_duration=0x7f0100b6;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int el_headerLayout=0x7f0100b4;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -775,7 +793,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int goIcon=0x7f0100c4;
+        public static final int goIcon=0x7f0100c7;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -875,7 +893,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int iconifiedByDefault=0x7f0100c0;
+        public static final int iconifiedByDefault=0x7f0100c3;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -924,7 +942,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int isEnable=0x7f0100f1;
+        public static final int isEnable=0x7f0100f4;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -940,7 +958,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int itemNumber=0x7f0100ec;
+        public static final int itemNumber=0x7f0100ef;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -959,7 +977,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int itemlineColor=0x7f0100ed;
+        public static final int itemlineColor=0x7f0100f0;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -969,11 +987,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int itemlineHeight=0x7f0100ee;
+        public static final int itemlineHeight=0x7f0100f1;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int layout=0x7f0100bf;
+        public static final int layout=0x7f0100c2;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1055,7 +1073,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int logoDescription=0x7f0100df;
+        public static final int logoDescription=0x7f0100e2;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1065,7 +1083,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int maskHight=0x7f0100ef;
+        public static final int maskHight=0x7f0100f2;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1075,7 +1093,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int maxButtonHeight=0x7f0100da;
+        public static final int maxButtonHeight=0x7f0100dd;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1083,7 +1101,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int measureWithLargestChild=0x7f0100b4;
+        public static final int measureWithLargestChild=0x7f0100b7;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1105,11 +1123,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int navigationContentDescription=0x7f0100de;
+        public static final int navigationContentDescription=0x7f0100e1;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int navigationIcon=0x7f0100dd;
+        public static final int navigationIcon=0x7f0100e0;
         /** <p>Must be one of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1129,7 +1147,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int noEmpty=0x7f0100f0;
+        public static final int noEmpty=0x7f0100f3;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1138,7 +1156,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int normalTextColor=0x7f0100e7;
+        public static final int normalTextColor=0x7f0100ea;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1148,7 +1166,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int normalTextSize=0x7f0100e8;
+        public static final int normalTextSize=0x7f0100eb;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1156,7 +1174,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int overlapAnchor=0x7f0100bd;
+        public static final int overlapAnchor=0x7f0100c0;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1175,7 +1193,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int paddingEnd=0x7f0100e3;
+        public static final int paddingEnd=0x7f0100e6;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1185,7 +1203,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int paddingStart=0x7f0100e2;
+        public static final int paddingStart=0x7f0100e5;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1223,7 +1241,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int preserveIconSpacing=0x7f0100bc;
+        public static final int preserveIconSpacing=0x7f0100bf;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1241,7 +1259,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int queryBackground=0x7f0100ca;
+        public static final int queryBackground=0x7f0100cd;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1249,7 +1267,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int queryHint=0x7f0100c1;
+        public static final int queryHint=0x7f0100c4;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1269,11 +1287,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int searchHintIcon=0x7f0100c6;
+        public static final int searchHintIcon=0x7f0100c9;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int searchIcon=0x7f0100c5;
+        public static final int searchIcon=0x7f0100c8;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1298,7 +1316,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int selectedTextColor=0x7f0100e9;
+        public static final int selectedTextColor=0x7f0100ec;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1308,7 +1326,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int selectedTextSize=0x7f0100ea;
+        public static final int selectedTextSize=0x7f0100ed;
         /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1322,7 +1340,7 @@ containing a value of this type.
 <tr><td><code>collapseActionView</code></td><td>8</td><td></td></tr>
 </table>
          */
-        public static final int showAsAction=0x7f0100b8;
+        public static final int showAsAction=0x7f0100bb;
         /** <p>Must be one or more (separated by '|') of the following constant values.</p>
 <table>
 <colgroup align="left" />
@@ -1335,7 +1353,7 @@ containing a value of this type.
 <tr><td><code>end</code></td><td>4</td><td></td></tr>
 </table>
          */
-        public static final int showDividers=0x7f0100b5;
+        public static final int showDividers=0x7f0100b8;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1343,7 +1361,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int showText=0x7f0100d2;
+        public static final int showText=0x7f0100d5;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1371,7 +1389,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int splitTrack=0x7f0100d1;
+        public static final int splitTrack=0x7f0100d4;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1383,11 +1401,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int state_above_anchor=0x7f0100be;
+        public static final int state_above_anchor=0x7f0100c1;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int submitBackground=0x7f0100cb;
+        public static final int submitBackground=0x7f0100ce;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1399,7 +1417,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int subtitleTextAppearance=0x7f0100d4;
+        public static final int subtitleTextAppearance=0x7f0100d7;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1408,7 +1426,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int subtitleTextColor=0x7f0100e1;
+        public static final int subtitleTextColor=0x7f0100e4;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1416,7 +1434,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int suggestionRowLayout=0x7f0100c9;
+        public static final int suggestionRowLayout=0x7f0100cc;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1426,7 +1444,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int switchMinWidth=0x7f0100cf;
+        public static final int switchMinWidth=0x7f0100d2;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1436,7 +1454,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int switchPadding=0x7f0100d0;
+        public static final int switchPadding=0x7f0100d3;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1444,7 +1462,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int switchTextAppearance=0x7f0100ce;
+        public static final int switchTextAppearance=0x7f0100d1;
         /** <p>May be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
 <p>May be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -1489,7 +1507,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int theme=0x7f0100e4;
+        public static final int theme=0x7f0100e7;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1509,7 +1527,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int thumbTextPadding=0x7f0100cd;
+        public static final int thumbTextPadding=0x7f0100d0;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1527,7 +1545,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int titleMarginBottom=0x7f0100d9;
+        public static final int titleMarginBottom=0x7f0100dc;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1537,7 +1555,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int titleMarginEnd=0x7f0100d7;
+        public static final int titleMarginEnd=0x7f0100da;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1547,7 +1565,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int titleMarginStart=0x7f0100d6;
+        public static final int titleMarginStart=0x7f0100d9;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1557,7 +1575,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int titleMarginTop=0x7f0100d8;
+        public static final int titleMarginTop=0x7f0100db;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1567,11 +1585,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int titleMargins=0x7f0100d5;
+        public static final int titleMargins=0x7f0100d8;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int titleTextAppearance=0x7f0100d3;
+        public static final int titleTextAppearance=0x7f0100d6;
         /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
 <p>This may also be a reference to a resource (in the form
@@ -1580,7 +1598,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int titleTextColor=0x7f0100e0;
+        public static final int titleTextColor=0x7f0100e3;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -1606,7 +1624,7 @@ containing a value of this type.
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int track=0x7f0100cc;
+        public static final int track=0x7f0100cf;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -1616,11 +1634,11 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
          */
-        public static final int unitHight=0x7f0100eb;
+        public static final int unitHight=0x7f0100ee;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
-        public static final int voiceIcon=0x7f0100c7;
+        public static final int voiceIcon=0x7f0100ca;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -1743,20 +1761,20 @@ containing a value of this type.
         public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f080007;
     }
     public static final class color {
-        public static final int abc_background_cache_hint_selector_material_dark=0x7f0d007b;
-        public static final int abc_background_cache_hint_selector_material_light=0x7f0d007c;
-        public static final int abc_color_highlight_material=0x7f0d007d;
+        public static final int abc_background_cache_hint_selector_material_dark=0x7f0d007a;
+        public static final int abc_background_cache_hint_selector_material_light=0x7f0d007b;
+        public static final int abc_color_highlight_material=0x7f0d007c;
         public static final int abc_input_method_navigation_guard=0x7f0d0000;
-        public static final int abc_primary_text_disable_only_material_dark=0x7f0d007e;
-        public static final int abc_primary_text_disable_only_material_light=0x7f0d007f;
-        public static final int abc_primary_text_material_dark=0x7f0d0080;
-        public static final int abc_primary_text_material_light=0x7f0d0081;
-        public static final int abc_search_url_text=0x7f0d0082;
+        public static final int abc_primary_text_disable_only_material_dark=0x7f0d007d;
+        public static final int abc_primary_text_disable_only_material_light=0x7f0d007e;
+        public static final int abc_primary_text_material_dark=0x7f0d007f;
+        public static final int abc_primary_text_material_light=0x7f0d0080;
+        public static final int abc_search_url_text=0x7f0d0081;
         public static final int abc_search_url_text_normal=0x7f0d0001;
         public static final int abc_search_url_text_pressed=0x7f0d0002;
         public static final int abc_search_url_text_selected=0x7f0d0003;
-        public static final int abc_secondary_text_material_dark=0x7f0d0083;
-        public static final int abc_secondary_text_material_light=0x7f0d0084;
+        public static final int abc_secondary_text_material_dark=0x7f0d0082;
+        public static final int abc_secondary_text_material_light=0x7f0d0083;
         public static final int accent_material_dark=0x7f0d0004;
         public static final int accent_material_light=0x7f0d0005;
         public static final int background_floating_material_dark=0x7f0d0006;
@@ -1783,12 +1801,12 @@ containing a value of this type.
         public static final int colorPrimary=0x7f0d001b;
         public static final int colorPrimaryDark=0x7f0d001c;
         public static final int common_bg_stroke=0x7f0d001d;
-        public static final int default_text_color=0x7f0d0085;
+        public static final int default_text_color=0x7f0d0084;
         public static final int dim_foreground_disabled_material_dark=0x7f0d001e;
         public static final int dim_foreground_disabled_material_light=0x7f0d001f;
         public static final int dim_foreground_material_dark=0x7f0d0020;
         public static final int dim_foreground_material_light=0x7f0d0021;
-        public static final int folder_text_color=0x7f0d0086;
+        public static final int folder_text_color=0x7f0d0085;
         public static final int foreground_material_dark=0x7f0d0022;
         public static final int foreground_material_light=0x7f0d0023;
         public static final int frame=0x7f0d0024;
@@ -1832,13 +1850,13 @@ containing a value of this type.
         public static final int secondary_text_default_material_light=0x7f0d004a;
         public static final int secondary_text_disabled_material_dark=0x7f0d004b;
         public static final int secondary_text_disabled_material_light=0x7f0d004c;
-        public static final int selector_tv_login=0x7f0d0087;
+        public static final int selector_tv_login=0x7f0d0086;
         public static final int statusbar_left=0x7f0d004d;
         public static final int statusbar_main=0x7f0d004e;
         public static final int switch_thumb_disabled_material_dark=0x7f0d004f;
         public static final int switch_thumb_disabled_material_light=0x7f0d0050;
-        public static final int switch_thumb_material_dark=0x7f0d0088;
-        public static final int switch_thumb_material_light=0x7f0d0089;
+        public static final int switch_thumb_material_dark=0x7f0d0087;
+        public static final int switch_thumb_material_light=0x7f0d0088;
         public static final int switch_thumb_normal_material_dark=0x7f0d0051;
         public static final int switch_thumb_normal_material_light=0x7f0d0052;
         public static final int text=0x7f0d0053;
@@ -1854,33 +1872,32 @@ containing a value of this type.
         public static final int trade_color15=0x7f0d005d;
         public static final int trade_color_black=0x7f0d005e;
         public static final int trade_color_hold_line01=0x7f0d005f;
-        public static final int trade_color_hold_list_item_expand_backgound=0x7f0d0060;
-        public static final int trade_color_white=0x7f0d0061;
-        public static final int trade_divide_line=0x7f0d0062;
-        public static final int trade_down_green=0x7f0d0063;
-        public static final int trade_list_item=0x7f0d0064;
-        public static final int trade_list_press=0x7f0d0065;
-        public static final int trade_normal_background=0x7f0d0066;
-        public static final int trade_sale=0x7f0d0067;
-        public static final int trade_sale_bg=0x7f0d0068;
-        public static final int trade_text=0x7f0d0069;
-        public static final int trade_text_color0=0x7f0d006a;
-        public static final int trade_text_color1=0x7f0d006b;
-        public static final int trade_text_color2=0x7f0d006c;
-        public static final int trade_text_color3=0x7f0d006d;
-        public static final int trade_text_color6=0x7f0d006e;
-        public static final int trade_text_color9=0x7f0d006f;
-        public static final int trade_top_tab_dark_gray=0x7f0d0070;
-        public static final int trade_up_red=0x7f0d0071;
-        public static final int trader_door_gv_divider=0x7f0d0072;
-        public static final int trans_white=0x7f0d0073;
-        public static final int transparent=0x7f0d0074;
-        public static final int transparent_background=0x7f0d0075;
-        public static final int tv_bt_brown=0x7f0d0076;
-        public static final int viewfinder_mask=0x7f0d0077;
-        public static final int wheel_timebtn_nor=0x7f0d0078;
-        public static final int wheel_timebtn_pre=0x7f0d0079;
-        public static final int white=0x7f0d007a;
+        public static final int trade_color_white=0x7f0d0060;
+        public static final int trade_divide_line=0x7f0d0061;
+        public static final int trade_down_green=0x7f0d0062;
+        public static final int trade_list_item=0x7f0d0063;
+        public static final int trade_list_press=0x7f0d0064;
+        public static final int trade_normal_background=0x7f0d0065;
+        public static final int trade_sale=0x7f0d0066;
+        public static final int trade_sale_bg=0x7f0d0067;
+        public static final int trade_text=0x7f0d0068;
+        public static final int trade_text_color0=0x7f0d0069;
+        public static final int trade_text_color1=0x7f0d006a;
+        public static final int trade_text_color2=0x7f0d006b;
+        public static final int trade_text_color3=0x7f0d006c;
+        public static final int trade_text_color6=0x7f0d006d;
+        public static final int trade_text_color9=0x7f0d006e;
+        public static final int trade_top_tab_dark_gray=0x7f0d006f;
+        public static final int trade_up_red=0x7f0d0070;
+        public static final int trader_door_gv_divider=0x7f0d0071;
+        public static final int trans_white=0x7f0d0072;
+        public static final int transparent=0x7f0d0073;
+        public static final int transparent_background=0x7f0d0074;
+        public static final int tv_bt_brown=0x7f0d0075;
+        public static final int viewfinder_mask=0x7f0d0076;
+        public static final int wheel_timebtn_nor=0x7f0d0077;
+        public static final int wheel_timebtn_pre=0x7f0d0078;
+        public static final int white=0x7f0d0079;
     }
     public static final class dimen {
         public static final int abc_action_bar_content_inset_material=0x7f090027;
@@ -2196,7 +2213,7 @@ containing a value of this type.
         public static final int mmtitle_bg_alpha=0x7f0200c2;
         public static final int next_black=0x7f0200c3;
         public static final int not_data_listview=0x7f0200c4;
-        public static final int notification_template_icon_bg=0x7f020126;
+        public static final int notification_template_icon_bg=0x7f020125;
         public static final int person=0x7f0200c5;
         public static final int progressbar=0x7f0200c6;
         public static final int radio_dark=0x7f0200c7;
@@ -2220,86 +2237,85 @@ containing a value of this type.
         public static final int selector_indicator=0x7f0200d9;
         public static final int selector_press_list_item=0x7f0200da;
         public static final int selector_press_list_item2=0x7f0200db;
-        public static final int selector_press_list_item3=0x7f0200dc;
-        public static final int selector_text_tab=0x7f0200dd;
-        public static final int selector_trade_login_btn=0x7f0200de;
-        public static final int shadow_bottom=0x7f0200df;
-        public static final int shadow_left=0x7f0200e0;
-        public static final int shadow_right=0x7f0200e1;
-        public static final int shap_gray_bottom=0x7f0200e2;
-        public static final int shap_gray_single=0x7f0200e3;
-        public static final int shap_gray_top=0x7f0200e4;
-        public static final int shap_white_bottom=0x7f0200e5;
-        public static final int shap_white_single=0x7f0200e6;
-        public static final int shap_white_top=0x7f0200e7;
-        public static final int shape_bg_alph_popwindow=0x7f0200e8;
-        public static final int shape_bg_btn_buy=0x7f0200e9;
-        public static final int shape_bg_btn_emp_buy=0x7f0200ea;
-        public static final int shape_bg_btn_emp_sale=0x7f0200eb;
-        public static final int shape_bg_btn_hq=0x7f0200ec;
-        public static final int shape_bg_btn_num=0x7f0200ed;
-        public static final int shape_bg_btn_num_sale=0x7f0200ee;
-        public static final int shape_bg_btn_sell=0x7f0200ef;
-        public static final int shape_bg_gradius4=0x7f0200f0;
-        public static final int shape_bg_tab_trade_left_normal=0x7f0200f1;
-        public static final int shape_bg_tab_trade_left_selected=0x7f0200f2;
-        public static final int shape_bg_tab_trade_right_normal=0x7f0200f3;
-        public static final int shape_bg_tab_trade_right_selected=0x7f0200f4;
-        public static final int shape_bg_trade_tab_credit=0x7f0200f5;
-        public static final int shape_bg_trade_tab_credit_select=0x7f0200f6;
-        public static final int shape_bg_trade_tab_normal=0x7f0200f7;
-        public static final int shape_bg_trade_tab_normal_select=0x7f0200f8;
-        public static final int shape_bg_tv_open_account=0x7f0200f9;
-        public static final int shape_bg_tv_open_account_bigradius=0x7f0200fa;
-        public static final int shape_bg_tv_time_picker=0x7f0200fb;
-        public static final int shape_btn_pressed=0x7f0200fc;
-        public static final int shape_common_bg_of_edittext=0x7f0200fd;
-        public static final int shape_common_bg_of_edittext_bottom=0x7f0200fe;
-        public static final int shape_common_bg_of_edittext_corner=0x7f0200ff;
-        public static final int shape_common_bg_of_edittext_corner_white=0x7f020100;
-        public static final int shape_normal=0x7f020101;
-        public static final int text_indicator=0x7f020102;
-        public static final int theme_blue_pull_to_refresh_loading=0x7f020103;
-        public static final int timepicker_divider_line=0x7f020104;
-        public static final int timepicker_sel_text_item=0x7f020105;
-        public static final int trade_buy=0x7f020106;
-        public static final int trade_buy_selected=0x7f020107;
-        public static final int trade_sale=0x7f020108;
-        public static final int trade_sale_selected=0x7f020109;
-        public static final int trans_money_icon=0x7f02010a;
-        public static final int wheel_bg=0x7f02010b;
-        public static final int wheel_timebtn=0x7f02010c;
-        public static final int wheel_val=0x7f02010d;
-        public static final int yunloading01=0x7f02010e;
-        public static final int yunloading02=0x7f02010f;
-        public static final int yunloading03=0x7f020110;
-        public static final int yunloading04=0x7f020111;
-        public static final int yunloading05=0x7f020112;
-        public static final int yunloading06=0x7f020113;
-        public static final int yunloading07=0x7f020114;
-        public static final int yunloading08=0x7f020115;
-        public static final int yunloading09=0x7f020116;
-        public static final int yunloading10=0x7f020117;
-        public static final int yunloading11=0x7f020118;
-        public static final int yunloading12=0x7f020119;
-        public static final int yunloading13=0x7f02011a;
-        public static final int yunloading14=0x7f02011b;
-        public static final int yunloading15=0x7f02011c;
-        public static final int yunloading16=0x7f02011d;
-        public static final int yunloading17=0x7f02011e;
-        public static final int yunloading18=0x7f02011f;
-        public static final int yunloading19=0x7f020120;
-        public static final int yunloading20=0x7f020121;
-        public static final int yunloading21=0x7f020122;
-        public static final int yunloading22=0x7f020123;
-        public static final int yunloading23=0x7f020124;
-        public static final int yunloading24=0x7f020125;
+        public static final int selector_text_tab=0x7f0200dc;
+        public static final int selector_trade_login_btn=0x7f0200dd;
+        public static final int shadow_bottom=0x7f0200de;
+        public static final int shadow_left=0x7f0200df;
+        public static final int shadow_right=0x7f0200e0;
+        public static final int shap_gray_bottom=0x7f0200e1;
+        public static final int shap_gray_single=0x7f0200e2;
+        public static final int shap_gray_top=0x7f0200e3;
+        public static final int shap_white_bottom=0x7f0200e4;
+        public static final int shap_white_single=0x7f0200e5;
+        public static final int shap_white_top=0x7f0200e6;
+        public static final int shape_bg_alph_popwindow=0x7f0200e7;
+        public static final int shape_bg_btn_buy=0x7f0200e8;
+        public static final int shape_bg_btn_emp_buy=0x7f0200e9;
+        public static final int shape_bg_btn_emp_sale=0x7f0200ea;
+        public static final int shape_bg_btn_hq=0x7f0200eb;
+        public static final int shape_bg_btn_num=0x7f0200ec;
+        public static final int shape_bg_btn_num_sale=0x7f0200ed;
+        public static final int shape_bg_btn_sell=0x7f0200ee;
+        public static final int shape_bg_gradius4=0x7f0200ef;
+        public static final int shape_bg_tab_trade_left_normal=0x7f0200f0;
+        public static final int shape_bg_tab_trade_left_selected=0x7f0200f1;
+        public static final int shape_bg_tab_trade_right_normal=0x7f0200f2;
+        public static final int shape_bg_tab_trade_right_selected=0x7f0200f3;
+        public static final int shape_bg_trade_tab_credit=0x7f0200f4;
+        public static final int shape_bg_trade_tab_credit_select=0x7f0200f5;
+        public static final int shape_bg_trade_tab_normal=0x7f0200f6;
+        public static final int shape_bg_trade_tab_normal_select=0x7f0200f7;
+        public static final int shape_bg_tv_open_account=0x7f0200f8;
+        public static final int shape_bg_tv_open_account_bigradius=0x7f0200f9;
+        public static final int shape_bg_tv_time_picker=0x7f0200fa;
+        public static final int shape_btn_pressed=0x7f0200fb;
+        public static final int shape_common_bg_of_edittext=0x7f0200fc;
+        public static final int shape_common_bg_of_edittext_bottom=0x7f0200fd;
+        public static final int shape_common_bg_of_edittext_corner=0x7f0200fe;
+        public static final int shape_common_bg_of_edittext_corner_white=0x7f0200ff;
+        public static final int shape_normal=0x7f020100;
+        public static final int text_indicator=0x7f020101;
+        public static final int theme_blue_pull_to_refresh_loading=0x7f020102;
+        public static final int timepicker_divider_line=0x7f020103;
+        public static final int timepicker_sel_text_item=0x7f020104;
+        public static final int trade_buy=0x7f020105;
+        public static final int trade_buy_selected=0x7f020106;
+        public static final int trade_sale=0x7f020107;
+        public static final int trade_sale_selected=0x7f020108;
+        public static final int trans_money_icon=0x7f020109;
+        public static final int wheel_bg=0x7f02010a;
+        public static final int wheel_timebtn=0x7f02010b;
+        public static final int wheel_val=0x7f02010c;
+        public static final int yunloading01=0x7f02010d;
+        public static final int yunloading02=0x7f02010e;
+        public static final int yunloading03=0x7f02010f;
+        public static final int yunloading04=0x7f020110;
+        public static final int yunloading05=0x7f020111;
+        public static final int yunloading06=0x7f020112;
+        public static final int yunloading07=0x7f020113;
+        public static final int yunloading08=0x7f020114;
+        public static final int yunloading09=0x7f020115;
+        public static final int yunloading10=0x7f020116;
+        public static final int yunloading11=0x7f020117;
+        public static final int yunloading12=0x7f020118;
+        public static final int yunloading13=0x7f020119;
+        public static final int yunloading14=0x7f02011a;
+        public static final int yunloading15=0x7f02011b;
+        public static final int yunloading16=0x7f02011c;
+        public static final int yunloading17=0x7f02011d;
+        public static final int yunloading18=0x7f02011e;
+        public static final int yunloading19=0x7f02011f;
+        public static final int yunloading20=0x7f020120;
+        public static final int yunloading21=0x7f020121;
+        public static final int yunloading22=0x7f020122;
+        public static final int yunloading23=0x7f020123;
+        public static final int yunloading24=0x7f020124;
     }
     public static final class id {
         public static final int LinearLayout=0x7f0e00cc;
         public static final int about_version_code=0x7f0e0000;
         public static final int account_large_photo=0x7f0e00b1;
-        public static final int action0=0x7f0e05ae;
+        public static final int action0=0x7f0e05af;
         public static final int action_bar=0x7f0e0073;
         public static final int action_bar_activity_content=0x7f0e0001;
         public static final int action_bar_container=0x7f0e0072;
@@ -2308,7 +2324,7 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f0e0054;
         public static final int action_bar_title=0x7f0e0053;
         public static final int action_context_bar=0x7f0e0074;
-        public static final int action_divider=0x7f0e05b2;
+        public static final int action_divider=0x7f0e05b3;
         public static final int action_menu_divider=0x7f0e0003;
         public static final int action_menu_presenter=0x7f0e0004;
         public static final int action_mode_bar=0x7f0e0070;
@@ -2321,8 +2337,8 @@ containing a value of this type.
         public static final int back=0x7f0e0094;
         public static final int beginning=0x7f0e004b;
         public static final int bottom_list_loading=0x7f0e035f;
-        public static final int btnCancel=0x7f0e05cc;
-        public static final int btnSubmit=0x7f0e05cd;
+        public static final int btnCancel=0x7f0e05cd;
+        public static final int btnSubmit=0x7f0e05ce;
         public static final int btn_account_fragment=0x7f0e0195;
         public static final int btn_back=0x7f0e009c;
         public static final int btn_back_in_fragment=0x7f0e0190;
@@ -2368,29 +2384,29 @@ containing a value of this type.
         public static final int buttonClick=0x7f0e00b7;
         public static final int buttonPanel=0x7f0e005d;
         public static final int button_back=0x7f0e00ae;
-        public static final int cancel_action=0x7f0e05af;
+        public static final int cancel_action=0x7f0e05b0;
         public static final int category_btn=0x7f0e029b;
         public static final int checkbox=0x7f0e006b;
         public static final int checkbox_agreement=0x7f0e0183;
-        public static final int checkmark=0x7f0e05ad;
-        public static final int chronometer=0x7f0e05b5;
+        public static final int checkmark=0x7f0e05ae;
+        public static final int chronometer=0x7f0e05b6;
         public static final int circle=0x7f0e0039;
         public static final int circle_ll=0x7f0e0165;
-        public static final int ckb_contract_item_select=0x7f0e051d;
+        public static final int ckb_contract_item_select=0x7f0e051e;
         public static final int code_content=0x7f0e00a4;
         public static final int code_image=0x7f0e00a6;
         public static final int collapseActionView=0x7f0e004f;
-        public static final int combinfee_hk=0x7f0e041d;
+        public static final int combinfee_hk=0x7f0e041e;
         public static final int commit=0x7f0e00b8;
-        public static final int container=0x7f0e05a4;
+        public static final int container=0x7f0e05a5;
         public static final int contentPanel=0x7f0e0063;
-        public static final int contract_not_cut_date=0x7f0e0537;
-        public static final int cover=0x7f0e05a8;
+        public static final int contract_not_cut_date=0x7f0e0538;
+        public static final int cover=0x7f0e05a9;
         public static final int cropImageView=0x7f0e0092;
         public static final int custom=0x7f0e0069;
         public static final int customPanel=0x7f0e0068;
         public static final int data_list_view=0x7f0e018c;
-        public static final int day=0x7f0e05d2;
+        public static final int day=0x7f0e05d3;
         public static final int decode=0x7f0e0006;
         public static final int decode_failed=0x7f0e0007;
         public static final int decode_succeeded=0x7f0e0008;
@@ -2466,12 +2482,12 @@ containing a value of this type.
         public static final int encode_failed=0x7f0e0009;
         public static final int encode_succeeded=0x7f0e000a;
         public static final int end=0x7f0e004c;
-        public static final int end_padder=0x7f0e05ba;
-        public static final int entrust_price_way=0x7f0e04f7;
+        public static final int end_padder=0x7f0e05bb;
+        public static final int entrust_price_way=0x7f0e04f8;
         public static final int et_password=0x7f0e039d;
         public static final int et_verify=0x7f0e00a9;
-        public static final int exercise_end_date=0x7f0e04f8;
-        public static final int exercise_price=0x7f0e04f9;
+        public static final int exercise_end_date=0x7f0e04f9;
+        public static final int exercise_price=0x7f0e04fa;
         public static final int expand_activities_button=0x7f0e0057;
         public static final int expanded_menu=0x7f0e006a;
         public static final int fl_account_container=0x7f0e0109;
@@ -2493,12 +2509,12 @@ containing a value of this type.
         public static final int gv_more_menu=0x7f0e02b8;
         public static final int gv_more_menu_credit=0x7f0e01c6;
         public static final int hierarchy=0x7f0e000c;
-        public static final int hold_stock=0x7f0e04f4;
-        public static final int hold_stock2=0x7f0e04f5;
-        public static final int hold_stock3=0x7f0e04f6;
+        public static final int hold_stock=0x7f0e04f5;
+        public static final int hold_stock2=0x7f0e04f6;
+        public static final int hold_stock3=0x7f0e04f7;
         public static final int home=0x7f0e000d;
         public static final int homeAsUp=0x7f0e0032;
-        public static final int hour=0x7f0e05d3;
+        public static final int hour=0x7f0e05d4;
         public static final int hsll_content=0x7f0e0083;
         public static final int hsll_part=0x7f0e0188;
         public static final int hsll_part1=0x7f0e0162;
@@ -2520,16 +2536,16 @@ containing a value of this type.
         public static final int indcator_bottom_circle=0x7f0e014c;
         public static final int indcator_left=0x7f0e0294;
         public static final int indcator_right=0x7f0e0296;
-        public static final int indicator=0x7f0e05a9;
-        public static final int info=0x7f0e05b9;
+        public static final int indicator=0x7f0e05aa;
+        public static final int info=0x7f0e05ba;
         public static final int isexpand=0x7f0e000e;
-        public static final int iv_account_phone=0x7f0e05a6;
+        public static final int iv_account_phone=0x7f0e05a7;
         public static final int iv_back=0x7f0e008c;
         public static final int iv_delete_price=0x7f0e0118;
-        public static final int iv_fast_menu_icon=0x7f0e03e4;
+        public static final int iv_fast_menu_icon=0x7f0e03e5;
         public static final int iv_flag=0x7f0e01b7;
         public static final int iv_icon=0x7f0e0153;
-        public static final int iv_item_select=0x7f0e03de;
+        public static final int iv_item_select=0x7f0e03df;
         public static final int iv_left_selected=0x7f0e021e;
         public static final int iv_more_can_rotate=0x7f0e02b7;
         public static final int iv_more_can_rotate_credit=0x7f0e01c5;
@@ -2538,8 +2554,8 @@ containing a value of this type.
         public static final int launch_product_query=0x7f0e000f;
         public static final int layout=0x7f0e00b5;
         public static final int layout_root=0x7f0e0090;
-        public static final int lin_bottom_revocation=0x7f0e03cb;
-        public static final int lin_choose_contract=0x7f0e051f;
+        public static final int lin_bottom_revocation=0x7f0e03c7;
+        public static final int lin_choose_contract=0x7f0e0520;
         public static final int lin_have_data=0x7f0e02aa;
         public static final int lin_have_data_set=0x7f0e0168;
         public static final int lin_have_date=0x7f0e029e;
@@ -2551,16 +2567,16 @@ containing a value of this type.
         public static final int lin_in_pwd_text2=0x7f0e00fb;
         public static final int lin_lay_collater=0x7f0e01a3;
         public static final int lin_lay_ticket=0x7f0e032b;
-        public static final int lin_level_revocation=0x7f0e04a8;
-        public static final int lin_lin=0x7f0e0403;
-        public static final int lin_lin_r=0x7f0e0522;
-        public static final int lin_lin_revocation=0x7f0e0477;
+        public static final int lin_level_revocation=0x7f0e04a9;
+        public static final int lin_lin=0x7f0e0404;
+        public static final int lin_lin_r=0x7f0e0523;
+        public static final int lin_lin_revocation=0x7f0e0478;
         public static final int lin_loading=0x7f0e029c;
         public static final int lin_loading_set=0x7f0e00f3;
         public static final int lin_no_data_set=0x7f0e029d;
         public static final int lin_not_data_set=0x7f0e0161;
         public static final int lin_object_capital=0x7f0e0325;
-        public static final int lin_option_revocation=0x7f0e050b;
+        public static final int lin_option_revocation=0x7f0e050c;
         public static final int lin_out_pwd_text1=0x7f0e0102;
         public static final int lin_out_pwd_text2=0x7f0e0104;
         public static final int lin_proper_one=0x7f0e0321;
@@ -2569,14 +2585,14 @@ containing a value of this type.
         public static final int lin_r_stock_return_pop=0x7f0e0353;
         public static final int lin_select_data_end=0x7f0e015d;
         public static final int lin_select_data_start=0x7f0e015b;
-        public static final int lin_trans_line_one=0x7f0e055f;
-        public static final int lin_trans_line_two=0x7f0e0562;
+        public static final int lin_trans_line_one=0x7f0e0560;
+        public static final int lin_trans_line_two=0x7f0e0563;
         public static final int lin_trans_trade_head=0x7f0e0399;
         public static final int lin_transfer_in=0x7f0e00f4;
         public static final int lin_transfer_out=0x7f0e00fe;
-        public static final int line1=0x7f0e05b3;
-        public static final int line3=0x7f0e05b7;
-        public static final int linear_wheel=0x7f0e05cf;
+        public static final int line1=0x7f0e05b4;
+        public static final int line3=0x7f0e05b8;
+        public static final int linear_wheel=0x7f0e05d0;
         public static final int listMode=0x7f0e002e;
         public static final int list_item=0x7f0e005a;
         public static final int ll_account_after=0x7f0e010c;
@@ -2589,20 +2605,20 @@ containing a value of this type.
         public static final int ll_buy_or_sell_list_loading=0x7f0e0222;
         public static final int ll_capital_have_data=0x7f0e038a;
         public static final int ll_capital_list_loading=0x7f0e0329;
-        public static final int ll_click_parent=0x7f0e03dc;
+        public static final int ll_click_parent=0x7f0e03dd;
         public static final int ll_code_name=0x7f0e0107;
         public static final int ll_dialog_button_bar=0x7f0e00be;
         public static final int ll_dialog_title=0x7f0e00ba;
         public static final int ll_firstRow=0x7f0e01b1;
         public static final int ll_fselect_trade_loading=0x7f0e01e9;
         public static final int ll_fund_list_loading=0x7f0e02b3;
-        public static final int ll_hold_list_item_expand=0x7f0e03be;
-        public static final int ll_hold_list_item_view=0x7f0e03ba;
+        public static final int ll_hold_list_item_expand=0x7f0e03ba;
+        public static final int ll_hold_list_item_view=0x7f0e03b5;
         public static final int ll_home_layout=0x7f0e01a7;
         public static final int ll_input_amount=0x7f0e011c;
         public static final int ll_input_price=0x7f0e0113;
-        public static final int ll_list_item_expand=0x7f0e03d8;
-        public static final int ll_list_item_view=0x7f0e03d7;
+        public static final int ll_list_item_expand=0x7f0e03d9;
+        public static final int ll_list_item_view=0x7f0e03d8;
         public static final int ll_list_loading=0x7f0e016d;
         public static final int ll_loading=0x7f0e018b;
         public static final int ll_main_container_hold=0x7f0e01aa;
@@ -2625,12 +2641,12 @@ containing a value of this type.
         public static final int ll_stock_num_after=0x7f0e011d;
         public static final int ll_ticket_list_loading=0x7f0e032f;
         public static final int ll_today_entrust_list_item_expand=0x7f0e00db;
-        public static final int ll_today_entrust_list_item_view=0x7f0e03e0;
+        public static final int ll_today_entrust_list_item_view=0x7f0e03e1;
         public static final int ll_today_entrust_loading=0x7f0e0189;
         public static final int ll_whole_login_fragment=0x7f0e0152;
         public static final int lock_pattern_indicator=0x7f0e0097;
         public static final int lock_pattern_view=0x7f0e0099;
-        public static final int lv_account=0x7f0e05c0;
+        public static final int lv_account=0x7f0e05c1;
         public static final int lv_fund_hold_stock=0x7f0e01ea;
         public static final int lv_have_head=0x7f0e0198;
         public static final int lv_hold=0x7f0e035d;
@@ -2648,13 +2664,13 @@ containing a value of this type.
         public static final int lv_revotion=0x7f0e0360;
         public static final int lv_show_stock=0x7f0e0223;
         public static final int lv_today_entrust=0x7f0e018a;
-        public static final int mask=0x7f0e05ac;
-        public static final int media_actions=0x7f0e05b1;
+        public static final int mask=0x7f0e05ad;
+        public static final int media_actions=0x7f0e05b2;
         public static final int middle=0x7f0e004d;
-        public static final int minute=0x7f0e05d4;
-        public static final int month=0x7f0e05d1;
+        public static final int minute=0x7f0e05d5;
+        public static final int month=0x7f0e05d2;
         public static final int multiply=0x7f0e003b;
-        public static final int name=0x7f0e05aa;
+        public static final int name=0x7f0e05ab;
         public static final int never=0x7f0e0051;
         public static final int next=0x7f0e0095;
         public static final int none=0x7f0e0033;
@@ -2665,15 +2681,15 @@ containing a value of this type.
         public static final int options1=0x7f0e03a1;
         public static final int options2=0x7f0e03a2;
         public static final int options3=0x7f0e03a3;
-        public static final int optionspicker=0x7f0e05ce;
+        public static final int optionspicker=0x7f0e05cf;
         public static final int parentPanel=0x7f0e005f;
         public static final int pb_loadImage=0x7f0e039f;
-        public static final int placeholder=0x7f0e05a5;
-        public static final int pop_all_agree=0x7f0e05bc;
-        public static final int pop_all_cancel=0x7f0e05bf;
-        public static final int pop_all_give_up=0x7f0e05be;
-        public static final int pop_all_oppose=0x7f0e05bd;
-        public static final int pop_layout=0x7f0e05bb;
+        public static final int placeholder=0x7f0e05a6;
+        public static final int pop_all_agree=0x7f0e05bd;
+        public static final int pop_all_cancel=0x7f0e05c0;
+        public static final int pop_all_give_up=0x7f0e05bf;
+        public static final int pop_all_oppose=0x7f0e05be;
+        public static final int pop_layout=0x7f0e05bc;
         public static final int preview=0x7f0e00b6;
         public static final int preview_view=0x7f0e0084;
         public static final int pro_loaing_money=0x7f0e00f7;
@@ -2681,17 +2697,17 @@ containing a value of this type.
         public static final int progressBar1=0x7f0e00cd;
         public static final int progress_circular=0x7f0e0010;
         public static final int progress_horizontal=0x7f0e0011;
-        public static final int pull_to_load_footer_content=0x7f0e05c1;
-        public static final int pull_to_load_footer_hint_textview=0x7f0e05c3;
-        public static final int pull_to_load_footer_progressbar=0x7f0e05c2;
-        public static final int pull_to_refresh_header_animimg=0x7f0e05cb;
-        public static final int pull_to_refresh_header_arrow=0x7f0e05c9;
-        public static final int pull_to_refresh_header_content=0x7f0e05c4;
-        public static final int pull_to_refresh_header_hint_textview=0x7f0e05c6;
-        public static final int pull_to_refresh_header_progressbar=0x7f0e05ca;
-        public static final int pull_to_refresh_header_text=0x7f0e05c5;
-        public static final int pull_to_refresh_header_time=0x7f0e05c8;
-        public static final int pull_to_refresh_last_update_time_text=0x7f0e05c7;
+        public static final int pull_to_load_footer_content=0x7f0e05c2;
+        public static final int pull_to_load_footer_hint_textview=0x7f0e05c4;
+        public static final int pull_to_load_footer_progressbar=0x7f0e05c3;
+        public static final int pull_to_refresh_header_animimg=0x7f0e05cc;
+        public static final int pull_to_refresh_header_arrow=0x7f0e05ca;
+        public static final int pull_to_refresh_header_content=0x7f0e05c5;
+        public static final int pull_to_refresh_header_hint_textview=0x7f0e05c7;
+        public static final int pull_to_refresh_header_progressbar=0x7f0e05cb;
+        public static final int pull_to_refresh_header_text=0x7f0e05c6;
+        public static final int pull_to_refresh_header_time=0x7f0e05c9;
+        public static final int pull_to_refresh_last_update_time_text=0x7f0e05c8;
         public static final int qr_picture=0x7f0e00ad;
         public static final int qrcode_bitmap=0x7f0e00a3;
         public static final int quit=0x7f0e0012;
@@ -2705,18 +2721,18 @@ containing a value of this type.
         public static final int ratio_custom=0x7f0e0045;
         public static final int ratio_fit_image=0x7f0e0046;
         public static final int ratio_free=0x7f0e0047;
-        public static final int rb_add_vote_agree=0x7f0e04c4;
-        public static final int rb_add_vote_give_up=0x7f0e04c6;
-        public static final int rb_add_vote_opppse=0x7f0e04c5;
+        public static final int rb_add_vote_agree=0x7f0e04c5;
+        public static final int rb_add_vote_give_up=0x7f0e04c7;
+        public static final int rb_add_vote_opppse=0x7f0e04c6;
         public static final int rb_foot_one_key_sub=0x7f0e02ab;
-        public static final int rb_one_key_sub=0x7f0e04dc;
+        public static final int rb_one_key_sub=0x7f0e04dd;
         public static final int rb_option_put=0x7f0e02e0;
         public static final int rb_option_subscription=0x7f0e02df;
         public static final int rb_r_liability=0x7f0e0333;
         public static final int rb_r_limit=0x7f0e0334;
         public static final int rb_r_money=0x7f0e0332;
-        public static final int rb_share_set_cash=0x7f0e0415;
-        public static final int rb_share_set_hold=0x7f0e0414;
+        public static final int rb_share_set_cash=0x7f0e0416;
+        public static final int rb_share_set_hold=0x7f0e0415;
         public static final int rb_trans_hq_all=0x7f0e037c;
         public static final int rb_trans_hq_buy=0x7f0e037d;
         public static final int re_root_layout=0x7f0e0194;
@@ -2724,12 +2740,12 @@ containing a value of this type.
         public static final int restart_preview=0x7f0e0013;
         public static final int result=0x7f0e00a2;
         public static final int return_scan_result=0x7f0e0014;
-        public static final int rg_add_vote=0x7f0e04c3;
+        public static final int rg_add_vote=0x7f0e04c4;
         public static final int rg_fragment_group=0x7f0e0199;
-        public static final int rg_fund_risk_question=0x7f0e040c;
+        public static final int rg_fund_risk_question=0x7f0e040d;
         public static final int rg_option_open=0x7f0e02de;
         public static final int rg_property_select=0x7f0e0331;
-        public static final int rg_radio_group_share=0x7f0e0413;
+        public static final int rg_radio_group_share=0x7f0e0414;
         public static final int rg_trans_hq=0x7f0e037b;
         public static final int rg_trans_sale=0x7f0e037e;
         public static final int rl_bgoftoolbar=0x7f0e02bd;
@@ -2743,6 +2759,7 @@ containing a value of this type.
         public static final int rl_one_key=0x7f0e02ba;
         public static final int rl_r_choose_stock=0x7f0e02f2;
         public static final int rl_sub_bond=0x7f0e01c8;
+        public static final int row=0x7f0e03ad;
         public static final int screen=0x7f0e003c;
         public static final int scrollIndicatorDown=0x7f0e0067;
         public static final int scrollIndicatorUp=0x7f0e0064;
@@ -2768,7 +2785,7 @@ containing a value of this type.
         public static final int showTitle=0x7f0e0036;
         public static final int show_always=0x7f0e0049;
         public static final int show_on_touch=0x7f0e004a;
-        public static final int size=0x7f0e05ab;
+        public static final int size=0x7f0e05ac;
         public static final int sll_back_out=0x7f0e019d;
         public static final int sll_for_activity=0x7f0e0087;
         public static final int sll_layout=0x7f0e01a1;
@@ -2780,7 +2797,7 @@ containing a value of this type.
         public static final int src_atop=0x7f0e003d;
         public static final int src_in=0x7f0e003e;
         public static final int src_over=0x7f0e003f;
-        public static final int status_bar_latest_event_content=0x7f0e05b0;
+        public static final int status_bar_latest_event_content=0x7f0e05b1;
         public static final int step1=0x7f0e0115;
         public static final int step2=0x7f0e011b;
         public static final int submit_area=0x7f0e007e;
@@ -2789,23 +2806,23 @@ containing a value of this type.
         public static final int tabMode=0x7f0e0030;
         public static final int tab_replace_toolbar=0x7f0e008b;
         public static final int tb_showname=0x7f0e02be;
-        public static final int text=0x7f0e05b8;
-        public static final int text2=0x7f0e05b6;
+        public static final int text=0x7f0e05b9;
+        public static final int text2=0x7f0e05b7;
         public static final int textSpacerNoButtons=0x7f0e0066;
-        public static final int textView=0x7f0e03b0;
-        public static final int textView10=0x7f0e054c;
+        public static final int textView=0x7f0e03d7;
+        public static final int textView10=0x7f0e054d;
         public static final int textView11=0x7f0e035c;
         public static final int textView12=0x7f0e039a;
         public static final int textView2=0x7f0e014d;
         public static final int textView3=0x7f0e01b8;
         public static final int textView4=0x7f0e01ba;
-        public static final int textView5=0x7f0e03df;
+        public static final int textView5=0x7f0e03e0;
         public static final int textView6=0x7f0e039b;
         public static final int textView7=0x7f0e01bc;
         public static final int textView8=0x7f0e00ec;
-        public static final int textView9=0x7f0e0538;
+        public static final int textView9=0x7f0e0539;
         public static final int textview_title=0x7f0e00af;
-        public static final int time=0x7f0e05b4;
+        public static final int time=0x7f0e05b5;
         public static final int timeline_area=0x7f0e0299;
         public static final int title=0x7f0e005c;
         public static final int title_template=0x7f0e0061;
@@ -2815,11 +2832,11 @@ containing a value of this type.
         public static final int trade_container=0x7f0e019a;
         public static final int tv=0x7f0e00ce;
         public static final int tv1=0x7f0e00c3;
-        public static final int tv10=0x7f0e0539;
-        public static final int tv11=0x7f0e053a;
-        public static final int tv12=0x7f0e053b;
-        public static final int tv13=0x7f0e053c;
-        public static final int tv14=0x7f0e053d;
+        public static final int tv10=0x7f0e053a;
+        public static final int tv11=0x7f0e053b;
+        public static final int tv12=0x7f0e053c;
+        public static final int tv13=0x7f0e053d;
+        public static final int tv14=0x7f0e053e;
         public static final int tv2=0x7f0e00c4;
         public static final int tv3=0x7f0e00c5;
         public static final int tv4=0x7f0e00c6;
@@ -2828,27 +2845,27 @@ containing a value of this type.
         public static final int tv7=0x7f0e018f;
         public static final int tv8=0x7f0e01bd;
         public static final int tv9=0x7f0e01be;
-        public static final int tv_a_statement_bs=0x7f0e03cc;
-        public static final int tv_a_statement_date=0x7f0e03cd;
+        public static final int tv_a_statement_bs=0x7f0e03cb;
+        public static final int tv_a_statement_date=0x7f0e03cc;
         public static final int tv_account=0x7f0e00b2;
-        public static final int tv_account_label=0x7f0e05a7;
+        public static final int tv_account_label=0x7f0e05a8;
         public static final int tv_account_switch_credit=0x7f0e00e9;
         public static final int tv_account_switch_normal=0x7f0e00e8;
         public static final int tv_account_switch_option=0x7f0e00ea;
-        public static final int tv_add_vote_content=0x7f0e04c2;
+        public static final int tv_add_vote_content=0x7f0e04c3;
         public static final int tv_agreement_content=0x7f0e0187;
         public static final int tv_agreement_title=0x7f0e0186;
         public static final int tv_all_num=0x7f0e0122;
         public static final int tv_all_repay=0x7f0e00aa;
         public static final int tv_amount=0x7f0e021b;
         public static final int tv_amount_text=0x7f0e021c;
-        public static final int tv_apply_time=0x7f0e0421;
-        public static final int tv_approve_amount=0x7f0e04a3;
-        public static final int tv_assert_val=0x7f0e043e;
-        public static final int tv_authority_times=0x7f0e0475;
-        public static final int tv_authority_type_name=0x7f0e0473;
+        public static final int tv_apply_time=0x7f0e0422;
+        public static final int tv_approve_amount=0x7f0e04a4;
+        public static final int tv_assert_val=0x7f0e043f;
+        public static final int tv_authority_times=0x7f0e0476;
+        public static final int tv_authority_type_name=0x7f0e0474;
         public static final int tv_back=0x7f0e03a0;
-        public static final int tv_balance=0x7f0e03c6;
+        public static final int tv_balance=0x7f0e03c2;
         public static final int tv_bank_account=0x7f0e03a5;
         public static final int tv_bank_click_select=0x7f0e00f6;
         public static final int tv_bank_count=0x7f0e03a6;
@@ -2858,19 +2875,19 @@ containing a value of this type.
         public static final int tv_bank_out_text=0x7f0e0100;
         public static final int tv_bank_status=0x7f0e03a8;
         public static final int tv_bank_time=0x7f0e03a7;
-        public static final int tv_bbusiness_type=0x7f0e0426;
-        public static final int tv_begin_date=0x7f0e04d3;
-        public static final int tv_begin_time=0x7f0e0461;
-        public static final int tv_bizdate=0x7f0e0433;
-        public static final int tv_bsflag=0x7f0e04cb;
+        public static final int tv_bbusiness_type=0x7f0e0427;
+        public static final int tv_begin_date=0x7f0e04d4;
+        public static final int tv_begin_time=0x7f0e0462;
+        public static final int tv_bizdate=0x7f0e0434;
+        public static final int tv_bsflag=0x7f0e04cc;
         public static final int tv_business_amount=0x7f0e01bb;
-        public static final int tv_business_balance=0x7f0e0429;
-        public static final int tv_business_id=0x7f0e0422;
-        public static final int tv_business_price=0x7f0e03ce;
-        public static final int tv_business_time=0x7f0e0434;
-        public static final int tv_business_type=0x7f0e0428;
-        public static final int tv_business_type_name=0x7f0e0488;
-        public static final int tv_businessflag=0x7f0e0462;
+        public static final int tv_business_balance=0x7f0e042a;
+        public static final int tv_business_id=0x7f0e0423;
+        public static final int tv_business_price=0x7f0e03cd;
+        public static final int tv_business_time=0x7f0e0435;
+        public static final int tv_business_type=0x7f0e0429;
+        public static final int tv_business_type_name=0x7f0e0489;
+        public static final int tv_businessflag=0x7f0e0463;
         public static final int tv_buy1_amount=0x7f0e013d;
         public static final int tv_buy1_price=0x7f0e013c;
         public static final int tv_buy2_amount=0x7f0e0140;
@@ -2885,121 +2902,121 @@ containing a value of this type.
         public static final int tv_buy_open=0x7f0e02c1;
         public static final int tv_buying=0x7f0e01b2;
         public static final int tv_buyorsell=0x7f0e00ef;
-        public static final int tv_buyrate=0x7f0e0438;
+        public static final int tv_buyrate=0x7f0e0439;
         public static final int tv_can_out_num=0x7f0e01e0;
         public static final int tv_can_trans_num=0x7f0e0216;
         public static final int tv_can_use_money=0x7f0e0126;
-        public static final int tv_cancel=0x7f0e05d5;
+        public static final int tv_cancel=0x7f0e05d6;
         public static final int tv_cancle=0x7f0e00dd;
         public static final int tv_capital_click=0x7f0e0328;
         public static final int tv_capital_name=0x7f0e0327;
-        public static final int tv_channel=0x7f0e0501;
-        public static final int tv_circulation_type_name=0x7f0e0472;
-        public static final int tv_cleardate=0x7f0e0489;
+        public static final int tv_channel=0x7f0e0502;
+        public static final int tv_circulation_type_name=0x7f0e0473;
+        public static final int tv_cleardate=0x7f0e048a;
         public static final int tv_click_all_max=0x7f0e02da;
         public static final int tv_click_buy=0x7f0e0378;
         public static final int tv_click_commit=0x7f0e0208;
         public static final int tv_click_hq=0x7f0e037a;
-        public static final int tv_click_input_num=0x7f0e04e2;
+        public static final int tv_click_input_num=0x7f0e04e3;
         public static final int tv_click_sale=0x7f0e0379;
         public static final int tv_click_select=0x7f0e029f;
-        public static final int tv_click_set=0x7f0e04ea;
-        public static final int tv_click_vote=0x7f0e04d2;
+        public static final int tv_click_set=0x7f0e04eb;
+        public static final int tv_click_vote=0x7f0e04d3;
         public static final int tv_click_warn_book=0x7f0e0184;
-        public static final int tv_code=0x7f0e03ad;
+        public static final int tv_code=0x7f0e03b6;
         public static final int tv_code_and_name=0x7f0e02cd;
-        public static final int tv_collater_code=0x7f0e0513;
+        public static final int tv_collater_code=0x7f0e0514;
         public static final int tv_collater_code_pre=0x7f0e01a4;
-        public static final int tv_collater_date=0x7f0e0518;
-        public static final int tv_collater_hold=0x7f0e0516;
-        public static final int tv_collater_market=0x7f0e0524;
-        public static final int tv_collater_name=0x7f0e0514;
-        public static final int tv_collater_not=0x7f0e0517;
-        public static final int tv_collater_num=0x7f0e0515;
-        public static final int tv_collater_profit=0x7f0e0525;
+        public static final int tv_collater_date=0x7f0e0519;
+        public static final int tv_collater_hold=0x7f0e0517;
+        public static final int tv_collater_market=0x7f0e0525;
+        public static final int tv_collater_name=0x7f0e0515;
+        public static final int tv_collater_not=0x7f0e0518;
+        public static final int tv_collater_num=0x7f0e0516;
+        public static final int tv_collater_profit=0x7f0e0526;
         public static final int tv_collateral_security_in=0x7f0e0358;
         public static final int tv_collateral_security_lookout=0x7f0e035a;
         public static final int tv_collateral_security_out=0x7f0e0359;
         public static final int tv_collateral_security_revocation=0x7f0e035b;
-        public static final int tv_combinfee_rmb=0x7f0e041b;
-        public static final int tv_commitflag=0x7f0e0463;
+        public static final int tv_combinfee_rmb=0x7f0e041c;
+        public static final int tv_commitflag=0x7f0e0464;
         public static final int tv_communication_password=0x7f0e0019;
         public static final int tv_content=0x7f0e00e7;
         public static final int tv_contract_code=0x7f0e02d0;
         public static final int tv_contract_name=0x7f0e02d1;
-        public static final int tv_corpbehavior_code=0x7f0e0427;
-        public static final int tv_cost_balance=0x7f0e0508;
-        public static final int tv_cost_price=0x7f0e03bc;
-        public static final int tv_costing=0x7f0e03b9;
+        public static final int tv_corpbehavior_code=0x7f0e0428;
+        public static final int tv_cost_balance=0x7f0e0509;
+        public static final int tv_cost_price=0x7f0e03b8;
+        public static final int tv_costing=0x7f0e03b4;
         public static final int tv_could_repay=0x7f0e00a8;
         public static final int tv_covered_close=0x7f0e02c6;
         public static final int tv_covered_lock=0x7f0e02c8;
         public static final int tv_covered_open=0x7f0e02c5;
         public static final int tv_covered_open_lock=0x7f0e02c9;
-        public static final int tv_create_date=0x7f0e0504;
-        public static final int tv_create_time=0x7f0e0505;
-        public static final int tv_current_amount=0x7f0e0509;
-        public static final int tv_current_price=0x7f0e03bd;
-        public static final int tv_current_rate=0x7f0e0476;
+        public static final int tv_create_date=0x7f0e0505;
+        public static final int tv_create_time=0x7f0e0506;
+        public static final int tv_current_amount=0x7f0e050a;
+        public static final int tv_current_price=0x7f0e03b9;
+        public static final int tv_current_rate=0x7f0e0477;
         public static final int tv_cut_date=0x7f0e02ce;
-        public static final int tv_daybuyriserate=0x7f0e043b;
-        public static final int tv_daysaleriserate=0x7f0e043c;
-        public static final int tv_debtsid=0x7f0e0418;
+        public static final int tv_daybuyriserate=0x7f0e043c;
+        public static final int tv_daysaleriserate=0x7f0e043d;
+        public static final int tv_debtsid=0x7f0e0419;
         public static final int tv_dialog_title=0x7f0e00bb;
-        public static final int tv_direct_data=0x7f0e03fe;
-        public static final int tv_direct_have=0x7f0e03ff;
-        public static final int tv_direct_have_time=0x7f0e0401;
-        public static final int tv_direct_money=0x7f0e03fd;
-        public static final int tv_direct_time=0x7f0e0400;
-        public static final int tv_distribute_begin=0x7f0e04db;
-        public static final int tv_distribute_count=0x7f0e04da;
-        public static final int tv_distribute_data=0x7f0e04d6;
-        public static final int tv_distribute_securit_name=0x7f0e04d7;
-        public static final int tv_distribute_securit_number=0x7f0e04d8;
-        public static final int tv_divide_line=0x7f0e04bd;
+        public static final int tv_direct_data=0x7f0e03ff;
+        public static final int tv_direct_have=0x7f0e0400;
+        public static final int tv_direct_have_time=0x7f0e0402;
+        public static final int tv_direct_money=0x7f0e03fe;
+        public static final int tv_direct_time=0x7f0e0401;
+        public static final int tv_distribute_begin=0x7f0e04dc;
+        public static final int tv_distribute_count=0x7f0e04db;
+        public static final int tv_distribute_data=0x7f0e04d7;
+        public static final int tv_distribute_securit_name=0x7f0e04d8;
+        public static final int tv_distribute_securit_number=0x7f0e04d9;
+        public static final int tv_divide_line=0x7f0e04be;
         public static final int tv_down_limit=0x7f0e0110;
         public static final int tv_down_limit_text=0x7f0e010f;
-        public static final int tv_enable_amount=0x7f0e048d;
-        public static final int tv_enable_balance=0x7f0e043f;
-        public static final int tv_end_date=0x7f0e04d4;
+        public static final int tv_enable_amount=0x7f0e048e;
+        public static final int tv_enable_balance=0x7f0e0440;
+        public static final int tv_end_date=0x7f0e04d5;
         public static final int tv_entrust_amount=0x7f0e01b9;
-        public static final int tv_entrust_balance=0x7f0e0485;
-        public static final int tv_entrust_count=0x7f0e04ae;
-        public static final int tv_entrust_date=0x7f0e048a;
-        public static final int tv_entrust_info=0x7f0e03b1;
-        public static final int tv_entrust_name=0x7f0e0523;
-        public static final int tv_entrust_no=0x7f0e0487;
+        public static final int tv_entrust_balance=0x7f0e0486;
+        public static final int tv_entrust_count=0x7f0e04af;
+        public static final int tv_entrust_date=0x7f0e048b;
+        public static final int tv_entrust_info=0x7f0e03c9;
+        public static final int tv_entrust_name=0x7f0e0524;
+        public static final int tv_entrust_no=0x7f0e0488;
         public static final int tv_entrust_number=0x7f0e00f0;
         public static final int tv_entrust_price=0x7f0e00ee;
-        public static final int tv_entrust_state_name=0x7f0e04fb;
-        public static final int tv_entrust_status_name=0x7f0e050c;
+        public static final int tv_entrust_state_name=0x7f0e04fc;
+        public static final int tv_entrust_status_name=0x7f0e050d;
         public static final int tv_entrust_str=0x7f0e02dc;
-        public static final int tv_entrust_time=0x7f0e04ca;
-        public static final int tv_entrust_value=0x7f0e04ac;
+        public static final int tv_entrust_time=0x7f0e04cb;
+        public static final int tv_entrust_value=0x7f0e04ad;
         public static final int tv_exchange_rate=0x7f0e021a;
         public static final int tv_exchange_rate_text=0x7f0e0219;
-        public static final int tv_exchange_type=0x7f0e04cc;
-        public static final int tv_exchange_type_name=0x7f0e0435;
+        public static final int tv_exchange_type=0x7f0e04cd;
+        public static final int tv_exchange_type_name=0x7f0e0436;
         public static final int tv_exercise=0x7f0e02c7;
         public static final int tv_exercise_price=0x7f0e02cf;
         public static final int tv_exit_logout=0x7f0e02bc;
         public static final int tv_exit_logout_credit=0x7f0e01ca;
-        public static final int tv_fee_ghf=0x7f0e03d5;
-        public static final int tv_fee_jsf=0x7f0e0432;
-        public static final int tv_fee_jygf=0x7f0e042f;
-        public static final int tv_fee_qsf=0x7f0e0431;
-        public static final int tv_fee_sxf=0x7f0e03d6;
-        public static final int tv_fee_yhs=0x7f0e042d;
-        public static final int tv_fee_zgf=0x7f0e042e;
-        public static final int tv_feefront=0x7f0e0430;
-        public static final int tv_float_yk=0x7f0e0490;
-        public static final int tv_float_yk_per=0x7f0e048f;
+        public static final int tv_fee_ghf=0x7f0e03d4;
+        public static final int tv_fee_jsf=0x7f0e0433;
+        public static final int tv_fee_jygf=0x7f0e0430;
+        public static final int tv_fee_qsf=0x7f0e0432;
+        public static final int tv_fee_sxf=0x7f0e03d5;
+        public static final int tv_fee_yhs=0x7f0e042e;
+        public static final int tv_fee_zgf=0x7f0e042f;
+        public static final int tv_feefront=0x7f0e0431;
+        public static final int tv_float_yk=0x7f0e0491;
+        public static final int tv_float_yk_per=0x7f0e0490;
         public static final int tv_forget_password=0x7f0e00b4;
-        public static final int tv_freeze_amount=0x7f0e048e;
-        public static final int tv_fselect_four=0x7f0e03eb;
-        public static final int tv_fselect_one=0x7f0e03e8;
-        public static final int tv_fselect_three=0x7f0e03e9;
-        public static final int tv_fselect_two=0x7f0e03ea;
+        public static final int tv_freeze_amount=0x7f0e048f;
+        public static final int tv_fselect_four=0x7f0e03ec;
+        public static final int tv_fselect_one=0x7f0e03e9;
+        public static final int tv_fselect_three=0x7f0e03ea;
+        public static final int tv_fselect_two=0x7f0e03eb;
         public static final int tv_fun_otc=0x7f0e001a;
         public static final int tv_fun_trade=0x7f0e001b;
         public static final int tv_fun_trade_in=0x7f0e001c;
@@ -3007,116 +3024,116 @@ containing a value of this type.
         public static final int tv_fund_account=0x7f0e0154;
         public static final int tv_fund_click_ransom_max=0x7f0e01f6;
         public static final int tv_fund_click_sub_max=0x7f0e020d;
-        public static final int tv_fund_code=0x7f0e0448;
+        public static final int tv_fund_code=0x7f0e0449;
         public static final int tv_fund_dire_name=0x7f0e01ee;
         public static final int tv_fund_in_name=0x7f0e01dd;
         public static final int tv_fund_in_profit=0x7f0e01de;
         public static final int tv_fund_max_money=0x7f0e020f;
         public static final int tv_fund_maxmoney=0x7f0e0291;
         public static final int tv_fund_name=0x7f0e020a;
-        public static final int tv_fund_name_account=0x7f0e03e6;
+        public static final int tv_fund_name_account=0x7f0e03e7;
         public static final int tv_fund_net_value=0x7f0e020b;
         public static final int tv_fund_now_price=0x7f0e028e;
         public static final int tv_fund_open_account=0x7f0e01eb;
         public static final int tv_fund_out_profit=0x7f0e01db;
-        public static final int tv_fund_pledge_click=0x7f0e03fc;
+        public static final int tv_fund_pledge_click=0x7f0e03fd;
         public static final int tv_fund_profit=0x7f0e01ef;
         public static final int tv_fund_ransom_max=0x7f0e01f8;
         public static final int tv_fund_ransom_max_limit=0x7f0e01f5;
         public static final int tv_fund_ransom_name=0x7f0e0284;
         public static final int tv_fund_ransom_netvalue=0x7f0e01f4;
         public static final int tv_fund_ransom_now_price=0x7f0e0285;
-        public static final int tv_fund_real_own=0x7f0e0447;
-        public static final int tv_fund_realin=0x7f0e0442;
-        public static final int tv_fund_realout=0x7f0e0443;
-        public static final int tv_fund_revocation_balances=0x7f0e0409;
-        public static final int tv_fund_revocation_balances_title=0x7f0e0408;
-        public static final int tv_fund_revocation_bs=0x7f0e0404;
-        public static final int tv_fund_revocation_code=0x7f0e0406;
-        public static final int tv_fund_revocation_name=0x7f0e0405;
-        public static final int tv_fund_revocation_profit=0x7f0e0407;
-        public static final int tv_fund_revocation_time=0x7f0e040a;
-        public static final int tv_fund_risk_question=0x7f0e040b;
-        public static final int tv_fund_select_balance=0x7f0e03f1;
-        public static final int tv_fund_select_bs=0x7f0e03ec;
-        public static final int tv_fund_select_code=0x7f0e03ee;
-        public static final int tv_fund_select_name=0x7f0e03ed;
-        public static final int tv_fund_select_profit=0x7f0e03f0;
-        public static final int tv_fund_select_status=0x7f0e03ef;
-        public static final int tv_fund_select_time=0x7f0e03f2;
+        public static final int tv_fund_real_own=0x7f0e0448;
+        public static final int tv_fund_realin=0x7f0e0443;
+        public static final int tv_fund_realout=0x7f0e0444;
+        public static final int tv_fund_revocation_balances=0x7f0e040a;
+        public static final int tv_fund_revocation_balances_title=0x7f0e0409;
+        public static final int tv_fund_revocation_bs=0x7f0e0405;
+        public static final int tv_fund_revocation_code=0x7f0e0407;
+        public static final int tv_fund_revocation_name=0x7f0e0406;
+        public static final int tv_fund_revocation_profit=0x7f0e0408;
+        public static final int tv_fund_revocation_time=0x7f0e040b;
+        public static final int tv_fund_risk_question=0x7f0e040c;
+        public static final int tv_fund_select_balance=0x7f0e03f2;
+        public static final int tv_fund_select_bs=0x7f0e03ed;
+        public static final int tv_fund_select_code=0x7f0e03ef;
+        public static final int tv_fund_select_name=0x7f0e03ee;
+        public static final int tv_fund_select_profit=0x7f0e03f1;
+        public static final int tv_fund_select_status=0x7f0e03f0;
+        public static final int tv_fund_select_time=0x7f0e03f3;
         public static final int tv_fund_sub_max=0x7f0e020c;
-        public static final int tv_fund_tranin=0x7f0e0440;
-        public static final int tv_fund_tranout=0x7f0e0441;
+        public static final int tv_fund_tranin=0x7f0e0441;
+        public static final int tv_fund_tranout=0x7f0e0442;
         public static final int tv_fund_unit=0x7f0e016a;
-        public static final int tv_fundbal=0x7f0e03d3;
-        public static final int tv_fundnightout=0x7f0e0446;
-        public static final int tv_funduncomein=0x7f0e0444;
-        public static final int tv_funduncomeout=0x7f0e0445;
+        public static final int tv_fundbal=0x7f0e03d2;
+        public static final int tv_fundnightout=0x7f0e0447;
+        public static final int tv_funduncomein=0x7f0e0445;
+        public static final int tv_funduncomeout=0x7f0e0446;
         public static final int tv_give_up_sub=0x7f0e02a7;
         public static final int tv_give_up_sub_revocation=0x7f0e02a8;
         public static final int tv_half_num=0x7f0e0123;
-        public static final int tv_happen_price=0x7f0e03c3;
+        public static final int tv_happen_price=0x7f0e03bf;
         public static final int tv_header_of_grade_bottom=0x7f0e014a;
-        public static final int tv_hfund_bs=0x7f0e04b0;
-        public static final int tv_hfund_code=0x7f0e04b4;
-        public static final int tv_hfund_count=0x7f0e04b5;
-        public static final int tv_hfund_name=0x7f0e04b3;
-        public static final int tv_hfund_price=0x7f0e04b6;
-        public static final int tv_hfund_status=0x7f0e04b2;
-        public static final int tv_hfund_time=0x7f0e04b1;
-        public static final int tv_history_data=0x7f0e044a;
+        public static final int tv_hfund_bs=0x7f0e04b1;
+        public static final int tv_hfund_code=0x7f0e04b5;
+        public static final int tv_hfund_count=0x7f0e04b6;
+        public static final int tv_hfund_name=0x7f0e04b4;
+        public static final int tv_hfund_price=0x7f0e04b7;
+        public static final int tv_hfund_status=0x7f0e04b3;
+        public static final int tv_hfund_time=0x7f0e04b2;
+        public static final int tv_history_data=0x7f0e044b;
         public static final int tv_history_entrust=0x7f0e02e2;
-        public static final int tv_history_entrust_bs=0x7f0e0450;
-        public static final int tv_history_entrust_num=0x7f0e044e;
-        public static final int tv_history_entrust_price=0x7f0e044c;
-        public static final int tv_history_entrust_status=0x7f0e0451;
+        public static final int tv_history_entrust_bs=0x7f0e0451;
+        public static final int tv_history_entrust_num=0x7f0e044f;
+        public static final int tv_history_entrust_price=0x7f0e044d;
+        public static final int tv_history_entrust_status=0x7f0e0452;
         public static final int tv_history_list=0x7f0e02a9;
-        public static final int tv_history_securit_name=0x7f0e0449;
-        public static final int tv_history_time=0x7f0e044b;
+        public static final int tv_history_securit_name=0x7f0e044a;
+        public static final int tv_history_time=0x7f0e044c;
         public static final int tv_history_trade=0x7f0e02e3;
-        public static final int tv_history_trade_bs=0x7f0e0458;
-        public static final int tv_history_trade_count=0x7f0e0456;
-        public static final int tv_history_trade_data=0x7f0e0453;
-        public static final int tv_history_trade_money=0x7f0e0457;
-        public static final int tv_history_trade_name=0x7f0e0452;
-        public static final int tv_history_trade_number=0x7f0e044f;
-        public static final int tv_history_trade_pric=0x7f0e0455;
-        public static final int tv_history_trade_price=0x7f0e044d;
-        public static final int tv_history_trade_time=0x7f0e0454;
+        public static final int tv_history_trade_bs=0x7f0e0459;
+        public static final int tv_history_trade_count=0x7f0e0457;
+        public static final int tv_history_trade_data=0x7f0e0454;
+        public static final int tv_history_trade_money=0x7f0e0458;
+        public static final int tv_history_trade_name=0x7f0e0453;
+        public static final int tv_history_trade_number=0x7f0e0450;
+        public static final int tv_history_trade_pric=0x7f0e0456;
+        public static final int tv_history_trade_price=0x7f0e044e;
+        public static final int tv_history_trade_time=0x7f0e0455;
         public static final int tv_hk_action_name=0x7f0e0225;
         public static final int tv_hk_action_type1=0x7f0e0226;
         public static final int tv_hk_action_type2=0x7f0e0227;
-        public static final int tv_hk_business_name=0x7f0e046f;
+        public static final int tv_hk_business_name=0x7f0e0470;
         public static final int tv_hk_buy=0x7f0e0230;
-        public static final int tv_hk_commission=0x7f0e046b;
-        public static final int tv_hk_commission_data=0x7f0e0470;
-        public static final int tv_hk_currency=0x7f0e046e;
-        public static final int tv_hk_liquidation_money=0x7f0e0469;
-        public static final int tv_hk_not_paid_deta_entrust=0x7f0e0466;
-        public static final int tv_hk_not_paid_deta_price=0x7f0e0464;
-        public static final int tv_hk_not_paid_detail_numbler=0x7f0e0467;
+        public static final int tv_hk_commission=0x7f0e046c;
+        public static final int tv_hk_commission_data=0x7f0e0471;
+        public static final int tv_hk_currency=0x7f0e046f;
+        public static final int tv_hk_liquidation_money=0x7f0e046a;
+        public static final int tv_hk_not_paid_deta_entrust=0x7f0e0467;
+        public static final int tv_hk_not_paid_deta_price=0x7f0e0465;
+        public static final int tv_hk_not_paid_detail_numbler=0x7f0e0468;
         public static final int tv_hk_other_sale=0x7f0e0232;
         public static final int tv_hk_revocation=0x7f0e0235;
-        public static final int tv_hk_revocation_bs=0x7f0e0478;
-        public static final int tv_hk_revocation_code=0x7f0e047a;
-        public static final int tv_hk_revocation_date=0x7f0e047b;
-        public static final int tv_hk_revocation_entrust_num=0x7f0e047d;
-        public static final int tv_hk_revocation_entrust_price=0x7f0e047c;
-        public static final int tv_hk_revocation_name=0x7f0e0479;
-        public static final int tv_hk_revocation_trade_num=0x7f0e047f;
-        public static final int tv_hk_revocation_trade_price=0x7f0e047e;
+        public static final int tv_hk_revocation_bs=0x7f0e0479;
+        public static final int tv_hk_revocation_code=0x7f0e047b;
+        public static final int tv_hk_revocation_date=0x7f0e047c;
+        public static final int tv_hk_revocation_entrust_num=0x7f0e047e;
+        public static final int tv_hk_revocation_entrust_price=0x7f0e047d;
+        public static final int tv_hk_revocation_name=0x7f0e047a;
+        public static final int tv_hk_revocation_trade_num=0x7f0e0480;
+        public static final int tv_hk_revocation_trade_price=0x7f0e047f;
         public static final int tv_hk_sale=0x7f0e0231;
-        public static final int tv_hk_settlement_rate=0x7f0e046d;
-        public static final int tv_hk_stamp_duty=0x7f0e046a;
-        public static final int tv_hk_transaction_number=0x7f0e046c;
-        public static final int tv_hk_transaction_price=0x7f0e0465;
+        public static final int tv_hk_settlement_rate=0x7f0e046e;
+        public static final int tv_hk_stamp_duty=0x7f0e046b;
+        public static final int tv_hk_transaction_number=0x7f0e046d;
+        public static final int tv_hk_transaction_price=0x7f0e0466;
         public static final int tv_hk_vote_name=0x7f0e0247;
-        public static final int tv_hold_amount=0x7f0e048c;
-        public static final int tv_hold_list_item_expend_buy=0x7f0e03bf;
-        public static final int tv_hold_list_item_expend_hq=0x7f0e03c1;
-        public static final int tv_hold_list_item_expend_sale=0x7f0e03c0;
+        public static final int tv_hold_amount=0x7f0e048d;
+        public static final int tv_hold_list_item_expend_buy=0x7f0e03bb;
+        public static final int tv_hold_list_item_expend_hq=0x7f0e03bd;
+        public static final int tv_hold_list_item_expend_sale=0x7f0e03bc;
         public static final int tv_hold_stock=0x7f0e02e4;
-        public static final int tv_holder_account=0x7f0e03dd;
+        public static final int tv_holder_account=0x7f0e03de;
         public static final int tv_holdpager_bank=0x7f0e0157;
         public static final int tv_home_g_g_t=0x7f0e001e;
         public static final int tv_home_trans_stock=0x7f0e001f;
@@ -3138,8 +3155,8 @@ containing a value of this type.
         public static final int tv_in_fund_redemption_all_button=0x7f0e0271;
         public static final int tv_in_fund_redemption_amount_input=0x7f0e0272;
         public static final int tv_in_fund_redemption_upper_limit_show=0x7f0e0270;
-        public static final int tv_in_fund_stock_code=0x7f0e04a7;
-        public static final int tv_in_fund_stock_name=0x7f0e04a6;
+        public static final int tv_in_fund_stock_code=0x7f0e04a8;
+        public static final int tv_in_fund_stock_name=0x7f0e04a7;
         public static final int tv_in_fund_subscription=0x7f0e0256;
         public static final int tv_in_fund_subscription_all_button=0x7f0e0265;
         public static final int tv_in_fund_subscription_money_input=0x7f0e0268;
@@ -3151,21 +3168,21 @@ containing a value of this type.
         public static final int tv_in_monetary_fund_purchase=0x7f0e0253;
         public static final int tv_in_monetary_fund_redemption=0x7f0e0254;
         public static final int tv_in_monetary_fund_subscription=0x7f0e0252;
-        public static final int tv_income_balance=0x7f0e050a;
+        public static final int tv_income_balance=0x7f0e050b;
         public static final int tv_increase_amount=0x7f0e012a;
-        public static final int tv_inform_day=0x7f0e041f;
-        public static final int tv_inform_type=0x7f0e041e;
-        public static final int tv_input_num=0x7f0e04c1;
-        public static final int tv_item=0x7f0e0510;
-        public static final int tv_item_expend_buy=0x7f0e03d9;
-        public static final int tv_item_expend_details=0x7f0e03db;
-        public static final int tv_item_expend_sale=0x7f0e03da;
-        public static final int tv_item_search_stock_code=0x7f0e0511;
-        public static final int tv_item_search_stock_name=0x7f0e0512;
-        public static final int tv_jsdate=0x7f0e0417;
+        public static final int tv_inform_day=0x7f0e0420;
+        public static final int tv_inform_type=0x7f0e041f;
+        public static final int tv_input_num=0x7f0e04c2;
+        public static final int tv_item=0x7f0e0511;
+        public static final int tv_item_expend_buy=0x7f0e03da;
+        public static final int tv_item_expend_details=0x7f0e03dc;
+        public static final int tv_item_expend_sale=0x7f0e03db;
+        public static final int tv_item_search_stock_code=0x7f0e0512;
+        public static final int tv_item_search_stock_name=0x7f0e0513;
+        public static final int tv_jsdate=0x7f0e0418;
         public static final int tv_keep=0x7f0e0173;
-        public static final int tv_last_price=0x7f0e048b;
-        public static final int tv_lastmktvalue=0x7f0e041c;
+        public static final int tv_last_price=0x7f0e048c;
+        public static final int tv_lastmktvalue=0x7f0e041d;
         public static final int tv_level_buy_divide=0x7f0e0277;
         public static final int tv_level_buy_ransom=0x7f0e0275;
         public static final int tv_level_buy_revocation=0x7f0e0276;
@@ -3182,7 +3199,7 @@ containing a value of this type.
         public static final int tv_level_select_entrust=0x7f0e0287;
         public static final int tv_level_select_trade=0x7f0e028a;
         public static final int tv_level_select_ttrade=0x7f0e0288;
-        public static final int tv_lgtrdstatusName=0x7f0e0481;
+        public static final int tv_lgtrdstatusName=0x7f0e0482;
         public static final int tv_limit_all=0x7f0e0322;
         public static final int tv_limit_other_quan=0x7f0e0324;
         public static final int tv_limit_other_zi=0x7f0e0323;
@@ -3197,24 +3214,24 @@ containing a value of this type.
         public static final int tv_main_today_profit_a=0x7f0e01ae;
         public static final int tv_market_arrows=0x7f0e0305;
         public static final int tv_market_entrust=0x7f0e0304;
-        public static final int tv_market_price=0x7f0e03bb;
-        public static final int tv_market_value=0x7f0e03b4;
-        public static final int tv_market_year=0x7f0e0474;
-        public static final int tv_matchamt=0x7f0e03d0;
-        public static final int tv_matchqty=0x7f0e03cf;
+        public static final int tv_market_price=0x7f0e03b7;
+        public static final int tv_market_value=0x7f0e03af;
+        public static final int tv_market_year=0x7f0e0475;
+        public static final int tv_matchamt=0x7f0e03cf;
+        public static final int tv_matchqty=0x7f0e03ce;
         public static final int tv_max_enable=0x7f0e02d9;
         public static final int tv_max_text=0x7f0e02dd;
-        public static final int tv_menu_item=0x7f0e03e5;
-        public static final int tv_midrate=0x7f0e043a;
-        public static final int tv_mkttrdstatus_name=0x7f0e045f;
+        public static final int tv_menu_item=0x7f0e03e6;
+        public static final int tv_midrate=0x7f0e043b;
+        public static final int tv_mkttrdstatus_name=0x7f0e0460;
         public static final int tv_modified_trade_password=0x7f0e0020;
         public static final int tv_monetary_unit=0x7f0e0155;
         public static final int tv_money_number=0x7f0e022b;
-        public static final int tv_money_type_name=0x7f0e03d4;
-        public static final int tv_money_type_name1=0x7f0e0486;
+        public static final int tv_money_type_name=0x7f0e03d3;
+        public static final int tv_money_type_name1=0x7f0e0487;
         public static final int tv_money_unit=0x7f0e022c;
-        public static final int tv_more_menu_item=0x7f0e04bc;
-        public static final int tv_motion_id=0x7f0e04a2;
+        public static final int tv_more_menu_item=0x7f0e04bd;
+        public static final int tv_motion_id=0x7f0e04a3;
         public static final int tv_my_hold=0x7f0e0021;
         public static final int tv_myhold_canget=0x7f0e01e6;
         public static final int tv_myhold_cangeta=0x7f0e01e7;
@@ -3246,33 +3263,33 @@ containing a value of this type.
         public static final int tv_newtock=0x7f0e0320;
         public static final int tv_no=0x7f0e03ab;
         public static final int tv_no_data_set=0x7f0e019e;
-        public static final int tv_note_date=0x7f0e0471;
-        public static final int tv_notice_sn=0x7f0e0500;
+        public static final int tv_note_date=0x7f0e0472;
+        public static final int tv_notice_sn=0x7f0e0501;
         public static final int tv_now_price=0x7f0e0129;
         public static final int tv_nstock=0x7f0e0314;
         public static final int tv_num=0x7f0e01bf;
         public static final int tv_num_add=0x7f0e02d8;
         public static final int tv_num_cut=0x7f0e02d6;
         public static final int tv_nw_stock=0x7f0e031c;
-        public static final int tv_object_code=0x7f0e051a;
-        public static final int tv_object_market=0x7f0e051c;
-        public static final int tv_object_name=0x7f0e0519;
-        public static final int tv_object_per=0x7f0e051b;
-        public static final int tv_occur_balance=0x7f0e03d1;
-        public static final int tv_on_way_in=0x7f0e0491;
-        public static final int tv_on_way_out=0x7f0e0492;
+        public static final int tv_object_code=0x7f0e051b;
+        public static final int tv_object_market=0x7f0e051d;
+        public static final int tv_object_name=0x7f0e051a;
+        public static final int tv_object_per=0x7f0e051c;
+        public static final int tv_occur_balance=0x7f0e03d0;
+        public static final int tv_on_way_in=0x7f0e0492;
+        public static final int tv_on_way_out=0x7f0e0493;
         public static final int tv_oneKey_collection=0x7f0e0024;
         public static final int tv_one_eight=0x7f0e033c;
         public static final int tv_one_five=0x7f0e0339;
         public static final int tv_one_four=0x7f0e0338;
-        public static final int tv_one_key_can_use=0x7f0e03ca;
-        public static final int tv_one_key_money=0x7f0e03c9;
-        public static final int tv_one_key_name=0x7f0e03c7;
+        public static final int tv_one_key_can_use=0x7f0e03c6;
+        public static final int tv_one_key_money=0x7f0e03c5;
+        public static final int tv_one_key_name=0x7f0e03c3;
         public static final int tv_one_key_sub=0x7f0e02a5;
-        public static final int tv_one_key_sub_max=0x7f0e04e0;
-        public static final int tv_one_key_sub_num=0x7f0e04e1;
-        public static final int tv_one_key_sub_price=0x7f0e04df;
-        public static final int tv_one_key_type=0x7f0e03c8;
+        public static final int tv_one_key_sub_max=0x7f0e04e1;
+        public static final int tv_one_key_sub_num=0x7f0e04e2;
+        public static final int tv_one_key_sub_price=0x7f0e04e0;
+        public static final int tv_one_key_type=0x7f0e03c4;
         public static final int tv_one_night=0x7f0e033d;
         public static final int tv_one_one=0x7f0e0335;
         public static final int tv_one_seven=0x7f0e033b;
@@ -3287,24 +3304,24 @@ containing a value of this type.
         public static final int tv_onekey_money=0x7f0e02c0;
         public static final int tv_onem_in_account=0x7f0e016f;
         public static final int tv_onem_out_account=0x7f0e016e;
-        public static final int tv_open_date=0x7f0e03e7;
+        public static final int tv_open_date=0x7f0e03e8;
         public static final int tv_open_status=0x7f0e0182;
-        public static final int tv_oppose_amount=0x7f0e04a4;
-        public static final int tv_opt_business_price=0x7f0e04ff;
-        public static final int tv_opt_entrust_price=0x7f0e04fe;
-        public static final int tv_opthold_type_name=0x7f0e04fd;
+        public static final int tv_oppose_amount=0x7f0e04a5;
+        public static final int tv_opt_business_price=0x7f0e0500;
+        public static final int tv_opt_entrust_price=0x7f0e04ff;
+        public static final int tv_opthold_type_name=0x7f0e04fe;
         public static final int tv_option_change_pwd=0x7f0e02cb;
         public static final int tv_option_code=0x7f0e02e5;
-        public static final int tv_option_contract_bs=0x7f0e04f3;
-        public static final int tv_option_contract_name=0x7f0e04f1;
-        public static final int tv_option_contract_type=0x7f0e04f2;
-        public static final int tv_option_name=0x7f0e04fa;
+        public static final int tv_option_contract_bs=0x7f0e04f4;
+        public static final int tv_option_contract_name=0x7f0e04f2;
+        public static final int tv_option_contract_type=0x7f0e04f3;
+        public static final int tv_option_name=0x7f0e04fb;
         public static final int tv_option_revocation=0x7f0e02ca;
-        public static final int tv_option_type_name=0x7f0e04fc;
-        public static final int tv_order_date=0x7f0e04c9;
-        public static final int tv_order_group=0x7f0e04c8;
-        public static final int tv_order_sno=0x7f0e04c7;
-        public static final int tv_order_status=0x7f0e04d1;
+        public static final int tv_option_type_name=0x7f0e04fd;
+        public static final int tv_order_date=0x7f0e04ca;
+        public static final int tv_order_group=0x7f0e04c9;
+        public static final int tv_order_sno=0x7f0e04c8;
+        public static final int tv_order_status=0x7f0e04d2;
         public static final int tv_out=0x7f0e00de;
         public static final int tv_out_fund_account=0x7f0e01d6;
         public static final int tv_out_fund_company=0x7f0e0213;
@@ -3320,21 +3337,21 @@ containing a value of this type.
         public static final int tv_out_fund_sub=0x7f0e01d1;
         public static final int tv_out_fund_subtion=0x7f0e01d0;
         public static final int tv_out_fund_trans_out=0x7f0e0211;
-        public static final int tv_outf_code=0x7f0e03f4;
-        public static final int tv_outf_count=0x7f0e03f8;
-        public static final int tv_outf_name=0x7f0e03f3;
-        public static final int tv_outf_profit=0x7f0e03f6;
-        public static final int tv_outf_share=0x7f0e03f9;
-        public static final int tv_outf_status=0x7f0e03f5;
-        public static final int tv_outf_value=0x7f0e03f7;
-        public static final int tv_placard_id=0x7f0e04a1;
+        public static final int tv_outf_code=0x7f0e03f5;
+        public static final int tv_outf_count=0x7f0e03f9;
+        public static final int tv_outf_name=0x7f0e03f4;
+        public static final int tv_outf_profit=0x7f0e03f7;
+        public static final int tv_outf_share=0x7f0e03fa;
+        public static final int tv_outf_status=0x7f0e03f6;
+        public static final int tv_outf_value=0x7f0e03f8;
+        public static final int tv_placard_id=0x7f0e04a2;
         public static final int tv_pop_cancel=0x7f0e00bf;
         public static final int tv_pop_code=0x7f0e00e3;
         public static final int tv_pop_code_text=0x7f0e00e2;
         public static final int tv_pop_entrust_number=0x7f0e00e6;
-        public static final int tv_pop_fund_code=0x7f0e050e;
-        public static final int tv_pop_fund_left=0x7f0e050d;
-        public static final int tv_pop_fund_name=0x7f0e050f;
+        public static final int tv_pop_fund_code=0x7f0e050f;
+        public static final int tv_pop_fund_left=0x7f0e050e;
+        public static final int tv_pop_fund_name=0x7f0e0510;
         public static final int tv_pop_msg=0x7f0e00cf;
         public static final int tv_pop_name=0x7f0e00e1;
         public static final int tv_pop_name_text=0x7f0e00c2;
@@ -3344,23 +3361,23 @@ containing a value of this type.
         public static final int tv_price=0x7f0e01c0;
         public static final int tv_price_add=0x7f0e02d5;
         public static final int tv_price_cut=0x7f0e02d3;
-        public static final int tv_product_status=0x7f0e045e;
-        public static final int tv_qsdate=0x7f0e0419;
+        public static final int tv_product_status=0x7f0e045f;
+        public static final int tv_qsdate=0x7f0e041a;
         public static final int tv_quarter_num=0x7f0e0125;
         public static final int tv_querry_indebtedness=0x7f0e0177;
         public static final int tv_query=0x7f0e01b5;
         public static final int tv_r_assure_buy=0x7f0e0308;
         public static final int tv_r_assure_sell=0x7f0e0309;
-        public static final int tv_r_begin_date=0x7f0e051e;
-        public static final int tv_r_bs=0x7f0e053e;
-        public static final int tv_r_bscode=0x7f0e0541;
-        public static final int tv_r_bsname=0x7f0e0540;
-        public static final int tv_r_bsnum=0x7f0e0543;
-        public static final int tv_r_bsprice=0x7f0e0542;
-        public static final int tv_r_bsstatus=0x7f0e053f;
-        public static final int tv_r_bstime=0x7f0e0546;
-        public static final int tv_r_business_balance=0x7f0e0521;
-        public static final int tv_r_business_price=0x7f0e0552;
+        public static final int tv_r_begin_date=0x7f0e051f;
+        public static final int tv_r_bs=0x7f0e053f;
+        public static final int tv_r_bscode=0x7f0e0542;
+        public static final int tv_r_bsname=0x7f0e0541;
+        public static final int tv_r_bsnum=0x7f0e0544;
+        public static final int tv_r_bsprice=0x7f0e0543;
+        public static final int tv_r_bsstatus=0x7f0e0540;
+        public static final int tv_r_bstime=0x7f0e0547;
+        public static final int tv_r_business_balance=0x7f0e0522;
+        public static final int tv_r_business_price=0x7f0e0553;
         public static final int tv_r_buy_coupon_payments=0x7f0e030d;
         public static final int tv_r_buy_in=0x7f0e0306;
         public static final int tv_r_cash_can_use=0x7f0e02ea;
@@ -3369,28 +3386,28 @@ containing a value of this type.
         public static final int tv_r_contract=0x7f0e0311;
         public static final int tv_r_contract_id=0x7f0e02f6;
         public static final int tv_r_end_date=0x7f0e02f7;
-        public static final int tv_r_entrust_bs=0x7f0e0547;
+        public static final int tv_r_entrust_bs=0x7f0e0548;
         public static final int tv_r_equity_trading=0x7f0e030f;
         public static final int tv_r_money_payments=0x7f0e030b;
-        public static final int tv_r_money_type_name=0x7f0e0554;
+        public static final int tv_r_money_type_name=0x7f0e0555;
         public static final int tv_r_more=0x7f0e0313;
-        public static final int tv_r_not_bs=0x7f0e0529;
-        public static final int tv_r_not_cash=0x7f0e0530;
-        public static final int tv_r_not_code=0x7f0e0527;
-        public static final int tv_r_not_cut_date=0x7f0e0535;
-        public static final int tv_r_not_date=0x7f0e0528;
-        public static final int tv_r_not_id=0x7f0e0536;
-        public static final int tv_r_not_money=0x7f0e052f;
-        public static final int tv_r_not_name=0x7f0e0526;
-        public static final int tv_r_not_not_fa=0x7f0e0534;
-        public static final int tv_r_not_not_li=0x7f0e0532;
-        public static final int tv_r_not_r_money=0x7f0e052d;
-        public static final int tv_r_not_status=0x7f0e052a;
-        public static final int tv_r_not_trade_balances=0x7f0e052c;
-        public static final int tv_r_not_trade_num=0x7f0e052b;
-        public static final int tv_r_not_yes_fa=0x7f0e0533;
-        public static final int tv_r_not_yes_li=0x7f0e0531;
-        public static final int tv_r_not_yk=0x7f0e052e;
+        public static final int tv_r_not_bs=0x7f0e052a;
+        public static final int tv_r_not_cash=0x7f0e0531;
+        public static final int tv_r_not_code=0x7f0e0528;
+        public static final int tv_r_not_cut_date=0x7f0e0536;
+        public static final int tv_r_not_date=0x7f0e0529;
+        public static final int tv_r_not_id=0x7f0e0537;
+        public static final int tv_r_not_money=0x7f0e0530;
+        public static final int tv_r_not_name=0x7f0e0527;
+        public static final int tv_r_not_not_fa=0x7f0e0535;
+        public static final int tv_r_not_not_li=0x7f0e0533;
+        public static final int tv_r_not_r_money=0x7f0e052e;
+        public static final int tv_r_not_status=0x7f0e052b;
+        public static final int tv_r_not_trade_balances=0x7f0e052d;
+        public static final int tv_r_not_trade_num=0x7f0e052c;
+        public static final int tv_r_not_yes_fa=0x7f0e0534;
+        public static final int tv_r_not_yes_li=0x7f0e0532;
+        public static final int tv_r_not_yk=0x7f0e052f;
         public static final int tv_r_open_date=0x7f0e02f4;
         public static final int tv_r_pager_all=0x7f0e02f9;
         public static final int tv_r_pager_alla=0x7f0e02fa;
@@ -3404,7 +3421,7 @@ containing a value of this type.
         public static final int tv_r_pager_per=0x7f0e02fe;
         public static final int tv_r_pager_pera=0x7f0e02ff;
         public static final int tv_r_payments=0x7f0e030e;
-        public static final int tv_r_real_compact_balance=0x7f0e0520;
+        public static final int tv_r_real_compact_balance=0x7f0e0521;
         public static final int tv_r_return_all=0x7f0e02ec;
         public static final int tv_r_return_stock_all=0x7f0e0355;
         public static final int tv_r_return_stock_max_num=0x7f0e0356;
@@ -3413,31 +3430,31 @@ containing a value of this type.
         public static final int tv_r_sell_out=0x7f0e0307;
         public static final int tv_r_stock_code=0x7f0e02f3;
         public static final int tv_r_stock_name=0x7f0e02f5;
-        public static final int tv_r_trade_balances=0x7f0e054b;
-        public static final int tv_r_trade_code=0x7f0e054a;
-        public static final int tv_r_trade_name=0x7f0e0549;
-        public static final int tv_r_trade_num=0x7f0e0545;
-        public static final int tv_r_trade_price=0x7f0e0544;
-        public static final int tv_r_trade_time=0x7f0e0548;
-        public static final int tv_r_water_balance=0x7f0e0550;
-        public static final int tv_r_water_bs=0x7f0e054d;
-        public static final int tv_r_water_date=0x7f0e054e;
-        public static final int tv_r_water_entrust_no=0x7f0e054f;
-        public static final int tv_r_water_num=0x7f0e0551;
-        public static final int tv_r_water_post_money=0x7f0e0553;
+        public static final int tv_r_trade_balances=0x7f0e054c;
+        public static final int tv_r_trade_code=0x7f0e054b;
+        public static final int tv_r_trade_name=0x7f0e054a;
+        public static final int tv_r_trade_num=0x7f0e0546;
+        public static final int tv_r_trade_price=0x7f0e0545;
+        public static final int tv_r_trade_time=0x7f0e0549;
+        public static final int tv_r_water_balance=0x7f0e0551;
+        public static final int tv_r_water_bs=0x7f0e054e;
+        public static final int tv_r_water_date=0x7f0e054f;
+        public static final int tv_r_water_entrust_no=0x7f0e0550;
+        public static final int tv_r_water_num=0x7f0e0552;
+        public static final int tv_r_water_post_money=0x7f0e0554;
         public static final int tv_radio_back=0x7f0e019b;
         public static final int tv_radio_right=0x7f0e019c;
         public static final int tv_ransom_fundname=0x7f0e01f3;
         public static final int tv_ratio_win_lose=0x7f0e024f;
         public static final int tv_refer_pofit=0x7f0e0159;
-        public static final int tv_report_id=0x7f0e0425;
-        public static final int tv_report_time=0x7f0e04d0;
-        public static final int tv_report_type=0x7f0e0423;
+        public static final int tv_report_id=0x7f0e0426;
+        public static final int tv_report_time=0x7f0e04d1;
+        public static final int tv_report_type=0x7f0e0424;
         public static final int tv_reset=0x7f0e009a;
         public static final int tv_retest=0x7f0e0206;
         public static final int tv_revocation=0x7f0e01b4;
-        public static final int tv_revocation_time=0x7f0e04ab;
-        public static final int tv_risk_id=0x7f0e0503;
+        public static final int tv_revocation_time=0x7f0e04ac;
+        public static final int tv_risk_id=0x7f0e0504;
         public static final int tv_risk_test_value_date=0x7f0e0205;
         public static final int tv_risk_test_value_is_over_date=0x7f0e0204;
         public static final int tv_risk_test_value_level=0x7f0e0203;
@@ -3451,13 +3468,13 @@ containing a value of this type.
         public static final int tv_sale4_price=0x7f0e012f;
         public static final int tv_sale5_amount=0x7f0e012d;
         public static final int tv_sale5_price=0x7f0e012c;
-        public static final int tv_sale_amount=0x7f0e0555;
+        public static final int tv_sale_amount=0x7f0e0556;
         public static final int tv_sale_close=0x7f0e02c4;
         public static final int tv_sale_open=0x7f0e02c2;
-        public static final int tv_salerate=0x7f0e0439;
-        public static final int tv_securities=0x7f0e03b3;
-        public static final int tv_security_name=0x7f0e04a9;
-        public static final int tv_security_number=0x7f0e04aa;
+        public static final int tv_salerate=0x7f0e043a;
+        public static final int tv_securities=0x7f0e03ae;
+        public static final int tv_security_name=0x7f0e04aa;
+        public static final int tv_security_number=0x7f0e04ab;
         public static final int tv_sele_history_entrust=0x7f0e01fd;
         public static final int tv_sele_history_trade=0x7f0e01fe;
         public static final int tv_sele_ransom_risk=0x7f0e01ff;
@@ -3467,7 +3484,7 @@ containing a value of this type.
         public static final int tv_sele_today_trade=0x7f0e01fb;
         public static final int tv_select_business_type=0x7f0e0181;
         public static final int tv_select_capital_stock=0x7f0e0236;
-        public static final int tv_select_code=0x7f0e03fb;
+        public static final int tv_select_code=0x7f0e03fc;
         public static final int tv_select_combined=0x7f0e023a;
         public static final int tv_select_company_action=0x7f0e0234;
         public static final int tv_select_contract=0x7f0e02cc;
@@ -3476,56 +3493,56 @@ containing a value of this type.
         public static final int tv_select_data=0x7f0e015f;
         public static final int tv_select_data_take=0x7f0e01f1;
         public static final int tv_select_delivery_order=0x7f0e0243;
-        public static final int tv_select_distribute_data=0x7f0e04d9;
+        public static final int tv_select_distribute_data=0x7f0e04da;
         public static final int tv_select_distribute_number=0x7f0e017e;
-        public static final int tv_select_entrust=0x7f0e04d5;
-        public static final int tv_select_entrust_number=0x7f0e0497;
-        public static final int tv_select_entrust_price=0x7f0e0495;
+        public static final int tv_select_entrust=0x7f0e04d6;
+        public static final int tv_select_entrust_number=0x7f0e0498;
+        public static final int tv_select_entrust_price=0x7f0e0496;
         public static final int tv_select_exchange=0x7f0e023d;
         public static final int tv_select_fund=0x7f0e0239;
         public static final int tv_select_histortradey_entrust=0x7f0e017a;
         public static final int tv_select_history_trade=0x7f0e017b;
-        public static final int tv_select_hk_bs=0x7f0e0499;
+        public static final int tv_select_hk_bs=0x7f0e049a;
         public static final int tv_select_liabilities=0x7f0e023b;
         public static final int tv_select_limit=0x7f0e023e;
         public static final int tv_select_market_day=0x7f0e0245;
-        public static final int tv_select_name=0x7f0e03fa;
+        public static final int tv_select_name=0x7f0e03fb;
         public static final int tv_select_no_trade=0x7f0e0237;
         public static final int tv_select_notification=0x7f0e0244;
         public static final int tv_select_numberwinning=0x7f0e017f;
         public static final int tv_select_price_difference=0x7f0e023c;
-        public static final int tv_select_securit_name=0x7f0e0493;
+        public static final int tv_select_securit_name=0x7f0e0494;
         public static final int tv_select_securities=0x7f0e0238;
         public static final int tv_select_statement_account=0x7f0e017c;
-        public static final int tv_select_status=0x7f0e0402;
+        public static final int tv_select_status=0x7f0e0403;
         public static final int tv_select_stock=0x7f0e02a0;
         public static final int tv_select_stock_account=0x7f0e0180;
         public static final int tv_select_sub_bs=0x7f0e02d2;
-        public static final int tv_select_time=0x7f0e0494;
+        public static final int tv_select_time=0x7f0e0495;
         public static final int tv_select_today_entrust=0x7f0e0178;
         public static final int tv_select_today_money=0x7f0e017d;
         public static final int tv_select_today_trade=0x7f0e0179;
-        public static final int tv_select_trade_number=0x7f0e0498;
-        public static final int tv_select_trade_price=0x7f0e0496;
-        public static final int tv_select_trade_status=0x7f0e049a;
+        public static final int tv_select_trade_number=0x7f0e0499;
+        public static final int tv_select_trade_price=0x7f0e0497;
+        public static final int tv_select_trade_status=0x7f0e049b;
         public static final int tv_select_vote_sub=0x7f0e0233;
         public static final int tv_select_voting_msg=0x7f0e0240;
         public static final int tv_select_voting_trust=0x7f0e023f;
         public static final int tv_sell=0x7f0e01b3;
         public static final int tv_sell_yu=0x7f0e0026;
-        public static final int tv_send_date=0x7f0e0506;
-        public static final int tv_send_time=0x7f0e0507;
-        public static final int tv_send_type=0x7f0e0502;
-        public static final int tv_set_balance=0x7f0e042a;
+        public static final int tv_send_date=0x7f0e0507;
+        public static final int tv_send_time=0x7f0e0508;
+        public static final int tv_send_type=0x7f0e0503;
+        public static final int tv_set_balance=0x7f0e042b;
         public static final int tv_set_data_end=0x7f0e015e;
         public static final int tv_set_data_start=0x7f0e015c;
-        public static final int tv_settrate=0x7f0e041a;
-        public static final int tv_share_set_code=0x7f0e040e;
-        public static final int tv_share_set_hold=0x7f0e0412;
-        public static final int tv_share_set_market=0x7f0e0411;
-        public static final int tv_share_set_name=0x7f0e040d;
-        public static final int tv_share_set_profit=0x7f0e0410;
-        public static final int tv_share_set_status=0x7f0e040f;
+        public static final int tv_settrate=0x7f0e041b;
+        public static final int tv_share_set_code=0x7f0e040f;
+        public static final int tv_share_set_hold=0x7f0e0413;
+        public static final int tv_share_set_market=0x7f0e0412;
+        public static final int tv_share_set_name=0x7f0e040e;
+        public static final int tv_share_set_profit=0x7f0e0411;
+        public static final int tv_share_set_status=0x7f0e0410;
         public static final int tv_should_money=0x7f0e02a2;
         public static final int tv_show_content=0x7f0e02e7;
         public static final int tv_show_faq=0x7f0e01ce;
@@ -3533,42 +3550,42 @@ containing a value of this type.
         public static final int tv_show_pop_more_account=0x7f0e010e;
         public static final int tv_show_pop_more_account_pre=0x7f0e010b;
         public static final int tv_sign_agreement=0x7f0e0027;
-        public static final int tv_sno=0x7f0e0416;
+        public static final int tv_sno=0x7f0e0417;
         public static final int tv_state=0x7f0e03ac;
-        public static final int tv_step_price=0x7f0e0437;
-        public static final int tv_stkbal=0x7f0e03d2;
-        public static final int tv_stock_account=0x7f0e04cd;
+        public static final int tv_step_price=0x7f0e0438;
+        public static final int tv_stkbal=0x7f0e03d1;
+        public static final int tv_stock_account=0x7f0e04ce;
         public static final int tv_stock_code=0x7f0e00ed;
         public static final int tv_stock_max_num=0x7f0e011f;
         public static final int tv_stock_name=0x7f0e0218;
         public static final int tv_stock_num_pre=0x7f0e0121;
-        public static final int tv_stock_type_name=0x7f0e0436;
+        public static final int tv_stock_type_name=0x7f0e0437;
         public static final int tv_stock_unit=0x7f0e0120;
-        public static final int tv_stockcode=0x7f0e03c4;
-        public static final int tv_store=0x7f0e03b7;
+        public static final int tv_stockcode=0x7f0e03c0;
+        public static final int tv_store=0x7f0e03b2;
         public static final int tv_sub_select=0x7f0e02a6;
         public static final int tv_subscribe_amount_max=0x7f0e02b1;
-        public static final int tv_subscribe_code=0x7f0e04e4;
-        public static final int tv_subscribe_name=0x7f0e04e3;
+        public static final int tv_subscribe_code=0x7f0e04e5;
+        public static final int tv_subscribe_name=0x7f0e04e4;
         public static final int tv_subscribe_price=0x7f0e02af;
-        public static final int tv_subscribe_unit=0x7f0e04e5;
-        public static final int tv_subscribe_uplimit=0x7f0e04e6;
-        public static final int tv_sumdebtamt=0x7f0e045b;
-        public static final int tv_sumpaidamt=0x7f0e045a;
-        public static final int tv_sure=0x7f0e05d6;
-        public static final int tv_surplus_amount=0x7f0e042c;
-        public static final int tv_surplus_balance=0x7f0e042b;
-        public static final int tv_surplus_quota=0x7f0e045d;
-        public static final int tv_sysdate=0x7f0e043d;
+        public static final int tv_subscribe_unit=0x7f0e04e6;
+        public static final int tv_subscribe_uplimit=0x7f0e04e7;
+        public static final int tv_sumdebtamt=0x7f0e045c;
+        public static final int tv_sumpaidamt=0x7f0e045b;
+        public static final int tv_sure=0x7f0e05d7;
+        public static final int tv_surplus_amount=0x7f0e042d;
+        public static final int tv_surplus_balance=0x7f0e042c;
+        public static final int tv_surplus_quota=0x7f0e045e;
+        public static final int tv_sysdate=0x7f0e043e;
         public static final int tv_tab_credit=0x7f0e0362;
         public static final int tv_tab_left=0x7f0e008d;
         public static final int tv_tab_normal=0x7f0e0361;
         public static final int tv_tab_right=0x7f0e008e;
-        public static final int tv_tfund_code=0x7f0e04b9;
-        public static final int tv_tfund_count=0x7f0e04ba;
-        public static final int tv_tfund_name=0x7f0e04b8;
-        public static final int tv_tfund_price=0x7f0e04bb;
-        public static final int tv_tfund_time=0x7f0e04b7;
+        public static final int tv_tfund_code=0x7f0e04ba;
+        public static final int tv_tfund_count=0x7f0e04bb;
+        public static final int tv_tfund_name=0x7f0e04b9;
+        public static final int tv_tfund_price=0x7f0e04bc;
+        public static final int tv_tfund_time=0x7f0e04b8;
         public static final int tv_third_num=0x7f0e0124;
         public static final int tv_three_five=0x7f0e0350;
         public static final int tv_three_four=0x7f0e034f;
@@ -3584,64 +3601,64 @@ containing a value of this type.
         public static final int tv_title=0x7f0e009d;
         public static final int tv_title_below=0x7f0e009e;
         public static final int tv_title_in_fragment=0x7f0e0191;
-        public static final int tv_title_status=0x7f0e03af;
+        public static final int tv_title_status=0x7f0e03c8;
         public static final int tv_to_stock_bank=0x7f0e00ab;
         public static final int tv_today_entrust=0x7f0e0028;
-        public static final int tv_today_entrust_item_expend_buy=0x7f0e03e1;
-        public static final int tv_today_entrust_item_expend_details=0x7f0e03e3;
-        public static final int tv_today_entrust_item_expend_sale=0x7f0e03e2;
+        public static final int tv_today_entrust_item_expend_buy=0x7f0e03e2;
+        public static final int tv_today_entrust_item_expend_details=0x7f0e03e4;
+        public static final int tv_today_entrust_item_expend_sale=0x7f0e03e3;
         public static final int tv_today_refer_profit=0x7f0e015a;
         public static final int tv_today_trade=0x7f0e0029;
-        public static final int tv_today_trade_bs=0x7f0e04a0;
-        public static final int tv_today_trade_count=0x7f0e049e;
-        public static final int tv_today_trade_money=0x7f0e049f;
-        public static final int tv_today_trade_name=0x7f0e049b;
-        public static final int tv_today_trade_pric=0x7f0e049d;
-        public static final int tv_today_trade_time=0x7f0e049c;
+        public static final int tv_today_trade_bs=0x7f0e04a1;
+        public static final int tv_today_trade_count=0x7f0e049f;
+        public static final int tv_today_trade_money=0x7f0e04a0;
+        public static final int tv_today_trade_name=0x7f0e049c;
+        public static final int tv_today_trade_pric=0x7f0e049e;
+        public static final int tv_today_trade_time=0x7f0e049d;
         public static final int tv_toopen_account=0x7f0e01cf;
         public static final int tv_total_assets=0x7f0e0174;
         public static final int tv_total_indebtedness=0x7f0e0176;
         public static final int tv_total_price=0x7f0e01c1;
-        public static final int tv_total_quota=0x7f0e045c;
-        public static final int tv_total_stock_code=0x7f0e04de;
-        public static final int tv_total_stock_name=0x7f0e04dd;
-        public static final int tv_trade_count=0x7f0e04af;
-        public static final int tv_trade_date=0x7f0e0420;
+        public static final int tv_total_quota=0x7f0e045d;
+        public static final int tv_total_stock_code=0x7f0e04df;
+        public static final int tv_total_stock_name=0x7f0e04de;
+        public static final int tv_trade_count=0x7f0e04b0;
+        public static final int tv_trade_date=0x7f0e0421;
         public static final int tv_trade_limit=0x7f0e021d;
         public static final int tv_trade_market=0x7f0e021f;
-        public static final int tv_trade_value=0x7f0e04ad;
+        public static final int tv_trade_value=0x7f0e04ae;
         public static final int tv_trans_bank_click=0x7f0e02e6;
         public static final int tv_trans_buy=0x7f0e0364;
         public static final int tv_trans_click_max_all=0x7f0e0381;
-        public static final int tv_trans_down_limit=0x7f0e0581;
+        public static final int tv_trans_down_limit=0x7f0e0582;
         public static final int tv_trans_history=0x7f0e0386;
         public static final int tv_trans_history2=0x7f0e0387;
-        public static final int tv_trans_history_entrust_bs=0x7f0e0556;
-        public static final int tv_trans_history_entrust_code=0x7f0e055a;
-        public static final int tv_trans_history_entrust_date=0x7f0e0557;
-        public static final int tv_trans_history_entrust_entrust_num=0x7f0e055c;
-        public static final int tv_trans_history_entrust_entrust_price=0x7f0e055b;
-        public static final int tv_trans_history_entrust_name=0x7f0e0559;
-        public static final int tv_trans_history_entrust_out_account=0x7f0e0564;
-        public static final int tv_trans_history_entrust_out_xi=0x7f0e0563;
-        public static final int tv_trans_history_entrust_status=0x7f0e0558;
-        public static final int tv_trans_history_entrust_trade_num=0x7f0e055e;
-        public static final int tv_trans_history_entrust_trade_price=0x7f0e055d;
-        public static final int tv_trans_history_entrust_trade_status=0x7f0e0560;
-        public static final int tv_trans_history_entrust_yue_num=0x7f0e0561;
-        public static final int tv_trans_history_trade_bs=0x7f0e0565;
-        public static final int tv_trans_history_trade_code=0x7f0e0569;
-        public static final int tv_trans_history_trade_date=0x7f0e0566;
-        public static final int tv_trans_history_trade_entrust_num=0x7f0e056b;
-        public static final int tv_trans_history_trade_entrust_price=0x7f0e056a;
-        public static final int tv_trans_history_trade_name=0x7f0e0568;
-        public static final int tv_trans_history_trade_out_account=0x7f0e0571;
-        public static final int tv_trans_history_trade_out_xi=0x7f0e0570;
-        public static final int tv_trans_history_trade_status=0x7f0e0567;
-        public static final int tv_trans_history_trade_trade_num=0x7f0e056d;
-        public static final int tv_trans_history_trade_trade_price=0x7f0e056c;
-        public static final int tv_trans_history_trade_trade_status=0x7f0e056e;
-        public static final int tv_trans_history_trade_yue_num=0x7f0e056f;
+        public static final int tv_trans_history_entrust_bs=0x7f0e0557;
+        public static final int tv_trans_history_entrust_code=0x7f0e055b;
+        public static final int tv_trans_history_entrust_date=0x7f0e0558;
+        public static final int tv_trans_history_entrust_entrust_num=0x7f0e055d;
+        public static final int tv_trans_history_entrust_entrust_price=0x7f0e055c;
+        public static final int tv_trans_history_entrust_name=0x7f0e055a;
+        public static final int tv_trans_history_entrust_out_account=0x7f0e0565;
+        public static final int tv_trans_history_entrust_out_xi=0x7f0e0564;
+        public static final int tv_trans_history_entrust_status=0x7f0e0559;
+        public static final int tv_trans_history_entrust_trade_num=0x7f0e055f;
+        public static final int tv_trans_history_entrust_trade_price=0x7f0e055e;
+        public static final int tv_trans_history_entrust_trade_status=0x7f0e0561;
+        public static final int tv_trans_history_entrust_yue_num=0x7f0e0562;
+        public static final int tv_trans_history_trade_bs=0x7f0e0566;
+        public static final int tv_trans_history_trade_code=0x7f0e056a;
+        public static final int tv_trans_history_trade_date=0x7f0e0567;
+        public static final int tv_trans_history_trade_entrust_num=0x7f0e056c;
+        public static final int tv_trans_history_trade_entrust_price=0x7f0e056b;
+        public static final int tv_trans_history_trade_name=0x7f0e0569;
+        public static final int tv_trans_history_trade_out_account=0x7f0e0572;
+        public static final int tv_trans_history_trade_out_xi=0x7f0e0571;
+        public static final int tv_trans_history_trade_status=0x7f0e0568;
+        public static final int tv_trans_history_trade_trade_num=0x7f0e056e;
+        public static final int tv_trans_history_trade_trade_price=0x7f0e056d;
+        public static final int tv_trans_history_trade_trade_status=0x7f0e056f;
+        public static final int tv_trans_history_trade_yue_num=0x7f0e0570;
         public static final int tv_trans_limit_max=0x7f0e0383;
         public static final int tv_trans_limit_max_str=0x7f0e0382;
         public static final int tv_trans_market_buy=0x7f0e0366;
@@ -3663,73 +3680,73 @@ containing a value of this type.
         public static final int tv_trans_price_cut=0x7f0e038d;
         public static final int tv_trans_price_hq=0x7f0e0388;
         public static final int tv_trans_revocation=0x7f0e036e;
-        public static final int tv_trans_revocation_bs=0x7f0e0572;
-        public static final int tv_trans_revocation_code=0x7f0e0575;
-        public static final int tv_trans_revocation_date=0x7f0e0573;
-        public static final int tv_trans_revocation_entrust_num=0x7f0e0577;
-        public static final int tv_trans_revocation_entrust_price=0x7f0e0576;
-        public static final int tv_trans_revocation_name=0x7f0e0574;
-        public static final int tv_trans_revocation_out_account=0x7f0e057d;
-        public static final int tv_trans_revocation_out_xi=0x7f0e057c;
-        public static final int tv_trans_revocation_trade_num=0x7f0e0579;
-        public static final int tv_trans_revocation_trade_price=0x7f0e0578;
-        public static final int tv_trans_revocation_trade_status=0x7f0e057a;
-        public static final int tv_trans_revocation_yue_num=0x7f0e057b;
+        public static final int tv_trans_revocation_bs=0x7f0e0573;
+        public static final int tv_trans_revocation_code=0x7f0e0576;
+        public static final int tv_trans_revocation_date=0x7f0e0574;
+        public static final int tv_trans_revocation_entrust_num=0x7f0e0578;
+        public static final int tv_trans_revocation_entrust_price=0x7f0e0577;
+        public static final int tv_trans_revocation_name=0x7f0e0575;
+        public static final int tv_trans_revocation_out_account=0x7f0e057e;
+        public static final int tv_trans_revocation_out_xi=0x7f0e057d;
+        public static final int tv_trans_revocation_trade_num=0x7f0e057a;
+        public static final int tv_trans_revocation_trade_price=0x7f0e0579;
+        public static final int tv_trans_revocation_trade_status=0x7f0e057b;
+        public static final int tv_trans_revocation_yue_num=0x7f0e057c;
         public static final int tv_trans_sale=0x7f0e0365;
-        public static final int tv_trans_stock_code=0x7f0e057f;
-        public static final int tv_trans_stock_name=0x7f0e057e;
-        public static final int tv_trans_stock_status=0x7f0e0583;
+        public static final int tv_trans_stock_code=0x7f0e0580;
+        public static final int tv_trans_stock_name=0x7f0e057f;
+        public static final int tv_trans_stock_status=0x7f0e0584;
         public static final int tv_trans_sub_buy=0x7f0e0368;
         public static final int tv_trans_sub_sale=0x7f0e0369;
         public static final int tv_trans_sure_buy=0x7f0e036c;
         public static final int tv_trans_sure_sale=0x7f0e036d;
         public static final int tv_trans_today=0x7f0e0384;
         public static final int tv_trans_today2=0x7f0e0385;
-        public static final int tv_trans_today_entrust_bs=0x7f0e0584;
-        public static final int tv_trans_today_entrust_code=0x7f0e0588;
-        public static final int tv_trans_today_entrust_date=0x7f0e0585;
-        public static final int tv_trans_today_entrust_entrust_num=0x7f0e058a;
-        public static final int tv_trans_today_entrust_entrust_price=0x7f0e0589;
-        public static final int tv_trans_today_entrust_name=0x7f0e0587;
-        public static final int tv_trans_today_entrust_out_account=0x7f0e0590;
-        public static final int tv_trans_today_entrust_out_xi=0x7f0e058f;
-        public static final int tv_trans_today_entrust_status=0x7f0e0586;
-        public static final int tv_trans_today_entrust_trade_num=0x7f0e058c;
-        public static final int tv_trans_today_entrust_trade_price=0x7f0e058b;
-        public static final int tv_trans_today_entrust_trade_status=0x7f0e058d;
-        public static final int tv_trans_today_entrust_yue_num=0x7f0e058e;
-        public static final int tv_trans_today_trade_bs=0x7f0e0591;
-        public static final int tv_trans_today_trade_code=0x7f0e0595;
-        public static final int tv_trans_today_trade_date=0x7f0e0592;
-        public static final int tv_trans_today_trade_entrust_num=0x7f0e0597;
-        public static final int tv_trans_today_trade_entrust_price=0x7f0e0596;
-        public static final int tv_trans_today_trade_name=0x7f0e0594;
-        public static final int tv_trans_today_trade_out_account=0x7f0e059d;
-        public static final int tv_trans_today_trade_out_xi=0x7f0e059c;
-        public static final int tv_trans_today_trade_status=0x7f0e0593;
-        public static final int tv_trans_today_trade_trade_num=0x7f0e0599;
-        public static final int tv_trans_today_trade_trade_price=0x7f0e0598;
-        public static final int tv_trans_today_trade_trade_status=0x7f0e059a;
-        public static final int tv_trans_today_trade_yue_num=0x7f0e059b;
-        public static final int tv_trans_trade_bs=0x7f0e059f;
+        public static final int tv_trans_today_entrust_bs=0x7f0e0585;
+        public static final int tv_trans_today_entrust_code=0x7f0e0589;
+        public static final int tv_trans_today_entrust_date=0x7f0e0586;
+        public static final int tv_trans_today_entrust_entrust_num=0x7f0e058b;
+        public static final int tv_trans_today_entrust_entrust_price=0x7f0e058a;
+        public static final int tv_trans_today_entrust_name=0x7f0e0588;
+        public static final int tv_trans_today_entrust_out_account=0x7f0e0591;
+        public static final int tv_trans_today_entrust_out_xi=0x7f0e0590;
+        public static final int tv_trans_today_entrust_status=0x7f0e0587;
+        public static final int tv_trans_today_entrust_trade_num=0x7f0e058d;
+        public static final int tv_trans_today_entrust_trade_price=0x7f0e058c;
+        public static final int tv_trans_today_entrust_trade_status=0x7f0e058e;
+        public static final int tv_trans_today_entrust_yue_num=0x7f0e058f;
+        public static final int tv_trans_today_trade_bs=0x7f0e0592;
+        public static final int tv_trans_today_trade_code=0x7f0e0596;
+        public static final int tv_trans_today_trade_date=0x7f0e0593;
+        public static final int tv_trans_today_trade_entrust_num=0x7f0e0598;
+        public static final int tv_trans_today_trade_entrust_price=0x7f0e0597;
+        public static final int tv_trans_today_trade_name=0x7f0e0595;
+        public static final int tv_trans_today_trade_out_account=0x7f0e059e;
+        public static final int tv_trans_today_trade_out_xi=0x7f0e059d;
+        public static final int tv_trans_today_trade_status=0x7f0e0594;
+        public static final int tv_trans_today_trade_trade_num=0x7f0e059a;
+        public static final int tv_trans_today_trade_trade_price=0x7f0e0599;
+        public static final int tv_trans_today_trade_trade_status=0x7f0e059b;
+        public static final int tv_trans_today_trade_yue_num=0x7f0e059c;
+        public static final int tv_trans_trade_bs=0x7f0e05a0;
         public static final int tv_trans_trade_buy=0x7f0e036a;
-        public static final int tv_trans_trade_code=0x7f0e059e;
-        public static final int tv_trans_trade_count=0x7f0e05a0;
-        public static final int tv_trans_trade_market=0x7f0e0582;
+        public static final int tv_trans_trade_code=0x7f0e059f;
+        public static final int tv_trans_trade_count=0x7f0e05a1;
+        public static final int tv_trans_trade_market=0x7f0e0583;
         public static final int tv_trans_trade_max=0x7f0e0394;
         public static final int tv_trans_trade_name=0x7f0e038c;
-        public static final int tv_trans_trade_price=0x7f0e05a1;
+        public static final int tv_trans_trade_price=0x7f0e05a2;
         public static final int tv_trans_trade_sale=0x7f0e036b;
-        public static final int tv_trans_trade_xi_num=0x7f0e05a3;
-        public static final int tv_trans_trade_yue_num=0x7f0e05a2;
-        public static final int tv_trans_up_limit=0x7f0e0580;
+        public static final int tv_trans_trade_xi_num=0x7f0e05a4;
+        public static final int tv_trans_trade_yue_num=0x7f0e05a3;
+        public static final int tv_trans_up_limit=0x7f0e0581;
         public static final int tv_transfer_account=0x7f0e002a;
-        public static final int tv_trunover_info=0x7f0e03b2;
-        public static final int tv_trust_status_fj=0x7f0e0424;
-        public static final int tv_turn_status=0x7f0e03ae;
-        public static final int tv_turnover_amount=0x7f0e03c5;
-        public static final int tv_turnover_price=0x7f0e03c2;
-        public static final int tv_tv_hk_not_paid_detail_money=0x7f0e0468;
+        public static final int tv_trunover_info=0x7f0e03ca;
+        public static final int tv_trust_status_fj=0x7f0e0425;
+        public static final int tv_turn_status=0x7f0e03d6;
+        public static final int tv_turnover_amount=0x7f0e03c1;
+        public static final int tv_turnover_price=0x7f0e03be;
+        public static final int tv_tv_hk_not_paid_detail_money=0x7f0e0469;
         public static final int tv_two_eight=0x7f0e0348;
         public static final int tv_two_finance=0x7f0e002b;
         public static final int tv_two_five=0x7f0e0345;
@@ -3741,47 +3758,49 @@ containing a value of this type.
         public static final int tv_two_ten=0x7f0e034a;
         public static final int tv_two_three=0x7f0e0343;
         public static final int tv_two_two=0x7f0e0342;
-        public static final int tv_uddelegere_numbler=0x7f0e0484;
-        public static final int tv_uddelegere_priser=0x7f0e0483;
+        public static final int tv_uddelegere_numbler=0x7f0e0485;
+        public static final int tv_uddelegere_priser=0x7f0e0484;
         public static final int tv_unit=0x7f0e00da;
-        public static final int tv_unpayamt=0x7f0e0459;
+        public static final int tv_unpayamt=0x7f0e045a;
         public static final int tv_up_limit=0x7f0e0111;
         public static final int tv_up_limit_text=0x7f0e0112;
-        public static final int tv_update_date=0x7f0e0482;
-        public static final int tv_upddate=0x7f0e0460;
-        public static final int tv_usable=0x7f0e03b8;
+        public static final int tv_update_date=0x7f0e0483;
+        public static final int tv_upddate=0x7f0e0461;
+        public static final int tv_usable=0x7f0e03b3;
         public static final int tv_use_other_account=0x7f0e00b3;
         public static final int tv_username=0x7f0e039c;
-        public static final int tv_v_id=0x7f0e04be;
-        public static final int tv_vote_info=0x7f0e04bf;
-        public static final int tv_vote_leijino=0x7f0e04c0;
-        public static final int tv_vote_qty=0x7f0e04cf;
-        public static final int tv_vote_type=0x7f0e04ce;
-        public static final int tv_waive_amount=0x7f0e04a5;
+        public static final int tv_v_id=0x7f0e04bf;
+        public static final int tv_vote_info=0x7f0e04c0;
+        public static final int tv_vote_leijino=0x7f0e04c1;
+        public static final int tv_vote_qty=0x7f0e04d0;
+        public static final int tv_vote_type=0x7f0e04cf;
+        public static final int tv_waive_amount=0x7f0e04a6;
         public static final int tv_warn1=0x7f0e00f1;
         public static final int tv_warn2=0x7f0e00f2;
         public static final int tv_win_code=0x7f0e00d3;
         public static final int tv_win_count=0x7f0e00d4;
         public static final int tv_win_cur_sort=0x7f0e00d5;
         public static final int tv_win_lose=0x7f0e024e;
-        public static final int tv_win_lose_num=0x7f0e03b5;
-        public static final int tv_win_lose_rate=0x7f0e03b6;
+        public static final int tv_win_lose_num=0x7f0e03b0;
+        public static final int tv_win_lose_rate=0x7f0e03b1;
         public static final int tv_win_name=0x7f0e00d2;
         public static final int tv_win_num=0x7f0e02a1;
-        public static final int tv_winning_cash=0x7f0e04f0;
-        public static final int tv_winning_count=0x7f0e04ec;
-        public static final int tv_winning_data=0x7f0e04e7;
-        public static final int tv_winning_money=0x7f0e04ef;
-        public static final int tv_winning_number=0x7f0e04eb;
-        public static final int tv_winning_price=0x7f0e04ed;
-        public static final int tv_winning_securit_name=0x7f0e04e8;
-        public static final int tv_winning_securit_number=0x7f0e04e9;
-        public static final int tv_winning_tcount=0x7f0e04ee;
-        public static final int tv_zstrdstatusName=0x7f0e0480;
+        public static final int tv_winning_cash=0x7f0e04f1;
+        public static final int tv_winning_count=0x7f0e04ed;
+        public static final int tv_winning_data=0x7f0e04e8;
+        public static final int tv_winning_money=0x7f0e04f0;
+        public static final int tv_winning_number=0x7f0e04ec;
+        public static final int tv_winning_price=0x7f0e04ee;
+        public static final int tv_winning_securit_name=0x7f0e04e9;
+        public static final int tv_winning_securit_number=0x7f0e04ea;
+        public static final int tv_winning_tcount=0x7f0e04ef;
+        public static final int tv_zstrdstatusName=0x7f0e0481;
         public static final int tvew_stock=0x7f0e031f;
         public static final int up=0x7f0e002c;
         public static final int useLogo=0x7f0e0037;
         public static final int view_bottom=0x7f0e00c1;
+        public static final int view_expandable_contentLayout=0x7f0e05d9;
+        public static final int view_expandable_headerlayout=0x7f0e05d8;
         public static final int view_indicator=0x7f0e03a9;
         public static final int viewfinder_view=0x7f0e0085;
         public static final int vp_bottom_fragment=0x7f0e014b;
@@ -3790,7 +3809,7 @@ containing a value of this type.
         public static final int webview=0x7f0e002d;
         public static final int withText=0x7f0e0052;
         public static final int wrap_content=0x7f0e0038;
-        public static final int year=0x7f0e05d0;
+        public static final int year=0x7f0e05d1;
     }
     public static final class integer {
         public static final int abc_config_activityDefaultDur=0x7f0b0001;
@@ -4025,148 +4044,153 @@ containing a value of this type.
         public static final int item_a_revocation=0x7f0400de;
         public static final int item_a_statement_account=0x7f0400df;
         public static final int item_a_today_entrust=0x7f0400e0;
-        public static final int item_a_today_trade=0x7f0400e1;
-        public static final int item_account_pop_lv=0x7f0400e2;
-        public static final int item_bottom_revocation=0x7f0400e3;
-        public static final int item_bottom_today_entrust=0x7f0400e4;
-        public static final int item_fast_menu_trade=0x7f0400e5;
-        public static final int item_fund_account=0x7f0400e6;
-        public static final int item_fund_history_entrust=0x7f0400e7;
-        public static final int item_fund_history_trade=0x7f0400e8;
-        public static final int item_fund_hold_count=0x7f0400e9;
-        public static final int item_fund_pledge_select=0x7f0400ea;
-        public static final int item_fund_revocation=0x7f0400eb;
-        public static final int item_fund_risk_question=0x7f0400ec;
-        public static final int item_fund_share_set=0x7f0400ed;
-        public static final int item_fund_today_entrust=0x7f0400ee;
-        public static final int item_fund_today_trade=0x7f0400ef;
-        public static final int item_hk_combine=0x7f0400f0;
-        public static final int item_hk_company_msg=0x7f0400f1;
-        public static final int item_hk_corporate=0x7f0400f2;
-        public static final int item_hk_delivery=0x7f0400f3;
-        public static final int item_hk_difference=0x7f0400f4;
-        public static final int item_hk_exchange=0x7f0400f5;
-        public static final int item_hk_fund=0x7f0400f6;
-        public static final int item_hk_history_entrust=0x7f0400f7;
-        public static final int item_hk_history_trade=0x7f0400f8;
-        public static final int item_hk_hold_buy_or_sale=0x7f0400f9;
-        public static final int item_hk_hold_stock_list=0x7f0400fa;
-        public static final int item_hk_liabilities=0x7f0400fb;
-        public static final int item_hk_limit=0x7f0400fc;
-        public static final int item_hk_marketday=0x7f0400fd;
-        public static final int item_hk_no_trade=0x7f0400fe;
-        public static final int item_hk_notification=0x7f0400ff;
-        public static final int item_hk_revocation_listview=0x7f040100;
-        public static final int item_hk_secutitiese=0x7f040101;
-        public static final int item_hk_statement=0x7f040102;
-        public static final int item_hk_stock=0x7f040103;
-        public static final int item_hk_today_entrust=0x7f040104;
-        public static final int item_hk_today_trade=0x7f040105;
-        public static final int item_hk_trust=0x7f040106;
-        public static final int item_hk_vote_msg=0x7f040107;
-        public static final int item_in_fund_sercurities_positions=0x7f040108;
-        public static final int item_level_fund_revocation=0x7f040109;
-        public static final int item_level_history_entrust=0x7f04010a;
-        public static final int item_level_history_trade=0x7f04010b;
-        public static final int item_level_today_entrust=0x7f04010c;
-        public static final int item_level_today_trade=0x7f04010d;
-        public static final int item_lv_trade_bottom_hold=0x7f04010e;
-        public static final int item_more_menu=0x7f04010f;
-        public static final int item_net_add_up=0x7f040110;
-        public static final int item_net_not_add_up=0x7f040111;
-        public static final int item_net_vote_entrust=0x7f040112;
-        public static final int item_net_vote_msg=0x7f040113;
-        public static final int item_new_distribute=0x7f040114;
-        public static final int item_new_give_up_revocation=0x7f040115;
-        public static final int item_new_history_list=0x7f040116;
-        public static final int item_new_one_key_sub=0x7f040117;
-        public static final int item_new_sub_select=0x7f040118;
-        public static final int item_new_subscribe=0x7f040119;
-        public static final int item_new_winning=0x7f04011a;
-        public static final int item_option_contract=0x7f04011b;
-        public static final int item_option_contract_lock=0x7f04011c;
-        public static final int item_option_contract_open=0x7f04011d;
-        public static final int item_option_entrust_price_way=0x7f04011e;
-        public static final int item_option_exercise_end_date=0x7f04011f;
-        public static final int item_option_exercise_price=0x7f040120;
-        public static final int item_option_history_entrust=0x7f040121;
-        public static final int item_option_history_list=0x7f040122;
-        public static final int item_option_history_risk=0x7f040123;
-        public static final int item_option_history_trade=0x7f040124;
-        public static final int item_option_hold=0x7f040125;
-        public static final int item_option_hold_stock=0x7f040126;
-        public static final int item_option_hold_stock_title=0x7f040127;
-        public static final int item_option_revocation=0x7f040128;
-        public static final int item_option_today_entrust=0x7f040129;
-        public static final int item_option_today_trade=0x7f04012a;
-        public static final int item_pop_for_list_fund=0x7f04012b;
-        public static final int item_pop_onkey_accounts=0x7f04012c;
-        public static final int item_pop_search_stocks=0x7f04012d;
-        public static final int item_r_buy_or_sale_contract=0x7f04012e;
-        public static final int item_r_buy_or_sale_object=0x7f04012f;
-        public static final int item_r_choose_contract_extension=0x7f040130;
-        public static final int item_r_choose_contract_return_money=0x7f040131;
-        public static final int item_r_choose_contract_return_stock=0x7f040132;
-        public static final int item_r_not_contract=0x7f040133;
-        public static final int item_r_revocation=0x7f040134;
-        public static final int item_r_rollater_in=0x7f040135;
-        public static final int item_r_rollater_out=0x7f040136;
-        public static final int item_r_rollater_revocation=0x7f040137;
-        public static final int item_r_rollater_select=0x7f040138;
-        public static final int item_r_select_collater_security=0x7f040139;
-        public static final int item_r_select_contract_not=0x7f04013a;
-        public static final int item_r_select_contract_yes=0x7f04013b;
-        public static final int item_r_select_do=0x7f04013c;
-        public static final int item_r_select_history_entrust=0x7f04013d;
-        public static final int item_r_select_history_trade=0x7f04013e;
-        public static final int item_r_select_object_capital=0x7f04013f;
-        public static final int item_r_select_object_ticket=0x7f040140;
-        public static final int item_r_select_quan_detail=0x7f040141;
-        public static final int item_r_select_today_entrust=0x7f040142;
-        public static final int item_r_select_today_trade=0x7f040143;
-        public static final int item_r_select_water_money=0x7f040144;
-        public static final int item_r_select_zi_detail=0x7f040145;
-        public static final int item_r_sub_bond=0x7f040146;
-        public static final int item_r_sub_bond2=0x7f040147;
-        public static final int item_trans_history_entrust=0x7f040148;
-        public static final int item_trans_history_trade=0x7f040149;
-        public static final int item_trans_hold_stock=0x7f04014a;
-        public static final int item_trans_revocation=0x7f04014b;
-        public static final int item_trans_select_ticket=0x7f04014c;
-        public static final int item_trans_today_entrust=0x7f04014d;
-        public static final int item_trans_today_trade=0x7f04014e;
-        public static final int item_trans_trade_buy_or_sale=0x7f04014f;
-        public static final int layout_circle_thumbnail=0x7f040150;
-        public static final int list_item_camera=0x7f040151;
-        public static final int list_item_folder=0x7f040152;
-        public static final int list_item_image=0x7f040153;
-        public static final int myhold_refresh_scrollview=0x7f040154;
-        public static final int notification_media_action=0x7f040155;
-        public static final int notification_media_cancel_action=0x7f040156;
-        public static final int notification_template_big_media=0x7f040157;
-        public static final int notification_template_big_media_narrow=0x7f040158;
-        public static final int notification_template_lines=0x7f040159;
-        public static final int notification_template_media=0x7f04015a;
-        public static final int notification_template_part_chronometer=0x7f04015b;
-        public static final int notification_template_part_time=0x7f04015c;
-        public static final int pop_show_bottom=0x7f04015d;
-        public static final int popwindow_account_select=0x7f04015e;
-        public static final int popwindow_total_price=0x7f04015f;
-        public static final int pull_to_load_footer_trade=0x7f040160;
-        public static final int pull_to_refresh_header_trade=0x7f040161;
-        public static final int pw_options=0x7f040162;
-        public static final int select_dialog_item_material=0x7f040163;
-        public static final int select_dialog_multichoice_material=0x7f040164;
-        public static final int select_dialog_singlechoice_material=0x7f040165;
-        public static final int support_simple_spinner_dropdown_item=0x7f040166;
-        public static final int textview_home_moduleitem=0x7f040167;
-        public static final int timepicker_layout=0x7f040168;
-        public static final int timepicker_line=0x7f040169;
-        public static final int timepicker_toolbar=0x7f04016a;
-        public static final int view_bottom_blue=0x7f04016b;
-        public static final int view_bottom_golden=0x7f04016c;
-        public static final int view_content=0x7f04016d;
-        public static final int view_header=0x7f04016e;
+        public static final int item_a_today_money_water=0x7f0400e1;
+        public static final int item_a_today_trade=0x7f0400e2;
+        public static final int item_account_pop_lv=0x7f0400e3;
+        public static final int item_bottom_revocation=0x7f0400e4;
+        public static final int item_bottom_today_entrust=0x7f0400e5;
+        public static final int item_fast_menu_trade=0x7f0400e6;
+        public static final int item_fund_account=0x7f0400e7;
+        public static final int item_fund_history_entrust=0x7f0400e8;
+        public static final int item_fund_history_trade=0x7f0400e9;
+        public static final int item_fund_hold_count=0x7f0400ea;
+        public static final int item_fund_pledge_select=0x7f0400eb;
+        public static final int item_fund_revocation=0x7f0400ec;
+        public static final int item_fund_risk_question=0x7f0400ed;
+        public static final int item_fund_share_set=0x7f0400ee;
+        public static final int item_fund_today_entrust=0x7f0400ef;
+        public static final int item_fund_today_trade=0x7f0400f0;
+        public static final int item_hk_combine=0x7f0400f1;
+        public static final int item_hk_company_msg=0x7f0400f2;
+        public static final int item_hk_corporate=0x7f0400f3;
+        public static final int item_hk_delivery=0x7f0400f4;
+        public static final int item_hk_difference=0x7f0400f5;
+        public static final int item_hk_exchange=0x7f0400f6;
+        public static final int item_hk_fund=0x7f0400f7;
+        public static final int item_hk_history_entrust=0x7f0400f8;
+        public static final int item_hk_history_trade=0x7f0400f9;
+        public static final int item_hk_hold_buy_or_sale=0x7f0400fa;
+        public static final int item_hk_hold_stock_list=0x7f0400fb;
+        public static final int item_hk_liabilities=0x7f0400fc;
+        public static final int item_hk_limit=0x7f0400fd;
+        public static final int item_hk_marketday=0x7f0400fe;
+        public static final int item_hk_no_trade=0x7f0400ff;
+        public static final int item_hk_notification=0x7f040100;
+        public static final int item_hk_revocation_listview=0x7f040101;
+        public static final int item_hk_secutitiese=0x7f040102;
+        public static final int item_hk_statement=0x7f040103;
+        public static final int item_hk_stock=0x7f040104;
+        public static final int item_hk_today_entrust=0x7f040105;
+        public static final int item_hk_today_trade=0x7f040106;
+        public static final int item_hk_trust=0x7f040107;
+        public static final int item_hk_vote_msg=0x7f040108;
+        public static final int item_in_fund_sercurities_positions=0x7f040109;
+        public static final int item_level_fund_revocation=0x7f04010a;
+        public static final int item_level_history_entrust=0x7f04010b;
+        public static final int item_level_history_trade=0x7f04010c;
+        public static final int item_level_today_entrust=0x7f04010d;
+        public static final int item_level_today_trade=0x7f04010e;
+        public static final int item_lv_trade_bottom_hold=0x7f04010f;
+        public static final int item_more_menu=0x7f040110;
+        public static final int item_net_add_up=0x7f040111;
+        public static final int item_net_not_add_up=0x7f040112;
+        public static final int item_net_vote_entrust=0x7f040113;
+        public static final int item_net_vote_msg=0x7f040114;
+        public static final int item_new_distribute=0x7f040115;
+        public static final int item_new_give_up_revocation=0x7f040116;
+        public static final int item_new_history_list=0x7f040117;
+        public static final int item_new_one_key_sub=0x7f040118;
+        public static final int item_new_sub_select=0x7f040119;
+        public static final int item_new_subscribe=0x7f04011a;
+        public static final int item_new_winning=0x7f04011b;
+        public static final int item_option_contract=0x7f04011c;
+        public static final int item_option_contract_lock=0x7f04011d;
+        public static final int item_option_contract_open=0x7f04011e;
+        public static final int item_option_entrust_price_way=0x7f04011f;
+        public static final int item_option_exercise_end_date=0x7f040120;
+        public static final int item_option_exercise_price=0x7f040121;
+        public static final int item_option_history_entrust=0x7f040122;
+        public static final int item_option_history_list=0x7f040123;
+        public static final int item_option_history_risk=0x7f040124;
+        public static final int item_option_history_trade=0x7f040125;
+        public static final int item_option_hold=0x7f040126;
+        public static final int item_option_hold_stock=0x7f040127;
+        public static final int item_option_hold_stock_title=0x7f040128;
+        public static final int item_option_revocation=0x7f040129;
+        public static final int item_option_today_entrust=0x7f04012a;
+        public static final int item_option_today_trade=0x7f04012b;
+        public static final int item_pop_for_list_fund=0x7f04012c;
+        public static final int item_pop_onkey_accounts=0x7f04012d;
+        public static final int item_pop_search_stocks=0x7f04012e;
+        public static final int item_r_buy_or_sale_contract=0x7f04012f;
+        public static final int item_r_buy_or_sale_object=0x7f040130;
+        public static final int item_r_choose_contract_extension=0x7f040131;
+        public static final int item_r_choose_contract_return_money=0x7f040132;
+        public static final int item_r_choose_contract_return_stock=0x7f040133;
+        public static final int item_r_not_contract=0x7f040134;
+        public static final int item_r_revocation=0x7f040135;
+        public static final int item_r_rollater_in=0x7f040136;
+        public static final int item_r_rollater_out=0x7f040137;
+        public static final int item_r_rollater_revocation=0x7f040138;
+        public static final int item_r_rollater_select=0x7f040139;
+        public static final int item_r_select_collater_security=0x7f04013a;
+        public static final int item_r_select_contract_not=0x7f04013b;
+        public static final int item_r_select_contract_yes=0x7f04013c;
+        public static final int item_r_select_do=0x7f04013d;
+        public static final int item_r_select_history_entrust=0x7f04013e;
+        public static final int item_r_select_history_trade=0x7f04013f;
+        public static final int item_r_select_object_capital=0x7f040140;
+        public static final int item_r_select_object_ticket=0x7f040141;
+        public static final int item_r_select_quan_detail=0x7f040142;
+        public static final int item_r_select_today_entrust=0x7f040143;
+        public static final int item_r_select_today_trade=0x7f040144;
+        public static final int item_r_select_water_money=0x7f040145;
+        public static final int item_r_select_zi_detail=0x7f040146;
+        public static final int item_r_sub_bond=0x7f040147;
+        public static final int item_r_sub_bond2=0x7f040148;
+        public static final int item_trans_history_entrust=0x7f040149;
+        public static final int item_trans_history_trade=0x7f04014a;
+        public static final int item_trans_hold_stock=0x7f04014b;
+        public static final int item_trans_revocation=0x7f04014c;
+        public static final int item_trans_select_ticket=0x7f04014d;
+        public static final int item_trans_today_entrust=0x7f04014e;
+        public static final int item_trans_today_trade=0x7f04014f;
+        public static final int item_trans_trade_buy_or_sale=0x7f040150;
+        public static final int layout_circle_thumbnail=0x7f040151;
+        public static final int layout_history_entrust_item_head=0x7f040152;
+        public static final int layout_history_item_expand=0x7f040153;
+        public static final int layout_history_trade_item_header=0x7f040154;
+        public static final int list_item_camera=0x7f040155;
+        public static final int list_item_folder=0x7f040156;
+        public static final int list_item_image=0x7f040157;
+        public static final int myhold_refresh_scrollview=0x7f040158;
+        public static final int notification_media_action=0x7f040159;
+        public static final int notification_media_cancel_action=0x7f04015a;
+        public static final int notification_template_big_media=0x7f04015b;
+        public static final int notification_template_big_media_narrow=0x7f04015c;
+        public static final int notification_template_lines=0x7f04015d;
+        public static final int notification_template_media=0x7f04015e;
+        public static final int notification_template_part_chronometer=0x7f04015f;
+        public static final int notification_template_part_time=0x7f040160;
+        public static final int pop_show_bottom=0x7f040161;
+        public static final int popwindow_account_select=0x7f040162;
+        public static final int popwindow_total_price=0x7f040163;
+        public static final int pull_to_load_footer_trade=0x7f040164;
+        public static final int pull_to_refresh_header_trade=0x7f040165;
+        public static final int pw_options=0x7f040166;
+        public static final int select_dialog_item_material=0x7f040167;
+        public static final int select_dialog_multichoice_material=0x7f040168;
+        public static final int select_dialog_singlechoice_material=0x7f040169;
+        public static final int support_simple_spinner_dropdown_item=0x7f04016a;
+        public static final int textview_home_moduleitem=0x7f04016b;
+        public static final int timepicker_layout=0x7f04016c;
+        public static final int timepicker_line=0x7f04016d;
+        public static final int timepicker_toolbar=0x7f04016e;
+        public static final int view_bottom_blue=0x7f04016f;
+        public static final int view_bottom_golden=0x7f040170;
+        public static final int view_content=0x7f040171;
+        public static final int view_expandable=0x7f040172;
+        public static final int view_header=0x7f040173;
     }
     public static final class mipmap {
         public static final int add_icon=0x7f030000;
@@ -8851,6 +8875,57 @@ containing a value of this type.
           @attr name com.thinkive.android.trade_bz.test:thickness
         */
         public static final int DrawerArrowToggle_thickness = 7;
+        /** Attributes that can be used with a ExpandableLayout.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ExpandableLayout_el_contentLayout com.thinkive.android.trade_bz.test:el_contentLayout}</code></td><td></td></tr>
+           <tr><td><code>{@link #ExpandableLayout_el_duration com.thinkive.android.trade_bz.test:el_duration}</code></td><td></td></tr>
+           <tr><td><code>{@link #ExpandableLayout_el_headerLayout com.thinkive.android.trade_bz.test:el_headerLayout}</code></td><td></td></tr>
+           </table>
+           @see #ExpandableLayout_el_contentLayout
+           @see #ExpandableLayout_el_duration
+           @see #ExpandableLayout_el_headerLayout
+         */
+        public static final int[] ExpandableLayout = {
+            0x7f0100b4, 0x7f0100b5, 0x7f0100b6
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#el_contentLayout}
+          attribute's value can be found in the {@link #ExpandableLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.thinkive.android.trade_bz.test:el_contentLayout
+        */
+        public static final int ExpandableLayout_el_contentLayout = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#el_duration}
+          attribute's value can be found in the {@link #ExpandableLayout} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.thinkive.android.trade_bz.test:el_duration
+        */
+        public static final int ExpandableLayout_el_duration = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#el_headerLayout}
+          attribute's value can be found in the {@link #ExpandableLayout} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.thinkive.android.trade_bz.test:el_headerLayout
+        */
+        public static final int ExpandableLayout_el_headerLayout = 0;
         /** Attributes that can be used with a LinearLayoutCompat.
            <p>Includes the following attributes:</p>
            <table>
@@ -8879,8 +8954,8 @@ containing a value of this type.
          */
         public static final int[] LinearLayoutCompat = {
             0x010100af, 0x010100c4, 0x01010126, 0x01010127,
-            0x01010128, 0x7f01000b, 0x7f0100b4, 0x7f0100b5,
-            0x7f0100b6
+            0x01010128, 0x7f01000b, 0x7f0100b7, 0x7f0100b8,
+            0x7f0100b9
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#baselineAligned}
@@ -9052,7 +9127,7 @@ containing a value of this type.
            @see #LockPatternView_aspect
          */
         public static final int[] LockPatternView = {
-            0x7f0100b7
+            0x7f0100ba
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#aspect}
@@ -9174,8 +9249,8 @@ containing a value of this type.
             0x01010002, 0x0101000e, 0x010100d0, 0x01010106,
             0x01010194, 0x010101de, 0x010101df, 0x010101e1,
             0x010101e2, 0x010101e3, 0x010101e4, 0x010101e5,
-            0x0101026f, 0x7f0100b8, 0x7f0100b9, 0x7f0100ba,
-            0x7f0100bb
+            0x0101026f, 0x7f0100bb, 0x7f0100bc, 0x7f0100bd,
+            0x7f0100be
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#actionLayout}
@@ -9339,7 +9414,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x7f0100bc
+            0x0101012f, 0x01010130, 0x01010131, 0x7f0100bf
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#headerBackground}
@@ -9410,7 +9485,7 @@ containing a value of this type.
            @see #PopupWindow_overlapAnchor
          */
         public static final int[] PopupWindow = {
-            0x01010176, 0x7f0100bd
+            0x01010176, 0x7f0100c0
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#popupBackground}
@@ -9443,7 +9518,7 @@ containing a value of this type.
            @see #PopupWindowBackgroundState_state_above_anchor
          */
         public static final int[] PopupWindowBackgroundState = {
-            0x7f0100be
+            0x7f0100c1
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#state_above_anchor}
@@ -9503,10 +9578,10 @@ containing a value of this type.
          */
         public static final int[] SearchView = {
             0x010100da, 0x0101011f, 0x01010220, 0x01010264,
-            0x7f0100bf, 0x7f0100c0, 0x7f0100c1, 0x7f0100c2,
-            0x7f0100c3, 0x7f0100c4, 0x7f0100c5, 0x7f0100c6,
-            0x7f0100c7, 0x7f0100c8, 0x7f0100c9, 0x7f0100ca,
-            0x7f0100cb
+            0x7f0100c2, 0x7f0100c3, 0x7f0100c4, 0x7f0100c5,
+            0x7f0100c6, 0x7f0100c7, 0x7f0100c8, 0x7f0100c9,
+            0x7f0100ca, 0x7f0100cb, 0x7f0100cc, 0x7f0100cd,
+            0x7f0100ce
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#focusable}
@@ -9759,9 +9834,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #SwitchCompat_track
          */
         public static final int[] SwitchCompat = {
-            0x01010124, 0x01010125, 0x01010142, 0x7f0100cc,
-            0x7f0100cd, 0x7f0100ce, 0x7f0100cf, 0x7f0100d0,
-            0x7f0100d1, 0x7f0100d2
+            0x01010124, 0x01010125, 0x01010142, 0x7f0100cf,
+            0x7f0100d0, 0x7f0100d1, 0x7f0100d2, 0x7f0100d3,
+            0x7f0100d4, 0x7f0100d5
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#textOff}
@@ -10028,11 +10103,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int[] Toolbar = {
             0x010100af, 0x01010140, 0x7f010003, 0x7f010006,
             0x7f01000a, 0x7f010016, 0x7f010017, 0x7f010018,
-            0x7f010019, 0x7f01001b, 0x7f0100d3, 0x7f0100d4,
-            0x7f0100d5, 0x7f0100d6, 0x7f0100d7, 0x7f0100d8,
-            0x7f0100d9, 0x7f0100da, 0x7f0100db, 0x7f0100dc,
-            0x7f0100dd, 0x7f0100de, 0x7f0100df, 0x7f0100e0,
-            0x7f0100e1
+            0x7f010019, 0x7f01001b, 0x7f0100d6, 0x7f0100d7,
+            0x7f0100d8, 0x7f0100d9, 0x7f0100da, 0x7f0100db,
+            0x7f0100dc, 0x7f0100dd, 0x7f0100de, 0x7f0100df,
+            0x7f0100e0, 0x7f0100e1, 0x7f0100e2, 0x7f0100e3,
+            0x7f0100e4
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#gravity}
@@ -10385,8 +10460,8 @@ containing a value of this type.
            @see #View_theme
          */
         public static final int[] View = {
-            0x01010000, 0x010100da, 0x7f0100e2, 0x7f0100e3,
-            0x7f0100e4
+            0x01010000, 0x010100da, 0x7f0100e5, 0x7f0100e6,
+            0x7f0100e7
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#focusable}
@@ -10457,7 +10532,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            @see #ViewBackgroundHelper_backgroundTintMode
          */
         public static final int[] ViewBackgroundHelper = {
-            0x010100d4, 0x7f0100e5, 0x7f0100e6
+            0x010100d4, 0x7f0100e8, 0x7f0100e9
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#background}
@@ -10566,9 +10641,9 @@ containing a value of this type.
            @see #WheelView_unitHight
          */
         public static final int[] WheelView = {
-            0x7f0100e7, 0x7f0100e8, 0x7f0100e9, 0x7f0100ea,
-            0x7f0100eb, 0x7f0100ec, 0x7f0100ed, 0x7f0100ee,
-            0x7f0100ef, 0x7f0100f0, 0x7f0100f1
+            0x7f0100ea, 0x7f0100eb, 0x7f0100ec, 0x7f0100ed,
+            0x7f0100ee, 0x7f0100ef, 0x7f0100f0, 0x7f0100f1,
+            0x7f0100f2, 0x7f0100f3, 0x7f0100f4
         };
         /**
           <p>This symbol is the offset where the {@link com.thinkive.android.trade_bz.test.R.attr#isEnable}

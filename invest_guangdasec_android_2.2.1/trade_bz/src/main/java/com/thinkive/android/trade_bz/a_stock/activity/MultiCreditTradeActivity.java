@@ -24,7 +24,7 @@ import java.util.ArrayList;
 /**
  * Created by Administrator on 2016/10/25.
  */
-public class MultiCreditTradeActivity extends AbsNavBarActivity{
+public class MultiCreditTradeActivity extends AbsNavBarActivity {
     private MultiTradeViewController mController = null;
     private NavigatorView mNavSlide = null;
     private RadioTabs mRadioTabs;
@@ -40,7 +40,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
     private RRevocationFragment mRRevocationFragment;
     private MyRRHoldStockFragment mMyRRHoldStockFragment;
     private CreditTodayEntrustOrTradeFragment mCreditTodayEntrustOrTradeFragment;
-    private int mChildePos=0;
+    private int mChildePos = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +68,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         Bundle bundle = getIntent().getExtras();
         defaultViewPagerPos = bundle.getInt("pos", 0);
         mChildePos = bundle.getInt("childePos", 0);
+        final String stock_code = bundle.getString("stock_code");
         mFragmentList = new ArrayList<AbsBaseFragment>();
         mRCreditBuyFragment = new RCreditBuyFragment();
         mRCreditBuyFragment.setName("融买");
@@ -75,10 +76,10 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         mRCreditSaleFragment.setName("融卖");
         mRRevocationFragment = new RRevocationFragment();
         mRRevocationFragment.setName("撤单");
-        mCreditTodayEntrustOrTradeFragment = new   CreditTodayEntrustOrTradeFragment();
+        mCreditTodayEntrustOrTradeFragment = new CreditTodayEntrustOrTradeFragment();
         mCreditTodayEntrustOrTradeFragment.setName("委托");
         Bundle bundle1 = new Bundle();
-        bundle1.putInt("childePos",mChildePos);
+        bundle1.putInt("childePos", mChildePos);
         mCreditTodayEntrustOrTradeFragment.setArguments(bundle1);
         mMyRRHoldStockFragment = new MyRRHoldStockFragment();
         mMyRRHoldStockFragment.setName("个人");
@@ -89,6 +90,15 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         mFragmentList.add(mMyRRHoldStockFragment);
         mController = new MultiTradeViewController(this);
         mRadioTabs = new RadioTabs(this, mHorizontalSlideLinearLayout);
+        mRadioTabs.setFragments(mFragmentList);
+        if (stock_code != null & (defaultViewPagerPos == 0 || defaultViewPagerPos == 1)) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    transferFragmentToBuySaleFromOthers(stock_code, defaultViewPagerPos);
+                }
+            }).start();
+        }
     }
 
     @Override
@@ -118,7 +128,7 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         // 设置页面上方中间的标题
         setTitleText("信用交易");
         setTitleDrawableLedt(R.mipmap.credit_header);
-        mRadioTabs.setFragments(mFragmentList);
+
         mRadioTabs.initViews();
         // mRadioTabs对象的类不是View子类，所以这个监听器的设置不能写在mController中
         mRadioTabs.setTabChangeListener(new RadioTabs.OnTabChangeListener() {
@@ -162,13 +172,14 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
         //设置标题栏标题
         //        setTitleStr(str);
     }
+
     /**
      * 当其他Fragment中的列表的item展开布局中的“买入”、“卖出”按钮
      *
      * @param stockCode 在持仓列表中点击的那支股票的股票代码
      * @param buyOrSale 0:单击的是“买入”；1：单机的是“卖出”
      */
-    public void transferFragmentToBuySaleFromOthers(String stockCode, int buyOrSale) {
+    public void transferFragmentToBuySaleFromOthers(String stockCode, final int buyOrSale) {
         if (buyOrSale == 0) { // 如果单击的是“买入”
 
             Bundle bundle = mRCreditBuyFragment.getArguments();
@@ -179,7 +190,6 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
             } else {
                 mRCreditBuyFragment.setStockCodeFromOther(stockCode);
             }
-
 
         } else if (buyOrSale == 1) { // 如果单击的是“卖出”
             Bundle bundle = mRCreditSaleFragment.getArguments();
@@ -192,8 +202,13 @@ public class MultiCreditTradeActivity extends AbsNavBarActivity{
             }
         }
 
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mRadioTabs.setCurTab(buyOrSale);
+            }
+        });
 
-        mRadioTabs.setCurTab(buyOrSale);
     }
 
     public NavigatorView getNavSlide() {
